@@ -1,0 +1,814 @@
+// ------------------------------
+// ADD FONTS
+@font-face {
+    font-family: "BebasNeueRegular";
+    src: url('BebasNeue-webfont.woff') format('woff'),
+    		 url('BebasNeue-webfont.ttf') format('truetype'),
+         url('BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+// ------------------------------
+// VARIABLES:
+// color - grays
+$white:					#fefefe !default;
+$grayLighter:		darken($white, 				16.67%) !default;
+$grayLight:			darken($grayLighter, 	16.67%) !default;
+$gray:					darken($grayLight, 		16.67%) !default;
+$grayDark:			darken($gray, 				16.67%) !default;
+$grayDarker:		darken($grayDark, 		16.67%) !default;
+$black:					#000 !default;
+// color - spectrum
+$blue:		#5c789c;		$blueDark:		#324762;		$blueLight:		#90a6c4;		$blueOpaque:		rgba($blue, .4);
+$green:		#97a116;		$greenDark:		#636b03;		$greenLight:	#c4cd5c;		$greenOpaque:		rgba($green, .4);;
+$yellow:	#d4c62f;		$yellowDark:	#8b8010;		$yellowLight:	#f0e56b;		$yellowOpaque:	rgba($yellow, .1);;
+$orange:	#c49f39;		$orangeDark:	#806318;		$orangeLight:	#e4c673;		$orangeOpaque:	rgba($orange, .4);;
+$red:			#a86156;		$redDark:			#6b352e;		$redLight:		#cc938a;		$redOpaque:			rgba($red, .4);;
+$pink:		#bf8298;		$pinkDark:		#774959;		$pinkLight:		#d9a9ba;		$pinkOpaque:		rgba($pink, .4);;
+$purple:	#997bbd;		$purpleDark:	#5b4575;		$purpleLight:	#bda4d9;		$purpleOpaque:	rgba($purple, .4);;
+// color - scaffolding
+$bodyBackground: 				darken($white, 5%);
+$textColor: 						#444;
+// color - links
+$linkColor:             $green;
+$linkColorHover:        $greenDark;
+// color - tables
+$tableBackground:                   $white; // overall background-color
+$tableBackgroundAccent:             darken($white, 2%); // for striping
+$tableBackgroundHover:              $yellowOpaque; // for hover
+$tableBorder:                       $grayLighter; // table and cell border
+// color - buttons  (Highlight is actually darker)
+$btnBackground:                     $white;
+$btnBackgroundHighlight:            darken($white, 10%);
+$btnPrimaryBackground: 							$greenLight;
+$btnPrimaryBackgroundHighlight: 		$green;
+$btnInfoBackground:                 $blueLight;
+$btnInfoBackgroundHighlight:        $blue;
+$btnSuccessBackground:              $greenLight;
+$btnSuccessBackgroundHighlight:     $green;
+$btnWarningBackground:              $orangeLight;
+$btnWarningBackgroundHighlight:     $orange;
+$btnDangerBackground:               $redLight;
+$btnDangerBackgroundHighlight:      $red;
+// color - form states and alerts
+$warningText:             $yellowDark;
+$warningBackground:       $yellowOpaque;
+$warningBorder:           $yellow;
+$errorText:               $redDark;
+$errorBackground:         $redOpaque;
+$errorBorder:             $red;
+$successText:             $greenDark;
+$successBackground:       $greenOpaque;
+$successBorder:           $green;
+$infoText:                $blueDark;
+$infoBackground:          $blueOpaque;
+$infoBorder:              $blue;
+// typography 
+$sansFontFamily: 'Puritan', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$headingsFontFamily: "BebasNeueRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$headingsFontWeight: normal;
+// remove sprite icons path
+$iconSpritePath:          "";
+$iconWhiteSpritePath:     "";
+// custom
+$double-border: medium double #c5c5c5;
+$widgetBackground: darken($white, 2%);
+$widgetBordersColor: #d4d4d4;
+
+
+// ------------------------------
+// THEN import Bootstrap
+@import "bootstrap";
+@import "font-awesome";
+
+
+// ------------------------------
+// OVERRIDE Bootstrap:
+// typography
+h1,
+h2 {
+	font-size: 60px;
+	line-height: 1em;
+	text-shadow: rgba(black, .25) 0px 3px 3px;
+	small { text-shadow: none; }
+}
+h2 { font-size: 30px; }
+h3,
+h4,
+h5,
+h6 {
+	font-family: $sansFontFamily;
+	font-weight: bold;
+}
+h1, h2, h3, h4, h5, h6 {
+	small { color: $textColor; }
+}
+// rules
+hr {
+	border-top: $double-border;
+	border-bottom: none;
+}
+// change the focus colors for form elements
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
+	border-color: $blueLight;
+	@include box-shadow (#{inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($blue, 0.6)});
+}
+// make the buttons' text bold
+.btn { font-weight: bold; }
+// mixin for setting the button drop-shadows and glow on large buttons
+@mixin addShadowsAndGlow($darkerColor, $lighterColor) {
+	@include box-shadow(#{
+		0 3px 0 $darkerColor,
+		0 -1px 1px $lighterColor inset,
+		0 5px 3px rgba(0,0,0,.3)
+	});
+}
+// style the large buttons as 3D
+.btn-large {
+	font-family: $headingsFontFamily;
+	font-size: 24px;
+	font-weight: normal;
+	@include transition(box-shadow .1s linear);
+	@include addShadowsAndGlow($gray, $white);
+	&.btn-primary,
+	&.btn-success {	@include addShadowsAndGlow($greenDark, $greenOpaque); }
+	&.btn-warning { @include addShadowsAndGlow($orangeDark, $orangeOpaque); }
+	&.btn-danger  { @include addShadowsAndGlow($redDark, $redOpaque); }
+	&.btn-info    { @include addShadowsAndGlow($blueDark, $blueOpaque); }
+	&.btn-inverse { @include addShadowsAndGlow($black, $grayDark); }
+	&.btn-primary, &.btn-success, &.btn-warning, &.btn-danger, &.btn-success, &.btn-info, &.btn-inverse {
+		&:active, &.active {
+			@include box-shadow(#{inset 0 2px 3px rgba(0,0,0,.35), -1px -2px 0px rgba(255,255,255,.05)}); 
+		}
+	}	
+}
+// better vertical alignment of icon with text
+.btn [class^="icon-"], .btn [class*=" icon-"] {	vertical-align: text-bottom; }
+.btn-large [class^="icon-"], .btn-large [class*=" icon-"] {	vertical-align: baseline; }
+// change caret color to text color
+.caret { border-top-color: $textColor; }
+.dropup .caret { border-bottom-color: $textColor; }
+
+.text-warning { color: #c09853; }
+.text-error { color: #b94a48; }
+.text-info { color: #3a87ad; }
+.text-success { color: #468847; }
+
+// make -danger the same as what Bootstrap calls -important to keep naming consistant
+.badge-danger { @extend .badge-important; }
+.label-danger { @extend .label-important; }
+.danger { @extend .error; }
+
+// make badges less wide
+.badge {
+	padding-left: 6px;
+	padding-right: 6px;
+}
+
+.page-header { border-bottom: $double-border; }
+
+.form-actions {
+	border-top: $double-border;
+	background: none;
+	text-align: right;
+}
+
+.well { background: $white; }
+
+.pagination {
+	height: auto;
+	a, span {
+		background-color: $white;
+		font-weight: bold;
+		color: $gray;
+		border-color: $grayLighter;
+		&:hover, &:focus {
+			color: $textColor
+		}
+	}
+	.active a, .active span {
+		background: $grayLighter;
+		color: $gray;
+	}	
+	.disabled a, .disabled span, .disabled a:hover, .disabled a:focus {
+		color: $grayLighter;
+	}
+}
+
+.thumbnail { 
+	border: none;
+	padding: 5px;
+	position: relative;
+	@include box-shadow(none);
+	img {
+		border: 5px solid $white;
+		position: relative;
+		left: -5px;
+		top: -5px;
+		@include box-shadow(0 3px 3px rgba(0,0,0,.25));
+	}
+}
+
+.carousel-control { line-height: 38px; }
+
+// hide button text for action buttons
+.actions .btn span { display: none; }
+
+table, .table {
+	// row highlight/selected color
+	tr.selected td { background-color: $tableBackgroundHover !important; }
+	// align cells to the middle
+	td,th { vertical-align: middle; }
+	// algin cells with calss of .centered to the center
+	.centered { text-align: center; }
+	.actions a { font-size: 1.15em; }
+}
+// un-round corners from bordered tables
+.table-bordered,
+.table-bordered thead:first-child tr:first-child th:first-child,
+.table-bordered tbody:first-child tr:first-child td:first-child,
+.table-bordered thead:last-child tr:last-child th:first-child,
+.table-bordered tbody:last-child tr:last-child td:first-child,
+.table-bordered tfoot:last-child tr:last-child td:first-child,
+.table-bordered thead:first-child tr:first-child th:last-child,
+.table-bordered tbody:first-child tr:first-child td:last-child,
+.table-bordered thead:last-child tr:last-child th:last-child,
+.table-bordered tbody:last-child tr:last-child td:last-child,
+.table-bordered tfoot:last-child tr:last-child td:last-child {	@include border-radius(0px); }
+// change header background to gradient for the detailed tables
+.table-detailed thead th {
+	@include gradient-vertical ($white, #eaeaea)
+}
+// LINKABLE
+.table-row-linkable tr:hover {
+	cursor: pointer;
+}
+// SORTABLE
+.table-sortable thead th {
+	// change colors of sortable headers based on state
+	&.sorting,
+	&.sorting_asc_disabled,
+	&.sorting_desc_disabled { color: $grayLight; }
+	&.sorting_asc,
+	&.sorting_desc { color: $textColor; }
+	// change sorting arrows from images to FontAwesome
+	&.sorting,
+	&.sorting_asc,
+	&.sorting_desc {
+		background-image: none;
+		&::after {
+			font-family: FontAwesome;
+			content: "\f0dc";
+			float: right;
+			margin-top: 3px;
+			@include opacity(.5);
+		}
+	}	
+	&.sorting_asc::after,
+	&.sorting_asc:hover::after {
+		content: "\f0de";
+		@include opacity(.8);
+	}
+	&.sorting_desc::after,
+	&.sorting_desc:hover::after {
+		content: "\f0dd";
+		@include opacity(.8);
+	}
+}
+// FOCUSABLE
+.table-focusable {
+	td { @include transition(all 300ms); }
+	tbody:hover td {
+		color: transparent;
+		text-shadow: 0 0 3px $grayLight;
+	}
+	tbody:hover tr:hover td {
+		color: $textColor;
+		text-shadow: none;
+	}
+}
+// DataTable extras like filter + length
+.dataTables_extras_top, .dataTables_extras_bottom {
+	@extend .clearfix;
+	font-size: .85em;
+	label {
+		font-size: 1em;
+	}
+}
+.dataTables_filter {
+	float: left;
+	input[type="text"] {
+		margin-left: 15px;
+		width: 180px;
+		//@include box-shadow(0 1px 0 white);
+	}
+}
+.dataTables_length {
+	float: right;
+	select {
+		height: 30px;
+		margin: 0 3px;
+	}
+}
+.dataTables_info {
+	margin-bottom: 10px;
+	@include opacity(.5);
+	float: left;
+}
+.dataTables_paginate {
+	float: right;
+	ul {
+		@include box-shadow(none);
+	}
+} 
+// ColVis(DataTables Extra)
+.ColVis { float:right; margin-left: 30px; }
+.ColVis_MasterButton {
+	background: transparent;
+	border-width: 0 0 0 1px;
+	@include border-radius(0);
+	&:before {
+		content: "\f0db";
+		font-family: FontAwesome;
+		font-weight: normal;
+	}
+	span {
+		display: none;
+	}
+}
+.ColVis_collection {
+	//@extends .dropdown-menu;
+	padding: 5px 0;
+	background-color: $dropdownBackground;
+	border: 1px solid #ccc; // Fallback for IE7-8
+  border: 1px solid $dropdownBorder;
+  *border-right-width: 2px;
+	*border-bottom-width: 2px;
+  @include border-radius(6px);
+  @include box-shadow(0 5px 10px rgba(0,0,0,.2));
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+	button {
+		border: none;
+		background: none;
+		text-align: left;
+		width: 100% !important;
+		//@extends .dropdown-menu a
+		display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: $baseLineHeight;
+    color: $dropdownLinkColor;
+    white-space: nowrap;
+		&:hover, &:focus {
+			//@extends .dropdown-menu li > a:hover
+			text-decoration: none;
+		  color: $dropdownLinkColorHover;
+		  background-color: $dropdownLinkBackgroundHover;
+		  @include gradient-vertical($dropdownLinkBackgroundHover, darken($dropdownLinkBackgroundHover, 5%));
+		}
+		.ColVis_radio {
+			margin-right: 10px;
+		}
+	}
+}
+		
+// progress bars
+.progress .bar { @include gradient-vertical($btnInfoBackground, $btnInfoBackgroundHighlight); }
+.progress-striped .bar { @include gradient-striped($blue); }
+.progress-danger .bar, .progress .bar-danger { @include gradient-vertical($btnDangerBackground, $btnDangerBackgroundHighlight); }
+.progress-danger.progress-striped .bar, .progress-striped .bar-danger { @include gradient-striped($red); }
+.progress-success .bar, .progress .bar-success { @include gradient-vertical($btnSuccessBackground, $btnSuccessBackgroundHighlight); }
+.progress-success.progress-striped .bar, .progress-striped .bar-success { @include gradient-striped($green); }
+.progress-info .bar, .progress .bar-info { @include gradient-vertical($btnInfoBackground, $btnInfoBackgroundHighlight); }
+.progress-info.progress-striped .bar, .progress-striped .bar-info { @include gradient-striped($blue); }
+.progress-warning .bar, .progress .bar-warning { @include gradient-vertical($btnWarningBackground, $btnWarningBackgroundHighlight); }
+.progress-warning.progress-striped .bar, .progress-striped .bar-warning { @include gradient-striped($orange); }
+
+/* Breadcrumb */
+.breadcrumb {
+	background-color: #eee;
+	border: 1px solid #ddd;
+	.dropdown { display: inline-block; }
+	a {
+		color: $gray;
+		padding: 10px;
+		.icon-chevron-right {
+			margin-left: 20px;
+			color: $gray;
+		}
+		.caret {
+			border-top-color: $gray;
+			border-bottom-color: $gray;
+		}
+		&:hover, &:focus {
+			text-decoration: none;
+			color: $textColor;
+		}
+	}
+	a.active {
+		color: $textColor;
+		font-weight: bold;
+	}
+	li {
+		display: block;
+		a {	text-shadow: none; }
+	}
+}
+
+// -----------------------------
+// CUSTOM STYLES:
+
+body { background-image: url('header_bg.png'); }
+#content {
+	background-image: url('body_bg.png');
+	border-top: $double-border;
+	border-bottom: $double-border;
+}
+
+#top-nav {
+	position: relative;
+}	
+
+.brand {
+	display: inline-block;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: .5em;
+	font-weight: normal;
+	text-transform: uppercase;
+	color: $grayLight;
+	img {
+		vertical-align: bottom;
+	}
+}
+
+#user-btn-group {
+	position: absolute;
+	top: 0;
+	right: 0;
+	.btn {
+		@include border-radius(0px);
+		span {
+			display: none;
+		}
+		&:last-child { border-right-width: 0; }
+		span.label {
+			display: inline;
+			margin-left: 3px;
+		}
+	}
+}
+
+// -------------------------
+// WIDGETS
+.widget {
+	background: $widgetBackground;
+	border: 1px solid $widgetBordersColor;
+	@include box-shadow(0 2px 2px rgba($widgetBordersColor, .5));
+	margin-bottom: 40px;
+	position: relative;
+	// the head
+	.widget-head {
+		height: 40px;
+		@include gradient-vertical ($white, #f0f0f0);
+		border-bottom: 1px solid $widgetBordersColor;
+		@include box-shadow(0 1px 0 $white inset);
+		text-shadow: 0 1px $white;
+		// position: relative;
+		h5, a {
+			display: inline-block;
+		}
+		h5 {
+			padding: 10px 14px;
+			margin: 0;
+		}
+		.btn {
+			border: none;
+			background: none;
+			@include border-radius(0px);
+			padding: 10px 12px;
+			border-right: 1px solid #d4d4d4;
+			text-align: center;
+		}
+	}
+	// normal content
+	.widget-content {
+		padding: 10px 14px;
+	}
+	// dataTables content
+	.dataTables_extras_top {
+		@include box-shadow(0 1px 0 $white inset);
+		border-bottom: 1px solid $widgetBordersColor;
+		padding: 13px 20px 7px;
+	} 	
+	.ColVis_MasterButton {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 40px;
+		// border: none;
+		// background: none;
+		// @include border-radius(0px);
+		// border-left: 1px solid #d4d4d4;
+	}
+	// table content
+	.table { margin-bottom: 0px !important; }
+	.table-bordered {
+		border: none;
+		td, th { 
+			border-left: 1px solid #ddd;
+			&:first-child {	border-left: none; }
+		}
+	}	
+	// footer
+	.widget-footer, .dataTables_extras_bottom {
+		@include gradient-vertical ($white, #f0f0f0);
+		border-top: 1px solid $widgetBordersColor;
+		padding: 0 20px;
+		& > div {
+			margin: 10px 0 2px;
+		}		
+	}
+	.widget-footer { 
+		padding-bottom: 8px;
+	}
+}
+
+.color-test {
+	width: 60px;
+	height: 60px;
+	display: inline-block;
+	background: #ff0;
+	@include box-shadow(0 2px 2px rgba($black, .2));
+	&.blue { background: $blue; }
+	&.blue.lighter { background: $blueLight; }
+	&.blue.darker { background: $blueDark; }
+	&.blue.opaque { background: $blueOpaque; }
+
+	&.green { background: $green; }
+	&.green.lighter { background: $greenLight; }
+	&.green.darker { background: $greenDark; }
+	&.green.opaque { background: $greenOpaque; }
+	
+	&.yellow { background: $yellow; }
+	&.yellow.lighter { background: $yellowLight; }
+	&.yellow.darker { background: $yellowDark; }
+	&.yellow.opaque { background: $yellowOpaque; }
+	
+	&.orange { background: $orange; }
+	&.orange.lighter { background: $orangeLight; }
+	&.orange.darker { background: $orangeDark; }
+	&.orange.opaque { background: $orangeOpaque; }
+	
+	&.red { background: $red; }
+	&.red.lighter { background: $redLight; }
+	&.red.darker { background: $redDark; }
+	&.red.opaque { background: $redOpaque; }
+	
+	&.pink { background: $pink; }
+	&.pink.lighter { background: $pinkLight; }
+	&.pink.darker { background: $pinkDark; }
+	&.pink.opaque { background: $pinkOpaque; }
+	
+	&.purple { background: $purple; }
+	&.purple.lighter { background: $purpleLight; }
+	&.purple.darker { background: $purpleDark; }
+	&.purple.opaque { background: $purpleOpaque; }
+	
+	&.white { background: $white; }
+	&.grayLighter { background: $grayLighter; }
+	&.grayLight { background: $grayLight; }
+	&.gray { background: $gray; }
+	&.grayDark { background: $grayDark; }
+	&.grayDarker { background: $grayDarker; }
+	&.black { background: $black; }
+	
+}
+
+
+
+
+// SIDEBAR
+#sidebar {
+	// place it to the left of the content
+  display: block;
+  float: left;
+  position: relative;
+  width: 220px;
+  z-index: 16;
+
+	h5 {
+		border-bottom: 1px solid $grayLighter;
+		margin: 0;
+		padding: 10px;
+	}
+	
+	// all buttons
+	.btn {
+		text-shadow: 0 1px $white;
+		@include border-radius(0px);
+		border-top-width: 0px;
+		text-align: left;
+		// @include gradient-vertical($grayDark, $grayDarker);
+		// color: $white;
+		// text-shadow: none;
+		//@include box-shadow(0 5px 20px rgba($white, .25) );
+		.caret, .label { float: right; }
+		i {
+			margin-right: 10px;
+			vertical-align: middle;
+		}
+		//.label { color: $grayDarker; text-shadow: none; }
+	}
+	
+	// all lists
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		background: $white;
+		border-top: $double-border;
+	}
+	
+	// first list
+	& > ul {
+		position: absolute;
+		width: 220px;
+		li {			
+			display: block;	
+			position: relative;
+			// first list buttons only
+			.btn {
+				padding: 15px 10px 11px 15px;
+				display: block;
+				border-right-width: 0px;
+				border-left-width: 0px;
+			}
+			&.open .btn, &.active .btn {
+				background: $btnBackgroundHighlight;
+			}
+			&.active {
+				@include box-shadow(0 2px 2px rgba(0,0,0,.1) inset);
+			}
+			// show second list when .open
+			&.open ul { display: block; }
+		}
+	}
+	
+	// second list (dropdown)
+	& > ul ul {
+		display: none;
+		background: $white;
+		border-color: $grayLighter;
+		border-style: solid;
+		border-width: 1px 0 1px 0;
+		li {
+			a {
+				padding: 10px 25px;
+				border-bottom: 1px solid $grayLighter;
+				display: block;
+				color: $gray;
+			}
+			// hover and active links
+			a:hover, a:focus, &.active a {
+				background-image: -webkit-linear-gradient(top, #efefef, #ddd);
+				color: #444;
+				text-decoration: none;
+				outline: 0;
+			}
+		}
+	}
+}
+
+// ---------------------------
+// ADMIN
+.admin {
+	header.navbar {
+		margin-bottom: 0px;
+		.navbar-inner {
+			border: none;
+			@include border-radius(0px);
+		}
+	}
+	#top-nav .nav, #top-nav form {
+	}
+	#content {
+    margin-left: 220px;
+    margin-right: 0;
+    padding-bottom: 25px;
+    min-height: 500px;
+    width: auto;
+		border-left: $double-border;
+	}
+}
+
+// IMPORT responsive styles
+@import "bootstrap-responsive";
+
+// CUSTOM RESPONSIVENESS
+@media (max-width: 480px) {
+
+	.admin #content {
+			margin-left: 0 !important;
+			border-left: none;
+	}
+	#sidebar {
+		float: none;
+		width: 100% !important;
+		& > .btn {
+			border-left-width: 0;
+			border-right-width: 0;
+		}
+		& > ul {
+			display: none;
+			margin: 0 !important;
+			width: 100% !important;
+			box-shadow: 0 6px 6px rgba(0,0,0,0.3);
+			background: #efefef;
+		}
+	}
+}
+
+@media (min-width: 480px) and (max-width: 978px){
+	// no padding on body
+	body { padding: 0px; }
+	
+
+}
+
+@media (max-width: 767px) {
+	body {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.container-fluid {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+	.admin #content {
+		margin-left: 50px;
+	}
+	#sidebar, #sidebar > ul {
+		width: 50px;
+		display: block !important;
+	}
+	
+	#sidebar {
+		& > a { display: none !important;	}
+		// first list
+		& > ul li {
+			// remove text and carets from view
+			.btn { 
+				span 	 { display: none;	}
+				.caret { display: none; }
+			}
+		}
+
+		// second list (dropdown)		
+		& > ul ul {
+			position: absolute;
+			left: 54px;
+			top: 5px;
+			min-width: 150px;
+			@include box-shadow(0 1px 5px rgba(0,0,0,0.3));
+			@include border-radius(5px);	
+			border: 1px solid $grayLighter;
+			li a {
+				white-space: nowrap;
+			}
+			li:last-child a {
+				border-bottom: 0px;
+			}
+			&:before {
+				border-top: 7px solid transparent;
+				border-bottom: 7px solid transparent;
+				content: "";
+				display: inline-block;
+				left: -6px;
+				position: absolute;
+				top: 11px;
+				border-right: 6px solid #bbb;
+			}
+			&:after {
+				border-top: 6px solid transparent;
+				border-bottom: 6px solid transparent;
+				content: "";
+				display: inline-block;
+				left: -5px;
+				position: absolute;
+				top: 12px;
+				border-right: 6px solid #fefefe;
+		  }
+		}
+	}
+	
+}
