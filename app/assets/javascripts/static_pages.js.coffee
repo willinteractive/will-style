@@ -43,3 +43,8 @@ jQuery ->
 	# make table rows selectable by checking the checkbox
 	$(".table-selectable input:checkbox").change ->
 	  $(this).closest('tr').toggleClass("selected", this.checked)
+	  
+	
+
+
+

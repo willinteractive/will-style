@@ -29,6 +29,9 @@ group :assets do
   #jQuery Datatables
   gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
   
+  #jQuery Charts with Flot
+  gem "flot-rails"
+  
 end
 
 gem 'jquery-rails'

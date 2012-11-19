@@ -31,7 +31,4 @@ class StaticPagesController < ApplicationController
      render :layout => 'admin';
   end
   
-  def report
-     render :layout => 'admin';
-  end
 end
