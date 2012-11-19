@@ -27,11 +27,11 @@ class StaticPagesController < ApplicationController
     render :layout => 'admin';
   end
   
-  def grid
-    render :layout => 'admin';
-  end
-  
   def dashboard
      render :layout => 'admin';
-   end
+  end
+  
+  def report
+     render :layout => 'admin';
+  end
 end

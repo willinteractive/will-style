@@ -7,7 +7,7 @@ Template::Application.routes.draw do
   match '/icons',      to: 'static_pages#icons'
   match '/general',    to: 'static_pages#general'
   match '/tables',     to: 'static_pages#tables'
-  match '/grid',       to: 'static_pages#grid'
+  match '/report',     to: 'static_pages#report'
   match '/dashboard',  to: 'static_pages#dashboard'  
 
   resources :products

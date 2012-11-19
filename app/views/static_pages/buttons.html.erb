@@ -1,6 +1,23 @@
-<header class="page-header">
-	<h1>Buttons and Colors</h1>
-</header>
+	<div class="page-header">
+		<header>
+			<h1>Colors &amp; Buttons</h1>
+		</header>
+
+		<div class="breadcrumb">
+			<div class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+				    UI elements
+				    <span class="caret"></span>
+						<span class="icon-chevron-right"></span>
+				  </a>
+				  <ul class="dropdown-menu">
+						<%= render 'navigation/general_links_list' %>
+				  </ul>
+			</div>
+
+			<a class="active">Colors &amp; Buttons</a>
+		</div>
+	</div>
 
 <% @colors = [
 	{"color"=>"default","class"=>"", 				"icon"=>"cog"},
@@ -17,12 +34,12 @@
 	{"color"=>"purple", "class"=>""}
 ] %>
 
-<div class="row">
+<div class="row-fluid">
 	<div class="span9">
 		<% @colors.each do |c| %>
 		<h3><%= c['color'] %> <small>.<% if c['class'] == "success" %>primary .success<% else %><%= c['class'] %><% end %></small></h3>
-		<div class="row">
-			<div class="span3">
+		<div class="row-fluid">
+			<div class="span4">
 				<% if c['color'] == "default" %>
 				<div class="color-test gray"></div>
 				<div class="color-test grayLight "></div>
@@ -39,7 +56,7 @@
 				<div class="color-test <%= c['color'] %> opaque"></div>
 				<% end %>
 			</div>
-			<div class="span6">
+			<div class="span8">
 				<button class="btn btn-<%= c['class'] %> " type="button">.btn</button>
 				<button class="btn btn-large btn-<%= c['class'] %> " type="button"><i class="icon-<%= c['icon'] %>"></i>&ensp; .btn-large</button>
 				<button class="btn btn-small btn-<%= c['class'] %> " type="button">.btn-small</button>
@@ -50,10 +67,11 @@
 			</div>
 		</div>
 		<% end %>
-		<div class="row">
+		
+		<div class="row-fluid">
 			<% @otherColors.each do |c| %>
 
-			<div class="span3">
+			<div class="span4">
 				<h3><%= c['color'] %></h3>
 				<div class="color-test <%= c['color'] %> darker"></div>
 				<div class="color-test <%= c['color'] %>"></div>
@@ -67,7 +85,7 @@
 	<div class="span3">
 		<h3>Other Button Types</h3>
 		<h5>.btn (all types look the same)</h5>
-		<a class="btn" href="">Link</a><button class="btn" type="submit">Button</button><input class="btn" type="button" value="Input"><input class="btn" type="submit" value="Submit">
+		<a class="btn" href="#">Link</a><button class="btn" type="submit">Button</button><input class="btn" type="button" value="Input"><input class="btn" type="submit" value="Submit">
 		<hr>
 		<h5>.btn-group</h5>
 		<div class="btn-group">

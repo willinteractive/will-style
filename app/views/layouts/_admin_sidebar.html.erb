@@ -11,16 +11,12 @@
 				<i class="icon-globe"></i><span>UI Elements</span><b class="caret"></b>
 			</a>
 			<ul>
-				<li class="<%= 'active' if params[:controller] == 'static_pages' && params[:action] == 'general' %>"><a href="/general">General</a></li>
-				<li class="<%= 'active' if params[:controller] == 'static_pages' && params[:action] == 'icons' %>">  <a href="/icons">Icons</a></li>
-				<li class="<%= 'active' if params[:controller] == 'static_pages' && params[:action] == 'buttons' %>"><a href="/buttons">Colors &amp; Buttons</a></li>
-				<li class="<%= 'active' if params[:controller] == 'static_pages' && params[:action] == 'grid' %>">	 <a href="/grid">Grid</a></li>
-				<li class="<%= 'active' if params[:controller] == 'static_pages' && params[:action] == 'tables' %>"> <a href="/tables">Tables</a></li>
-				<li class="<%= 'active' if params[:controller] == 'static_pages' && params[:action] == 'forms' %>">	 <a href="/forms">Forms</a></li>
-				<li class="<%= 'active' if params[:controller] == 'static_pages' && params[:action] == 'other' %>">	 <a href="/other">Other</a></li>
+				<%= render "navigation/general_links_list" %>
 			</ul>
 		</li>
-		<li><a class="btn" href="#"><i class="icon-bar-chart"></i><span>Charts &amp; Graphs</span></a></li>
+		<li class="<%= 'active' if params[:controller] == 'static_pages' && params[:action] == 'report' %>">
+			<a class="btn" href="/report"><i class="icon-bar-chart"></i><span>Charts &amp; Graphs</span></a>
+		</li>
 		<li class="dropdown">
 			<a class="btn" href="#">
 				<i class="icon-warning-sign"></i><span>Error pages</span><b class="caret"></b>
