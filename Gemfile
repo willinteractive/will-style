@@ -20,14 +20,14 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   
   # Sass and Bootstrap
-  gem 'bootstrap-sass'
-  gem 'twitter-bootstrap-rails'
+  gem 'bootstrap-sass', '~> 2.2.1.1'
+  # gem 'twitter-bootstrap-rails'
   
   # FontAwesome the Sass way : https://github.com/littlebtc/font-awesome-sass-rails
   gem 'font-awesome-sass-rails'
   
   #jQuery Datatables
-  gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+  gem 'jquery-datatables-rails'
   
   #jQuery Charts with Flot
   gem "flot-rails"
