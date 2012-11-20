@@ -25,7 +25,8 @@ jQuery ->
 		placement: "bottom"
 	})
 	$('.popover-right').popover({
-		placement: "right"
+		placement: "right",
+		html: true;
 	})
 	$('#myModal').modal({
 		show: false
