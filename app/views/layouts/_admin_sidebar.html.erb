@@ -27,7 +27,8 @@
 						<li><a href="#">Website is offline error</a></li>
 					</ul>
 				</li> -->
-		<li class="<%= 'active' if params[:controller] == 'products'%>"><a class="btn" href="<%= products_path %>"><i class="icon-bar-chart"></i><span>Products</span><span class="label">5</span></a></li>
+		<li class="<%= 'active' if params[:controller] == 'products'%>"><a class="btn" href="<%= products_path %>"><i class="icon-bar-chart"></i><span>Products</span><span class="label"><%= @products.count %></span></a></li>
+
 	</ul>
 
 </div>

@@ -479,9 +479,12 @@ body {
 			display: none;
 		}
 		&:last-child { border-right-width: 0; }
-		span.label {
+		span.label, &:first-child span {
 			display: inline;
 			margin-left: 3px;
+		}
+		&:first-child span {
+			margin-left: 10px;
 		}
 	}
 }
@@ -744,6 +747,9 @@ body {
 	.admin #content {
 			margin-left: 0 !important;
 			border-left: none;
+	}
+	#user-btn-group .btn:first-child span {
+		display: none;
 	}
 	#sidebar {
 		float: none;
