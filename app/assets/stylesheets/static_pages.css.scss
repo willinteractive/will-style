@@ -14,11 +14,11 @@ ul.the-icons {
 }
 
 
-
-
-
-
 /* Graph Container */
+.graph-padding {
+	padding: 11px;
+}
+
 .graph-container {
     position: relative;
     width: 100%;
@@ -35,11 +35,12 @@ ul.the-icons {
     margin-bottom: 10px;
 }
 
+.yAxis .tickLabel:first-child {
+	display: none;
+}
 
-/* -------------------------------------------------------------- 
-   Reports Page
--------------------------------------------------------------- 	*/
 
+/* Reports Page */
 .big_stats {
 	text-align: center;
 	&.well {
