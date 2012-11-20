@@ -428,8 +428,13 @@ table, .table {
 // -----------------------------
 // CUSTOM STYLES:
 
-body { background-image: url('header_bg.png'); }
-#content {
+body { 
+	background-image: url('body_bg.png');
+	&.admin {
+		background-image: url('header_bg.png');
+	}
+}
+.admin #content {
 	background-image: url('body_bg.png');
 	border-top: $double-border;
 	border-bottom: $double-border;
@@ -747,13 +752,11 @@ body { background-image: url('header_bg.png'); }
 
 @media (min-width: 480px) and (max-width: 978px){
 	// no padding on body
-	body { padding: 0px; }
-	
-
+	body.admin { padding: 0px; }
 }
 
 @media (max-width: 767px) {
-	body {
+	body.admin {
 		padding-left: 0;
 		padding-right: 0;
 	}
