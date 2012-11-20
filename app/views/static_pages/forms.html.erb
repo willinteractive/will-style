@@ -1,22 +1,10 @@
 <div class="page-header">
 	<header>
-		<h1>Forms</h1>
+		<h1><%= @title %></h1>
 	</header>
 	
-	<div class="breadcrumb">
-		<div class="dropdown">
-			<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-			    UI elements
-			    <span class="caret"></span>
-					<span class="icon-chevron-right"></span>
-			  </a>
-			  <ul class="dropdown-menu">
-					<%= render 'navigation/general_links_list' %>
-			  </ul>
-		</div>
+	<%= render "navigation/ui_elements_breadcrumbs" %>
 
-		<a class="active">Forms</a>
-	</div>
 </div>
 
 <div class="row-fluid">

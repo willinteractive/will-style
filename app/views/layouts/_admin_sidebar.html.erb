@@ -4,7 +4,7 @@
 	</a>
 	<ul>
 		<li class="<%= 'active' if params[:controller] == 'static_pages' && params[:action] == 'dashboard' %>">
-			<a class="btn" href="/dashboard"><i class="icon-dashboard"></i><span>Dashboard</span></a>
+			<a class="btn" href="<%= dashboard_path %>"><i class="icon-dashboard"></i><span>Dashboard</span></a>
 		</li>
 		<li class="dropdown <%= 'active' if params[:controller] == 'static_pages' && params[:action] != 'dashboard'%>">
 			<a class="btn" href="#">
