@@ -12,7 +12,7 @@ jQuery ->
 	$('#datatable_example').dataTable( {
 		"sDom": "<'dataTables_extras_top'fCl>rt<'dataTables_extras_bottom clearfix'ip>",
 		"oColVis": { "sAlign": "right" }
-	} );
+	});
 	
 	$('.dataTables_filter input').attr("placeholder", "type to filter...");	
 	$('.ColVis_MasterButton').addClass("btn");

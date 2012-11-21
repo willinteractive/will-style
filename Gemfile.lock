@@ -112,7 +112,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass (~> 2.2.1.1)
+  bootstrap-sass
   coffee-rails (~> 3.2.1)
   flot-rails
   font-awesome-sass-rails

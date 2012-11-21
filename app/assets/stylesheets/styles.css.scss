@@ -315,7 +315,7 @@ table, .table {
 }
 .dataTables_info {
 	margin-bottom: 10px;
-	@include opacity(.5);
+	@include opacity(50);
 	float: left;
 }
 .dataTables_paginate {
@@ -438,6 +438,9 @@ table, .table {
 	background-size: 100% 200%;
 }
 
+.tooltips {
+	text-shadow: none;
+}
 
 // -----------------------------
 // CUSTOM STYLES:
@@ -547,10 +550,6 @@ body {
 		top: 0;
 		right: 0;
 		height: 40px;
-		// border: none;
-		// background: none;
-		// @include border-radius(0px);
-		// border-left: 1px solid #d4d4d4;
 	}
 	// table content
 	.table { margin-bottom: 0px !important; }
@@ -847,3 +846,83 @@ body {
 	}
 	
 }
+
+
+
+/* PRINT Styles */
+@media print {
+	* { background: transparent !important; color: #444 !important; text-shadow: none !important;
+		@include box-shadow(none !important) ; }
+  a, a:visited { color: #444 !important; text-decoration: underline; }
+  a:after { content: " (" attr(href) ")"; } 
+  abbr:after { content: " (" attr(title) ")"; }
+  .ir a:after { content: ""; }  /* Don't show links for images */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* css-discuss.incutio.com/wiki/Printing_Tables */ 
+  tr, img { page-break-inside: avoid; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3, h4, h5 { page-break-after: avoid; }
+	
+	select {
+		-webkit-appearance: none;
+	}
+	
+	/* HIDING */
+	#top-nav, .admin #sidebar, .breadcrumb, .table .actions, .ColVis {
+		display: none;
+		visibility: hidden;
+	}
+
+	body, #content {
+	    width: 100%;
+			padding: 0;
+	}
+	
+	.btn {
+		border: 1px solid rgba(#444, .25);
+	}
+	
+	.well, .hero-unit {
+		@include box-shadow(none);
+	}
+	
+	/* ADMIN */
+	.admin {
+		#content {
+			border-left: none;
+			margin-left: 0;
+		}		
+	}
+	
+	.widget {
+		border-left: none;
+		border-right: none;
+		@include box-shadow(none);
+		.widget-head {
+			height: auto;
+			border: none;
+			h5 {
+				float: none;
+			}
+			.btn {
+				display: none;
+				visibility: hidden;
+			}
+		}
+	}
+	
+	.widget-graph {
+		page-break-before:always; 
+	}
+	
+	/* Tables */
+	
+
+
+
+
+
+
+}
+
