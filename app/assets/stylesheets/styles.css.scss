@@ -152,6 +152,16 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 .caret { border-top-color: $textColor; }
 .dropup .caret { border-bottom-color: $textColor; }
 
+input[type="radio"], input[type="checkbox"] {
+	margin: 2px 0 0;
+}
+
+.radio, .checkbox {
+padding-left: 0px;
+margin-right: 20px;
+}
+
+
 .text-warning { color: #c09853; }
 .text-error { color: #b94a48; }
 .text-info { color: #3a87ad; }
