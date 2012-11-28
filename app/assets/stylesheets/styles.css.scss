@@ -169,16 +169,15 @@ input[type="radio"], input[type="checkbox"] {
   input[type="checkbox"] {
 		display: block;
 		height: 22px;
-		position: relative;
     width: 40px;
+		position: relative;
 		cursor: pointer;
 		// background
     -webkit-appearance: none;
 		background: red;
-		@include gradient-vertical($red, lighten($red, 5%));
     border-radius: 4px;
+		@include gradient-vertical($red, lighten($red, 5%));
     @include box-shadow(inset 0 0 5px rgba(0,0,0, .25));
-    @include transition(0.2s ease-in-out);
     // knob
     &:before {
       background-color: white;
