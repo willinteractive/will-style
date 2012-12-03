@@ -241,6 +241,26 @@ input[type="radio"], input[type="checkbox"] {
 	padding-right: 6px;
 }
 
+.label-block {
+	display: block;
+	text-align: center;
+}
+
+// badge and label colors
+.label-important, .badge-important              { background-color: $red; }
+.label-important[href], .badge-important[href]  { background-color: darken($red, 10%); }
+// Warnings (orange)
+.label-warning, .badge-warning                  { background-color: $orange; }
+.label-warning[href], .badge-warning[href]      { background-color: darken($orange, 10%); }
+// Success (green)
+.label-success, .badge-success                  { background-color: $green; }
+.label-success[href], .badge-success[href]      { background-color: darken($green, 10%); }
+// Info (turquoise)
+.label-info, .badge-info                        { background-color: $blue; }
+.label-info[href], .badge-info[href]            { background-color: darken($blue, 10%); }
+// Inverse (black)
+.label-inverse, .badge-inverse                  { background-color: $gray; }
+
 .page-header { border-bottom: $double-border; }
 
 .form-actions {
@@ -337,18 +357,18 @@ table, .table {
 			content: "\f0dc";
 			float: right;
 			margin-top: 3px;
-			@include opacity(.5);
+			@include opacity(50);
 		}
 	}	
 	&.sorting_asc::after,
 	&.sorting_asc:hover::after {
 		content: "\f0de";
-		@include opacity(.8);
+		@include opacity(80);
 	}
 	&.sorting_desc::after,
 	&.sorting_desc:hover::after {
 		content: "\f0dd";
-		@include opacity(.8);
+		@include opacity(80);
 	}
 }
 // FOCUSABLE
@@ -646,6 +666,19 @@ body {
 		padding-bottom: 8px;
 	}
 }
+
+.big_stats {
+	text-align: center;
+	&.well {
+		padding: 10px;
+	}
+	.value {
+		font-size: 4em;
+		line-height: 1em;
+		font-family: "BebasNeueRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;;
+	}
+}
+
 
 .color-test {
 	width: 60px;

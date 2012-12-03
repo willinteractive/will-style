@@ -38,17 +38,3 @@ ul.the-icons {
 .yAxis .tickLabel:first-child {
 	display: none;
 }
-
-
-/* Reports Page */
-.big_stats {
-	text-align: center;
-	&.well {
-		padding: 10px;
-	}
-	.value {
-		font-size: 4em;
-		line-height: 1em;
-		font-family: "BebasNeueRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;;
-	}
-}
