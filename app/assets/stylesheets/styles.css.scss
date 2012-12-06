@@ -66,6 +66,7 @@ $infoText:                $blueDark;
 $infoBackground:          $blueOpaque;
 $infoBorder:              $blue;
 // typography 
+$dataFontFamily: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $sansFontFamily: 'Puritan', "Helvetica Neue", Helvetica, Arial, sans-serif;
 $headingsFontFamily: "BebasNeueRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $headingsFontWeight: normal;
@@ -147,7 +148,10 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 }
 // better vertical alignment of icon with text
 .btn [class^="icon-"], .btn [class*=" icon-"] {	vertical-align: text-bottom; }
-.btn-large [class^="icon-"], .btn-large [class*=" icon-"] {	vertical-align: baseline; }
+.btn-large [class^="icon-"], .btn-large [class*=" icon-"] {
+	vertical-align: baseline;
+	margin-right: 10px;
+}
 // change caret color to text color
 .caret { border-top-color: $textColor; }
 .dropup .caret { border-bottom-color: $textColor; }
@@ -164,8 +168,6 @@ input[type="radio"], input[type="checkbox"] {
 
 // on/off switch
 .switch {
-	margin-bottom: 12px;
-
   input[type="checkbox"] {
 		display: block;
 		height: 22px;
@@ -225,15 +227,20 @@ input[type="radio"], input[type="checkbox"] {
   }
 }
 
-.text-warning { color: #c09853; }
-.text-error { color: #b94a48; }
-.text-info { color: #3a87ad; }
-.text-success { color: #468847; }
+.text-warning { color: $yellow; }
+.text-error { color: $red; }
+.text-info { color: $blue; }
+.text-success { color: $green; }
 
 // make -danger the same as what Bootstrap calls -important to keep naming consistant
 .badge-danger { @extend .badge-important; }
 .label-danger { @extend .label-important; }
 .danger { @extend .error; }
+
+// labels for frame types
+.label-choice { background-color: rgb(200,66,66); }
+.label-text   { background-color: rgb(113,191,70);}
+.label-video  { background-color: rgb(59,154,199);}
 
 // make badges less wide
 .badge {
@@ -307,18 +314,37 @@ input[type="radio"], input[type="checkbox"] {
 
 .carousel-control { line-height: 38px; }
 
-// hide button text for action buttons
-.actions .btn span { display: none; }
+.tooltip { z-index: 100; }
+
+
+	
 
 table, .table {
+	font-size: 1em;
+	//font-family: $sans-serif
 	// row highlight/selected color
-	tr.selected td { background-color: $tableBackgroundHover !important; }
+	tr.selected td, tr.DTTT_selected td { background-color: $tableBackgroundHover !important; }
 	// align cells to the middle
 	td,th { vertical-align: middle; }
 	// algin cells with calss of .centered to the center
 	.centered { text-align: center; }
-	.actions a { font-size: 1.15em; }
+	.actions {
+		white-space: nowrap;
+		text-align: center;
+		a {
+		  font-size: 1.15em;  
+		  // hide button text for action buttons
+		  &.btn span { display: none; }
+		}
+	} 
 }
+
+/* SELECTING - Row selection styles */
+table.selectable tbody tr, table.DTTT_selectable tbody tr {
+	cursor: pointer;
+	*cursor: hand;
+}
+
 // un-round corners from bordered tables
 .table-bordered,
 .table-bordered thead:first-child tr:first-child th:first-child,
@@ -343,8 +369,9 @@ table, .table {
 .table-sortable thead th {
 	// change colors of sortable headers based on state
 	&.sorting,
+	&.sorting_disabled,
 	&.sorting_asc_disabled,
-	&.sorting_desc_disabled { color: $grayLight; }
+	&.sorting_desc_disabled { color: $gray; }
 	&.sorting_asc,
 	&.sorting_desc { color: $textColor; }
 	// change sorting arrows from images to FontAwesome
@@ -352,11 +379,12 @@ table, .table {
 	&.sorting_asc,
 	&.sorting_desc {
 		background-image: none;
+		padding-right: 22px;
 		&::after {
 			font-family: FontAwesome;
 			content: "\f0dc";
 			float: right;
-			margin-top: 3px;
+			margin-right: -12px;
 			@include opacity(50);
 		}
 	}	
@@ -417,57 +445,108 @@ table, .table {
 		@include box-shadow(none);
 	}
 } 
-// ColVis(DataTables Extra)
-.ColVis { float:right; margin-left: 30px; }
-.ColVis_MasterButton {
-	background: transparent;
-	border-width: 0 0 0 1px;
-	@include border-radius(0);
-	&:before {
-		content: "\f0db";
-		font-family: FontAwesome;
-		font-weight: normal;
-	}
-	span {
-		display: none;
-	}
-}
-.ColVis_collection {
-	//@extends .dropdown-menu;
-	padding: 5px 0;
-	background-color: $dropdownBackground;
-	border: 1px solid #ccc; // Fallback for IE7-8
-  border: 1px solid $dropdownBorder;
-  *border-right-width: 2px;
-	*border-bottom-width: 2px;
-  @include border-radius(6px);
-  @include box-shadow(0 5px 10px rgba(0,0,0,.2));
-  -webkit-background-clip: padding-box;
-     -moz-background-clip: padding;
-          background-clip: padding-box;
-	button {
-		border: none;
-		background: none;
-		text-align: left;
-		width: 100% !important;
-		//@extends .dropdown-menu a
-		display: block;
-    padding: 3px 20px;
-    clear: both;
-    font-weight: normal;
-    line-height: $baseLineHeight;
-    color: $dropdownLinkColor;
-    white-space: nowrap;
-		&:hover, &:focus {
-			//@extends .dropdown-menu li > a:hover
-			text-decoration: none;
-		  color: $dropdownLinkColorHover;
-		  background-color: $dropdownLinkBackgroundHover;
-		  @include gradient-vertical($dropdownLinkBackgroundHover, darken($dropdownLinkBackgroundHover, 5%));
-		}
-		.ColVis_radio {
+
+// --- ColVis & TableTools (DataTables Extras)
+	// The containers
+	.ColVis, .DTTT_container { float: right; margin-left: 30px; }
+	// The visible button for dropdown (.btn and the caret are added by js)
+	.ColVis_MasterButton, .DTTT_button_collection, .DTTT_button_print {
+		// give it an icon
+		&:before {
+			content: "\f0db";
+			font-family: FontAwesome;
+			font-weight: normal;
 			margin-right: 10px;
 		}
+	}
+	.DTTT_button_collection:before { content: "\f0c7"; }
+	.DTTT_button_print:before { content: "\f02f" }
+	// make the dropdowns look like the bootstrap dropdowns
+	.ColVis_collection, .DTTT_collection {
+		//@extends .dropdown-menu;
+		padding: 5px 0;
+		background-color: $dropdownBackground;
+		border: 1px solid #ccc; // Fallback for IE7-8
+	  border: 1px solid $dropdownBorder;
+	  *border-right-width: 2px;
+		*border-bottom-width: 2px;
+	  @include border-radius(6px);
+	  @include box-shadow(0 5px 10px rgba(0,0,0,.2));
+	  -webkit-background-clip: padding-box;
+	     -moz-background-clip: padding;
+	          background-clip: padding-box;
+		button, a {
+			border: none;
+			background: none;
+			text-align: left;
+			width: 100% !important;
+			//@extends .dropdown-menu a
+			display: block;
+	    padding: 3px 20px;
+	    clear: both;
+	    font-weight: normal;
+	    line-height: $baseLineHeight;
+	    color: $dropdownLinkColor;
+	    white-space: nowrap;
+			&:hover, &:focus {
+				//@extends .dropdown-menu li > a:hover
+				text-decoration: none;
+			  color: $dropdownLinkColorHover;
+			  background-color: $dropdownLinkBackgroundHover;
+			  @include gradient-vertical($dropdownLinkBackgroundHover, darken($dropdownLinkBackgroundHover, 5%));
+			}
+			.ColVis_radio {
+				margin-right: 10px;
+			}
+		}
+	}
+	// the background color of the overlay when the dropdown shows
+	.ColVis_collectionBackground, .DTTT_collection_background {
+		background-color: $black;
+	}
+	// specific styles for the TableTools collection because of the weird EMBED stuff
+	.DTTT_collection {
+		width: 110px;
+		overflow: hidden;
+	 	a.DTTT_button {
+			position: relative;
+			display: block;
+			embed { 
+				outline: none;
+			}
+		}
+		a.DTTT_disabled {
+			@include opacity(25);
+		}	
+	}
+	// The modal that pops up when you press the print from TableTools
+	.DTTT_print_info {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		width: 400px;
+		margin-left: -200px;
+		margin-top: -75px;
+		text-align: center;
+		padding: 10px 30px;
+		@include gradient-vertical($white, darken($white, 5%));
+		@include opacity(95);
+		border: 1px solid rgba($grayDark, 0.5);
+		@include border-radius(6px);
+		@include box-shadow(0 3px 7px rgba($black, 0.5));
+		h6 {
+			@extend h2;
+		}
+	}
+
+
+//SPECIFIC Tables
+.activity-table {
+	.error td {
+		font-weight: bold;
+	}
+	td .label {
+		@include opacity(50);
 	}
 }
 		
@@ -528,7 +607,7 @@ table, .table {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$bodyBackground', endColorstr='darken($bodyBackground,3%)',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 	
 	background-position: center;
-	background-size: 100% 200%;
+	background-size: 200%;
 }
 
 .tooltips {
@@ -551,6 +630,7 @@ body {
 }
 
 #top-nav {
+	height: 65px;
 	position: relative;
 	.navbar-inner {
 		background: url('header_bg.png');
@@ -603,9 +683,10 @@ body {
 	@include box-shadow(0 2px 2px rgba($widgetBordersColor, .5));
 	margin-bottom: 20px;
 	position: relative;
+	overflow: auto;
 	// the head
 	.widget-head {
-		height: 40px;
+		@extend .row-fluid;
 		@include gradient-vertical ($white, #f0f0f0);
 		border-bottom: 1px solid $widgetBordersColor;
 		@include box-shadow(0 1px 0 $white inset);
@@ -637,12 +718,27 @@ body {
 		@include box-shadow(0 1px 0 $white inset);
 		border-bottom: 1px solid $widgetBordersColor;
 		padding: 13px 20px 7px;
-	} 	
-	.ColVis_MasterButton {
+	}
+	.ColVis, .DTTT_container {
 		position: absolute;
 		top: 0;
 		right: 0;
-		height: 40px;
+	}
+	.DTTT_container {
+		right: 50px
+	}
+	.ColVis_MasterButton, .DTTT_button_collection, .DTTT_button_print {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		background: transparent;
+		border-width: 0 0 0 1px;
+		@include border-radius(0);
+		&:before {
+			margin-right: 0;
+		}
+		span {
+			display: none;
+		}
 	}
 	// table content
 	.table { margin-bottom: 0px !important; }
@@ -728,11 +824,39 @@ body {
 	&.grayDark { background: $grayDark; }
 	&.grayDarker { background: $grayDarker; }
 	&.black { background: $black; }
-	
 }
 
+.graph-padding {
+	padding: 11px;
+}
 
+.graph-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+ 
+.graph-container > div {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+}
+ 
+.graph-info {
+    margin-bottom: 10px;
+}
 
+.tickLabel {
+	line-height: 1.2em;
+}
+
+.pie-inside-label {
+	font-size: .9em;
+	font-weight: bold;
+	text-align: center;
+	padding: 2px;
+	color: $white;
+}
 
 // SIDEBAR
 #sidebar {
@@ -1022,13 +1146,5 @@ body {
 		page-break-before:always; 
 	}
 	
-	/* Tables */
-	
-
-
-
-
-
-
 }
 

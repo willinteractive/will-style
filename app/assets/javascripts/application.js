@@ -15,7 +15,8 @@
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
 //= require dataTables/extras/ColVis
-// require dataTables/extras/TableTools
+//= require dataTables/extras/ZeroClipboard.js
+//= require dataTables/extras/TableTools
 //= require jquery.flot
 //= require jquery.flot.pie
 //= require jquery.flot.resize
