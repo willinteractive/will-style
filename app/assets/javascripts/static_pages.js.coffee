@@ -4,7 +4,7 @@
 jQuery ->
   # DataTable defaults
   $.extend( $.fn.dataTable.defaults, {
-    "sDom": "<'dataTables_extras_top'fCl>rt<'dataTables_extras_bottom clearfix'ip>",
+    "sDom": "TC<'dataTables_extras_top'fl>rt<'dataTables_extras_bottom clearfix'ip>",
     "sPaginationType": "bootstrap",
   } );
   # TableTool defaults
@@ -18,7 +18,6 @@ jQuery ->
   ];
 
   $('#datatable_example').dataTable( {
-    "sDom": "<'dataTables_extras_top'TfCl>rt<'dataTables_extras_bottom clearfix'ip>",
     "oColVis": {
       "buttonText": "Change Columns",
       "sAlign": "right"
