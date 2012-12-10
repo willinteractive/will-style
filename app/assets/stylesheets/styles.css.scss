@@ -67,9 +67,10 @@ $infoBackground:          $blueOpaque;
 $infoBorder:              $blue;
 // typography 
 $dataFontFamily: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$sansFontFamily: 'Puritan', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$sansFontFamily: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 $headingsFontFamily: "BebasNeueRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $headingsFontWeight: normal;
+$baseFontSize:          12px !default;
 // remove sprite icons path
 $iconSpritePath:          "";
 $iconWhiteSpritePath:     "";
@@ -88,21 +89,25 @@ $widgetBordersColor: #d4d4d4;
 // ------------------------------
 // OVERRIDE Bootstrap:
 // typography
-h1,
-h2 {
+h1 {
 	font-size: 60px;
 	line-height: 1em;
 	text-shadow: rgba(black, .25) 0px 3px 3px;
 	small { text-shadow: none; }
 }
-h2 { font-size: 30px; }
+h2,
 h3,
 h4,
 h5,
 h6 {
 	font-family: $sansFontFamily;
+}
+h4,
+h5,
+h6 {
 	font-weight: bold;
 }
+
 h1, h2, h3, h4, h5, h6 {
 	small { color: $textColor; }
 }
