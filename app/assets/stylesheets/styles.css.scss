@@ -637,6 +637,7 @@ body {
 #top-nav {
 	height: 65px;
 	position: relative;
+	margin-bottom: $baseLineHeight;
 	.navbar-inner {
 		background: url('header_bg.png');
 		border-bottom: $double-border;
@@ -646,6 +647,8 @@ body {
 		}
 	}
 }
+
+.admind #top-nav { margin-bottom: 0; }
 
 .brand {
 	display: inline-block;
