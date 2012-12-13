@@ -619,6 +619,12 @@ table.selectable tbody tr, table.DTTT_selectable tbody tr {
 	text-shadow: none;
 }
 
+.dropdown-menu .active > a,
+.dropdown-menu .active > a:hover {
+  color: $white;
+}
+
+
 // -----------------------------
 // CUSTOM STYLES:
 
