@@ -152,7 +152,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 	}	
 }
 // better vertical alignment of icon with text
-.btn [class^="icon-"], .btn [class*=" icon-"] {	vertical-align: text-bottom; }
+.btn [class^="icon-"], .btn [class*=" icon-"] {	vertical-align: middle; }
 .btn-large [class^="icon-"], .btn-large [class*=" icon-"] {
 	vertical-align: baseline;
 	margin-right: 10px;
