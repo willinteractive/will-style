@@ -4,7 +4,7 @@
 jQuery ->
   # DataTable defaults
   $.extend( $.fn.dataTable.defaults, {
-    "sDom": "TC<'dataTables_extras_top'fl>rt<'dataTables_extras_bottom clearfix'ip>",
+    "sDom": "<'dataTables_buttons'TC><'dataTables_extras_top'fl>rt<'dataTables_extras_bottom clearfix'ip>",
     "sPaginationType": "bootstrap",
   } );
   # TableTool defaults
@@ -28,9 +28,9 @@ jQuery ->
   });
   
   $('.dataTables_filter input').attr("placeholder", "type to filter..."); 
-  $('.ColVis_MasterButton').addClass("btn").append('&ensp;<b class="caret"></b>').attr('title', 'Change Columns');  
-  $('.DTTT_button_collection').addClass("btn").append('&ensp;<b class="caret"></b>').attr('title', 'Save Table as…');  
-  $('.DTTT_button_print').addClass("btn").attr('title', 'Print Table');
+  $('.ColVis_MasterButton').addClass("btn").prepend('<i class="icon-columns"></i> &ensp;').append('&ensp; <b class="caret"></b>').attr('title', 'Change Columns');  
+  $('.DTTT_button_collection').addClass("btn").prepend('<i class="icon-save"></i> &ensp;').append('&ensp; <b class="caret"></b>').attr('title', 'Save Table as…');  
+  $('.DTTT_button_print').prepend('<i class="icon-print"></i> &ensp;').addClass("btn").attr('title', 'Print Table');
 
       
   $('.carousel').carousel({

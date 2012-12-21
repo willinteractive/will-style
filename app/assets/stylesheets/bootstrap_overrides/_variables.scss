@@ -16,6 +16,11 @@ $red:			#a86156;		$redDark:			#6b352e;		$redLight:		#cc938a;		$redOpaque:			rgba
 $pink:		#bf8298;		$pinkDark:		#774959;		$pinkLight:		#d9a9ba;		$pinkOpaque:		rgba($pink, .4);;
 $purple:	#997bbd;		$purpleDark:	#5b4575;		$purpleLight:	#bda4d9;		$purpleOpaque:	rgba($purple, .4);;
 
+// color - player frame types
+$choice: rgb(200,66,66);
+$text:   rgb(113,191,70);
+$video:  rgb(59,154,199);
+
 // color - scaffolding
 $bodyBackground: 				darken($white, 5%);
 $textColor: 						#444;

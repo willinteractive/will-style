@@ -1,48 +1,12 @@
-// //
-// // Labels and badges
-// // --------------------------------------------------
-// 
-// 
-// // Base classes
-// .label,
-// .badge {
-//   display: inline-block;
-//   padding: 2px 4px;
-//   font-size: $baseFontSize * .846;
-//   font-weight: bold;
-//   line-height: 14px; // ensure proper line-height if floated
-//   color: $white;
-//   vertical-align: baseline;
-//   white-space: nowrap;
-//   text-shadow: 0 -1px 0 rgba(0,0,0,.25);
-//   background-color: $grayLight;
-// }
-// // Set unique padding and border-radii
-// .label {
-//   @include border-radius(3px);
-// }
-// .badge {
-//   padding-left: 9px;
-//   padding-right: 9px;
-//   @include border-radius(9px);
-// }
+//
+// Labels and badges
+// --------------------------------------------------
 
 // make badges less wide
 .badge {
 	padding-left: 6px;
 	padding-right: 6px;
 }
-
-// 
-// // Hover state, but only for links
-// a {
-//   &.label:hover,
-//   &.badge:hover {
-//     color: $white;
-//     text-decoration: none;
-//     cursor: pointer;
-//   }
-// }
 
 // Colors
 // Important (red)
@@ -61,21 +25,9 @@
 .label-inverse, .badge-inverse                  { background-color: $gray; }
 .label-inverse[href], .badge-inverse[href]      { background-color: darken($gray, 10%); }
 
-
-// // Quick fix for labels/badges in buttons
-// .btn {
-//   .label,
-//   .badge {
-//     position: relative;
-//     top: -1px;
-//   }
-// }
-// .btn-mini {
-//   .label,
-//   .badge {
-//     top: 0;
-//   }
-// }
+.label-choice, .badge-choice 			{ background-color: $choice; }
+.label-text, .badge-text    			{ background-color: $text}
+.label-video, .badge-video  			{ background-color: $video;}
 
 // label that is block-level
 .label-block {

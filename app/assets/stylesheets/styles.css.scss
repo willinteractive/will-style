@@ -4,7 +4,13 @@
 @import "bootstrap_overrides/variables";
 // ---- Import Bootstrap ---- //
 @import "bootstrap";
-///////////// @import "font-awesome";
+@import "font-awesome";
+@import "font-awesome-ie7"; // Should move this to a IE7- only stylesheet
+// increase icon size & shift icons down
+[class^="icon-"], [class*=" icon-"] {
+	font-size: 16px;
+	vertical-align: -2px;
+}
 
 // ---- OVERRIDE Bootstrap ---- //
 // Core variables and mixins
@@ -12,7 +18,6 @@
 
 // Grid system and page structure
 @import "bootstrap_overrides/scaffolding";
-// @import "bootstrap_overrides/layouts";
 
 // Base CSS
 @import "bootstrap_overrides/type";
@@ -22,827 +27,95 @@
 // Components: common
 @import "bootstrap_overrides/sprites";
 @import "bootstrap_overrides/dropdowns";
-// @import "bootstrap_overrides/wells";
+@import "bootstrap_overrides/wells";
 
 // Components: Buttons & Alerts
 @import "bootstrap_overrides/buttons";
 
 // Components: Nav
-@import "bootstrap_overrides/navs";
 @import "bootstrap_overrides/navbar";
 @import "bootstrap_overrides/breadcrumbs";
 @import "bootstrap_overrides/pagination";
 
 // Components: Misc
 @import "bootstrap_overrides/thumbnails";
-// @import "bootstrap_overrides/media";
 @import "bootstrap_overrides/labels-badges";
-// @import "bootstrap_overrides/progress-bars";
+@import "bootstrap_overrides/progress-bars";
 
-// Utility classes
-// @import "bootstrap_overrides/utilities"; // Has to be last to override when necessary
-
-
-
-
+// Custom classes
+@import "custom_classes/dataTables";
+@import "custom_classes/widgets";
+@import "custom_classes/flot";
 
 
+// --------------------------------------------------
+// Project Specific:
+// --------------------------------------------------
 
-//___-------_____---------_________--------___________
+.color-test {
+	width: 60px;
+	height: 60px;
+	display: inline-block;
+	zoom: 1;
+	*display: inline;
+	background: #ff0;
+	@include box-shadow(0 2px 2px rgba($black, .2));
+	&.blue { background: $blue; }
+	&.blue.lighter { background: $blueLight; }
+	&.blue.darker { background: $blueDark; }
+	&.blue.opaque { background: $blueOpaque; }
 
+	&.green { background: $green; }
+	&.green.lighter { background: $greenLight; }
+	&.green.darker { background: $greenDark; }
+	&.green.opaque { background: $greenOpaque; }
+	
+	&.yellow { background: $yellow; }
+	&.yellow.lighter { background: $yellowLight; }
+	&.yellow.darker { background: $yellowDark; }
+	&.yellow.opaque { background: $yellowOpaque; }
+	
+	&.orange { background: $orange; }
+	&.orange.lighter { background: $orangeLight; }
+	&.orange.darker { background: $orangeDark; }
+	&.orange.opaque { background: $orangeOpaque; }
+	
+	&.red { background: $red; }
+	&.red.lighter { background: $redLight; }
+	&.red.darker { background: $redDark; }
+	&.red.opaque { background: $redOpaque; }
+	
+	&.pink { background: $pink; }
+	&.pink.lighter { background: $pinkLight; }
+	&.pink.darker { background: $pinkDark; }
+	&.pink.opaque { background: $pinkOpaque; }
+	
+	&.purple { background: $purple; }
+	&.purple.lighter { background: $purpleLight; }
+	&.purple.darker { background: $purpleDark; }
+	&.purple.opaque { background: $purpleOpaque; }
+	
+	&.white { background: $white; }
+	&.grayLighter { background: $grayLighter; }
+	&.grayLight { background: $grayLight; }
+	&.gray { background: $gray; }
+	&.grayDark { background: $grayDark; }
+	&.grayDarker { background: $grayDarker; }
+	&.black { background: $black; }
+}
 
-
-// EXTENDS
-// make -danger the same as what Bootstrap calls -important to keep naming consistant
-.badge-danger { @extend .badge-important; }
-.label-danger { @extend .label-important; }
-.danger { @extend .error; }
-
-// labels for frame types
-.label-choice { background-color: rgb(200,66,66); }
-.label-text   { background-color: rgb(113,191,70);}
-.label-video  { background-color: rgb(59,154,199);}
-
-// 
-
-// 
-
-// 
-
-// 
-
-// 
-
-// 
-
-
-// // FOCUSABLE
-// .table-focusable {
-// 	td { @include transition(all 300ms); }
-// 	tbody:hover td {
-// 		color: transparent;
-// 		text-shadow: 0 0 3px $grayLight;
-// 	}
-// 	tbody:hover tr:hover td {
-// 		color: $textColor;
-// 		text-shadow: none;
-// 	}
-// }
-// // DataTable extras like filter + length
-// .dataTables_extras_top, .dataTables_extras_bottom {
-// 	@extend .clearfix;
-// 	font-size: .85em;
-// 	label {
-// 		font-size: 1em;
-// 	}
-// }
-// .dataTables_filter {
-// 	float: left;
-// 	input[type="text"] {
-// 		margin-left: 15px;
-// 		width: 180px;
-// 		//@include box-shadow(0 1px 0 white);
-// 	}
-// }
-// .dataTables_length {
-// 	float: right;
-// 	select {
-// 		height: 30px;
-// 		margin: 0 3px;
-// 	}
-// }
-// .dataTables_info {
-// 	margin-bottom: 10px;
-// 	@include opacity(50);
-// 	float: left;
-// }
-// .dataTables_paginate {
-// 	float: right;
-// 	ul {
-// 		@include box-shadow(none);
-// 	}
-// } 
-// 
-// // --- ColVis & TableTools (DataTables Extras)
-// 	// The containers
-// 	.ColVis, .DTTT_container { float: right; margin-left: 30px; }
-// 	// The visible button for dropdown (.btn and the caret are added by js)
-// 	.ColVis_MasterButton, .DTTT_button_collection, .DTTT_button_print {
-// 		// give it an icon
-// 		&:before {
-// 			content: "\f0db";
-// 			font-family: FontAwesome;
-// 			font-weight: normal;
-// 			margin-right: 10px;
-// 		}
-// 	}
-// 	.DTTT_button_collection:before { content: "\f0c7"; }
-// 	.DTTT_button_print:before { content: "\f02f" }
-// 	// make the dropdowns look like the bootstrap dropdowns
-// 	.ColVis_collection, .DTTT_collection {
-// 		//@extends .dropdown-menu;
-// 		padding: 5px 0;
-// 		background-color: $dropdownBackground;
-// 		border: 1px solid #ccc; // Fallback for IE7-8
-// 	  border: 1px solid $dropdownBorder;
-// 	  *border-right-width: 2px;
-// 		*border-bottom-width: 2px;
-// 	  @include border-radius(6px);
-// 	  @include box-shadow(0 5px 10px rgba(0,0,0,.2));
-// 	  -webkit-background-clip: padding-box;
-// 	     -moz-background-clip: padding;
-// 	          background-clip: padding-box;
-// 		button, a {
-// 			border: none;
-// 			background: none;
-// 			text-align: left;
-// 			width: 100% !important;
-// 			//@extends .dropdown-menu a
-// 			display: block;
-// 	    padding: 3px 20px;
-// 	    clear: both;
-// 	    font-weight: normal;
-// 	    line-height: $baseLineHeight;
-// 	    color: $dropdownLinkColor;
-// 	    white-space: nowrap;
-// 			&:hover, &:focus {
-// 				//@extends .dropdown-menu li > a:hover
-// 				text-decoration: none;
-// 			  color: $dropdownLinkColorHover;
-// 			  background-color: $dropdownLinkBackgroundHover;
-// 			  @include gradient-vertical($dropdownLinkBackgroundHover, darken($dropdownLinkBackgroundHover, 5%));
-// 			}
-// 			.ColVis_radio {
-// 				margin-right: 10px;
-// 			}
-// 		}
-// 	}
-// 	// the background color of the overlay when the dropdown shows
-// 	.ColVis_collectionBackground, .DTTT_collection_background {
-// 		background-color: $black;
-// 	}
-// 	// specific styles for the TableTools collection because of the weird EMBED stuff
-// 	.DTTT_collection {
-// 		width: 110px;
-// 		overflow: hidden;
-// 	 	a.DTTT_button {
-// 			position: relative;
-// 			display: block;
-// 			embed { 
-// 				outline: none;
-// 			}
-// 		}
-// 		a.DTTT_disabled {
-// 			@include opacity(25);
-// 		}	
-// 	}
-// 	// The modal that pops up when you press the print from TableTools
-// 	.DTTT_print_info {
-// 		position: fixed;
-// 		top: 50%;
-// 		left: 50%;
-// 		width: 400px;
-// 		margin-left: -200px;
-// 		margin-top: -75px;
-// 		text-align: center;
-// 		padding: 10px 30px;
-// 		@include gradient-vertical($white, darken($white, 5%));
-// 		@include opacity(95);
-// 		border: 1px solid rgba($grayDark, 0.5);
-// 		@include border-radius(6px);
-// 		@include box-shadow(0 3px 7px rgba($black, 0.5));
-// 		h6 {
-// 			@extend h2;
-// 		}
-// 	}
-// 
-// 
-// //SPECIFIC Tables
-// .activity-table {
-// 	.error td {
-// 		font-weight: bold;
-// 	}
-// 	td .label {
-// 		@include opacity(50);
-// 	}
-// }
-// 		
-// // progress bars
-// .progress .bar { @include gradient-vertical($btnInfoBackground, $btnInfoBackgroundHighlight); }
-// .progress-striped .bar { @include gradient-striped($blue); }
-// .progress-danger .bar, .progress .bar-danger { @include gradient-vertical($btnDangerBackground, $btnDangerBackgroundHighlight); }
-// .progress-danger.progress-striped .bar, .progress-striped .bar-danger { @include gradient-striped($red); }
-// .progress-success .bar, .progress .bar-success { @include gradient-vertical($btnSuccessBackground, $btnSuccessBackgroundHighlight); }
-// .progress-success.progress-striped .bar, .progress-striped .bar-success { @include gradient-striped($green); }
-// .progress-info .bar, .progress .bar-info { @include gradient-vertical($btnInfoBackground, $btnInfoBackgroundHighlight); }
-// .progress-info.progress-striped .bar, .progress-striped .bar-info { @include gradient-striped($blue); }
-// .progress-warning .bar, .progress .bar-warning { @include gradient-vertical($btnWarningBackground, $btnWarningBackgroundHighlight); }
-// .progress-warning.progress-striped .bar, .progress-striped .bar-warning { @include gradient-striped($orange); }
-// 
-// // Breadcrumb
-// .breadcrumb {
-// 	background-color: #eee;
-// 	border: 1px solid #ddd;
-// 	.dropdown { display: inline-block; }
-// 	a {
-// 		color: $gray;
-// 		padding: 10px;
-// 		.icon-chevron-right {
-// 			margin-left: 20px;
-// 			color: $gray;
-// 		}
-// 		.caret {
-// 			border-top-color: $gray;
-// 			border-bottom-color: $gray;
-// 		}
-// 		&:hover, &:focus {
-// 			text-decoration: none;
-// 			color: $textColor;
-// 		}
-// 	}
-// 	a.active {
-// 		color: $textColor;
-// 		font-weight: bold;
-// 	}
-// 	li {
-// 		display: block;
-// 		a {	text-shadow: none; }
-// 	}
-// }
-// 
-// .well,.hero-unit{
-//   border: 1px solid $widgetBordersColor;
-// 	@include box-shadow(0px 1px 0px white);
-// 	background: $bodyBackground;
-// 	background: -moz-radial-gradient(center, ellipse cover,  $bodyBackground 0%, $bodyBackground 50%, darken($bodyBackground,3%) 100%);
-// 	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,$bodyBackground), color-stop(50%,$bodyBackground), color-stop(100%,darken($bodyBackground,3%)));
-// 	background: -webkit-radial-gradient(center, ellipse cover,  $white 0%, $bodyBackground 50%,darken($bodyBackground,3%) 100%);
-// 	background: -o-radial-gradient(center, ellipse cover,  $bodyBackground 0%,$bodyBackground 50%,darken($bodyBackground,3%) 100%);	
-// 	background-position: center;
-// 	background-size: 200%;
-// }
-// 
-// .tooltips {
-// 	text-shadow: none;
-// }
-// 
-// .dropdown-menu .active > a,
-// .dropdown-menu .active > a:hover {
-//   color: $white;
-// }
-// 
-// 
-// // -----------------------------
-// // CUSTOM STYLES:
-// 
-// body { 
-// 	background-image: url('body_bg.png');
-// 	&.admin {
-// 		background-image: url('header_bg.png');
-// 	}
-// }
-// .admin #content {
-// 	background-image: url('body_bg.png');
-// 	border-top: $double-border;
-// 	border-bottom: $double-border;
-// }
-// 
-// #top-nav {
-// 	position: relative;
-// 	margin-bottom: $baseLineHeight;
-// 	.navbar-inner {
-// 		filter: none; // removes gradient bg so background img can show in IE
-// 		background: url('header_bg.png') repeat;
-// 		border-bottom: $double-border;
-// 		ul.nav, form {
-// 			margin-top: 20px;
-// 			margin-left: 20px;
-// 		}
-// 	}
-// }
-// 
-// .admin #top-nav { margin-bottom: 0; }
-// 
-// .navbar .brand {
-// 	padding-top: 30px;
-// 	padding-bottom: 0px;
-// 	padding-left: 110px !important;
-// 	font-weight: normal;
-// 	text-transform: uppercase;
-// 	background: url('Logo-w80.png') no-repeat 20px bottom;
-// }
-// 
-// #user-btn-group {
-// 	position: absolute;
-// 	top: 0;
-// 	right: 0;
-// 	.btn {
-// 		@include border-radius(0px);
-// 		span {
-// 			display: none;
-// 		}
-// 		&:last-child { border-right-width: 0; }
-// 		span.label, &:first-child span {
-// 			display: inline;
-// 			margin-left: 3px;
-// 		}
-// 		&:first-child span {
-// 			margin-left: 10px;
-// 		}
-// 	}
-// }
-// 
-// // -------------------------
-// // WIDGETS
-// .widget {
-// 	background: $widgetBackground;
-// 	border: 1px solid $widgetBordersColor;
-// 	@include box-shadow(0 2px 2px rgba($widgetBordersColor, .5));
-// 	margin-bottom: 20px;
-// 	position: relative;
-// 	overflow: auto;
-// 	// the head
-// 	.widget-head {
-// 		@extend .row-fluid;
-// 		@include gradient-vertical ($white, #f0f0f0);
-// 		border-bottom: 1px solid $widgetBordersColor;
-// 		@include box-shadow(0 1px 0 $white inset);
-// 		text-shadow: 0 1px $white;
-// 		clear: both;
-// 		// position: relative;
-// 		h5, a {
-// 			float: left;
-// 		}
-// 		h5 {
-// 			padding: 10px 14px;
-// 			margin: 0;
-// 		}
-// 		.btn {
-// 			border: none;
-// 			background: none;
-// 			@include border-radius(0px);
-// 			padding: 10px 12px;
-// 			border-right: 1px solid #d4d4d4;
-// 			text-align: center;
-// 		}
-// 	}
-// 	// normal content
-// 	.widget-content {
-// 		padding: 10px 14px;
-// 	}
-// 	// dataTables content
-// 	.dataTables_extras_top {
-// 		@include box-shadow(0 1px 0 $white inset);
-// 		border-bottom: 1px solid $widgetBordersColor;
-// 		padding: 13px 20px 7px;
-// 	}
-// 	.ColVis, .DTTT_container {
-// 		position: absolute;
-// 		top: 0;
-// 		right: 0;
-// 	}
-// 	.DTTT_container {
-// 		right: 50px
-// 	}
-// 	.ColVis_MasterButton, .DTTT_button_collection, .DTTT_button_print {
-// 		padding-top: 10px;
-// 		padding-bottom: 10px;
-// 		background: transparent;
-// 		border-width: 0 0 0 1px;
-// 		@include border-radius(0);
-// 		&:before {
-// 			margin-right: 0;
-// 		}
-// 		span {
-// 			display: none;
-// 		}
-// 	}
-// 	// table content
-// 	.table { margin-bottom: 0px !important; }
-// 	.table-bordered {
-// 		border: none;
-// 		td, th { 
-// 			border-left: 1px solid #ddd;
-// 			&:first-child {	border-left: none; }
-// 		}
-// 	}	
-// 	// footer
-// 	.widget-footer, .dataTables_extras_bottom {
-// 		@include gradient-vertical ($white, #f0f0f0);
-// 		border-top: 1px solid $widgetBordersColor;
-// 		padding: 0 20px;
-// 		& > div {
-// 			margin: 10px 0 2px;
-// 		}		
-// 	}
-// 	.widget-footer { 
-// 		padding-bottom: 8px;
-// 	}
-// }
-// 
-// .big_stats {
-// 	text-align: center;
-// 	&.well {
-// 		padding: 10px;
-// 	}
-// 	.value {
-// 		font-size: 4em;
-// 		line-height: 1em;
-// 		font-family: "BebasNeueRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;;
-// 	}
-// }
-// 
-// 
-// .color-test {
-// 	width: 60px;
-// 	height: 60px;
-// 	display: inline-block;
-// 	background: #ff0;
-// 	@include box-shadow(0 2px 2px rgba($black, .2));
-// 	&.blue { background: $blue; }
-// 	&.blue.lighter { background: $blueLight; }
-// 	&.blue.darker { background: $blueDark; }
-// 	&.blue.opaque { background: $blueOpaque; }
-// 
-// 	&.green { background: $green; }
-// 	&.green.lighter { background: $greenLight; }
-// 	&.green.darker { background: $greenDark; }
-// 	&.green.opaque { background: $greenOpaque; }
-// 	
-// 	&.yellow { background: $yellow; }
-// 	&.yellow.lighter { background: $yellowLight; }
-// 	&.yellow.darker { background: $yellowDark; }
-// 	&.yellow.opaque { background: $yellowOpaque; }
-// 	
-// 	&.orange { background: $orange; }
-// 	&.orange.lighter { background: $orangeLight; }
-// 	&.orange.darker { background: $orangeDark; }
-// 	&.orange.opaque { background: $orangeOpaque; }
-// 	
-// 	&.red { background: $red; }
-// 	&.red.lighter { background: $redLight; }
-// 	&.red.darker { background: $redDark; }
-// 	&.red.opaque { background: $redOpaque; }
-// 	
-// 	&.pink { background: $pink; }
-// 	&.pink.lighter { background: $pinkLight; }
-// 	&.pink.darker { background: $pinkDark; }
-// 	&.pink.opaque { background: $pinkOpaque; }
-// 	
-// 	&.purple { background: $purple; }
-// 	&.purple.lighter { background: $purpleLight; }
-// 	&.purple.darker { background: $purpleDark; }
-// 	&.purple.opaque { background: $purpleOpaque; }
-// 	
-// 	&.white { background: $white; }
-// 	&.grayLighter { background: $grayLighter; }
-// 	&.grayLight { background: $grayLight; }
-// 	&.gray { background: $gray; }
-// 	&.grayDark { background: $grayDark; }
-// 	&.grayDarker { background: $grayDarker; }
-// 	&.black { background: $black; }
-// }
-// 
-// .graph-padding {
-// 	padding: 11px;
-// }
-// 
-// .graph-container {
-//     position: relative;
-//     width: 100%;
-//     height: 300px;
-// }
-//  
-// .graph-container > div {
-//     position: absolute;
-//     width: inherit;
-//     height: inherit;
-// }
-//  
-// .graph-info {
-//     margin-bottom: 10px;
-// }
-// 
-// .tickLabel {
-// 	line-height: 1.2em;
-// }
-// 
-// .pie-inside-label {
-// 	font-size: .9em;
-// 	font-weight: bold;
-// 	text-align: center;
-// 	padding: 2px;
-// 	color: $white;
-// }
-// 
-// #trial-dates {
-// 	margin: 0;
-// 	dt { width: 60px; }
-// 	dd {
-// 		margin-left: 0px;
-// 		padding-left: 80px;
-// 		padding-bottom: 10px;
-// 		margin-bottom: 10px;
-// 		border-bottom: 1px solid $grayLighter;
-// 	}
-// 	dd:last-child {
-// 		padding-bottom: 0px;
-// 		margin-bottom: 0px;
-// 		border-bottom: none;
-// 	}
-// }
-// 
-// // SIDEBAR
-// #sidebar {
-// 	// place it to the left of the content
-//   display: block;
-//   float: left;
-//   position: relative;
-//   width: 220px;
-//   z-index: 16;
-// 
-// 	h5 {
-// 		border-bottom: 1px solid $grayLighter;
-// 		margin: 0;
-// 		padding: 10px;
-// 	}
-// 	
-// 	// all buttons
-// 	.btn {
-// 		text-shadow: 0 1px $white;
-// 		@include border-radius(0px);
-// 		border-top-width: 0px;
-// 		text-align: left;
-// 		// @include gradient-vertical($grayDark, $grayDarker);
-// 		// color: $white;
-// 		// text-shadow: none;
-// 		//@include box-shadow(0 5px 20px rgba($white, .25) );
-// 		.caret, .label { float: right; }
-// 		i {
-// 			margin-right: 10px;
-// 			vertical-align: middle;
-// 		}
-// 		//.label { color: $grayDarker; text-shadow: none; }
-// 	}
-// 	
-// 	// all lists
-// 	ul {
-// 		list-style: none;
-// 		margin: 0;
-// 		padding: 0;
-// 		background: $white;
-// 		border-top: $double-border;
-// 	}
-// 	
-// 	// first list
-// 	& > ul {
-// 		position: absolute;
-// 		width: 220px;
-// 		li {			
-// 			display: block;	
-// 			position: relative;
-// 			// first list buttons only
-// 			.btn {
-// 				padding: 15px 10px 11px 15px;
-// 				display: block;
-// 				border-right-width: 0px;
-// 				border-left-width: 0px;
-// 			}
-// 			&.open .btn, &.active .btn {
-// 				background: $btnBackgroundHighlight;
-// 			}
-// 			&.active {
-// 				@include box-shadow(0 2px 2px rgba(0,0,0,.1) inset);
-// 			}
-// 			// show second list when .open
-// 			&.open ul { display: block; }
-// 		}
-// 	}
-// 	
-// 	// second list (dropdown)
-// 	& > ul ul {
-// 		display: none;
-// 		background: $white;
-// 		border-color: $grayLighter;
-// 		border-style: solid;
-// 		border-width: 1px 0 1px 0;
-// 		li {
-// 			a {
-// 				padding: 10px 25px;
-// 				border-bottom: 1px solid $grayLighter;
-// 				display: block;
-// 				color: $gray;
-// 			}
-// 			// hover and active links
-// 			a:hover, a:focus, &.active a {
-// 				background-image: -webkit-linear-gradient(top, #efefef, #ddd);
-// 				color: #444;
-// 				text-decoration: none;
-// 				outline: 0;
-// 			}
-// 		}
-// 	}
-// }
-// 
-// 
-// 
-// // ---------------------------
-// // ADMIN
-// .admin {
-// 	header.navbar {
-// 		margin-bottom: 0px;
-// 		.navbar-inner {
-// 			border: none;
-// 			@include border-radius(0px);
-// 		}
-// 	}
-// 	#content {
-//     margin-left: 220px;
-//     margin-right: 0;
-//     padding-bottom: 25px;
-//     min-height: 500px;
-//     width: auto;
-// 		border-left: $double-border;
-// 	}
-// }
-// 
+ul.the-icons {
+	list-style-type: none;
+	margin-left: 0;
+	li {
+		line-height: 42px;
+		padding-left: 12px;
+		font-size: 16px;
+	}
+}
+ 
 // ---- IMPORT responsive styles ---- //
 @import "bootstrap-responsive";
-// 
-// // CUSTOM RESPONSIVENESS
-// @media (max-width: 480px) {
-// 
-// 	.admin #content {
-// 			margin-left: 0 !important;
-// 			border-left: none;
-// 	}
-// 	#user-btn-group .btn:first-child span {
-// 		display: none;
-// 	}
-// 	#sidebar {
-// 		float: none;
-// 		width: 100% !important;
-// 		& > .btn {
-// 			border-left-width: 0;
-// 			border-right-width: 0;
-// 		}
-// 		& > ul {
-// 			display: none;
-// 			margin: 0 !important;
-// 			width: 100% !important;
-// 			box-shadow: 0 6px 6px rgba(0,0,0,0.3);
-// 			background: #efefef;
-// 		}
-// 	}
-// }
-// 
-// @media (min-width: 480px) and (max-width: 978px){
-// 	// no padding on body
-// 	body.admin { padding: 0px; }
-// }
-// 
-// @media (max-width: 767px) {
-// 	body.admin {
-// 		padding-left: 0;
-// 		padding-right: 0;
-// 	}
-// 	.container-fluid {
-// 		padding-left: 20px;
-// 		padding-right: 20px;
-// 	}
-// 	#trial-dates {
-// 		dt { float: left; }
-// 	}
-// }
-// 
-// @media (min-width: 481px) and (max-width: 970px) {
-// 
-// 	.admin #content {
-// 		margin-left: 50px;
-// 	}
-// 	#sidebar, #sidebar > ul {
-// 		width: 50px;
-// 		display: block !important;
-// 	}
-// 	
-// 	#sidebar {
-// 		& > a { display: none !important;	}
-// 		// first list
-// 		& > ul li {
-// 			// remove text and carets from view
-// 			.btn { 
-// 				span 	 { display: none;	}
-// 				.caret { display: none; }
-// 			}
-// 		}
-// 
-// 		// second list (dropdown)		
-// 		& > ul ul {
-// 			position: absolute;
-// 			left: 54px;
-// 			top: 5px;
-// 			min-width: 150px;
-// 			@include box-shadow(0 1px 5px rgba(0,0,0,0.3));
-// 			@include border-radius(5px);	
-// 			border: 1px solid $grayLighter;
-// 			li a {
-// 				white-space: nowrap;
-// 			}
-// 			li:last-child a {
-// 				border-bottom: 0px;
-// 			}
-// 			&:before {
-// 				border-top: 7px solid transparent;
-// 				border-bottom: 7px solid transparent;
-// 				content: "";
-// 				display: inline-block;
-// 				left: -6px;
-// 				position: absolute;
-// 				top: 11px;
-// 				border-right: 6px solid #bbb;
-// 			}
-// 			&:after {
-// 				border-top: 6px solid transparent;
-// 				border-bottom: 6px solid transparent;
-// 				content: "";
-// 				display: inline-block;
-// 				left: -5px;
-// 				position: absolute;
-// 				top: 12px;
-// 				border-right: 6px solid #fefefe;
-// 		  }
-// 		}
-// 	}
-// 	
-// }
-// 
-// 
-// 
-// // PRINT Styles
-// @media print {
-// 	* { background: transparent !important; color: #444 !important; text-shadow: none !important;
-// 		@include box-shadow(none !important) ; }
-//   a, a:visited { color: #444 !important; text-decoration: underline; }
-//   a:after { content: " (" attr(href) ")"; } 
-//   abbr:after { content: " (" attr(title) ")"; }
-//   .ir a:after { content: ""; }  // Don't show links for images
-//   pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-//   thead { display: table-header-group; } // css-discuss.incutio.com/wiki/Printing_Tables
-//   tr, img { page-break-inside: avoid; }
-//   @page { margin: 0.5cm; }
-//   p, h2, h3 { orphans: 3; widows: 3; }
-//   h2, h3, h4, h5 { page-break-after: avoid; }
-// 	
-// 	select {
-// 		-webkit-appearance: none;
-// 	}
-// 	
-// 	// HIDING
-// 	#top-nav, .admin #sidebar, .breadcrumb, .table .actions, .ColVis {
-// 		display: none;
-// 		visibility: hidden;
-// 	}
-// 
-// 	body, #content {
-// 	    width: 100%;
-// 			padding: 0;
-// 	}
-// 	
-// 	.btn {
-// 		border: 1px solid rgba(#444, .25);
-// 	}
-// 	
-// 	.well, .hero-unit {
-// 		@include box-shadow(none);
-// 	}
-// 	
-// 	// ADMIN
-// 	.admin {
-// 		#content {
-// 			border-left: none;
-// 			margin-left: 0;
-// 		}		
-// 	}
-// 	
-// 	.widget {
-// 		border-left: none;
-// 		border-right: none;
-// 		@include box-shadow(none);
-// 		.widget-head {
-// 			height: auto;
-// 			border: none;
-// 			h5 {
-// 				float: none;
-// 			}
-// 			.btn {
-// 				display: none;
-// 				visibility: hidden;
-// 			}
-// 		}
-// 	}
-// 	
-// 	.widget-graph {
-// 		page-break-before:always; 
-// 	}
-// 	
-// }
+
+// ---- IMPORT print styles ---- //
+@import "print";
