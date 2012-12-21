@@ -1,3 +1,8 @@
+<% # We need some more bootstrap js
+	content_for :javascript_includes do %>
+  <%= javascript_include_tag "page-specific/other" %>
+<% end %>
+
 <div class="page-header">
 	<header>
 		<h1><%= @title %></h1>

@@ -10,17 +10,28 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
+// -------- JQUERY
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap
-//= require dataTables/jquery.dataTables
-//= require dataTables/jquery.dataTables.bootstrap
-//= require dataTables/extras/ColVis
-//= require dataTables/extras/ZeroClipboard.js
-//= require dataTables/extras/TableTools
-//= require jquery.flot
-//= require jquery.flot.pie
-//= require jquery.flot.resize
 //= require jquery.placeholder.min.js
+// -------- MODERNIZR
 //= require modernizr
-//= require_tree .
+// -------- BOOTSTRAP (only require ones that are used VERY often)
+//= require bootstrap-transition
+// require bootstrap-affix
+//= require bootstrap-alert
+// require bootstrap-button
+// require bootstrap-carousel
+// require bootstrap-collapse
+//= require bootstrap-dropdown
+// require bootstrap-modal
+// require bootstrap-scrollspy
+// require bootstrap-tab
+//= require bootstrap-tooltip
+//= require bootstrap-popover
+// require bootstrap-typeahead
+//= require bootstrap_inits
+// -------- DATATABLES (files are required in dataTables_inits)
+// -------- FLOT (files are required in flot_inits)
+// -------- NO LONGER REQUIRE TREE
+// require_tree .

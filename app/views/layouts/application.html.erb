@@ -5,7 +5,6 @@
 	
 	<%= render 'layouts/shim' %>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %> 
 </head>
 <body>
@@ -20,3 +19,6 @@
 
 </body>
 </html>
+
+<%= javascript_include_tag "application" %>
+<%= yield :javascript_includes %>

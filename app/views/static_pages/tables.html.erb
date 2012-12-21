@@ -1,3 +1,8 @@
+<% # We need dataTables
+	content_for :javascript_includes do %>
+  <%= javascript_include_tag "dataTables_inits.js" %>
+<% end %>
+
 <div class="page-header">
 	<header>
 		<h1><%= @title %></h1>
