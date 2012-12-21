@@ -14,6 +14,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.placeholder.min.js
+//= require jquery_inits
 // -------- MODERNIZR
 //= require modernizr
 // -------- BOOTSTRAP (only require ones that are used VERY often)

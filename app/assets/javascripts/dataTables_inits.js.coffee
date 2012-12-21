@@ -51,6 +51,3 @@ jQuery ->
   # make table rows selectable by checking the checkbox
   $(".table-selectable input:checkbox").change ->
     $(this).closest('tr').toggleClass("selected", this.checked)
-    
-  # make placeholder attributes work in IE
-  $(document).ready($('input[placeholder]').placeholder())
