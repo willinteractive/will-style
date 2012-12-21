@@ -1,0 +1,70 @@
+// color - grays
+$white:					#fefefe !default;
+$grayLighter:		darken($white, 				16.67%) !default;
+$grayLight:			darken($grayLighter, 	16.67%) !default;
+$gray:					darken($grayLight, 		16.67%) !default;
+$grayDark:			darken($gray, 				16.67%) !default;
+$grayDarker:		darken($grayDark, 		16.67%) !default;
+$black:					#000 !default;
+
+// color - spectrum
+$blue:		#5c789c;		$blueDark:		#324762;		$blueLight:		#90a6c4;		$blueOpaque:		rgba($blue, .4);
+$green:		#97a116;		$greenDark:		#636b03;		$greenLight:	#c4cd5c;		$greenOpaque:		rgba($green, .4);;
+$yellow:	#d4c62f;		$yellowDark:	#8b8010;		$yellowLight:	#f0e56b;		$yellowOpaque:	rgba($yellow, .1);;
+$orange:	#c49f39;		$orangeDark:	#806318;		$orangeLight:	#e4c673;		$orangeOpaque:	rgba($orange, .4);;
+$red:			#a86156;		$redDark:			#6b352e;		$redLight:		#cc938a;		$redOpaque:			rgba($red, .4);;
+$pink:		#bf8298;		$pinkDark:		#774959;		$pinkLight:		#d9a9ba;		$pinkOpaque:		rgba($pink, .4);;
+$purple:	#997bbd;		$purpleDark:	#5b4575;		$purpleLight:	#bda4d9;		$purpleOpaque:	rgba($purple, .4);;
+
+// color - scaffolding
+$bodyBackground: 				darken($white, 5%);
+$textColor: 						#444;
+
+// color - links
+$linkColor:             $green;
+$linkColorHover:        $greenDark;
+
+// tables
+$tableBackground:                   $white; // overall background-color
+$tableBackgroundAccent:             darken($white, 2%); // for striping
+$tableBackgroundHover:              $yellowOpaque; // for hover
+$tableBorder:                       $grayLighter; // table and cell border
+
+// buttons  (Highlight is actually darker)
+$btnBackground:                     $white;
+$btnBackgroundHighlight:            darken($white, 10%);
+$btnPrimaryBackground: 							$greenLight;
+$btnPrimaryBackgroundHighlight: 		$green;
+$btnInfoBackground:                 $blueLight;
+$btnInfoBackgroundHighlight:        $blue;
+$btnSuccessBackground:              $greenLight;
+$btnSuccessBackgroundHighlight:     $green;
+$btnWarningBackground:              $orangeLight;
+$btnWarningBackgroundHighlight:     $orange;
+$btnDangerBackground:               $redLight;
+$btnDangerBackgroundHighlight:      $red;
+
+// form states and alerts
+$warningText:             $yellowDark;
+$warningBackground:       $yellowOpaque;
+$warningBorder:           $yellow;
+$errorText:               $redDark;
+$errorBackground:         $redOpaque;
+$errorBorder:             $red;
+$successText:             $greenDark;
+$successBackground:       $greenOpaque;
+$successBorder:           $green;
+$infoText:                $blueDark;
+$infoBackground:          $blueOpaque;
+$infoBorder:              $blue;
+
+// typography 
+$sansFontFamily: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$headingsFontFamily: 'Open Sans Condensed', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$headingsFontWeight: bold;
+$baseFontSize: 12px !default;
+
+// custom
+$double-border: medium double #c5c5c5;
+$widgetBackground: darken($white, 2%);
+$widgetBordersColor: #d4d4d4;

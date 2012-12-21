@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
 //= require dataTables/extras/ColVis
@@ -20,6 +21,6 @@
 //= require jquery.flot
 //= require jquery.flot.pie
 //= require jquery.flot.resize
+//= require jquery.placeholder.min.js
+//= require modernizr
 //= require_tree .
-// Loads all Bootstrap javascripts
-//= require bootstrap

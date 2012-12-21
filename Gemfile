@@ -32,6 +32,9 @@ group :assets do
   #jQuery Charts with Flot
   gem "flot-rails"
   
+  #Modernizr
+  gem 'modernizr'
+  
 end
 
 gem 'jquery-rails'
