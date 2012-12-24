@@ -8,19 +8,14 @@
 		font-size: 1em;
 	}
 }
-.dataTables_filter {
-	float: left;
-	input[type="text"] {
-		margin-left: 15px;
-		width: 180px;
-	}
+div.dataTables_filter label, div.dataTables_length label  {
+	float: none;
 }
-.dataTables_length {
+div.dataTables_length {
 	float: right;
-	select {
-		height: 30px;
-		margin: 0 3px;
-	}
+}
+div.dataTables_filter {
+	float: left;
 }
 .dataTables_info {
 	margin-bottom: 10px;

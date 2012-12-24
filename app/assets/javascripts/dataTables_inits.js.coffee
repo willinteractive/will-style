@@ -37,9 +37,9 @@ jQuery ->
   
   # After tables have been initialized, add some content and/or classes to added DOM
   $('.dataTables_filter input').attr("placeholder", "type to filter..."); 
-  $('.ColVis_MasterButton').addClass("btn").prepend('<i class="icon-columns"></i> &ensp;').append('&ensp; <b class="caret"></b>').attr('title', 'Change Columns');  
-  $('.DTTT_button_collection').addClass("btn").prepend('<i class="icon-save"></i> &ensp;').append('&ensp; <b class="caret"></b>').attr('title', 'Save Table as…');  
-  $('.DTTT_button_print').prepend('<i class="icon-print"></i> &ensp;').addClass("btn").attr('title', 'Print Table');
+  $('.ColVis_MasterButton').addClass("btn").prepend('<i class="icon-columns"></i> ').append('&ensp; <b class="caret"></b>').attr('title', 'Change Columns');  
+  $('.DTTT_button_collection').addClass("btn").prepend('<i class="icon-save"></i> ').append('&ensp; <b class="caret"></b>').attr('title', 'Save Table as…');  
+  $('.DTTT_button_print').prepend('<i class="icon-print"></i> ').addClass("btn").attr('title', 'Print Table');
 
       
   ## --- OTHER TABLE FUNCTIONALITY
