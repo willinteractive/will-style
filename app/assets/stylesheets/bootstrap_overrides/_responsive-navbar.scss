@@ -1,0 +1,32 @@
+//
+// Responsive: Navbar
+// --------------------------------------------------
+
+
+// TABLETS AND BELOW
+// -----------------
+@media (max-width: $navbarCollapseWidth) {
+
+  // COLLAPSIBLE NAVBAR
+  // ------------------
+
+  // Block-level the nav
+  .nav-collapse .nav {
+    top: 0;
+  }
+
+  .navbar-inverse .nav-collapse .nav > li > a:hover,
+  .navbar-inverse .nav-collapse .dropdown-menu a:hover {
+    background: none;
+		color: $linkColor;
+  }
+
+  // Forms in navbar
+  .nav-collapse .navbar-form,
+  .nav-collapse .navbar-search {
+    top: 0;
+  }
+
+
+
+}

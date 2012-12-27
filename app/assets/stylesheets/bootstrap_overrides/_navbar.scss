@@ -20,6 +20,7 @@
 	padding-left: 110px !important;
 	text-transform: uppercase;
 	background: url('Logo-w80.png') no-repeat 20px 10px;
+	font-size: 18px;
 }
 
 // Navbar search
@@ -40,6 +41,38 @@
 	top: 20px;
 }
 
+// Links
+.navbar .nav > li > a {
+  font-weight: bold;
+}
+
+// Active nav items
+.navbar .nav > .active > a,
+.navbar .nav > .active > a:hover,
+.navbar .nav > .active > a:focus {
+  @include box-shadow(none);
+}
+
+// Navbar button for toggling navbar items in responsive layouts
+// These definitions need to come after '.navbar .btn'
+.navbar .btn-navbar {
+	position: relative;
+  top: 10px;
+  background: transparent;
+	filter: none;
+}
+.navbar .btn-navbar .icon-bar {
+  display: block;
+  width: 18px;
+  height: 1px;
+  background-color: rgba(#f5f5f5, .5);
+  @include border-radius(0px);
+  @include box-shadow(none);
+}
+.btn-navbar .icon-bar + .icon-bar {
+  margin-top: 3px;
+}
+
 // Inverted navbar
 // -------------------------
 .navbar-inverse {
@@ -48,5 +81,12 @@
 		background-image: url('header_bg.png');
 		background-repeat: repeat;
 		border-bottom: $double-border;
+  }
+
+  .nav .active > a,
+  .nav .active > a:hover,
+  .nav .active > a:focus {
+    color: $navbarInverseLinkColorActive;
+    background-color: transparent;
   }
 }

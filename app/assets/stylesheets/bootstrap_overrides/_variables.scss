@@ -73,3 +73,15 @@ $baseFontSize: 12px !default;
 $double-border: medium double #c5c5c5;
 $widgetBackground: darken($white, 2%);
 $widgetBordersColor: #d4d4d4;
+
+// Navbar
+// -------------------------
+$navbarCollapseWidth:             767px !default;
+
+// inverted navbar
+$navbarInverseText:                      $grayLight !default;
+$navbarInverseLinkColor:                 $grayLight !default;
+$navbarInverseLinkColorHover:            $linkColor !default;
+$navbarInverseLinkColorActive:           $navbarInverseLinkColorHover !default;
+$navbarInverseLinkBackgroundHover:       transparent !default;
+$navbarInverseLinkBackgroundActive:      transparent !default;
