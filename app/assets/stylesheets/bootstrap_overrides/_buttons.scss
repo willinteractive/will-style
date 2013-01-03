@@ -11,11 +11,6 @@
 	font-weight: bold;
 }
 
-// better vertical alignment of icon with text
-.btn [class^="icon-"], .btn [class*=" icon-"] {
-	vertical-align: middle;
-}
-
 // auto-use the white icons for non-default colored buttons (if no font-face)
 .no-fontface .btn {
 	&.btn-primary, &.btn-success, &.btn-warning, &.btn-danger, &.btn-success, &.btn-info, &.btn-inverse {
@@ -51,6 +46,7 @@
 
 // better vertical alignment of icon with text
 .btn-large [class^="icon-"], .btn-large [class*=" icon-"] {
+	font-size: 1em;
 	vertical-align: baseline;
 	*vertical-align: middle;
 }

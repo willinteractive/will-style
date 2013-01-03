@@ -1,0 +1,56 @@
+
+.dashboard-row-header {
+	@extend .page-header;
+	padding: 0;
+
+	h2 {
+		font-weight: normal;
+		text-transform: uppercase;
+	}
+	
+	.btn-group {
+		position: relative;
+		top: 25px;
+		
+		.btn {
+			border: none;
+			background: none;
+			filter: none;
+			@include box-shadow(none);
+			@include opacity(70);
+		}
+	}	
+}
+
+.dashboard-row .well {
+	h3 {
+		line-height: $baseLineHeight;
+		margin-top: 0;
+	}
+	
+	p, .alert {
+		margin-bottom: 0;
+	}
+	
+	.table-progress {
+		background: none;
+		
+		td {
+			padding: 10px;
+		}
+		
+		td.muted {
+			text-align: right;
+			white-space: nowrap;
+		}
+		
+		.progress {
+			margin: 0;
+		}
+	}
+	
+	&:hover {
+		cursor: pointer;
+		border-color: $gray;
+	}
+}

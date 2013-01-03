@@ -2,6 +2,14 @@
 // Labels and badges
 // --------------------------------------------------
 
+// Base classes
+.label,
+.badge {
+  font-weight: bold;
+	letter-spacing: 1px;
+	font-family: $sansFontFamily;
+}
+
 // make badges less wide
 .badge {
 	padding-left: 6px;
@@ -10,11 +18,13 @@
 
 // Colors
 // Important (red)
-.label-important, .badge-important              { background-color: $red; }
-.label-important[href], .badge-important[href]  { background-color: darken($red, 10%); }
+.label-important, .badge-important,
+.label-danger, .badge-danger			              { background-color: $red; }
+.label-important[href], .badge-important[href],
+.label-danger[href], .badge-danger[href]  			{ background-color: darken($red, 10%); }
 // Warnings (orange)
-.label-warning, .badge-warning                  { background-color: $orange; }
-.label-warning[href], .badge-warning[href]      { background-color: darken($orange, 10%); }
+.label-warning, .badge-warning                  { background-color: $yellow; }
+.label-warning[href], .badge-warning[href]      { background-color: darken($yellow, 10%); }
 // Success (green)
 .label-success, .badge-success                  { background-color: $green; }
 .label-success[href], .badge-success[href]      { background-color: darken($green, 10%); }

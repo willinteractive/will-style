@@ -1,5 +1,9 @@
 // DATATABLES
 // -----------------
+.dataTable {
+	width: 100% !important;
+}
+
 // extras like filter + length
 .dataTables_extras_top, .dataTables_extras_bottom {
 	@extend .clearfix;

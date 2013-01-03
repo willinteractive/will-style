@@ -9,6 +9,10 @@
 
   // COLLAPSIBLE NAVBAR
   // ------------------
+  .nav-collapse .nav > li > a,
+  .nav-collapse .dropdown-menu a {
+    font-weight: normal;
+  }
 
   // Block-level the nav
   .nav-collapse .nav {

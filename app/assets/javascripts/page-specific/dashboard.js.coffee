@@ -101,3 +101,7 @@ $(document).ready ->
     $("#graph-bars").fadeIn().removeClass "hidden"
     e.preventDefault()
 
+  $("a.main").addClass "hidden"
+  $(document).delegate ".well", "click", ->
+    window.location = $(this).find("a.main").attr("href")
+    

@@ -66,6 +66,37 @@ textarea[readonly] {
 		text-align: right;
 }
 
+// HORIZONTAL & VERTICAL FORMS
+// ---------------------------
+
+// Common properties
+// -----------------
+
+.form-search,
+.form-inline,
+.form-horizontal {
+  input,
+  textarea,
+  select,
+  .help-inline,
+  .uneditable-input,
+  .input-prepend,
+  .input-append {
+    vertical-align: top;
+  }
+}
+
+.form-search,
+.form-inline,
+.form-horizontal {
+	input[type="radio"],
+	input[type="checkbox"] {
+    vertical-align: middle;
+  }
+}
+
+
+
 // CUSTOM ELEMENTS
 // ---------------------------
 

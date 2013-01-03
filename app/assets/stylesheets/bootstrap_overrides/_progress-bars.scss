@@ -5,6 +5,11 @@
 // THE BARS
 // --------
 
+// mini progress bars
+.progress-mini {
+  height: $baseLineHeight / 3;
+}
+
 // Bar of progress
 .progress .bar {
   @include gradient-vertical($btnInfoBackground, $btnInfoBackgroundHighlight);

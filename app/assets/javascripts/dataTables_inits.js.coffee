@@ -25,7 +25,7 @@ jQuery ->
   
   # Specific DataTable constructs
   # HAVE to be here because the other code needs to be executed AFTER the construction
-  $('#datatable_example').dataTable( {
+  exampleTable = $('#datatable_example').dataTable( {
     "oColVis": {
       "buttonText": "Change Columns",
       "sAlign": "right"
@@ -51,3 +51,28 @@ jQuery ->
   # make table rows selectable by checking the checkbox
   $(".table-selectable input:checkbox").change ->
     $(this).closest('tr').toggleClass("selected", this.checked)
+    
+  # RESPONSIVE
+  $(window).resize ->
+    if($(window).width() > 978)
+      exampleTable.fnSetColumnVis( 1, true );
+      exampleTable.fnSetColumnVis( 3, true );
+    if($(window).width() <= 978)
+      exampleTable.fnSetColumnVis( 1, false );
+      exampleTable.fnSetColumnVis( 3, false );
+    if($(window).width() > 480)
+      exampleTable.fnSetColumnVis( 4, true );
+    if($(window).width() <= 480)
+      exampleTable.fnSetColumnVis( 4, false );
+
+  if($(window).width() > 978)
+    exampleTable.fnSetColumnVis( 1, true );
+    exampleTable.fnSetColumnVis( 3, true );
+    exampleTable.fnSetColumnVis( 4, true );
+  if($(window).width() <= 978)
+    exampleTable.fnSetColumnVis( 1, false );
+    exampleTable.fnSetColumnVis( 3, false );
+  if($(window).width() > 480)
+    exampleTable.fnSetColumnVis( 4, true );
+  if($(window).width() <= 480)
+    exampleTable.fnSetColumnVis( 4, false );

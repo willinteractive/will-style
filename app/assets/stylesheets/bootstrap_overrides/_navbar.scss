@@ -41,11 +41,6 @@
 	top: 20px;
 }
 
-// Links
-.navbar .nav > li > a {
-  font-weight: bold;
-}
-
 // Active nav items
 .navbar .nav > .active > a,
 .navbar .nav > .active > a:hover,
@@ -86,7 +81,7 @@
   .nav .active > a,
   .nav .active > a:hover,
   .nav .active > a:focus {
-    color: $navbarInverseLinkColorActive;
+    color: $white;
     background-color: transparent;
   }
 }
