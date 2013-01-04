@@ -1,4 +1,5 @@
 require "will-style/version"
+require "bootstrap-sass"
 
 module Will
   module Style
