@@ -6,7 +6,10 @@
 // ICONS
 // -----
 
-[class^="icon-"],
-[class*=" icon-"] {
+// increase icon size & make them sharper
+[class^="icon-"], [class*=" icon-"] {
+	font-size: 1.1666em;
+	padding-right: 0;
+	-webkit-font-smoothing: antialiased;
   margin-top: 0px;
 }

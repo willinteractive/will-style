@@ -20,9 +20,12 @@
   }
 
   .navbar-inverse .nav-collapse .nav > li > a:hover,
-  .navbar-inverse .nav-collapse .dropdown-menu a:hover {
-    background: none;
-		color: $linkColor;
+  .navbar-inverse .nav-collapse .dropdown-menu a:hover,
+  .navbar-inverse .nav-collapse .dropdown-menu li a:hover,
+  .navbar-inverse .nav-collapse .dropdown-menu li.active a,
+  .navbar-inverse .nav-collapse .dropdown-menu li.active a:hover {
+    background: rgba($navbarInverseBackground, .25);
+		color: $navbarInverseLinkColorHover;
   }
 
   // Forms in navbar
@@ -30,7 +33,5 @@
   .nav-collapse .navbar-search {
     top: 0;
   }
-
-
 
 }

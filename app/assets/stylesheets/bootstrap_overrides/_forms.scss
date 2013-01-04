@@ -61,9 +61,9 @@ textarea[readonly] {
 // ------------
 
 .form-actions {
-		border-top: $double-border;
-		background: none;
-		text-align: right;
+	border-top: $double-border;
+	background: none;
+	text-align: right;
 }
 
 // HORIZONTAL & VERTICAL FORMS
@@ -111,17 +111,15 @@ textarea[readonly] {
 			cursor: pointer;
 			// background
 	    -webkit-appearance: none;
-			background: red;
-	    border-radius: 4px;
+	    border-radius: $baseBorderRadius;
 			@include gradient-vertical($red, lighten($red, 5%));
 	    @include box-shadow(inset 0 0 5px rgba(0,0,0, .25));
 	    // knob
 	    &:before {
-	      background-color: white;
-	      background-image: -webkit-linear-gradient(top, #fff 0%,#f0f0f0 100%);
-	      border: 1px solid #fff;
-	      border-radius: 2px;
-	      box-shadow: 0 0 4px rgba(0,0,0,0.3);
+				@include gradient-vertical(white, #f0f0f0);
+	      border: 1px solid white;
+	      border-radius: $baseBorderRadius / 2;
+	      @include box-shadow(0 0 4px rgba(0,0,0,0.3));
 	      content: '';
 	      display: block;
 	      height: 14px;
@@ -133,7 +131,7 @@ textarea[readonly] {
 	    // x and checkmarks
 	    &:after {	     
 				content: "";
-				background-image: url("/assets/glyphicons-halflings-white.png");
+				background-image: url($iconWhiteSpritePath);
 				background-position: -288px 0; 
 	      display: block;
 	      width: 14px;
@@ -169,7 +167,7 @@ textarea[readonly] {
 		text-shadow: 0 -2px 0 rgba(0, 0, 0, 0.2);
 		text-decoration: inherit;
 		line-height: 28px;
-		top: -1px;
+		top: -3px;
 		left: 23px;
 	}
 

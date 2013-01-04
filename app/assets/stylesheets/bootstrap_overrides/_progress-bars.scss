@@ -49,8 +49,8 @@
 
 // Warning (orange)
 .progress-warning .bar, .progress .bar-warning {
-  @include gradient-vertical($btnWarningBackground, $btnWarningBackgroundHighlight);
+  @include gradient-vertical($yellowLight, $yellow);
 }
 .progress-warning.progress-striped .bar, .progress-striped .bar-warning {
-  @include gradient-striped($orange);
+  @include gradient-striped($yellow);
 }

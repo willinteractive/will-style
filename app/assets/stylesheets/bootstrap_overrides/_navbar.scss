@@ -10,6 +10,7 @@
 	border-bottom: $double-border;
   @include border-radius(0);
   @include box-shadow(none);
+	a { font-weight: normal; }
 }
 
 // Brand: website or project name
@@ -20,8 +21,8 @@
 	padding-left: 110px !important;
 	text-transform: uppercase;
 	background: url('Logo-w80.png') no-repeat 20px 10px;
-	font-size: 18px;
-	text-decoration: none;
+	font-size: $baseFontSize * 1.5;
+	@include unStyleLink();
 }
 
 // Navbar search
@@ -65,9 +66,6 @@
   @include border-radius(0px);
   @include box-shadow(none);
 }
-.btn-navbar .icon-bar + .icon-bar {
-  margin-top: 3px;
-}
 
 // Inverted navbar
 // -------------------------
@@ -77,13 +75,6 @@
 		background-image: url('header_bg.png');
 		background-repeat: repeat;
 		border-bottom: $double-border;
-  }
-
-  .nav .active > a,
-  .nav .active > a:hover,
-  .nav .active > a:focus {
-    color: $white;
-    background-color: transparent;
   }
 	
 	.nav .dropdown-menu .active > a,

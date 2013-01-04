@@ -3,7 +3,7 @@
 // --------------------------------------------------
 
 .dropdown-menu li > a {
-	text-decoration: none;
+	@include unStyleLink();
 }
 
 // Change caret color to match text

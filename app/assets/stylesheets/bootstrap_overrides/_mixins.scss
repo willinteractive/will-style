@@ -23,3 +23,11 @@
 	   -moz-hyphens: auto;
 	        hyphens: auto;
 }
+
+// make a tags not look like normal links
+@mixin unStyleLink() {
+	&, &:hover {
+		text-decoration: none;
+		text-shadow: none;
+	}
+}

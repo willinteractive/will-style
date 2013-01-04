@@ -4,20 +4,13 @@
 
 .breadcrumb {
   background-color: #eee;
-	border: 1px solid #ddd;
-  li {
+	border: 1px solid $grayLighter;
+	.active {
+		color: $gray;
+		font-weight: normal;
+		@include unStyleLink();
+	}
+  .dropdown-menu > li {
     text-shadow: none;
   }
-	.dropdown-menu li {
-		display: block;
-		&.active a {
-			color: white;
-		}
-	}
-	a.active {
-		&, &:hover {
-			text-decoration: none;
-			text-shadow: none;
-		}
-	}
 }
