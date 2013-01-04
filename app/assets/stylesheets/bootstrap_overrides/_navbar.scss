@@ -21,6 +21,7 @@
 	text-transform: uppercase;
 	background: url('Logo-w80.png') no-repeat 20px 10px;
 	font-size: 18px;
+	text-decoration: none;
 }
 
 // Navbar search
@@ -84,4 +85,9 @@
     color: $white;
     background-color: transparent;
   }
+	
+	.nav .dropdown-menu .active > a,
+	.nav .dropdown-menu .active > a:hover {
+	  @include gradient-vertical($dropdownLinkBackgroundActive, darken($dropdownLinkBackgroundActive, 5%));
+	}
 }

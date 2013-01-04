@@ -14,7 +14,10 @@
 			color: white;
 		}
 	}
-	li a.active:hover {
-		text-decoration: none;
+	a.active {
+		&, &:hover {
+			text-decoration: none;
+			text-shadow: none;
+		}
 	}
 }

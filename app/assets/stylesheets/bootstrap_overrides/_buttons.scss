@@ -9,7 +9,18 @@
 // Core
 .btn {
 	font-weight: bold;
+	text-decoration: none;
+	&, &:hover {
+		text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+	}
 }
+
+.btn-primary, .btn-success, .btn-warning, .btn-danger, .btn-success, .btn-info, .btn-inverse {
+	&, &:hover {
+		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);		
+	}
+}
+
 
 // auto-use the white icons for non-default colored buttons (if no font-face)
 .no-fontface .btn {

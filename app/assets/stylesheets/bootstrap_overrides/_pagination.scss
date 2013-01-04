@@ -5,13 +5,16 @@
 .pagination ul > li > a,
 .pagination ul > li > span {
 	color: $textColor;
+	text-shadow: none;
 }
 .pagination ul > .active > a,
 .pagination ul > .active > span {
   color: $grayLight;
+	text-shadow: none;
 }
 .pagination ul > .disabled > span,
 .pagination ul > .disabled > a,
 .pagination ul > .disabled > a:hover {
   color: $grayLight;
+	text-shadow: none;
 }

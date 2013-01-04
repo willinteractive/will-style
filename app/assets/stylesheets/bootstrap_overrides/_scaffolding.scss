@@ -16,6 +16,19 @@ body {
 	border-top: $double-border;
 }
 
+
+// Links
+// -------------------------
+
+a {
+	font-weight: bold;
+  text-decoration: underline;
+}
+a:hover {
+	text-shadow: 0px 0px 5px rgba(0,0,0,.5);
+}
+
+
 // Images
 // -------------------------
  

@@ -2,6 +2,10 @@
 // Dropdown menus
 // --------------------------------------------------
 
+.dropdown-menu li > a {
+	text-decoration: none;
+}
+
 // Change caret color to match text
 // --------------------
 .caret {
