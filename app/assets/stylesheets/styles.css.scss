@@ -5,11 +5,12 @@
 // ---- Import Bootstrap ---- //
 @import "bootstrap";
 @import "font-awesome";
-@import "font-awesome-ie7"; // Should move this to a IE7- only stylesheet
-// increase icon size & shift icons down
+@import "font-awesome-ie7.min"; // Should move this to a IE7- only stylesheet
+// increase icon size & make them sharper
 [class^="icon-"], [class*=" icon-"] {
-	font-size: 16px;
-	vertical-align: -2px;
+	font-size: 14px;
+	padding-right: 0;
+	-webkit-font-smoothing: antialiased;
 }
 
 // ---- OVERRIDE Bootstrap ---- //
@@ -110,7 +111,7 @@ ul.the-icons {
 	li {
 		line-height: 42px;
 		padding-left: 12px;
-		font-size: 16px;
+		font-size: 14px;
 	}
 }
  

@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/nicoles/font-awesome-sass-rails.git
+  revision: 3dc12ca74891fd358f635ffc4be980a5cd2fd213
+  branch: font-awesome-3
+  specs:
+    font-awesome-sass-rails (3.0.0.0)
+      railties (>= 3.1.1)
+      sass-rails (>= 3.1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -44,9 +53,6 @@ GEM
       multi_json (~> 1.0)
     flot-rails (0.0.2)
       jquery-rails
-    font-awesome-sass-rails (2.0.0.0)
-      railties (>= 3.1.1)
-      sass-rails (>= 3.1.1)
     hike (1.2.1)
     i18n (0.6.1)
     journey (1.0.4)
@@ -117,7 +123,7 @@ DEPENDENCIES
   bootstrap-sass
   coffee-rails (~> 3.2.1)
   flot-rails
-  font-awesome-sass-rails
+  font-awesome-sass-rails!
   jquery-datatables-rails
   jquery-rails
   modernizr
