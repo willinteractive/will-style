@@ -58,5 +58,6 @@ hr.double {
 
 .zero-font { font-size: 0px; }
 .centered { text-align: center; }
+.no-wrap { white-space: nowrap; }
 .force-wrap { @include forceWrap(); }
 
