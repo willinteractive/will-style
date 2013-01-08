@@ -24,7 +24,7 @@ group :assets do
   # gem 'twitter-bootstrap-rails'
   
   # FontAwesome the Sass way : https://github.com/littlebtc/font-awesome-sass-rails
-  gem 'font-awesome-sass-rails', :git => "git://github.com/nicoles/font-awesome-sass-rails.git", :branch => "font-awesome-3"
+  gem 'font-awesome-sass-rails'
   
   #jQuery Datatables
   gem 'jquery-datatables-rails'
