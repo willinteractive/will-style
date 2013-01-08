@@ -1,8 +1,5 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in will-style.gemspec
-gemspec
-
 gem 'rails', '3.2.8'
 
 # Bundle edge Rails instead:
