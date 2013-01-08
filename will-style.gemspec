@@ -12,8 +12,6 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{The will-style gem contains shared WILL branding for use across apps.}
   gem.homepage      = "https://github.com/willinteractive/will-style-guide"
 
-  gem.add_dependency 'bootstrap-sass', '~> 2.2.2'
-
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})

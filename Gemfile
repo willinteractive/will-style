@@ -23,7 +23,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   
   # Sass and Bootstrap
-  # gem 'bootstrap-sass'
+  gem 'bootstrap-sass'
   # gem 'twitter-bootstrap-rails'
   
   # FontAwesome the Sass way : https://github.com/littlebtc/font-awesome-sass-rails
