@@ -113,17 +113,16 @@ $(document).ready ->
 
   classesForSelectableRows = "table-selectable table-focusable-complex"
 
-  $(window).resize ->
+  # IF the browser supports media queries then change the way the Dashboard rows behave
+  if(Modernizr.mq('only all'))
+    $(window).resize ->
+      if($(window).width() <= 767)
+        $("#user-trials").addClass classesForSelectableRows
+        $("#user-trials tr").bind "click", rowToBtnURL
+      if($(window).width() > 767)
+        $("#user-trials").removeClass classesForSelectableRows
+        $("#user-trials tr").unbind "click"
+
     if($(window).width() <= 767)
       $("#user-trials").addClass classesForSelectableRows
       $("#user-trials tr").bind "click", rowToBtnURL
-    if($(window).width() > 767)
-      $("#user-trials").removeClass classesForSelectableRows
-      $("#user-trials tr").unbind "click"
-
-  if($(window).width() <= 767)
-    $("#user-trials").addClass classesForSelectableRows
-    $("#user-trials tr").bind "click", rowToBtnURL
-  
-  
-
