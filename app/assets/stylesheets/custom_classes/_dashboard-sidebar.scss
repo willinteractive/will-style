@@ -1,0 +1,97 @@
+/* ============== messages ============== */
+#sidebar-header {
+	margin-bottom: 0;
+	
+	.btn-group > .btn-large {
+		@include box-shadow(none);
+		background: none;
+		filter: none;
+		font-size: 24px;
+		font-weight: normal;
+		border: none;
+	}
+	
+	button[data-toggle="button"] {
+  	i.icon-arrow-up {
+    	display: none;
+  	}
+  	&.active {
+    	i.icon-arrow-up {
+      	display: inline-block;
+    	}
+    	i.icon-arrow-down {
+      	display: none;
+    	}
+  	}
+	}
+}
+
+#dashboard-sidebar {
+  border-right: 1px solid $grayLighter;
+
+	li > a {
+		@include clearfix();
+		@include unStyleLink();
+		@include gradient-vertical(#f9f9f9,#eee);
+		font-weight: normal;
+    display: block;
+    border-bottom: 1px solid $grayLighter;
+    padding: 10px 20px;
+    
+    &>span {
+	    font-size: .8em;
+	    text-transform: uppercase;
+	    i {
+		    font-size: 14px;
+	    }
+    }
+   	
+   	&, h4>i {
+   		color: $gray;
+   	}
+   	
+   	h4>i {
+	   	font-size: 14px;
+	   	margin-left: 5px;
+   	}
+   	
+    &.new {
+	    background-color: $white;
+			background: -webkit-linear-gradient( -45deg, #e6e6e6 5%, #e1e1e1 8%, transparent 8%, #e0e0e0 8%, #e0e0e0 8.33333%, transparent 8.4444%, transparent 92.4444%, transparent 97%), -webkit-linear-gradient(top,#f9f9f9,#eee);
+			background: -moz-linear-gradient( -45deg, #e6e6e6 5%, #e1e1e1 8%, transparent 8%, #e0e0e0 8%, #e0e0e0 8.33333%, transparent 8.4444%, transparent 92.4444%, transparent 97%), -webkit-linear-gradient(top,#f9f9f9,#eee);
+			background: -0-linear-gradient( -45deg, #e6e6e6 5%, #e1e1e1 8%, transparent 8%, #e0e0e0 8%, #e0e0e0 8.33333%, transparent 8.4444%, transparent 92.4444%, transparent 97%), -webkit-linear-gradient(top,#f9f9f9,#eee);
+			background: linear-gradient( -45deg, #e6e6e6 5%, #e1e1e1 8%, transparent 8%, #e0e0e0 8%, #e0e0e0 8.33333%, transparent 8.4444%, transparent 92.4444%, transparent 97%), -webkit-linear-gradient(top,#f9f9f9,#eee);
+			
+			.icon-star {
+				position: relative;
+				left: -17px;
+				top: -5px;
+			}
+		}
+    
+    &.active, &.active:hover, &.active:focus {
+	    background: $grayDark;
+	    &, h4>i {
+		    color: rgba($white, .7);
+	    }
+	    h4 {
+		    color: #fff;
+	    }
+    }
+    
+    &.expired {
+	    @include opacity(50);
+    }
+    
+    &:hover, &:focus {
+	    @include opacity(100);
+	    background: rgba($yellow, .1);
+    }
+  }
+}
+
+a.load-more {
+  padding: 10px;
+  display: block;
+  text-align: center;
+}

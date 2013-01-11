@@ -33,4 +33,8 @@ class StaticPagesController < ApplicationController
     @title = "Dashboard";
   end
   
+  def dashboard2
+    @title = "Dashboard with Sidebar";
+  end
+  
 end
