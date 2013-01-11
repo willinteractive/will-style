@@ -55,6 +55,14 @@ hr.double {
 	border-bottom: none;
 }
 
+hr.short {
+  margin: $baseLineHeight/2 0;
+}
+
+hr.shorter {
+  margin: 0;
+}
+
 // Additions
 // -------------------------
 
