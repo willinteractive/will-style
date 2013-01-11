@@ -1,4 +1,5 @@
 #= require ../flot_inits
+#= require bootstrap-button
 
 $(document).ready ->
   graphData = [
@@ -86,6 +87,12 @@ $(document).ready ->
       hoverable: true
       clickable: true
 
+  $(".peity .bar").peity "bar",
+    max: 100,
+    width: "100",
+    height: "80",
+    colours: ["#a86156", "#d4c62f", "#97a116"]
+
   $("#graph-bars").hide()
   $("#lines").click ->
     $("#bars").removeClass "active"
@@ -101,7 +108,22 @@ $(document).ready ->
     $("#graph-bars").fadeIn().removeClass "hidden"
     e.preventDefault()
 
-  $("a.main").addClass "hidden"
-  $(document).delegate ".well", "click", ->
-    window.location = $(this).find("a.main").attr("href")
-    
+  rowToBtnURL = ->
+    window.location = $(this).find("a.btn").attr("href")
+
+  classesForSelectableRows = "table-selectable table-focusable-complex"
+
+  $(window).resize ->
+    if($(window).width() <= 767)
+      $("#user-trials").addClass classesForSelectableRows
+      $("#user-trials tr").bind "click", rowToBtnURL
+    if($(window).width() > 767)
+      $("#user-trials").removeClass classesForSelectableRows
+      $("#user-trials tr").unbind "click"
+
+  if($(window).width() <= 767)
+    $("#user-trials").addClass classesForSelectableRows
+    $("#user-trials tr").bind "click", rowToBtnURL
+  
+  
+

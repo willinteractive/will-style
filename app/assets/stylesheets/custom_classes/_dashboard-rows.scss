@@ -1,56 +1,114 @@
+///
+/// DASHBOARD
+///
 
 .dashboard-row-header {
-	@extend .page-header;
-	padding: 0;
-
+  margin-top: $baseLineHeight;
+  
 	h2 {
-		font-weight: normal;
 		text-transform: uppercase;
+		font-weight: normal;
 	}
 	
-	.btn-group {
-		position: relative;
-		top: 25px;
-		
-		.btn {
-			border: none;
-			background: none;
-			filter: none;
-			@include box-shadow(none);
-			@include opacity(70);
-		}
-	}	
+	div.span10 {
+  	position: relative;
+  	top: 15px;
+  	@media (max-width: 767px) {
+  		top: 0;
+  	}
+	}
+	
+	.btn {
+		@include box-shadow(none);
+		background: none;
+		filter: none;
+		@include opacity(70);
+	}
+	
+	button[data-toggle="button"] {
+  	i.icon-arrow-up {
+    	display: none;
+  	}
+  	&.active {
+    	i.icon-arrow-up {
+      	display: inline-block;
+    	}
+    	i.icon-arrow-down {
+      	display: none;
+    	}
+  	}
+	}
+	
+	input[type="search"] {
+		background: transparent;
+		&:focus { background: $white; }
+  	@media (max-width: 767px) {
+    	width: 120px;
+    }
+	}
+	
+	&+hr {
+		margin: 0;
+	}
 }
 
-.dashboard-row .well {
+table.dashboard-row-table {
+	margin-bottom: 0;
+	background: none;
+	tr.expired td {
+		@include opacity(50);
+	}
+	tr:last-child td {
+  	border-bottom: none;
+	}
+	td {
+		padding: $baseLineHeight 0;
+		padding-left: $baseLineHeight;
+		border-bottom: 1px solid $grayLighter;
+		&:nth-child(2) {
+			min-width: 160px;
+		}
+		&:first-child {
+			padding-left: 0;
+			.btn {
+				margin-top: $baseLineHeight / 2;
+			}
+		}
+	}
 	h3 {
+		margin: 0 0 10px 0;
 		line-height: $baseLineHeight;
-		margin-top: 0;
 	}
-	
-	p, .alert {
+	.unit {
+		display: inline-block;
 		margin-bottom: 0;
+		width: 30px;
+		text-align: right;
 	}
-	
-	.table-progress {
-		background: none;
-		
-		td {
-			padding: 10px;
-		}
-		
-		td.muted {
-			text-align: right;
-			white-space: nowrap;
-		}
-		
-		.progress {
-			margin: 0;
-		}
+	p, .alert {
+		margin: 0;
 	}
-	
-	&:hover {
-		cursor: pointer;
-		border-color: $gray;
+	.alert {
+		padding-right: 13px;
+	}
+	.peity {
+		text-align: center;
+	}
+
+	&+p {
+  	position: relative;
+  	top: -10px;
+  	padding-left: 10px;
+		&+hr {
+    	margin-top: 0;
+  	}
 	}
 }
+table.dashboard-row-table.table-selectable tbody:hover tr {
+	&:active, &:focus {
+		td {
+			background: rgba($grayLighter, .2);	
+		}
+	}
+}
+

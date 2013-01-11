@@ -2,7 +2,9 @@ body { font-weight: normal; }
 
 // Emphasis & misc
 // -------------------------
-
+.muted {
+  color: $gray;
+}
 .text-warning { color: $yellow; }
 a.text-warning:hover { color: darken($yellow, 10%); }
 

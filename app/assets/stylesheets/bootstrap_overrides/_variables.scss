@@ -21,12 +21,12 @@ $black:					#000 !default;
 // Accent colors
 // -------------------------
 $blue:		#5c789c;		$blueDark:		#324762;		$blueLight:		#90a6c4;		$blueOpaque:		rgba($blue, .4);
-$green:		#97a116;		$greenDark:		#636b03;		$greenLight:	#c4cd5c;		$greenOpaque:		rgba($green, .4);;
-$yellow:	#d4c62f;		$yellowDark:	#8b8010;		$yellowLight:	#f0e56b;		$yellowOpaque:	rgba($yellow, .1);;
-$orange:	#c49f39;		$orangeDark:	#806318;		$orangeLight:	#e4c673;		$orangeOpaque:	rgba($orange, .4);;
-$red:			#a86156;		$redDark:			#6b352e;		$redLight:		#cc938a;		$redOpaque:			rgba($red, .4);;
-$pink:		#bf8298;		$pinkDark:		#774959;		$pinkLight:		#d9a9ba;		$pinkOpaque:		rgba($pink, .4);;
-$purple:	#997bbd;		$purpleDark:	#5b4575;		$purpleLight:	#bda4d9;		$purpleOpaque:	rgba($purple, .4);;
+$green:		#97a116;		$greenDark:		#636b03;		$greenLight:	#c4cd5c;		$greenOpaque:		rgba($green, .4);
+$yellow:	#d4c62f;		$yellowDark:	#8b8010;		$yellowLight:	#f0e56b;		$yellowOpaque:	rgba($yellow, .4);
+$orange:	#c49f39;		$orangeDark:	#806318;		$orangeLight:	#e4c673;		$orangeOpaque:	rgba($orange, .4);
+$red:			#a86156;		$redDark:			#6b352e;		$redLight:		#cc938a;		$redOpaque:			rgba($red, .4);
+$pink:		#bf8298;		$pinkDark:		#774959;		$pinkLight:		#d9a9ba;		$pinkOpaque:		rgba($pink, .4);
+$purple:	#997bbd;		$purpleDark:	#5b4575;		$purpleLight:	#bda4d9;		$purpleOpaque:	rgba($purple, .4);
 
 // color - player frame types
 $choice: rgb(200,66,66);
@@ -245,19 +245,19 @@ $navbarInverseLinkBackgroundActive:      transparent !default;
 // Form states and alerts
 // -------------------------
 $warningText:             $yellowDark;
-$warningBackground:       $yellowOpaque;
+$warningBackground:       rgba($yellow, .1);
 $warningBorder:           $yellow;
 
 $errorText:               $redDark;
-$errorBackground:         $redOpaque;
+$errorBackground:         rgba($red, .1);
 $errorBorder:             $red;
 
 $successText:             $greenDark;
-$successBackground:       $greenOpaque;
+$successBackground:       rgba($green, .1);
 $successBorder:           $green;
 
 $infoText:                $blueDark;
-$infoBackground:          $blueOpaque;
+$infoBackground:          rgba($blue, .1);
 $infoBorder:              $blue;
 
 

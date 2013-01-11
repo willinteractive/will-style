@@ -1,13 +1,11 @@
-<% # We need Flot
+<%
 	content_for :javascript_includes do %>
+  <%= javascript_include_tag "jquery.peity" %>
   <%= javascript_include_tag "page-specific/dashboard" %>
 <% end %>
 
-<header class="page-header">
-	<h1><%= @title %></h1>
-</header>
 
-<section class="row-fluid">
+<section class="row">
 	<div class="span4">
 		<div class="big_stats well">
 			<h4>Pending Sales Today</h4>
@@ -31,133 +29,122 @@
 	</div>
 </section>
 
-<div class="clearfix dashboard-row-header">
-	<h2 class="muted pull-left">Trials</h2>
-	<div class="btn-group pull-right">
-	  <button class="btn dropdown-toggle" data-toggle="dropdown">Recently Viewed <span class="caret"></span></button>
-	 	<ul class="dropdown-menu">
-	     <li><a href="#">Action</a></li>
-	     <li><a href="#">Another action</a></li>
-	     <li><a href="#">Something else here</a></li>
-	   </ul>
+<div class="row dashboard-row-header">
+	<div class="span2">
+		<h2 class="muted">Trials</h2>
 	</div>
-</div>
-
-<section class="row-fluid dashboard-row">
-	<div class="span4">
-		<div class="well">
-			<span class="label label-warning pull-right">INCOMPLETE</span>
-			<h3>Basic Trial 354</h3>
-			<p class="muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit…</p>
-			<hr>
-			<div class="alert">
-        <strong>There are currently no participants or users.</strong>
-				Add participants by sending users an invitation.
-      </div>
-			<a class="main" href="http://google.com">Manage Trial</a>
-		</div>		
-	</div>
-	
-	<div class="span4">
-		<div class="well">
-			<span class="label label-warning pull-right">INCOMPLETE</span>
-			<h3>Basic Trial 567</h3>
-			<hr>
-			<div class="alert">
-        <strong>There are currently no sumulations belonging to this trial.</strong> 
-				Add simulations by editing the trial.
-      </div>
-			<a class="main" href="http://google.com">Manage Trial</a>
-		</div>		
-	</div>
-	
-	<div class="span4">
-		<div class="well">
-			<span class="label label-success pull-right">ACTIVE</span>
-			<h3>Basic Trial 6,875</h3>
-			<p class="muted">Ut enim ad minim veniam, quis nostrud exercitation.</p>
-			<hr>
-			<table class="table-progress" width="100%">
-				<tbody>
-					<tr>
-						<td class="muted">Finished</td>
-						<td><strong>10</strong>%</td>
-						<td width="100%"><div class="progress progress-mini"><div class="bar bar-success" style="width: 10%;"></div></div></td>
-					</tr>
-					<tr>
-						<td class="muted">In Progress</td>
-						<td><strong>20</strong>%</td>
-						<td width="100%"><div class="progress progress-mini"><div class="bar bar-warning" style="width: 20%;"></div></div></td>
-					</tr>
-					<tr>
-						<td class="muted">Not Started</td>
-						<td><strong>70</strong>%</td>
-						<td width="100%"><div class="progress progress-mini"><div class="bar bar-danger" style="width: 70%;"></div></div></td>
-					</tr>
-				</tbody>
-			</table>
-			<a class="main" href="http://yahoo.com">Manage Trial</a>
-		</div>		
-	</div>
-	
-	<a href="#" class="pull-right">View All Trials</a>
-	<hr>
-</section>
-
-<section class="row-fluid dashboard-row hidden">	
-	<div class="span4">
-		<div class="well clearfix">
-			<h3>Basic Trial 555 <span class="label label-danger pull-right">5 DAYS LEFT</span></h3>
-			<hr>
-			<table class="table-progress" width="100%">
-				<tbody>
-					<tr>
-						<td class="muted">Finished</td>
-						<td><strong>60</strong>%</td>
-						<td width="100%"><div class="progress progress-mini"><div class="bar bar-success" style="width: 60%;"></div></div></td>
-					</tr>
-					<tr>
-						<td class="muted">In Progress</td>
-						<td><strong>20</strong>%</td>
-						<td width="100%"><div class="progress progress-mini"><div class="bar bar-warning" style="width: 20%;"></div></div></td>
-					</tr>
-					<tr>
-						<td class="muted">Not Started</td>
-						<td><strong>20</strong>%</td>
-						<td width="100%"><div class="progress progress-mini"><div class="bar bar-danger" style="width: 20%;"></div></div></td>
-					</tr>
-				</tbody>
-			</table>
-			<a class="main" href="http://google.com">Manage Trial</a>
-		</div>		
-	</div>
-	
-	<div class="span4">
-		<div class="well clearfix">
-			<h3>Basic Trial <span class="label label-danger pull-right">FINISHED</span></h3>
-			<hr>
-			<div class="alert alert-danger">
-				<strong>The trial has now ended but you may still view the reports.</strong>
+	<div class="span10">
+		<input type="search" name="trial_search" placeholder="Filter&#8230;" class="pull-left">
+		<button class="btn pull-right" data-toggle="button"><i class="icon-arrow-up"></i><i class="icon-arrow-down"></i></button>
+		<div class="btn-group pull-right">
+			  <button class="btn dropdown-toggle" data-toggle="dropdown">Recently Viewed <span class="caret"></span></button>
+			 	<ul class="dropdown-menu">
+			 		<li><a href="#">Recently Updated</a></li>
+			     <li><a href="#">Name </a></li>
+			     <li><a href="#">Status </a></li>
+			     <li><a href="#">Role </a></li>
+			   </ul>
 			</div>
-			<a class="main" href="http://google.com">Manage Trial</a>
-		</div>		
-	</div>
-	
-</section>
-
-<div class="clearfix dashboard-row-header">
-	<h2 class="muted pull-left">Previews</h2>
-	<div class="btn-group pull-right">
-	  <button class="btn dropdown-toggle" data-toggle="dropdown">Recently Viewed <span class="caret"></span></button>
-	 	<ul class="dropdown-menu">
-	     <li><a href="#">Action</a></li>
-	     <li><a href="#">Another action</a></li>
-	     <li><a href="#">Something else here</a></li>
-	   </ul>
-	</div>
+	</div>	
 </div>
 
-<section class="row-fluid">
+<hr class="double">
+
+<table class="dashboard-row-table" id="user-trials">
+	<tbody>
+		<tr>
+			<td><h3>Basic Trial 1</h3>
+					<p class="muted">Cosby sweater wolf portland put a bird on it aesthetic master cleanse.  VHS readymade pork belly PBR gastropub cray.  Portland street art beard meh.</p>
+					<a href="http://google.com" class="btn hidden-phone">Manage Trial</a>
+			</td>
+			<td width="20%" class="hidden-phone">
+				<span class="lead unit"><strong>1</strong></span>
+				<span class="muted"> &emsp;SIMULATION</span>
+				<br>
+				<span class="lead unit"><strong>0</strong></span>
+				<span class="muted"> &emsp;PARTICIPANTS</span>
+				<br>
+				<span class="lead unit"><strong>3</strong></span>
+				<span class="muted"> &emsp;AUDITORS</span>
+			</td>
+			<td width="25%">
+				<p class="centered"><i class="icon-exclamation-sign text-error"></i> <span class="text-error">INCOMPLETE</span></p>
+				<div class="alert alert-error hidden-phone"><strong>There are currently no participants or  users.</strong>
+				Add participants by sending users an invitation.</div>
+			</td>
+		</tr>
+		<tr>
+			<td><h3>Basic Trial 3.5</h3>
+					<p class="muted">Mumblecore pinterest small batch gastropub, echo park bicycle rights chambray..</p>
+					<a href="http://flickr.com" class="btn hidden-phone">Manage Trial</a>
+			</td>
+			<td width="20%" class="hidden-phone">
+				<span class="lead unit"><strong>2</strong></span>
+				<span class="muted"> &emsp;SIMULATIONS</span>
+				<br>
+				<span class="lead unit"><strong>35</strong></span>
+				<span class="muted"> &emsp;PARTICIPANTS</span>
+				<br>
+				<span class="lead unit"><strong>6</strong></span>
+				<span class="muted"> &emsp;AUDITORS</span>
+			</td>
+			<td width="25%">
+				<p class="centered"><i class="icon-time text-warning"></i> IN PROGRESS</p>
+				<div class="peity"><span class="bar">10,25,65</span></div>
+			</td>
+		</tr>
+		<tr>
+			<td><h3> Basic Trial 4</h3>
+					<p class="muted">Eitan neutra 90's, kogi flannel art party sartorial YOLO bespoke photo booth meh butcher marfa direct trade.</p>
+					<a href="http://msn.com" class="btn hidden-phone">Manage Trial</a>
+			</td>
+			<td width="20%" class="hidden-phone">
+				<span class="lead unit"><strong>1</strong></span>
+				<span class="muted"> &emsp;SIMULATION</span>
+				<br>
+				<span class="lead unit"><strong>5</strong></span>
+				<span class="muted"> &emsp;PARTICIPANTS</span>
+				<br>
+				<span class="lead unit"><strong>1</strong></span>
+				<span class="muted"> &emsp;AUDITOR</span>
+			</td>
+			<td width="25%">
+				<p class="centered"><i class="icon-ok-circle text-success"></i> FINISHED</p>
+				
+			</td>
+		</tr>
+		<tr class="expired">
+			<td><h3> Basic Trial 5</h3>
+					<p class="muted">Lomo art party flannel messenger bag gastropub vice.</p>
+					<a href="http://willinteractive.com" class="btn hidden-phone">Manage Trial</a>
+			</td>
+			<td width="20%" class="hidden-phone">
+				<span class="lead unit"><strong>1</strong></span>
+				<span class="muted"> &emsp;SIMULATION</span>
+				<br>
+				<span class="lead unit"><strong>5</strong></span>
+				<span class="muted"> &emsp;PARTICIPANTS</span>
+				<br>
+				<span class="lead unit"><strong>1</strong></span>
+				<span class="muted"> &emsp;AUDITOR</span>
+			</td>
+			<td width="25%">
+				<p class="centered"><i class="icon-ban-circle muted"></i> EXPIRED
+				<br>
+					<em>on July 5, 2012</em>
+				</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p class="pull-right">
+	Showing 5 of 7 &mdash; <a href="javascript:;">Show All Trials <i class="icon-caret-down"></i></a>
+</p>
+
+<hr>
+
+<section class="row">
 	
 		<div class="span6">
 			<div class="widget widget-graph">
@@ -191,7 +178,7 @@
 		</div> <!-- .span6 -->
 </section>
 
-<section class="row-fluid">
+<section class="row">
 	<div class="span4">
 		<div class="widget">
 			<div class="widget-head">
