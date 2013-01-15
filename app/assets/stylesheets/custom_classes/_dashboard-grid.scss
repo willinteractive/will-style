@@ -2,8 +2,7 @@
 // Dashboard Sidebar ( Tracker )
 //
 
-#sidebar-header {
-	margin-bottom: 0;
+#grid-header {
 	
 	.btn-group > .btn-large {
 		@include box-shadow(none);
@@ -32,18 +31,14 @@
 	}
 }
 
-#dashboard-sidebar {
-  border-right: 1px solid $grayLighter;
-  border-left: 1px solid $grayLighter;
+#dashboard-grid {
 
-	li > a {
-		@include unStyleLink();
+	.well {
 		@include clearfix();
 		@include gradient-vertical(#f9f9f9,#eee);
     display: block;
-    padding: 10px 20px;
-    border-bottom: 1px solid $grayLighter;
 		font-weight: normal;
+ 		color: $gray;
     
     &>span {
 	    text-transform: uppercase;
@@ -53,13 +48,25 @@
 	    }
     }
    	
-   	&, h4>i {
-   		color: $gray;
+   	h2 {
+	   	margin-top: 0;
+	   	line-height: $baseLineHeight * 1.5;
+   	}
+   	h2>i {
+/* 	   	margin-right: -15px; */
+	   	color: $grayLight;
+	   	font-size: .9em;
    	}
    	
-   	h4>i {
-	   	margin-left: 5px;
-	   	font-size: 14px;
+   	p {
+	   	clear: both;
+	   	&:last-child {
+		   	margin-bottom: 0;
+	   	}
+   	}
+   	
+   	.label {
+	   	text-transform: uppercase;
    	}
    	
     &.new {
@@ -67,31 +74,14 @@
     	border-left: 10px solid $blue;
 		}
     
-    &.active, &.active:hover, &.active:focus {
-	    background: $grayDark;
-	    &, h4>i {
-		    color: rgba($white, .7);
-	    }
-	    h4 {
-		    color: #fff;
-	    }
-    }
-    
     &.expired {
 	    @include opacity(50);
-	    border-bottom-color: darken($grayLighter, 15%);
     }
     
     &:hover, &:focus {
 	    @include opacity(100);
 	    background: rgba($yellow, .1);
-	    border-bottom-color: $grayLighter;
     }
+		@include unStyleLink();
   }
-}
-
-a.load-more {
-  display: block;
-  padding: 10px;
-  text-align: center;
 }

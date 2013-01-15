@@ -30,11 +30,15 @@ class StaticPagesController < ApplicationController
   end
   
   def dashboard
-    @title = "Dashboard";
+    @title = "Default Dashboard";
   end
   
   def dashboard2
-    @title = "Dashboard with Sidebar";
+    @title = "Tracker Dashboard";
+  end
+  
+  def dashboard3
+    @title = "TestBed Dashboard";
   end
   
 end

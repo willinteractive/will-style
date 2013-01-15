@@ -31,3 +31,11 @@
 		text-shadow: none;
 	}
 }
+
+// gradients
+@mixin gradient-directional-stops($deg: 45deg, $startColor: #555, $startStop: 100%, $endColor: #333, $endStop: 100%) {
+  background-image: -moz-linear-gradient($deg, $startColor $startStop, $endColor $endStop); // FF 3.6+
+  background-image: -webkit-linear-gradient($deg, $startColor $startStop, $endColor $endStop); // Safari 5.1+, Chrome 10+
+  background-image: -o-linear-gradient($deg, $startColor $startStop, $endColor $endStop); // Opera 11.10
+  background-image: linear-gradient($deg, $startColor $startStop, $endColor $endStop); // Standard, IE10
+}

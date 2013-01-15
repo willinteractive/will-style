@@ -12,11 +12,11 @@
 	    		<li class="<%= 'active' if params[:controller] == 'static_pages' && params[:action] == 'home' %>">
 						<%= link_to "Home", root_path %>
 					</li>
-					<li class="<%= 'active' if params[:controller] == 'static_pages' && params[:action] == 'dashboard' %>">
-						<%= link_to "Dashboard", dashboard_path %>
-					</li>
-					<li class="<%= 'active' if params[:controller] == 'static_pages' && params[:action] == 'dashboard2' %>">
-						<%= link_to "Dashboard w/ Sidebar", dashboard2_path %>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dashboards <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<%= render "navigation/dashboard_links_list" %>
+						</ul>
 					</li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">UI Elements <b class="caret"></b></a>

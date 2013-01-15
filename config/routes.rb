@@ -9,6 +9,7 @@ Template::Application.routes.draw do
   match '/tables',     to: 'static_pages#tables'
   match '/dashboard',  to: 'static_pages#dashboard'  
   match '/dashboard2',  to: 'static_pages#dashboard2'  
+  match '/dashboard3',  to: 'static_pages#dashboard3'  
 
   resources :products
 
