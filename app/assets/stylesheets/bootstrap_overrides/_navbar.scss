@@ -7,22 +7,23 @@
 // -------------
 
 .navbar-inner {
-	border-bottom: $double-border;
   @include border-radius(0);
   @include box-shadow(none);
+	border-bottom: $double-border;
 	a { font-weight: normal; }
 }
 
 // Brand: website or project name
 // -------------------------
 .navbar .brand {
+	@include unStyleLink();
 	padding-top: 30px;
 	padding-bottom: 10px;
-	padding-left: 110px !important;
-	text-transform: uppercase;
+	padding-left: 100px !important;
 	background: url('Logo-w80.png') no-repeat 20px 10px;
-	font-size: $baseFontSize * 1.5;
-	@include unStyleLink();
+	text-transform: uppercase;
+	font-size: $baseFontSize * 1.8;
+	font-family: $headingsFontFamily;
 }
 
 // Navbar search
@@ -59,22 +60,22 @@
 	filter: none;
 }
 .navbar .btn-navbar .icon-bar {
+  @include border-radius(0px);
+  @include box-shadow(none);
   display: block;
   width: 18px;
   height: 1px;
   background-color: rgba(#f5f5f5, .5);
-  @include border-radius(0px);
-  @include box-shadow(none);
 }
 
 // Inverted navbar
 // -------------------------
 .navbar-inverse {
   .navbar-inner {
+		border-bottom: $double-border;
+		background-repeat: repeat;
 		filter: none; // removes gradient bg so background img can show in IE
 		background-image: url('header_bg.png');
-		background-repeat: repeat;
-		border-bottom: $double-border;
   }
 	
 	.nav .dropdown-menu .active > a,
