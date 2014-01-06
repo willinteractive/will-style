@@ -7,6 +7,9 @@ bundle install
 echo "==============="
 echo "done!"
 
+echo "Setting Up Rails"
+rake rails:update:bin
+
 echo ""
 echo "Reseting Database"
 echo "================="
@@ -23,7 +26,8 @@ echo ""
 echo "Adding app to pow & restarting"
 echo "======================="
 echo "  Adding symlink..."
-ln -s $PWD/ ~/.pow/will-style-guide
+ln -s $PWD/ ~/.pow/will-style
+
 echo "  restart..."
 touch tmp/restart.txt
 echo "================="

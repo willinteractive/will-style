@@ -1,15 +1,15 @@
 Template::Application.routes.draw do
   root to: 'static_pages#home'
   
-  match '/buttons',    to: 'static_pages#buttons'
-  match '/forms',      to: 'static_pages#forms'
-  match '/other',      to: 'static_pages#other'
-  match '/icons',      to: 'static_pages#icons'
-  match '/general',    to: 'static_pages#general'
-  match '/tables',     to: 'static_pages#tables'
-  match '/dashboard',  to: 'static_pages#dashboard'  
-  match '/dashboard2',  to: 'static_pages#dashboard2'  
-  match '/dashboard3',  to: 'static_pages#dashboard3'  
+  get '/buttons',    to: 'static_pages#buttons'
+  get '/forms',      to: 'static_pages#forms'
+  get '/other',      to: 'static_pages#other'
+  get '/icons',      to: 'static_pages#icons'
+  get '/general',    to: 'static_pages#general'
+  get '/tables',     to: 'static_pages#tables'
+  get '/dashboard',  to: 'static_pages#dashboard'  
+  get '/dashboard2',  to: 'static_pages#dashboard2'  
+  get '/dashboard3',  to: 'static_pages#dashboard3'  
 
   resources :products
 

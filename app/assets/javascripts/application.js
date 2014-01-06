@@ -18,19 +18,19 @@
 // -------- MODERNIZR
 //= require modernizr
 // -------- BOOTSTRAP (only require ones that are used VERY often)
-//= require bootstrap-transition
-// require bootstrap-affix
-//= require bootstrap-alert
-// require bootstrap-button
-// require bootstrap-carousel
-//= require bootstrap-collapse
-//= require bootstrap-dropdown
-// require bootstrap-modal
-// require bootstrap-scrollspy
-// require bootstrap-tab
-//= require bootstrap-tooltip
-//= require bootstrap-popover
-// require bootstrap-typeahead
+//= require bootstrap/transition
+// require bootstrap/affix
+//= require bootstrap/alert
+// require bootstrap/button
+// require bootstrap/carousel
+//= require bootstrap/collapse
+//= require bootstrap/dropdown
+// require bootstrap/modal
+// require bootstrap/scrollspy
+// require bootstrap/tab
+//= require bootstrap/tooltip
+//= require bootstrap/popover
+// require bootstrap-/ypeahead
 //= require bootstrap_inits
 // -------- DATATABLES (files are required in dataTables_inits)
 // -------- FLOT (files are required in flot_inits)

@@ -52,7 +52,7 @@ div.dataTables_filter {
 		*border-bottom-width: 2px;
 	  @include border-radius(6px);
 	  @include box-shadow(0 5px 10px rgba(0,0,0,.2));
-	  @include background-clip(padding-box);
+	  // @include background-clip(padding-box);
 		button, a {
 			text-decoration: none;
 			border: none;
