@@ -20,8 +20,9 @@ gem 'sass-rails'
 gem 'bootstrap-sass'
 # gem 'twitter-bootstrap-rails'
 
-# FontAwesome the Sass way : https://github.com/littlebtc/font-awesome-sass-rails
+# FontAwesome for Rails
 # gem 'font-awesome-sass-rails'
+gem 'font-awesome-rails'
 
 #jQuery Datatables
 gem 'jquery-datatables-rails'
