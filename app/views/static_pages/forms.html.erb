@@ -7,145 +7,141 @@
 
 </div>
 
-<div class="row-fluid">
+<div class="row">
 	
-	<div class="span8 offset2">
+	<div class="col-sm-8 col-sm-offset-2">
 		<form class="form-horizontal">
-	  	<div class="control-group">
-		    <label class="control-label" for="input">Label text for input</label>
-		    <div class="controls">
-		    	<input type="text" id="input" placeholder="Input text">
+	  	<div class="form-group">
+		    <label class="col-sm-4 control-label" for="input">Label text for input</label>
+		    <div class="col-sm-8">
+		    	<input class="form-control" type="text" id="input" placeholder="Input text">
 		    </div>
 	  	</div>
 	  
-			<div class="control-group">
-		    <label class="control-label" for="prepend">Prepend text</label>
-		    <div class="controls">
-		      <div class="input-prepend">
-					  <span class="add-on">@</span><input id="prepend" type="text">
+			<div class="form-group">
+		    <label class="col-sm-4 control-label" for="prepend">Prepend text</label>
+		    <div class="col-sm-8">
+		      <div class="input-group">
+					  <span class="input-group-addon">@</span>
+					  <input class="form-control" id="prepend" type="text">
 					</div>
-					<span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
+					<p class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</p>
 		    </div>
 		  </div>
 	
-			<div class="control-group">
-		    <label class="control-label" for="append">Append text</label>
-		    <div class="controls">
-		      <div class="input-append">
-					  <input id="append" type="text"><span class="add-on">.00</span>
-					</div>
-					<span class="help-inline">Inline help text</span>
-		    </div>
-		  </div>
-	
-			<div class="control-group">
-		    <label class="control-label" for="appendedPrependedInput">Append &amp; Prepend text</label>
-		    <div class="controls">
-					<div class="input-prepend input-append">
-					  <span class="add-on">$</span><input id="appendedPrependedInput" size="16" type="text"><span class="add-on">.00</span>
+			<div class="form-group">
+		    <label class="col-sm-4 control-label" for="append">Append text</label>
+		    <div class="col-sm-8">
+		      <div class="input-group">
+					  <input class="form-control" id="append" type="text">
+					  <span class="input-group-addon">.00</span>
 					</div>
 		    </div>
 		  </div>
 	
-			<div class="control-group">
-				<label class="control-label" for="appendedInputButton">Append with Button</label>
-				<div class="controls">
-					<div class="input-append">
-					  <input id="appendedInputButton" type="text"><button class="btn" type="button">Go!</button>
+			<div class="form-group">
+		    <label class="col-sm-4 control-label" for="appendedPrependedInput">Append &amp; Prepend text</label>
+		    <div class="col-sm-8">
+					<div class="input-group">
+					  <span class="input-group-addon">$</span>
+					  <input class="form-control" id="appendedPrependedInput" size="16" type="text">
+					  <span class="input-group-addon">.00</span>
+					</div>
+		    </div>
+		  </div>
+	
+			<div class="form-group">
+				<label class="col-sm-4 control-label" for="appendedInputButton">Append with Button</label>
+				<div class="col-sm-8">
+					<div class="input-group">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button">Go!</button>
+						</span>
+					  <input class="form-control" id="appendedInputButton" type="text">
 					</div>
 				</div>
 			</div>
 
-			<div class="control-group">
-				<label class="control-label">Checkboxes</label>
-				<div class="controls">
-					
-					<input type="checkbox" id="inlineCheckbox1" value="option1" >
-					<label for="inlineCheckbox1" class="checkbox inline">
-					  01
+			<div class="form-group">
+				<label class="col-sm-4 control-label">Checkboxes</label>
+				<div class="col-sm-8">
+					<label class="checkbox-inline">
+					  <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
 					</label>
-					
-					<input type="checkbox" id="inlineCheckbox2" value="option2">
-					<label for="inlineCheckbox2" class="checkbox inline">
-					  02
+					<label class="checkbox-inline">
+					  <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
 					</label>
-					
-					<input type="checkbox" id="inlineCheckbox3" value="option3">
-					<label id="inlineCheckbox3" class="checkbox inline">
-					   03
+					<label class="checkbox-inline">
+					  <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
 					</label>
 				</div>
 			</div>
 
-			<div class="control-group">
-				<label class="control-label">Radio Buttons</label>
-				<div class="controls">
-					<input type="radio" name="optionsRadios" id="optionsRadios1" checked>
-					<label class="radio inline" for="optionsRadios1">
-					  Aa
+			<div class="form-group">
+				<label class="col-sm-4 control-label">Radio Buttons</label>
+				<div class="col-sm-8">
+					<label class="radio-inline">
+					  <input type="radio" id="inlineradio1" value="option1"> 1
 					</label>
-					
-					<input type="radio" name="optionsRadios" id="optionsRadios2">
-					<label class="radio inline" for="optionsRadios2">
-					  Bb
+					<label class="radio-inline">
+					  <input type="radio" id="inlineradio2" value="option2"> 2
 					</label>
-					
-					<input type="radio" name="optionsRadios" id="optionsRadios3">
-					<label class="radio inline" for="optionsRadios3">
-					  Cc
+					<label class="radio-inline">
+					  <input type="radio" id="inlineradio3" value="option3"> 3
 					</label>
+
 				</div>
 			</div>	
 		
-			<div class="control-group">
-				<label class="control-label" for="focusedInput">Focused input</label>
-				<div class="controls">
-					<input class="input-xlarge" id="focusedInput" type="text" value="This is focused..."  autofocus="autofocus">
+			<div class="form-group">
+				<label class="col-sm-4 control-label" for="focusedInput">Focused input</label>
+				<div class="col-sm-8">
+					<input class="form-control" id="focusedInput" type="text" value="This is focused..."  autofocus="autofocus">
 				</div>
 			</div>
 		
-			<div class="control-group">
-				<label class="control-label" for="textArea">Text area</label>
-				<div class="controls">
-					<textarea id="textArea"  rows="3"></textarea>
+			<div class="form-group">
+				<label class="col-sm-4 control-label" for="textArea">Text area</label>
+				<div class="col-sm-8">
+					<textarea class="form-control" rows="3"></textarea>
 				</div>
 			</div>
 		
-			<div class="control-group">
-				<label class="control-label" for="disabledInput">Disables input</label>
-				<div class="controls">
-					<input class="input-xlarge" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
+			<div class="form-group">
+				<label class="col-sm-4 control-label" for="disabledInput">Disables input</label>
+				<div class="col-sm-8">
+					<input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
 				</div>
 			</div>
 		
-			<div class="control-group warning">
-			  <label class="control-label" for="inputWarning">Input with warning</label>
-			  <div class="controls">
-			    <input type="text" id="inputWarning">
-			    <span class="help-inline">Something may have gone wrong</span>
+			<div class="form-group has-warning">
+			  <label class="col-sm-4 control-label" for="inputWarning">Input with warning</label>
+			  <div class="col-sm-8">
+			    <input class="form-control" type="text" id="inputWarning">
+			    <p class="help-block">Something may have gone wrong</p>
 			  </div>
 			</div>
 		
-			<div class="control-group error">
-			  <label class="control-label" for="inputError">Input with error</label>
-			  <div class="controls">
-			    <input type="text" id="inputError">
-			    <span class="help-inline">Please correct the error</span>
+			<div class="form-group has-error">
+			  <label class="col-sm-4 control-label" for="inputError">Input with error</label>
+			  <div class="col-sm-8">
+			    <input class="form-control" type="text" id="inputError">
+			    <p class="help-block">Please correct the error</p>
 			  </div>
 			</div>
 		
-			<div class="control-group success">
-			  <label class="control-label" for="inputSuccess">Input with success</label>
-			  <div class="controls">
-			    <input type="text" id="inputSuccess">
-			    <span class="help-inline">Woohoo!</span>
+			<div class="form-group has-success">
+			  <label class="col-sm-4 control-label" for="inputSuccess">Input with success</label>
+			  <div class="col-sm-8">
+			    <input class="form-control" type="text" id="inputSuccess">
+			    <p class="help-block">Woohoo!</p>
 			  </div>
 			</div>
 		
-			<div class="control-group">
-				<label class="control-label">Select</label>
-				<div class="controls">
-					<select>
+			<div class="form-group">
+				<label class="col-sm-4 control-label">Select</label>
+				<div class="col-sm-8">
+					<select class="form-control">
 					  <option>1</option>
 					  <option>2</option>
 					  <option>3</option>
@@ -155,20 +151,21 @@
 				</div>
 			</div>
 			
-			<div class="control-group">
-				<label class="control-label">On/Off Switch</label>
-				<div class="controls switch">
-					  <input type="checkbox">
+			<div class="form-group">
+				<label class="col-sm-4 control-label">On/Off Switch</label>
+				<div class="col-sm-8 switch">
+					  <input class="form-control" type="checkbox">
 				</div>
 			</div>
+			
+			<div class="form-group">
+		    <div class="col-sm-8 col-sm-offset-4">
+		      <button type="submit" class="btn btn-primary">Save Changes</button>
+				  <button type="button" class="btn btn-default">Cancel</button>
+		    </div>
+		  </div>
 		
 		</form>
-		
-		
-		<div class="form-actions">
-		  <button type="submit" class="btn btn-primary">Save changes</button>
-		  <button type="button" class="btn">Cancel</button>
-		</div>
 		
 	</div>
 	

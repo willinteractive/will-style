@@ -8,12 +8,12 @@
 </div>
 
 <% @colors = [
-	{"color"=>"default","class"=>"", 				"icon"=>"cog"},
+	{"color"=>"default","class"=>"default",	"icon"=>"cog"},
 	{"color"=>"blue", 	"class"=>"info", 		"icon"=>"info-sign"},
 	{"color"=>"green", 	"class"=>"success", "icon"=>"ok"},
 	{"color"=>"orange", "class"=>"warning", "icon"=>"warning-sign"},
 	{"color"=>"red", 		"class"=>"danger", 	"icon"=>"trash"},
-	{"color"=>"dark", 	"class"=>"inverse", "icon"=>"plane"},
+	{"color"=>"link", 	"class"=>"link", 		"icon"=>"plane"},
 ] %>
 
 <% @otherColors = [
@@ -22,17 +22,17 @@
 	{"color"=>"purple", "class"=>""}
 ] %>
 
-<div class="row-fluid">
+<div class="row">
 	<% @colors.each do |c| %>
 	<h4><%= c['color'] %> <small>.<% if c['class'] == "success" %>primary .success<% else %><%= c['class'] %><% end %></small></h4>
 	<div class="row-fluid">
-		<div class="span4">
+		<div class="col-sm-4">
 			<% if c['color'] == "default" %>
 			<div class="color-test gray"></div>
 			<div class="color-test grayLight "></div>
 			<div class="color-test grayLighter"></div>
 			<div class="color-test white"></div>
-			<% elsif c['color'] == "dark" %>
+			<% elsif c['color'] == "link" %>
 			<div class="color-test black"></div>
 			<div class="color-test grayDarker "></div>
 			<div class="color-test grayDark"></div>
@@ -43,22 +43,21 @@
 			<div class="color-test <%= c['color'] %> opaque"></div>
 			<% end %>
 		</div>
-		<div class="span8">
+		<div class="col-sm-8">
 			<button class="btn btn-<%= c['class'] %> " type="button"><i class="icon-<%= c['icon'] %>"></i>&ensp; .btn</button>
-			<button class="btn btn-large btn-<%= c['class'] %> " type="button"><i class="icon-<%= c['icon'] %> icon-2x"></i>&ensp; .btn-large</button>
-			<button class="btn btn-small btn-<%= c['class'] %> " type="button">.btn-small</button>
-			<button class="btn btn-mini btn-<%= c['class'] %> " type="button">.btn-mini</button>
+			<button class="btn btn-lg btn-<%= c['class'] %> " type="button"><i class="icon-<%= c['icon'] %> icon-2x"></i>&ensp; .btn-large</button>
+			<button class="btn btn-sm btn-<%= c['class'] %> " type="button">.btn-small</button>
+			<button class="btn btn-xs btn-<%= c['class'] %> " type="button">.btn-mini</button>
 			<button class="btn btn-<%= c['class'] %> disabled " type="button">.disabled</button>
 			<span class="label label-<%= c['class'] %>">.label</span>
-			<span class="badge badge-<%= c['class'] %>">.badge</span>
 		</div>
 	</div>
 	<% end %>
 	
-	<div class="row-fluid">
+	<div class="row">
 		<% @otherColors.each do |c| %>
 
-		<div class="span4">
+		<div class="col-sm-4">
 			<h4><%= c['color'] %></h4>
 			<div class="color-test <%= c['color'] %> darker"></div>
 			<div class="color-test <%= c['color'] %>"></div>
@@ -75,19 +74,19 @@
 	<h2>Other Button Types</h2>
 	
 	<h5>.btn (all types look the same)</h5>
-	<a class="btn" href="#">Link</a> <button class="btn" type="submit">Button</button> <input class="btn" type="button" value="Input"> <input class="btn" type="submit" value="Submit">
+	<a class="btn btn-default" href="#">Link</a> <button class="btn btn-default" type="submit">Button</button> <input class="btn btn-default" type="button" value="Input"> <input class="btn btn-default" type="submit" value="Submit">
 	
 	<h5>.btn-group</h5>
 	<div class="btn-group">
-	  <button class="btn">1</button>
-	  <button class="btn">2</button>
-	  <button class="btn">3</button>
-	  <button class="btn">4</button>
+	  <button class="btn btn-default">1</button>
+	  <button class="btn btn-default">2</button>
+	  <button class="btn btn-default">3</button>
+	  <button class="btn btn-default">4</button>
 	</div>
 
 	<h5>.btn-group > .dropdown-toggle</h5>
 	<div class="btn-group">
-    <button class="btn dropdown-toggle" data-toggle="dropdown">Button dropdowns <span class="caret"></span></button>
+    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">Button dropdowns <span class="caret"></span></button>
    	<ul class="dropdown-menu">
        <li><a href="#">Action</a></li>
        <li><a href="#">Another action</a></li>
@@ -99,8 +98,8 @@
 
 	<h5>.btn-group > .btn + .dropdown-toggle</h5>
 	<div class="btn-group">
-      	<button class="btn">Split button dropdowns</button>
-     	<button class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+    	<button class="btn btn-default">Split button dropdowns</button>
+     	<button class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
      	<ul class="dropdown-menu">
          <li><a href="#">Action</a></li>
          <li><a href="#">Another action</a></li>
@@ -112,8 +111,8 @@
 
 	<h5>.btn-group.dropup > .btn + .dropdown-toggle</h5>
 	<div class="btn-group dropup">
-     <button class="btn">Dropup</button>
-     <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+     <button class="btn btn-default">Dropup</button>
+     <button class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
      <ul class="dropdown-menu">
        <li><a href="#">Action</a></li>
        <li><a href="#">Another action</a></li>
@@ -123,14 +122,12 @@
      </ul>
    </div>
 
-	<h5>.pagination > ul > li > a</h5>
-	<div class="pagination">
-      <ul>
-        <li class="disabled"><a href="#">«</a></li>
-        <li class="active"><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">»</a></li>
-    	</ul>
-    </div>
+	<h5>ul.pagination > li > a</h5>
+  <ul class="pagination">
+    <li class="disabled"><a href="#">«</a></li>
+    <li class="active"><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">»</a></li>
+	</ul>
 </div>
