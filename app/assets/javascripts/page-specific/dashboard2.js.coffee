@@ -1,5 +1,4 @@
 #= require jquery.peity
-#= require bootstrap-button
 
 $(document).ready ->
   $(".peity .bar").peity "bar",

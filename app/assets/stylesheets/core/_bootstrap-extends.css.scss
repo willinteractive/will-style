@@ -1,0 +1,43 @@
+/* 
+// 
+// RAILS EXTENDS BOOTSTRAP
+// ( these are rails specific but we want them to act like bootstrap classes )
+
+// AND
+
+// BOOTSTRAP CUSTOMIZATION
+// ( altering styles after they are applied - if there is no variable that handles it )
+// 
+*/
+
+// SCAFFOLIDING
+	// body reset height
+	html, body {
+		height: 100%;
+	}
+
+	// creating a dark hr
+	hr.dark {
+		border-top-color: #ddd;
+	}
+
+// TYPE
+// CODE
+// GRID
+// TABLES
+
+// FORMS
+	.field_with_errors {
+		@extend .has-error;
+	}
+	
+	// Make sure expanding text areas have a reasonable base height
+	textarea.expanding {
+		min-height: 80px;
+	}
+	
+	input.filter {
+		margin-bottom: 15px;
+	}
+
+// BUTTONS

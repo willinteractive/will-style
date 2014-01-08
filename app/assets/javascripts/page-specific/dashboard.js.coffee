@@ -1,5 +1,4 @@
 #= require ../flot_inits
-#= require bootstrap-button
 
 $(document).ready ->
   graphData = [

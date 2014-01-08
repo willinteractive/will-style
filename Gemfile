@@ -8,7 +8,6 @@ group :development do
   gem 'annotate'
 end
 
-gem 'sass-rails'
 gem 'coffee-rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -17,11 +16,12 @@ gem 'coffee-rails'
 gem 'uglifier'
 
 # Sass and Bootstrap
+gem 'sass-rails'
 gem 'bootstrap-sass'
 # gem 'twitter-bootstrap-rails'
 
 # FontAwesome the Sass way : https://github.com/littlebtc/font-awesome-sass-rails
-gem 'font-awesome-sass-rails'
+# gem 'font-awesome-sass-rails'
 
 #jQuery Datatables
 gem 'jquery-datatables-rails'
@@ -30,10 +30,15 @@ gem 'jquery-datatables-rails'
 gem "flot-rails"
 
 #Modernizr
-gem 'modernizr'
+# gem 'modernizr'
 
 
 gem 'jquery-rails'
+
+group :development do
+  # View source maps in Chrome
+  gem 'sass-rails-source-maps'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
