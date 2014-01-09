@@ -9,10 +9,10 @@
 
 <% @colors = [
 	{"color"=>"default","class"=>"default",	"icon"=>"cog"},
-	{"color"=>"blue", 	"class"=>"info", 		"icon"=>"info-sign"},
-	{"color"=>"green", 	"class"=>"success", "icon"=>"ok"},
-	{"color"=>"orange", "class"=>"warning", "icon"=>"warning-sign"},
-	{"color"=>"red", 		"class"=>"danger", 	"icon"=>"trash"},
+	{"color"=>"blue", 	"class"=>"info", 		"icon"=>"info-circle"},
+	{"color"=>"green", 	"class"=>"success", "icon"=>"check"},
+	{"color"=>"orange", "class"=>"warning", "icon"=>"exclamation-triangle"},
+	{"color"=>"red", 		"class"=>"danger", 	"icon"=>"trash-o"},
 	{"color"=>"link", 	"class"=>"link", 		"icon"=>"plane"},
 ] %>
 
@@ -44,10 +44,10 @@
 			<% end %>
 		</div>
 		<div class="col-sm-8">
-			<button class="btn btn-<%= c['class'] %> " type="button"><i class="icon-<%= c['icon'] %>"></i>&ensp; .btn</button>
-			<button class="btn btn-lg btn-<%= c['class'] %> " type="button"><i class="icon-<%= c['icon'] %> icon-2x"></i>&ensp; .btn-large</button>
-			<button class="btn btn-sm btn-<%= c['class'] %> " type="button">.btn-small</button>
-			<button class="btn btn-xs btn-<%= c['class'] %> " type="button">.btn-mini</button>
+			<button class="btn btn-<%= c['class'] %> " type="button"><%= fa_icon c['icon'] %>&ensp; .btn</button>
+			<button class="btn btn-lg btn-<%= c['class'] %> " type="button"><%= fa_icon c['icon'] %>&ensp; .btn-lg</button>
+			<button class="btn btn-sm btn-<%= c['class'] %> " type="button">.btn-sm</button>
+			<button class="btn btn-xs btn-<%= c['class'] %> " type="button">.btn-xs</button>
 			<button class="btn btn-<%= c['class'] %> disabled " type="button">.disabled</button>
 			<span class="label label-<%= c['class'] %>">.label</span>
 		</div>

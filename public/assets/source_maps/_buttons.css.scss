@@ -1,0 +1,25 @@
+/* 
+// 
+// BOOTSTRAP VARIABLE OVERRIDES
+// 
+*/
+
+
+// Base styles
+// -------------------------
+
+// Core
+.btn {
+	vertical-align: baseline;
+}
+
+
+// Button Sizes
+// -------------------------
+
+// make the large buttons use the headings font
+.btn-lg {
+	font-family: $headings-font-family;
+	font-size: $font-size-large*1.5;
+	text-transform: uppercase;
+}

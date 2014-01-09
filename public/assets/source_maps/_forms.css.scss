@@ -1,13 +1,12 @@
-//
-// Forms
-// --------------------------------------------------
+/* 
+// 
+// FORMS
+// 
+*/
 
 
-// GENERAL STYLES
-// --------------
-
-// DISABLED STATE
-// --------------
+// Common form controls
+// ---------------------------
 
 // remove box shadow and reduce text color from 
 // Disabled and read-only inputs
@@ -21,10 +20,19 @@
 }
 
 
-
-// CUSTOM ELEMENTS
+// Feedback states
 // ---------------------------
 
+// extend the rails added class to inherit from bootstrap's has-error class
+.field_with_errors {
+	@extend .has-error;
+}
+
+
+// Custom elements
+// ---------------------------
+
+/*  THIS NEEDS TO BE RE-DONE (CH)
 //  create an on/off switch ONLY for Chrome and Safari
 @media screen and (-webkit-min-device-pixel-ratio:0) {
 	.generatedcontent .switch {
@@ -56,7 +64,7 @@
 	    // x and checkmarks
 	    &:after {	     
 				content: "";
-/* 				background-image: url($iconWhiteSpritePath); */
+				background-image: url($iconWhiteSpritePath);
 				background-position: -288px 0; 
 	      display: block;
 	      width: 14px;
@@ -101,3 +109,4 @@
 		left: 4px;
 	}
 }
+*/
