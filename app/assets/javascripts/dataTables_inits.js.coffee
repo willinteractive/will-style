@@ -1,7 +1,7 @@
 # Place all the behaviors and hooks related to DataTables and other Table functionality here.
 
 #= require dataTables/jquery.dataTables
-#= require dataTables/jquery.dataTables.bootstrap
+#= require dataTables/jquery.dataTables.bootstrap3
 #= require dataTables/extras/ColVis
 #= require dataTables/extras/ZeroClipboard.js
 #= require dataTables/extras/TableTools
