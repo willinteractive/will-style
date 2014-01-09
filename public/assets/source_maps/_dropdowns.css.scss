@@ -1,0 +1,13 @@
+/* 
+// 
+// BOOTSTRAP VARIABLE OVERRIDES
+// 
+*/
+
+
+// The dropdown menu (ul)
+// -------------------------
+
+.dropdown-menu > li > a {
+	@include unStyleLink();
+}

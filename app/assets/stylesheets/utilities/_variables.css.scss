@@ -74,13 +74,19 @@ $table-border-color: 		$gray-lighter; // table and cell border
 // BUTTONS
 // -------------------------
 $btn-font-weight: 			700;
-
 $btn-default-color:     $text-color;
+
 
 // FORMS
 // -------------------------
 $input-border-focus:    $blueLight;
 $input-bg-disabled: 		none;
+
+
+// DROPDOWNS
+// -------------------------
+$dropdown-link-hover-bg:    lighten($text-color, 60%);
+$dropdown-caret-color:      $text-color;
 
 
 // NAVBAR
