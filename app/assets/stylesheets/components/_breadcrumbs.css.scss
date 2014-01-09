@@ -1,0 +1,25 @@
+/* 
+// 
+// BOOTSTRAP VARIABLE OVERRIDES
+// 
+*/
+
+
+.breadcrumb {
+	border: 1px solid $gray-lighter;
+	
+	a.active {
+		font-weight: 400;
+		@include unStyleLink();
+		color: $gray;
+	}
+}
+
+
+// Custom
+// -------------------------
+
+// increase font-size for large breadcrumbs
+.large-breadcrumb {
+	font-size: 2.15em;
+}

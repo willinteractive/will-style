@@ -127,6 +127,12 @@ $thumbnail-bg:                none;
 $thumbnail-border-radius:     0px;
 
 
+// BREADCRUMBS
+// -------------------------
+$breadcrumb-active-color: 		$gray;
+$breadcrumb-bg: 							lighten($gray-lighter, 10%);
+
+
 /* 
 // 
 // CUSTOM VARIABLES
