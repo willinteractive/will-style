@@ -93,19 +93,3 @@
 }
 
 
-// Big Stats
-// -------------------------
-
-.big_stats {
-	text-align: center;
-	h4 { margin: 0; }
-	&.well {
-		padding: 10px;
-	}
-	.value {
-		font-size: 4em;
-		line-height: 1.2em;
-		font-family: $headingsFontFamily;
-		font-weight: $headingsFontWeight;
-	}
-}

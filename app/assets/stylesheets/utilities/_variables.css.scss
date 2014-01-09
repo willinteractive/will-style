@@ -57,6 +57,8 @@ $font-family-sans-serif:  'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-
 
 $font-size-base:          14px;
 
+$font-size-h1:            floor(($font-size-base * 3.75)); // ~52px
+
 $headings-font-family:    'Open Sans Condensed', "Helvetica Neue", Helvetica, Arial, sans-serif;
 $headings-font-weight:    700;
 
@@ -81,6 +83,8 @@ $btn-default-color:     $text-color;
 
 // FORMS
 // -------------------------
+$input-color: 					$text-color;
+
 $input-border-focus:    $blueLight;
 $input-bg-disabled: 		none;
 
