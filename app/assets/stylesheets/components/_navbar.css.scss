@@ -1,0 +1,59 @@
+/* 
+// 
+// NAVBARS
+// 
+*/
+
+
+// Wrapper and base class
+// -------------------------
+
+.navbar {
+	border-bottom: $double-border;
+	a { 
+		font-weight: normal;
+	}
+}
+
+
+// Brand/project name
+// -------------------------
+
+a.navbar-brand {
+	@include unStyleLink();
+	padding-top: 30px;
+	padding-bottom: 10px;
+	padding-left: 100px !important;
+	background: url('Logo-w80.png') no-repeat 20px 10px;
+	text-transform: uppercase;
+	font-size: $font-size-large * 1.2;
+	font-family: $headings-font-family;
+}
+
+
+// Navbar nav links
+// -------------------------
+
+.navbar-nav {
+	// move the nav links down to be more aligned with logo
+	margin-top: $navbar-padding-vertical*2;
+}
+
+
+// Navbar form
+// -------------------------
+
+.navbar-form {
+	// move forms down to be more aligned with logo
+	margin-top: $navbar-padding-vertical*1.7;
+}
+
+
+// Alternate navbars:
+// Inverse navbar
+// -------------------------
+
+.navbar-inverse {
+	background-image: url('header_bg.png');
+	background-repeat: repeat;
+}
