@@ -21,7 +21,8 @@ body {
 // Links
 // -------------------------
 
-a {
+// style links if they are not a button - doesn't contain the .btn class
+a:not([class*="btn"]) {
 	font-weight: bold;
   text-decoration: underline;
   
@@ -36,6 +37,7 @@ a {
  
 // Add shadow to thumbnail style images
 .img-thumbnail {
+	background: $white;
   @include box-shadow(0 3px 3px rgba(0,0,0,.1));
 }
 
@@ -46,4 +48,17 @@ a {
 // creating a dark hr
 hr.dark {
 	border-top-color: #ddd;
+}
+
+hr.double {
+	border-top: $double-border;
+	border-bottom: none;
+}
+
+hr.short {
+  margin: $line-height-base/2 0;
+}
+
+hr.shorter {
+  margin: 0;
 }

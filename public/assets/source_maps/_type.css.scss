@@ -1,0 +1,51 @@
+/* 
+// 
+// TYPOGRAPHY
+// 
+*/
+
+// reset font-weight for Open Sans weight
+body { 
+	font-weight: 400;
+}
+
+
+// Headings
+// -------------------------
+
+// custom h1 styles
+h1, .h1 {
+	text-transform: uppercase;
+	text-shadow: rgba(black, .25) 0px 2px 2px;
+	color: $text-color;
+	small { 
+		text-shadow: none;
+	}
+}
+
+h4, h5, h6,
+.h4, .h5, .h6 {
+	font-family: $font-family-sans-serif;
+}
+
+
+// Page header
+// -------------------------
+
+.page-header {
+	border-bottom: $double-border;
+	margin-top: 0;
+}
+
+
+// Custom
+// -------------------------
+
+.no-wrap {
+	white-space: nowrap;
+}
+
+.force-wrap {
+	@include forceWrap();
+}
+

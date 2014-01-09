@@ -23,8 +23,15 @@
    ================================================================ */
 
 @import url('http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300|Open+Sans:400italic,700italic,400,700');
-
-
+// NOTE: do not use "bold" or "normal" font weights!
+			// for the condensed font use: 
+							// bold = 700
+							// normal = 300
+			// for the regular font use: 
+							// bold = 700
+							// normal = 400
+							
+							
 /* ===================================================================
 	 UTILITIES - Generic utility styles etc.
    ================================================================ */
@@ -35,6 +42,9 @@
 @import "bootstrap/mixins";
 @import "bootstrap/normalize";
 @import "bootstrap/print";
+
+// Custom mixins
+@import "utilities/mixins";
 
 // Custom print styles
 // -- should probably break this into multiple print styles per category (CH)
@@ -54,7 +64,7 @@
 
 // Custom
 @import "core/scaffolding";
-
+@import "core/type";
 
 /* ===================================================================
 	 LIBRARIES - External library CSS
