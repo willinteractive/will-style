@@ -1,20 +1,21 @@
-//
-// Thumbnails
-// --------------------------------------------------
+/* 
+// 
+// THUMBNAILS
+// 
+*/
+
 
 // The actual thumbnail (can be `a` or `div`)
 .thumbnail {
-  display: block;
 	position: relative;
   padding: 0px;
   border: none;
-  @include box-shadow(none);
 }
 
 
 // Add a hover state for linked versions only
 a.thumbnail:hover {
-  @include box-shadow(0 1px 4px rgba($linkColor,.25));
+  @include box-shadow(0 1px 4px rgba($link-color,.25));
 }
  
 // Images and captions

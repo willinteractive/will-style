@@ -30,7 +30,7 @@
 // require bootstrap/tab
 //= require bootstrap/tooltip
 //= require bootstrap/popover
-// require bootstrap-/ypeahead
+// require bootstrap/typeahead
 //= require bootstrap_inits
 // -------- DATATABLES (files are required in dataTables_inits)
 // -------- FLOT (files are required in flot_inits)
