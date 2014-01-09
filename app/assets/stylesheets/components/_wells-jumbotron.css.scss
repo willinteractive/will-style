@@ -15,3 +15,15 @@
   border: 1px solid $gray-lighter;
 	@include box-shadow(0px 1px 0px white);
 }
+
+
+// Custom
+// -------------------------
+
+// giving the admin areas a diagonal stripped background
+.well-admin {
+	background: none;
+	@include gradient-striped(#eee);
+	background-size: 8px 8px;
+	text-align: center;
+}
