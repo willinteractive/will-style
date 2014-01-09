@@ -1,0 +1,13 @@
+/* 
+// 
+// BOOTSTRAP VARIABLE OVERRIDES
+// 
+*/
+
+
+// COLORS
+// -------------------------
+
+.pagination > li > a {
+	@include unStyleLink();
+}
