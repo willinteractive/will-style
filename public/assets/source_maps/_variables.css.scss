@@ -42,7 +42,7 @@ $video:  rgb(59,154,199);
 // SCAFFOLDING
 // -------------------------
 $body-bg: 				darken($white, 1%);
-$text-color:			$gray;
+$text-color:			$gray-dark;
 
 
 // LINKS
@@ -75,6 +75,7 @@ $table-border-color: 		$gray-lighter; // table and cell border
 // -------------------------
 $btn-font-weight: 			700;
 
+$btn-default-color:     $text-color;
 
 // FORMS
 // -------------------------
