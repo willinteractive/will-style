@@ -24,7 +24,7 @@
 /* ===================================================================
 	 UTILITIES - Generic utility styles etc.
    ================================================================ */
-/* @import "utilities/variable_overrides"; */
+@import "utilities/variable_overrides";
 
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
@@ -33,6 +33,9 @@
 
 // Custom print styles
 @import "utilities/print";
+
+// custom double border
+$double-border: medium double #c5c5c5;
 
 /* ===================================================================
 	 CORE - Core styles; unclassed HTML elements etc.
