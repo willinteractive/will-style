@@ -73,13 +73,14 @@
 	 LIBRARIES - External library CSS
    ================================================================ */
 @import "dataTables/jquery.dataTables.bootstrap3";
+@import "libraries/offline";
 
 
 /* ===================================================================
-	 COMPONENTS - Objects and abstractions
+	 ELEMENTS - Objects and abstractions
    ================================================================ */
 @import "bootstrap/component-animations";
-// @import "bootstrap/glyphicons";
+// @import "bootstrap/glyphicons"; -- We are using FontAwesome instead because it's more powerful
 @import "bootstrap/dropdowns";
 @import "bootstrap/button-groups";
 @import "bootstrap/input-groups";
@@ -106,18 +107,24 @@
 @import "bootstrap/popovers";
 @import "bootstrap/carousel";
 
-// Custom
-@import "components/dropdowns";
-@import "components/navs";
-@import "components/navbar";
-@import "components/breadcrumbs";
-@import "components/pagination";
-@import "components/labels-badges";
-@import "components/thumbnails";
-@import "components/alerts";
-@import "components/wells-jumbotron";
+// Bootstrap Overrides & Extends
+@import "elements/dropdowns";
+@import "elements/navs";
+@import "elements/navbar";
+@import "elements/breadcrumbs";
+@import "elements/pagination";
+@import "elements/labels-badges";
+@import "elements/thumbnails";
+@import "elements/alerts";
+@import "elements/wells-jumbotron";
 
-@import "components/sticky-footer";
+// Custom
+@import "elements/sticky-footer";
+
+
+/* ===================================================================
+	 COMPONENTS - Components put together
+   ================================================================ */
 
 
 /* ===================================================================
