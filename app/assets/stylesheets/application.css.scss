@@ -12,14 +12,25 @@
 
 /*
  *= require font-awesome
+ *  -- HELPERS:
+ *  -- You can now use <%= fa_icon "arrow-up" %>
+ *  -- or <%= fa_stacked_icon "twitter", base: "square-o" %> (http://fontawesome.io/examples/#stacked)
+ *  -- see https://github.com/bokmann/font-awesome-rails for more helpers
  */
 
 /* ===================================================================
 	 FONTS - Import from Google Web Fonts
    ================================================================ */
 @import url('http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300|Open+Sans:400italic,700italic,400,700');
-
-
+// NOTE: do not use "bold" or "normal" font weights!
+			// for the condensed font use: 
+							// bold = 700
+							// normal = 300
+			// for the regular font use: 
+							// bold = 700
+							// normal = 400
+							
+							
 /* ===================================================================
 	 UTILITIES - Generic utility styles etc.
    ================================================================ */
@@ -32,6 +43,7 @@
 @import "bootstrap/print";
 
 // Custom print styles
+// -- should probably break this into multiple print styles per category (CH)
 @import "utilities/print";
 
 
@@ -47,14 +59,13 @@
 @import "bootstrap/buttons";
 
 // Custom
-@import "core/bootstrap-extends";
+@import "core/scaffolding";
 
 
 /* ===================================================================
 	 LIBRARIES - External library CSS
    ================================================================ */
 @import "dataTables/jquery.dataTables.bootstrap";
-@import "font-awesome";
 
 
 /* ===================================================================

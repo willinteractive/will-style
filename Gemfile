@@ -18,10 +18,8 @@ gem 'uglifier'
 # Sass and Bootstrap
 gem 'sass-rails'
 gem 'bootstrap-sass'
-# gem 'twitter-bootstrap-rails'
 
 # FontAwesome for Rails
-# gem 'font-awesome-sass-rails'
 gem 'font-awesome-rails'
 
 #jQuery Datatables

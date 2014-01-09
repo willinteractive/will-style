@@ -12,6 +12,10 @@
 
 /*
 
+ *  -- HELPERS:
+ *  -- You can now use <%= fa_icon "arrow-up" %>
+ *  -- or <%= fa_stacked_icon "twitter", base: "square-o" %> (http://fontawesome.io/examples/#stacked)
+ *  -- see https://github.com/bokmann/font-awesome-rails for more helpers
  */
 
 /* ===================================================================
@@ -24,7 +28,8 @@
 /* ===================================================================
 	 UTILITIES - Generic utility styles etc.
    ================================================================ */
-@import "utilities/variable_overrides";
+// Bootstrap variable overrides and custom variables
+@import "utilities/variables";
 
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
@@ -32,10 +37,9 @@
 @import "bootstrap/print";
 
 // Custom print styles
+// -- should probably break this into multiple print styles per category (CH)
 @import "utilities/print";
 
-// custom double border
-$double-border: medium double #c5c5c5;
 
 /* ===================================================================
 	 CORE - Core styles; unclassed HTML elements etc.
@@ -49,14 +53,13 @@ $double-border: medium double #c5c5c5;
 @import "bootstrap/buttons";
 
 // Custom
-@import "core/bootstrap-extends";
+@import "core/scaffolding";
 
 
 /* ===================================================================
 	 LIBRARIES - External library CSS
    ================================================================ */
 @import "dataTables/jquery.dataTables.bootstrap";
-@import "font-awesome";
 
 
 /* ===================================================================

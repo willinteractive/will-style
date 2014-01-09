@@ -11,15 +11,14 @@
 */
 
 // SCAFFOLDING
-	// body reset height
-	html, body {
-		height: 100%;
-	}
+	
 
-	// creating a dark hr
-	hr.dark {
-		border-top-color: #ddd;
-	}
+	
+.footer {
+	margin: $baseLineHeight 0;
+	padding-top: $baseLineHeight;
+	border-top: $double-border;
+}
 	
 
 // TYPE
@@ -32,13 +31,5 @@
 		@extend .has-error;
 	}
 	
-	// Make sure expanding text areas have a reasonable base height
-	textarea.expanding {
-		min-height: 80px;
-	}
-	
-	input.filter {
-		margin-bottom: 15px;
-	}
 
 // BUTTONS
