@@ -21,7 +21,7 @@ body {
 // Links
 // -------------------------
 
-// style links if they are not a button - most likely does not have a class applied to it
+// style links if they are not a button - doesn't contain the .btn class
 a:not([class*="btn"]) {
 	font-weight: bold;
   text-decoration: underline;

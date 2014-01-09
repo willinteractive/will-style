@@ -15,9 +15,9 @@
 }
 
 footer p {
+	margin: 0;
 	display: block;
 	height: 60px;
-	background: $gray-lighter;
-	margin: 0;
 	line-height: 60px;
+	border-top: $double-border;
 }
