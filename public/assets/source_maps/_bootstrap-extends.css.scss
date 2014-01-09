@@ -10,18 +10,6 @@
 // 
 */
 
-
-// ALERTS
-	.alert-error {
-		@extend .alert-danger;
-	}
-
-// PROGRESS-BARS
-	// globally setting the background color of the progress bars so we can see it
-	.progress.dark-bg {
-		background-color: darkgray;
-	}
-
 // MEDIA
 // LIST GROUP
 
