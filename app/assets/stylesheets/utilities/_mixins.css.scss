@@ -2,15 +2,6 @@
 // Custom Mixins
 // --------------------------------------------------
 
-// mixin for setting the button drop-shadows and glow on large buttons
-@mixin addShadowsAndGlow($darkerColor, $lighterColor) {
-	@include box-shadow(#{
-		0 3px 0 $darkerColor,
-		0 -1px 1px $lighterColor inset,
-		0 5px 3px rgba(0,0,0,.3)
-	});
-}
-
 // forcing text to wrap
 @mixin forceWrap() {
 	 -ms-word-break: break-all;
@@ -22,14 +13,6 @@
 	-webkit-hyphens: auto;
 	   -moz-hyphens: auto;
 	        hyphens: auto;
-}
-
-// make a tags not look like normal links
-@mixin unStyleLink() {
-	&, &:hover {
-		text-decoration: none;
-		text-shadow: none;
-	}
 }
 
 // gradients

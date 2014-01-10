@@ -9,8 +9,6 @@
 	border: 1px solid $gray-lighter;
 	
 	a.active {
-		font-weight: 400;
-		@include unStyleLink();
 		color: $gray;
 	}
 }

@@ -4,13 +4,6 @@
 // 
 */
 
-// Base class
-// -------------------------
-
-// unstyle all links within a nav
-.nav > li > a {
-  @include unStyleLink();
-}
 
 // Tabs
 // -------------------------

@@ -47,8 +47,8 @@ $text-color:			$gray-dark;
 
 // LINKS
 // -------------------------
-$link-color:             $text-color;
-$link-color-hover:       $text-color;
+$link-color:             $brand-primary;
+$link-color-hover:       $brand-primary;
 
 
 // TYPOGRAPHY
@@ -66,6 +66,7 @@ $headings-color:          $gray-dark;
 $headings-small-color:    $text-color;
 
 $text-muted:              $gray;
+
 
 // TABLES
 // -------------------------

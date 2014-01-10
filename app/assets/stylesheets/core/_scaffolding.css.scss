@@ -18,20 +18,6 @@ body {
 }
 
 
-// Links
-// -------------------------
-
-// style links if they are not a button - doesn't contain the .btn class
-a:not([class*="btn"]) {
-	font-weight: 700;
-  text-decoration: underline;
-  
-  &:hover, &:active, &:focus {
-		text-shadow: 0px 0px 7px rgba(0,0,0,.25); 
-  }
-}
-
-
 // Images
 // -------------------------
  
