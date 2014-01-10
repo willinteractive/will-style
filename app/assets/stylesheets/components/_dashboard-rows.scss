@@ -75,16 +75,6 @@ table.dashboard-row-table {
 			}
 		}
 	}
-	h3 {
-		margin: 0 0 10px 0;
-		line-height: $baseLineHeight;
-	}
-	.unit {
-		display: inline-block;
-		margin-bottom: 0;
-		width: 30px;
-		text-align: right;
-	}
 	p, .alert {
 		margin: 0;
 	}
@@ -101,14 +91,7 @@ table.dashboard-row-table {
 		text-align: center;
 	}
 	td[colspan="2"] {
-  	.btn {
-    	text-align: left;
-    	padding-left: 5px;
-    	padding-right: 5px;
-    	span {
-      	text-transform: uppercase;
-    	}
-  	}
+  	
   }
   
 	&+p {
