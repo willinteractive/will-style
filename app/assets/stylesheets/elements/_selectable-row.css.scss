@@ -1,0 +1,13 @@
+/* 
+// 
+// SELECTABLE ROWS - When at small screen sizes the whole row becomes selectable instead of just a button
+// 
+*/
+
+
+.selectable-rows .row {
+	&:hover, &:focus, &:active {
+		background: rgba($gray-lighter, .2);	
+		cursor: pointer;
+	}
+}

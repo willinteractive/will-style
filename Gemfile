@@ -29,7 +29,7 @@ gem 'jquery-datatables-rails'
 gem "flot-rails"
 
 #Modernizr
-# gem 'modernizr'
+gem 'modernizr'
 
 
 gem 'jquery-rails'

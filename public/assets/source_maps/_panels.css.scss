@@ -4,6 +4,14 @@
 // 
 */
 
+// Tables in panels
+// -------------------------
+
+.panel > .table {
+	// the table was cutting into the corner radii of the panel
+	@include border-bottom-radius($panel-border-radius);
+}
+
 
 // Optional heading
 // -------------------------

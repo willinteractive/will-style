@@ -16,12 +16,12 @@
 //= require jquery.placeholder.min.js
 //= require jquery_inits
 // -------- MODERNIZR
-// require modernizr
+//= require modernizr
 // -------- BOOTSTRAP (only require ones that are used VERY often)
 //= require bootstrap/transition
 // require bootstrap/affix
 //= require bootstrap/alert
-// require bootstrap/button
+//= require bootstrap/button
 // require bootstrap/carousel
 //= require bootstrap/collapse
 //= require bootstrap/dropdown

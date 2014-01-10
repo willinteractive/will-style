@@ -75,6 +75,7 @@
    ================================================================ */
 @import "dataTables/jquery.dataTables.bootstrap3";
 @import "libraries/offline";
+@import "libraries/piety";
 
 
 /* ===================================================================
@@ -122,7 +123,7 @@
 
 // Custom
 @import "elements/sticky-footer";
-
+@import "elements/selectable-row";
 
 /* ===================================================================
 	 COMPONENTS - Elements put together
@@ -134,6 +135,7 @@
 	 TEMPLATES - Page layouts
    ================================================================ */
 @import "templates/trials";
+
 
 /* ===================================================================
 	 POST - Styles that need to be at the end of the css
