@@ -2,45 +2,6 @@
 // Widgets
 // --------------------------------------------------
 
-.widget {
-	background: $widgetBackground;
-	border: 1px solid $widgetBordersColor;
-	@include box-shadow(0 2px 2px rgba($widgetBordersColor, .5));
-	margin-bottom: 20px;
-}
-
-// The header
-.widget-head {
-	display: table;
-	clear: both;
-	width: 100%;
-	@include gradient-vertical ($white, #f0f0f0);
-	border-bottom: 1px solid $widgetBordersColor;
-	@include box-shadow(0 1px 0 $white inset);
-	text-shadow: 0 1px $white;
-	h5 {
-		padding: 10px 14px;
-		margin: 0;
-	}
-	.btn {
-		border: none;
-		background: transparent;
-		@include border-radius(0px);
-		padding: 10px 12px;
-		border-right: 1px solid #d4d4d4;
-		text-align: center;
-	}
-	.btn.pull-right {
-		border-right: none;
-		border-left: 1px solid #d4d4d4;		
-	}
-}
-
-// Normal content
-.widget-content {
-	padding: 10px 14px;
-}
-
 // DataTables content
 .dTWidget {
 	position: relative;
