@@ -3,116 +3,151 @@
   <%= javascript_include_tag "page-specific/dashboard2" %>
 <% end %>
 
-<header id="sidebar-header" class="page-header clearfix">
-	<div id="main-dropdown" class="btn-group pull-left">
-	  <button class="btn btn-default btn-large dropdown-toggle" data-toggle="dropdown">Trials & Previews&ensp;<span class="caret muted"></span></button>
-	 	<ul class="dropdown-menu">
-	 		<li><a href="#">Just Trials</a></li>
-	     <li><a href="#">Just Previews</a></li>
-	   </ul>
+<div class="row page-header">
+	<div class="col-sm-4">
+		<div class="btn-group">
+		  <h2 class="dropdown-toggle" data-toggle="dropdown">
+		    Trials &amp; Previews <span class="caret"></span>
+		  </h2>
+		  <ul class="dropdown-menu" role="menu">
+				<li><a href="#">Just Trials</a></li>
+				<li><a href="#">Just Previews</a></li>
+		  </ul>
+		</div>
 	</div>
-	
-	<button class="btn btn-default pull-right" data-toggle="button"><i class="fa fa-arrow-up"></i><i class="fa fa-arrow-down"></i></button>
-
-	<div class="btn-group pull-right">
-	  <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">Recently Viewed <span class="caret"></span></button>
-	 	<ul class="dropdown-menu">
-	 		<li><a href="#">Recently Updated</a></li>
-	     <li><a href="#">Name </a></li>
-	     <li><a href="#">Status </a></li>
-	     <li><a href="#">Role </a></li>
-	   </ul>
+	<div class="col-sm-3">
+		<input type="search" name="trial_search" placeholder="Filter&#8230;" class="form-control">
 	</div>
-
-	<input type="search" class="form-control" name="trial_search" placeholder="Filter&#8230;" class="pull-right">
-		
-</header>
+	<div class="col-sm-5">
+		<button class="btn btn-default pull-right" data-toggle="button"><i class="fa fa-arrow-up"></i><i class="fa fa-arrow-down"></i></button>
+		<div class="btn-group pull-right">
+			  <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">Recently Viewed <span class="caret"></span></button>
+			 	<ul class="dropdown-menu">
+			 		<li><a href="#">Recently Updated</a></li>
+			     <li><a href="#">Name </a></li>
+			     <li><a href="#">Status </a></li>
+			     <li><a href="#">Role </a></li>
+			   </ul>
+			</div>
+	</div>	
+</div> 
 
 <section id="dashboard-grid">
 	<div id="dashboard-grid" class="row">
 	  <div class="col-sm-4">
-	  		<a href="javascript:;" class="list-group-item trial new incomplete clearfix">
-	  			<h2 class="pull-left"><i class="fa fa-tasks"></i> Basic Trial 0012 </h2>
-	  			<span class="pull-right">incomplete <i class="fa fa-exclamation-circle text-danger"></i></span>
-	  			<p><span class="label label-inverse">AUDITOR</span></p>
-	  			<p>Semiotics meh food truck art party post-ironic.</p>
-	  			<p class="label label-danger">No participants yet</p>
+	  		<a href="javascript:;" class="list-group-item trial new incomplete">
+	  			<h2><%= fa_icon "tasks", class: "text-muted" %> Basic Trial 0012 </h2>
+	  			<span class="status" rel="tooltip" data-placement="top" data-original-title="Incomplete"><%= fa_icon "exclamation-circle 2x", class: "text-danger" %></span>
+	  			<p class="text-muted">Semiotics meh food truck art party post-ironic.</p>
+	  			<p><span class="label label-danger">No participants yet</span></p>
+	  			<span class="label label-default pull-right">AUDITOR</span>
 	  		</a>
 	  </div>
-	  <div class="col-sm-4"><a href="javascript:;" class="list-group-item preview new notstarted">
-	  		<h2 class="pull-left"><i class="fa fa-eye-open"></i> Basic Preview 102</h2>
-	  		<span class="pull-right">not started <i class="fa fa-minus-circle text-danger"></i></span>
-	  		<p>Cliche you probably haven't heard of them vegan, stumptown fap semiotics craft beer.</p>
-	  		<p><strong>0/1 Simulation Complete</strong></p>
-	  	</a></div>
-	  <div class="col-sm-4"><a href="javascript:;" class="list-group-item trial new inprogress">
-	  		<h2 class="pull-left"><i class="fa fa-tasks"></i> Basic Trial 002</h2>
-	  		<span class="pull-right">in progress <i class="fa fa-clock-o text-warning"></i></span>
-	  		<p><span class="label label-inverse">AUDITOR</span></p>
-	  		<p>Semiotics meh food truck art party post-ironic. 
-	  			 <span class="peity pull-right"><span class="bar ">10,25,65</span></span>
+	  <div class="col-sm-4">
+			<a href="javascript:;" class="list-group-item preview new notstarted">
+	  		<h2><%= fa_icon "eye", class: "text-muted" %> Basic Preview 102</h2>
+	  		<span class="status" rel="tooltip" data-placement="top" data-original-title="Not Started"><%= fa_icon "minus-circle 2x", class: "text-danger" %></span>
+	  		<p class="text-muted">Cliche you probably haven't heard of them vegan, stumptown fap semiotics craft beer.</p>
+	  		<p><strong>0/1 Simulations Complete</strong></p>
+	  	</a>
+	  </div>
+	  <div class="col-sm-4">
+	  	<a href="javascript:;" class="list-group-item trial new inprogress">
+	  		<h2><%= fa_icon "tasks", class: "text-muted" %> Basic Trial 002</h2>
+	  		<span class="status" rel="tooltip" data-placement="top" data-original-title="In Progress"><%= fa_icon "clock-o 2x", class: "text-warning" %></span>
+	  		<p class="text-muted">
+	  			<span class="peity pull-right"><span class="bar ">10,25,65</span></span>
+	  			Semiotics meh food truck art party post-ironic.  
 	  		</p>
-	  	</a></div>
+	  		<span class="label label-default pull-right">AUDITOR</span>
+	  	</a>
+	  </div>
 	</div>
 	<div class="row">
-	  <div class="col-sm-4"><a href="javascript:;" class="list-group-item trial new finished">
-	  		<h2 class="pull-left"><i class="fa fa-tasks"></i> Basic Trial 003</h2>
-	  		<span class="pull-right">finished <i class="fa fa-check-circle-o text-success"></i></span>
-	  		<p><span class="label label-inverse">AUDITOR</span></p>
-	  		<p>Semiotics meh food truck art party post-ironic.</p>
-	  	</a></div>
-		<div class="col-sm-4"><a href="javascript:;" class="list-group-item preview inprogess">
-	  		<h2 class="pull-left"><i class="fa fa-eye-open"></i> Basic Preview 107</h2>
-	  		<span class="pull-right">in progress <i class="fa fa-clock-o text-warning"></i></span>
-	  		<p><span class="label label-inverse">Manager</span></p>
-	  		<p>Cliche you probably haven't heard of them vegan, stumptown fap semiotics craft beer.
-	  		<span class="peity pull-right"><span class="bar ">10,25,65</span></span></p>
-	  	</a></div>
-		<div class="col-sm-4"><a href="javascript:;" class="list-group-item trial expired">
-	  		<h2 class="pull-left"><i class="fa fa-tasks"></i> Basic Trial 004</h2>
-	  		<span class="pull-right">expired <i class="fa fa-ban"></i></span>
-	  		<p><span class="label label-inverse">AUDITOR</span></p>
-	  		<p>Semiotics meh food truck art party post-ironic.</p>
-	  	</a></div>
- 	</div><div class="row">
-	  <div class="col-sm-4"><a href="javascript:;" class="list-group-item trial inprogress">
-	  		<h2 class="pull-left"><i class="fa fa-tasks"></i> Basic Trial 005</h2>
-	  		<span class="pull-right">in progress <i class="fa fa-clock-o text-warning"></i></span>
-	  		<p><span class="peity pull-right"><span class="pie">2/3</span></span>
+	  <div class="col-sm-4">
+	  	<a href="javascript:;" class="list-group-item trial new finished">
+	  		<h2><%= fa_icon "tasks", class: "text-muted" %> Basic Trial 003</h2>
+	  		<span class="status" rel="tooltip" data-placement="top" data-original-title="Finished"><%= fa_icon "check-circle-o 2x", class: "text-success" %></span>
+	  		<p class="text-muted">Semiotics meh food truck art party post-ironic.</p>
+	  		<span class="label label-default pull-right">AUDITOR</span>
+	  	</a>
+	  </div>
+		<div class="col-sm-4">
+			<a href="javascript:;" class="list-group-item preview inprogess">
+	  		<h2><%= fa_icon "eye", class: "text-muted" %> Basic Preview 107</h2>
+	  		<span class="status" rel="tooltip" data-placement="top" data-original-title="In Progress"><%= fa_icon "clock-o 2x", class: "text-warning" %></span>
+	  		<p class="text-muted">
+	  			<span class="peity pull-right"><span class="bar ">10,25,65</span></span>
+	  			Cliche you probably haven't heard of them vegan, stumptown fap semiotics craft beer.
+	  		</p>
+	  		<span class="label label-default pull-right">MANAGER</span>
+	  	</a>
+	  </div>
+		<div class="col-sm-4">
+			<a href="javascript:;" class="list-group-item trial expired">
+	  		<h2><%= fa_icon "tasks", class: "text-muted" %> Basic Trial 004</h2>
+	  		<span class="status" rel="tooltip" data-placement="top" data-original-title="Expired"><%= fa_icon "ban 2x" %></span>
+	  		<p class="text-muted">Semiotics meh food truck art party post-ironic.</p>
+	  		<span class="label label-default pull-right">AUDITOR</span>
+	  	</a>
+	  </div>
+ 	</div>
+ 	<div class="row">
+	  <div class="col-sm-4">
+	  	<a href="javascript:;" class="list-group-item trial inprogress">
+	  		<h2><%= fa_icon "tasks", class: "text-muted" %> Basic Trial 005</h2>
+	  		<span class="status" rel="tooltip" data-placement="top" data-original-title="In Progress"><%= fa_icon "clock-o 2x", class: "text-warning" %></span>
+	  		<p class="text-muted">
+	  			<span class="peity pull-right"><span class="pie">2/3</span></span>
 	  			Semiotics meh food truck art party post-ironic.</p>
 	  		<p><strong>1/2 Simulations Complete</strong></p>
-	  	</a></div>
-		<div class="col-sm-4"><a href="javascript:;" class="list-group-item preview inprogess">
-	  		<h2 class="pull-left"><i class="fa fa-eye-open"></i> Basic Preview 257</h2>
-	  		<span class="pull-right">finished <i class="fa fa-check-circle-o text-success"></i></span>
-	  		<p><span class="label label-inverse">Manager</span></p>
-	  		<p>Cliche you probably haven't heard of them vegan, stumptown fap semiotics craft beer.</p>
-	  	</a></div>
-	  <div class="col-sm-4"><a href="javascript:;" class="list-group-item trial notstarted">
-	  		<h2 class="pull-left"><i class="fa fa-tasks"></i> Basic Trial 006</h2>
-	  		<span class="pull-right">not started <i class="fa fa-minus-circle text-danger"></i></span>
-	  		<p>Semiotics meh food truck art party post-ironic.</p>
+	  	</a>
+	  </div>
+		<div class="col-sm-4">
+			<a href="javascript:;" class="list-group-item preview inprogess">
+	  		<h2><%= fa_icon "eye", class: "text-muted" %> Basic Preview 257</h2>
+	  		<span class="status" rel="tooltip" data-placement="top" data-original-title="Finished"><%= fa_icon "check-circle-o 2x", class: "text-success" %></span>
+	  		<p class="text-muted">Cliche you probably haven't heard of them vegan, stumptown fap semiotics craft beer.</p>
+	  		<span class="label label-default pull-right">MANAGER</span>
+	  	</a>
+	  </div>
+	  <div class="col-sm-4">
+	  	<a href="javascript:;" class="list-group-item trial notstarted">
+	  		<h2><%= fa_icon "tasks", class: "text-muted" %> Basic Trial 006</h2>
+	  		<span class="status" rel="tooltip" data-placement="top" data-original-title="Not Started"><%= fa_icon "minus-circle 2x", class: "text-danger" %></span>
+	  		<p class="text-muted">Semiotics meh food truck art party post-ironic.</p>
 	  		<p><strong>0/1 Simulation Complete</strong></p>
 	  		<span class="label label-danger">Hurry! Trial ends in 5 days!</span>
-	  	</a></div>
-	</div><div class="row">
-		<div class="col-sm-4"><a href="javascript:;" class="list-group-item trial inprogess">
-	  		<h2 class="pull-left"><i class="fa fa-tasks"></i> Basic Trial 007</h2>
-	  		<span class="pull-right">in progress <i class="fa fa-clock-o text-warning"></i></span>
-	  		<p><span class="label label-inverse">AUDITOR</span></p>
-	  		<p>Semiotics meh food truck art party post-ironic.<span class="peity pull-right"><span class="bar ">10,25,65</span></span></p>
-	  	</a></div>	  	
-		<div class="col-sm-4"><a href="javascript:;" class="list-group-item preview expired">
-	  		<h2 class="pull-left"><i class="fa fa-eye-open"></i> Basic Preview 488</h2>
-	  		<span class="pull-right">expired <i class="fa fa-ban"></i></span>
-	  		<p>Cliche you probably haven't heard of them vegan, stumptown fap semiotics craft beer.</p>
+	  	</a>
+	  </div>
+	</div>
+	<div class="row">
+		<div class="col-sm-4">
+			<a href="javascript:;" class="list-group-item trial inprogess">
+	  		<h2><%= fa_icon "tasks", class: "text-muted" %> Basic Trial 007</h2>
+	  		<span class="status" rel="tooltip" data-placement="top" data-original-title="In Progress"><%= fa_icon "clock-o 2x", class: "text-warning" %></span>
+	  		<p class="text-muted">
+	  			<span class="peity pull-right"><span class="bar ">10,25,65</span></span>
+	  			Semiotics meh food truck art party post-ironic.
+	  		</p>
+	  		<span class="label label-default pull-right">AUDITOR</span>
+	  	</a>
+	  </div>	  	
+		<div class="col-sm-4">
+			<a href="javascript:;" class="list-group-item preview expired">
+	  		<h2><%= fa_icon "eye", class: "text-muted" %> Basic Preview 488</h2>
+	  		<span class="status" rel="tooltip" data-placement="top" data-original-title="Expired"><%= fa_icon "ban 2x" %></span>
+	  		<p class="text-muted">Cliche you probably haven't heard of them vegan, stumptown fap semiotics craft beer.</p>
 	  		<p><strong>2/2 Simulations Complete</strong></p>
-	  	</a></div>
-		<div class="col-sm-4"><a href="javascript:;" class="list-group-item preview inprogess">
-	  		<h2 class="pull-left"><i class="fa fa-eye-open"></i> Basic Preview 310</h2>
-	  		<span class="pull-right">finished <i class="fa fa-check-circle-o text-success"></i></span>
-	  		<p><span class="label label-inverse">Manager</span></p>
-	  		<p>Cliche you probably haven't heard of them vegan, stumptown fap semiotics craft beer.</p>
-	  	</a></div>
+	  	</a>
+		</div>
+		<div class="col-sm-4">
+			<a href="javascript:;" class="list-group-item preview inprogess">
+	  		<h2><%= fa_icon "eye", class: "text-muted" %> Basic Preview 310</h2>
+	  		<span class="status" rel="tooltip" data-placement="top" data-original-title="Finished"><%= fa_icon "check-circle-o 2x", class: "text-success" %></span>
+	  		<p class="text-muted">Cliche you probably haven't heard of them vegan, stumptown fap semiotics craft beer.</p>
+	  		<span class="label label-default pull-right">MANAGER</span>
+	  	</a>
+	  </div>
 	</div>
 </section>
