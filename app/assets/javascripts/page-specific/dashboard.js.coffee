@@ -111,18 +111,18 @@ $(document).ready ->
   rowToBtnURL = ->
     window.location = $(this).find("a.btn").attr("href")
 
-  classesForSelectableRows = "selectable-rows"
+  classesForSelectableRows = "selectable"
 
   # IF the browser supports media queries then change the way the Dashboard rows behave
   if(Modernizr.mq('only all'))
     $(window).resize ->
       if($(window).width() <= 767)
-        $("#trial-list").addClass classesForSelectableRows
-        $("#trial-list .row").bind "click", rowToBtnURL
+        $("#dashboard-list").addClass classesForSelectableRows
+        $("#dashboard-list .list-group-item").bind "click", rowToBtnURL
       if($(window).width() > 767)
-        $("#trial-list").removeClass classesForSelectableRows
-        $("#trial-list .row").unbind "click"
+        $("#dashboard-list").removeClass classesForSelectableRows
+        $("#dashboard-list .list-group-item").unbind "click"
 
     if($(window).width() <= 767)
-      $("#trial-list").addClass classesForSelectableRows
-      $("#trial-list .row").bind "click", rowToBtnURL
+      $("#dashboard-list").addClass classesForSelectableRows
+      $("#dashboard-list .list-group-item").bind "click", rowToBtnURL

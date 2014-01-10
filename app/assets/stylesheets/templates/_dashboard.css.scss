@@ -5,6 +5,18 @@
 */
 
 
+// mixin for hover styles because it's not alway applied to the same element
+@mixin hover-styles() {
+	// change color of background on hover
+  &:hover, &:focus {
+  	background: rgba($yellow, .1);
+  	// expired ones are still clickable so make the 100% opacity
+    @include opacity(1);
+    cursor: pointer;
+  }
+}
+
+
 // Header
 // -------------------------
 
@@ -41,6 +53,30 @@ h2.dropdown-toggle:hover {
 	}
 }
 
+
+// Common styles for list-group-items that each Dashboard share
+// -------------------------
+
+.list-group-item {
+	// make sure each item contains it's floats
+	@extend .clearfix;
+	
+	// clear out the margin-top of each h*
+	h2, h3, h4 {
+		margin-top: 0;
+	}
+	
+	// style the item based on it's status
+	&.new {
+		padding-left: 10px;
+		border-left: 5px solid $blue;
+	}
+	
+	&.expired {
+	  @include opacity(.5);
+	}
+}
+
 	
 // List
 // -------------------------
@@ -62,10 +98,6 @@ h2.dropdown-toggle:hover {
 		padding-bottom: 2em;		
 	}
 	
-	h3 {
-		margin-top: 0;
-	}
-	
 	.alert {
 		margin-bottom: 0;
 	}
@@ -79,19 +111,50 @@ h2.dropdown-toggle:hover {
   	}
 	}
 	
-	.expired {
-		@include opacity(.5);
+	// give it the hover styles only if the rows are selectable
+	&.selectable .list-group-item {
+		@include hover-styles();
 	}
 }
 
-// give the footer of the trial list a border
+// give the footer of the trial list a background
 #dashboard-list-footer {
-	position: relative;
-	top: -10px;
-	padding-left: 10px;
-	&+hr {
-  	margin-top: 0;
+	text-align: center;
+	background: #efefef;
+	
+	p {
+		margin: 0;
 	}
+}
+
+
+// SIDEBAR
+// -------------------------
+
+#dashboard-sidebar {
+	
+	.list-group-item {
+		
+		@include hover-styles();
+		
+		.status {
+			text-transform: uppercase;
+			font-size: .5em;
+		}
+		
+		// change the colors of the active state to be gray background a white text
+		// as well as during the hover states so those don't change
+		&.active, &.active:hover, &.active:focus {
+			background-color: $gray-dark;
+			border-color: $gray-dark;
+			
+			h4, p.text-muted {
+				color: white;
+			}
+		}
+		
+	}
+	
 }
 
 
@@ -101,19 +164,11 @@ h2.dropdown-toggle:hover {
 #dashboard-grid {
 	
 	.list-group-item {
-		// make sure each item contains it's floats
-		@extend .clearfix;
 		
 		// give the items some vertical margins
 		margin-bottom: 2em;
 		
-		// clear out default a tag styles
-		@include unStyleLink();
-		font-weight: 400;
-		
-		// clear out h2's margin-top
 		h2 {
-			margin-top: 0;
 			// make sure the status does not overlap the title
 			padding-right: 1em;
 		}
@@ -125,23 +180,9 @@ h2.dropdown-toggle:hover {
 			top: 10px;
 			right: 15px;
 		}
-		
-		// style the item based on it's status
-		&.new {
-    	padding-left: 10px;
-    	border-left: 5px solid $blue;
-		}
     
-    &.expired {
-	    @include opacity(.5);
-    }
-    
-    // change color of background on hover
-    &:hover, &:focus {
-    	background: rgba($yellow, .1);
-    	// expired ones are still clickable so make the 100% opacity
-	    @include opacity(1);
-    }
+    @include hover-styles();
+
 	}
 	
 }
