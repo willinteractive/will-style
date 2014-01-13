@@ -1,3 +1,10 @@
+PATH
+  remote: .
+  specs:
+    will-style (0.0.1)
+      bootstrap-sass
+      rails
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -128,6 +135,7 @@ PLATFORMS
 DEPENDENCIES
   annotate
   bootstrap-sass
+  bundler (~> 1.5)
   coffee-rails
   flot-rails
   font-awesome-rails
@@ -135,7 +143,9 @@ DEPENDENCIES
   jquery-rails
   modernizr
   rails
+  rake
   sass-rails
   sass-rails-source-maps
   sqlite3
   uglifier
+  will-style!
