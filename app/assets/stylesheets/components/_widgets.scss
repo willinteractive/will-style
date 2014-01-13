@@ -3,18 +3,11 @@
 // --------------------------------------------------
 
 // DataTables content
-.dTWidget {
-	position: relative;
-}
+
 .widget {
 	.dataTables_extras_top {
 		border-bottom: 1px solid $widgetBordersColor;
 		padding: 13px 20px 7px;
-	}
-	.dataTables_buttons {
-		position: absolute;
-		top: 0;
-		right: 0;
 	}
 	// Put the extra buttons in the widget header
 	.DTTT_container > .DTTT_button, .ColVis_MasterButton {
@@ -24,9 +17,7 @@
 		border-width: 0 0 0 1px;
 		margin-left: 0;
 		@include border-radius(0);
-		span {
-			display: none;
-		}
+		
 	}
 }
 

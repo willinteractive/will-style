@@ -34,24 +34,31 @@
 // If the panel's header contains buttons
 .panel-heading-buttons {
 	.btn {
-		// reset border to only be visible on the right
+		// reset background, border widths and radii
+		background: transparent;
 		border: none;
-		border-right: 1px solid $panel-inner-border;
-		
-		// make sure it has no rounded corners
 		border-radius: 0px;
-		// except the first one needs it's top left corner rounded
-		&:first-of-type {
-			border-top-left-radius: $panel-border-radius - 1px;
-		}
-		
+
 		// make sure it fits height-wise in the panel-heading
 		padding: 10px 12px;
-	}
+		
+		// if it's on the left - make sure the borders are on the right
+		&.pull-left {
+			border-right: 1px solid $panel-inner-border;
+			
+			// except the first one needs it's top left corner rounded
+			&:first-of-type {
+				border-top-left-radius: $panel-border-radius - 1px;
+			}			
+		}
 	
-	// if the button is on the right instead
-	.btn.pull-right {
-		border-right: none;
-		border-left: 1px solid $panel-inner-border;		
+		// if the button is on the right instead - put the border on the left
+		&.pull-right {
+			border-left: 1px solid $panel-inner-border;
+			
+			&:first-of-type {
+				border-top-right-radius: $panel-border-radius - 1px;
+			}
+		}
 	}
 }

@@ -9,16 +9,19 @@
 jQuery ->
   # DataTable defaults
   $.extend( $.fn.dataTable.defaults, {
-    "sDom": "<'dataTables_buttons'TC><'dataTables_extras_top'fl>rt<'dataTables_extras_bottom clearfix'ip>",
+    "sDom": "<'dataTables_buttons'CT><'dataTables_extras_top'fl>rt<'dataTables_extras_bottom'ip>",
     "sPaginationType": "bootstrap",
   } );
   
   # TableTools defaults
   TableTools.DEFAULTS.aButtons = [
-    "print",
+  	{
+  		"sExtends": "print",
+  		"sButtonText": ""
+  	}
     {
       "sExtends": "collection",
-      "sButtonText": "Save Table as…",
+      "sButtonText": "",
       "aButtons": [ "csv", "xls", "pdf" ]
     }
   ];
@@ -27,19 +30,22 @@ jQuery ->
   # HAVE to be here because the other code needs to be executed AFTER the construction
   exampleTable = $('#datatable_example').dataTable( {
     "oColVis": {
-      "buttonText": "Change Columns",
+      "buttonText": "",
       "sAlign": "right"
     },
     "oTableTools": {
       "sRowSelect": "multi"
-    }
+    },
+    "oLanguage": {
+     	"sSearch": ""
+     }
   });
   
   # After tables have been initialized, add some content and/or classes to added DOM
   $('.dataTables_filter input').attr("placeholder", "type to filter..."); 
-  $('.ColVis_MasterButton').addClass("btn").prepend('<i class="icon-columns"></i> ').append('&ensp; <b class="caret"></b>').attr('title', 'Change Columns');  
-  $('.DTTT_button_collection').addClass("btn").prepend('<i class="icon-save"></i> ').append('&ensp; <b class="caret"></b>').attr('title', 'Save Table as…');  
-  $('.DTTT_button_print').prepend('<i class="icon-print"></i> ').addClass("btn").attr('title', 'Print Table');
+  $('.ColVis_MasterButton').addClass("btn btn-default dropdown-toggle pull-right").prepend('<i class="fa fa-columns"></i> ').append('&ensp; <b class="caret"></b>').attr('title', 'Change Columns');  
+  $('.DTTT_button_collection').addClass("btn btn-default dropdown-toggle pull-right").prepend('<i class="fa fa-save"></i> ').append('&ensp; <b class="caret"></b>').attr('title', 'Save Table as…');  
+  $('.DTTT_button_print').prepend('<i class="fa fa-print"></i> ').addClass("btn btn-default dropdown-toggle pull-right").attr('title', 'Print Table');
 
       
   ## --- OTHER TABLE FUNCTIONALITY
