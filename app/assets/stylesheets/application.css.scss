@@ -73,9 +73,11 @@
 	 LIBRARIES - External library CSS
    ================================================================ */
 @import "dataTables/jquery.dataTables.bootstrap3";
+@import "libraries/dataTables";
+@import "libraries/flot";
 @import "libraries/offline";
 @import "libraries/piety";
-@import "libraries/dataTables";
+
 
 /* ===================================================================
 	 ELEMENTS - Objects and abstractions
