@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "bundler", "~> 1.5"
   s.add_development_dependency "rake"
   
-  s.require_paths = ["lib"]
+  s.require_path = 'lib'
 
   s.files = Dir["app/assets/**/*", "vendor/assets/**/*", "Readme.md"]
 end
