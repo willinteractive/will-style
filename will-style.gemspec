@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'will-style/will-style/version'
+require 'will/style/version'
 
 Gem::Specification.new do |s|
   s.name     = "will-style"
-  s.version  = WillStyle::VERSION
+  s.version  = Will::Style::VERSION
   s.authors  = ["Caroline Horn"]
   s.email    = 'chorn@willinteractive.com'
   s.summary  = "WILL custom styling built on top of bootstrap-sass"
