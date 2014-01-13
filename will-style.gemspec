@@ -20,5 +20,5 @@ Gem::Specification.new do |s|
 
   s.require_path = 'lib/will/'
 
-  s.files = Dir["app/assets/**/*", "vendor/assets/**/*", "lib/will/**/*", "Readme.md"]
+  s.files = Dir["lib/assets/**/*", "vendor/assets/**/*", "lib/will/**/*", "Readme.md"]
 end
