@@ -7,7 +7,7 @@
 #= require dataTables/extras/TableTools
 
 # DataTable defaults
-$.extend ( $.fn.dataTable.defaults, {
+$.extend( $.fn.dataTable.defaults, {
   "sDom": "<'dataTables_buttons'CT><'dataTables_extras_top'fl>rt<'dataTables_extras_bottom'ip>",
   "sPaginationType": "bootstrap",
 
