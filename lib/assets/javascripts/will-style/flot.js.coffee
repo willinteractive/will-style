@@ -4,6 +4,8 @@
 
 #= require jquery.flot
 #= require jquery.flot.pie
-#= require jquery.flot.resize
+
+# @NOTE: Needed until the flot-rails gem updates for a bunch of fixes from the flot repo
+#= require jquery.flot.resize-fix.js
 
 #= require jquery.peity.js
