@@ -35,7 +35,7 @@
 	 UTILITIES - Generic utility styles etc.
    ================================================================ */
 // Bootstrap variable overrides and custom variables
-@import "utilities/variables";
+@import "will-style/utilities/variables";
 
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
@@ -43,11 +43,11 @@
 @import "bootstrap/print";
 
 // Custom mixins
-@import "utilities/mixins";
+@import "will-style/utilities/mixins";
 
 // Custom print styles
 // -- should probably break this into multiple print styles per category (CH)
-@import "utilities/print";
+@import "will-style/utilities/print";
 
 
 /* ===================================================================
@@ -62,21 +62,22 @@
 @import "bootstrap/buttons";
 
 // Custom
-@import "core/scaffolding";
-@import "core/type";
-@import "core/tables";
-@import "core/forms";
-@import "core/buttons";
+@import "will-style/core/scaffolding";
+@import "will-style/core/type";
+@import "will-style/core/tables";
+@import "will-style/core/forms";
+@import "will-style/core/buttons";
 
 
 /* ===================================================================
 	 LIBRARIES - External library CSS
    ================================================================ */
 @import "dataTables/jquery.dataTables.bootstrap3";
-@import "libraries/dataTables";
-@import "libraries/flot";
-@import "libraries/offline";
-@import "libraries/piety";
+
+@import "will-style/libraries/dataTables";
+@import "will-style/libraries/flot";
+@import "will-style/libraries/offline";
+@import "will-style/libraries/piety";
 
 
 /* ===================================================================
@@ -111,30 +112,30 @@
 @import "bootstrap/carousel";
 
 // Bootstrap Overrides & Extends
-@import "elements/navs";
-@import "elements/navbar";
-@import "elements/breadcrumbs";
-@import "elements/labels-badges";
-@import "elements/thumbnails";
-@import "elements/alerts";
-@import "elements/panels";
-@import "elements/wells-jumbotron";
+@import "will-style/elements/navs";
+@import "will-style/elements/navbar";
+@import "will-style/elements/breadcrumbs";
+@import "will-style/elements/labels-badges";
+@import "will-style/elements/thumbnails";
+@import "will-style/elements/alerts";
+@import "will-style/elements/panels";
+@import "will-style/elements/wells-jumbotron";
 
 // Custom
-@import "elements/sticky-footer";
+@import "will-style/elements/sticky-footer";
 
 
 /* ===================================================================
 	 COMPONENTS - Elements put together
    ================================================================ */
-@import "components/well-big-stats";
+@import "will-style/components/well-big-stats";
 
 
 /* ===================================================================
 	 TEMPLATES - Page layouts
    ================================================================ */
-@import "templates/dashboard";
-@import "templates/_color-test";
+
+// Specific to each application/project
 
 
 /* ===================================================================
