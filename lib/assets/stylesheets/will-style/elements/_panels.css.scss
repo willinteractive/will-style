@@ -60,5 +60,10 @@
 				border-top-right-radius: $panel-border-radius - 1px;
 			}
 		}
+		
+		&.active {
+			// make the background of the active button just slightly darker
+			background-color: $gray-lighter;
+		}
 	}
 }
