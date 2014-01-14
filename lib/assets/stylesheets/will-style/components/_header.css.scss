@@ -1,0 +1,28 @@
+/* 
+// 
+// HEADER
+// 
+*/
+
+
+// Full header background
+// -------------------------
+
+header {
+	border-bottom: $double-border;
+	background-image: url('will-style/header_bg.png');
+	background-repeat: repeat;
+	margin-bottom: 2em;
+}
+
+
+// Custom Brand/project name
+// -------------------------
+
+a.navbar-brand {
+	padding: $navbar-padding-vertical/2 $navbar-padding-horizontal;
+	text-transform: uppercase;
+	font-size: $font-size-large * 1.2;
+	font-family: $headings-font-family;
+	vertical-align: bottom;
+}

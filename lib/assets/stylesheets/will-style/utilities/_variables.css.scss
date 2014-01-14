@@ -9,153 +9,155 @@
 // -------------------------
 
 // Grays
-$black:					#000;
-$gray-darker: 	lighten(#000, 13.5%); // #222
-$gray-dark: 		lighten(#000, 26.5%); // #444
-$gray: 					lighten(#000, 46.5%); // #777
-$gray-light: 		lighten(#000, 73.5%); // #bbb
-$gray-lighter: 	lighten(#000, 93.5%); // #eee
-$white:					#fff;
+$black:											#000;
+$gray-darker: 							lighten(#000, 13.5%); // #222
+$gray-dark: 								lighten(#000, 26.5%); // #444
+$gray: 											lighten(#000, 46.5%); // #777
+$gray-light: 								lighten(#000, 73.5%); // #bbb
+$gray-lighter: 							lighten(#000, 93.5%); // #eee
+$white:											#fff;
 
 // Accents
-$blue:		#5c789c;
-$green:		#97a116;
-$yellow:	#d4c62f;
-$orange:	#c49f39;
-$red:			#a86156;
-$pink:		#bf8298;
-$purple:	#997bbd;
+$blue:											#5c789c;
+$green:											#97a116;
+$yellow:										#d4c62f;
+$orange:										#c49f39;
+$red:												#a86156;
+$pink:											#bf8298;
+$purple:										#997bbd;
 
 // Brand
-$brand-primary:         $green;
-$brand-success:         $green;
-$brand-warning:         $orange;
-$brand-danger:          $red;
-$brand-info:            $blue;
+$brand-primary:							$green;
+$brand-success:							$green;
+$brand-warning:							$orange;
+$brand-danger:							$red;
+$brand-info:								$blue;
 
 // Player frame types
-$choice: rgb(200,66,66);
-$text:   rgb(113,191,70);
-$video:  rgb(59,154,199);
+$choice: 										rgb(200,66,66);
+$text:	 										rgb(113,191,70);
+$video:	 										rgb(59,154,199);
 
 
 // SCAFFOLDING
 // -------------------------
-$body-bg: 				$white;
-$text-color:			$gray-dark;
+$body-bg: 									$white;
+$text-color:								$gray-dark;
 
 
 // LINKS
 // -------------------------
-$link-color:             $brand-primary;
-$link-color-hover:       $brand-primary;
+$link-color:								$brand-primary;
+$link-color-hover:					$brand-primary;
 
 
 // TYPOGRAPHY
 // -------------------------
-$font-family-sans-serif:  'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans-serif:		'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-$font-size-base:          14px;
+$font-size-base:						14px;
 
-$font-size-h1:            floor(($font-size-base * 3.75)); // ~52px
+$font-size-h1:							floor(($font-size-base * 3.75)); // ~52px
 
-$headings-font-family:    'Open Sans Condensed', "Helvetica Neue", Helvetica, Arial, sans-serif;
-$headings-font-weight:    700;
+$headings-font-family:			'Open Sans Condensed', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$headings-font-weight:			700;
 
-$headings-color:          $gray-dark;
-$headings-small-color:    $text-color;
+$headings-color:						$gray-dark;
+$headings-small-color:			$text-color;
 
-$text-muted:              $gray;
+$text-muted:								$gray;
 
 
 // TABLES
 // -------------------------
-$table-bg: 							$white; // overall background-color
-$table-bg-accent: 			darken($white, 3%); // for striping
-$table-bg-hover: 				lighten($yellow, 10%); // for hover
+$table-bg: 									$white; // overall background-color
+$table-bg-accent: 					darken($white, 3%); // for striping
+$table-bg-hover: 						lighten($yellow, 10%); // for hover
 
-$table-border-color: 		$gray-lighter; // table and cell border
+$table-border-color: 				$gray-lighter; // table and cell border
 
 
 // BUTTONS
 // -------------------------
-$btn-font-weight: 			700;
-$btn-default-color:     $text-color;
+$btn-font-weight: 					700;
+$btn-default-color:					$text-color;
 
 
 // FORMS
 // -------------------------
-$input-color: 					$text-color;
+$input-color: 							$text-color;
 
-$input-border-focus:    lighten($blue, 20%);
-$input-bg-disabled: 		none;
+$input-border-focus:				lighten($blue, 20%);
+$input-bg-disabled: 				none;
 
 
 // DROPDOWNS
 // -------------------------
-$dropdown-link-hover-bg:    lighten($text-color, 60%);
-$dropdown-caret-color:      $text-color;
+$dropdown-link-hover-bg:		lighten($text-color, 60%);
+$dropdown-caret-color:			$text-color;
 
 
 // NAVBAR
 // -------------------------
-$navbar-height:             40px;
-$navbar-border-radius:      0px;
+$navbar-height:							60px;
+$navbar-margin-bottom:			0px;
+$navbar-border-radius:			0px;
 
-$navbar-inverse-link-active-bg:    transparent;
+$navbar-inverse-bg: 							transparent;
+$navbar-inverse-link-active-bg: 	transparent;
 
 
 // PAGINATION
 // -------------------------
-$pagination-active-bg:          $gray-light;
+$pagination-active-bg:			$gray-light;
 
 
 // JUMBOTRON
 // -------------------------
-$jumbotron-color: 						$text-color;
-$jumbotron-heading-color: 		$headings-color;
+$jumbotron-color: 					$text-color;
+$jumbotron-heading-color: 	$headings-color;
 
 
 // FROM STATES AND ALERTS
 // -------------------------
-$state-success-text:             $green;
-$state-success-bg: 				       rgba($green, .1);
-$state-success-border:           $green;
+$state-success-text:				$green;
+$state-success-bg: 					rgba($green, .1);
+$state-success-border:			$green;
 
-$state-info-text:                $blue;
-$state-info-bg:         				 rgba($blue, .1);
-$state-info-border:              $blue;
+$state-info-text:						$blue;
+$state-info-bg:							rgba($blue, .1);
+$state-info-border:					$blue;
 
-$state-warning-text:             $yellow;
-$state-warning-bg:      			   rgba($yellow, .1);
-$state-warning-border:           $yellow;
+$state-warning-text:				$yellow;
+$state-warning-bg:					rgba($yellow, .1);
+$state-warning-border:			$yellow;
 
-$state-danger-text:              $red;
-$state-danger-bg:        				 rgba($red, .1);
-$state-danger-border:            $red;
+$state-danger-text:					$red;
+$state-danger-bg:				 		rgba($red, .1);
+$state-danger-border:				$red;
 
 
 // PROGRESS BARS
 // -------------------------
-$progress-bar-bg:             $blue;
+$progress-bar-bg:						$blue;
 
 
 // THUMBNAILS
 // -------------------------
-$thumbnail-bg:                none;
-$thumbnail-border-radius:     0px;
+$thumbnail-bg:							none;
+$thumbnail-border-radius:		0px;
 
 
 // BREADCRUMBS
 // -------------------------
-$breadcrumb-active-color: 		$gray;
-$breadcrumb-bg: 							lighten($gray-lighter, 10%);
+$breadcrumb-active-color: 	$gray;
+$breadcrumb-bg: 						lighten($gray-lighter, 10%);
 
 
-/* 
-// 
+/*
+//
 // CUSTOM VARIABLES
-// 
+//
 */
 
-$double-border: medium double #c5c5c5;
+$double-border: 						medium double #c5c5c5;
