@@ -18,7 +18,5 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency "bundler", "~> 1.5"
 
-  s.require_path = 'lib/will/'
-
-  s.files = Dir["lib/assets/**/*", "vendor/assets/**/*", "lib/will/**/*", "Readme.md"]
+  s.files = `git ls-files`.split("\n")
 end
