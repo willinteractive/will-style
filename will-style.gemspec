@@ -6,8 +6,8 @@ require 'will/style/version'
 Gem::Specification.new do |s|
   s.name     = "will-style"
   s.version  = Will::Style::VERSION
-  s.authors  = ["Caroline Horn"]
-  s.email    = 'chorn@willinteractive.com'
+  s.authors  = ["The WILL Ninja Team"]
+  s.email    = ["ninja.team@willinteractive.com"]
   s.summary  = "WILL custom styling built on top of bootstrap-sass"
   s.description  = "WILL Style"
   s.homepage = "http://github.com/willinteractive/will-style"
