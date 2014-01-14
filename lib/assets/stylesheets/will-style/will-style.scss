@@ -1,0 +1,146 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ */
+
+/*
+ *= require font-awesome
+ *  -- HELPERS:
+ *  -- You can now use <%= fa_icon "arrow-up" %>
+ *  -- or <%= fa_stacked_icon "twitter", base: "square-o" %> (http://fontawesome.io/examples/#stacked)
+ *  -- see https://github.com/bokmann/font-awesome-rails for more helpers
+ */
+
+/* ===================================================================
+	 FONTS - Import from Google Web Fonts
+   ================================================================ */
+@import url('http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300|Open+Sans:400italic,700italic,400,700');
+// NOTE: do not use "bold" or "normal" font weights!
+			// for the condensed font use: 
+							// bold = 700
+							// normal = 300
+			// for the regular font use: 
+							// bold = 700
+							// normal = 400
+							
+							
+/* ===================================================================
+	 UTILITIES - Generic utility styles etc.
+   ================================================================ */
+// Bootstrap variable overrides and custom variables
+@import "will-style/utilities/variables";
+
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/normalize";
+@import "bootstrap/print";
+
+// Custom mixins
+@import "will-style/utilities/mixins";
+
+// Custom print styles
+// -- should probably break this into multiple print styles per category (CH)
+@import "will-style/utilities/print";
+
+
+/* ===================================================================
+	 CORE - Core styles; unclassed HTML elements etc.
+   ================================================================ */
+@import "bootstrap/scaffolding";
+@import "bootstrap/type";
+@import "bootstrap/code";
+@import "bootstrap/grid";
+@import "bootstrap/tables";
+@import "bootstrap/forms";
+@import "bootstrap/buttons";
+
+// Custom
+@import "will-style/core/scaffolding";
+@import "will-style/core/type";
+@import "will-style/core/tables";
+@import "will-style/core/forms";
+@import "will-style/core/buttons";
+
+
+/* ===================================================================
+	 LIBRARIES - External library CSS
+   ================================================================ */
+@import "dataTables/jquery.dataTables.bootstrap3";
+
+@import "will-style/libraries/dataTables";
+@import "will-style/libraries/flot";
+@import "will-style/libraries/offline";
+@import "will-style/libraries/piety";
+
+
+/* ===================================================================
+	 ELEMENTS - Objects and abstractions
+   ================================================================ */
+@import "bootstrap/component-animations";
+// @import "bootstrap/glyphicons"; -- We are using FontAwesome instead because it's more powerful
+@import "bootstrap/dropdowns";
+@import "bootstrap/button-groups";
+@import "bootstrap/input-groups";
+@import "bootstrap/navs";
+@import "bootstrap/navbar";
+@import "bootstrap/breadcrumbs";
+@import "bootstrap/pagination";
+@import "bootstrap/pager";
+@import "bootstrap/labels";
+@import "bootstrap/badges";
+@import "bootstrap/jumbotron";
+@import "bootstrap/thumbnails";
+@import "bootstrap/alerts";
+@import "bootstrap/progress-bars";
+@import "bootstrap/media";
+@import "bootstrap/list-group";
+@import "bootstrap/panels";
+@import "bootstrap/wells";
+@import "bootstrap/close";
+
+// w/ JavaScript
+@import "bootstrap/modals";
+@import "bootstrap/tooltip";
+@import "bootstrap/popovers";
+@import "bootstrap/carousel";
+
+// Bootstrap Overrides & Extends
+@import "will-style/elements/navs";
+@import "will-style/elements/navbar";
+@import "will-style/elements/breadcrumbs";
+@import "will-style/elements/labels-badges";
+@import "will-style/elements/thumbnails";
+@import "will-style/elements/alerts";
+@import "will-style/elements/panels";
+@import "will-style/elements/wells-jumbotron";
+
+// Custom
+@import "will-style/elements/sticky-footer";
+
+
+/* ===================================================================
+	 COMPONENTS - Elements put together
+   ================================================================ */
+@import "will-style/components/well-big-stats";
+
+
+/* ===================================================================
+	 TEMPLATES - Page layouts
+   ================================================================ */
+
+// Specific to each application/project
+
+
+/* ===================================================================
+	 POST - Styles that need to be at the end of the css
+   ================================================================ */
+@import "bootstrap/utilities";
+@import "bootstrap/responsive-utilities";
+

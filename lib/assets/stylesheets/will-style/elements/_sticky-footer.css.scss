@@ -1,0 +1,23 @@
+// HTML MUST LOOK LIKE THIS:
+//	<body>
+//		<div id="wrap"></div>
+//		<footer>
+//			<p></p>
+//		</footer>
+//	</body>
+
+#wrap {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -60px;
+	padding: 0 0 80px;
+}
+
+footer p {
+	margin: 0;
+	display: block;
+	height: 60px;
+	line-height: 60px;
+	border-top: $double-border;
+}

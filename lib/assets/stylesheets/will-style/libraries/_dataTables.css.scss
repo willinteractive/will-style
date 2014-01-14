@@ -1,0 +1,159 @@
+/* 
+// 
+// DATATABLES
+// 
+*/
+
+
+.dataTable {
+	width: 100% !important;
+}
+
+
+// extras like filter & length 
+// -------------------------
+
+.dataTables_extras_top, .dataTables_extras_bottom {
+	// make the text smaller
+	font-size: $font-size-small;
+	// clear the floats
+	@extend .clearfix;
+	// add padding
+	padding: $padding-large-vertical $padding-base-horizontal;
+	
+	// extend the .form-control to style inputs and select the bootstrap way
+	input, select {
+		@extend .form-control;
+	}
+}
+
+// clear default floats
+div.dataTables_filter label, div.dataTables_length label  {
+	float: none;
+}
+// move the length to the far right
+div.dataTables_length {
+	float: right;
+}
+// move the filter form to far left
+div.dataTables_filter {
+	float: left;
+}
+
+// add some padding and correctly float the footer elements
+.dataTables_info {
+	margin-bottom: 10px;
+	@include opacity(.5);
+	float: left;
+}
+.dataTables_paginate {
+	float: right;
+}
+
+
+// ColVis & TableTools (DataTables Extras)
+// -------------------------
+
+/* THE HTML
+<div class="dataTables_buttons">
+	<div class="DTTT_container">
+		<a class="DTTT_button DTTT_button_print btn btn-default"><i class="fa fa-print"></i> <span>Print</span></a>
+		<a class="DTTT_button DTTT_button_collection btn btn-default"<i class="fa fa-save"></i> <span>Save Table as…</span>  <b class="caret"></b></a>
+	</div>
+	<div class="ColVis TableTools">
+		<button class="ColVis_Button TableTools_Button ColVis_MasterButton btn btn-default"><i class="fa fa-columns"></i> <span>Change Columns</span>  <b class="caret"></b></button>
+	</div>
+</div>
+*/
+
+// get all elements in one line
+.DTTT_container, .ColVis {
+	display: inline-block;
+}
+
+
+// if the dataTable is in a .panel:
+.panel-dataTable {
+	// make the buttons appear to be in the panel header
+	position: relative;
+	
+	.dataTables_buttons {
+		position: absolute;
+		top: 0;
+		right: 0;
+		
+		// style the buttons the way we do for buttons inside panel headers
+		@extend .panel-heading-buttons;
+		
+		.btn {			
+			// but they are on the right, so switch which side gets a border
+			border-right: none;
+			border-left: 1px solid $panel-inner-border;		
+		}
+	}
+}
+
+// extend the dropdowns to look like bootstrap
+.ColVis_collection, .DTTT_collection {
+	@extend .dropdown-menu;
+	
+	button, a {		
+		@extend .btn;
+		@extend .btn-default;
+		background: transparent;
+		border: none;
+		text-align: left;
+	}
+}
+
+// the ColVis Buttons contain checkboxes
+.ColVis_collection .ColVis_Button > span {
+	@extend .checkbox-inline;
+}
+
+// make the DTTT buttons full-width
+a.DTTT_button {
+	display: block;
+}
+
+
+// Sorting Arrows
+// -------------------------
+
+// Change sorting arrows to FontAwesome (if not IE targeted by flexbox)
+.flexbox .table-sortable thead th {
+	// change colors of sortable headers based on state
+	&.sorting,
+	&.sorting_disabled,
+	&.sorting_asc_disabled,
+	&.sorting_desc_disabled { 
+		color: $gray;
+	}
+	&.sorting_asc,
+	&.sorting_desc {
+		color: $text-color;
+	}
+	&.sorting,
+	&.sorting_asc,
+	&.sorting_desc {
+		background-image: none;
+		padding-right: 22px;
+		&::after {
+			font-family: FontAwesome;
+			content: "\f0dc";
+			float: right;
+			margin-right: -12px;
+			@include opacity(.5);
+		}
+	}	
+	&.sorting_asc::after,
+	&.sorting_asc:hover::after {
+		content: "\f0de";
+		@include opacity(.8);
+	}
+	&.sorting_desc::after,
+	&.sorting_desc:hover::after {
+		content: "\f0dd";
+		@include opacity(.8);
+	}
+}
