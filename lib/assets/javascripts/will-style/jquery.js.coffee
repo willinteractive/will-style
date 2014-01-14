@@ -1,7 +1,7 @@
 # Place all the behaviors and hooks related to jQuery here.
 
-#= require jquery.placeholder.min.js
+#= require jquery.placeholder.js
 
 $ ->
-  # make placeholder attributes work in IE
+  # Make all inputs with a placeholder attribute into a placeholder
   $(document).ready($('input[placeholder]').placeholder())
