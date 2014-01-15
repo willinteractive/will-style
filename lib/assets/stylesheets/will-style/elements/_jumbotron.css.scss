@@ -8,6 +8,8 @@
 // 
 */
 
+// @import "compass/css/background-size";
+
 
 // Base class
 // -------------------------
@@ -25,9 +27,52 @@
 		padding-top: $jumbotron-padding;
 	}
 	
-	// make sure all h* tags get the headings color
-	h1, h2, h3, h4, h5 {
-		color: $jumbotron-heading-color;
-	}
-	
+}
+
+
+// CUSTOM - Inverse (dark) Background
+// -------------------------
+
+.jumbotron-inverse {
+  color: $jumbotron-inverse-color;
+  background-color: $jumbotron-inverse-bg;
+
+  h1, h2, h3, h4, h5 {
+    color: $jumbotron-inverse-heading-color;
+  }
+}
+
+
+// CUSTOM - Primary (brand color) Background
+// -------------------------
+
+.jumbotron-inverse {
+  color: $jumbotron-primary-color;
+  background-color: $jumbotron-primary-bg;
+
+  h1, h2, h3, h4, h5 {
+    color: $jumbotron-primary-heading-color;
+  }
+}
+
+
+// CUSTOM - Background images
+// -------------------------
+
+.jumbotron[class*="image"] {
+	// if it is an image, center it and do not tile it
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.jumbotron[class*="cover"] {
+	// @include background-size(cover);
+	background-size: cover;
+}
+
+.jumbotron[class*="fixed"] {
+	// @include background-size(cover);
+	background-size: 100% auto;
+	background-attachment: fixed;
+	background-position-y: top;
 }

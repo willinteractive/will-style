@@ -132,10 +132,19 @@ $pagination-active-bg:			$gray-light;
 // JUMBOTRON
 // -------------------------
 $jumbotron-padding:					4em;
-$jumbotron-color:						$white;
-$jumbotron-bg:							$brand-primary;
-$jumbotron-heading-color:		$white;
 $jumbotron-font-size:				$font-size-base;
+
+$jumbotron-color:						inherit;
+$jumbotron-bg:							$gray-lighter;
+$jumbotron-heading-color:		inherit;
+
+$jumbotron-inverse-color:						$white;
+$jumbotron-inverse-bg:							$gray-dark;
+$jumbotron-inverse-heading-color:		$white;
+
+$jumbotron-primary-color:						$white;
+$jumbotron-primary-bg:							$brand-primary;
+$jumbotron-primary-heading-color:		$white;
 
 
 // FROM STATES AND ALERTS
