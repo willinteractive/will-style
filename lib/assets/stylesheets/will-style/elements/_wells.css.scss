@@ -1,6 +1,6 @@
 /* 
 // 
-// WELLS & JUMBOTRON
+// WELLS
 // 
 */
 
@@ -8,7 +8,7 @@
 // Base class
 // -------------------------
 
-.well, .jumbotron {
+.well {
 	@include gradient-radial(lighten($body-bg,2%), darken($body-bg,4%));
 	background-position: center;
 	background-size: 200%;

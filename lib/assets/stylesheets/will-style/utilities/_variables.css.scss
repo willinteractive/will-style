@@ -131,8 +131,11 @@ $pagination-active-bg:			$gray-light;
 
 // JUMBOTRON
 // -------------------------
-$jumbotron-color: 					$text-color;
-$jumbotron-heading-color: 	$headings-color;
+$jumbotron-padding:					4em;
+$jumbotron-color:						$white;
+$jumbotron-bg:							$brand-primary;
+$jumbotron-heading-color:		$white;
+$jumbotron-font-size:				$font-size-base;
 
 
 // FROM STATES AND ALERTS

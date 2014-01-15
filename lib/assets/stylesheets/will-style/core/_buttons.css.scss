@@ -23,51 +23,55 @@
 // CUSTOM: Inverse buttons
 // --------------------------------------------------
 
-// Colored border, transparent background
-// but on hover colors it's bg
-.btn-default-inverse {
-  @include button-variant($btn-default-bg, transparent, $btn-default-border);
-  
-  &:hover, &:focus {
-	 @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border); 
+// All inverse buttons will have a transparent background and it's hover text will be white
+.btn[class*="inverse"] {
+	background: transparent;
+	&:hover, &:focus {
+		color: $white;
   }
+}
+
+// added .btn to the default so the because the above was overriding the :hover's text color change
+.btn.btn-default-inverse {
+	color: $btn-default-bg;
+	border-color: $btn-default-border;
+	&:hover, &:focus {
+		background: $btn-default-bg;
+		color: $text-color;
+	}		
 }
 .btn-primary-inverse {
-  @include button-variant($btn-primary-bg, transparent, $btn-primary-border);
-  
-  &:hover, &:focus {
-	 @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border); 
-  }
+	color: $btn-primary-bg;
+	border-color: $btn-primary-bg;
+	&:hover, &:focus {
+		background: $btn-primary-bg;
+	}  
 }
-// Success appears as green
 .btn-success-inverse {
-  @include button-variant($btn-success-bg, transparent, $btn-success-border);
-  
-  &:hover, &:focus {
-	 @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border); 
-  }
+	color: $btn-success-bg;
+	border-color: $btn-success-bg;
+	&:hover, &:focus {
+		background: $btn-success-bg;
+	}  
 }
-// Info appears as blue-green
 .btn-info-inverse {
-  @include button-variant($btn-info-bg, transparent, $btn-info-border);
-  
-  &:hover, &:focus {
-	 @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border); 
-  }
+	color: $btn-info-bg;
+	border-color: $btn-info-bg;
+	&:hover, &:focus {
+		background: $btn-info-bg;
+	}  
 }
-// Warning appears as orange
 .btn-warning-inverse {
-  @include button-variant($btn-warning-bg, transparent, $btn-warning-border);
-  
-  &:hover, &:focus {
-	 @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border); 
-  }
+	color: $btn-warning-bg;
+	border-color: $btn-warning-bg;
+	&:hover, &:focus {
+		background: $btn-warning-bg;
+	}  
 }
-// Danger and error appear as red
 .btn-danger-inverse {
-  @include button-variant($btn-danger-bg, transparent, $btn-danger-border);
-  
-  &:hover, &:focus {
-	 @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border); 
-  }
+	color: $btn-danger-bg;
+	border-color: $btn-danger-bg;
+	&:hover, &:focus {
+		background: $btn-danger-bg;
+	}  
 }

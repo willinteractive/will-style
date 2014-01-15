@@ -1,0 +1,33 @@
+/* 
+// 
+// JUMBOTRON
+//
+// These no loner are like large wells
+// They now span the entire width of the window
+// Make sure it's outside .container
+// 
+*/
+
+
+// Base class
+// -------------------------
+
+.jumbotron {
+
+	// remove padding from left and right
+	padding-right: 0px;
+	padding-left: 0px;
+	
+	// no bottom margin so you can stack Jumbotrons
+	margin-bottom: 0px;
+	// but give some spacing to the containers that follow
+	+ .container {
+		padding-top: $jumbotron-padding;
+	}
+	
+	// make sure all h* tags get the headings color
+	h1, h2, h3, h4, h5 {
+		color: $jumbotron-heading-color;
+	}
+	
+}
