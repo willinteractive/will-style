@@ -27,6 +27,14 @@
 		padding-top: $jumbotron-padding;
 	}
 	
+	// these aren't actually in the SASS files??
+	// I'm not sure why they're not applied to the p tag but just the .jumbotron tag
+	p {
+    margin-bottom: ($jumbotron-padding / 2);
+    font-size: $jumbotron-font-size;
+    font-weight: 400;
+  }
+	
 }
 
 
