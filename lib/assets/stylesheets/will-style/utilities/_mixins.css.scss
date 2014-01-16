@@ -14,3 +14,9 @@
 	   -moz-hyphens: auto;
 	        hyphens: auto;
 }
+
+// Button typography alteration as mixin for others to use
+@mixin btn_typography() {
+	text-transform: uppercase;
+	letter-spacing: .05em;
+}

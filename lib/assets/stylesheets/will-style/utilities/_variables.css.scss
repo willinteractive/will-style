@@ -116,10 +116,29 @@ $dropdown-caret-color:			$text-color;
 
 // NAVBAR
 // -------------------------
-$navbar-height:							60px;
+$navbar-height:							80px;
 $navbar-margin-bottom:			0px;
 $navbar-border-radius:			0px;
 
+$navbar-default-color:			$text-color;
+$navbar-default-bg:					transparent;
+$navbar-default-border:			$gray-lighter;
+
+// Navbar links
+$navbar-default-link-color:						$gray-darker;
+$navbar-default-link-hover-color:			darken($navbar-default-link-color, 10%);
+$navbar-default-link-hover-bg:				transparent;
+$navbar-default-link-active-color:		$gray;
+$navbar-default-link-active-bg:				transparent;
+$navbar-default-link-disabled-color:	$gray-light;
+$navbar-default-link-disabled-bg:			transparent;
+
+// Navbar brand label
+$navbar-default-brand-color:					$navbar-default-link-color;
+$navbar-default-brand-hover-color:		$navbar-default-link-hover-color;
+$navbar-default-brand-hover-bg:				transparent;
+
+// Navbar inverse
 $navbar-inverse-bg: 							transparent;
 $navbar-inverse-link-active-bg: 	transparent;
 

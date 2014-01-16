@@ -5,15 +5,27 @@
 */
 
 
-// Full header background
-// -------------------------
+// App Header
 
 .app-header {
-	border-bottom: $double-border;
-	background-image: url('will-style/header_bg.png');
-	background-repeat: repeat;
-	margin-bottom: 0px;
-}
+	
+	// if the app header is followed by a the main content, give it some top padding
+	+ .container {
+		padding-top: 2em;
+	}
+	
+	// customize the type of the navigation
+	// but not the dropdowns
+	.nav > li > a {
+		@include btn_typography();
+	}
+	
+	// move the dropdowns inside the nav up because there's so much padding
+	.navbar-nav > li > .dropdown-menu {
+		margin-top: -$navbar-padding-vertical/1.5;
+	}
+	
+} 
 
 
 // Custom Brand/project name
@@ -23,6 +35,5 @@ a.navbar-brand {
 	padding: $navbar-padding-vertical/2 $navbar-padding-horizontal;
 	text-transform: uppercase;
 	font-size: $font-size-large * 1.2;
-	font-family: $headings-font-family;
 	vertical-align: bottom;
 }
