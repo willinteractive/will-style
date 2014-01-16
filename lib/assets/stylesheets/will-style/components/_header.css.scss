@@ -36,4 +36,9 @@ a.navbar-brand {
 	text-transform: uppercase;
 	font-size: $font-size-large * 1.2;
 	vertical-align: bottom;
+	
+	// make sure it doesn't change color because it's been visited
+	&:visited {
+		color: $navbar-default-brand-color;
+	}
 }
