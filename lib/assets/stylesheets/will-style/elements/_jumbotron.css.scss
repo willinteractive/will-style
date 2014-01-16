@@ -16,6 +16,10 @@
 
 .jumbotron {
 
+	// these are supposed to be under the p tag but it's not compiling right
+	font-weight: inherit;
+	line-height: inherit;
+
 	// remove padding from left and right
 	padding-right: 0px;
 	padding-left: 0px;
@@ -35,6 +39,14 @@
     font-weight: 400;
   }
 	
+}
+
+
+// SMALL - less padding
+// -------------------------
+.jumbotron-small {
+	padding-top: $jumbotron-padding / 2;
+	padding-bottom: $jumbotron-padding / 2;
 }
 
 

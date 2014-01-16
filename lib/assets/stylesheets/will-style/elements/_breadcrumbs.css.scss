@@ -5,15 +5,6 @@
 */
 
 
-.breadcrumb {
-	border: 1px solid $gray-lighter;
-	
-	a.active {
-		color: $gray;
-	}
-}
-
-
 // Custom
 // -------------------------
 
@@ -25,4 +16,15 @@
 	
 	// remove padding from the left for better alignment
 	padding-left: 0px;
+	
+	a {
+		// put some spacing between the right side of the link and the divider
+		margin-right: .5em;
+	}
+}
+
+
+// if the breadcrumb is inside a jumbotron, remove the bottom margin
+.jumbotron .breadcrumb {
+	margin-bottom: 0px;
 }

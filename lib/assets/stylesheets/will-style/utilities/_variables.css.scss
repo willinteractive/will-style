@@ -48,7 +48,7 @@ $text-color:								$gray-dark;
 // LINKS
 // -------------------------
 $link-color:								$green;
-$link-color-hover:					$green;
+$link-hover-color:					$green;
 
 
 // TYPOGRAPHY
@@ -200,8 +200,8 @@ $thumbnail-border-radius:		0px;
 
 // BREADCRUMBS
 // -------------------------
-$breadcrumb-active-color: 	$gray;
-$breadcrumb-bg: 						lighten($gray-lighter, 10%);
+$breadcrumb-active-color: 	$text-color;
+$breadcrumb-bg: 						transparent;
 
 
 /*
