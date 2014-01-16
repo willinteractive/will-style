@@ -13,6 +13,16 @@ html, body {
 	height: 100%;
 }
 
+
+// Links
+// -------------------------
+
+// style the visited links that are not buttons
+a:not([class*="btn"]):visited {
+	color: darken($link-color, 15%);
+}
+
+
 // Images
 // -------------------------
  
