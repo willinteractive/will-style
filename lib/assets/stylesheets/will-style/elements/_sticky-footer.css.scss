@@ -10,18 +10,13 @@
 	min-height: 100%;
 	height: auto !important;
 	height: 100%;
-	margin: 0 auto -60px;
-	padding: 0 0 80px;
+	margin: 0 auto -80px;
+	padding: 0 0 100px;
 }
 
 footer {
 	background: $gray-lighter;
-	
-	p {
-		margin: 0;
-		display: block;
-		height: 60px;
-		line-height: 60px;
-	}
+	height: 80px;
+	padding-top: 30px;
 }
 	
