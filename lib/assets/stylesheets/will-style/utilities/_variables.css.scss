@@ -141,7 +141,10 @@ $navbar-default-brand-hover-color:		$navbar-default-link-hover-color;
 $navbar-default-brand-hover-bg:				transparent;
 
 // Navbar inverse
-$navbar-inverse-bg: 							transparent;
+// @FIXME: setting this to transparent causes an error:
+// $color: "transparent" is not a color for `darken'
+// $navbar-inverse-bg: 							transparent;
+
 $navbar-inverse-link-active-bg: 	transparent;
 
 
