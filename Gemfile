@@ -8,6 +8,8 @@ gem 'coffee-rails'
 
 gem 'sass-rails'
 
+gem 'compass-rails'
+
 gem 'bootstrap-sass'
 
 gem 'jquery-rails'
@@ -24,5 +26,7 @@ gem "flot-rails"
 #Modernizr
 gem 'modernizr'
 
-# View source maps in Chrome
-gem 'sass-rails-source-maps'
+group :development do
+  # View source maps in Chrome
+  gem 'sass-rails-source-maps'
+end
