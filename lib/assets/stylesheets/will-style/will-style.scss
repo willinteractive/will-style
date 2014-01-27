@@ -58,7 +58,13 @@
 @import "bootstrap/scaffolding";
 @import "bootstrap/type";
 @import "bootstrap/code";
+
+// Custom medium-small (ms) grid for 480-768
+// must come before Bootstrap's grid
+@import "will-style/core/grid";
 @import "bootstrap/grid";
+
+// resume bootstrap imports
 @import "bootstrap/tables";
 @import "bootstrap/forms";
 @import "bootstrap/buttons";
@@ -66,6 +72,7 @@
 // Custom
 @import "will-style/core/scaffolding";
 @import "will-style/core/type";
+@import "will-style/core/grid";
 @import "will-style/core/tables";
 @import "will-style/core/forms";
 @import "will-style/core/buttons";
