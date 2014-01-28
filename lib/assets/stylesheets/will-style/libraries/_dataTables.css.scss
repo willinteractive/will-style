@@ -9,6 +9,11 @@
 	width: 100% !important;
 }
 
+// if the the table is in side a panel, remove the top and bottom margins
+.panel .dataTable {
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+}
 
 // extras like filter & length 
 // -------------------------
