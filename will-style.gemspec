@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency "sass-rails", "~> 4.0"
   s.add_dependency "compass-rails", "~> 1.1"
   s.add_dependency "bootstrap-sass", "~> 3.0"
+  s.add_dependency "font-awesome-rails", "~> 4.0"
 
   s.add_development_dependency "bundler", "~> 1.5"
 
