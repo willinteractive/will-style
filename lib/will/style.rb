@@ -1,3 +1,10 @@
+# Dependencies
+require "sass"
+require "sass-rails"
+require "compass-rails"
+require "bootstrap-sass"
+require "font-awesome-rails"
+
 module Will
   module Style
     class Engine < Rails::Engine
