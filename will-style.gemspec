@@ -14,6 +14,10 @@ Gem::Specification.new do |s|
   s.license  = 'MIT'
 
   s.add_dependency "rails", "~> 4.0"
+
+  # @NOTE: This is the only version of sass that works with compass 0.12.2
+  s.add_dependency "sass", "3.3.0.alpha.149"
+  
   s.add_dependency "sass-rails", "~> 4.0"
   s.add_dependency "compass-rails", "~> 1.1"
   s.add_dependency "bootstrap-sass", "~> 3.0"
