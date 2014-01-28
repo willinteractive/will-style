@@ -66,6 +66,14 @@ div.dataTables_filter {
 </div>
 */
 
+// remove the background overlays and catchers completely
+.ColVis_collectionBackground, 
+.TableTools_collectionBackground,
+.ColVis_catcher,
+.TableTools_catcher {
+	display: none !important;
+}
+
 // get all elements in one line
 .DTTT_container, .ColVis {
 	display: inline-block;

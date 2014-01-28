@@ -27,3 +27,11 @@
 	@extend .has-error;
 }
 
+
+// Horizontal form labels still need to be text-aligned right
+@media (min-width: $screen-xs) {
+	.form-horizontal .control-label {
+		text-align: right;
+	}
+}
+
