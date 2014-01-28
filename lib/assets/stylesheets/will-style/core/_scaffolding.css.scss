@@ -14,15 +14,6 @@ html, body {
 }
 
 
-// Links
-// -------------------------
-
-// style the visited links that are not buttons
-a:not([class*="btn"]):visited {
-	color: darken($link-color, 15%);
-}
-
-
 // Images
 // -------------------------
  
