@@ -162,3 +162,21 @@ a.DTTT_button {
 		@include opacity(.8);
 	}
 }
+
+
+// EXTRA's catcher's and overlays
+// taken from jquery-datatables-rails
+// didn't want the whole thing because it messed up the buttons styles
+// -------------------------
+
+div.ColVis_collectionBackground
+div.DTTT_collection_background {
+  background-color: black;
+  z-index: 1100;
+}
+
+div.ColVis_catcher,
+div.DTTT_catcher {
+  position: absolute;
+  z-index: 1101;
+}
