@@ -27,7 +27,7 @@
 
 // add a thin line between buttons
 .btn-group {
-	> .btn + .dropdown-toggle {
+	> .btn {
 		@include box-shadow(-1px 0px 0px rgba(0,0,0,.1));
 	}
 }
