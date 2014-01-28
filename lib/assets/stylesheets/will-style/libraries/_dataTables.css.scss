@@ -102,12 +102,16 @@ div.dataTables_filter {
 .ColVis_collection, .DTTT_collection {
 	@extend .dropdown-menu;
 	
-	button, a {		
-		@extend .btn;
-		@extend .btn-default;
-		background: transparent;
+	button, a {
+		background: none;
 		border: none;
+		padding: 5px;
 		text-align: left;
+		
+		&:hover, &:focus {
+			background: $gray-light;
+			cursor: pointer;			
+		}
 	}
 }
 
