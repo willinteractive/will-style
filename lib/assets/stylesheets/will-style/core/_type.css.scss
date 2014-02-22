@@ -1,46 +1,91 @@
 /* 
 // 
 // TYPOGRAPHY
+// Leaving most of the declarations to TypePlate but adding back in some bootstrap classes manually
 // 
 */
-
-
-// reset font-weight for Open Sans weight
-body { 
-	font-weight: 400;
-}
-
 
 // Headings
 // -------------------------
 
-// custom h1 styles
-h1, .h1 {
-	text-transform: uppercase;
-	text-shadow: rgba(black, .25) 0px 2px 2px;
-	color: $text-color;
-	small { 
-		text-shadow: none;
-	}
-}
-
-h3, h4, h5, h6,
-.h3, .h4, .h5, .h6 {
-	font-family: $font-family-sans-serif;
+// reset larger heading font-weights to light
+h1, h2, h3, h4 {
+	font-weight: 300;
 }
 
 
-// Page header
+
+// Emphasis & misc
 // -------------------------
 
-.page-header {	
-	border-bottom: $double-border;
-	
-	h1, h2, h3 {
-		margin-top: 0;
-	}
+// Alignment
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+.text-center {
+	text-align: center;
+}
+.text-justify {
+	text-align: justify;
 }
 
+// Contextual colors
+.text-muted {
+  color: $text-muted;
+}
+
+// for some reason it's not finding this mixin so I'm duplicating it here
+@mixin text-emphasis-variant($parent, $color) {
+  #{$parent} {
+    color: $color;
+  }
+  a#{$parent}:hover {
+    color: darken($color, 10%);
+  }
+}
+
+@include text-emphasis-variant('.text-primary', $brand-primary);
+@include text-emphasis-variant('.text-success', $state-success-text);
+@include text-emphasis-variant('.text-info', 		$state-info-text);
+@include text-emphasis-variant('.text-warning', $state-warning-text);
+@include text-emphasis-variant('.text-danger', 	$state-danger-text);
+
+
+// Lists
+// -------------------------
+
+// Unstyled keeps list items block level, just removes default browser padding and list-style
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+// Inline turns list items into inline-block
+.list-inline {
+  @extend .list-unstyled;
+  margin-left: -5px;
+
+  > li {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+
+// Miscellaneous
+// -------------------------
+
+// Blockquotes
+blockquote {
+	// extend the TypePlate blockquote style
+	// include a cite flourish
+  @include blockquote("-");
+  font-style: italic;
+}
 
 // Custom
 // -------------------------

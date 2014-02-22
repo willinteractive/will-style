@@ -21,12 +21,10 @@
 /* ===================================================================
 	 FONTS - Import from Google Web Fonts
    ================================================================ */
-@import url('http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300|Open+Sans:400italic,700italic,400,700');
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700);
 // NOTE: do not use "bold" or "normal" font weights!
-			// for the condensed font use: 
-							// bold = 700
-							// normal = 300
-			// for the regular font use: 
+			// for the light font use:  300
+			// for the normal font use: 
 							// bold = 700
 							// normal = 400
 							
@@ -55,9 +53,12 @@
 /* ===================================================================
 	 CORE - Core styles; unclassed HTML elements etc.
    ================================================================ */
-@import "bootstrap/scaffolding";
-@import "bootstrap/type";
-@import "bootstrap/code";
+//@import "bootstrap/scaffolding"; - messes with html font-size
+//@import "bootstrap/type"; -- USE TYPEPLATE INSTEAD
+//@import "bootstrap/code"; -- USE TYPEPLATE INSTEAD
+
+//@import "will-style/utilities/vars-typeplate";
+//@import "typeplate";
 
 // Custom medium-small (ms) grid for 480-768
 // must come before Bootstrap's grid

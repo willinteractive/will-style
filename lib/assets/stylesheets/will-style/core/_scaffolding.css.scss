@@ -5,6 +5,20 @@
 */
 
 
+// Reset the box-sizing
+//
+// Heads up! This reset may cause conflicts with some third-party widgets.
+// For recommendations on resolving such conflicts, see
+// http://getbootstrap.com/getting-started/#third-box-sizing
+* {
+  @include box-sizing(border-box);
+}
+*:before,
+*:after {
+  @include box-sizing(border-box);
+}
+
+
 // Body reset
 // -------------------------
 
@@ -13,19 +27,100 @@ html, body {
 	height: 100%;
 }
 
+body {
+  background-color: $body-bg;
+}
+
+// Reset fonts for relevant elements
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+
+// Links
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  border-bottom: 1px solid lighten($link-color, 40%);
+
+  &:hover,
+  &:focus {
+    color: $link-hover-color;
+  }
+
+  &:focus {
+    @include tab-focus();
+  }
+}
+
+[class*="nav"] a {
+	border: 0;
+}
+
+
+// Figures
+//
+// We reset this here because previously Normalize had no `figure` margins. This
+// ensures we don't break anyone's use of the element.
+
+figure {
+  margin: 0;
+}
+
 
 // Images
 // -------------------------
  
-// Add shadow to thumbnail style images
+img {
+  vertical-align: middle;
+}
+
+// Responsive images (ensure images don't scale beyond their parents)
+.img-responsive {
+  @include img-responsive();
+}
+
+// Rounded corners
+.img-rounded {
+  border-radius: $border-radius-large;
+}
+
+// Image thumbnails
+//
+// Heads up! This is mixin-ed into thumbnails.less for `.thumbnail`.
 .img-thumbnail {
-	background: $white;
-  @include box-shadow(0 3px 3px rgba(0,0,0,.1));
+  padding: $thumbnail-padding;
+  line-height: $line-height-base;
+  background-color: $thumbnail-bg;
+  border: 1px solid $thumbnail-border;
+  border-radius: $thumbnail-border-radius;
+  @include transition(all .2s ease-in-out);
+
+  // Keep them at most 100% wide
+  @include img-responsive(inline-block);
+}
+
+// Perfect circle
+.img-circle {
+  border-radius: 50%; // set radius in percents
 }
 
 
 // Horizontal Rules
 // -------------------------
+
+hr {
+  margin-top:    $line-height-computed;
+  margin-bottom: $line-height-computed;
+  border: 0;
+  border-top: 1px solid $hr-border;
+}
 
 // creating a dark hr
 hr.dark {
@@ -44,3 +139,57 @@ hr.short {
 hr.shorter {
   margin: 0;
 }
+
+
+// Only display content to screen readers
+// -------------------------
+// See: http://a11yproject.com/posts/how-to-hide-content/
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+
+// Sectioning
+// -------------------------
+
+// color containers in a zebra fashion if the main section has the .zebra class
+.zebra {
+	section:nth-child(2n) {
+		background-color: $gray-lighter;
+	}
+	.container {
+		padding-top: 5rem;
+		padding-bottom: 5rem;
+	}
+}
+
+
+// Flex Box Layouts
+// -------------------------
+
+// add one of these classes to the parent .row if you want the cols to align vertically
+.row[class*="flexbox"] {
+	@include display-box;
+}
+.flexbox-start {
+	@include box-align(start);
+}
+.flexbox-end {
+	@include box-align(end);
+}
+.flexbox-center {
+	@include box-align(center);
+}
+
+
+
+
+
