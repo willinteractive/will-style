@@ -21,3 +21,16 @@
 	// Bootstrap sets the font-size to px, so we need to set it back to 1 rem
 	font-size: 1rem;
 }
+
+
+// Inside a Page Header
+// -------------------------
+
+// if the dropdown is inside of a page header, we only want the arrow to be the link color
+.dropdown-toggle {
+	color: $text-color;
+	
+	.fa, .caret {
+		color: $link-color;
+	}
+}
