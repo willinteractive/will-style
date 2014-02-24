@@ -1,0 +1,23 @@
+/* 
+// 
+// DROPDOWN MENUS
+// 
+*/
+
+
+// Dropdown arrow/caret
+// -------------------------
+
+// If the caret is small, align it to the middle
+.dropdown-toggle > .fa.small {
+	vertical-align: middle;
+}
+
+
+// The dropdown menu (ul)
+// -------------------------
+
+.dropdown-menu {
+	// Bootstrap sets the font-size to px, so we need to set it back to 1 rem
+	font-size: 1rem;
+}

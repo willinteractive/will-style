@@ -524,6 +524,7 @@ html {
 	}
 }
 
+// Custom Responsiveness
 @media (min-width: 568px) {
 	html {
 		font-size: 87.5%;
@@ -594,7 +595,12 @@ $sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gam
 @each $size in $sizes {
 	.#{nth($size, 1)} {
 		@include type-scale(nth($size, 2), $font-base, '#{$type-scale-unit-value}', $measure);
+		font-weight: 300;
 	}
+}
+
+.epsilon, .zeta {
+	font-weight: bold;
 }
 
 // associate h1-h6 tags with their appropriate greek heading

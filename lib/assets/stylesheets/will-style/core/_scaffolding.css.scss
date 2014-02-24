@@ -47,11 +47,11 @@ textarea {
 a {
   color: $link-color;
   text-decoration: none;
-  border-bottom: 1px solid lighten($link-color, 40%);
 
   &:hover,
   &:focus {
     color: $link-hover-color;
+    text-decoration: underline;
   }
 
   &:focus {
