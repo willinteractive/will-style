@@ -107,6 +107,12 @@ $dropdown-link-hover-bg:		lighten($text-color, 60%);
 $dropdown-caret-color:			$text-color;
 
 
+// MEDIA QUERIES BREAKPOINTS
+// -------------------------
+// custom for ms size
+$screen-ms-min: 						568px;
+
+
 // NAVBAR
 // -------------------------
 $navbar-height:							80px;
@@ -186,6 +192,11 @@ $state-danger-border:				$red;
 $progress-bar-bg:						$blue;
 
 
+// LIST GROUP
+// -------------------------
+$list-group-border-radius:  0px;
+
+
 // THUMBNAILS
 // -------------------------
 $thumbnail-bg:							none;
@@ -194,7 +205,7 @@ $thumbnail-border-radius:		0px;
 
 // BREADCRUMBS
 // -------------------------
-$breadcrumb-color: 					$gray-light;
+$breadcrumb-color: 					#999;
 $breadcrumb-active-color: 	$text-color;
 $breadcrumb-bg: 						transparent;
 $breadcrumb-separator: 			":";

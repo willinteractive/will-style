@@ -36,7 +36,7 @@
 
 // ----- col-ms breakpoints and related classes -----
 
-@media (min-width: 568px) {
+@media (min-width: $screen-ms-min) {
   .col-ms-1,
   .col-ms-2,
   .col-ms-3,
