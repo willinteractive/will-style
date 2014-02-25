@@ -25,7 +25,7 @@
 
 // color containers in a zebra fashion if the main section has the .zebra class
 .zebra {
-	section:nth-child(2n) {
+	> section:nth-child(2n) {
 		color: $section-zebra-color;
 		background-color: $section-zebra-bg;
 		
@@ -39,7 +39,7 @@
 // Inverse (dark) Background
 // -------------------------
 
-.sectioned section.inverse {
+.sectioned > section.inverse {
   color: $section-inverse-color;
   background-color: $section-inverse-bg;
 
@@ -52,7 +52,7 @@
 // Primary (brand color) Background
 // -------------------------
 
-.sectioned section.primary {
+.sectioned > section.primary {
   color: $section-primary-color;
   background-color: $section-primary-bg;
 
@@ -65,18 +65,18 @@
 // Background images
 // -------------------------
 
-.sectioned section[class*="image"] {
+.sectioned > section[class*="image"] {
 	// if it is an image, center it and do not tile it
 	background-position: center;
 	background-repeat: no-repeat;
 }
 
-.sectioned section[class*="cover"] {
+.sectioned > section[class*="cover"] {
 	@include background-size(cover);
 	background-size: cover;
 }
 
-.sectioned section[class*="fixed"] {
+.sectioned > section[class*="fixed"] {
 	@include background-size(cover);
 	background-size: 100% auto;
 	background-attachment: fixed;
