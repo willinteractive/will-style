@@ -121,7 +121,6 @@
 @import "will-style/elements/navs";
 @import "will-style/elements/breadcrumbs";
 @import "will-style/elements/labels-badges";
-@import "will-style/elements/jumbotron";
 @import "will-style/elements/thumbnails";
 @import "will-style/elements/alerts";
 @import "will-style/elements/panels";
@@ -129,6 +128,7 @@
 
 
 // Custom
+@import "will-style/elements/sections";
 @import "will-style/elements/sticky-footer";
 @import "will-style/elements/switch";
 
@@ -136,8 +136,8 @@
 /* ===================================================================
 	 COMPONENTS - Elements put together
    ================================================================ */
-@import "will-style/components/well-big-stats";
 @import "will-style/components/header";
+@import "will-style/components/well-big-stats";
 
 
 /* ===================================================================

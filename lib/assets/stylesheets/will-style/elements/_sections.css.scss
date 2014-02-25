@@ -1,0 +1,84 @@
+/* 
+// 
+// SECTIONS
+//
+// Sections are full-width colored/imaged background areas of a page.
+// add the class ".sectioned" to the <main> element followed by <section> elements
+// 
+*/
+
+
+// Base class
+// -------------------------
+
+.sectioned section {
+
+	// add padding
+	padding-top: $section-padding;
+	padding-bottom: $section-padding;
+	
+}
+
+
+// Zebra striping
+// -------------------------
+
+// color containers in a zebra fashion if the main section has the .zebra class
+.zebra {
+	section:nth-child(2n) {
+		color: $section-zebra-color;
+		background-color: $section-zebra-bg;
+		
+		h1, h2, h3, h4, h5 {
+			color: $section-zebra-heading-color;
+		}
+	}
+}
+
+
+// Inverse (dark) Background
+// -------------------------
+
+.sectioned section.inverse {
+  color: $section-inverse-color;
+  background-color: $section-inverse-bg;
+
+  h1, h2, h3, h4, h5 {
+    color: $section-inverse-heading-color;
+  }
+}
+
+
+// Primary (brand color) Background
+// -------------------------
+
+.sectioned section.primary {
+  color: $section-primary-color;
+  background-color: $section-primary-bg;
+
+  h1, h2, h3, h4, h5 {
+    color: $section-primary-heading-color;
+  }
+}
+
+
+// Background images
+// -------------------------
+
+.sectioned section[class*="image"] {
+	// if it is an image, center it and do not tile it
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.sectioned section[class*="cover"] {
+	@include background-size(cover);
+	background-size: cover;
+}
+
+.sectioned section[class*="fixed"] {
+	@include background-size(cover);
+	background-size: 100% auto;
+	background-attachment: fixed;
+	background-position-y: center;
+}

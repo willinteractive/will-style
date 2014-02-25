@@ -156,23 +156,6 @@ hr.shorter {
 }
 
 
-// Sectioning
-// -------------------------
-
-// if the main area has the class .sectioned, it wants the following sections to have padding
-.sectioned section{
-		padding-top: 5rem;
-		padding-bottom: 5rem;
-}
-
-// color containers in a zebra fashion if the main section has the .zebra class
-.zebra {
-	section:nth-child(2n) {
-		background-color: $gray-lighter;
-	}
-}
-
-
 // Flex Box Layouts
 // -------------------------
 

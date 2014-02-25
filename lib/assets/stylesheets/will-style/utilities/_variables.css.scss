@@ -160,14 +160,6 @@ $jumbotron-color:						inherit;
 $jumbotron-bg:							$gray-lighter;
 $jumbotron-heading-color:		inherit;
 
-$jumbotron-inverse-color:						$white;
-$jumbotron-inverse-bg:							$gray-dark;
-$jumbotron-inverse-heading-color:		$white;
-
-$jumbotron-primary-color:						$white;
-$jumbotron-primary-bg:							$brand-primary;
-$jumbotron-primary-heading-color:		$white;
-
 
 // FROM STATES AND ALERTS
 // -------------------------
@@ -219,3 +211,20 @@ $breadcrumb-separator: 			":";
 */
 
 $double-border: 						medium double #c5c5c5;
+
+
+// SECTIONS
+// -------------------------
+$section-padding:						5rem;
+
+$section-zebra-color:						inherit;
+$section-zebra-bg:							$gray-lighter;
+$section-zebra-heading-color:		inherit;
+
+$section-inverse-color:						$white;
+$section-inverse-bg:							$gray-dark;
+$section-inverse-heading-color:		$white;
+
+$section-primary-color:						$white;
+$section-primary-bg:							$brand-primary;
+$section-primary-heading-color:		$white;
