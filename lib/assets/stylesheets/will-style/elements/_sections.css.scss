@@ -77,8 +77,6 @@
 }
 
 .sectioned > section[class*="fixed"] {
-	@include background-size(cover);
-	background-size: 100% auto;
 	background-attachment: fixed;
 	background-position-y: center;
 }
