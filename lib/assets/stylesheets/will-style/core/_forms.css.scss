@@ -9,6 +9,12 @@
 // ---------------------------
 
 .form-control {
+	// remove pixel font-size
+	font-size: 1rem;
+	
+	// remove pixel height
+	height: auto;
+	
 	// remove box shadow and reduce text color from 
 	// Disabled and read-only inputs	&[disabled],
   &[readonly],
@@ -33,5 +39,27 @@
 	.form-horizontal .control-label {
 		text-align: right;
 	}
+}
+
+
+// Breakpoints
+// ---------------------------
+
+@media (min-width: $screen-sm-min) {
+	// Position radios and checkboxes better
+	input[type="radio"],
+	input[type="checkbox"] {
+	  margin-top: 5px;
+	}
+
+}
+
+@media (min-width: $screen-md-min) {
+	// Position radios and checkboxes better
+	input[type="radio"],
+	input[type="checkbox"] {
+	  margin-top: 7px;
+	}
+
 }
 
