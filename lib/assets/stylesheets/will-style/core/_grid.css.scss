@@ -64,6 +64,7 @@
   .col-ms-12 { width: 100%; }
 
   // Push and pull columns for source order changes
+  .col-ms-push-0  { left: percentage((0 / $grid-columns)); }
   .col-ms-push-1  { left: percentage((1 / $grid-columns)); }
   .col-ms-push-2  { left: percentage((2 / $grid-columns)); }
   .col-ms-push-3  { left: percentage((3 / $grid-columns)); }
@@ -76,6 +77,7 @@
   .col-ms-push-10 { left: percentage((10/ $grid-columns)); }
   .col-ms-push-11 { left: percentage((11/ $grid-columns)); }
 
+  .col-ms-pull-0  { right: percentage((0 / $grid-columns)); }
   .col-ms-pull-1  { right: percentage((1 / $grid-columns)); }
   .col-ms-pull-2  { right: percentage((2 / $grid-columns)); }
   .col-ms-pull-3  { right: percentage((3 / $grid-columns)); }
@@ -89,6 +91,7 @@
   .col-ms-pull-11 { right: percentage((11/ $grid-columns)); }
 
   // Offsets
+  .col-ms-offset-0  { margin-left: percentage((0 / $grid-columns)); }
   .col-ms-offset-1  { margin-left: percentage((1 / $grid-columns)); }
   .col-ms-offset-2  { margin-left: percentage((2 / $grid-columns)); }
   .col-ms-offset-3  { margin-left: percentage((3 / $grid-columns)); }
