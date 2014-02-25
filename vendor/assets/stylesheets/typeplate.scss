@@ -525,20 +525,20 @@ html {
 }
 
 // Custom Responsiveness
-@media (min-width: 568px) {
+@media (min-width: $screen-ms-min) {
 	html {
 		font-size: 87.5%;
 	}
 }
 
-@media (min-width: 768px) {
+@media (min-width: $screen-sm-min) {
 	html {
 		font-size: 100%;
 		font-weight: 300;
 	}
 }
 
-@media (min-width: 1024px) {
+@media (min-width: $screen-md-min) {
 	html {
 		font-size: 112.5%;
 	}
