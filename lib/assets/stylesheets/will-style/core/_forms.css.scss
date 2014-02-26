@@ -25,6 +25,36 @@
 }
 
 
+// Form control feedback states
+// ---------------------------
+
+// Bootstrap uses px units, we must you rem's
+.has-feedback {
+
+  // Ensure icons don't overlap text
+  .form-control {
+    padding-right: ($input-height-base * 1.25);
+  }
+
+  // Feedback icon (requires .glyphicon classes)
+  .form-control-feedback {
+  	// clear our px width & height
+    width: auto;
+    height: auto;
+    
+    // use default line-height
+    line-height: $line-height-base;
+    
+    // then use the same padding as the inputs and put it at the top
+    padding: $padding-base-vertical $padding-base-horizontal;
+    top: 0;
+    
+    // when using this feedback inside of an input group the z-index needs to be higher than the form-control which is 2
+    z-index: 3;
+  }
+}
+
+
 // Feedback states
 // ---------------------------
 
