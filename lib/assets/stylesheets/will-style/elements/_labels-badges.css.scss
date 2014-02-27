@@ -15,6 +15,10 @@
 // CUSTOM
 // -------------------------
 
+.label-purple {
+	@include label-variant($purple);
+}
+
 .label-choice {
 	@include label-variant($choice);
 }
