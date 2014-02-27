@@ -52,13 +52,18 @@
 	// give it a bg color
   background-color: $gray-lighter;
   
-  // if it contains a breadcrumb instead of header
-  .breadcrumb {
+  // if it contains a breadcrumb and/or (search) form instead of header
+  .breadcrumb, form {
 	  // remove padding
 	  padding: 0;
 	  
 	  // setup margins
-	  margin: .75em 0;
+	  margin: 1.5rem 0;
+  }
+  
+  // move the form down slightly more
+  form {
+	  margin-top: 1.75rem;
   }
 }
 
