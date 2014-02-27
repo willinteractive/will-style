@@ -61,6 +61,127 @@ $headings-small-color:			$text-color;
 
 $text-muted:								$gray;
 
+// .x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x //
+//
+// $Variables
+//
+// .x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x //
+
+
+// $Variable $BaseType
+// -------------------------------------//
+//the serif boolean var can be redeclared from another stylesheet. However
+//the var must be placed after your @import "typeplate.scss";
+$serif-boolean: false;
+$font-family: if($serif-boolean, serif, sans-serif) !default; // Non-font-face font-stack
+$font-weight: 400;
+$line-height: 1.65 !default;
+$font-size: 75; // percentage value (16 * 75% = 12px)
+$font-base: 16 * ($font-size/100) !default; // converts our percentage to a pixel value
+$custom-font-family: 'Open Sans'; // Custom font-face stack, if set will be added to the $font-family
+$measure: $font-base * $line-height; // 12 * 1.65 = 19.8
+
+
+// $Variable $Paragraphs
+// -------------------------------------//
+
+// Text Indentation Value
+$indent-val: 1.5em !default;
+
+// Paragraph Styling Boolean
+// 'false' means no vertical whitespace
+// between subsequent paragraphs.
+$paragraph-vertical-whitespace: true;
+
+
+// $Variable $Small-Print
+// -------------------------------------//
+
+$small-print-size: 80% !default;
+
+
+// $Variable $Base-Color
+// -------------------------------------//
+
+$body-copy-color: $text-color;
+$heading-color: $gray-dark;
+
+
+// $Variable $Ampersand
+// -------------------------------------//
+
+$amp-fontface-name: Ampersand !default;
+$amp-fontface-source: local('Georgia'), local('Garamond'), local('Palatino'), local('Book Antiqua') !default;
+$amp-fontface-fallback: local('Georgia') !default;
+
+// Allows for our ampersand element to have differing
+// font-family from the ampersand unicode font-family.
+$amp-font-family: Verdana, sans-serif !default;
+
+
+// $Variable $Icon-Font-Helper
+// -------------------------------------//
+// ex.1) $icon-fonts: (icon-name);
+// ex.2) $icon-fonts: (icon-name1, icon-name2, icon-name3);
+$icon-fonts: null !default;
+
+
+// $Variable $Typescale
+// -------------------------------------//
+
+$tera: 78; 		// 12 × 6.5
+$giga: 60; 		// 12 × 5
+$mega: 48; 		// 12 × 4
+$alpha: 40; 	// 12 × 3.3333
+$beta: 32; 		// 12 × 2.6667
+$gamma: 24; 	// 12 × 2
+$delta: 16; 	// 12 × 1.3333
+$epsilon: 14; // 12 × 1.1667
+$zeta: 12; 		// 12 × 1
+
+
+// $Variable $Typescale-Unit
+// -------------------------------------//
+
+$type-scale-unit-value: rem !default;
+
+
+// $Variable $Pull-Quotes
+// -------------------------------------//
+
+$pull-quote-fontsize: 4em !default;
+$pull-quote-opacity: 0.5 !default;
+$pull-quote-color: #dc976e !default;
+
+
+// $Variable $Citation
+// -------------------------------------//
+
+$cite-display: block !default;
+$cite-text-align: right !default;
+$cite-font-size: inherit !default;
+
+
+// $Variable $Small-Caps
+// -------------------------------------//
+
+$small-caps-color: gray !default;
+$small-caps-weight: 600 !default;
+
+
+// $Variable $DropCap
+// -------------------------------------//
+
+$dropcap-float-position: left !default;
+$dropcap-font-size: 4em !default;
+$dropcap-font-family: inherit !default;
+$dropcap-txt-indent: 0 !default;
+$dropcap-margin: inherit !default;
+$dropcap-padding: inherit !default;
+$dropcap-color: inherit !default;
+$dropcap-line-height: 1 !default;
+$dropcap-bg: transparent !default;
+
 
 // TABLES
 // -------------------------
@@ -116,9 +237,12 @@ $screen-ms-min: 						568px;
 
 // NAVBAR
 // -------------------------
-$navbar-height:							80px;
+$navbar-scale:							$delta;
 $navbar-margin-bottom:			0px;
 $navbar-border-radius:			0px;
+//$navbar-padding-horizontal: floor(($grid-gutter-width / 2)) !default;
+//THIS NEEDS TO BE MADE TO USE THE MARGIN CALCULATOR
+$navbar-padding-vertical:		1.2375rem;
 
 $navbar-default-color:			$text-color;
 $navbar-default-bg:					transparent;
@@ -126,7 +250,7 @@ $navbar-default-border:			$gray-lighter;
 
 // Navbar links
 $navbar-default-link-color:						$gray-darker;
-$navbar-default-link-hover-color:			darken($navbar-default-link-color, 10%);
+$navbar-default-link-hover-color:			$link-color;
 $navbar-default-link-hover-bg:				transparent;
 $navbar-default-link-active-color:		$gray;
 $navbar-default-link-active-bg:				transparent;
@@ -136,13 +260,14 @@ $navbar-default-link-disabled-bg:			transparent;
 // Navbar brand label
 $navbar-default-brand-color:					$navbar-default-link-color;
 $navbar-default-brand-hover-color:		$navbar-default-link-hover-color;
-$navbar-default-brand-hover-bg:				transparent;
+
+// Navbar toggle
+$navbar-default-toggle-hover-bg:			$gray-lighter;
+$navbar-default-toggle-icon-bar-bg:		$text-color;
+$navbar-default-toggle-border-color:	$gray-lighter;
 
 // Navbar inverse
-// @FIXME: setting this to transparent causes an error:
-// $color: "transparent" is not a color for `darken'
-// $navbar-inverse-bg: 							transparent;
-
+$navbar-inverse-bg: 							$gray-dark;
 $navbar-inverse-link-active-bg: 	transparent;
 
 
@@ -233,3 +358,4 @@ $section-inverse-heading-color:		$white;
 $section-primary-color:						$white;
 $section-primary-bg:							$brand-primary;
 $section-primary-heading-color:		$white;
+
