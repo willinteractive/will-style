@@ -8,29 +8,36 @@ module Will
         argument :save_path, type: :string, default: ""
 
         def partial
-          partials = Dir.entries(File.expand_path("../../../partials", __FILE__))
+          partials = Dir.entries(File.expand_path("../../../../../app/views/will/style", __FILE__))
+
+          cleaned_partials = []
+          partials.each do |partial|
+            cleaned_partials << partial.gsub(/^_/, "") unless partial == "." || partial == ".."
+          end
+
+          partials = cleaned_partials
 
           if partial_name == ""
             p "Here are your available partials"
             p "--------------------------------"
             partials.each do |partial|
-              p partial.gsub(".html.erb", "") unless partial == "." || partial == ".."
+              p partial.gsub(".html.erb", "")
             end
           else
             found_partial = false
 
             partials.each do |partial|
               if partial.gsub(".html.erb", "").downcase == partial_name.downcase
-                p "Generating Partial #{partial}"    
                 found_partial = true
 
-                file_content = File.read(File.expand_path("../../../partials/#{partial}", __FILE__))
+                file_content = File.read(File.expand_path("../../../../../app/views/will/style/_#{partial}", __FILE__))
                 if save_path == ""
                   pbcopy file_content
                   p "Partial copied to clipboard"
                 else
                   new_filename = "app/views/#{save_path}.html.erb"
                   File.open(new_filename, 'a') { |file| file.write(file_content) }
+                  p "Copied '#{partial_name}' to #{new_filename}"
                 end
               end
             end
