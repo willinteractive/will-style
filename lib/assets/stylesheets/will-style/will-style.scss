@@ -10,142 +10,51 @@
  *
  */
 
-/*
- *= require font-awesome
- */
-
-/* ===================================================================
-	 FONTS - Import from Google Web Fonts
-   ================================================================ */
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700);
-							
-							
-/* ===================================================================
-	 UTILITIES - Generic utility styles etc.
-   ================================================================ */
-@import "compass/css3";
-
-// Bootstrap variable overrides and custom variables
-@import "will-style/utilities/variables";
-
-@import "bootstrap/variables";
-@import "bootstrap/mixins";
-@import "bootstrap/normalize";
-@import "bootstrap/print";
-
-// Custom mixins
-@import "will-style/utilities/mixins";
-
-// Custom print styles
-// -- should probably break this into multiple print styles per category (CH)
-@import "will-style/utilities/print";
+// CORE
+// HTML tags & more abstract elements like color palettes, 
+// fonts and invisible aspects like animations
+// -------------------------
+@import "will-style/core/core";
 
 
-/* ===================================================================
-	 CORE - Core styles; unclassed HTML elements etc.
-   ================================================================ */
-//@import "bootstrap/scaffolding"; - messes with html font-size
-//@import "bootstrap/type"; -- USE TYPEPLATE INSTEAD
-//@import "bootstrap/code"; -- USE TYPEPLATE INSTEAD
+// ELEMENTS
+// Relatively simple combinations of the CORE built for reuse
+// -------------------------
+@import "will-style/elements/elements";
 
-@import "typeplate";
-
-// Custom medium-small (ms) grid for 480-768
-// must come before Bootstrap's grid
-@import "will-style/core/grid";
-@import "bootstrap/grid";
-
-// resume bootstrap imports
-@import "bootstrap/tables";
-@import "bootstrap/forms";
-@import "bootstrap/buttons";
-
-// Custom
-@import "will-style/core/scaffolding";
-@import "will-style/core/type";
-@import "will-style/core/grid";
-@import "will-style/core/tables";
-@import "will-style/core/forms";
-@import "will-style/core/buttons";
+// Extra elements
+// either import the whole file or copy and paste only certain elements
+@import "will-style/elements/extras";
 
 
-/* ===================================================================
-	 LIBRARIES - External library CSS
-   ================================================================ */
-@import "dataTables/jquery.dataTables.bootstrap3";
-
-@import "will-style/libraries/dataTables";
-@import "will-style/libraries/flot";
-@import "will-style/libraries/offline";
-@import "will-style/libraries/piety";
+// FIXTURES
+// Groups of elements joined together to form a relatively complex, 
+// distinct section of an interface. 
+// -------------------------
+@import "will-style/fixtures/fixtures";
 
 
-/* ===================================================================
-	 ELEMENTS - Objects and abstractions
-   ================================================================ */
-@import "bootstrap/component-animations";
-// @import "bootstrap/glyphicons"; -- We are using FontAwesome instead because it's more powerful
-@import "bootstrap/dropdowns";
-@import "bootstrap/button-groups";
-@import "bootstrap/input-groups";
-@import "bootstrap/navs";
-@import "bootstrap/navbar";
-@import "bootstrap/breadcrumbs";
-@import "bootstrap/pagination";
-@import "bootstrap/pager";
-@import "bootstrap/labels";
-@import "bootstrap/badges";
-// @import "bootstrap/jumbotron"; -- Use wells inside of Sectioned content instead
-@import "bootstrap/thumbnails";
-@import "bootstrap/alerts";
-@import "bootstrap/progress-bars";
-@import "bootstrap/media";
-@import "bootstrap/list-group";
-@import "bootstrap/panels";
-@import "bootstrap/wells";
-@import "bootstrap/close";
-
-// w/ JavaScript
-@import "bootstrap/modals";
-@import "bootstrap/tooltip";
-@import "bootstrap/popovers";
-@import "bootstrap/carousel";
-
-// Bootstrap Overrides & Extends
-@import "will-style/elements/dropdowns";
-@import "will-style/elements/input-groups";
-@import "will-style/elements/navs";
-@import "will-style/elements/navbar";
-@import "will-style/elements/breadcrumbs";
-@import "will-style/elements/labels-badges";
-@import "will-style/elements/thumbnails";
-@import "will-style/elements/alerts";
-@import "will-style/elements/panels";
-@import "will-style/elements/wells";
+// TEMPLATES
+// Very concrete and provide context to all these relatively abstract Fixtures and elements.
+// -------------------------
+// You don't need to import any templates unless you plan to use them
 
 
-// Custom
-@import "will-style/elements/sections";
-@import "will-style/elements/sticky-footer";
-@import "will-style/elements/switch";
+// PAGES
+// The highest level of fidelity and the most tangible.
+// -------------------------
+// import your project specific pages here
 
 
-/* ===================================================================
-	 COMPONENTS - Elements put together
-   ================================================================ */
-@import "will-style/components/well-big-stats";
+// LIBRARIES
+// This is wher you want to import external library css styles 
+// and will-style overrides for those
+// -------------------------
+// the libraries you can import from WILL-Style are:
+// dataTables, flot, offline, and piety
 
 
-/* ===================================================================
-	 TEMPLATES - Page layouts
-   ================================================================ */
-
-// Specific to each application/project
-
-
-/* ===================================================================
-	 POST - Styles that need to be at the end of the css
-   ================================================================ */
-@import "bootstrap/utilities";
-@import "bootstrap/responsive-utilities";
-
+// ENDING UTILITIES
+// Required utility classes that must come at the end of the document.
+// -------------------------
+@import "will-style/core/utilities";

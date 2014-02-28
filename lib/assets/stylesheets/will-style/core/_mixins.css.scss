@@ -1,6 +1,14 @@
-//
-// Custom Mixins
-// --------------------------------------------------
+/* 
+// 
+// MIXINS
+// 
+*/
+
+@import "bootstrap/mixins";
+
+
+// Custom
+// ----------------------
 
 // forcing text to wrap
 @mixin forceWrap() {

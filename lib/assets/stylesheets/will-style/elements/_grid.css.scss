@@ -104,3 +104,5 @@
   .col-ms-offset-10 { margin-left: percentage((10/ $grid-columns)); }
   .col-ms-offset-11 { margin-left: percentage((11/ $grid-columns)); }
 }
+
+@import "bootstrap/grid";

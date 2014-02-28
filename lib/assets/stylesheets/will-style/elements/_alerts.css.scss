@@ -4,6 +4,9 @@
 // 
 */
 
+@import "bootstrap/alerts";
+@import "bootstrap/close"; // adding the close import here because it's the only required element that could potentially use it
+
 
 // Extending
 // -------------------------

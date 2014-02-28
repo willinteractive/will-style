@@ -4,19 +4,7 @@
 // 
 */
 
-// Brand/project name
-// -------------------------
-
-// Bootstrap (BS) uses px units but we want REM units
-// so we should extend the .delta class
-// but we need to be more specific in our targeting than BS 
-// because TypePlate comes before BS's Navbar stylesheet
-// so we'll type it to a link tag
-a.navbar-brand {
-	//@extend .delta;
-	// but we don't want it's bottom margin
-	//margin-bottom: 0;
-}
+@import "bootstrap/navbar";
 
 
 // We don't want the navbar to have a defined height

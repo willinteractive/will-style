@@ -4,6 +4,8 @@
 // 
 */
 
+@import "bootstrap/buttons";
+
 
 // Base styles
 // -------------------------
@@ -25,16 +27,6 @@
   font-size: .8rem;
 }
 
-
-// Button groups
-// -------------------------
-
-// add a thin line between buttons
-.btn-group {
-	> .btn {
-		@include box-shadow(-1px 0px 0px rgba(0,0,0,.1));
-	}
-}
 
 // CUSTOM: Inverse buttons
 // --------------------------------------------------

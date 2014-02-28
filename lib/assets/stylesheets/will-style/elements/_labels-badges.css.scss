@@ -4,11 +4,14 @@
 // 
 */
 
+@import "bootstrap/labels";
+@import "bootstrap/badges";
+
 
 .label,
 .badge {
-  font-weight: 700;
-	letter-spacing: 1px;
+	// for smaller fonts, increase the letter spacing
+	letter-spacing: .05em;
 }
 
 

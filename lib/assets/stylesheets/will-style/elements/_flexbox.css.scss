@@ -1,0 +1,86 @@
+/* 
+// 
+// FLEXBOX LAYOUTS
+// This might be able to be simplified using SASS at a later date * CH
+//
+// add one of these classes to the parent .row if you want the cols to align vertically
+// 
+*/
+
+.flexbox-xs-start {
+	@include display-box;
+	@include box-align(start);
+}
+.flexbox-xs-end {
+	@include display-box;
+	@include box-align(end);
+}
+.flexbox-xs-center {
+	@include display-box;
+	@include box-align(center);
+}
+
+@media (min-width: 568px) {
+	.flexbox-ms-start {
+		@include display-box;
+		@include box-align(start);
+	}
+	.flexbox-ms-end {
+		@include display-box;
+		@include box-align(end);
+	}
+	.flexbox-ms-center {
+		@include display-box;
+		@include box-align(center);
+	}
+}
+
+@media (min-width: $screen-sm-min) {
+	.flexbox-sm-start {
+		@include display-box;
+		@include box-align(start);
+	}
+	.flexbox-sm-end {
+		@include display-box;
+		@include box-align(end);
+	}
+	.flexbox-sm-center {
+		@include display-box;
+		@include box-align(center);
+	}
+}
+
+@media (min-width: $screen-md-min) {
+	.flexbox-md-start {
+		@include display-box;
+		@include box-align(start);
+	}
+	.flexbox-md-end {
+		@include display-box;
+		@include box-align(end);
+	}
+	.flexbox-md-center {
+		@include display-box;
+		@include box-align(center);
+	}
+}
+
+@media (min-width: $screen-lg-min) {
+	.flexbox-lg-start {
+		@include display-box;
+		@include box-align(start);
+	}
+	.flexbox-lg-end {
+		@include display-box;
+		@include box-align(end);
+	}
+	.flexbox-gl-center {
+		@include display-box;
+		@include box-align(center);
+	}
+}
+
+
+
+
+

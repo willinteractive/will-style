@@ -1,0 +1,31 @@
+/* 
+// 
+// UTILITIES - AT THE END
+// 
+*/
+
+@import "bootstrap/component-animations";
+@import "bootstrap/utilities";
+@import "bootstrap/responsive-utilities";
+
+// FROM BOOTSTRAP/SCAFFOLDING
+// We needed to tear this apart because it was interacting badly with TypePlate
+// ------------------------- 
+
+// Only display content to screen readers
+// -------------------------
+// See: http://a11yproject.com/posts/how-to-hide-content/
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+@import "bootstrap/print";
+@import "print";

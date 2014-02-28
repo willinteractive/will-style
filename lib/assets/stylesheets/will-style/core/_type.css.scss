@@ -5,6 +5,61 @@
 // 
 */
 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700);
+@import "typeplate";
+
+
+// FROM BOOTSTRAP/SCAFFOLDING
+// We needed to tear this apart because it was interacting badly with TypePlate
+// ------------------------- 
+
+// Links
+
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $link-hover-color;
+  }
+
+  &:focus {
+    @include tab-focus();
+  }
+}
+
+// Horizontal rules
+
+hr {
+  margin-top:    $line-height-computed;
+  margin-bottom: $line-height-computed;
+  border: 0;
+  border-top: 1px solid $hr-border;
+}
+
+// creating a dark hr
+hr.dark {
+	border-top-color: #ddd;
+}
+
+hr.double {
+	border-top: $double-border;
+	border-bottom: none;
+}
+
+hr.short {
+  margin: $line-height-base/2 0;
+}
+
+hr.shorter {
+  margin: 0;
+}
+
+
+// FROM BOOTSTRAP/TYPE
+// We needed to tear this apart because it was interacting badly with TypePlate
+// ------------------------- 
 
 // Emphasis & misc
 // -------------------------
@@ -43,6 +98,7 @@
 @include text-emphasis-variant('.text-info', 		$state-info-text);
 @include text-emphasis-variant('.text-warning', $state-warning-text);
 @include text-emphasis-variant('.text-danger', 	$state-danger-text);
+
 
 
 // Page header
@@ -111,4 +167,5 @@ blockquote {
 .force-wrap {
 	@include forceWrap();
 }
+
 
