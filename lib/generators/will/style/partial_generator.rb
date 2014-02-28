@@ -8,11 +8,11 @@ module Will
         argument :save_path, type: :string, default: ""
 
         def partial
-          partials = Dir.entries(File.expand_path("../../../../../app/views/will/style", __FILE__))
+          partials = Dir.entries(File.expand_path("../../../../../app/views/will-style", __FILE__))
 
           cleaned_partials = []
           partials.each do |partial|
-            cleaned_partials << partial.gsub(/^_/, "") unless partial == "." || partial == ".."
+            cleaned_partials << partial.gsub(/^_/, "") unless partial == "." || partial == ".." || partial == ".DS_Store"
           end
 
           partials = cleaned_partials
@@ -30,7 +30,7 @@ module Will
               if partial.gsub(".html.erb", "").downcase == partial_name.downcase
                 found_partial = true
 
-                file_content = File.read(File.expand_path("../../../../../app/views/will/style/_#{partial}", __FILE__))
+                file_content = File.read(File.expand_path("../../../../../app/views/will-style/_#{partial}", __FILE__))
                 if save_path == ""
                   pbcopy file_content
                   p "Partial copied to clipboard"
