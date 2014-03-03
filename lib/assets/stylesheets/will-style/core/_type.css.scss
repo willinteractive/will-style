@@ -9,6 +9,12 @@
 @import "typeplate";
 
 
+// adding a class for p tags that sets a max width for ideal line length
+.ideal {
+	max-width: 36em;
+}
+
+
 // FROM BOOTSTRAP/SCAFFOLDING
 // We needed to tear this apart because it was interacting badly with TypePlate
 // ------------------------- 
@@ -98,30 +104,6 @@ hr.shorter {
 @include text-emphasis-variant('.text-info', 		$state-info-text);
 @include text-emphasis-variant('.text-warning', $state-warning-text);
 @include text-emphasis-variant('.text-danger', 	$state-danger-text);
-
-
-
-// Page header
-// -------------------------
-
-.page-header {
-	// give it a bg color
-  background-color: $gray-lighter;
-  
-  // if it contains a breadcrumb and/or (search) form instead of header
-  .breadcrumb, form {
-	  // remove padding
-	  padding: 0;
-	  
-	  // setup margins
-	  margin: 1.5rem 0;
-  }
-  
-  // move the form down slightly more
-  form {
-	  margin-top: 1.75rem;
-  }
-}
 
 
 // Lists

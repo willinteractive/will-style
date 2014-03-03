@@ -1,0 +1,25 @@
+/* 
+// 
+// PAGE HEADER
+// 
+*/
+
+
+.page-header {
+	// give it a bg color
+  background-color: $gray-lighter;
+  
+  // if it contains a breadcrumb and/or (search) form instead of header
+  .breadcrumb, form {
+	  // remove padding
+	  padding: 0;
+	  
+	  // setup margins
+	  margin: 1.5rem 0;
+  }
+  
+  // the following elements should be in a column to the right of the breadcrumbs
+  form, .btn-group {
+	  margin-top: 1.75rem;
+  }
+}
