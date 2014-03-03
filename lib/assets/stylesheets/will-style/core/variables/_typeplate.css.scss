@@ -1,9 +1,26 @@
-/* 
-// 
-// TYPEPLATE VARIABLE OVERRIDES
-// 
-*/
+/*!
+ *
+.||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||.
 
+	.                                      '||            .
+  .||.  .... ... ... ...    ....  ... ...   ||   ....   .||.    ....
+   ||    '|.  |   ||'  || .|...||  ||'  ||  ||  '' .||   ||   .|...||
+   ||     '|.|    ||    | ||       ||    |  ||  .|' ||   ||   ||
+   '|.'    '|     ||...'   '|...'  ||...'  .||. '|..'|'  '|.'  '|...'
+		.. |      ||               ||
+		 ''      ''''             ''''      A Typographic Starter Kit
+
+  URL ........... http://typeplate.com
+  VERSION ....... 1.1.2
+  Github ........ https://github.com/typeplate/typeplate.github.io
+  AUTHORS ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
+  LICENSE ....... Creative Commmons Attribution 3.0
+  LICENSE URL ... http://creativecommons.org/licenses/by/3.0
+
+ .||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||.
+ *
+ */
+ 
 
 // $Variable $BaseType
 // -------------------------------------//
@@ -40,8 +57,8 @@ $small-print-size: 80% !default;
 // $Variable $Base-Color
 // -------------------------------------//
 
-$body-copy-color: #444;
-$heading-color: #222;
+$body-copy-color: $text-color;
+$heading-color: $headings-color;
 
 
 // $Variable $Ampersand

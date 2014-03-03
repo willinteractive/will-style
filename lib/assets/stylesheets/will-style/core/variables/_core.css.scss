@@ -1,0 +1,53 @@
+/* 
+// 
+// CORE
+// 
+// 
+*/
+
+
+// TYPOGRAPHY
+// -------------------------
+$font-size-base:						12px;
+$line-height-base: 					1.65;
+
+
+// FORMS
+// -------------------------
+$input-color: 							$text-color;
+
+$input-border-focus:				lighten($blue, 20%);
+$input-bg-disabled: 				none;
+
+
+// BUTTONS
+// -------------------------
+$btn-font-weight: 					700;
+
+$btn-default-color:					$text-color;
+$btn-default-bg:						darken($gray-lighter, 5%);
+$btn-default-border:				$btn-default-bg;
+
+$btn-primary-bg:						$brand-primary;
+$btn-primary-border:				$btn-primary-bg;
+
+$btn-success-bg:						$brand-success;
+$btn-success-border:				$btn-success-bg;
+
+$btn-info-bg:								$brand-info;
+$btn-info-border:						$btn-info-bg;
+
+$btn-warning-bg:						$brand-warning;
+$btn-warning-border:				$btn-warning-bg;
+
+$btn-danger-bg:							$brand-danger;
+$btn-danger-border:					$btn-danger-bg;
+
+
+// TABLES
+// -------------------------
+$table-bg: 									$white; // overall background-color
+$table-bg-accent: 					darken($white, 3%); // for striping
+$table-bg-hover: 						lighten($yellow, 10%); // for hover
+
+$table-border-color: 				$gray-lighter; // table and cell border

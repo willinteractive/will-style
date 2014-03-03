@@ -9,12 +9,13 @@
 // doesn't add load to CSS generated file
 // just gives access to all of the functions
 
-// Variables - overrides first
-@import "variables_tp";
-@import "variables_bs";
-@import "bootstrap/variables";
-
+// There is a special order to Variables and mixins so we can reuse them
+@import "variables/colors";
+@import "variables/typeplate";
 @import "mixins";
+@import "variables/core";
+@import "variables/elements";
+@import "bootstrap/variables";
 
 @import "reset";
 

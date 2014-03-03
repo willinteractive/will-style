@@ -1,0 +1,119 @@
+/* 
+// 
+// ELEMENTS
+// 
+// 
+*/
+
+
+
+// LIST GROUP
+// -------------------------
+$list-group-border-radius:  0px;
+
+// DROPDOWNS
+// -------------------------
+$dropdown-link-hover-bg:		lighten($text-color, 60%);
+$dropdown-caret-color:			$text-color;
+
+
+// SECTIONS
+// -------------------------
+$section-padding:						5rem;
+
+$section-zebra-color:						inherit;
+$section-zebra-bg:							$gray-lighter;
+$section-zebra-heading-color:		inherit;
+
+$section-inverse-color:						$white;
+$section-inverse-bg:							$gray-dark;
+$section-inverse-heading-color:		$white;
+
+$section-primary-color:						$white;
+$section-primary-bg:							$brand-primary;
+$section-primary-heading-color:		$white;
+
+// MEDIA QUERIES BREAKPOINTS
+// -------------------------
+// custom for ms size
+$screen-ms-min: 						568px;
+
+
+// NAVBAR
+// -------------------------
+$navbar-scale:							$delta;
+$navbar-margin-bottom:			0px;
+$navbar-border-radius:			0px;
+//$navbar-padding-horizontal: floor(($grid-gutter-width / 2)) !default;
+//THIS NEEDS TO BE MADE TO USE THE MARGIN CALCULATOR
+$navbar-padding-vertical:		1.2375rem;
+
+$navbar-default-color:			$text-color;
+$navbar-default-bg:					transparent;
+$navbar-default-border:			$gray-lighter;
+
+// Navbar links
+$navbar-default-link-color:						$gray-darker;
+$navbar-default-link-hover-color:			$link-color;
+$navbar-default-link-hover-bg:				transparent;
+$navbar-default-link-active-color:		$gray;
+$navbar-default-link-active-bg:				transparent;
+$navbar-default-link-disabled-color:	$gray-light;
+$navbar-default-link-disabled-bg:			transparent;
+
+// Navbar brand label
+$navbar-default-brand-color:					$navbar-default-link-color;
+$navbar-default-brand-hover-color:		$navbar-default-link-hover-color;
+
+// Navbar toggle
+$navbar-default-toggle-hover-bg:			$gray-lighter;
+$navbar-default-toggle-icon-bar-bg:		$text-color;
+$navbar-default-toggle-border-color:	$gray-lighter;
+
+// Navbar inverse
+$navbar-inverse-bg: 							$gray-dark;
+$navbar-inverse-link-active-bg: 	transparent;
+
+// PAGINATION
+// -------------------------
+$pagination-active-bg:			$gray-light;
+
+// BREADCRUMBS
+// -------------------------
+$breadcrumb-color: 					#999;
+$breadcrumb-active-color: 	$text-color;
+$breadcrumb-bg: 						transparent;
+$breadcrumb-separator: 			":";
+
+
+// FORM STATES AND ALERTS
+// -------------------------
+$state-success-text:				$green;
+$state-success-bg: 					rgba($green, .1);
+$state-success-border:			$green;
+
+$state-info-text:						$blue;
+$state-info-bg:							rgba($blue, .1);
+$state-info-border:					$blue;
+
+$state-warning-text:				$yellow;
+$state-warning-bg:					rgba($yellow, .1);
+$state-warning-border:			$yellow;
+
+$state-danger-text:					$red;
+$state-danger-bg:				 		rgba($red, .1);
+$state-danger-border:				$red;
+
+
+// WELLS
+// -------------------------
+$well-bg: 									darken($white, 2%);
+
+// THUMBNAILS
+// -------------------------
+$thumbnail-bg:							none;
+$thumbnail-border-radius:		0px;
+
+// PROGRESS BARS
+// -------------------------
+$progress-bar-bg:						$blue;
