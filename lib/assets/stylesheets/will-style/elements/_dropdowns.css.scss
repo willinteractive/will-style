@@ -22,8 +22,22 @@
 .dropdown-menu {
 	// Bootstrap sets the font-size to px, so we need to set it back to 1 rem
 	font-size: 1rem;
+	
+	// style a secondary ul inside
+	> li > ul {
+		background: $gray-lighter;
+		> li {
+			color: $gray-light;
+			> a {
+				display: block;
+				color: $text-color;
+				&:hover, &:focus {
+					background: $dropdown-link-hover-bg;
+				}
+			} 
+		}
+	}
 }
-
 
 // Inside a Page Header
 // -------------------------
