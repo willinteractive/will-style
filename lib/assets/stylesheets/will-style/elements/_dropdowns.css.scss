@@ -31,6 +31,8 @@
 			> a {
 				display: block;
 				color: $text-color;
+				padding-left: .5em;
+				padding-right: .5em;
 				&:hover, &:focus {
 					background: $dropdown-link-hover-bg;
 				}
