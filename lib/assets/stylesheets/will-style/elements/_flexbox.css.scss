@@ -20,7 +20,7 @@
 	@include box-align(center);
 }
 
-@media (min-width: 568px) {
+@media (min-width: $screen-ms-min) {
 	.flexbox-ms-start {
 		@include display-box;
 		@include box-align(start);
@@ -32,6 +32,10 @@
 	.flexbox-ms-center {
 		@include display-box;
 		@include box-align(center);
+	}
+	.flexbox-ms-none {
+		display: block;
+		@include box-align(inherit);
 	}
 }
 
@@ -47,6 +51,10 @@
 	.flexbox-sm-center {
 		@include display-box;
 		@include box-align(center);
+	}
+	.flexbox-sm-none {
+		display: block;
+		@include box-align(inherit);
 	}
 }
 
@@ -77,6 +85,10 @@
 	.flexbox-gl-center {
 		@include display-box;
 		@include box-align(center);
+	}
+	.flexbox-lg-none {
+		display: block;
+		@include box-align(inherit);
 	}
 }
 
