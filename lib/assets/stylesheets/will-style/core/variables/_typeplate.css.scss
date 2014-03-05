@@ -51,7 +51,7 @@ $paragraph-vertical-whitespace: true;
 // $Variable $Small-Print
 // -------------------------------------//
 
-$small-print-size: .8;
+$small-print-size: 80%;
 
 
 // $Variable $Base-Color
@@ -92,7 +92,7 @@ $gamma: 24; 	// 12 × 2
 $delta: 16; 	// 12 × 1.3333
 $epsilon: 14; // 12 × 1.1667
 $zeta: $font-base; 		// 12 × 1
-$iota: $font-base*$small-print-size; 		// 12 × .8
+$iota: $font-base*.8; 		// 12 × .8
 
 // $Variable $Typescale-Unit
 // -------------------------------------//
