@@ -1,1 +1,1 @@
-require "will/style"
+require "will-style/engine.rb"
