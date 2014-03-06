@@ -49,7 +49,8 @@
     
     // then use the same padding as the inputs and put it at the top
     padding: $padding-base-vertical $padding-base-horizontal;
-    top: 0;
+    top: auto;
+    bottom: 0;
     
     // when using this feedback inside of an input group the z-index needs to be higher than the form-control which is 2
     z-index: 3;
