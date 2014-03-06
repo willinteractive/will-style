@@ -54,4 +54,5 @@ $table-border-color: 				$gray-lighter; // table and cell border
 // MISCELLANEOUS
 // -------------------------
 
+// HR is opaque so it shows on backgrounds of the same color
 $hr-border:                   rgba($gray, .15);
