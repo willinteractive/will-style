@@ -40,6 +40,7 @@
 		// reset background and border widths
 		background: transparent;
 		border: none;
+		@include border-radius(0);
 
 		// make sure it fits height-wise in the panel-heading
 		padding: 8px 12px;

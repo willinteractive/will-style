@@ -9,6 +9,7 @@
 // ----------------------
 @import "labels-badges";
 @import "dropdowns";
+@import "bootstrap/list-group";
 
 // Layout
 // ----------------------
@@ -23,6 +24,8 @@
 @import "navs";
 @import "navbar";
 @import "breadcrumbs";
+@import "bootstrap/pagination";
+@import "bootstrap/pager";
 
 // Forms
 // ----------------------
@@ -35,4 +38,3 @@
 @import "wells";
 @import "alerts";
 @import "panels";
-@import "thumbnails";
