@@ -96,3 +96,14 @@
 
 }
 
+
+// Custom Search Form
+// ---------------------------
+
+// Because the input is not the last item in the input-group,
+// it un-rounds the left corners
+// let's round them back
+.search-form .input-group .form-control:not(:first-child):not(:last-child) {
+	@include border-right-radius($border-radius-base);
+}
+
