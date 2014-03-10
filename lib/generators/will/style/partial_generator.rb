@@ -1,3 +1,17 @@
+module FontAwesomeStubHelper
+  def fa_icon(names = "flag", options = {})
+    return "<%= fa_icon \"#{(names.is_a?(Array) ? names.join(" ") : names)}\"#{(options.keys.length > 0 ? " " + options.inspect : "") } %>".html_safe
+  end
+
+  def fa_stacked_icon(names = "flag", options = {})
+    return "<%= fa_stacked_icon \"#{(names.is_a?(Array) ? names.join(" ") : names)}\"#{(options.keys.length > 0 ? " " + options.inspect : "") } %>".html_safe
+  end
+end
+
+class Renderer < ActionController::Base
+  helper FontAwesomeStubHelper
+end
+
 module Will
   module Style
     module Generators
@@ -8,7 +22,7 @@ module Will
         argument :save_path, type: :string, default: ""
 
         def partial
-          partials = Dir.entries(File.expand_path("../../../../../app/views/will-style", __FILE__))
+          partials = Dir.entries(File.expand_path("../../../../../app/views/will-style/elements", __FILE__))
 
           cleaned_partials = []
           partials.each do |partial|
@@ -30,12 +44,16 @@ module Will
               if partial.gsub(".html.erb", "").downcase == partial_name.downcase
                 found_partial = true
 
-                file_content = File.read(File.expand_path("../../../../../app/views/will-style/_#{partial}", __FILE__))
+                file_content = File.read(File.expand_path("../../../../../app/views/will-style/elements/_#{partial}", __FILE__))
+
+                # Render out any sub-partials (and use our fa_icon stub to not render those)
+                file_content = Renderer.new().render_to_string(partial: "will-style/elements/" + partial.gsub(".html.erb", "").downcase)
+
                 if save_path == ""
                   pbcopy file_content
                   p "Partial copied to clipboard"
                 else
-                  new_filename = "app/views/#{save_path}.html.erb"
+                  new_filename = "app/views/#{(save_path.start_with?("_") ? save_path : "_" + save_path)}.html.erb"
                   File.open(new_filename, 'a') { |file| file.write(file_content) }
                   p "Copied '#{partial_name}' to #{new_filename}"
                 end
@@ -56,3 +74,4 @@ module Will
     end
   end
 end
+
