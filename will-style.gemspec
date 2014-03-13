@@ -15,6 +15,10 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 4.0"
 
+  # @NOTE: 2.12.0 conflicts with something else in here (likely the specific SASS gem),
+  # so we need to keep it at the previous version
+  s.add_dependency "sprockets", "~> 2.11.0"
+
   # @NOTE: This is the only version of sass that works with compass 0.12.2
   s.add_dependency "sass", "3.3.0.alpha.149"
   
