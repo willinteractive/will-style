@@ -29,7 +29,7 @@
 		color: $section-zebra-color;
 		background-color: $section-zebra-bg;
 		
-		h1, h2, h3, h4, h5 {
+		h1, h2, h3, h4, h5, h6 {
 			color: $section-zebra-heading-color;
 		}
 	}
@@ -43,7 +43,7 @@
   color: $section-inverse-color;
   background-color: $section-inverse-bg;
 
-  h1, h2, h3, h4, h5 {
+  h1, h2, h3, h4, h5, h6 {
     color: $section-inverse-heading-color;
   }
 }
@@ -56,7 +56,7 @@
   color: $section-primary-color;
   background-color: $section-primary-bg;
 
-  h1, h2, h3, h4, h5 {
+  h1, h2, h3, h4, h5, h6 {
     color: $section-primary-heading-color;
   }
 }
