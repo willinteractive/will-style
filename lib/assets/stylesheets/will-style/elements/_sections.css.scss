@@ -61,6 +61,17 @@
   }
 }
 
+// Succes (brand-success color) Background
+// -------------------------
+
+.sectioned > section.success {
+  color: $section-primary-color;
+  background-color: $brand-success;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $section-primary-heading-color;
+  }
+}
 
 // Background images
 // -------------------------
