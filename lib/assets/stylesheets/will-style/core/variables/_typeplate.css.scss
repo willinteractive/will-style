@@ -30,6 +30,7 @@ $serif-boolean: false;
 $font-family: if($serif-boolean, serif, sans-serif) !default; // Non-font-face font-stack
 $font-weight: 400;
 $line-height: 1.65 !default;
+$heading-line-height: 1.4;
 $font-size: 75; // percentage value (16 * 75% = 12px)
 $font-base: 16 * ($font-size/100) !default; // converts our percentage to a pixel value
 $custom-font-family: 'Open Sans'; // Custom font-face stack, if set will be added to the $font-family
