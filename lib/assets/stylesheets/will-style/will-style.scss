@@ -11,7 +11,7 @@
  */
 
 // CORE
-// HTML tags & more abstract elements like color palettes, 
+// HTML tags & more abstract elements like color palettes, 
 // fonts and invisible aspects like animations
 // -------------------------
 @import "will-style/core/core";
@@ -28,20 +28,20 @@
 
 
 // FIXTURES
-// Groups of elements joined together to form a relatively complex, 
+// Groups of elements joined together to form a relatively complex, 
 // distinct section of an interface. 
 // -------------------------
 @import "will-style/fixtures/fixtures";
 
 
 // TEMPLATES
-// Very concrete and provide context to all these relatively abstract Fixtures and elements.
+// Very concrete and provide context to all these relatively abstract Fixtures and elements.
 // -------------------------
 // You don't need to import any templates unless you plan to use them
 
 
 // PAGES
-// The highest level of fidelity and the most tangible.
+// The highest level of fidelity and the most tangible.
 // -------------------------
 // import your project specific pages here
 
