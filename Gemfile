@@ -24,7 +24,7 @@ gem 'jquery-datatables-rails'
 gem "flot-rails"
 
 #Modernizr
-gem 'modernizr'
+gem 'modernizr-rails'
 
 group :development do
   # View source maps in Chrome

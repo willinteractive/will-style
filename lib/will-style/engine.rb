@@ -4,7 +4,7 @@ require "sass-rails"
 require "compass-rails"
 require "bootstrap-sass"
 require "font-awesome-rails"
-require "modernizr"
+require "modernizr-rails"
 
 module Will
   module Style
