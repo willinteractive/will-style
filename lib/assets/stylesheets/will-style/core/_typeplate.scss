@@ -245,7 +245,8 @@ q,
 samp,
 tt,
 var,
-xmp {
+xmp,
+h1, h2, h3, h4 {
 	@include css-hyphens(none);
 }
 
