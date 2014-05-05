@@ -34,6 +34,11 @@
   padding-right: ($grid-gutter-width / 2);
 }
 
+// visibility classes
+.visible-ms {
+	display: none !important;
+}
+
 // ----- col-ms breakpoints and related classes -----
 
 @media (min-width: $screen-ms-min) {
@@ -103,6 +108,14 @@
   .col-ms-offset-9  { margin-left: percentage((9 / $grid-columns)); }
   .col-ms-offset-10 { margin-left: percentage((10/ $grid-columns)); }
   .col-ms-offset-11 { margin-left: percentage((11/ $grid-columns)); }
+  
+  .visible-ms {
+	  display: block !important;
+  }
+  
+  .hidden-xs {
+		display: none !important;
+	}
 }
 
 @import "bootstrap/grid";
