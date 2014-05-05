@@ -43,7 +43,7 @@
 		@include border-radius(0);
 
 		// make sure it fits height-wise in the panel-heading
-		padding: 8px 12px;
+		padding: 10px 12px;
 		
 		// if it's on the left - make sure the borders are on the right
 		&.pull-left {
@@ -68,5 +68,16 @@
 			// make the background of the active button just slightly darker
 			background-color: $gray-lighter;
 		}
+	}
+}
+
+// if the panel is primary, change the button border color to darker
+.panel-primary .panel-heading-buttons {
+	.btn.pull-right, .btn.pull-left {
+		border-color: rgba(white, .3);
+	}
+	
+	.btn.active {
+		background-color: rgba(white, .15);
 	}
 }
