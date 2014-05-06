@@ -4,6 +4,8 @@
 // 
 */
 
+@import "ie7";
+
 @import "bootstrap/component-animations";
 @import "bootstrap/utilities";
 @import "bootstrap/responsive-utilities";
@@ -26,6 +28,7 @@
   clip: rect(0,0,0,0);
   border: 0;
 }
+
 
 @import "bootstrap/print";
 @import "print";
