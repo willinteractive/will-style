@@ -16,20 +16,22 @@
 }
 
 
-// Optional heading
+// Optional heading with Buttons
 // -------------------------
 
-.panel-heading {
+.panel-heading-buttons {
 	// let the title have the padding
 	padding: 0;
+	
+	.panel-title {
+		padding: 12px 14px;
+	}
 }
 
 .panel-title {
 	// bootstrap wants to change the font size of the panel-title no matter which h* tag you use
 	font-size: inherit;
-	padding: 12px 14px;
 }
-
 
 // Custom
 // -------------------------
