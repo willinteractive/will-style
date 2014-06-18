@@ -25,6 +25,7 @@
 }
 .btn-sm, .btn-xs {
 	@include type-scale($iota, $font-base, '#{$type-scale-unit-value}', $measure);
+	margin-bottom: 1em;
 }
 
 
