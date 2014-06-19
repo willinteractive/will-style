@@ -14,6 +14,7 @@
 .btn {
   @include btn_typography();
   @include transition(background 300ms, border 300ms, color 300ms);
+  margin-bottom: 0;
 }
 
 
@@ -22,10 +23,11 @@
 
 .btn-lg {
 	@include type-scale($delta, $font-base, '#{$type-scale-unit-value}', $measure);
+	margin-bottom: 0;
 }
 .btn-sm, .btn-xs {
 	@include type-scale($iota, $font-base, '#{$type-scale-unit-value}', $measure);
-	margin-bottom: 1em;
+	margin-bottom: 0;
 }
 
 
