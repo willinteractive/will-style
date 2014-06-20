@@ -15,7 +15,7 @@
 	font-size: 1rem;
 	
 	// remove pixel height
-	height: auto;
+	height: auto !important;
 	
 	// remove box shadow and reduce text color from 
 	// Disabled and read-only inputs	&[disabled],
@@ -25,6 +25,16 @@
 		color: $text-muted;
   }
 }
+
+
+// Form control sizing
+// ---------------------------
+// Build on `.form-control` with modifier classes to decrease or increase the
+// height and font-size of form controls.
+
+@include input-size('.input-sm', auto, $padding-small-vertical, $padding-small-horizontal, .8rem, $line-height-small, $border-radius-small);
+
+@include input-size('.input-lg', auto, $padding-large-vertical, $padding-large-horizontal, 1.25rem, $line-height-large, $border-radius-large);
 
 
 // Form control feedback states
