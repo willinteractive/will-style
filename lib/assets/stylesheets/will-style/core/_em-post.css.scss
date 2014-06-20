@@ -21,6 +21,12 @@ pre {
   @include calc(height, $input-height-base, "+", 2px);
 }
 
+// @NOTE: This makes submit buttons the correct size
+//  but could have unintended consequences. We should
+//  make sure this works across all of our web apps.
+input[type="submit"] {
+  @include calc(height, $input-height-base, "+", 2px);
+}
 
 .form-horizontal {
     .radio, .checkbox, .radio-inline, .checkbox-inline {
