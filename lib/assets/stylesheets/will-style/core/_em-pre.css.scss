@@ -63,3 +63,10 @@ $input-height-base:         ($line-height-computed + ($padding-base-vertical * 2
 $input-height-large:        (($font-size-large * $line-height-large) + ($padding-large-vertical * 2));
 //** Small `.form-control` height
 $input-height-small:        (($font-size-small * $line-height-small) + ($padding-small-vertical * 2));
+
+// Set root font size
+
+html {
+    font-size: $font-size-root;
+}
+
