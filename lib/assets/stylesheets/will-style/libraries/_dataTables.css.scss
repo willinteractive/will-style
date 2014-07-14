@@ -20,11 +20,13 @@
 
 .dataTables_extras_top, .dataTables_extras_bottom {
 	// make the text smaller
-	font-size: $font-size-small;
+	// @FOUNDATION-FIX
+	// font-size: $font-size-small;
 	// clear the floats
 	@extend .clearfix;
 	// add padding
-	padding: $padding-large-vertical $padding-base-horizontal;
+	// @FOUNDATION-FIX
+	// padding: $padding-large-vertical $padding-base-horizontal;
 	
 	// extend the .form-control to style inputs and select the bootstrap way
 	input, select {
@@ -93,7 +95,8 @@ div.dataTables_filter {
 		.btn {			
 			// but they are on the right, so switch which side gets a border
 			border-right: none;
-			border-left: 1px solid $panel-inner-border;		
+			// @FOUNDATION-FIX
+			// border-left: 1px solid $panel-inner-border;		
 		}
 	}
 }
@@ -117,7 +120,8 @@ div.dataTables_filter {
 
 // the ColVis Buttons contain checkboxes
 .ColVis_collection .ColVis_Button > span {
-	@extend .checkbox-inline;
+	// @FOUNDATION-FIX
+	// @extend .checkbox-inline;
 }
 
 // make the DTTT buttons full-width

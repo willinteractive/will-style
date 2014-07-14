@@ -10,7 +10,7 @@ gem 'sass-rails'
 
 gem 'compass-rails'
 
-gem 'bootstrap-sass'
+gem 'foundation-rails'
 
 gem 'jquery-rails'
 

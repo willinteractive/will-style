@@ -9,7 +9,8 @@
 // ----------------------
 @import "labels-badges";
 @import "dropdowns";
-@import "bootstrap/list-group";
+// @import "bootstrap/list-group";
+@import "foundation/components/inline-lists";
 
 // Layout
 // ----------------------
@@ -24,8 +25,8 @@
 @import "navs";
 @import "navbar";
 @import "breadcrumbs";
-@import "bootstrap/pagination";
-@import "bootstrap/pager";
+@import "foundation/components/pagination";
+// @import "bootstrap/pager";
 
 // Forms
 // ----------------------

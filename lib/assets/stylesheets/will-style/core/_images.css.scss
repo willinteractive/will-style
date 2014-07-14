@@ -10,32 +10,38 @@
 // ------------------------- 
 
 img {
-  vertical-align: middle;
+  // @FOUNDATION-FIX
+  // vertical-align: middle;
 }
 
 // Responsive images (ensure images don't scale beyond their parents)
 .img-responsive {
-  @include img-responsive();
+  // @FOUNDATION-FIX
+  // @include img-responsive();
 }
 
 // Rounded corners
 .img-rounded {
-  border-radius: $border-radius-large;
+  // @FOUNDATION-FIX
+  // border-radius: $border-radius-large;
 }
 
 // Image thumbnails
 //
 // Heads up! This is mixin-ed into thumbnails.less for `.thumbnail`.
 .img-thumbnail {
-  padding: $thumbnail-padding;
+  // @FOUNDATION-FIX
+  // padding: $thumbnail-padding;
   line-height: $line-height-base;
   background-color: $thumbnail-bg;
-  border: 1px solid $thumbnail-border;
-  border-radius: $thumbnail-border-radius;
+  // @FOUNDATION-FIX
+  // border: 1px solid $thumbnail-border;
+  // border-radius: $thumbnail-border-radius;
   @include transition(all .2s ease-in-out);
 
+  // @FOUNDATION-FIX
   // Keep them at most 100% wide
-  @include img-responsive(inline-block);
+  // @include img-responsive(inline-block);
 }
 
 // Perfect circle

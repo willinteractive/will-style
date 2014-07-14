@@ -4,23 +4,26 @@
 // 
 */
 
-@import "bootstrap/labels";
-@import "bootstrap/badges";
+@import "foundation/components/labels";
+// @import "bootstrap/badges";
 
 
 // CUSTOM
 // -------------------------
 
 .label-choice {
-	@include label-variant($choice);
+	// @FOUNDATION-FIX
+	// @include label-variant($choice);
 }
 
 .label-text {
-	@include label-variant($text);
+	// @FOUNDATION-FIX
+	// @include label-variant($text);
 }
 
 .label-video {
-	@include label-variant($video);
+	// @FOUNDATION-FIX
+	// @include label-variant($video);
 }
 
 // label that is block-level

@@ -2,7 +2,7 @@
 require "sass"
 require "sass-rails"
 require "compass-rails"
-require "bootstrap-sass"
+require "foundation-rails"
 require "font-awesome-rails"
 require "modernizr-rails"
 

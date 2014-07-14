@@ -4,7 +4,7 @@
 // 
 */
 
-@import "bootstrap/panels";
+@import "foundation/components/panels";
 
 
 // Tables in panels
@@ -12,7 +12,8 @@
 
 .panel > .table {
 	// the table was cutting into the corner radii of the panel
-	@include border-bottom-radius($panel-border-radius);
+	// @FOUNDATION-FIX
+	// @include border-bottom-radius($panel-border-radius);
 }
 
 
@@ -49,20 +50,24 @@
 		
 		// if it's on the left - make sure the borders are on the right
 		&.pull-left {
-			border-right: 1px solid $panel-inner-border;
+			// @FOUNDATION-FIX
+			// border-right: 1px solid $panel-inner-border;
 			
 			// except the first one needs it's top left corner rounded
 			&:first-of-type {
-				border-top-left-radius: $panel-border-radius - 1px;
+				// @FOUNDATION-FIX
+				// border-top-left-radius: $panel-border-radius - 1px;
 			}			
 		}
 	
 		// if the button is on the right instead - put the border on the left
 		&.pull-right {
-			border-left: 1px solid $panel-inner-border;
+			// @FOUNDATION-FIX
+			// border-left: 1px solid $panel-inner-border;
 			
 			&:first-of-type {
-				border-top-right-radius: $panel-border-radius - 1px;
+				// @FOUNDATION-FIX
+				// border-top-right-radius: $panel-border-radius - 1px;
 			}
 		}
 		

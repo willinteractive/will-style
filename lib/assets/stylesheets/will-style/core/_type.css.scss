@@ -37,7 +37,8 @@ a {
   }
 
   &:focus {
-    @include tab-focus();
+    // @FOUNDATION-FIX
+    // @include tab-focus();
   }
 }
 

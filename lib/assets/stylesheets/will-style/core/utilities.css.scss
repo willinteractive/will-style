@@ -6,9 +6,10 @@
 
 @import "ie7";
 
-@import "bootstrap/component-animations";
-@import "bootstrap/utilities";
-@import "bootstrap/responsive-utilities";
+// @FOUNDATION-FIX
+// @import "bootstrap/component-animations";
+// @import "bootstrap/utilities";
+// @import "bootstrap/responsive-utilities";
 
 // FROM BOOTSTRAP/SCAFFOLDING
 // We needed to tear this apart because it was interacting badly with TypePlate
@@ -29,8 +30,6 @@
   border: 0;
 }
 
-
-@import "bootstrap/print";
+// @FOUNDATION-FIX
+// @import "bootstrap/print";
 @import "print";
-
-@import "em-post"

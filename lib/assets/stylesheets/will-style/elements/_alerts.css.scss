@@ -4,13 +4,14 @@
 // 
 */
 
-@import "bootstrap/alerts";
-@import "bootstrap/close"; // adding the close import here because it's the only required element that could potentially use it
+@import "foundation/components/alert-boxes";
+// @import "bootstrap/close"; // adding the close import here because it's the only required element that could potentially use it
 
 
 // Extending
 // -------------------------
 
 .alert-error {
-	@extend .alert-danger;
+	// @FOUNDATION-FIX
+	// @extend .alert-danger;
 }

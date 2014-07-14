@@ -4,7 +4,7 @@
 // 
 */
 
-@import "bootstrap/input-groups";
+/* @import "bootstrap/input-groups"; */
 
 
 // Text input groups
@@ -20,5 +20,6 @@
 
 .input-group-btn > .btn {
 	// make sure the button's border matches that of the input
-	border-color: $input-border;
+	// @FOUNDATION-FIX
+	// border-color: $input-border;
 }

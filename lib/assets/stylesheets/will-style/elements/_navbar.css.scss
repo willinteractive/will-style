@@ -4,7 +4,7 @@
 // 
 */
 
-@import "bootstrap/navbar";
+// @import "bootstrap/navbar";
 
 
 // We don't want the navbar to have a defined height
@@ -42,7 +42,8 @@
 		// we don't want margin, we want padding instead
 		// so let's use that function to determine the correct rem values
 		margin-bottom: 0;
-		padding: measure-margin($navbar-scale, $measure, '#{$type-scale-unit-value}') $navbar-padding-horizontal;
+		// @FOUNDATION-FIX
+		// padding: measure-margin($navbar-scale, $measure, '#{$type-scale-unit-value}') $navbar-padding-horizontal;
 		
 		// the logo
 		img {
@@ -57,9 +58,10 @@
 	// Because the logo pushes the baseline of the brand text down
 	// the links and everything else inside of the un-collapsed area needs to shift down
 	.navbar-collapse {
-		@media (min-width: $grid-float-breakpoint) {
-			margin-top: measure-margin($navbar-scale, $measure, '#{$type-scale-unit-value}');
-		}
+		// @FOUNDATION-FIX
+		// @media (min-width: $grid-float-breakpoint) {
+		// 	margin-top: measure-margin($navbar-scale, $measure, '#{$type-scale-unit-value}');
+		// }
 	}
 	
 	// the toggle-button also needs to come down the same amount

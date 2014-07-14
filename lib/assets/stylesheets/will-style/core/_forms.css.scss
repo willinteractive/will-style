@@ -4,7 +4,7 @@
 // 
 */
 
-@import "bootstrap/forms";
+@import "foundation/components/forms";
 
 
 // Common form controls
@@ -21,7 +21,8 @@
 	// Disabled and read-only inputs	&[disabled],
   &[readonly],
   fieldset[disabled] {
-		@include box-shadow(none);
+  		// @FOUNDATION-FIX
+		// @include box-shadow(none);
 		color: $text-muted;
   }
 }
@@ -32,9 +33,10 @@
 // Build on `.form-control` with modifier classes to decrease or increase the
 // height and font-size of form controls.
 
-@include input-size('.input-sm', auto, $padding-small-vertical, $padding-small-horizontal, .8rem, $line-height-small, $border-radius-small);
+// @FOUNDATION-FIX
+// @include input-size('.input-sm', auto, $padding-small-vertical, $padding-small-horizontal, .8rem, $line-height-small, $border-radius-small);
 
-@include input-size('.input-lg', auto, $padding-large-vertical, $padding-large-horizontal, 1.25rem, $line-height-large, $border-radius-large);
+// @include input-size('.input-lg', auto, $padding-large-vertical, $padding-large-horizontal, 1.25rem, $line-height-large, $border-radius-large);
 
 
 // Form control feedback states
@@ -45,7 +47,8 @@
 
   // Ensure icons don't overlap text
   .form-control {
-    padding-right: ($input-height-base * 1.25);
+  	// @FOUNDATION-FIX
+    // padding-right: ($input-height-base * 1.25);
   }
 
   // Feedback icon (requires .glyphicon classes)
@@ -58,7 +61,8 @@
     line-height: $line-height-base;
     
     // then use the same padding as the inputs and put it at the top
-    padding: $padding-base-vertical $padding-base-horizontal;
+    // @FOUNDATION-FIX
+    // padding: $padding-base-vertical $padding-base-horizontal;
     top: auto;
     bottom: 0;
     
@@ -73,7 +77,8 @@
 
 // extend the rails added class to inherit from bootstrap's has-error class
 .field_with_errors {
-	@extend .has-error;
+	// @FOUNDATION-FIX
+	// @extend .has-error;
 }
 
 
@@ -114,6 +119,7 @@
 // it un-rounds the left corners
 // let's round them back
 .search-form .input-group .form-control:not(:first-child):not(:last-child) {
-	@include border-right-radius($border-radius-base);
+	// @FOUNDATION-FIX
+	// @include border-right-radius($border-radius-base);
 }
 

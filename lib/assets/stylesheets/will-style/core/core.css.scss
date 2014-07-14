@@ -6,6 +6,7 @@
 
 // Import compass
 @import "compass";
+
 // doesn't add load to CSS generated file
 // just gives access to all of the functions
 
@@ -15,9 +16,8 @@
 @import "mixins";
 @import "variables/core";
 @import "variables/elements";
-@import "bootstrap/variables";
 
-@import "em-pre";
+@import "foundation/settings";
 
 @import "reset";
 
