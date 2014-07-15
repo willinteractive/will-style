@@ -9,6 +9,7 @@ require "modernizr-rails"
 module Will
   module Style
     class Engine < Rails::Engine
+      isolate_namespace WILL::Style
     end
 
     # Using bootstrap-sass initialization
