@@ -8,7 +8,8 @@
 .page-header {
 	// give it a bg color
   background-color: #efefef;
-  padding: $section-padding / 2;
+  padding-top: $section-padding / 2;
+  padding-bottom: $section-padding / 2;
   
  .breadcrumbs {
 	  // remove colors from breadcrumbs
