@@ -150,11 +150,11 @@ Block to fill in HTML content.</p>
 
 <p>Default Functionality</p>
 
-<pre>&lt;%= f_alert(&quot;This is an alert&quot;, &quot;warning&quot;, class: &quot;round&quot;, exclude_close_button: true) %&gt;</pre>
+<pre>&lt;%= f_alert &quot;This is an alert&quot;, &quot;warning&quot;, class: &quot;round&quot;, exclude_close_button: true %&gt;</pre>
 
 <p>With ERB Block</p>
 
-<pre>&lt;%= f_alert(&quot;warning&quot; do %&gt;
+<pre>&lt;%= f_alert &quot;warning&quot; do %&gt;
   &lt;h1&gt;Big Alert&lt;/h1&gt;
 &lt;% end %&gt;</pre>
           
@@ -162,7 +162,7 @@ Block to fill in HTML content.</p>
 
           
           <div class="method-source-code" id="f_alert-source">
-            <pre><span class="ruby-comment"># File app/helpers/will-style/FoundationHelper.rb, line 49</span>
+            <pre><span class="ruby-comment"># File app/helpers/will/style/foundation_helper.rb, line 48</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">f_alert</span>(<span class="ruby-identifier">text</span>=<span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">type</span>=<span class="ruby-string">&quot;info&quot;</span>, <span class="ruby-identifier">options</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span>
     <span class="ruby-identifier">content</span> = <span class="ruby-identifier">capture</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)

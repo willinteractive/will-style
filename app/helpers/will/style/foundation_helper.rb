@@ -39,9 +39,9 @@ module WILL
       #
       # = Examples
       # Default Functionality
-      #   <%= f_alert("This is an alert", "warning", class: "round", exclude_close_button: true) %>
+      #   <%= f_alert "This is an alert", "warning", class: "round", exclude_close_button: true %>
       # With ERB Block
-      #   <%= f_alert("warning" do %>
+      #   <%= f_alert "warning" do %>
       #     <h1>Big Alert</h1>
       #   <% end %>
       #
