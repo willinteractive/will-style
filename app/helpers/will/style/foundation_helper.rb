@@ -31,7 +31,7 @@ module WILL
       #
       # :class – will add classes to the alert. 
       #
-      # :exclude_close_button - will not include the close button.
+      # :dismissable - whether or not to include the close button. Defaults to true.
       #
       # +block+
       #
@@ -39,7 +39,7 @@ module WILL
       #
       # = Examples
       # Default Functionality
-      #   <%= f_alert "This is an alert", "warning", class: "round", exclude_close_button: true %>
+      #   <%= f_alert "This is an alert", "warning", class: "round", dismissable: false %>
       # With ERB Block
       #   <%= f_alert "warning" do %>
       #     <h1>Big Alert</h1>
@@ -56,7 +56,7 @@ module WILL
         end
 
         content_tag(:div, data: { alert: true }, class: "alert-box #{type} #{options[:class]}") do
-          if options[:exclude_close_button] == true
+          if options.has_key?(:dismissable) && options[:dismissable] == false
             content
           else
             content + link_to("&times;".html_safe, "#", class: "close")

@@ -140,7 +140,8 @@ Block to fill in HTML content.</p>
 
 <p>:class – will add classes to the alert.</p>
 
-<p>:exclude_close_button - will not include the close button.</p>
+<p>:dismissable - whether or not to include the close button. Defaults to
+true.</p>
 
 <p><code>block</code></p>
 
@@ -150,7 +151,7 @@ Block to fill in HTML content.</p>
 
 <p>Default Functionality</p>
 
-<pre>&lt;%= f_alert &quot;This is an alert&quot;, &quot;warning&quot;, class: &quot;round&quot;, exclude_close_button: true %&gt;</pre>
+<pre>&lt;%= f_alert &quot;This is an alert&quot;, &quot;warning&quot;, class: &quot;round&quot;, dismissable: false %&gt;</pre>
 
 <p>With ERB Block</p>
 
@@ -167,14 +168,14 @@ Block to fill in HTML content.</p>
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span>
     <span class="ruby-identifier">content</span> = <span class="ruby-identifier">capture</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
 
-    <span class="ruby-identifier">options</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">type</span>)
+    <span class="ruby-identifier">options</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">type</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">type</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
     <span class="ruby-identifier">type</span> = <span class="ruby-identifier">text</span>
   <span class="ruby-keyword">else</span>
     <span class="ruby-identifier">content</span> = <span class="ruby-identifier">content_tag</span>(<span class="ruby-value">:span</span>, <span class="ruby-identifier">text</span>)
   <span class="ruby-keyword">end</span>
 
   <span class="ruby-identifier">content_tag</span>(<span class="ruby-value">:div</span>, <span class="ruby-identifier">data</span><span class="ruby-operator">:</span> { <span class="ruby-identifier">alert</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span> }, <span class="ruby-identifier">class</span><span class="ruby-operator">:</span> <span class="ruby-node">&quot;alert-box #{type} #{options[:class]}&quot;</span>) <span class="ruby-keyword">do</span>
-    <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:exclude_close_button</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-string">&quot;dismissable&quot;</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:dismissable</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>
       <span class="ruby-identifier">content</span>
     <span class="ruby-keyword">else</span>
       <span class="ruby-identifier">content</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">link_to</span>(<span class="ruby-string">&quot;&amp;times;&quot;</span>.<span class="ruby-identifier">html_safe</span>, <span class="ruby-node">&quot;#&quot;</span>, <span class="ruby-identifier">class</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;close&quot;</span>)
