@@ -1,16 +1,18 @@
-<form role="form">
-	<div class="form-group has-success">
-		<label class="control-label" for="inputSuccess1">Input with success</label>
-		<input type="text" class="form-control" id="inputSuccess1">
-	</div>
-	<div class="form-group has-warning has-feedback">
-		<label class="control-label" for="inputWarning2">Input with warning and feedback</label>
-		<input type="text" class="form-control" id="inputWarning2">
-		<%= fa_icon "exclamation-triangle", class: "form-control-feedback" %>
-	</div>
-	<div class="form-group has-error has-feedback">
-		<label class="control-label" for="inputError2">Input with error and feedback</label>
-		<input type="text" class="form-control" id="inputError2">
-		<%= fa_icon "trash-o", class: "form-control-feedback" %>
-	</div>
+<form>
+  <div class="row">
+    <div class="large-6 columns">
+      <label class="error">Error
+        <input type="text" class="error" />
+      </label>
+      <small class="error">Invalid entry</small>
+    </div>
+    <div class="large-6 columns error">
+      <label>Another Error
+        <input type="text" />
+      </label>
+      <small class="error">Invalid entry</small>
+    </div>
+  </div>
+  <textarea class="error" placeholder="Message..."></textarea>
+  <small class="error">Invalid entry</small>
 </form>
