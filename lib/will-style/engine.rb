@@ -6,9 +6,10 @@ require "foundation-rails"
 require "font-awesome-rails"
 require "modernizr-rails"
 
-module Will
+module WILL
   module Style
     class Engine < Rails::Engine
+      isolate_namespace WILL::Style
     end
 
     # Using bootstrap-sass initialization
@@ -36,4 +37,4 @@ module Will
   end
 end
 
-Will::Style.load!
+WILL::Style.load!

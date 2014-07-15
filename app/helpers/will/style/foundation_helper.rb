@@ -49,7 +49,7 @@ module WILL
         if block
           content = capture(&block)
 
-          options = options.merge(type)
+          options = options.merge(type) if type.is_a?(Hash)
           type = text
         else
           content = content_tag(:span, text)
