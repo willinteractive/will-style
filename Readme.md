@@ -42,3 +42,12 @@ Finally, when switching between the local and the remote gem, be sure to delete:
 and restart the app by saving:
 
 * tmp/restart.txt
+
+
+#### Updating docs
+
+```
+$ rake rdoc
+```
+
+RDoc Formatting Guide: http://ruby-doc.org/gems/docs/r/rdoc-4.1.1/RDoc/Markup.html
