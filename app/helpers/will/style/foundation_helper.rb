@@ -160,6 +160,7 @@ module WILL
         # +text+
         #
         # text you would like to display in the trigger button.
+        #
         # +options+
         #
         # Hash of options.
