@@ -6,7 +6,19 @@
 // add the class ".sectioned" to the <main> element followed by <section> elements
 // 
 */
+$section-padding:						5rem;
 
+$section-zebra-color:						inherit;
+$section-zebra-bg:							#efefef;
+$section-zebra-heading-color:		inherit;
+
+$section-inverse-color:						#fff;
+$section-inverse-bg:							#444444;
+$section-inverse-heading-color:		#fff;
+
+$section-primary-color:						#fff;
+$section-primary-bg:							$primary-color;
+$section-primary-heading-color:		#fff;
 
 // Base class
 // -------------------------
@@ -66,7 +78,7 @@
 
 .sectioned > section.success {
   color: $section-primary-color;
-  background-color: $brand-success;
+  background-color: $success-color;
 
   h1, h2, h3, h4, h5, h6 {
     color: $section-primary-heading-color;

@@ -1,5 +1,13 @@
+@import "compass";
+	
 //@import "will-style/will-style"
 @import "foundation";
 @import "font-awesome";
 
+// add in sectioning
+@import "will-style/elements/sections";
+
+// page-header
+@import "will-style/fixtures/page-header";
+@import "will-style/fixtures/sticky-footer";
 

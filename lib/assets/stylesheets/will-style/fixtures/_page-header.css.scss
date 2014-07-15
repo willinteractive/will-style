@@ -7,15 +7,30 @@
 
 .page-header {
 	// give it a bg color
-  background-color: $gray-lighter;
+  background-color: #efefef;
+  padding: $section-padding / 2;
+  
+ .breadcrumbs {
+	  // remove colors from breadcrumbs
+	  background: none;
+	  border: none;
+	  
+	  // enlarge the text
+	  & > li {
+	  	font-size: $h1-font-size;
+	  	line-height: $header-line-height;
+	  	text-transform: none;
+	  }
+  }
   
   // if it contains a breadcrumb and/or (search) form instead of header
-  .breadcrumb, form {
+  .breadcrumbs, form {
 	  // remove padding
 	  padding: 0;
 	  
 	  // setup margins
-	  margin: 1.5rem 0;
+	  margin-bottom: 0;
+	  margin-top: 0;
   }
   
   // the following elements should be in a column to the right of the breadcrumbs
