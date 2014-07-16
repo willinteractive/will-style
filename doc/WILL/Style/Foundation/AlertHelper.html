@@ -4,21 +4,21 @@
 <head>
 <meta charset="UTF-8">
 
-<title>module WILL::Style::FoundationHelper - RDoc Documentation</title>
+<title>module WILL::Style::Foundation::AlertHelper - RDoc Documentation</title>
 
-<link href="../../fonts.css" rel="stylesheet">
-<link href="../../rdoc.css" rel="stylesheet">
+<link href="../../../fonts.css" rel="stylesheet">
+<link href="../../../rdoc.css" rel="stylesheet">
 
 <script type="text/javascript">
-  var rdoc_rel_prefix = "../../";
+  var rdoc_rel_prefix = "../../../";
 </script>
 
-<script src="../../js/jquery.js"></script>
-<script src="../../js/navigation.js"></script>
-<script src="../../js/search_index.js"></script>
-<script src="../../js/search.js"></script>
-<script src="../../js/searcher.js"></script>
-<script src="../../js/darkfish.js"></script>
+<script src="../../../js/jquery.js"></script>
+<script src="../../../js/navigation.js"></script>
+<script src="../../../js/search_index.js"></script>
+<script src="../../../js/search.js"></script>
+<script src="../../../js/searcher.js"></script>
+<script src="../../../js/darkfish.js"></script>
 
 
 <body id="top" role="document" class="module">
@@ -26,13 +26,13 @@
   <div id="project-navigation">
     <div id="home-section" role="region" title="Quick navigation" class="nav-section">
   <h2>
-    <a href="../../index.html" rel="home">Home</a>
+    <a href="../../../index.html" rel="home">Home</a>
   </h2>
 
   <div id="table-of-contents-navigation">
-    <a href="../../table_of_contents.html#pages">Pages</a>
-    <a href="../../table_of_contents.html#classes">Classes</a>
-    <a href="../../table_of_contents.html#methods">Methods</a>
+    <a href="../../../table_of_contents.html#pages">Pages</a>
+    <a href="../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../table_of_contents.html#methods">Methods</a>
   </div>
 </div>
 
@@ -68,24 +68,20 @@
     
     <li ><a href="#method-i-f_alert">#f_alert</a>
     
-    <li ><a href="#method-i-f_modal">#f_modal</a>
-    
-    <li ><a href="#method-i-f_tooltip">#f_tooltip</a>
-    
   </ul>
 </div>
 
   </div>
 </nav>
 
-<main role="main" aria-labelledby="module-WILL::Style::FoundationHelper">
-  <h1 id="module-WILL::Style::FoundationHelper" class="module">
-    module WILL::Style::FoundationHelper
+<main role="main" aria-labelledby="module-WILL::Style::Foundation::AlertHelper">
+  <h1 id="module-WILL::Style::Foundation::AlertHelper" class="module">
+    module WILL::Style::Foundation::AlertHelper
   </h1>
 
   <section class="description">
     
-<p>Helpers for generating Foundation HTML elements</p>
+<p>Helpers for generating <a href="../Foundation.html">Foundation</a> alerts</p>
 
   </section>
 
@@ -169,7 +165,7 @@ false.</p>
 
           
           <div class="method-source-code" id="f_alert-source">
-            <pre><span class="ruby-comment"># File app/helpers/will/style/foundation_helper.rb, line 53</span>
+            <pre><span class="ruby-comment"># File app/helpers/will/style/foundation/alert_helper.rb, line 57</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">f_alert</span>(<span class="ruby-identifier">text</span>=<span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">type</span>=<span class="ruby-string">&quot;info&quot;</span>, <span class="ruby-identifier">options</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
     <span class="ruby-identifier">content</span> = <span class="ruby-identifier">capture</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
@@ -186,126 +182,6 @@ false.</p>
     <span class="ruby-keyword">else</span>
       <span class="ruby-identifier">content</span>            
     <span class="ruby-keyword">end</span>
-  <span class="ruby-keyword">end</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
-    
-      <div id="method-i-f_modal" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">f_modal</span><span
-            class="method-args">(id="will-style-modal", &block)</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Generates a modal. This returns a modal builder that you can use to
-generate both the modal window and the trigger button.</p>
-
-<h1 id="method-i-f_modal-label-Params">Params<span><a href="#method-i-f_modal-label-Params">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
-
-<p><code>id</code></p>
-
-<p>The id you would like to give the modal. Defaults to will-style-modal</p>
-
-<h1 id="method-i-f_modal-label-Examples">Examples<span><a href="#method-i-f_modal-label-Examples">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
-
-<pre>&lt;%= f_modal &quot;myModal&quot; do |m| %&gt;
-  &lt;%= m.trigger &quot;Open my Modal&quot; %&gt;
-
-  &lt;%= m.modal class=&quot;large&quot; do %&gt;
-    &lt;strong&gt;My&lt;/strong&gt; Modal content
-  &lt;% end %&gt;
-&lt;% end %&gt;</pre>
-          
-          
-
-          
-          <div class="method-source-code" id="f_modal-source">
-            <pre><span class="ruby-comment"># File app/helpers/will/style/foundation_helper.rb, line 126</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">f_modal</span>(<span class="ruby-identifier">id</span>=<span class="ruby-string">&quot;will-style-modal&quot;</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
-  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing block&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
-
-  <span class="ruby-identifier">capture</span>(<span class="ruby-constant">ModalBuilder</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">id</span>, <span class="ruby-keyword">self</span>), <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
-<span class="ruby-keyword">end</span></pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
-    
-      <div id="method-i-f_tooltip" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">f_tooltip</span><span
-            class="method-args">(text="", title="", position="bottom", options={})</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Generates a tooltip span.</p>
-
-<h1 id="method-i-f_tooltip-label-Params">Params<span><a href="#method-i-f_tooltip-label-Params">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
-
-<p><code>text</code></p>
-
-<p>text you would like to display in the span.</p>
-
-<p><code>title</code></p>
-
-<p>tooltip text.</p>
-
-<p><code>position</code></p>
-
-<p>Position of the tooltip.</p>
-
-<p><em>Possible values</em>: bottom, top, left, right.</p>
-
-<p><em>Default value</em>: bottom.</p>
-
-<p><code>options</code></p>
-
-<p>Hash of options.</p>
-
-<p>:id – element id.</p>
-
-<p>:class – will add classes to the tooltip.</p>
-
-<p>:options - Foundation tooltip data-options. (disable_for_touch:true,
-show_on:large)</p>
-
-<h1 id="method-i-f_tooltip-label-Examples">Examples<span><a href="#method-i-f_tooltip-label-Examples">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
-
-<pre>&lt;%= f_tooltip &quot;Click Here&quot;, &quot;This takes you to a new place&quot;, &quot;top&quot;, class: &quot;round&quot;, options: &quot;disable_for_touch:true&quot; %&gt;</pre>
-          
-          
-
-          
-          <div class="method-source-code" id="f_tooltip-source">
-            <pre><span class="ruby-comment"># File app/helpers/will/style/foundation_helper.rb, line 104</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">f_tooltip</span>(<span class="ruby-identifier">text</span>=<span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">title</span>=<span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">position</span>=<span class="ruby-string">&quot;bottom&quot;</span>, <span class="ruby-identifier">options</span>={})
-  <span class="ruby-identifier">content_tag</span>(<span class="ruby-value">:span</span>, <span class="ruby-identifier">data</span><span class="ruby-operator">:</span> { <span class="ruby-identifier">tooltip</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>, <span class="ruby-identifier">options</span><span class="ruby-operator">:</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>] }, <span class="ruby-identifier">class</span><span class="ruby-operator">:</span> <span class="ruby-node">&quot;has-tip tip-#{position} #{options[:class]}&quot;</span>, <span class="ruby-identifier">title</span><span class="ruby-operator">:</span> <span class="ruby-identifier">title</span>, <span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:id</span>]) <span class="ruby-keyword">do</span>
-    <span class="ruby-identifier">text</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
