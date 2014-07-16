@@ -78,6 +78,8 @@ module WILL
           #
           # You can use any of the html options available in ActionView helpers.
           #
+          # :show_trigger - Set to false to hide the trigger arrow.
+          #
           # +block+
           #
           # ERB Block for the trigger button if it needs to be HTML content.
@@ -102,7 +104,8 @@ module WILL
               options[:data] = data
             end
 
-            options[:class] = "button dropdown #{options[:class]}"
+            hide_trigger = options.has_key?(:show_trigger) && options[:show_trigger] == false
+            options[:class] = "button#{ hide_trigger ? "" : " dropdown" } #{options[:class]}"
 
             if block_given?
               link_to("#", options) do
@@ -219,6 +222,45 @@ module WILL
               link_to("#", options) do
                 content
               end
+            end
+          end
+
+          ##
+          # Generates a dropdown content area.
+          # = Params
+          #
+          # +options+
+          #
+          # Hash of options.
+          #
+          # You can use any of the html options available in ActionView helpers.
+          #
+          # +block+
+          #
+          # ERB Block for the dropdown content.
+          #
+          # = Examples
+          #   <%= d.content do %>
+          #     <p>Dropdown Content</p>
+          #   <% end %>
+          #
+          def content(options={}, &block)
+            raise ArgumentError, "Missing block" unless block_given?
+
+            # Merge custom html data options with mandatory modal data options
+            data = { "dropdown-content" => true }
+
+            if options[:data] && options[:data].is_a?(Hash)
+              options[:data] = options[:data].merge(data)
+            else
+              options[:data] = data
+            end
+
+            options[:id] = @id
+            options[:class] = "f-dropdown content #{options[:class]}"
+
+            content_tag(:div, options) do
+              capture(&block)
             end
           end
         end
