@@ -18,3 +18,4 @@ end
 include WILL::Style::Foundation::AlertHelper
 include WILL::Style::Foundation::TooltipHelper
 include WILL::Style::Foundation::ModalHelper
+include WILL::Style::Foundation::DropdownHelper

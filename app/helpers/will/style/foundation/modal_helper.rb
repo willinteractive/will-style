@@ -153,7 +153,7 @@ module WILL
               if can_dismiss
                 content + link_to("&times;".html_safe, "#", class: "close-reveal-modal")
               else
-                content              
+                content
               end
             end
           end
