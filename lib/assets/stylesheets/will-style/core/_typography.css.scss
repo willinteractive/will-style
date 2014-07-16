@@ -5,22 +5,27 @@
 // 
 */
 
-// custom variables
-$font-weight-light: 300;
-$font-weight-normal: 400;
-$font-weight-bold: 700;
-
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600);
 
-$body-font-family: 'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+// -- From _global
+$font-weight-light: 	300 !default;
+$font-weight-normal: 	400 !default;
+$font-weight-bold: 		700 !default;
 
-$header-font-family: inherit;
-$header-font-weight: $font-weight-light;
+// -- From _type
+$body-font-family: 			'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !default;
+$header-font-family: 		inherit;
+$header-font-weight: 		$font-weight-light;
+$paragraph-font-weight: $font-weight-normal;
 
+// IMPORT FOUNDATION
+@import "foundation/components/type";
+
+
+// CUSTOM STYLES
 h5, h6 {
 	font-weight: $font-weight-bold;
 }
 
 
-$paragraph-font-weight: $font-weight-normal;
 

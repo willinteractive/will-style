@@ -1,0 +1,42 @@
+/* 
+// 
+// TABLES
+// 
+*/
+
+@import "foundation/components/tables";
+
+
+// CUSTOM:
+//
+// FOCUSABLE
+// -------------------------
+
+// hover effects of tables that have rows that are selectable
+table.focusable {
+	td {
+		@include transition(all 300ms);
+	}
+	tbody:hover td {
+		color: transparent;
+		text-shadow: 0 0 3px $secondary-color;
+	}
+	tbody:hover tr:hover td {
+		color: $body-font-color;
+		text-shadow: none;
+	}
+}
+
+// hover effects of tables that have rows that are selectable but are very complex
+// this class is added by Javascript
+table.focusable.complex {
+	td { 
+		@include transition(all 300ms);
+	}
+	tbody:hover td {
+		@include opacity(30);
+	}
+	tbody:hover tr:hover td {
+		@include opacity(100);
+	}
+}

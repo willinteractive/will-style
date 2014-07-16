@@ -1,0 +1,108 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ */
+
+
+
+
+// CORE
+// HTML tags & more abstract elements like color palettes, 
+// fonts and invisible aspects like animations
+// -------------------------
+@import "will-style/core/core";
+
+//FOUNDATION PIECES:
+@import
+  "foundation/components/grid",
+  "foundation/components/accordion",
+  "foundation/components/alert-boxes",
+  "foundation/components/block-grid",
+  "foundation/components/breadcrumbs",
+  "foundation/components/clearing",
+  "foundation/components/dropdown",
+  "foundation/components/dropdown-buttons",
+  "foundation/components/flex-video",
+  //not included in gem version
+  //"foundation/components/icon-bar",
+  "foundation/components/inline-lists",
+  "foundation/components/joyride",
+  "foundation/components/keystrokes",
+  "foundation/components/labels",
+  "foundation/components/magellan",
+  "foundation/components/orbit",
+  "foundation/components/pagination",
+  "foundation/components/panels",
+  "foundation/components/pricing-tables",
+  "foundation/components/progress-bars",
+  "foundation/components/range-slider",
+  "foundation/components/reveal",
+  "foundation/components/side-nav",
+  "foundation/components/split-buttons",
+  "foundation/components/sub-nav",
+  //not included in gem version
+  //"foundation/components/switches",
+  "foundation/components/tabs",
+  "foundation/components/thumbs",
+  "foundation/components/tooltips",
+  "foundation/components/top-bar",
+  "foundation/components/offcanvas",
+  "foundation/components/visibility";
+	
+
+// add in sectioning
+@import "will-style/elements/sections";
+
+
+// page-header
+@import "will-style/fixtures/page-header";
+@import "will-style/fixtures/sticky-footer";
+
+// ELEMENTS
+// Relatively simple combinations of the CORE built for reuse
+// -------------------------
+//@import "will-style/elements/elements";
+
+// Extra elements
+// either import the whole file or copy and paste only certain elements
+//@import "will-style/elements/extras";
+
+
+// FIXTURES
+// Groups of elements joined together to form a relatively complex, 
+// distinct section of an interface. 
+// -------------------------
+//@import "will-style/fixtures/fixtures";
+
+
+// TEMPLATES
+// Very concrete and provide context to all these relatively abstract Fixtures and elements.
+// -------------------------
+// You don't need to import any templates unless you plan to use them
+
+
+// PAGES
+// The highest level of fidelity and the most tangible.
+// -------------------------
+// import your project specific pages here
+
+
+// LIBRARIES
+// This is wher you want to import external library css styles 
+// and will-style overrides for those
+// -------------------------
+// the libraries you can import from WILL-Style are:
+// dataTables, flot, offline, and piety
+
+
+// ENDING UTILITIES
+// Required utility classes that must come at the end of the document.
+// -------------------------
+//@import "will-style/core/utilities";

@@ -1,0 +1,40 @@
+/* 
+// 
+// CORE
+// 
+*/
+
+// EXTERNAL
+@import 
+	"compass",
+	"normalize";
+
+// INTERNAL
+@import
+	"global",
+	"typography",
+	"images",
+	"buttons",
+	"forms",
+	"tables";
+
+
+
+
+
+// OLD:
+// There is a special order to Variables and mixins so we can reuse them
+/*
+
+
+@import "images";
+
+//being imported by will-style for now
+//@import "font-awesome";
+
+@import "forms";
+
+@import "buttons";
+
+@import "tables";
+*/
