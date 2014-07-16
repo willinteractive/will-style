@@ -1,7 +1,3 @@
-include WILL::Style::Foundation::AlertHelper
-include WILL::Style::Foundation::TooltipHelper
-include WILL::Style::Foundation::ModalHelper
-
 ##
 # Namespace module.
 #
@@ -18,3 +14,7 @@ module WILL
     end
   end
 end
+
+include WILL::Style::Foundation::AlertHelper
+include WILL::Style::Foundation::TooltipHelper
+include WILL::Style::Foundation::ModalHelper

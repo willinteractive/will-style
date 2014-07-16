@@ -36,9 +36,7 @@ module WILL
         #
         # Hash of options.
         #
-        # :id – element id.
-        #
-        # :class – will add classes to the alert. 
+        # You can use any of the html options available in ActionView helpers.
         #
         # :dismissable - whether or not to include the close button. Defaults to false.
         #
@@ -64,7 +62,17 @@ module WILL
             content = content_tag(:span, text)
           end
 
-          content_tag(:div, data: { alert: true }, class: "alert-box #{type} #{options[:class]}", id: options[:id]) do
+          # Merge custom html data options with mandatory alert data options
+          if options[:data] && options[:data].is_a?(Hash)
+            options[:data] = options[:data].merge({ alert: true })
+          else
+            options[:data] = { alert: true }
+          end
+
+          # Merge custom classes with mandatory classes
+          options[:class] = "alert-box #{type} #{options[:class]}"
+
+          content_tag(:div, options) do
             if options.has_key?(:dismissable) && options[:dismissable] == true
               content + link_to("&times;".html_safe, "#", class: "close")
             else
