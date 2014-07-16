@@ -16,5 +16,9 @@
 #= require foundation/foundation.topbar
 #= require foundation/foundation.equalizer
 
+# Update Foundation components to allow for custom behaviors
+Foundation.libs.reveal.settings.dismiss_modal_class = 'close-reveal-modal, .reveal-close'
+
+# Initialize Foundation
 $ ->
 	$(document).foundation()

@@ -74,9 +74,7 @@ module WILL
           #
           # Hash of options.
           #
-          # :id – element id.
-          #
-          # :class – will add classes to the button.
+          # You can use any of the html options available in ActionView helpers.
           #
           # +block+
           #
@@ -91,14 +89,21 @@ module WILL
           #   <% end %>
           #
           def trigger(text="", options={}, &block)
+            options = options.merge(text) if text.is_a?(Hash) if block_given?
+
+            # Merge custom html data options with mandatory alert data options
+            if options[:data] && options[:data].is_a?(Hash)
+              options[:data] = options[:data].merge({ "reveal-id" => @id })
+            else
+              options[:data] = { "reveal-id" => @id }
+            end   
+
             if block_given?
-              options = options.merge(text) if text.is_a?(Hash)
-              
-              link_to("#", class: "button #{options[:class]}", id: options[:id], data: { "reveal-id" => @id }) do
+              link_to("#", options) do
                 capture(&block)
               end
             else
-              link_to(text, "#", class: "button #{options[:class]}", id: options[:id], data: { "reveal-id" => @id })
+              link_to(text, "#", options)
             end
           end
 
@@ -110,9 +115,7 @@ module WILL
           #
           # Hash of options.
           #
-          # :id – element id.
-          #
-          # :class – will add classes to the modal. 
+          # You can use any of the html options available in ActionView helpers.
           #
           # :dismissable - whether or not to include the close button. Defaults to true.
           #
@@ -132,12 +135,72 @@ module WILL
 
             can_dismiss = !options.has_key?(:dismissable) || options[:dismissable] == true
 
-            content_tag(:div, data: { reveal: true }, class: "reveal-modal #{options[:class]}", id: @id, "data-options" => can_dismiss ? "" : "close_on_background_click:false") do
+            # Merge custom html data options with mandatory modal data options
+
+            data_options = { reveal: true,
+                             "options" => can_dismiss ? "" : "close_on_background_click:false;" }
+
+            if options[:data] && options[:data].is_a?(Hash)
+              options[:data] = options[:data].merge(data_options)
+            else
+              options[:data] = data_options
+            end
+
+            options[:id] = @id
+            options[:class] = "reveal-modal #{options[:class]}"
+
+            content_tag(:div, options) do
               if can_dismiss
-                content + @template.link_to("&times;".html_safe, "#", class: "close-reveal-modal")
+                content + link_to("&times;".html_safe, "#", class: "close-reveal-modal")
               else
                 content              
               end
+            end
+          end
+
+          ##
+          # Generates a custom modal close button. You can either specify button text
+          # or use an ERB Block to fill in HTML content.
+          # = Params
+          #
+          # +text+
+          #
+          # text you would like to display in the close button.
+          #
+          # +type+
+          #
+          # Type of button. 
+          #
+          # <i>Possible values</i>: success, warning, info, alert, secondary. 
+          #
+          # <i>Default value</i>: warning.
+          #
+          # +options+
+          #
+          # Hash of options.
+          #
+          # You can use any of the html options available in ActionView helpers.
+          #
+          # +block+
+          #
+          # ERB Block for the close button if it needs to be HTML Content.
+          #
+          # = Examples
+          #   <%= m.close_button do %>
+          #     <strong>Close</strong> this modal
+          #   <% end %>
+          #
+          def close_button(text="", type="warning", options={}, &block)
+            options = options.merge(type) if type.is_a?(Hash) if block_given?
+
+            options[:class] = "button #{type} reveal-close #{options[:class]}"
+
+            if block_given?
+              link_to("#", options) do
+                capture(&block)
+              end
+            else
+              link_to(text, "#", options)
             end
           end
         end

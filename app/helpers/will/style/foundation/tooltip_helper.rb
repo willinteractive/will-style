@@ -39,17 +39,25 @@ module WILL
         #
         # Hash of options.
         #
-        # :id – element id.
-        #
-        # :class – will add classes to the tooltip. 
-        #
-        # :options - Foundation tooltip data-options. (disable_for_touch:true, show_on:large)
+        # You can use any of the html options available in ActionView helpers.
         #
         # = Examples
         #   <%= f_tooltip "Click Here", "This takes you to a new place", "top", class: "round", options: "disable_for_touch:true" %>
         #
         def f_tooltip(text="", title="", position="bottom", options={})
-          content_tag(:span, data: { tooltip: true, options: options[:options] }, class: "has-tip tip-#{position} #{options[:class]}", title: title, id: options[:id]) do
+          # Merge custom html data options with mandatory tooltip data options
+          if options[:data] && options[:data].is_a?(Hash)
+            options[:data] = options[:data].merge({ tooltip: true })
+          else
+            options[:data] = { tooltip: true }
+          end
+
+          options[:title] = title
+
+          # Merge custom classes with mandatory classes
+          options[:class] = "has-tip tip-#{position} #{options[:class]}"
+
+          content_tag(:span, options) do
             text
           end
         end
