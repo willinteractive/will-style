@@ -1,4 +1,4 @@
-helper WILL::Style::Foundation::AlertHelper
+include WILL::Style::Foundation::AlertHelper
 
 ##
 # Namespace module.
