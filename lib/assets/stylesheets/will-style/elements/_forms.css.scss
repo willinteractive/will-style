@@ -1,0 +1,16 @@
+/* 
+// 
+// FORMS
+// 
+*/
+
+// move search form's icon
+.has-icon {
+	position: relative;
+	
+	.input-icon {
+		position: absolute;
+		top: $form-spacing / 1.5;
+		right: $form-spacing;
+	}
+}
