@@ -1,0 +1,17 @@
+/* 
+// 
+// BREADCRUMBS
+// 
+*/
+
+
+$crumb-slash: ":";
+
+
+@import "foundation/components/breadcrumbs";
+
+// forcing links inside of current breadcrumb to be the link color
+.breadcrumbs > *.current a {
+	color: $primary-color;
+	cursor: auto;
+}
