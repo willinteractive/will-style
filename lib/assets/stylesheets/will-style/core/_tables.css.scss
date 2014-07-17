@@ -4,11 +4,51 @@
 // 
 */
 
+$table-even-row-bg: scale-color($secondary-color, $lightness: 50%);
+$table-head-bg: $table-even-row-bg;
+
+
 @import "foundation/components/tables";
 
 
 // CUSTOM:
 //
+
+// BORDERED
+// -------------------------
+
+table.bordered {
+  border: 1px solid $table-border-color;
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        border: 1px solid $table-border-color;
+      }
+    }
+  }
+  > thead > tr {
+    > th,
+    > td {
+      border-bottom-width: 2px;
+    }
+  }
+}
+
+// HOVERABLE
+// -------------------------
+
+table.hoverable, table.focusable {
+  > tbody > tr:hover {
+    > td,
+    > th {
+      background-color: scale-color($primary-color, $lightness: 90%);
+    }
+  }
+}
+
 // FOCUSABLE
 // -------------------------
 
@@ -19,7 +59,7 @@ table.focusable {
 	}
 	tbody:hover td {
 		color: transparent;
-		text-shadow: 0 0 3px $secondary-color;
+		text-shadow: 0 0 3px $body-font-color;
 	}
 	tbody:hover tr:hover td {
 		color: $body-font-color;
