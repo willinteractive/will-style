@@ -25,6 +25,7 @@ $success-color: #43AC6A !default;
 $warning-color: #f08a24 !default;
 $info-color: #a0d3e8 !default;
 */
+$component-hover-bg-color: scale-color($primary-color, $lightness: 92%);
 
 /* $column-gutter: rem-calc(30) !default; */
 

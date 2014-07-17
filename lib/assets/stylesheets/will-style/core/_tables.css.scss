@@ -44,7 +44,7 @@ table.hoverable, table.focusable {
   > tbody > tr:hover {
     > td,
     > th {
-      background-color: scale-color($primary-color, $lightness: 90%);
+      background-color: $component-hover-bg-color;
     }
   }
 }
