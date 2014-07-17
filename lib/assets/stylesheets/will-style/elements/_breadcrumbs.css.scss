@@ -12,6 +12,6 @@ $crumb-slash: ":";
 
 // forcing links inside of current breadcrumb to be the link color
 .breadcrumbs > *.current a {
-	color: $primary-color;
+	color: $anchor-font-color;
 	cursor: auto;
 }

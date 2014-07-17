@@ -22,9 +22,31 @@ $paragraph-font-weight: $font-weight-normal;
 @import "foundation/components/type";
 
 // CUSTOM STYLES
+// ---------------------
+
+// Make the smaller headers bold
 h5, h6 {
 	font-weight: $font-weight-bold;
 }
 
+// Colors
+.text-secondary {
+	color: scale-color($body-font-color, $lightness: 35%);
+}
+.text-primary {
+	color: $primary-color;
+}
+.text-alert {
+	color: $alert-color;
+}
+.text-warning {
+	color: $warning-color;
+}
+.text-success {
+	color: $success-color;
+}
+.text-info {
+	color: $info-color;
+}
 
 
