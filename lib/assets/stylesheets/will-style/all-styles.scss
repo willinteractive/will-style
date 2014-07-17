@@ -19,67 +19,22 @@
 // -------------------------
 @import "will-style/core/core";
 
-//FOUNDATION PIECES:
-@import
-  "foundation/components/grid",
-  "foundation/components/accordion",
-  "foundation/components/alert-boxes",
-  "foundation/components/block-grid",
-  "foundation/components/breadcrumbs",
-  "foundation/components/clearing",
-  "foundation/components/dropdown",
-  "foundation/components/dropdown-buttons",
-  "foundation/components/flex-video",
-  //not included in gem version
-  //"foundation/components/icon-bar",
-  "foundation/components/inline-lists",
-  "foundation/components/joyride",
-  "foundation/components/keystrokes",
-  "foundation/components/labels",
-  "foundation/components/magellan",
-  "foundation/components/orbit",
-  "foundation/components/pagination",
-  "foundation/components/panels",
-  "foundation/components/pricing-tables",
-  "foundation/components/progress-bars",
-  "foundation/components/range-slider",
-  "foundation/components/reveal",
-  "foundation/components/side-nav",
-  "foundation/components/split-buttons",
-  "foundation/components/sub-nav",
-  //not included in gem version
-  //"foundation/components/switches",
-  "foundation/components/tabs",
-  "foundation/components/thumbs",
-  "foundation/components/tooltips",
-  "foundation/components/top-bar",
-  "foundation/components/offcanvas",
-  "foundation/components/visibility";
-	
-
-// add in sectioning
-@import "will-style/elements/sections";
-
-
-// page-header
-@import "will-style/fixtures/page-header";
-@import "will-style/fixtures/sticky-footer";
 
 // ELEMENTS
 // Relatively simple combinations of the CORE built for reuse
 // -------------------------
-//@import "will-style/elements/elements";
+@import "will-style/elements/elements";
 
 // Extra elements
 // either import the whole file or copy and paste only certain elements
-//@import "will-style/elements/extras";
+@import "will-style/elements/extras";
 
 
 // FIXTURES
 // Groups of elements joined together to form a relatively complex, 
 // distinct section of an interface. 
 // -------------------------
-//@import "will-style/fixtures/fixtures";
+@import "will-style/fixtures/fixtures";
 
 
 // TEMPLATES
@@ -105,4 +60,4 @@
 // ENDING UTILITIES
 // Required utility classes that must come at the end of the document.
 // -------------------------
-//@import "will-style/core/utilities";
+@import "foundation/components/visibility";

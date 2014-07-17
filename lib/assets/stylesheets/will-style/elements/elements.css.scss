@@ -1,0 +1,34 @@
+/* 
+// 
+// ELEMENTS
+// 
+*/
+
+// LAYOUT
+// ----------------------
+@import
+  "foundation/components/grid",
+	"sections",
+  "foundation/components/block-grid",
+  "foundation/components/offcanvas";
+
+// NAVIGATION
+// ----------------------
+@import
+  "foundation/components/breadcrumbs",
+  // not included in gem version:
+  //"foundation/components/icon-bar",
+  "foundation/components/pagination",
+  "foundation/components/side-nav",
+  "foundation/components/sub-nav",
+  "foundation/components/tabs",
+  "foundation/components/top-bar";
+
+
+// BLOCKS
+// ----------------------
+@import
+  "foundation/components/alert-boxes",
+  "foundation/components/dropdown",
+	"foundation/components/labels",
+  "foundation/components/panels";

@@ -5,36 +5,39 @@
 */
 
 // EXTERNAL
+// ----------------------
 @import 
 	"compass",
 	"normalize";
 
-// INTERNAL
+// GLOBAL
+// ----------------------
+@import "global";
+	
+// TYPOGRAPHY
+// ----------------------
 @import
-	"global",
 	"typography",
-	"images",
-	"buttons",
-	"forms",
-	"tables";
+	"foundation/components/inline-lists";
+	
+// IMAGES
+// ----------------------
+@import
+	"font-awesome",
+	"foundation/components/thumbs";
 
+// BUTTONS	
+// ----------------------
+@import 
+	"foundation/components/buttons",
+  "foundation/components/button-groups",
+  "foundation/components/dropdown-buttons",
+  "foundation/components/split-buttons";
+  
+// FORMS
+// ----------------------
+@import	"forms";
 
-
-
-
-// OLD:
-// There is a special order to Variables and mixins so we can reuse them
-/*
-
-
-@import "images";
-
-//being imported by will-style for now
-//@import "font-awesome";
-
-@import "forms";
-
-@import "buttons";
-
+// TABLES
+// ----------------------
 @import "tables";
-*/

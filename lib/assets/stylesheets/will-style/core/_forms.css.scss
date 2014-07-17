@@ -4,7 +4,11 @@
 // 
 */
 
-@import "foundation/components/forms";
+@import
+	"foundation/components/forms",
+  "foundation/components/range-slider";
+  //not included in gem version
+  //"foundation/components/switches";
 
 // move search form's icon
 .has-icon {
