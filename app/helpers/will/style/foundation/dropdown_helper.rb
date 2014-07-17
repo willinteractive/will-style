@@ -215,7 +215,7 @@ module WILL
               options = options.merge(target) if target.is_a?(Hash)
               target = text
             else
-              content = content_tag(:span, text)
+              content = text.html_safe
             end
 
             content_tag(:li) do

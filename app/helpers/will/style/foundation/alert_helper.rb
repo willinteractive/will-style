@@ -59,7 +59,7 @@ module WILL
             options = options.merge(type) if type.is_a?(Hash)
             type = text
           else
-            content = content_tag(:span, text)
+            content = text.html_safe
           end
 
           # Merge custom html data options with mandatory alert data options
