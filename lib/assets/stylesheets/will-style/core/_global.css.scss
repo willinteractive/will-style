@@ -6,12 +6,18 @@
 
 // from _global
 
-// We use these to control various global styles
-$body-bg: #fff !default;
-$body-font-color: #444 !default;
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600);
+
+$font-weight-light: 	300;
+$font-weight-normal: 	400;
+$font-weight-bold: 		700;
+
+$body-bg: #fff;
+$body-font-color: #444;
+$body-font-family: 			'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 
 // We use these as default colors throughout
-$primary-color: #4CBB87 !default;
+$primary-color: #4CBB87;
 /*
 $secondary-color: #e7e7e7 !default;
 $alert-color: #f04124 !default;

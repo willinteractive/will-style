@@ -5,15 +5,7 @@
 // 
 */
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600);
-
-// -- From _global
-$font-weight-light: 	300 !default;
-$font-weight-normal: 	400 !default;
-$font-weight-bold: 		700 !default;
-
-// -- From _type
-$body-font-family: 			'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !default;
+// VARIABLES
 $header-font-family: 		inherit;
 $header-font-weight: 		$font-weight-light;
 $paragraph-font-weight: $font-weight-normal;
