@@ -1,0 +1,17 @@
+/* 
+// 
+// ALERT BOXES
+// 
+*/
+
+
+@import "foundation/components/alert-boxes";
+
+// Because font-sizing is applied to paragraphs, unles you put a <p> inside an alert
+// the font will be small - which is sometimes good.
+// But if you put in a <p> then the bottom padding is off because you have
+// the <p>'s margin plus the alert's padding.
+// So we remove the last <p> tag's margin
+.alert-box p:last-of-type {
+	margin-bottom: 0;
+}
