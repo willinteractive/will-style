@@ -72,14 +72,6 @@ module WILL
           #
           # text you would like to display in the trigger button.
           #
-          # +type+
-          #
-          # Type of button. 
-          #
-          # <i>Possible values</i>: normal, secondary, success, alert. 
-          #
-          # <i>Default value</i>: normal.
-          #
           # +options+
           #
           # Hash of options.
@@ -100,11 +92,8 @@ module WILL
           #     <h1>Open the dropdown</h1>
           #   <% end %>
           #
-          def button(text="", type="normal", options={}, &block)
-            if block_given?
-              options = options.merge(type) if type.is_a?(Hash)
-              type = text
-            end
+          def button(text="", options={}, &block)
+            options = options.merge(text) if block_given? && text.is_a?(Hash)
 
             # Merge custom html data options with mandatory alert data options
             data = { dropdown: @id }
@@ -116,7 +105,7 @@ module WILL
             end
 
             hide_trigger = options.has_key?(:show_trigger) && options[:show_trigger] == false
-            options[:class] = "button #{type}#{ hide_trigger ? "" : " dropdown" } #{options[:class]}"
+            options[:class] = "button#{ hide_trigger ? "" : " dropdown" } #{options[:class]}"
 
             if block_given?
               link_to("#", options) do
@@ -134,12 +123,6 @@ module WILL
           # +text+
           #
           # text you would like to display in the trigger button.
-          #
-          # Type of button. 
-          #
-          # <i>Possible values</i>: normal, secondary, success, alert. 
-          #
-          # <i>Default value</i>: normal.
           #
           # +target+
           #
@@ -163,18 +146,17 @@ module WILL
           #     <h1>Open the dropdown</h1>
           #   <% end %>
           #
-          def button_split(text="", type="normal", target="", options={}, &block)
+          def button_split(text="", target="", options={}, &block)
             if block_given?
               content = capture(&block)
 
               options = options.merge(target) if target.is_a?(Hash)
-              target = type
-              type = text
+              target = text
             else
               content = text.html_safe
             end
 
-            options[:class] = "button split #{type} #{options[:class]}"
+            options[:class] = "button split #{options[:class]}"
 
             link_to(target, options) do
               content + content_tag(:span, "", data: { dropdown: @id })
