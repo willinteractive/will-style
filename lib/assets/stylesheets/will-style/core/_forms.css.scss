@@ -4,13 +4,24 @@
 // 
 */
 
+// changing this to match regular button sizes
+// was rem-calc(16) BUT
+// buttons' font size is 18px, and the calc for height of form inputs is
+// height: ($input-font-size + ($form-spacing * 1.5) - rem-calc(1));
+// so we mutiply 17 * 1.5 to get 25.5 and round up to 26
+$form-spacing: rem-calc(26);
+
+// increasing font size of inputs and labels to be same as buttons
+$form-label-font-size: $button-font-med;
+$input-font-size: $button-font-med;
+
 @import
 	"foundation/components/forms",
   "foundation/components/range-slider";
   //not included in gem version
   //"foundation/components/switches";
 
-// move search form's icon
+// add these classes if you want an icon inside of the input
 .has-icon {
 	position: relative;
 	
@@ -19,4 +30,9 @@
 		top: $form-spacing / 1.5;
 		right: $form-spacing;
 	}
+}
+
+// force line-height of postfix and prefix buttons to be the same as other elements
+.postfix.button, .prefix.button {
+	line-height: ($input-font-size + ($form-spacing * 1.5) - rem-calc(1));
 }
