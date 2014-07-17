@@ -72,6 +72,14 @@ module WILL
           #
           # text you would like to display in the trigger button.
           #
+          # +type+
+          #
+          # Type of button. 
+          #
+          # <i>Possible values</i>: normal, secondary, success, alert. 
+          #
+          # <i>Default value</i>: normal.
+          #
           # +options+
           #
           # Hash of options.
@@ -88,12 +96,15 @@ module WILL
           # Default Functionality
           #   <%= d.button "Open the dropdown", class: "round" %>
           # With ERB Block
-          #   <%= d.dropdown do %>
+          #   <%= d.button do %>
           #     <h1>Open the dropdown</h1>
           #   <% end %>
           #
-          def button(text="", options={}, &block)
-            options = options.merge(text) if text.is_a?(Hash) if block_given?
+          def button(text="", type="normal", options={}, &block)
+            if block_given?
+              options = options.merge(type) if type.is_a?(Hash)
+              type = text
+            end
 
             # Merge custom html data options with mandatory alert data options
             data = { dropdown: @id }
@@ -105,7 +116,7 @@ module WILL
             end
 
             hide_trigger = options.has_key?(:show_trigger) && options[:show_trigger] == false
-            options[:class] = "button#{ hide_trigger ? "" : " dropdown" } #{options[:class]}"
+            options[:class] = "button #{type}#{ hide_trigger ? "" : " dropdown" } #{options[:class]}"
 
             if block_given?
               link_to("#", options) do
@@ -113,6 +124,60 @@ module WILL
               end
             else
               link_to(text, "#", options)
+            end
+          end
+
+          ##
+          # Generates a dropdown trigger split button. You can either specify button text
+          # or use an ERB Block to fill in HTML content.
+          # = Params
+          # +text+
+          #
+          # text you would like to display in the trigger button.
+          #
+          # Type of button. 
+          #
+          # <i>Possible values</i>: normal, secondary, success, alert. 
+          #
+          # <i>Default value</i>: normal.
+          #
+          # +target+
+          #
+          # the target for the main button
+          #
+          # +options+
+          #
+          # Hash of options.
+          #
+          # You can use any of the html options available in ActionView helpers.
+          #
+          # +block+
+          #
+          # ERB Block for the trigger button if it needs to be HTML content.
+          #
+          # = Examples
+          # Default Functionality
+          #   <%= d.button_split "Open the dropdown", class: "round" %>
+          # With ERB Block
+          #   <%= d.button_split do %>
+          #     <h1>Open the dropdown</h1>
+          #   <% end %>
+          #
+          def button_split(text="", type="normal", target="", options={}, &block)
+            if block_given?
+              content = capture(&block)
+
+              options = options.merge(target) if target.is_a?(Hash)
+              target = type
+              type = text
+            else
+              content = text.html_safe
+            end
+
+            options[:class] = "button split #{type} #{options[:class]}"
+
+            link_to(target, options) do
+              content + content_tag(:span, "", data: { dropdown: @id })
             end
           end
 

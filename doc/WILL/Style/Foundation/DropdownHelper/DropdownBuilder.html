@@ -77,6 +77,8 @@
     
     <li ><a href="#method-i-button">#button</a>
     
+    <li ><a href="#method-i-button_split">#button_split</a>
+    
     <li ><a href="#method-i-content">#content</a>
     
     <li ><a href="#method-i-item">#item</a>
@@ -201,7 +203,7 @@
         
         <div class="method-heading">
           <span class="method-name">button</span><span
-            class="method-args">(text="", options={}, &block)</span>
+            class="method-args">(text="", type="normal", options={}, &block)</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -218,6 +220,14 @@ use an ERB Block to fill in HTML content.</p>
 <p><code>text</code></p>
 
 <p>text you would like to display in the trigger button.</p>
+
+<p><code>type</code></p>
+
+<p>Type of button.</p>
+
+<p><em>Possible values</em>: normal, secondary, success, alert.</p>
+
+<p><em>Default value</em>: normal.</p>
 
 <p><code>options</code></p>
 
@@ -239,7 +249,7 @@ use an ERB Block to fill in HTML content.</p>
 
 <p>With ERB Block</p>
 
-<pre>&lt;%= d.dropdown do %&gt;
+<pre>&lt;%= d.button do %&gt;
   &lt;h1&gt;Open the dropdown&lt;/h1&gt;
 &lt;% end %&gt;</pre>
           
@@ -247,9 +257,12 @@ use an ERB Block to fill in HTML content.</p>
 
           
           <div class="method-source-code" id="button-source">
-            <pre><span class="ruby-comment"># File app/helpers/will/style/foundation/dropdown_helper.rb, line 95</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">button</span>(<span class="ruby-identifier">text</span>=<span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">options</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
-  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">text</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">text</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+            <pre><span class="ruby-comment"># File app/helpers/will/style/foundation/dropdown_helper.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">button</span>(<span class="ruby-identifier">text</span>=<span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">type</span>=<span class="ruby-string">&quot;normal&quot;</span>, <span class="ruby-identifier">options</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-identifier">options</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">type</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">type</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+    <span class="ruby-identifier">type</span> = <span class="ruby-identifier">text</span>
+  <span class="ruby-keyword">end</span>
 
   <span class="ruby-comment"># Merge custom html data options with mandatory alert data options</span>
   <span class="ruby-identifier">data</span> = { <span class="ruby-identifier">dropdown</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@id</span> }
@@ -261,7 +274,7 @@ use an ERB Block to fill in HTML content.</p>
   <span class="ruby-keyword">end</span>
 
   <span class="ruby-identifier">hide_trigger</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:show_trigger</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:show_trigger</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>
-  <span class="ruby-identifier">options</span>[<span class="ruby-value">:class</span>] = <span class="ruby-node">&quot;button#{ hide_trigger ? &quot;&quot; : &quot; dropdown&quot; } #{options[:class]}&quot;</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:class</span>] = <span class="ruby-node">&quot;button #{type}#{ hide_trigger ? &quot;&quot; : &quot; dropdown&quot; } #{options[:class]}&quot;</span>
 
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
     <span class="ruby-identifier">link_to</span>(<span class="ruby-node">&quot;#&quot;</span>, <span class="ruby-identifier">options</span>) <span class="ruby-keyword">do</span>
@@ -269,6 +282,92 @@ use an ERB Block to fill in HTML content.</p>
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">else</span>
     <span class="ruby-identifier">link_to</span>(<span class="ruby-identifier">text</span>, <span class="ruby-node">&quot;#&quot;</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-button_split" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">button_split</span><span
+            class="method-args">(text="", type="normal", target="", options={}, &block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Generates a dropdown trigger split button. You can either specify button
+text or use an ERB Block to fill in HTML content.</p>
+
+<h1 id="method-i-button_split-label-Params">Params<span><a href="#method-i-button_split-label-Params">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p><code>text</code></p>
+
+<p>text you would like to display in the trigger button.</p>
+
+<p>Type of button.</p>
+
+<p><em>Possible values</em>: normal, secondary, success, alert.</p>
+
+<p><em>Default value</em>: normal.</p>
+
+<p><code>target</code></p>
+
+<p>the target for the main button</p>
+
+<p><code>options</code></p>
+
+<p>Hash of options.</p>
+
+<p>You can use any of the html options available in ActionView helpers.</p>
+
+<p><code>block</code></p>
+
+<p>ERB Block for the trigger button if it needs to be HTML content.</p>
+
+<h1 id="method-i-button_split-label-Examples">Examples<span><a href="#method-i-button_split-label-Examples">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p>Default Functionality</p>
+
+<pre>&lt;%= d.button_split &quot;Open the dropdown&quot;, class: &quot;round&quot; %&gt;</pre>
+
+<p>With ERB Block</p>
+
+<pre>&lt;%= d.button_split do %&gt;
+  &lt;h1&gt;Open the dropdown&lt;/h1&gt;
+&lt;% end %&gt;</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="button_split-source">
+            <pre><span class="ruby-comment"># File app/helpers/will/style/foundation/dropdown_helper.rb, line 166</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">button_split</span>(<span class="ruby-identifier">text</span>=<span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">type</span>=<span class="ruby-string">&quot;normal&quot;</span>, <span class="ruby-identifier">target</span>=<span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">options</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-identifier">content</span> = <span class="ruby-identifier">capture</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+
+    <span class="ruby-identifier">options</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">target</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">target</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+    <span class="ruby-identifier">target</span> = <span class="ruby-identifier">type</span>
+    <span class="ruby-identifier">type</span> = <span class="ruby-identifier">text</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">content</span> = <span class="ruby-identifier">text</span>.<span class="ruby-identifier">html_safe</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:class</span>] = <span class="ruby-node">&quot;button split #{type} #{options[:class]}&quot;</span>
+
+  <span class="ruby-identifier">link_to</span>(<span class="ruby-identifier">target</span>, <span class="ruby-identifier">options</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">content</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">content_tag</span>(<span class="ruby-value">:span</span>, <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">data</span><span class="ruby-operator">:</span> { <span class="ruby-identifier">dropdown</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@id</span> })
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -318,7 +417,7 @@ use an ERB Block to fill in HTML content.</p>
 
           
           <div class="method-source-code" id="content-source">
-            <pre><span class="ruby-comment"># File app/helpers/will/style/foundation/dropdown_helper.rb, line 247</span>
+            <pre><span class="ruby-comment"># File app/helpers/will/style/foundation/dropdown_helper.rb, line 312</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">content</span>(<span class="ruby-identifier">options</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing block&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
 
@@ -394,7 +493,7 @@ an ERB Block to fill in HTML content.</p>
 
           
           <div class="method-source-code" id="item-source">
-            <pre><span class="ruby-comment"># File app/helpers/will/style/foundation/dropdown_helper.rb, line 211</span>
+            <pre><span class="ruby-comment"># File app/helpers/will/style/foundation/dropdown_helper.rb, line 276</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">item</span>(<span class="ruby-identifier">text</span>=<span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">target</span>=<span class="ruby-node">&quot;#&quot;</span>, <span class="ruby-identifier">options</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
     <span class="ruby-identifier">content</span> = <span class="ruby-identifier">capture</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
@@ -458,7 +557,7 @@ an ERB Block to fill in HTML content.</p>
 
           
           <div class="method-source-code" id="list-source">
-            <pre><span class="ruby-comment"># File app/helpers/will/style/foundation/dropdown_helper.rb, line 163</span>
+            <pre><span class="ruby-comment"># File app/helpers/will/style/foundation/dropdown_helper.rb, line 228</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">list</span>(<span class="ruby-identifier">options</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing block&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
 
@@ -519,7 +618,7 @@ an ERB Block to fill in HTML content.</p>
 
           
           <div class="method-source-code" id="trigger-source">
-            <pre><span class="ruby-comment"># File app/helpers/will/style/foundation/dropdown_helper.rb, line 131</span>
+            <pre><span class="ruby-comment"># File app/helpers/will/style/foundation/dropdown_helper.rb, line 196</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">trigger</span>(<span class="ruby-identifier">options</span>={})
   <span class="ruby-comment"># Merge custom html data options with mandatory dropdown trigger options</span>
   <span class="ruby-identifier">data</span> = { <span class="ruby-identifier">dropdown</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@id</span> }
