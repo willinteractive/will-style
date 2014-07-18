@@ -36,3 +36,48 @@ $input-font-size: $button-font-med;
 .postfix.button, .prefix.button {
 	line-height: ($input-font-size + ($form-spacing * 1.5) - rem-calc(1));
 }
+
+// style the placeholder
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea {
+  @include placeholder($input-border-color);
+}
+
+// CUSTOM
+// -----------------------
+
+.search-form {
+	// remove background from normal state of search settings buttons
+  .button.prefix {
+	  background-color: transparent;
+  }
+  // round the ends of each input and submit and remove opposite borders
+  input[type="search"] {
+    @include side-radius(left, $global-rounded);
+    border-right-width: 0;
+	  // remove focus because it looks weird with connected button
+    &:focus {
+    	outline: 0;
+		}
+  }
+  button[type="submit"] {
+	  @include side-radius(right, $global-rounded);
+    border-left-width: 0;
+    // make default background and border colors same as input
+	  background-color: $input-bg-color;
+	  border-color: $input-border-color;
+  }
+  
+}
