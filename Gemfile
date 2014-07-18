@@ -27,8 +27,5 @@ gem "flot-rails"
 gem 'modernizr-rails'
 
 group :development do
-  # View source maps in Chrome
-  gem 'sass-rails-source-maps'
-
   gem "rdoc"
 end
