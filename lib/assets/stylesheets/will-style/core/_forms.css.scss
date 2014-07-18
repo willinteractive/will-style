@@ -63,14 +63,18 @@ textarea {
   .button.prefix {
 	  background-color: transparent;
   }
+  input[type="search"], button[type="submit"] {
+	  // remove focus because it looks weird with connected button
+    &:focus {
+    	outline: 0;
+    	box-shadow: none;
+    	border-color: $input-border-color;
+		}
+	}
   // round the ends of each input and submit and remove opposite borders
   input[type="search"] {
     @include side-radius(left, $global-rounded);
     border-right-width: 0;
-	  // remove focus because it looks weird with connected button
-    &:focus {
-    	outline: 0;
-		}
   }
   button[type="submit"] {
 	  @include side-radius(right, $global-rounded);
