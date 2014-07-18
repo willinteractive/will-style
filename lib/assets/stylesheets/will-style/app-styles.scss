@@ -87,14 +87,12 @@ $row-width: 100%;
 // ----------------------
 @import
   "elements/breadcrumbs",
-  // exported icon-bar until we can update the gem
-  "elements/icon-bar",
+  "foundation/components/icon-bar",
   "foundation/components/pagination",
   //------------
   // APP-STYLE SPECIFIC SIDE NAV VARIABLES
   //------------
   "elements/app-side-nav",
-  "foundation/components/side-nav",
   "foundation/components/sub-nav",
   "foundation/components/tabs",
   "foundation/components/top-bar";

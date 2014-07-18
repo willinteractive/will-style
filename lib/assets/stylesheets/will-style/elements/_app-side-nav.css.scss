@@ -1,6 +1,6 @@
 /* 
 // 
-// APP SIDE BAR
+// APP SIDE NAV
 // 
 */
 
@@ -12,33 +12,85 @@
 
 // change the coloring of the side-nav using variables
 // We use this to control padding.
-$side-nav-padding: rem-calc(20 10);
+$side-nav-padding: rem-calc(20);
 
 // We use these to control list styles.
 $side-nav-list-type: none !default;
 $side-nav-list-position: outside !default;
-$side-nav-list-margin: rem-calc(0 0 7 0) !default;
+$side-nav-list-margin: rem-calc(0 0 14 0);
 
 // We use these to control link styles.
-$side-nav-link-color: $primary-color !default;
-$side-nav-link-color-active: scale-color($side-nav-link-color, $lightness: 30%) !default;
-$side-nav-link-color-hover: scale-color($side-nav-link-color, $lightness: 30%) !default;
+$side-nav-link-color: scale-color($body-font-color, $lightness: 25%);
+$side-nav-link-color-active: $body-font-color;
+$side-nav-link-color-hover: $side-nav-link-color-active;
+
 $side-nav-link-bg-hover: hsla(0, 0, 0, 0.025) !default;
 $side-nav-link-margin: 0 !default;
-$side-nav-link-padding: rem-calc(7 14) !default;
+$side-nav-link-padding: rem-calc(0);
+
 $side-nav-font-size: rem-calc(14) !default;
 $side-nav-font-weight: $font-weight-normal !default;
-$side-nav-font-weight-active: $side-nav-font-weight !default;
+$side-nav-font-weight-active: $font-weight-bold;
 $side-nav-font-family: $body-font-family !default;
 $side-nav-font-family-active: $side-nav-font-family !default;
 
 // We use these to control heading styles.
-$side-nav-heading-color: $side-nav-link-color !default;
+$side-nav-heading-color: $primary-color;
 $side-nav-heading-font-size: $side-nav-font-size !default;
-$side-nav-heading-font-weight: bold !default;
+$side-nav-heading-font-weight: $font-weight-bold;
 $side-nav-heading-text-transform: uppercase !default;
 
-// We use these to control border styles
-$side-nav-divider-size: 1px !default;
-$side-nav-divider-style: solid !default;
-$side-nav-divider-color: scale-color(#fff, $lightness: 10%) !default;
+
+@import "foundation/components/side-nav";
+
+
+// CUSTOM STYLING
+
+// default label padding is     (4 8 6);
+$rounded-label-padding: rem-calc(4 4 6);
+
+.side-nav.filtering {
+	
+	
+	.label.round {
+		// reduce padding on circular labels
+		padding:  $rounded-label-padding;
+		// remove the x icon from rounded labels unless active
+		i {
+			visibility: hidden;
+		}
+	}
+	
+	li.heading {
+	
+		// force link tags inside of headings to have the headings color
+		a:not(.button) {
+			color: $side-nav-heading-color;
+		}
+		
+	}
+	
+	li.new {
+		
+		i {
+			// use same padding as .label on icon for better alignment
+			padding: $rounded-label-padding;	
+		}
+		
+	}
+	
+	li.active {
+
+		.label {
+			// style the .active .side-nav items' labels
+			background: $side-nav-link-color-active;
+			color: white;
+		}
+		
+		.label.round > i {
+			visibility: visible;
+		}
+		
+	}
+	
+}
