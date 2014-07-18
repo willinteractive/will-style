@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
   # @FIXME: Untangle gem dependency knot for sass source maps
 
   # We need a 3.3 version of sass to enable source maps. 
-  # This is the only one compatible with the only version
+  # This is the only one that's compatible with the only version
   # of sass-rails that allows for 3.3.
   s.add_dependency "sass", "3.3.0.alpha.149"
 
@@ -38,7 +38,7 @@ Gem::Specification.new do |s|
   # Sprockets 2.12 is incompatible with sass-rails 4.0.1
   s.add_dependency "sprockets", "2.11.0"
 
-  # The current version of this gem says 
-  # it's compatible with compass-rails 2.0 but it isn't.
+  # The current version of this gem says it's compatible with compass-rails 2.0
+  # which it might be, but it's not compatible wiht the version of sass-rails we're using.
   s.add_development_dependency "compass-rails-source-maps", "0.0.3"
 end
