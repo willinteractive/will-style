@@ -10,51 +10,180 @@
  *
  */
 
+/* 
+//
 // CORE
 // HTML tags & more abstract elements like color palettes, 
 // fonts and invisible aspects like animations
 // -------------------------
-@import "will-style/core/core";
+*/
+
+// External
+// ----------------------
+@import 
+	"compass",
+	"normalize";
+
+// Global
+// ----------------------
+
+// make grid full-width and use large classes
+$include-xl-html-grid-classes: true;
+$row-width: 100%;
+
+@import
+	"core/mixins",
+	"core/global";
+	
+// Typography
+// ----------------------
+@import
+	"core/typography",
+	"foundation/components/inline-lists";
+	
+// Images
+// ----------------------
+@import
+	"font-awesome",
+	"foundation/components/thumbs";
+
+// Buttons	
+// ----------------------
+@import 
+	"foundation/components/buttons",
+  "foundation/components/button-groups",
+  "foundation/components/dropdown-buttons",
+  "foundation/components/split-buttons";
+  
+// Forms
+// ----------------------
+@import	"core/forms";
+
+// Tables
+// ----------------------
+@import "core/tables";
 
 
+
+
+
+/* 
+// 
 // ELEMENTS
 // Relatively simple combinations of the CORE built for reuse
-// -------------------------
-@import "will-style/elements/elements";
+// ------------------------- 
+*/
 
-// Extra elements
-// either import the whole file or copy and paste only certain elements
-@import "will-style/elements/extras";
+// Layout
+// ----------------------
+@import
+  "foundation/components/grid",
+	"elements/sections",
+  "foundation/components/block-grid",
+  "foundation/components/offcanvas";
 
 
+// Navigation
+// ----------------------
+@import
+  "elements/breadcrumbs",
+  // exported icon-bar until we can update the gem
+  "elements/icon-bar",
+  "foundation/components/pagination",
+  //------------
+  // APP-STYLE SPECIFIC SIDE NAV VARIABLES
+  //------------
+  "elements/app-side-nav",
+  "foundation/components/side-nav",
+  "foundation/components/sub-nav",
+  "foundation/components/tabs",
+  "foundation/components/top-bar";
+
+
+// Blocks
+// ----------------------
+@import
+  "elements/alert-boxes",
+  "foundation/components/dropdown",
+	"foundation/components/labels",
+	"elements/list-group",
+  "foundation/components/panels";
+
+// Extras
+// you probably don't need all of theses
+// ------------------------- 
+@import
+  "foundation/components/accordion",
+  "foundation/components/clearing",
+  "foundation/components/flex-video",
+  "foundation/components/joyride",
+  "foundation/components/keystrokes",
+  "foundation/components/magellan",
+  "foundation/components/orbit",
+  "foundation/components/pricing-tables",
+  "foundation/components/progress-bars",
+  "foundation/components/reveal",
+  "foundation/components/tooltips";
+
+
+
+
+/*
+//
 // FIXTURES
 // Groups of elements joined together to form a relatively complex, 
 // distinct section of an interface. 
 // -------------------------
-@import "will-style/fixtures/fixtures";
+*/
+
+// Global
+// ----------------------
+@import "fixtures/sticky-footer";
 
 
+// App Style
+// ----------------------
+@import "fixtures/app-page-header";
+@import "fixtures/app-sidebar";
+
+
+
+/*
+//
 // TEMPLATES
 // Very concrete and provide context to all these relatively abstract Fixtures and elements.
 // -------------------------
 // You don't need to import any templates unless you plan to use them
+*/
 
 
+
+/*
+//
 // PAGES
 // The highest level of fidelity and the most tangible.
 // -------------------------
 // import your project specific pages here
+*/
 
 
+
+/*
+//
 // LIBRARIES
 // This is wher you want to import external library css styles 
 // and will-style overrides for those
 // -------------------------
 // the libraries you can import from WILL-Style are:
 // dataTables, flot, offline, and piety
+*/
 
 
+
+/*
+//
 // ENDING UTILITIES
 // Required utility classes that must come at the end of the document.
 // -------------------------
-@import "will-style/core/utilities";
+*/
+@import "foundation/components/visibility";

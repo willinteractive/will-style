@@ -35,10 +35,8 @@
 	  margin-top: 0;
   }
   
-  // we want form controls to be the same size as button
-  form {
-	  input, button {
-		  @include button-size;
-	  }
+  // change the vertical alignment of the logo image
+  img.logo {
+	  vertical-align: baseline;
   }
 }
