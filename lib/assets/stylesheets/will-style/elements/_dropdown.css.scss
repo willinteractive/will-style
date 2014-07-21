@@ -1,0 +1,32 @@
+/* 
+// 
+// DROPDOWNS
+// 
+*/
+
+
+@import "foundation/components/dropdown";
+
+
+// Foundation's dropdowns don't come with 
+// .active or .divider styles
+
+.f-dropdown li {
+
+	&.active {
+		background: $f-dropdown-list-hover-bg;
+	}
+
+	&.divider {
+		border-bottom: 10px solid $f-dropdown-border-color;
+		margin: rem_calc(10 0);
+	}
+	
+	// shorten any inputs inside of dropdowns
+	input {
+		padding-top: rem_calc(8);
+		padding-bottom: rem_calc(8);
+		margin-bottom: 0;
+	}
+}
+
