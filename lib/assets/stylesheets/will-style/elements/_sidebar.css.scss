@@ -7,28 +7,28 @@
 
 html,
 body,
-.st-container,
-.st-pusher,
-.st-content {
+.sidebar-container,
+.sidebar-pusher,
+.sidebar-content {
 	height: 100%;
 }
 
-.st-content {
+.sidebar-content {
 	overflow-y: scroll;
 	background: #f3efe0;
 }
 
-.st-content,
-.st-content-inner {
+.sidebar-content,
+.sidebar-content-inner {
 	position: relative;
 }
 
-.st-container {
+.sidebar-container {
 	position: relative;
 	overflow: hidden;
 }
 
-.st-pusher {
+.sidebar-pusher {
 	position: relative;
 	left: 0;
 	z-index: 99;
@@ -37,7 +37,7 @@ body,
 	transition: transform 0.5s;
 }
 
-.st-pusher::after {
+.sidebar-pusher::after {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -50,7 +50,7 @@ body,
 	transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
 }
 
-.st-menu-open .st-pusher::after {
+.sidebar-menu-open .sidebar-pusher::after {
 	width: 100%;
 	height: 100%;
 	opacity: 1;
@@ -58,7 +58,7 @@ body,
 	transition: opacity 0.5s;
 }
 
-.st-menu {
+.sidebar-menu {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -71,7 +71,7 @@ body,
 	transition: all 0.5s;
 }
 
-.st-menu::after {
+.sidebar-menu::after {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -84,7 +84,7 @@ body,
 	transition: opacity 0.5s;
 }
 
-.st-menu-open .st-menu::after {
+.sidebar-menu-open .sidebar-menu::after {
 	width: 0;
 	height: 0;
 	opacity: 0;
@@ -94,13 +94,13 @@ body,
 
 /* content style */
 
-.st-menu ul {
+.sidebar-menu ul {
 	margin: 0;
 	padding: 0;
-	list-style: none;
+	lisidebar-style: none;
 }
 
-.st-menu h2 {
+.sidebar-menu h2 {
 	margin: 0;
 	padding: 1em;
 	color: rgba(0,0,0,0.4);
@@ -109,7 +109,7 @@ body,
 	font-size: 2em;
 }
 
-.st-menu ul li a {
+.sidebar-menu ul li a {
 	display: block;
 	padding: 1em 1em 1em 1.2em;
 	outline: none;
@@ -123,11 +123,11 @@ body,
 	transition: background 0.3s, box-shadow 0.3s;
 }
 
-.st-menu ul li:first-child a {
+.sidebar-menu ul li:firsidebar-child a {
 	box-shadow: inset 0 -1px rgba(0,0,0,0.2), inset 0 1px rgba(0,0,0,0.2);
 }
 
-.st-menu ul li a:hover {
+.sidebar-menu ul li a:hover {
 	background: rgba(0,0,0,0.2);
 	box-shadow: inset 0 -1px rgba(0,0,0,0);
 	color: #fff;
@@ -136,76 +136,76 @@ body,
 /* Individual effects */
 
 /* Effect 1: Slide in on top */
-.st-effect-1.st-menu {
+.sidebar-effect-slide.sidebar-menu {
 	visibility: visible;
 	-webkit-transform: translate3d(-100%, 0, 0);
 	transform: translate3d(-100%, 0, 0);
 }
 
-.st-effect-1.st-menu-open .st-effect-1.st-menu {
+.sidebar-effect-slide.sidebar-menu-open .sidebar-effect-slide.sidebar-menu {
 	visibility: visible;
 	-webkit-transform: translate3d(0, 0, 0);
 	transform: translate3d(0, 0, 0);
 }
 
-.st-effect-1.st-menu::after {
+.sidebar-effect-slide.sidebar-menu::after {
 	display: none;
 }
 
 /* Effect 2: Reveal */
-.st-effect-2.st-menu-open .st-pusher {
+.sidebar-effect-reveal.sidebar-menu-open .sidebar-pusher {
 	-webkit-transform: translate3d(300px, 0, 0);
 	transform: translate3d(300px, 0, 0);
 }
 
-.st-effect-2.st-menu {
+.sidebar-effect-reveal.sidebar-menu {
 	z-index: 1;
 }
 
-.st-effect-2.st-menu-open .st-effect-2.st-menu {
+.sidebar-effect-reveal.sidebar-menu-open .sidebar-effect-reveal.sidebar-menu {
 	visibility: visible;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
 }
 
-.st-effect-2.st-menu::after {
+.sidebar-effect-reveal.sidebar-menu::after {
 	display: none;
 }
 
 /* Effect 3: Push*/
-.st-effect-3.st-menu-open .st-pusher {
+.sidebar-effect-push.sidebar-menu-open .sidebar-pusher {
 	-webkit-transform: translate3d(300px, 0, 0);
 	transform: translate3d(300px, 0, 0);
 }
 
-.st-effect-3.st-menu {
+.sidebar-effect-push.sidebar-menu {
 	-webkit-transform: translate3d(-100%, 0, 0);
 	transform: translate3d(-100%, 0, 0);
 }
 
-.st-effect-3.st-menu-open .st-effect-3.st-menu {
+.sidebar-effect-push.sidebar-menu-open .sidebar-effect-push.sidebar-menu {
 	visibility: visible;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
 }
 
-.st-effect-3.st-menu::after {
+.sidebar-effect-push.sidebar-menu::after {
 	display: none;
 }
 
 /* Effect 4: Slide along */
-.st-effect-4.st-menu-open .st-pusher {
+.sidebar-effect-slide-along.sidebar-menu-open .sidebar-pusher {
 	-webkit-transform: translate3d(300px, 0, 0);
 	transform: translate3d(300px, 0, 0);
 }
 
-.st-effect-4.st-menu {
+.sidebar-effect-slide-along.sidebar-menu {
 	z-index: 1;
 	-webkit-transform: translate3d(-50%, 0, 0);
 	transform: translate3d(-50%, 0, 0);
 }
 
-.st-effect-4.st-menu-open .st-effect-4.st-menu {
+.sidebar-effect-slide-along.sidebar-menu-open .sidebar-effect-slide-along.sidebar-menu {
 	visibility: visible;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
@@ -213,23 +213,23 @@ body,
 	transform: translate3d(0, 0, 0);
 }
 
-.st-effect-4.st-menu::after {
+.sidebar-effect-slide-along.sidebar-menu::after {
 	display: none;
 }
 
 /* Effect 5: Reverse slide out */
-.st-effect-5.st-menu-open .st-pusher {
+.sidebar-effect-reverse-slide-out.sidebar-menu-open .sidebar-pusher {
 	-webkit-transform: translate3d(300px, 0, 0);
 	transform: translate3d(300px, 0, 0);
 }
 
-.st-effect-5.st-menu {
+.sidebar-effect-reverse-slide-out.sidebar-menu {
 	z-index: 1;
 	-webkit-transform: translate3d(50%, 0, 0);
 	transform: translate3d(50%, 0, 0);
 }
 
-.st-effect-5.st-menu-open .st-effect-5.st-menu {
+.sidebar-effect-reverse-slide-out.sidebar-menu-open .sidebar-effect-reverse-slide-out.sidebar-menu {
 	visibility: visible;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
@@ -239,24 +239,24 @@ body,
 
 /* Effect 6: Rotate pusher */
 
-.st-effect-6.st-container {
+.sidebar-effect-rotate.sidebar-container {
 	-webkit-perspective: 1500px;
 	perspective: 1500px;
 }
 
-.st-effect-6 .st-pusher {
+.sidebar-effect-rotate .sidebar-pusher {
 	-webkit-transform-origin: 0% 50%;
 	transform-origin: 0% 50%;
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
 
-.st-effect-6.st-menu-open .st-pusher {
+.sidebar-effect-rotate.sidebar-menu-open .sidebar-pusher {
 	-webkit-transform: translate3d(300px, 0, 0) rotateY(-15deg);
 	transform: translate3d(300px, 0, 0) rotateY(-15deg);
 }
 
-.st-effect-6.st-menu {
+.sidebar-effect-rotate.sidebar-menu {
 	-webkit-transform: translate3d(-100%, 0, 0);
 	transform: translate3d(-100%, 0, 0);
 	-webkit-transform-origin: 100% 50%;
@@ -265,7 +265,7 @@ body,
 	transform-style: preserve-3d;
 }
 
-.st-effect-6.st-menu-open .st-effect-6.st-menu {
+.sidebar-effect-rotate.sidebar-menu-open .sidebar-effect-rotate.sidebar-menu {
 	visibility: visible;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
@@ -273,30 +273,30 @@ body,
 	transform: translate3d(-100%, 0, 0) rotateY(15deg);
 }
 
-.st-effect-6.st-menu::after {
+.sidebar-effect-rotate.sidebar-menu::after {
 	display: none;
 }
 
 /* Effect 7: 3D rotate in */
 
-.st-effect-7.st-container {
+.sidebar-effect-3d-rotate-in.sidebar-container {
 	-webkit-perspective: 1500px;
 	perspective: 1500px;
 	-webkit-perspective-origin: 0% 50%;
 	perspective-origin: 0% 50%;
 }
 
-.st-effect-7 .st-pusher {
+.sidebar-effect-3d-rotate-in .sidebar-pusher {
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
 
-.st-effect-7.st-menu-open .st-pusher {
+.sidebar-effect-3d-rotate-in.sidebar-menu-open .sidebar-pusher {
 	-webkit-transform: translate3d(300px, 0, 0);
 	transform: translate3d(300px, 0, 0);
 }
 
-.st-effect-7.st-menu {
+.sidebar-effect-3d-rotate-in.sidebar-menu {
 	-webkit-transform: translate3d(-100%, 0, 0) rotateY(-90deg);
 	transform: translate3d(-100%, 0, 0) rotateY(-90deg);
 	-webkit-transform-origin: 100% 50%;
@@ -305,7 +305,7 @@ body,
 	transform-style: preserve-3d;
 }
 
-.st-effect-7.st-menu-open .st-effect-7.st-menu {
+.sidebar-effect-3d-rotate-in.sidebar-menu-open .sidebar-effect-3d-rotate-in.sidebar-menu {
 	visibility: visible;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
@@ -315,24 +315,24 @@ body,
 
 /* Effect 8: 3D rotate out */
 
-.st-effect-8.st-container {
+.sidebar-effect-3d-rotate-out.sidebar-container {
 	-webkit-perspective: 1500px;
 	perspective: 1500px;
 	-webkit-perspective-origin: 0% 50%;
 	perspective-origin: 0% 50%;
 }
 
-.st-effect-8 .st-pusher {
+.sidebar-effect-3d-rotate-out .sidebar-pusher {
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
 
-.st-effect-8.st-menu-open .st-pusher {
+.sidebar-effect-3d-rotate-out.sidebar-menu-open .sidebar-pusher {
 	-webkit-transform: translate3d(300px, 0, 0);
 	transform: translate3d(300px, 0, 0);
 }
 
-.st-effect-8.st-menu {
+.sidebar-effect-3d-rotate-out.sidebar-menu {
 	-webkit-transform: translate3d(-100%, 0, 0) rotateY(90deg);
 	transform: translate3d(-100%, 0, 0) rotateY(90deg);
 	-webkit-transform-origin: 100% 50%;
@@ -341,7 +341,7 @@ body,
 	transform-style: preserve-3d;
 }
 
-.st-effect-8.st-menu-open .st-effect-8.st-menu {
+.sidebar-effect-3d-rotate-out.sidebar-menu-open .sidebar-effect-3d-rotate-out.sidebar-menu {
 	visibility: visible;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
@@ -349,34 +349,34 @@ body,
 	transform: translate3d(-100%, 0, 0) rotateY(0deg);
 }
 
-.st-effect-8.st-menu::after {
+.sidebar-effect-3d-rotate-out.sidebar-menu::after {
 	display: none;
 }
 
 /* Effect 9: Scale down pusher */
 
-.st-effect-9.st-container {
+.sidebar-effect-scale-down.sidebar-container {
 	-webkit-perspective: 1500px;
 	perspective: 1500px;
 }
 
-.st-effect-9 .st-pusher {
+.sidebar-effect-scale-down .sidebar-pusher {
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
 
-.st-effect-9.st-menu-open .st-pusher {
+.sidebar-effect-scale-down.sidebar-menu-open .sidebar-pusher {
 	-webkit-transform: translate3d(0, 0, -300px);
 	transform: translate3d(0, 0, -300px);
 }
 
-.st-effect-9.st-menu {
+.sidebar-effect-scale-down.sidebar-menu {
 	opacity: 1;
 	-webkit-transform: translate3d(-100%, 0, 0);
 	transform: translate3d(-100%, 0, 0);
 }
 
-.st-effect-9.st-menu-open .st-effect-9.st-menu {
+.sidebar-effect-scale-down.sidebar-menu-open .sidebar-effect-scale-down.sidebar-menu {
 	visibility: visible;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
@@ -384,32 +384,32 @@ body,
 	transform: translate3d(0, 0, 0);
 }
 
-.st-effect-9.st-menu::after {
+.sidebar-effect-scale-down.sidebar-menu::after {
 	display: none;
 }
 
 /* Effect 10: Scale up */
 
-.st-effect-10.st-container {
+.sidebar-effect-scale-up.sidebar-container {
 	-webkit-perspective: 1500px;
 	perspective: 1500px;
 	-webkit-perspective-origin: 0% 50%;
 	perspective-origin: 0% 50%;
 }
 
-.st-effect-10.st-menu-open .st-pusher {
+.sidebar-effect-scale-up.sidebar-menu-open .sidebar-pusher {
 	-webkit-transform: translate3d(300px, 0, 0);
 	transform: translate3d(300px, 0, 0);
 }
 
-.st-effect-10.st-menu {
+.sidebar-effect-scale-up.sidebar-menu {
 	z-index: 1;
 	opacity: 1;
 	-webkit-transform: translate3d(0, 0, -300px);
 	transform: translate3d(0, 0, -300px);
 }
 
-.st-effect-10.st-menu-open .st-effect-10.st-menu {
+.sidebar-effect-scale-up.sidebar-menu-open .sidebar-effect-scale-up.sidebar-menu {
 	visibility: visible;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
@@ -419,28 +419,28 @@ body,
 
 /* Effect 11: Scale and rotate pusher */
 
-.st-effect-11.st-container {
+.sidebar-effect-scale-and-rotate.sidebar-container {
 	-webkit-perspective: 1500px;
 	perspective: 1500px;
 }
 
-.st-effect-11 .st-pusher {
+.sidebar-effect-scale-and-rotate .sidebar-pusher {
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
 
-.st-effect-11.st-menu-open .st-pusher {
+.sidebar-effect-scale-and-rotate.sidebar-menu-open .sidebar-pusher {
 	-webkit-transform: translate3d(100px, 0, -600px) rotateY(-20deg);
 	transform: translate3d(100px, 0, -600px) rotateY(-20deg);
 }
 
-.st-effect-11.st-menu {
+.sidebar-effect-scale-and-rotate.sidebar-menu {
 	opacity: 1;
 	-webkit-transform: translate3d(-100%, 0, 0);
 	transform: translate3d(-100%, 0, 0);
 }
 
-.st-effect-11.st-menu-open .st-effect-11.st-menu {
+.sidebar-effect-scale-and-rotate.sidebar-menu-open .sidebar-effect-scale-and-rotate.sidebar-menu {
 	visibility: visible;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
@@ -448,36 +448,36 @@ body,
 	transform: translate3d(0, 0, 0);
 }
 
-.st-effect-11.st-menu::after {
+.sidebar-effect-scale-and-rotate.sidebar-menu::after {
 	display: none;
 }
 
 /* Effect 12: Open door */
 
-.st-effect-12.st-container {
+.sidebar-effect-open-door.sidebar-container {
 	-webkit-perspective: 1500px;
 	perspective: 1500px;
 }
 
-.st-effect-12 .st-pusher {
+.sidebar-effect-open-door .sidebar-pusher {
 	-webkit-transform-origin: 100% 50%;
 	transform-origin: 100% 50%;
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
 
-.st-effect-12.st-menu-open .st-pusher {
+.sidebar-effect-open-door.sidebar-menu-open .sidebar-pusher {
 	-webkit-transform: rotateY(-10deg);
 	transform: rotateY(-10deg);
 }
 
-.st-effect-12.st-menu {
+.sidebar-effect-open-door.sidebar-menu {
 	opacity: 1;
 	-webkit-transform: translate3d(-100%, 0, 0);
 	transform: translate3d(-100%, 0, 0);
 }
 
-.st-effect-12.st-menu-open .st-effect-12.st-menu {
+.sidebar-effect-open-door.sidebar-menu-open .sidebar-effect-open-door.sidebar-menu {
 	visibility: visible;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
@@ -485,32 +485,32 @@ body,
 	transform: translate3d(0, 0, 0);
 }
 
-.st-effect-12.st-menu::after {
+.sidebar-effect-open-door.sidebar-menu::after {
 	display: none;
 }
 
 /* Effect 13: Fall down */
 
-.st-effect-13.st-container {
+.sidebar-effect-fall-down.sidebar-container {
 	-webkit-perspective: 1500px;
 	perspective: 1500px;
 	-webkit-perspective-origin: 0% 50%;
 	perspective-origin: 0% 50%;
 }
 
-.st-effect-13.st-menu-open .st-pusher {
+.sidebar-effect-fall-down.sidebar-menu-open .sidebar-pusher {
 	-webkit-transform: translate3d(300px, 0, 0);
 	transform: translate3d(300px, 0, 0);
 }
 
-.st-effect-13.st-menu {
+.sidebar-effect-fall-down.sidebar-menu {
 	z-index: 1;
 	opacity: 1;
 	-webkit-transform: translate3d(0, -100%, 0);
 	transform: translate3d(0, -100%, 0);
 }
 
-.st-effect-13.st-menu-open .st-effect-13.st-menu {
+.sidebar-effect-fall-down.sidebar-menu-open .sidebar-effect-fall-down.sidebar-menu {
 	visibility: visible;
 	-webkit-transition-timing-function: ease-in-out;
 	transition-timing-function: ease-in-out;
@@ -524,24 +524,24 @@ body,
 
 /* Effect 14: Delayed 3D rotate */
 
-.st-effect-14.st-container {
+.sidebar-effect-delayed-3d-rotate.sidebar-container {
 	-webkit-perspective: 1500px;
 	perspective: 1500px;
 	-webkit-perspective-origin: 0% 50%;
 	perspective-origin: 0% 50%;
 }
 
-.st-effect-14 .st-pusher {
+.sidebar-effect-delayed-3d-rotate .sidebar-pusher {
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
 
-.st-effect-14.st-menu-open .st-pusher {
+.sidebar-effect-delayed-3d-rotate.sidebar-menu-open .sidebar-pusher {
 	-webkit-transform: translate3d(300px, 0, 0);
 	transform: translate3d(300px, 0, 0);
 }
 
-.st-effect-14.st-menu {
+.sidebar-effect-delayed-3d-rotate.sidebar-menu {
 	-webkit-transform: translate3d(-100%, 0, 0) rotateY(90deg);
 	transform: translate3d(-100%, 0, 0) rotateY(90deg);
 	-webkit-transform-origin: 0% 50%;
@@ -550,7 +550,7 @@ body,
 	transform-style: preserve-3d;
 }
 
-.st-effect-14.st-menu-open .st-effect-14.st-menu {
+.sidebar-effect-delayed-3d-rotate.sidebar-menu-open .sidebar-effect-delayed-3d-rotate.sidebar-menu {
 	visibility: visible;
 	-webkit-transition-delay: 0.1s;
 	transition-delay: 0.1s;
@@ -563,7 +563,7 @@ body,
 }
 
 /* Fallback example for browsers that don't support 3D transforms (and no JS fallback) */
-.no-csstransforms3d .st-pusher,
-.no-js .st-pusher {
+.no-csstransforms3d .sidebar-pusher,
+.no-js .sidebar-pusher {
 	padding-left: 300px;
 }
