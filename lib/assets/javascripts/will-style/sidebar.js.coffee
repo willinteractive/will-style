@@ -106,6 +106,7 @@
   return
 ) jQuery
 
+# Initialize any sidebar container divs as a Sidebar
 $ ->
     $("div.sidebar-container").sidebar
         default_effect: "reveal"
