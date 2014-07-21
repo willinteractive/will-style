@@ -7,10 +7,17 @@
 
 @import "foundation/components/buttons";
 
-// Custom Inverse Button
-// -----------------------
-// This is the inverse of the secondary button coloring - gray bg, white text
-
-button.inverse, .button.inverse {
-	@include button-style($bg:$body-font-color);
+// HOVER Backgrounds are broke
+// Fixing until Foundation fixes itself
+button, .button {
+  &.secondary { @include button-style($bg:$secondary-color,
+  																		$bh:scale-color($secondary-color, $lightness: $button-function-factor)); }
+  &.success   { @include button-style($bg:$success-color,
+  																		$bh:scale-color($success-color, $lightness: $button-function-factor)); }
+  &.alert     { @include button-style($bg:$alert-color,
+  																		$bh:scale-color($success-color, $lightness: $button-function-factor)); }
+  
+  // and adding custom .inverse style
+  &.inverse   { @include button-style($bg:$body-font-color,
+  																		$bh:scale-color($body-font-color, $lightness: $button-function-factor)); }
 }
