@@ -74,8 +74,6 @@ $row-width: 100%;
 // ------------------------- 
 */
 
-@import "will-style/elements/sidebar";
-
 // Layout
 // ----------------------
 @import
@@ -146,6 +144,7 @@ $row-width: 100%;
 // ----------------------
 @import "fixtures/app-page-header";
 @import "fixtures/app-sidebar";
+@import "fixtures/animating-sidebar";
 
 
 
