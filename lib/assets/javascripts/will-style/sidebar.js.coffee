@@ -34,7 +34,6 @@
 
     # Generate necessary components if we don't have them
     target.append('<nav class="sidebar-menu"></nav>') if target.find(".sidebar-menu").length is 0
-    target.append('<div class="sidebar-pusher"></nav>') if target.find(".sidebar-pusher").length is 0
 
     if target.find(".sidebar-pusher").length is 0
         target.append('<div class="sidebar-pusher"></nav>')
@@ -106,6 +105,7 @@
   return
 ) jQuery
 
+# Initialize any sidebar container divs as a Sidebar
 $ ->
     $("div.sidebar-container").sidebar
         default_effect: "reveal"
