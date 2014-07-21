@@ -9,8 +9,8 @@ module WILL
   module Style
 
     ##
-    # Helpers for generating Foundation HTML elements
-    module FoundationHelper   
+    # Helpers for generating HTML elements
+    module ComponentsHelper   
     end
   end
 end
@@ -19,3 +19,5 @@ include WILL::Style::Foundation::AlertHelper
 include WILL::Style::Foundation::TooltipHelper
 include WILL::Style::Foundation::ModalHelper
 include WILL::Style::Foundation::DropdownHelper
+
+include WILL::Style::Components::SidebarHelper
