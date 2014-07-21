@@ -265,7 +265,7 @@ module WILL
               content = text.html_safe
             end
 
-            content_tag(:li) do
+            content_tag(:li, options) do
               link_to("#", options) do
                 content
               end
