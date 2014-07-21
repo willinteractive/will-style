@@ -1,0 +1,21 @@
+/* 
+// 
+// TABBED NAVIGATION
+// 
+*/
+
+
+@import "foundation/components/tabs";
+
+// Adding a class of .expand to allow tabs to be 100% width
+
+.tabs.expand {
+  dd, .tab-title {
+	  a {
+		  width: 100%;
+		  text-align: center;
+		  padding-left: 0;
+		  padding-right: 0;
+	  }
+  }  
+}
