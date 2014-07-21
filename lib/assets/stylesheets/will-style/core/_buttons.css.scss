@@ -5,7 +5,9 @@
 */
 
 
-@import "foundation/components/buttons";
+// @import "foundation/components/buttons";
+// We can switch back to this whenever foundation-rails updates its buttons sass file
+@import "will-style/core/monkeypatched_buttons";
 
 // Custom Inverse Button
 // -----------------------
