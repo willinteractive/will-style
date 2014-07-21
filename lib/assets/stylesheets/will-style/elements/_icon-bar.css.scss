@@ -1,0 +1,25 @@
+/* 
+// 
+// ICON BAR
+// 
+*/
+
+@import "foundation/components/icon-bar";
+
+
+.icon-bar > * {
+	
+	// Coloring small labels
+	label small {
+		color: $icon-bar-font-color;
+	}
+
+	// Creating a .active state
+	// For some reason, Foundation has the variables but doesn't actually create the styles
+	// Doing the same thing as :hover
+	&.active {
+		background: $icon-bar-active-color;
+	}
+	
+}
+
