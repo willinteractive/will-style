@@ -15,9 +15,9 @@
   cursor: pointer;
   margin: 0;
   padding: 5px 10px;
-  border-radius: 5px;
-  background: #000000;
-  color: #FFFFFF;
+  border-radius: 0px !important;
+  background: #000000 !important;
+  color: #FFFFFF !important;
 }
 
 .share-button label:hover {
