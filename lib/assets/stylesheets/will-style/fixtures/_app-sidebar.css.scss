@@ -1,10 +1,59 @@
 /* 
 // 
-// APP SIDE BAR
+// APPS SIDE BAR
 // 
 */
 
-// make the icon bar full-width when vertical
-.icon-bar.vertical {
-	width: 100%;
+$apps-sidebar-padding-horizontal: rem_calc(10);
+
+// WILL Apps navigational sidebar
+// -------------------------
+#apps-sidebar {
+	background-color: $icon-bar-bg;
+	color: $icon-bar-font-color;
+	
+	.icon-bar.vertical {
+		width: 100%;
+	}
+
+	.icon-bar .item {
+		// reduce padding
+		padding-left: $apps-sidebar-padding-horizontal;
+		padding-right: $apps-sidebar-padding-horizontal;
+	}
+}
+
+
+#apps-user {
+	// add padding once larger than medium
+	@media #{$large-up} {
+		padding: rem_calc(15 0);
+	}
+	
+	p {
+		text-align: center;
+		margin-bottom: $paragraph-margin-bottom/2;
+		
+		& > a {
+			margin: 0 rem_calc(5);
+		}
+	}
+
+	a.user-dropdown-btn {	
+		// reduce padding & margin
+		padding-left: $apps-sidebar-padding-horizontal;
+		padding-right: $apps-sidebar-padding-horizontal;
+		margin-bottom: 0
+	}
+}
+
+#apps-hiding-nav {
+	// style the buttons inside the hideable-sidebar that are only shown on small screens
+	& > .button {
+		text-align: left;
+		
+		padding-left: $apps-sidebar-padding-horizontal;
+		padding-right: $apps-sidebar-padding-horizontal;
+		margin-bottom: 0;
+	}
 }

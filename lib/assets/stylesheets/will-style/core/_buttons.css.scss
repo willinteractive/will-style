@@ -1,0 +1,16 @@
+/* 
+// 
+// BUTTONS
+// 
+*/
+
+
+@import "foundation/components/buttons";
+
+// Custom Inverse Button
+// -----------------------
+// This is the inverse of the secondary button coloring - gray bg, white text
+
+button.inverse, .button.inverse {
+	@include button-style($bg:$body-font-color);
+}

@@ -50,7 +50,7 @@ $row-width: 100%;
 // Buttons	
 // ----------------------
 @import 
-	"foundation/components/buttons",
+	"core/buttons",
   "foundation/components/button-groups",
   "foundation/components/dropdown-buttons",
   "foundation/components/split-buttons";
@@ -111,17 +111,18 @@ $row-width: 100%;
 // you probably don't need all of theses
 // ------------------------- 
 @import
-  "foundation/components/accordion",
-  "foundation/components/clearing",
-  "foundation/components/flex-video",
-  "foundation/components/joyride",
-  "foundation/components/keystrokes",
-  "foundation/components/magellan",
-  "foundation/components/orbit",
-  "foundation/components/pricing-tables",
-  "foundation/components/progress-bars",
-  "foundation/components/reveal",
-  "foundation/components/tooltips";
+  //"foundation/components/accordion",
+  //"foundation/components/clearing",
+  //"foundation/components/flex-video",
+  //"foundation/components/joyride",
+  //"foundation/components/keystrokes",
+  //"foundation/components/magellan",
+  //"foundation/components/orbit",
+  //"foundation/components/pricing-tables",
+  "foundation/components/progress-bars";
+  //"foundation/components/reveal",
+  //"foundation/components/tooltips";
+  
 
 
 
@@ -153,7 +154,6 @@ $row-width: 100%;
 // -------------------------
 // You don't need to import any templates unless you plan to use them
 */
-
 
 
 /*
