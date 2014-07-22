@@ -60,7 +60,7 @@ textarea {
 
 .search-form {
 	// remove margins from all elements
-	& > * {
+	div > * {
 		margin-bottom: 0;
 	}
 	// remove background from normal state of search settings buttons

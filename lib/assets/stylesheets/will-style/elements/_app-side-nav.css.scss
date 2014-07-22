@@ -94,3 +94,13 @@ $rounded-label-padding: rem-calc(2 4 3);
 	}
 	
 }
+
+// If the side-nav has a form, darken the bg and remove the margin from the form
+.side-nav.has-form {
+	background: #efefef;
+	border-bottom: 1px solid #ddd;
+	
+	form {
+		margin: 0;
+	}
+}
