@@ -63,11 +63,7 @@ textarea {
 	div > * {
 		margin-bottom: 0;
 	}
-	// remove background from normal state of search settings buttons
-  .button.prefix {
-	  background-color: transparent;
-  }
-  input[type="search"], .button.postfix  {
+  input[type="search"], .button.postfix, .button.prefix  {
 	  // remove focus because it looks weird with connected button
     &:focus {
     	outline: 0;
@@ -75,16 +71,28 @@ textarea {
     	border-color: $input-border-color;
 		}
 	}
-  // round the ends of each input and submit and remove opposite borders
+  // style the buttons to look like they're inside the input
   input[type="search"] {
     @include side-radius(left, $global-rounded);
     border-right-width: 0;
   }
-  .button.postfix {
-	  @include side-radius(right, $global-rounded);
-    // make default background and border colors same as input
-	  background-color: $input-bg-color;
+  
+  // remove the input's left border and radius only if it is the second child
+  div:nth-child(2n) input[type="search"] {
+    @include side-radius(left, 0);
+  }
+  
+  .button.postfix, .button.prefix {
+	  @include radius($global-rounded);
 	  border: 1px solid $input-border-color;
+  }
+  .button.prefix {
+	  @include side-radius(right, 0);
+    border-right-width: 0;
+  }
+  .button.postfix {
+	  background-color: $input-bg-color;
+	  @include side-radius(left, 0);	  
     border-left-width: 0;
   }
   
