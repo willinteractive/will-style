@@ -28,9 +28,10 @@ module WILL
         #       </ul>
         #     <% end %>
         #
-        #    <% s.content do %>
-        #      <%= d.button "Open Menu" %>
-        #      <p>Other Content</p>
+        #     <% s.content do %>
+        #       <%= s.button "Open Menu" %>
+        #       <p>Other Content</p>
+        #     <% end %>
         #   <% end %>
         #
         def ws_sidebar(&block)

@@ -132,16 +132,17 @@ sidebar.</p>
     &lt;/ul&gt;
   &lt;% end %&gt;
 
- &lt;% s.content do %&gt;
-   &lt;%= d.button &quot;Open Menu&quot; %&gt;
-   &lt;p&gt;Other Content&lt;/p&gt;
+  &lt;% s.content do %&gt;
+    &lt;%= s.button &quot;Open Menu&quot; %&gt;
+    &lt;p&gt;Other Content&lt;/p&gt;
+  &lt;% end %&gt;
 &lt;% end %&gt;</pre>
           
           
 
           
           <div class="method-source-code" id="ws_sidebar-source">
-            <pre><span class="ruby-comment"># File app/helpers/will/style/components/sidebar_helper.rb, line 36</span>
+            <pre><span class="ruby-comment"># File app/helpers/will/style/components/sidebar_helper.rb, line 37</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">ws_sidebar</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing block&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
 

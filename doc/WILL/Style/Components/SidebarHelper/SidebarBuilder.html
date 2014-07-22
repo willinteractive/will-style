@@ -157,7 +157,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/helpers/will/style/components/sidebar_helper.rb, line 56</span>
+            <pre><span class="ruby-comment"># File app/helpers/will/style/components/sidebar_helper.rb, line 57</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">template</span>)
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">template</span> = <span class="ruby-identifier">template</span>
 <span class="ruby-keyword">end</span></pre>
@@ -227,7 +227,7 @@ an ERB Block to fill in HTML content.</p>
 
           
           <div class="method-source-code" id="button-source">
-            <pre><span class="ruby-comment"># File app/helpers/will/style/components/sidebar_helper.rb, line 88</span>
+            <pre><span class="ruby-comment"># File app/helpers/will/style/components/sidebar_helper.rb, line 89</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">button</span>(<span class="ruby-identifier">text</span>=<span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">options</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-identifier">options</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">text</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">text</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
 
@@ -288,7 +288,7 @@ an ERB Block to fill in HTML content.</p>
 
           
           <div class="method-source-code" id="content-source">
-            <pre><span class="ruby-comment"># File app/helpers/will/style/components/sidebar_helper.rb, line 150</span>
+            <pre><span class="ruby-comment"># File app/helpers/will/style/components/sidebar_helper.rb, line 151</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">content</span>(<span class="ruby-identifier">options</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing block&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
 
@@ -347,7 +347,7 @@ an ERB Block to fill in HTML content.</p>
 
           
           <div class="method-source-code" id="menu-source">
-            <pre><span class="ruby-comment"># File app/helpers/will/style/components/sidebar_helper.rb, line 121</span>
+            <pre><span class="ruby-comment"># File app/helpers/will/style/components/sidebar_helper.rb, line 122</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">menu</span>(<span class="ruby-identifier">options</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing block&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
   

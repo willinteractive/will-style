@@ -21,3 +21,4 @@ include WILL::Style::Foundation::ModalHelper
 include WILL::Style::Foundation::DropdownHelper
 
 include WILL::Style::Components::SidebarHelper
+include WILL::Style::Components::SearchHelper

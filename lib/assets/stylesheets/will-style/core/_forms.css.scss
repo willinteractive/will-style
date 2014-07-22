@@ -77,8 +77,8 @@ textarea {
     border-right-width: 0;
   }
   
-  // remove the input's left border and radius only if it is the second child
-  div:nth-child(2n) input[type="search"] {
+  // remove the input's left border and radius only if there is also an options menu
+  div.row.collapse div:nth-of-type(2) input[type="search"] {
     @include side-radius(left, 0);
   }
   
@@ -95,5 +95,4 @@ textarea {
 	  @include side-radius(left, 0);	  
     border-left-width: 0;
   }
-  
 }
