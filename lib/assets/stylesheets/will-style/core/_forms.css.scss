@@ -59,11 +59,15 @@ textarea {
 // -----------------------
 
 .search-form {
+	// remove margins from all elements
+	& > * {
+		margin-bottom: 0;
+	}
 	// remove background from normal state of search settings buttons
   .button.prefix {
 	  background-color: transparent;
   }
-  input[type="search"], button[type="submit"] {
+  input[type="search"], .button.postfix  {
 	  // remove focus because it looks weird with connected button
     &:focus {
     	outline: 0;
@@ -76,12 +80,12 @@ textarea {
     @include side-radius(left, $global-rounded);
     border-right-width: 0;
   }
-  button[type="submit"] {
+  .button.postfix {
 	  @include side-radius(right, $global-rounded);
-    border-left-width: 0;
     // make default background and border colors same as input
 	  background-color: $input-bg-color;
-	  border-color: $input-border-color;
+	  border: 1px solid $input-border-color;
+    border-left-width: 0;
   }
   
 }
