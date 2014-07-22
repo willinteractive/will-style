@@ -12,7 +12,7 @@
 
 // change the coloring of the side-nav using variables
 // We use this to control padding.
-$side-nav-padding: rem-calc(20);
+$side-nav-padding: rem_calc(20) $column-gutter/2;
 
 // We use these to control list styles.
 $side-nav-list-type: none !default;
@@ -42,7 +42,7 @@ $side-nav-heading-text-transform: uppercase !default;
 
 
 @import "foundation/components/side-nav";
-
+@import "foundation/components/labels";
 
 // CUSTOM STYLING
 
@@ -51,29 +51,39 @@ $rounded-label-padding: rem-calc(2 4 3);
 
 .side-nav.filtering {
 	
+	// types of spans that extend labels
+	.number, .color {
+		float: right;
+	}
 	
-	.label.round {
-		// reduce padding on circular labels
-		padding:  $rounded-label-padding;
+	// numbers are light squares
+	.number {
+		@include label($bg:$secondary-color, $radius:$global-radius);
+	}
+	
+	// colors are circles
+	.color {
+		@include label($bg:$secondary-color, $radius:$global-rounded, $padding:$rounded-label-padding);
 		// remove the x icon from rounded labels unless active
 		i {
 			visibility: hidden;
 		}
 	}
 	
+		
 	li.heading {
 	
-		// force link tags inside of headings to have the headings color
+		// force link tags inside of headings to have the link tags color
 		a:not(.button) {
-			color: $side-nav-heading-color;
+			color: $anchor-font-color;
 		}
 		
 	}
 	
 	li.new {
 		
+		// use same padding as .label on icon for better alignment
 		i {
-			// use same padding as .label on icon for better alignment
 			padding: $rounded-label-padding;	
 		}
 		
@@ -81,13 +91,13 @@ $rounded-label-padding: rem-calc(2 4 3);
 	
 	li.active {
 
-		.label {
+		.number {
 			// style the .active .side-nav items' labels
 			background: $side-nav-link-color-active;
 			color: white;
 		}
 		
-		.label.round > i {
+		.color > i {
 			visibility: visible;
 		}
 		
