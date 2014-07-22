@@ -49,6 +49,12 @@
   .button, button {
 	  margin-bottom: 0;
   }
+  
+  // Make user nav button also larger text
+  a.user-dropdown-btn {
+	  font-size: $h3-font-size;
+  	line-height: $header-line-height;
+  }
 }
 
 
