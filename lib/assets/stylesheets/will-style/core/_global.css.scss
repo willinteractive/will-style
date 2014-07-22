@@ -18,13 +18,15 @@ $body-font-family: 			'Open Sans', "Helvetica Neue", "Helvetica", Helvetica, Ari
 
 // We use these as default colors throughout
 $primary-color: #4CBB87;
-/*
-$secondary-color: #e7e7e7 !default;
+$secondary-color: scale-color($body-font-color, $lightness: 90%);
 $alert-color: #f04124 !default;
 $success-color: #43AC6A !default;
 $warning-color: #f08a24 !default;
 $info-color: #a0d3e8 !default;
-*/
+
+// variables to share among all components
+$component-bg-color: scale-color($secondary-color, $lightness: 15%);
+$component-border-color: scale-color($body-font-color, $lightness: 80%);
 $component-hover-bg-color: scale-color($primary-color, $lightness: 92%);
 
 /* $column-gutter: rem-calc(30) !default; */
@@ -38,11 +40,9 @@ $xlarge-range: (90.063em, 120em) !default;
 $xxlarge-range: (120.063em, 99999999em) !default;
 */
 
-
 // Player frame types
 $choice: 										rgb(200,66,66);
 $text:	 										rgb(113,191,70);
 $video:	 										rgb(59,154,199);
-
 
 @import "foundation/components/global";

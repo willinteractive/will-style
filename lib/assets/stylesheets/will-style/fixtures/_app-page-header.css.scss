@@ -7,10 +7,10 @@
 
 .app-page-header {
 	// give it a bg color
-  background-color: #efefef;
+  background-color: $component-bg-color;
   padding-top: $section-padding / 3;
   padding-bottom: $section-padding / 3;
-	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid $component-border-color;
 
  .breadcrumbs {
 	  // remove colors from breadcrumbs
