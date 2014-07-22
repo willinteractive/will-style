@@ -22,3 +22,4 @@ include WILL::Style::Foundation::DropdownHelper
 
 include WILL::Style::Components::SidebarHelper
 include WILL::Style::Components::SearchHelper
+include WILL::Style::Components::ListGroupHelper

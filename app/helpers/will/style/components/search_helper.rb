@@ -97,7 +97,7 @@ module WILL
           attr_accessor :built_options_menu
 
           ##
-          # Initialize the SidebarBuilder
+          # Initialize the SearchBuilder
           #
           def initialize(template, q)
             self.template = template
