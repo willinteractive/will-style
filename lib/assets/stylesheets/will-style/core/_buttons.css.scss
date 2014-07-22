@@ -17,7 +17,7 @@ button, .button {
   &.success   { @include button-style($bg:$success-color,
   																		$bh:scale-color($success-color, $lightness: $button-function-factor)); }
   &.alert     { @include button-style($bg:$alert-color,
-  																		$bh:scale-color($success-color, $lightness: $button-function-factor)); }
+  																		$bh:scale-color($alert-color, $lightness: $button-function-factor)); }
   
   // and adding custom .inverse style
   &.inverse   { @include button-style($bg:$body-font-color,
