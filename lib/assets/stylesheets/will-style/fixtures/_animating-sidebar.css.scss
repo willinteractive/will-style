@@ -1,8 +1,11 @@
+@import "compass/css3/box-sizing";
+@import "compass/css3/transform";
+@import "compass/css3/transition";
+
 *,
 *:after,
 *::before {
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+	@include box-sizing(border-box);
 }
 
 html,
@@ -33,8 +36,8 @@ body,
 	left: 0;
 	z-index: 99;
 	height: 100%;
-	-webkit-transition: -webkit-transform 0.5s;
-	transition: transform 0.5s;
+
+	@include transition(transform 0.5s);
 }
 
 .sidebar-pusher::after {
@@ -46,16 +49,16 @@ body,
 	background: rgba(0,0,0,0.2);
 	content: '';
 	opacity: 0;
-	-webkit-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
-	transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+
+	@include transition(opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s);
 }
 
 .sidebar-menu-open .sidebar-pusher::after {
 	width: 100%;
 	height: 100%;
 	opacity: 1;
-	-webkit-transition: opacity 0.5s;
-	transition: opacity 0.5s;
+
+	@include transition(opacity 0.5s);
 }
 
 .sidebar-menu {
@@ -67,8 +70,8 @@ body,
 	height: 100%;
 	width: 300px;
 	background: $body-bg;
-	-webkit-transition: all 0.5s;
-	transition: all 0.5s;
+
+	@include transition(all 0.5s);
 }
 
 .sidebar-menu::after {
@@ -80,31 +83,32 @@ body,
 	background: rgba(0,0,0,0.2);
 	content: '';
 	opacity: 1;
-	-webkit-transition: opacity 0.5s;
-	transition: opacity 0.5s;
+
+	@include transition(opacity 0.5s);
 }
 
 .sidebar-menu-open .sidebar-menu::after {
 	width: 0;
 	height: 0;
 	opacity: 0;
-	-webkit-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
-	transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+
+	@include transition(opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s);
 }
 
 /* Individual effects */
 
 /* Effect 1: Slide in on top */
+
 .sidebar-effect-slide.sidebar-menu {
 	visibility: visible;
-	-webkit-transform: translate3d(-100%, 0, 0);
-	transform: translate3d(-100%, 0, 0);
+	
+	@include transform(translate3d(-100%, 0, 0));
 }
 
 .sidebar-effect-slide.sidebar-menu-open .sidebar-effect-slide.sidebar-menu {
 	visibility: visible;
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);
+
+	@include transform(translate3d(0, 0, 0));
 }
 
 .sidebar-effect-slide.sidebar-menu::after {
@@ -112,9 +116,9 @@ body,
 }
 
 /* Effect 2: Reveal */
+
 .sidebar-effect-reveal.sidebar-menu-open .sidebar-pusher {
-	-webkit-transform: translate3d(300px, 0, 0);
-	transform: translate3d(300px, 0, 0);
+	@include transform(translate3d(300px, 0, 0));
 }
 
 .sidebar-effect-reveal.sidebar-menu {
@@ -123,29 +127,28 @@ body,
 
 .sidebar-effect-reveal.sidebar-menu-open .sidebar-effect-reveal.sidebar-menu {
 	visibility: visible;
-	-webkit-transition: -webkit-transform 0.5s;
-	transition: transform 0.5s;
+
+	@include transition-property(transform 0.5s);
 }
 
 .sidebar-effect-reveal.sidebar-menu::after {
 	display: none;
 }
 
-/* Effect 3: Push*/
+/* Effect 3: Push */
+
 .sidebar-effect-push.sidebar-menu-open .sidebar-pusher {
-	-webkit-transform: translate3d(300px, 0, 0);
-	transform: translate3d(300px, 0, 0);
+	@include transform(translate3d(300px, 0, 0));
 }
 
 .sidebar-effect-push.sidebar-menu {
-	-webkit-transform: translate3d(-100%, 0, 0);
-	transform: translate3d(-100%, 0, 0);
+	@include transform(translate3d(-100%, 0, 0));
 }
 
 .sidebar-effect-push.sidebar-menu-open .sidebar-effect-push.sidebar-menu {
 	visibility: visible;
-	-webkit-transition: -webkit-transform 0.5s;
-	transition: transform 0.5s;
+
+	@include transition-property(transform 0.5s);
 }
 
 .sidebar-effect-push.sidebar-menu::after {
@@ -153,23 +156,22 @@ body,
 }
 
 /* Effect 4: Slide along */
+
 .sidebar-effect-slide-along.sidebar-menu-open .sidebar-pusher {
-	-webkit-transform: translate3d(300px, 0, 0);
-	transform: translate3d(300px, 0, 0);
+	@include transform(translate3d(300px, 0, 0));
 }
 
 .sidebar-effect-slide-along.sidebar-menu {
 	z-index: 1;
-	-webkit-transform: translate3d(-50%, 0, 0);
-	transform: translate3d(-50%, 0, 0);
+
+	@include transform(translate3d(-50%, 0, 0));
 }
 
 .sidebar-effect-slide-along.sidebar-menu-open .sidebar-effect-slide-along.sidebar-menu {
 	visibility: visible;
-	-webkit-transition: -webkit-transform 0.5s;
-	transition: transform 0.5s;
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);
+
+	@include transition-property(transform 0.5s);
+	@include transform(translate3d(0, 0, 0));
 }
 
 .sidebar-effect-slide-along.sidebar-menu::after {
@@ -177,59 +179,50 @@ body,
 }
 
 /* Effect 5: Reverse slide out */
+
 .sidebar-effect-reverse-slide-out.sidebar-menu-open .sidebar-pusher {
-	-webkit-transform: translate3d(300px, 0, 0);
-	transform: translate3d(300px, 0, 0);
+	@include transform(translate3d(300px, 0, 0));
 }
 
 .sidebar-effect-reverse-slide-out.sidebar-menu {
 	z-index: 1;
-	-webkit-transform: translate3d(50%, 0, 0);
-	transform: translate3d(50%, 0, 0);
+
+	@include transform(translate3d(50%, 0, 0));
 }
 
 .sidebar-effect-reverse-slide-out.sidebar-menu-open .sidebar-effect-reverse-slide-out.sidebar-menu {
 	visibility: visible;
-	-webkit-transition: -webkit-transform 0.5s;
-	transition: transform 0.5s;
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);
+
+	@include transition-property(transform 0.5s);
+	@include transform(translate3d(0, 0, 0));
 }
 
 /* Effect 6: Rotate pusher */
 
 .sidebar-effect-rotate.sidebar-container {
-	-webkit-perspective: 1500px;
-	perspective: 1500px;
+	@include perspective(1500px);
 }
 
 .sidebar-effect-rotate .sidebar-pusher {
-	-webkit-transform-origin: 0% 50%;
-	transform-origin: 0% 50%;
-	-webkit-transform-style: preserve-3d;
-	transform-style: preserve-3d;
+	@include transform-origin(0%, 50%);
+	@include transform-style(preserve-3d);
 }
 
 .sidebar-effect-rotate.sidebar-menu-open .sidebar-pusher {
-	-webkit-transform: translate3d(300px, 0, 0) rotateY(-15deg);
-	transform: translate3d(300px, 0, 0) rotateY(-15deg);
+	@include transform(translate3d(300px, 0, 0) rotateY(-15deg));
 }
 
 .sidebar-effect-rotate.sidebar-menu {
-	-webkit-transform: translate3d(-100%, 0, 0);
-	transform: translate3d(-100%, 0, 0);
-	-webkit-transform-origin: 100% 50%;
-	transform-origin: 100% 50%;
-	-webkit-transform-style: preserve-3d;
-	transform-style: preserve-3d;
+	@include transform(translate3d(-100%, 0, 0));
+	@include transform-origin(100%, 50%);
+	@include transform-style(preserve-3d);
 }
 
 .sidebar-effect-rotate.sidebar-menu-open .sidebar-effect-rotate.sidebar-menu {
 	visibility: visible;
-	-webkit-transition: -webkit-transform 0.5s;
-	transition: transform 0.5s;
-	-webkit-transform: translate3d(-100%, 0, 0) rotateY(15deg);
-	transform: translate3d(-100%, 0, 0) rotateY(15deg);
+
+	@include transition-property(transform 0.5s);
+	@include transform(translate3d(-100%, 0, 0) rotateY(15deg));
 }
 
 .sidebar-effect-rotate.sidebar-menu::after {
@@ -239,73 +232,57 @@ body,
 /* Effect 7: 3D rotate in */
 
 .sidebar-effect-3d-rotate-in.sidebar-container {
-	-webkit-perspective: 1500px;
-	perspective: 1500px;
-	-webkit-perspective-origin: 0% 50%;
-	perspective-origin: 0% 50%;
+	@include perspective(1500px);
+	@include perspective-origin(0% 50%);
 }
 
 .sidebar-effect-3d-rotate-in .sidebar-pusher {
-	-webkit-transform-style: preserve-3d;
-	transform-style: preserve-3d;
+	@include transform-style(preserve-3d);
 }
 
 .sidebar-effect-3d-rotate-in.sidebar-menu-open .sidebar-pusher {
-	-webkit-transform: translate3d(300px, 0, 0);
-	transform: translate3d(300px, 0, 0);
+	@include transform(translate3d(300px, 0, 0));
 }
 
 .sidebar-effect-3d-rotate-in.sidebar-menu {
-	-webkit-transform: translate3d(-100%, 0, 0) rotateY(-90deg);
-	transform: translate3d(-100%, 0, 0) rotateY(-90deg);
-	-webkit-transform-origin: 100% 50%;
-	transform-origin: 100% 50%;
-	-webkit-transform-style: preserve-3d;
-	transform-style: preserve-3d;
+	@include transform(translate3d(-100%, 0, 0) rotateY(-90deg));
+	@include transform-origin(100%, 50%);
+	@include transform-style(preserve-3d);
 }
 
 .sidebar-effect-3d-rotate-in.sidebar-menu-open .sidebar-effect-3d-rotate-in.sidebar-menu {
 	visibility: visible;
-	-webkit-transition: -webkit-transform 0.5s;
-	transition: transform 0.5s;
-	-webkit-transform: translate3d(-100%, 0, 0) rotateY(0deg);
-	transform: translate3d(-100%, 0, 0) rotateY(0deg);
+
+	@include transition-property(transform 0.5s);
+	@include transform(translate3d(-100%, 0, 0) rotateY(0deg));
 }
 
 /* Effect 8: 3D rotate out */
 
 .sidebar-effect-3d-rotate-out.sidebar-container {
-	-webkit-perspective: 1500px;
-	perspective: 1500px;
-	-webkit-perspective-origin: 0% 50%;
-	perspective-origin: 0% 50%;
+	@include perspective(1500px);
+	@include perspective-origin(0% 50%);
 }
 
 .sidebar-effect-3d-rotate-out .sidebar-pusher {
-	-webkit-transform-style: preserve-3d;
-	transform-style: preserve-3d;
+	@include transform-style(preserve-3d);
 }
 
 .sidebar-effect-3d-rotate-out.sidebar-menu-open .sidebar-pusher {
-	-webkit-transform: translate3d(300px, 0, 0);
-	transform: translate3d(300px, 0, 0);
+	@include transform(translate3d(300px, 0, 0));
 }
 
 .sidebar-effect-3d-rotate-out.sidebar-menu {
-	-webkit-transform: translate3d(-100%, 0, 0) rotateY(90deg);
-	transform: translate3d(-100%, 0, 0) rotateY(90deg);
-	-webkit-transform-origin: 100% 50%;
-	transform-origin: 100% 50%;
-	-webkit-transform-style: preserve-3d;
-	transform-style: preserve-3d;
+	@include transform(translate3d(-100%, 0, 0) rotateY(90deg));
+	@include transform-origin(100%, 50%);
+	@include transform-style(preserve-3d);
 }
 
 .sidebar-effect-3d-rotate-out.sidebar-menu-open .sidebar-effect-3d-rotate-out.sidebar-menu {
 	visibility: visible;
-	-webkit-transition: -webkit-transform 0.5s;
-	transition: transform 0.5s;
-	-webkit-transform: translate3d(-100%, 0, 0) rotateY(0deg);
-	transform: translate3d(-100%, 0, 0) rotateY(0deg);
+
+	@include transition-property(transform 0.5s);
+	@include transform(translate3d(-100%, 0, 0) rotateY(0deg));
 }
 
 .sidebar-effect-3d-rotate-out.sidebar-menu::after {
@@ -315,32 +292,28 @@ body,
 /* Effect 9: Scale down pusher */
 
 .sidebar-effect-scale-down.sidebar-container {
-	-webkit-perspective: 1500px;
-	perspective: 1500px;
+	@include perspective(1500px);
 }
 
 .sidebar-effect-scale-down .sidebar-pusher {
-	-webkit-transform-style: preserve-3d;
-	transform-style: preserve-3d;
+	@include transform-style(preserve-3d);
 }
 
 .sidebar-effect-scale-down.sidebar-menu-open .sidebar-pusher {
-	-webkit-transform: translate3d(0, 0, -300px);
-	transform: translate3d(0, 0, -300px);
+	@include transform(translate3d(0, 0, -300px));
 }
 
 .sidebar-effect-scale-down.sidebar-menu {
 	opacity: 1;
-	-webkit-transform: translate3d(-100%, 0, 0);
-	transform: translate3d(-100%, 0, 0);
+
+	@include transform(translate3d(-100%, 0, 0));
 }
 
 .sidebar-effect-scale-down.sidebar-menu-open .sidebar-effect-scale-down.sidebar-menu {
 	visibility: visible;
-	-webkit-transition: -webkit-transform 0.5s;
-	transition: transform 0.5s;
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);
+
+	@include transition-property(transform 0.5s);
+	@include transform(translate3d(0, 0, 0));
 }
 
 .sidebar-effect-scale-down.sidebar-menu::after {
@@ -350,61 +323,53 @@ body,
 /* Effect 10: Scale up */
 
 .sidebar-effect-scale-up.sidebar-container {
-	-webkit-perspective: 1500px;
-	perspective: 1500px;
-	-webkit-perspective-origin: 0% 50%;
-	perspective-origin: 0% 50%;
+	@include perspective(1500px);
+	@include perspective-origin(0% 50%);
 }
 
 .sidebar-effect-scale-up.sidebar-menu-open .sidebar-pusher {
-	-webkit-transform: translate3d(300px, 0, 0);
-	transform: translate3d(300px, 0, 0);
+	@include transform(translate3d(300px, 0, 0));
 }
 
 .sidebar-effect-scale-up.sidebar-menu {
 	z-index: 1;
 	opacity: 1;
-	-webkit-transform: translate3d(0, 0, -300px);
-	transform: translate3d(0, 0, -300px);
+
+	@include transform(translate3d(0, 0, -300px));
 }
 
 .sidebar-effect-scale-up.sidebar-menu-open .sidebar-effect-scale-up.sidebar-menu {
 	visibility: visible;
-	-webkit-transition: -webkit-transform 0.5s;
-	transition: transform 0.5s;
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);
+
+	@include transition-property(transform 0.5s);
+	@include transform(translate3d(0, 0, 0));
 }
 
 /* Effect 11: Scale and rotate pusher */
 
 .sidebar-effect-scale-and-rotate.sidebar-container {
-	-webkit-perspective: 1500px;
-	perspective: 1500px;
+	@include perspective(1500px);
 }
 
 .sidebar-effect-scale-and-rotate .sidebar-pusher {
-	-webkit-transform-style: preserve-3d;
-	transform-style: preserve-3d;
+	@include transform-style(preserve-3d);
 }
 
 .sidebar-effect-scale-and-rotate.sidebar-menu-open .sidebar-pusher {
-	-webkit-transform: translate3d(100px, 0, -600px) rotateY(-20deg);
-	transform: translate3d(100px, 0, -600px) rotateY(-20deg);
+	@include transform(translate3d(100px, 0, -600px) rotateY(-20deg));
 }
 
 .sidebar-effect-scale-and-rotate.sidebar-menu {
 	opacity: 1;
-	-webkit-transform: translate3d(-100%, 0, 0);
-	transform: translate3d(-100%, 0, 0);
+
+	@include transform(translate3d(-100%, 0, 0));
 }
 
 .sidebar-effect-scale-and-rotate.sidebar-menu-open .sidebar-effect-scale-and-rotate.sidebar-menu {
 	visibility: visible;
-	-webkit-transition: -webkit-transform 0.5s;
-	transition: transform 0.5s;
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);
+
+	@include transition-property(transform 0.5s);
+	@include transform(translate3d(0, 0, 0));
 }
 
 .sidebar-effect-scale-and-rotate.sidebar-menu::after {
@@ -414,34 +379,29 @@ body,
 /* Effect 12: Open door */
 
 .sidebar-effect-open-door.sidebar-container {
-	-webkit-perspective: 1500px;
-	perspective: 1500px;
+	@include perspective(1500px);
 }
 
 .sidebar-effect-open-door .sidebar-pusher {
-	-webkit-transform-origin: 100% 50%;
-	transform-origin: 100% 50%;
-	-webkit-transform-style: preserve-3d;
-	transform-style: preserve-3d;
+	@include transform-origin(100%, 50%);
+	@include transform-style(preserve-3d);
 }
 
 .sidebar-effect-open-door.sidebar-menu-open .sidebar-pusher {
-	-webkit-transform: rotateY(-10deg);
-	transform: rotateY(-10deg);
+	@include transform(rotateY(-10deg));
 }
 
 .sidebar-effect-open-door.sidebar-menu {
 	opacity: 1;
-	-webkit-transform: translate3d(-100%, 0, 0);
-	transform: translate3d(-100%, 0, 0);
+
+	@include transform(translate3d(-100%, 0, 0));
 }
 
 .sidebar-effect-open-door.sidebar-menu-open .sidebar-effect-open-door.sidebar-menu {
 	visibility: visible;
-	-webkit-transition: -webkit-transform 0.5s;
-	transition: transform 0.5s;
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);
+
+	@include transition-property(transform 0.5s);
+	@include transform(translate3d(0, 0, 0));
 }
 
 .sidebar-effect-open-door.sidebar-menu::after {
@@ -451,74 +411,57 @@ body,
 /* Effect 13: Fall down */
 
 .sidebar-effect-fall-down.sidebar-container {
-	-webkit-perspective: 1500px;
-	perspective: 1500px;
-	-webkit-perspective-origin: 0% 50%;
-	perspective-origin: 0% 50%;
+	@include perspective(1500);
+	@include perspective-origin(0% 50%);
 }
 
 .sidebar-effect-fall-down.sidebar-menu-open .sidebar-pusher {
-	-webkit-transform: translate3d(300px, 0, 0);
-	transform: translate3d(300px, 0, 0);
+	@include transform(translate3d(300px, 0, 0));
 }
 
 .sidebar-effect-fall-down.sidebar-menu {
 	z-index: 1;
 	opacity: 1;
-	-webkit-transform: translate3d(0, -100%, 0);
-	transform: translate3d(0, -100%, 0);
+
+	@include transform(translate3d(0, -100%, 0));
 }
 
 .sidebar-effect-fall-down.sidebar-menu-open .sidebar-effect-fall-down.sidebar-menu {
 	visibility: visible;
-	-webkit-transition-timing-function: ease-in-out;
-	transition-timing-function: ease-in-out;
-	-webkit-transition-property: -webkit-transform;
-	transition-property: transform;
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);
-	-webkit-transition-speed: 0.2s;
-	transition-speed: 0.2s;
+
+	@include transition-timing-function(ease-in-out);
+	@include transition-property(transform);
+	@include transform(translate3d(0, 0, 0));
 }
 
 /* Effect 14: Delayed 3D rotate */
 
 .sidebar-effect-delayed-3d-rotate.sidebar-container {
-	-webkit-perspective: 1500px;
-	perspective: 1500px;
-	-webkit-perspective-origin: 0% 50%;
-	perspective-origin: 0% 50%;
+	@include perspective(1500);
+	@include perspective-origin(0% 50%);
 }
 
 .sidebar-effect-delayed-3d-rotate .sidebar-pusher {
-	-webkit-transform-style: preserve-3d;
-	transform-style: preserve-3d;
+	@include transform-style(preserve-3d);
 }
 
 .sidebar-effect-delayed-3d-rotate.sidebar-menu-open .sidebar-pusher {
-	-webkit-transform: translate3d(300px, 0, 0);
-	transform: translate3d(300px, 0, 0);
+	@include transform(translate3d(300px, 0, 0));
 }
 
 .sidebar-effect-delayed-3d-rotate.sidebar-menu {
-	-webkit-transform: translate3d(-100%, 0, 0) rotateY(90deg);
-	transform: translate3d(-100%, 0, 0) rotateY(90deg);
-	-webkit-transform-origin: 0% 50%;
-	transform-origin: 0% 50%;
-	-webkit-transform-style: preserve-3d;
-	transform-style: preserve-3d;
+	@include transform(translate3d(-100%, 0, 0) rotateY(90deg));
+	@include transform-origin(0%, 50%);
+	@include transform-style(preserve-3d);
 }
 
 .sidebar-effect-delayed-3d-rotate.sidebar-menu-open .sidebar-effect-delayed-3d-rotate.sidebar-menu {
 	visibility: visible;
-	-webkit-transition-delay: 0.1s;
-	transition-delay: 0.1s;
-	-webkit-transition-timing-function: ease-in-out;
-	transition-timing-function: ease-in-out;
-	-webkit-transition-property: -webkit-transform;
-	transition-property: transform;
-	-webkit-transform: translate3d(-100%, 0, 0) rotateY(0deg);
-	transform: translate3d(-100%, 0, 0) rotateY(0deg);
+
+	@include transition-delay(0.1s);
+	@include transition-timing-function(ease-in-out);
+	@include transition-property(transform);
+	@include transform(translate3d(-100%, 0, 0) rotateY(0deg));
 }
 
 /* Fallback example for browsers that don't support 3D transforms (and no JS fallback) */
