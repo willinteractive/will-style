@@ -1,0 +1,7 @@
+@media #{$small-only} {
+	// Extend off-canvas class to the sidebar only on small sizes
+	.hideable-sidebar {
+		@include off-canvas-menu($position: left);
+		background-color: $body-bg;
+	}
+}
