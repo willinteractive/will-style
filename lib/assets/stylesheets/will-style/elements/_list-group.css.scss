@@ -7,7 +7,7 @@
 //** Background color on `.list-group-item`
 $list-group-bg:                 transparent;
 //** `.list-group-item` border color
-$list-group-border:             #ddd !default;
+$list-group-border:             $component-border-color;
 //** List group border radius
 $list-group-border-radius:      $global-radius;
 
@@ -16,7 +16,7 @@ $list-group-hover-bg:           $component-hover-bg-color;
 //** Text color of active list items
 $list-group-active-color:       #fff !default;
 //** Background color of active list items
-$list-group-active-bg:          $primary-color !default;
+$list-group-active-bg:          $primary-color;
 //** Border color of active list elements
 $list-group-active-border:      $list-group-active-bg !default;
 //** Text color for content within active list items
@@ -24,7 +24,7 @@ $list-group-active-text-color:  scale-color($list-group-active-bg, $lightness: 4
 //** Text color of disabled list items
 $list-group-disabled-color:     scale-color($body-font-color, $lightness: 40%);
 //** Background color of disabled list items
-$list-group-disabled-bg:        scale-color($secondary-color, $lightness: 50%);
+$list-group-disabled-bg:        scale-color($list-group-bg, $lightness: 50%);
 //** Text color for content within disabled list items
 $list-group-disabled-text-color: $list-group-disabled-color !default;
 
@@ -142,7 +142,6 @@ a.list-group-item {
   }
 }
 
-
 // Contextual variants
 //
 // Add modifier classes to change text and background color on individual items.
@@ -174,5 +173,19 @@ a.list-group-item {
 .list-group-actions {
 	button, .button {
 		margin-bottom: 0;
+	}
+}
+
+// if the list item should be highlighted
+.list-group-item.highlight {
+	&:before {
+		content: "";
+		position: absolute;
+		display: block;
+		top: 0px;
+		left: 0px;
+		bottom: 0px;
+		width: 3px;
+		background: $primary-color;
 	}
 }
