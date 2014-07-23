@@ -10,10 +10,12 @@ module WILL
 
     ##
     # Helpers for generating Foundation HTML elements
+    #
     module Foundation
 
       ##
       # Helpers for generating Foundation dropdowns
+      #
       module DropdownHelper
 
         ##

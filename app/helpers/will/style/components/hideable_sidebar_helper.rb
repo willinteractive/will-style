@@ -10,10 +10,12 @@ module WILL
 
     ##
     # Helpers for generating WILL Style components
+    #
     module Components
 
       ##
       # Helpers for generating our custom WILL hideable sidebar
+      #
       module HideableSidebarHelper
 
         ##
