@@ -4,11 +4,11 @@
 // 
 */
 
-$apps-sidebar-padding-horizontal: rem_calc(10);
+$app-sidebar-padding-horizontal: rem_calc(10);
 
 // WILL Apps navigational sidebar
 // -------------------------
-#apps-sidebar {
+#app-sidebar {
 	background-color: $icon-bar-bg;
 	color: $icon-bar-font-color;
 	
@@ -18,13 +18,13 @@ $apps-sidebar-padding-horizontal: rem_calc(10);
 
 	.icon-bar .item {
 		// reduce padding
-		padding-left: $apps-sidebar-padding-horizontal;
-		padding-right: $apps-sidebar-padding-horizontal;
+		padding-left: $app-sidebar-padding-horizontal;
+		padding-right: $app-sidebar-padding-horizontal;
 	}
 }
 
 
-#apps-user {
+#app-user {
 	// add padding once larger than medium
 	@media #{$large-up} {
 		padding: rem_calc(15 0);
@@ -41,19 +41,19 @@ $apps-sidebar-padding-horizontal: rem_calc(10);
 
 	a.user-dropdown-btn {	
 		// reduce padding & margin
-		padding-left: $apps-sidebar-padding-horizontal;
-		padding-right: $apps-sidebar-padding-horizontal;
+		padding-left: $app-sidebar-padding-horizontal;
+		padding-right: $app-sidebar-padding-horizontal;
 		margin-bottom: 0
 	}
 }
 
-#apps-hiding-nav {
+#app-hiding-nav {
 	// style the buttons inside the hideable-sidebar that are only shown on small screens
 	& > .button {
 		text-align: left;
 		
-		padding-left: $apps-sidebar-padding-horizontal;
-		padding-right: $apps-sidebar-padding-horizontal;
+		padding-left: $app-sidebar-padding-horizontal;
+		padding-right: $app-sidebar-padding-horizontal;
 		margin-bottom: 0;
 	}
 }

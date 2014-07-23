@@ -1,7 +1,7 @@
 <% app = "" unless defined?(app) %>
 
-<aside id="apps-sidebar" class="medium-1 columns hide-for-small-only" >
-	<div id="apps-user">
+<aside id="app-sidebar" class="medium-1 columns hide-for-small-only" >
+	<div id="app-user">
 		<p class="show-for-large-up"><%= fa_icon "user 2x", class: "user-icon" %></p>
 		<p class="show-for-large-up"><small>User Name</small></p>
 		<p class="show-for-large-up">
@@ -15,7 +15,7 @@
 		</a>
 	</div>
 
-	<nav id="apps-nav" class="icon-bar vertical">
+	<nav id="app-nav" class="icon-bar vertical">
 		<a href="#" class="item<%= app == "Launchapd" ? " active" : "" %>">
 			<%= fa_icon "home" %>
 			<label class="show-for-large-up"><small>Launchpad</small></label>     
