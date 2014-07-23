@@ -32,5 +32,9 @@ $(document).on 'click touchstart', 'a.dropdown', (event) ->
 
 # Initialize Foundation
 $ ->
-	$(document).foundation()
-
+	$(document).foundation
+		# Focus inputs in dropdowns if they have one
+		dropdown:
+    		opened: (event) ->
+    			if $(this).find("input[type='text']").length > 0
+    				$(this).find("input[type='text']").focus()
