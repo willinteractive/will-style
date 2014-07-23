@@ -66,7 +66,7 @@
 
   <ul class="link-list" role="directory">
     
-    <li ><a href="#method-i-ws_hideable_sidebar">#ws_hideable_sidebar</a>
+    <li ><a href="#method-i-ws_hideable_sidebar_container">#ws_hideable_sidebar_container</a>
     
   </ul>
 </div>
@@ -105,10 +105,10 @@ hideable sidebar</p>
        </header>
 
     
-      <div id="method-i-ws_hideable_sidebar" class="method-detail ">
+      <div id="method-i-ws_hideable_sidebar_container" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">ws_hideable_sidebar</span><span
+          <span class="method-name">ws_hideable_sidebar_container</span><span
             class="method-args">(options={}, &block)</span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -118,11 +118,19 @@ hideable sidebar</p>
 
         <div class="method-description">
           
-          <p>Generates a hideable sidebar component. This returns a sidebar builder that
-you can use to generate the sidebar menu as well as buttons to trigger
-opening the sidebar.</p>
+          <p>Generates a hideable sidebar component. Wrap this around your application
+content. This returns a sidebar builder that you can use to generate the
+sidebar menu as well as buttons to trigger opening the sidebar.</p>
 
-<h1 id="method-i-ws_hideable_sidebar-label-Params">Params<span><a href="#method-i-ws_hideable_sidebar-label-Params">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<p>To properly build a hideable sidebar, you should.</p>
+
+<p>1] Use the container around your application content</p>
+
+<p>2] Use h.wrapper around your h.sidebar and h.content.</p>
+
+<p>3] Use h.button to build a trigger for the sidebar.</p>
+
+<h1 id="method-i-ws_hideable_sidebar_container-label-Params">Params<span><a href="#method-i-ws_hideable_sidebar_container-label-Params">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
 
 <p><code>options</code></p>
 
@@ -130,28 +138,32 @@ opening the sidebar.</p>
 
 <p>You can use any of the html options available in ActionView helpers.</p>
 
-<h1 id="method-i-ws_hideable_sidebar-label-Examples">Examples<span><a href="#method-i-ws_hideable_sidebar-label-Examples">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="method-i-ws_hideable_sidebar_container-label-Examples">Examples<span><a href="#method-i-ws_hideable_sidebar_container-label-Examples">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
 
-<pre>&lt;%= ws_hideable_sidebar do |s| %&gt;
-  &lt;%= s.menu do %&gt;
-    &lt;h1&gt;Menu&lt;/h1&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Home&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;% end %&gt;
+<pre>&lt;%= ws_hideable_sidebar_container do |h| %&gt;
+  &lt;h1&gt;Header information&lt;/h1&gt;
 
-  &lt;% s.content do %&gt;
-    &lt;%= s.button &quot;Open Menu&quot; %&gt;
-    &lt;p&gt;Other Content&lt;/p&gt;
-  &lt;% end %&gt;
+  &lt;div id=&quot;main-content-area&quot; class=&quot;row&quot;&gt;
+    &lt;%= h.sidebar do %&gt;
+      &lt;h1&gt;Menu&lt;/h1&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Home&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;% end %&gt;
+
+    &lt;main id=&quot;content&quot;
+      &lt;%= s.button &quot;Open Menu&quot; %&gt;
+      &lt;p&gt;Other Content&lt;/p&gt;
+    &lt;/main&gt;
+  &lt;/div&gt;
 &lt;% end %&gt;</pre>
           
           
 
           
-          <div class="method-source-code" id="ws_hideable_sidebar-source">
-            <pre><span class="ruby-comment"># File app/helpers/will/style/components/hideable_sidebar.rb, line 43</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">ws_hideable_sidebar</span>(<span class="ruby-identifier">options</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+          <div class="method-source-code" id="ws_hideable_sidebar_container-source">
+            <pre><span class="ruby-comment"># File app/helpers/will/style/components/hideable_sidebar_helper.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ws_hideable_sidebar_container</span>(<span class="ruby-identifier">options</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing block&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
 
   <span class="ruby-identifier">options</span>[<span class="ruby-value">:class</span>] = <span class="ruby-node">&quot;off-canvas-wrap #{options[:class]}&quot;</span>

@@ -19,7 +19,15 @@ module WILL
       module HideableSidebarHelper
 
         ##
-        # Generates a hideable sidebar component. This returns a sidebar builder that you can use to generate the sidebar menu as well as buttons to trigger opening the sidebar.
+        # Generates a hideable sidebar component. Wrap this around your application content. This returns a sidebar builder that you can use to generate the sidebar menu as well as buttons to trigger opening the sidebar.
+        #
+        # To properly build a hideable sidebar, you should.
+        #
+        # 1] Use the container around your application content
+        #
+        # 2] Use h.wrapper around your h.sidebar and h.content.
+        #
+        # 3] Use h.button to build a trigger for the sidebar.
         #
         # = Params
         # +options+
@@ -28,21 +36,25 @@ module WILL
         #
         # You can use any of the html options available in ActionView helpers.
         # = Examples
-        #   <%= ws_hideable_sidebar do |s| %>
-        #     <%= s.menu do %>
-        #       <h1>Menu</h1>
-        #       <ul>
-        #         <li>Home</li>
-        #       </ul>
-        #     <% end %>
+        #   <%= ws_hideable_sidebar_container do |h| %>
+        #     <h1>Header information</h1>
         #
-        #     <% s.content do %>
-        #       <%= s.button "Open Menu" %>
-        #       <p>Other Content</p>
-        #     <% end %>
+        #     <div id="main-content-area" class="row">
+        #       <%= h.sidebar do %>
+        #         <h1>Menu</h1>
+        #         <ul>
+        #           <li>Home</li>
+        #         </ul>
+        #       <% end %>
+        #
+        #       <main id="content"
+        #         <%= s.button "Open Menu" %>
+        #         <p>Other Content</p>
+        #       </main>
+        #     </div>
         #   <% end %>
         #
-        def ws_hideable_sidebar(options={}, &block)
+        def ws_hideable_sidebar_container(options={}, &block)
           raise ArgumentError, "Missing block" unless block_given?
 
           options[:class] = "off-canvas-wrap #{options[:class]}"
@@ -76,6 +88,41 @@ module WILL
           end
 
           delegate :capture, :content_tag, :link_to, to: :template
+
+          ##
+          # Generates the wrapper to hold the sidebar and the main content area.
+          # = Params
+          #
+          # +options+
+          #
+          # Hash of options.
+          #
+          # You can use any of the html options available in ActionView helpers.
+          #
+          # +block+
+          #
+          # ERB Block for the wrapper.
+          #
+          # = Examples
+          #   <%= h.wrapper do %>
+          #     <%= h.sidebar do %>
+          #       <h1>This is the menu area</h1>
+          #     <% end %>
+          #
+          #     <%= h.content do %>
+          #       <h1>This is the main content area</h1>
+          #     <% end %>
+          #   <% end %>
+          #
+          def wrapper(options={}, &block)
+            raise ArgumentError, "Missing block" unless block_given?
+  
+            options[:class] = "row collapse inner-wrap #{options[:class]}"
+
+            content_tag(:div, options) do
+              capture(&block)
+            end
+          end
 
           ##
           # Generates a hideable sidebar toggle button. You can either specify button text
@@ -118,7 +165,7 @@ module WILL
           end
 
           ##
-          # Generates the hideable sidebar menu area.
+          # Generates the hideable sidebar.
           # = Params
           #
           # +options+
@@ -129,19 +176,48 @@ module WILL
           #
           # +block+
           #
-          # ERB Block for the menu area.
+          # ERB Block for the sidebar.
           #
           # = Examples
-          #   <%= h.menu do %>
+          #   <%= h.sidebar do %>
           #     <h1>This is the menu area</h1>
           #   <% end %>
           #
-          def menu(options={}, &block)
+          def sidebar(options={}, &block)
             raise ArgumentError, "Missing block" unless block_given?
   
-            options[:class] = "hideable-sidebar #{options[:class]}"
+            options[:class] = "hideable-sidebar columns #{options[:class]}"
 
             content_tag(:aside, options) do
+              capture(&block)
+            end
+          end
+
+          ##
+          # Generates the main content area.
+          # = Params
+          #
+          # +options+
+          #
+          # Hash of options.
+          #
+          # You can use any of the html options available in ActionView helpers.
+          #
+          # +block+
+          #
+          # ERB Block for the content area.
+          #
+          # = Examples
+          #   <%= h.content do %>
+          #     <h1>This is the main content area</h1>
+          #   <% end %>
+          #
+          def content(options={}, &block)
+            raise ArgumentError, "Missing block" unless block_given?
+  
+            options[:class] = "columns #{options[:class]}"
+
+            content_tag(:main, options) do
               capture(&block)
             end
           end

@@ -170,7 +170,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/helpers/will/style/foundation/modal_helper.rb, line 58</span>
+            <pre><span class="ruby-comment"># File app/helpers/will/style/foundation/modal_helper.rb, line 60</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">template</span>)
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">id</span> = <span class="ruby-identifier">id</span>
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">template</span> = <span class="ruby-identifier">template</span>
@@ -243,7 +243,7 @@ or use an ERB Block to fill in HTML content.</p>
 
           
           <div class="method-source-code" id="close_button-source">
-            <pre><span class="ruby-comment"># File app/helpers/will/style/foundation/modal_helper.rb, line 193</span>
+            <pre><span class="ruby-comment"># File app/helpers/will/style/foundation/modal_helper.rb, line 195</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">close_button</span>(<span class="ruby-identifier">text</span>=<span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">type</span>=<span class="ruby-string">&quot;warning&quot;</span>, <span class="ruby-identifier">options</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-identifier">options</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">type</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">type</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
 
@@ -307,7 +307,7 @@ true.</p>
 
           
           <div class="method-source-code" id="modal-source">
-            <pre><span class="ruby-comment"># File app/helpers/will/style/foundation/modal_helper.rb, line 131</span>
+            <pre><span class="ruby-comment"># File app/helpers/will/style/foundation/modal_helper.rb, line 133</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">modal</span>(<span class="ruby-identifier">options</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing block&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
 
@@ -395,7 +395,7 @@ Block to fill in HTML content.</p>
 
           
           <div class="method-source-code" id="trigger-source">
-            <pre><span class="ruby-comment"># File app/helpers/will/style/foundation/modal_helper.rb, line 91</span>
+            <pre><span class="ruby-comment"># File app/helpers/will/style/foundation/modal_helper.rb, line 93</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">trigger</span>(<span class="ruby-identifier">text</span>=<span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">options</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-identifier">options</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">text</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">text</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
 

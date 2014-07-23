@@ -77,7 +77,11 @@
     
     <li ><a href="#method-i-button">#button</a>
     
-    <li ><a href="#method-i-menu">#menu</a>
+    <li ><a href="#method-i-content">#content</a>
+    
+    <li ><a href="#method-i-sidebar">#sidebar</a>
+    
+    <li ><a href="#method-i-wrapper">#wrapper</a>
     
   </ul>
 </div>
@@ -155,7 +159,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/helpers/will/style/components/hideable_sidebar.rb, line 72</span>
+            <pre><span class="ruby-comment"># File app/helpers/will/style/components/hideable_sidebar_helper.rb, line 86</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">template</span>)
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">template</span> = <span class="ruby-identifier">template</span>
 <span class="ruby-keyword">end</span></pre>
@@ -225,7 +229,7 @@ text or use an ERB Block to fill in HTML content.</p>
 
           
           <div class="method-source-code" id="button-source">
-            <pre><span class="ruby-comment"># File app/helpers/will/style/components/hideable_sidebar.rb, line 104</span>
+            <pre><span class="ruby-comment"># File app/helpers/will/style/components/hideable_sidebar_helper.rb, line 153</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">button</span>(<span class="ruby-identifier">text</span>=<span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">options</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-identifier">options</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">text</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">text</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
 
@@ -249,10 +253,10 @@ text or use an ERB Block to fill in HTML content.</p>
       </div>
 
     
-      <div id="method-i-menu" class="method-detail ">
+      <div id="method-i-content" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">menu</span><span
+          <span class="method-name">content</span><span
             class="method-args">(options={}, &block)</span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -262,9 +266,9 @@ text or use an ERB Block to fill in HTML content.</p>
 
         <div class="method-description">
           
-          <p>Generates the hideable sidebar menu area.</p>
+          <p>Generates the main content area.</p>
 
-<h1 id="method-i-menu-label-Params">Params<span><a href="#method-i-menu-label-Params">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="method-i-content-label-Params">Params<span><a href="#method-i-content-label-Params">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
 
 <p><code>options</code></p>
 
@@ -274,25 +278,145 @@ text or use an ERB Block to fill in HTML content.</p>
 
 <p><code>block</code></p>
 
-<p>ERB Block for the menu area.</p>
+<p>ERB Block for the content area.</p>
 
-<h1 id="method-i-menu-label-Examples">Examples<span><a href="#method-i-menu-label-Examples">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="method-i-content-label-Examples">Examples<span><a href="#method-i-content-label-Examples">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
 
-<pre>&lt;%= h.menu do %&gt;
+<pre>&lt;%= h.content do %&gt;
+  &lt;h1&gt;This is the main content area&lt;/h1&gt;
+&lt;% end %&gt;</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="content-source">
+            <pre><span class="ruby-comment"># File app/helpers/will/style/components/hideable_sidebar_helper.rb, line 215</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">content</span>(<span class="ruby-identifier">options</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing block&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
+  
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:class</span>] = <span class="ruby-node">&quot;columns #{options[:class]}&quot;</span>
+
+  <span class="ruby-identifier">content_tag</span>(<span class="ruby-value">:main</span>, <span class="ruby-identifier">options</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">capture</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-sidebar" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">sidebar</span><span
+            class="method-args">(options={}, &block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Generates the hideable sidebar.</p>
+
+<h1 id="method-i-sidebar-label-Params">Params<span><a href="#method-i-sidebar-label-Params">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p><code>options</code></p>
+
+<p>Hash of options.</p>
+
+<p>You can use any of the html options available in ActionView helpers.</p>
+
+<p><code>block</code></p>
+
+<p>ERB Block for the sidebar.</p>
+
+<h1 id="method-i-sidebar-label-Examples">Examples<span><a href="#method-i-sidebar-label-Examples">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<pre>&lt;%= h.sidebar do %&gt;
   &lt;h1&gt;This is the menu area&lt;/h1&gt;
 &lt;% end %&gt;</pre>
           
           
 
           
-          <div class="method-source-code" id="menu-source">
-            <pre><span class="ruby-comment"># File app/helpers/will/style/components/hideable_sidebar.rb, line 137</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">menu</span>(<span class="ruby-identifier">options</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+          <div class="method-source-code" id="sidebar-source">
+            <pre><span class="ruby-comment"># File app/helpers/will/style/components/hideable_sidebar_helper.rb, line 186</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sidebar</span>(<span class="ruby-identifier">options</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing block&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
   
-  <span class="ruby-identifier">options</span>[<span class="ruby-value">:class</span>] = <span class="ruby-node">&quot;hideable-sidebar #{options[:class]}&quot;</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:class</span>] = <span class="ruby-node">&quot;hideable-sidebar columns #{options[:class]}&quot;</span>
 
   <span class="ruby-identifier">content_tag</span>(<span class="ruby-value">:aside</span>, <span class="ruby-identifier">options</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">capture</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-wrapper" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">wrapper</span><span
+            class="method-args">(options={}, &block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Generates the wrapper to hold the sidebar and the main content area.</p>
+
+<h1 id="method-i-wrapper-label-Params">Params<span><a href="#method-i-wrapper-label-Params">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p><code>options</code></p>
+
+<p>Hash of options.</p>
+
+<p>You can use any of the html options available in ActionView helpers.</p>
+
+<p><code>block</code></p>
+
+<p>ERB Block for the wrapper.</p>
+
+<h1 id="method-i-wrapper-label-Examples">Examples<span><a href="#method-i-wrapper-label-Examples">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<pre>&lt;%= h.wrapper do %&gt;
+  &lt;%= h.sidebar do %&gt;
+    &lt;h1&gt;This is the menu area&lt;/h1&gt;
+  &lt;% end %&gt;
+
+  &lt;%= h.content do %&gt;
+    &lt;h1&gt;This is the main content area&lt;/h1&gt;
+  &lt;% end %&gt;
+&lt;% end %&gt;</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="wrapper-source">
+            <pre><span class="ruby-comment"># File app/helpers/will/style/components/hideable_sidebar_helper.rb, line 117</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">wrapper</span>(<span class="ruby-identifier">options</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing block&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
+  
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:class</span>] = <span class="ruby-node">&quot;row collapse inner-wrap #{options[:class]}&quot;</span>
+
+  <span class="ruby-identifier">content_tag</span>(<span class="ruby-value">:div</span>, <span class="ruby-identifier">options</span>) <span class="ruby-keyword">do</span>
     <span class="ruby-identifier">capture</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
