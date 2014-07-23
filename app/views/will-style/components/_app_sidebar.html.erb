@@ -1,0 +1,39 @@
+<% app = "" unless defined?(app) %>
+
+<aside id="apps-sidebar" class="medium-1 columns hide-for-small-only" >
+	<div id="apps-user">
+		<p class="show-for-large-up"><%= fa_icon "user 2x", class: "user-icon" %></p>
+		<p class="show-for-large-up"><small>User Name</small></p>
+		<p class="show-for-large-up">
+			<a href="#" title="Admin"><%= fa_icon "cubes" %></a>
+			<a href="#" title="Settings"><%= fa_icon "cog" %></a>
+			<a href="#" title="Logout"><%= fa_icon "sign-out" %></a>
+		</p>
+
+		<a class="button inverse show-for-medium-only user-dropdown-btn" title="User Name" href="#" data-dropdown="user-drop" data-options="align:right">
+			<%= fa_icon "user 2x" %> &ensp; <%= fa_icon "angle-right 2x", class: "text-primary" %>
+		</a>
+	</div>
+
+	<nav id="apps-nav" class="icon-bar vertical">
+		<a href="#" class="item<%= app == "Launchapd" ? " active" : "" %>">
+			<%= fa_icon "home" %>
+			<label class="show-for-large-up"><small>Launchpad</small></label>     
+		</a>
+
+		<a href="#" class="item<%= app == "Tracker" ? " active" : "" %>" >
+			<%= fa_icon "check-square-o" %>
+			<label class="show-for-large-up"><small>Tracker</small></label>     
+		</a>
+		
+		<a href="#" class="item<%= app == "Testbed" ? " active" : "" %>" >
+			<%= fa_icon "flask" %>
+			<label class="show-for-large-up"><small>Testbed</small></label>     
+		</a>
+
+		<a href="#" class="item<%= app == "Access" ? " active" : "" %>">
+			<%= fa_icon "play-circle-o" %>
+			<label class="show-for-large-up"><small>Access</small></label>      
+		</a>
+	</nav>
+</aside>

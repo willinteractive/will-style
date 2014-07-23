@@ -13,14 +13,14 @@ module WILL
     module Components
 
       ##
-      # Helpers for generating our custom WILL Style sidebar
-      module SidebarHelper
+      # Helpers for generating our custom WILL Style animating sidebar
+      module AnimatingSidebarHelper
 
         ##
         # Generates a sidebar. This returns a sidebar builder that you can use to generate the sidebar menu as well as buttons to trigger opening the sidebar.
         #
         # = Examples
-        #   <%= ws_sidebar do |s| %>
+        #   <%= ws_animating_sidebar do |s| %>
         #     <%= s.menu do %>
         #       <h1>Menu</h1>
         #       <ul>
@@ -34,18 +34,18 @@ module WILL
         #     <% end %>
         #   <% end %>
         #
-        def ws_sidebar(&block)
+        def ws_animating_sidebar(&block)
           raise ArgumentError, "Missing block" unless block_given?
 
           content_tag(:div, class: "sidebar-container") do
-            capture(SidebarBuilder.new(self), &block)
+            capture(AnimatingSidebarBuilder.new(self), &block)
           end
         end
 
         ##
-        # Builder used to generate dropdown components.
+        # Builder used to generate animating sidebar components.
         #
-        class SidebarBuilder
+        class AnimatingSidebarBuilder
           ##
           # The parent template used to access ActionView Helper Methods
           #
