@@ -1,0 +1,33 @@
+{
+  "name": "will-style",
+  "version": "0.0.0",
+  "dependencies": {
+    "normalize-css": "~2.1.3",
+    "jquery": "~1.10.2",
+    "modernizr": "~2.7",
+    "foundation": "~5.3.1"
+  },
+  "homepage": "https://github.com/willinteractive/will-style",
+  "authors": [
+    "WILL Ninjas"
+  ],
+  "description": "WILL Style for bower",
+  "main": "ummm",
+  "keywords": [
+    "ummm"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+  	"app/**/*",
+  	"doc/**/*",
+  	"lib/generators/**/*",
+  	"lib/generators/**/*",
+  	"lib/will-style/**/*",
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
