@@ -19,10 +19,9 @@
   "license": "MIT",
   "private": true,
   "ignore": [
-  	"app/**/*",
-  	"doc/**/*",
-  	"lib/generators/**/*",
-  	"lib/generators/**/*",
+  	"app",
+  	"doc",
+  	"lib/generators",
   	"lib/will-style/**/*",
     "**/.*",
     "node_modules",
