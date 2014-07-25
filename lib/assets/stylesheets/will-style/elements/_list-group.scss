@@ -23,8 +23,12 @@ $list-group-active-border:      $list-group-active-bg !default;
 $list-group-active-text-color:  scale-color($list-group-active-bg, $lightness: 40%);
 //** Text color of disabled list items
 $list-group-disabled-color:     scale-color($body-font-color, $lightness: 40%);
+
 //** Background color of disabled list items
-$list-group-disabled-bg:        scale-color($list-group-bg, $lightness: 50%);
+// Newest SASS will complain about trying to scale transparent
+// $list-group-disabled-bg:        scale-color($list-group-bg, $lightness: 50%);
+$list-group-disabled-bg:        $list-group-bg;
+
 //** Text color for content within disabled list items
 $list-group-disabled-text-color: $list-group-disabled-color !default;
 
