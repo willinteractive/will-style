@@ -30,13 +30,13 @@
 // Global
 // ----------------------
 @import
-	"core/mixins",
-	"core/global";
+	"will-style/core/mixins",
+	"will-style/core/global";
 	
 // Typography
 // ----------------------
 @import
-	"core/typography",
+	"will-style/core/typography",
 	"foundation/components/inline-lists";
 	
 // Images
@@ -48,18 +48,18 @@
 // Buttons	
 // ----------------------
 @import 
-	"core/buttons",
+	"will-style/core/buttons",
   "foundation/components/button-groups",
   "foundation/components/dropdown-buttons",
   "foundation/components/split-buttons";
   
 // Forms
 // ----------------------
-@import	"core/forms";
+@import	"will-style/core/forms";
 
 // Tables
 // ----------------------
-@import "core/tables";
+@import "will-style/core/tables";
 
 
 
@@ -77,7 +77,7 @@
 // ----------------------
 @import
   "foundation/components/grid",
-	"elements/sections",
+	"will-style/elements/sections",
   "foundation/components/block-grid",
   "foundation/components/offcanvas";
 
@@ -85,8 +85,8 @@
 // Navigation
 // ----------------------
 @import
-  "elements/breadcrumbs",
-  "elements/icon-bar",
+  "will-style/elements/breadcrumbs",
+  "will-style/elements/icon-bar",
   "foundation/components/pagination",
   "foundation/components/side-nav",
   "foundation/components/sub-nav",
@@ -97,10 +97,10 @@
 // Blocks
 // ----------------------
 @import
-  "elements/alert-boxes",
-  "elements/dropdown",
+  "will-style/elements/alert-boxes",
+  "will-style/elements/dropdown",
 	"foundation/components/labels",
-	"elements/list-group",
+	"will-style/elements/list-group",
   "foundation/components/panels";
 
 // Extras
@@ -132,14 +132,14 @@
 
 // Global
 // ----------------------
-@import "fixtures/sticky-footer";
+@import "will-style/fixtures/sticky-footer";
 
 
 // App Style
 // ----------------------
-@import "fixtures/app-page-header";
-@import "fixtures/app-sidebar";
-@import "fixtures/animating-sidebar";
+@import "will-style/fixtures/app-page-header";
+@import "will-style/fixtures/app-sidebar";
+@import "will-style/fixtures/animating-sidebar";
 
 
 
