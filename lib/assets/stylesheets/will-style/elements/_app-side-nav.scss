@@ -10,6 +10,9 @@
 	width: 100%;
 }
 
+// background color
+$side-nav-categories-bg: $primary-color;
+
 // change the coloring of the side-nav using variables
 // We use this to control padding.
 $side-nav-padding: rem_calc(20) $column-gutter/2;
@@ -101,6 +104,45 @@ $rounded-label-padding: rem-calc(2 4 3);
 			visibility: visible;
 		}
 		
+	}
+	
+}
+
+.side-nav.categories {
+	
+	background: $side-nav-categories-bg;
+	
+	// we want the buttons to expand the full width
+	padding: 0;
+	
+	li {
+		// the buttons should be on top of eachother
+		margin-bottom: 0;
+		// but with a slightly darker border than the bg
+		border-bottom: 1px solid scale-color($side-nav-categories-bg, $lightness: -25%);
+		
+		.button {
+			// make full-width and no margin
+			width: 100%;
+			margin-bottom: 0;
+			text-align: left;
+			
+			// increase padding
+			@include button-size($padding:$button-lrg);
+			padding-top: $button-lrg*1.5;
+			padding-bottom: $button-lrg*1.5 + rem_calc(1);
+			
+			// if it has an icon, give it a bit more spacing
+			& > i {
+				margin-right: rem_calc(20);
+			}
+		}
+		
+		//remove background of active items
+		&.active .button {
+			background: $body-bg;
+			color: $body-font-color;
+		}
 	}
 	
 }

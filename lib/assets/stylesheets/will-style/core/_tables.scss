@@ -86,3 +86,43 @@ table.focusable.complex {
 		@include opacity(100);
 	}
 }
+
+// COMPLEX
+// -------------------------
+table.complex {
+	
+	
+	// first get rid of zebra striping
+	tr:nth-of-type(even) {
+		background: $table-bg;
+	}
+	
+	// give only the .row-heading a border top
+	tr.row-heading {
+		border-top: 1px solid $table-border-color;
+		h3 {
+			padding-top: $header-bottom-margin;
+		}
+	}
+	
+	// if cells contain lists
+	td > ul {
+		// give each list item a bit more margin
+		li {
+			margin: rem_calc(5 0); 
+		}
+	}
+	
+	
+	tr, th {
+		& > td {
+			// increase left and right padding
+			padding-left: rem_calc(20);
+			padding-right: rem_calc(20);
+			
+			// align to the top
+			vertical-align: top;
+		}
+	}
+	
+}

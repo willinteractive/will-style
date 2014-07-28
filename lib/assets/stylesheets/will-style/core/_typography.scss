@@ -23,7 +23,7 @@ h5, h6 {
 
 // Colors
 .text-secondary {
-	color: scale-color($body-font-color, $lightness: 35%);
+	color: scale-color($body-font-color, $lightness: 50%);
 }
 .text-primary {
 	color: $primary-color;
@@ -41,4 +41,20 @@ h5, h6 {
 	color: $info-color;
 }
 
+
+// custom class for creating borders between list items
+ul.divided, ol.divided {
+	& > li {
+		// give items padding top and bottom
+		padding-top: rem_calc(7);
+		padding-bottom: rem_calc(5);
+		
+		// then a border top as well as bottom on last item
+		border-top: 1px solid $component-border-color;
+		
+		&:last-of-type {
+			border-bottom: 1px solid $component-border-color;
+		}
+	}
+}
 
