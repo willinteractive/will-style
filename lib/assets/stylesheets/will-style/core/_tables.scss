@@ -4,9 +4,15 @@
 // 
 */
 
-$table-even-row-bg: scale-color($secondary-color, $lightness: 50%);
+$table-bg: $body-bg;
+$table-even-row-bg: scale-color($component-bg-color, $lightness: 20%);
+
+$table-border-color: $component-border-color;
+
 $table-head-bg: $table-even-row-bg;
 
+$table-row-font-color: $body-font-color;
+ 
 
 @import "foundation/components/tables";
 

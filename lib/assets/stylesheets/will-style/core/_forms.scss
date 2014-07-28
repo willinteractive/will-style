@@ -15,6 +15,13 @@ $form-spacing: rem-calc(26);
 $form-label-font-size: $button-font-med;
 $input-font-size: $button-font-med;
 
+$input-border-color: $component-border-color;
+$input-focus-border-color: scale-color($component-border-color, $lightness: -20%);
+$fieldset-border-color: $input-border-color;
+$legend-bg: $body-bg;
+$input-prefix-bg: $component-bg-color;
+$input-prefix-border-color: $component-border-color;
+
 @import
 	"foundation/components/forms",
   "foundation/components/range-slider";
