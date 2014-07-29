@@ -126,12 +126,7 @@ $rounded-label-padding: rem-calc(2 4 3);
 			width: 100%;
 			margin-bottom: 0;
 			text-align: left;
-			
-			// increase padding
-			@include button-size($padding:$button-lrg);
-			padding-top: $button-lrg*1.5;
-			padding-bottom: $button-lrg*1.5 + rem_calc(1);
-			
+						
 			// if it has an icon, give it a bit more spacing
 			& > i {
 				margin-right: rem_calc(20);

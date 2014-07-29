@@ -9,13 +9,13 @@ $table-even-row-bg: scale-color($component-bg-color, $lightness: 20%);
 
 $table-border-color: $component-border-color;
 
-$table-head-bg: $table-even-row-bg;
+$table-head-bg: $component-bg-color;
+$table-head-font-color: $body-font-color;
 
 $table-row-font-color: $body-font-color;
  
 
 @import "foundation/components/tables";
-
 
 // CUSTOM:
 //
@@ -90,38 +90,57 @@ table.focusable.complex {
 // COMPLEX
 // -------------------------
 table.complex {
-	
-	
+		
 	// first get rid of zebra striping
 	tr:nth-of-type(even) {
 		background: $table-bg;
 	}
 	
+	// style the thead a bit differently
+	thead tr {
+		th,
+		td {
+			padding-top: rem-calc(14);
+			padding-bottom: rem-calc(16);
+/* 			font-weight: $font-weight-normal; */
+			border-right: 3px solid $table-bg;
+			&:last-of-type {
+				border-right: none;
+			}
+		}
+	}
+	
+	
 	// give only the .row-heading a border top
-	tr.row-heading {
+	tr.item-start {
 		border-top: 1px solid $table-border-color;
-		h3 {
-			padding-top: $header-bottom-margin;
+		&:first-of-type {
+			border-top: none;
+		}
+		
+		// with extra padding
+		td {
+			padding-top: 2.5em;
 		}
 	}
 	
-	// if cells contain lists
-	td > ul {
-		// give each list item a bit more margin
-		li {
-			margin: rem_calc(5 0); 
-		}
+	tr.item-end td {
+		// last row in item also should have increased bottom padding
+		padding-bottom: 3em;
 	}
 	
 	
-	tr, th {
-		& > td {
+	tr {
+		& > td, & > th {
 			// increase left and right padding
 			padding-left: rem_calc(20);
 			padding-right: rem_calc(20);
 			
 			// align to the top
 			vertical-align: top;
+			
+			// lighten text color
+			color: scale-color($table-row-font-color, $lightness: 30%);
 		}
 	}
 	

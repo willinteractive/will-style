@@ -8,7 +8,7 @@
 // VARIABLES
 $header-font-family: 		inherit;
 $header-font-weight: 		$font-weight-light;
-$paragraph-font-weight: $font-weight-normal;
+$paragraph-font-weight: $font-weight-light;
 
 // IMPORT FOUNDATION
 @import "foundation/components/type";
@@ -55,6 +55,14 @@ ul.divided, ol.divided {
 		&:last-of-type {
 			border-bottom: 1px solid $component-border-color;
 		}
+	}
+}
+
+// if we are larger than the medium screen size, 
+// change font weight to thin
+@media #{$medium-up} {
+	body {
+		font-weight: $font-weight-light;
 	}
 }
 
