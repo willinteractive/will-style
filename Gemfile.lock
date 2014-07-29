@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    will-style (1.0.0)
+    will-style (2.0.0)
       compass-rails (~> 2.0)
       font-awesome-rails (~> 4.0)
       foundation-rails (~> 5.3.1)
