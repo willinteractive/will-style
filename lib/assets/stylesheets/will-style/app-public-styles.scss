@@ -26,11 +26,6 @@
 
 // Global
 // ----------------------
-
-// make grid full-width and use large classes
-$include-xl-html-grid-classes: true;
-$row-width: 100%;
-
 @import
 	"will-style/core/mixins",
 	"will-style/core/global";
@@ -95,7 +90,7 @@ $row-width: 100%;
   "will-style/elements/app-side-nav",
   "foundation/components/sub-nav",
   "will-style/elements/tabs",
-  "foundation/components/top-bar";
+  "will-style/elements/top-bar";
 
 
 // Blocks

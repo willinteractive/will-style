@@ -1,0 +1,29 @@
+<% app = "" unless defined?(app) %>
+
+<div class="contain-to-grid">
+	<nav class="top-bar" data-topbar>
+		<ul class="title-area">
+			<li class="name">
+				<h1>
+					<a href="#">
+						<img alt="WILL" class="logo" src="/assets/will-style/WILL_Logo_20.png"> <%= app %>
+					</a>
+				</h1>
+			</li>
+			<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+		</ul>
+	
+	  <section class="top-bar-section">
+	    <!-- Right Nav Section -->
+	    <ul class="right">
+	      <li class="has-dropdown">
+	        <a title="User Name" href="#"><%= fa_icon "user" %> User Name</a>
+	        <ul class="dropdown">
+	          <li><a href="#">Settings</a></li>
+	          <li><a href="#">Logout</a></li>
+	        </ul>
+	      </li>
+	    </ul>
+	  </section>
+	</nav>
+</div>
