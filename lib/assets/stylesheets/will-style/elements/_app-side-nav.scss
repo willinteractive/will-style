@@ -126,6 +126,10 @@ $rounded-label-padding: rem-calc(2 4 3);
 			width: 100%;
 			margin-bottom: 0;
 			text-align: left;
+			
+			// make left and right padding same as columns
+			padding-left: $column-gutter / 2;
+			padding-right: $column-gutter / 2;
 						
 			// if it has an icon, give it a bit more spacing
 			& > i {
