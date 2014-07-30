@@ -64,5 +64,10 @@ ul.divided, ol.divided {
 	body {
 		font-weight: $font-weight-light;
 	}
+	
+	// except for small
+	small {
+		font-weight: $font-weight-normal;
+	}
 }
 

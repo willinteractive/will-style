@@ -16,10 +16,15 @@ $app-sidebar-padding-horizontal: rem_calc(10);
 		width: 100%;
 	}
 
-	.icon-bar .item {
+	.icon-bar .item  {
 		// reduce padding
 		padding-left: $app-sidebar-padding-horizontal;
 		padding-right: $app-sidebar-padding-horizontal;
+	}
+	
+	.logo {			
+		padding: rem_calc(15 5 10);
+		text-align: center;
 	}
 }
 
