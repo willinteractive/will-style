@@ -25,7 +25,7 @@ $warning-color: #f08a24 !default;
 $info-color: #a0d3e8 !default;
 
 // variables to share among all components
-$component-bg-color: scale-color($secondary-color, $lightness: 15%);
+$component-bg-color: scale-color($secondary-color, $lightness: 50%);
 $component-border-color: scale-color($body-font-color, $lightness: 80%);
 $component-hover-bg-color: scale-color($primary-color, $lightness: 92%);
 
