@@ -1,0 +1,12 @@
+/* 
+// 
+// IMAGES
+// 
+*/
+
+// if the image has the class of .logo
+// it's usually accompanied by text
+// so let's align it with the text's baseline
+img.logo {
+	vertical-align: baseline;
+}
