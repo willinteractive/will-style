@@ -72,7 +72,7 @@ textarea {
 	}
   input[type="search"], .button.postfix, .button.prefix  {
 	  // remove focus because it looks weird with connected button
-    &:focus {
+    &, &:focus {
     	outline: 0;
     	box-shadow: none;
     	border-color: $input-border-color;

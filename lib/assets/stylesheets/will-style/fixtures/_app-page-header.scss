@@ -40,6 +40,11 @@
 	  margin-top: 0;
   }
   
+  // remove margin from inputs
+  input {
+	  margin-bottom: 0;
+  }
+  
   // change the vertical alignment of the logo image
   img.logo {
 	  vertical-align: baseline;
