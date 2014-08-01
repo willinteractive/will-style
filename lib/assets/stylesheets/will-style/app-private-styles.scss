@@ -90,20 +90,9 @@ $row-width: 100%;
   "will-style/elements/breadcrumbs",
   "will-style/elements/icon-bar",
   "foundation/components/pagination",
-  //------------
-  // APP-STYLE SPECIFIC SIDE NAV VARIABLES
-  //------------
-  "will-style/elements/app-side-nav",
   "foundation/components/sub-nav",
   "will-style/elements/tabs";
-  
-//------------
-// APP-PRIVATE SPECIFIC 
-// We don't want the top-bar to collapse
-//------------
-$topbar-breakpoint: 0em; 
-$topbar-media-query: $small-up;
-@import "will-style/elements/top-bar";
+
 
 
 // Blocks
@@ -146,14 +135,20 @@ $topbar-media-query: $small-up;
 // Global
 // ----------------------
 @import "will-style/fixtures/sticky-footer";
+	
+// We don't want the top-bar to collapse
+$topbar-breakpoint: 0em; 
+$topbar-media-query: $small-up;
+@import "will-style/fixtures/top-bar";
 
 
 // App Style
 // ----------------------
-@import "will-style/fixtures/app-page-header";
-@import "will-style/fixtures/app-sidebar";
-// @import "will-style/fixtures/animating-sidebar";
-@import "will-style/fixtures/hideable-sidebar";
+@import 
+	"will-style/fixtures/app-page-header",
+	"will-style/fixtures/app-nav-private",
+	"will-style/fixtures/app-side-nav",
+	"will-style/fixtures/hideable-sidebar";
 
 
 

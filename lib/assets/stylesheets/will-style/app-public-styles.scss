@@ -85,13 +85,9 @@
   "will-style/elements/breadcrumbs",
   "will-style/elements/icon-bar",
   "foundation/components/pagination",
-  //------------
-  // APP-STYLE SPECIFIC SIDE NAV VARIABLES
-  //------------
-  "will-style/elements/app-side-nav",
+  "foundation/components/side-nav",
   "foundation/components/sub-nav",
-  "will-style/elements/tabs",
-  "will-style/elements/top-bar";
+  "will-style/elements/tabs";
 
 
 // Blocks
@@ -133,15 +129,15 @@
 
 // Global
 // ----------------------
-@import "will-style/fixtures/sticky-footer";
+@import
+	"will-style/fixtures/sticky-footer",
+	"will-style/fixtures/top-bar";
 
 
 // App Style
 // ----------------------
-@import "will-style/fixtures/app-page-header";
-@import "will-style/fixtures/app-sidebar";
-// @import "will-style/fixtures/animating-sidebar";
-@import "will-style/fixtures/hideable-sidebar";
+@import 
+	"will-style/fixtures/app-page-header";
 
 
 

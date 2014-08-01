@@ -1,0 +1,25 @@
+/* 
+// 
+// TESTBED
+// 
+*/
+
+#tp_list {
+	.list-group-item {
+		padding-top: 3em;
+		padding-bottom: 3em;
+		border-left-width: 0px;
+		border-right-width: 0px;
+		&:first-of-type {
+			border-top-width: 0px;
+		}
+		&:last-of-type {
+			border-bottom-width: 0px;
+		}
+	}
+	.button.expand.text-left {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+}
+	

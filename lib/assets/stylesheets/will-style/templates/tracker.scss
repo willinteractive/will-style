@@ -1,0 +1,29 @@
+/* 
+// 
+// TRACKER
+// 
+*/
+
+// first colorize
+@include color-app-sidebar();
+
+// make the side-nav tabs full-width
+#tracker .tabs.expand dd {
+	width: 50%;
+}	
+
+#tracker main {
+	// giving the content a border-right to seperate it from the sidebar
+	border-left: 1px solid $list-group-border;
+	
+	// then removing border on list-group 
+	.list-group > li {
+		border-right: none;
+		border-left: none;
+	}
+	
+	// and margin from immediate buttons
+	.button {
+		margin-bottom: 0;
+	}
+}

@@ -30,15 +30,15 @@
   </section>
 </nav>
 
-<aside id="app-sidebar" class="medium-1 columns hide-for-small-only" >
+<aside class="medium-1 columns hide-for-small-only app-private-nav" >
 		
 	<div class="logo"><%= image_tag "will-style/WILL_Logo_20.png", class: "logo", title: "WILL", data: { interchange: "[#{asset_path("will-style/WILL_Logo_20.png")}, (default)], [#{asset_path("will-style/WILL_Logo_32.png")}, (medium)]" } %></div>
 	
-	<a id="app-user-button" class="button inverse expand show-for-medium-only" title="User Name" href="#" data-dropdown="user-drop" data-options="align:right">
+	<a class="button inverse expand show-for-medium-only app-user-btn" title="User Name" href="#" data-dropdown="user-drop" data-options="align:right">
 		<%= fa_icon "user 2x" %> <%= fa_icon "angle-right", class: "text-primary" %>
 	</a>
 		
-	<div id="app-user" class="show-for-large-up">
+	<div class="show-for-large-up app-user-display">
 		<p><%= fa_icon "user 2x", class: "user-icon" %></p>
 		<p><small>User Name</small></p>
 		<p>
@@ -48,9 +48,7 @@
 		</p>
 	</div>
 	
-	<nav id="app-nav" class="icon-bar vertical">
-		
-		
+	<nav class="icon-bar vertical">		
 		<a href="#" class="item<%= app == "launchpad" ? " active" : "" %>">
 			<%= fa_icon "home" %>
 			<label class="show-for-large-up"><small>Launchpad</small></label>     

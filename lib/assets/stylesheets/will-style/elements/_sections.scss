@@ -79,7 +79,7 @@ $section-primary-bg:							$primary-color;
 		// Inverse (dark) Background
 		// -------------------------
 		> section.inverse {
-		  @include section_color($bg: $section-zebra-bg, $text: $section-zebra-color);
+		  @include section_color($bg: $section-inverse-bg, $text: $section-inverse-color);
 		}
 
 	

@@ -1,0 +1,61 @@
+/* 
+// 
+// APP NAVIGATION - PRIVATE
+// logged in WILLies
+// 
+*/
+
+$app-sidebar-padding-horizontal: rem_calc(10);
+
+// Background coloring so that the app-sidebar is dark and the rest is white
+// Was doing this with Foundation's Equalizer but that wasn't working well with 
+// sticky-footer
+// We're also making it a mixin so we can use it in the apps themselves
+@mixin color-app-sidebar($body: $icon-bar-bg, $content: $body-bg) {
+	body {
+		background: $body;
+	}
+	
+	.app-content {
+		background: $content;
+	}
+}
+
+
+
+.app-private-nav {
+	background-color: $icon-bar-bg;
+	color: $icon-bar-font-color;
+	
+	.icon-bar.vertical {
+		width: 100%;
+
+		.item  {
+			// reduce padding
+			padding-left: $app-sidebar-padding-horizontal;
+			padding-right: $app-sidebar-padding-horizontal;
+		}
+	}
+	
+	.logo {			
+		padding: rem_calc(15 5 10);
+		text-align: center;
+	}
+}
+
+
+.app-user-display {
+	// add padding once larger than medium
+	@media #{$large-up} {
+		padding: rem_calc(15 0);
+	}
+	
+	p {
+		text-align: center;
+		margin-bottom: $paragraph-margin-bottom/2;
+		
+		& > a {
+			margin: 0 rem_calc(5);
+		}
+	}
+}
