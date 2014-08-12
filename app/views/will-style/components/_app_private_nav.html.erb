@@ -1,6 +1,5 @@
 <% app = "" unless defined?(app) %>
 
-
 <nav class="top-bar show-for-small-only" data-topbar>
   <section class="top-bar-section">
     <!-- Left Nav Section -->
@@ -21,9 +20,7 @@
       <li class="has-dropdown">
         <a title="User Name" href="#"><%= fa_icon "user" %></a>
         <ul class="dropdown">
-          <li><a href="#">Admin</a></li>
-          <li><a href="#">Settings</a></li>
-          <li><a href="#">Logout</a></li>
+          <%= render "will-style/partials/user_nav_list_items" %>
         </ul>
       </li>
     </ul>
@@ -66,21 +63,9 @@
 	
 </aside>
 
-
-<% # THE APPLICATIONS DROPDOWN %>
-<%= f_dropdown "app-drop" do |d| %>
-	<%= d.list do %>
-		<%= d.item "Launchpad" %>
-		<%= d.item "Tracker", class: "active" %>
-		<%= d.item "Testbed" %>
-		<%= d.item "Access" %>
-	<% end %>
-<% end %>
 <% # THE USER DROPDOWN %>
 <%= f_dropdown "user-drop" do |d| %>
 	<%= d.list do %>
-		<%= d.item "Admin" %>
-		<%= d.item "Settings" %>
-		<%= d.item "Logout" %>
+		<%= render "will-style/partials/user_nav_list_items" %>
 	<% end %>
 <% end %>
