@@ -22,6 +22,7 @@
 // ----------------------
 @import 
 	"compass",
+	"compass/layout",
 	"normalize";
 
 // Global
@@ -137,6 +138,7 @@
 // App Style
 // ----------------------
 @import 
+	"will-style/fixtures/app-nav",
 	"will-style/fixtures/app-page-header";
 
 

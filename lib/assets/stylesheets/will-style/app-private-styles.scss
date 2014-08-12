@@ -22,6 +22,7 @@
 // ----------------------
 @import 
 	"compass",
+	"compass/layout",
 	"normalize";
 
 // Global
@@ -145,8 +146,9 @@ $topbar-media-query: $small-up;
 // App Style
 // ----------------------
 @import 
-	"will-style/fixtures/app-page-header",
+	"will-style/fixtures/app-nav",
 	"will-style/fixtures/app-nav-private",
+	"will-style/fixtures/app-page-header",
 	"will-style/fixtures/app-side-nav",
 	"will-style/fixtures/hideable-sidebar";
 

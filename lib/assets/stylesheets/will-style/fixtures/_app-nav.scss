@@ -1,0 +1,21 @@
+/* 
+// 
+// APP NAVIGATION
+// both private and public
+// 
+*/
+
+// Large User Nav
+// User icon/gravatar on top of name on top of nav as icons on one line
+// ----------------------
+.user-nav-large {
+
+	// center all elements
+	text-align: center;
+	
+	.user-nav {
+		// extend Foundation's Inline Lists
+		@include inline-list;
+	}
+	
+}
