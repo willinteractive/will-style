@@ -58,6 +58,13 @@ ul.divided, ol.divided {
 	}
 }
 
+// Foundation chaged the style of the code elements from red to bordered
+// but we don't want that when it's inside a pre block
+pre > code {
+	border: none;
+	background: none;
+}
+
 // if we are larger than the medium screen size, 
 // change font weight to thin
 @media #{$medium-up} {
