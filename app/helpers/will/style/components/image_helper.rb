@@ -72,15 +72,16 @@ module WILL
           interchange.each do |key, value|
             default_size = value if key == :default
 
+            new_filename = "#{asset_path("#{value}")}"
             if append_filename
-              if value = ""
-                fixed_interchange << "[#{asset_path("#{filename}.#{extension}")}] (#{key.to_s}]"
+              if value == ""
+                new_filename = "#{asset_path("#{filename}.#{extension}")}"
               else
-                fixed_interchange << "[#{asset_path("#{filename}_#{value}.#{extension}")}] (#{key.to_s}]"
+                new_filename = "#{asset_path("#{filename}_#{value}.#{extension}")}"
               end
-            else
-              fixed_interchange << "[#{asset_path("#{value}")}] (#{key.to_s}]"
             end
+
+            fixed_interchange << "[#{new_filename}, (#{key.to_s})]"
           end
 
           source = "#{filename}_#{default_size}.#{extension}" if default_size && append_filename
