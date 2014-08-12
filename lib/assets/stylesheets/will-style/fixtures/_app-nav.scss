@@ -16,6 +16,12 @@
 	.user-nav {
 		// extend Foundation's Inline Lists
 		@include inline-list;
+		// BUT, we don't want them to float but display inline
+		// so that they get centered
+		& > li {
+			float: none;
+			display: inline-block;
+		}
 	}
 	
 }

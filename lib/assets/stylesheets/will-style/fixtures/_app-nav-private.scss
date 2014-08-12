@@ -41,21 +41,33 @@ $app-sidebar-padding-horizontal: rem_calc(10);
 		padding: rem_calc(15 5 10);
 		text-align: center;
 	}
-}
-
-
-.app-user-display {
-	// add padding once larger than medium
-	@media #{$large-up} {
-		padding: rem_calc(15 0);
-	}
 	
-	p {
-		text-align: center;
-		margin-bottom: $paragraph-margin-bottom/2;
+	
+	.user-nav-large {
+		// add padding once larger than medium
+		@media #{$large-up} {
+			padding: rem_calc(15 0);
+		}
 		
-		& > a {
-			margin: 0 rem_calc(5);
+		.user-icon i {
+			font-size: 2em;
+		}
+		
+		.user-name {
+			font-size: $small-font-size;
+		}
+		
+		// reduce margins between icons
+		// the margins of the ul and li have to relate to each other
+		.user-nav {
+			margin-left: $inline-list-default-float-margin/2;
+			li {
+				margin-left: $inline-list-default-float-list-margin/2;
+			}
+		}
+		
+		p {
+			margin-bottom: $paragraph-margin-bottom/2;
 		}
 	}
 }
