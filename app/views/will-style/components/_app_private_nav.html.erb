@@ -29,7 +29,9 @@
 
 <aside class="medium-1 columns hide-for-small-only app-private-nav" >
 		
-	<div class="logo"><%= image_tag "will-style/WILL_Logo_20.png", class: "logo", title: "WILL", data: { interchange: "[#{asset_path("will-style/WILL_Logo_20.png")}, (default)], [#{asset_path("will-style/WILL_Logo_32.png")}, (medium)]" } %></div>
+	<div class="logo">
+		<%= image_interchange_tag "will-style/WILL_Logo.png", { default: 20, medium: 32 }, class: "logo", title: "WILL" %>
+	</div>
 	
 	<a class="button inverse expand show-for-medium-only app-user-btn" title="User Name" href="#" data-dropdown="user-drop" data-options="align:right">
 		<%= image_tag "will-style/DefaultGravatar_64.png", width: "32" %> <%= fa_icon "angle-right", class: "text-primary" %>

@@ -79,7 +79,7 @@
     
     <li ><a href="#method-i-content">#content</a>
     
-    <li ><a href="#method-i-sidebar">#sidebar</a>
+    <li ><a href="#method-i-menu">#menu</a>
     
   </ul>
 </div>
@@ -310,10 +310,10 @@ an ERB Block to fill in HTML content.</p>
       </div>
 
     
-      <div id="method-i-sidebar" class="method-detail ">
+      <div id="method-i-menu" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">sidebar</span><span
+          <span class="method-name">menu</span><span
             class="method-args">(options={}, &block)</span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -325,7 +325,7 @@ an ERB Block to fill in HTML content.</p>
           
           <p>Generates the sidebar menu area.</p>
 
-<h1 id="method-i-sidebar-label-Params">Params<span><a href="#method-i-sidebar-label-Params">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="method-i-menu-label-Params">Params<span><a href="#method-i-menu-label-Params">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
 
 <p><code>options</code></p>
 
@@ -337,7 +337,7 @@ an ERB Block to fill in HTML content.</p>
 
 <p>ERB Block for the menu area.</p>
 
-<h1 id="method-i-sidebar-label-Examples">Examples<span><a href="#method-i-sidebar-label-Examples">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="method-i-menu-label-Examples">Examples<span><a href="#method-i-menu-label-Examples">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
 
 <pre>&lt;%= s.menu do %&gt;
   &lt;h1&gt;This is the menu area&lt;/h1&gt;
@@ -346,9 +346,9 @@ an ERB Block to fill in HTML content.</p>
           
 
           
-          <div class="method-source-code" id="sidebar-source">
+          <div class="method-source-code" id="menu-source">
             <pre><span class="ruby-comment"># File app/helpers/will/style/components/animating_sidebar_helper.rb, line 124</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">sidebar</span>(<span class="ruby-identifier">options</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">menu</span>(<span class="ruby-identifier">options</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing block&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
   
   <span class="ruby-identifier">options</span>[<span class="ruby-value">:class</span>] = <span class="ruby-node">&quot;sidebar-menu #{options[:class]}&quot;</span>

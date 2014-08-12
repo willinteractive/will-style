@@ -66,7 +66,7 @@
 
   <ul class="link-list" role="directory">
     
-    <li ><a href="#method-i-ws_animating_sidebar_container">#ws_animating_sidebar_container</a>
+    <li ><a href="#method-i-ws_animating_sidebar">#ws_animating_sidebar</a>
     
   </ul>
 </div>
@@ -105,10 +105,10 @@ href="../../Style.html">Style</a> animating sidebar</p>
        </header>
 
     
-      <div id="method-i-ws_animating_sidebar_container" class="method-detail ">
+      <div id="method-i-ws_animating_sidebar" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">ws_animating_sidebar_container</span><span
+          <span class="method-name">ws_animating_sidebar</span><span
             class="method-args">(&block)</span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -122,7 +122,7 @@ href="../../Style.html">Style</a> animating sidebar</p>
 generate the sidebar menu as well as buttons to trigger opening the
 sidebar.</p>
 
-<h1 id="method-i-ws_animating_sidebar_container-label-Examples">Examples<span><a href="#method-i-ws_animating_sidebar_container-label-Examples">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="method-i-ws_animating_sidebar-label-Examples">Examples<span><a href="#method-i-ws_animating_sidebar-label-Examples">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
 
 <pre>&lt;%= ws_animating_sidebar do |s| %&gt;
   &lt;%= s.menu do %&gt;
@@ -141,9 +141,9 @@ sidebar.</p>
           
 
           
-          <div class="method-source-code" id="ws_animating_sidebar_container-source">
+          <div class="method-source-code" id="ws_animating_sidebar-source">
             <pre><span class="ruby-comment"># File app/helpers/will/style/components/animating_sidebar_helper.rb, line 39</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">ws_animating_sidebar_container</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ws_animating_sidebar</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing block&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
 
   <span class="ruby-identifier">content_tag</span>(<span class="ruby-value">:div</span>, <span class="ruby-identifier">class</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;sidebar-container&quot;</span>) <span class="ruby-keyword">do</span>
