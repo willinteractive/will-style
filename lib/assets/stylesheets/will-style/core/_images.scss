@@ -10,3 +10,12 @@
 img.logo {
 	vertical-align: baseline;
 }
+
+// allow for making images have round corners
+img.radius {
+	border-radius: $global-radius;
+}
+
+img.round {
+	border-radius: $global-rounded;
+}
