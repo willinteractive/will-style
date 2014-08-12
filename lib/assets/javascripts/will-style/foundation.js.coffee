@@ -30,27 +30,6 @@ $(document).on 'click touchstart', 'a.dropdown', (event) ->
 
 	return true
 
-# Make dropdowns buttons with rich html content work
-#
-# https://github.com/zurb/foundation/issues/4891
-$(document).on 'click touchstart', 'a.dropdown > *', (event) ->
-	button = $(event.target).closest("a.dropdown")
-
-	# Only trigger a click on the parent element if we need to turn the dropdown on.
-	# ------------------------------------------------------------------------------
-	#
-	# Clicking to open the dropdown doesn't work because
-	# it doesn't consider the content to be within the button.
-	#
-	# Clicking to close a dropdown works fine since clicking on the element
-	# isn't considered within the button. 
-	if $("##{button.attr("data-dropdown")}.open").length == 0
-		# Delay until the next run cycle because you can't
-		# trigger multiple clicks in the same run cycle
-		setTimeout(->
-			$(event.target).closest("a.dropdown").trigger("click")
-		, 0)
-
 # Initialize Foundation
 $ ->
 	$(document).foundation

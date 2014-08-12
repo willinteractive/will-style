@@ -7,24 +7,3 @@
 $button-disabled-opacity: 0.5;
 
 @import "foundation/components/buttons";
-
-// HOVER Backgrounds are broke
-// Fixing until Foundation fixes itself
-button, .button {
-  &.secondary { @include button-style($bg:$secondary-color,
-  																		$bh:scale-color($secondary-color, $lightness: $button-function-factor)); }
-  &.success   { @include button-style($bg:$success-color,
-  																		$bh:scale-color($success-color, $lightness: $button-function-factor)); }
-  &.alert     { @include button-style($bg:$alert-color,
-  																		$bh:scale-color($alert-color, $lightness: $button-function-factor)); }
-  
-  // and adding custom .inverse style
-  &.inverse   { @include button-style($bg:$body-font-color,
-  																		$bh:scale-color($body-font-color, $lightness: $button-function-factor)); }
-
-	// foundation doesn't have enough button colors
-	&.warning   { @include button-style($bg:$warning-color,
-  																		$bh:scale-color($warning-color, $lightness: $button-function-factor)); }
-	&.info   		{ @include button-style($bg:$info-color,
-  																		$bh:scale-color($info-color, $lightness: $button-function-factor)); }
-}
