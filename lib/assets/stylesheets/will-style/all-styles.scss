@@ -25,6 +25,7 @@
 // ----------------------
 @import 
 	"compass",
+	"compass/layout",
 	"normalize";
 
 // Global
@@ -132,6 +133,7 @@
 // Global
 // ----------------------
 @import
+	"will-style/fixtures/complex-block-grid",
 	"will-style/fixtures/sticky-footer",
 	"will-style/fixtures/top-bar";
 
@@ -139,8 +141,9 @@
 // App Style
 // ----------------------
 @import 
-	"will-style/fixtures/app-page-header",
+	"will-style/fixtures/app-nav",
 	"will-style/fixtures/app-nav-private",
+	"will-style/fixtures/app-page-header",
 	"will-style/fixtures/app-side-nav",
 	"will-style/fixtures/hideable-sidebar";
 
