@@ -49,8 +49,8 @@ $app-sidebar-padding-horizontal: rem_calc(10);
 			padding: rem_calc(15 0);
 		}
 		
-		.user-icon i {
-			font-size: 2em;
+		.user-image img {
+			max-width: 48px;
 		}
 		
 		.user-name {

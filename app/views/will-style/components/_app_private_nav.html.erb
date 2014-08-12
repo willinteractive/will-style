@@ -18,7 +18,7 @@
     <!-- Right Nav Section -->
     <ul class="right">
       <li class="has-dropdown">
-        <a title="User Name" href="#"><%= fa_icon "user" %></a>
+        <a title="User Name" href="#"><%= image_tag "will-style/DefaultGravatar_64.png", width: "32" %></a>
         <ul class="dropdown">
           <%= render "will-style/partials/user_nav_list_items" %>
         </ul>
@@ -32,7 +32,7 @@
 	<div class="logo"><%= image_tag "will-style/WILL_Logo_20.png", class: "logo", title: "WILL", data: { interchange: "[#{asset_path("will-style/WILL_Logo_20.png")}, (default)], [#{asset_path("will-style/WILL_Logo_32.png")}, (medium)]" } %></div>
 	
 	<a class="button inverse expand show-for-medium-only app-user-btn" title="User Name" href="#" data-dropdown="user-drop" data-options="align:right">
-		<%= fa_icon "user 2x" %> <%= fa_icon "angle-right", class: "text-primary" %>
+		<%= image_tag "will-style/DefaultGravatar_64.png", width: "32" %> <%= fa_icon "angle-right", class: "text-primary" %>
 	</a>
 		
 	<div class="show-for-large-up">
