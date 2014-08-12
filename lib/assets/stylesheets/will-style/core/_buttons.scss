@@ -7,3 +7,16 @@
 $button-disabled-opacity: 0.5;
 
 @import "foundation/components/buttons";
+
+// Custom Button colors
+button, .button {
+  // and adding custom .inverse style
+  &.inverse   { @include button-style($bg:$body-font-color,
+  																		$bh:scale-color($body-font-color, $lightness: $button-function-factor)); }
+
+	// foundation doesn't have enough button colors
+	&.warning   { @include button-style($bg:$warning-color,
+  																		$bh:scale-color($warning-color, $lightness: $button-function-factor)); }
+	&.info   		{ @include button-style($bg:$info-color,
+  																		$bh:scale-color($info-color, $lightness: $button-function-factor)); }
+}
