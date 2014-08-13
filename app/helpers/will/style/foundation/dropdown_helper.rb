@@ -118,6 +118,58 @@ module WILL
             end
           end
 
+           ##
+          # Generates a dropdown trigger link. You can either specify link text
+          # or use an ERB Block to fill in HTML content.
+          # = Params
+          # +text+
+          #
+          # text you would like to display in the trigger link.
+          #
+          # +options+
+          #
+          # Hash of options.
+          #
+          # You can use any of the html options available in ActionView helpers.
+          #
+          # :show_trigger - Set to false to hide the trigger arrow.
+          #
+          # +block+
+          #
+          # ERB Block for the trigger link if it needs to be HTML content.
+          #
+          # = Examples
+          # Default Functionality
+          #   <%= d.link "Open the dropdown"%>
+          # With ERB Block
+          #   <%= d.link do %>
+          #     <h1>Open the dropdown</h1>
+          #   <% end %>
+          #
+          def link(text="", options={}, &block)
+            options = options.merge(text) if block_given? && text.is_a?(Hash)
+
+            # Merge custom html data options with mandatory alert data options
+            data = { dropdown: @id }
+
+            if options[:data] && options[:data].is_a?(Hash)
+              options[:data] = options[:data].merge(data)
+            else
+              options[:data] = data
+            end
+
+            hide_trigger = options.has_key?(:show_trigger) && options[:show_trigger] == false
+            options[:class] = "#{ hide_trigger ? "" : " dropdown" } #{options[:class]}"
+
+            if block_given?
+              link_to("#", options) do
+                capture(&block)
+              end
+            else
+              link_to(text, "#", options)
+            end
+          end
+
           ##
           # Generates a dropdown trigger split button. You can either specify button text
           # or use an ERB Block to fill in HTML content.
