@@ -103,7 +103,8 @@ $row-width: 100%;
   "will-style/elements/dropdown",
 	"foundation/components/labels",
 	"will-style/elements/list-group",
-  "foundation/components/panels";
+  "foundation/components/panels",
+  "will-style/elements/panels_admin";
 
 // Extras
 // you probably don't need all of theses
@@ -135,7 +136,9 @@ $row-width: 100%;
 
 // Global
 // ----------------------
-@import "will-style/fixtures/sticky-footer";
+@import 
+	"will-style/fixtures/complex-block-grid",
+	"will-style/fixtures/sticky-footer";
 	
 // We don't want the top-bar to collapse
 $topbar-breakpoint: 0em; 
