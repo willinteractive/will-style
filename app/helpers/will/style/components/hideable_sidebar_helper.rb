@@ -29,12 +29,6 @@ module WILL
         #
         # 3] Use h.button to build a trigger for the sidebar.
         #
-        # = Params
-        # +options+
-        #
-        # Hash of options.
-        #
-        # You can use any of the html options available in ActionView helpers.
         # = Examples
         #   <%= ws_hideable_sidebar_container do |h| %>
         #     <h1>Header information</h1>
@@ -54,21 +48,10 @@ module WILL
         #     </div>
         #   <% end %>
         #
-        def ws_hideable_sidebar_container(options={}, &block)
+        def ws_hideable_sidebar_container(&block)
           raise ArgumentError, "Missing block" unless block_given?
 
-          options[:class] = "off-canvas-wrap #{options[:class]}"
-          
-          # Merge custom html data options with mandatory alert data options
-          if options[:data] && options[:data].is_a?(Hash)
-            options[:data] = options[:data].merge({ offcanvas: true })
-          else
-            options[:data] = { offcanvas: true }
-          end
-
-          content_tag(:div, options) do
-            capture(HideableSidebarBuilder.new(self), &block)
-          end
+          capture(HideableSidebarBuilder.new(self), &block)
         end
 
         ##
@@ -117,10 +100,19 @@ module WILL
           def wrapper(options={}, &block)
             raise ArgumentError, "Missing block" unless block_given?
   
-            options[:class] = "row collapse inner-wrap #{options[:class]}"
+            options[:class] = "off-canvas-wrap #{options[:class]}"
+
+            # Merge custom html data options with mandatory alert data options
+            if options[:data] && options[:data].is_a?(Hash)
+              options[:data] = options[:data].merge({ offcanvas: true })
+            else
+              options[:data] = { offcanvas: true }
+            end
 
             content_tag(:div, options) do
-              capture(&block)
+              content_tag(:div, class: "row collapse inner-wrap") do
+                capture(&block)
+              end
             end
           end
 
