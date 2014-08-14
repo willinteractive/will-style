@@ -20,6 +20,7 @@ include WILL::Style::Foundation::AlertHelper
 include WILL::Style::Foundation::TooltipHelper
 include WILL::Style::Foundation::ModalHelper
 include WILL::Style::Foundation::DropdownHelper
+include WILL::Style::Foundation::FormHelper
 
 include WILL::Style::Components::HideableSidebarHelper
 include WILL::Style::Components::AnimatingSidebarHelper
