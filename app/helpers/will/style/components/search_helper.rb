@@ -64,8 +64,11 @@ module WILL
           options[:method] = :get
           options[:enforce_utf8] = false
 
+          autofocus = options[:autofocus] == true
+          options.delete(:autofocus) if options[:autofocus]
+
           form_tag(path, options) do
-            builder = SearchBuilder.new(self, query)
+            builder = SearchBuilder.new(self, query, autofocus)
             block_content = block_given? ? capture(builder, &block) : ""
 
             content_tag(:div, class: "row collapse") do
@@ -94,6 +97,11 @@ module WILL
           attr_accessor :q
 
           ##
+          # Whether or not to autofocus search input
+          #
+          attr_accessor :autofocus
+
+          ##
           # Whether or not we've built an options menu
           #
           attr_accessor :built_options_menu
@@ -101,9 +109,10 @@ module WILL
           ##
           # Initialize the SearchBuilder
           #
-          def initialize(template, q)
+          def initialize(template, q, autofocus=false)
             self.template = template
             self.q = q
+            self.autofocus = autofocus
 
             self.built_options_menu = false
           end
@@ -217,6 +226,7 @@ module WILL
             options[:placeholder] = placeholder
             options[:type] = "search"
             options[:autocomplete] = "off"
+            options[:autofocus] = autofocus
 
             content_tag(:div, class: "small-#{self.built_options_menu ? "8" : "10"} columns") do
               text_field_tag(:q, q, options)
