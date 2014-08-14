@@ -66,9 +66,9 @@ module WILL
 
           # Merge custom html data options with mandatory alert data options
           if options[:data] && options[:data].is_a?(Hash)
-            options[:data] = options[:data].merge({ alert: true })
+            options[:data] = options[:data].merge({ alert: true, "no-turbolink" => true })
           else
-            options[:data] = { alert: true }
+            options[:data] = { alert: true, "no-turbolink" => true }
           end
 
           # Merge custom classes with mandatory classes
