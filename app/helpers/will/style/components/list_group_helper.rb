@@ -140,7 +140,7 @@ module WILL
 
             options[:class] = "list-group-item #{options[:class]}"
 
-            link_to("#", options) do
+            link_to(target, options) do
               content
             end
           end
