@@ -108,7 +108,7 @@ module WILL
             self.built_options_menu = false
           end
 
-          delegate :capture, :content_tag, :link_to, :fa_icon, :text_field_tag, to: :template
+          delegate :capture, :content_tag, :link_to, :fa_icon, :text_field_tag, :submit_tag, to: :template
 
           ##
           # Generates the search button.
@@ -133,14 +133,18 @@ module WILL
             options[:type] = "submit"
 
             content_tag(:div, class: "small-2 columns") do
-              link_to("#", options) do
-                [
-                  fa_icon("search", class: "text-primary"),
-                  content_tag(:span, class: "hide") do
-                    "Search"
-                  end
-                ].join.html_safe
-              end
+              [
+                link_to("#", options) do
+                  [
+                    fa_icon("search", class: "text-primary"),
+                    content_tag(:span, class: "hide") do
+                      "Search"
+                    end
+                  ].join.html_safe
+                end,
+
+                submit_tag("Submit Search", class: "hide")
+              ].join.html_safe
             end
           end
 
