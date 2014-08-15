@@ -141,6 +141,12 @@ module WILL
             options[:class] = "button search-button secondary postfix #{options[:class]}"
             options[:type] = "submit"
 
+            if options[:data] && options[:data].is_a?(Hash)
+              options[:data] = options[:data].merge({ "no-turbolinks" => true })
+            else
+              options[:data] = { "no-turbolinks" => true }
+            end
+
             content_tag(:div, class: "small-2 columns") do
               [
                 link_to("#", options) do

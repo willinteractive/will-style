@@ -95,9 +95,9 @@ module WILL
 
             # Merge custom html data options with mandatory alert data options
             if options[:data] && options[:data].is_a?(Hash)
-              options[:data] = options[:data].merge({ "reveal-id" => @id })
+              options[:data] = options[:data].merge({ "reveal-id" => @id, "no-turbolinks" => true })
             else
-              options[:data] = { "reveal-id" => @id }
+              options[:data] = { "reveal-id" => @id, "no-turbolinks" => true }
             end   
 
             if block_given?
@@ -196,6 +196,12 @@ module WILL
             options = options.merge(type) if type.is_a?(Hash) if block_given?
 
             options[:class] = "button #{type} reveal-close #{options[:class]}"
+
+            if options[:data] && options[:data].is_a?(Hash)
+              options[:data] = options[:data].merge({ "no-turbolinks" => true })
+            else
+              options[:data] = { "no-turbolinks" => true }
+            end
 
             if block_given?
               link_to("#", options) do

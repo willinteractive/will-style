@@ -93,6 +93,12 @@ module WILL
 
             options[:class] = "sidebar-button #{options[:class]}"
 
+            if options[:data] && options[:data].is_a?(Hash)
+              options[:data] = options[:data].merge({ "no-turbolinks" => true })
+            else
+              options[:data] = { "no-turbolinks" => true }
+            end
+
             if block_given?
               link_to("#", options) do
                 capture(&block)

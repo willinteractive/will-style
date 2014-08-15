@@ -98,7 +98,7 @@ module WILL
             options = options.merge(text) if block_given? && text.is_a?(Hash)
 
             # Merge custom html data options with mandatory alert data options
-            data = { dropdown: @id }
+            data = { dropdown: @id, "no-turbolinks" => true }
 
             if options[:data] && options[:data].is_a?(Hash)
               options[:data] = options[:data].merge(data)
@@ -150,7 +150,7 @@ module WILL
             options = options.merge(text) if block_given? && text.is_a?(Hash)
 
             # Merge custom html data options with mandatory alert data options
-            data = { dropdown: @id }
+            data = { dropdown: @id, "no-turbolinks" => true }
 
             if options[:data] && options[:data].is_a?(Hash)
               options[:data] = options[:data].merge(data)
@@ -213,7 +213,7 @@ module WILL
             options[:class] = "button split #{options[:class]}"
 
             link_to(target, options) do
-              content + content_tag(:span, "", data: { dropdown: @id })
+              content + content_tag(:span, "", data: { dropdown: @id, "no-turbolinks" => true })
             end
           end
 
