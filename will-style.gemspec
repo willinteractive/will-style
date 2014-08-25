@@ -38,6 +38,8 @@ Gem::Specification.new do |s|
   # Sprockets 2.12 is incompatible with sass-rails 4.0.1
   s.add_dependency "sprockets", "2.11.0"
 
+  s.add_dependency 'coffee-rails', "~> 4.0.1"
+
   # The current version of this gem says it's compatible with compass-rails 2.0
   # which it might be, but it's not compatible wiht the version of sass-rails we're using.
   s.add_development_dependency "compass-rails-source-maps", "0.0.3"
