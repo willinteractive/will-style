@@ -2,9 +2,10 @@ PATH
   remote: .
   specs:
     will-style (2.0.0)
+      coffee-rails (~> 4.0.1)
       compass-rails (~> 2.0)
       font-awesome-rails (~> 4.0)
-      foundation-rails (~> 5.3.3)
+      foundation-rails (~> 5.4.3)
       modernizr-rails (~> 2.7)
       rails (~> 4.1)
       sass (= 3.3.0.alpha.149)
@@ -63,7 +64,7 @@ GEM
       jquery-rails
     font-awesome-rails (4.1.0.0)
       railties (>= 3.2, < 5.0)
-    foundation-rails (5.3.3.0)
+    foundation-rails (5.4.3.0)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
     fssm (0.2.10)
@@ -81,7 +82,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
-    minitest (5.4.0)
+    minitest (5.4.1)
     modernizr-rails (2.7.1)
     multi_json (1.10.1)
     polyglot (0.3.5)
