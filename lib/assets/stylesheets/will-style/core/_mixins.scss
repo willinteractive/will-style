@@ -4,6 +4,27 @@
 // 
 */
 
+// CUSTOM
+// -------------------
+
+// use this on an empty div just before an element you want to look like as being full-height
+// then add the background or border you need
+// **the div should also have the same column classes as the element
+//
+@mixin full-height($is-app-nav-private: false) {
+	@if $is-app-nav-private {
+		position: fixed;
+	}
+	@else {
+		position: absolute;
+	}
+	
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
 // FROM BOOTSTRAP
 // -------------------
 
