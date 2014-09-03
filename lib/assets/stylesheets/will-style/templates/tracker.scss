@@ -4,9 +4,6 @@
 // 
 */
 
-// first colorize
-@include color-app-sidebar();
-
 // make the side-nav tabs full-width
 #tracker .tabs.expand dd {
 	width: 50%;
