@@ -42,7 +42,7 @@ module WILL
         #       <% end %>
         #
         #       <main id="content"
-        #         <%= s.button "Open Menu" %>
+        #         <%= h.button "Open Menu" %>
         #         <p>Other Content</p>
         #       </main>
         #     </div>
