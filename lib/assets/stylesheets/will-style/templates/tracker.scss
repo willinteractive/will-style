@@ -32,7 +32,7 @@
 		}
 		
 		// and margin from immediate buttons
-		.button {
+		& > .button-group .button {
 			margin-bottom: 0;
 		}
 	}
