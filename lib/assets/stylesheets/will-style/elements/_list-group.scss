@@ -172,6 +172,13 @@ a.list-group-item {
 		top: $list-group-item-padding-vertical * 2;
 		left: $list-group-item-padding-horizontal;
 	}
+	.list-group-item {
+		@include transition(background);
+		
+		&:hover, &:focus {
+			background: $component-hover-bg-color;
+		}
+	}
 }
   
 .list-group-actions {

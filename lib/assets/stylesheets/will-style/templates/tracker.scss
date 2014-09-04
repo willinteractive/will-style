@@ -19,6 +19,16 @@
 		.list-group > li {
 			border-right: none;
 			border-left: none;
+			
+			// and change color and weight of issue titles
+			h4 a {
+				color: $body-font-color;
+				font-weight: $font-weight-normal;
+				
+				&:hover, &:focus {
+					color: $anchor-font-color;
+				}
+			}
 		}
 		
 		// and margin from immediate buttons
