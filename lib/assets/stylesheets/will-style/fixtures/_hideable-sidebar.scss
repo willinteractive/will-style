@@ -1,9 +1,13 @@
 // use flexbox to equalize heights fo borders and backgrounds
-.inner-wrap {
-	@include display-box;
-	
-	.hideable-sidebar, main {
-		@include box-align("stretch");
+// Used as a mixin so we can better control it
+
+@mixin equalize-sidebar() {
+	.inner-wrap {
+		@include display-box;
+		
+		.hideable-sidebar, main {
+			@include box-align("stretch");
+		}
 	}
 }
 
