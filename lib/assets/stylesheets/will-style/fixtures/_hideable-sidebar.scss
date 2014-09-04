@@ -1,3 +1,12 @@
+// use flexbox to equalize heights fo borders and backgrounds
+.inner-wrap {
+	@include display-box;
+	
+	.hideable-sidebar, main {
+		@include box-align("stretch");
+	}
+}
+
 @media #{$small-only} {
 	// Extend off-canvas class to the sidebar only on small sizes
 	.hideable-sidebar {

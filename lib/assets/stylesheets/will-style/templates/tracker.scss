@@ -11,22 +11,10 @@
 
 #tracker {
 	.hideable-sidebar {
-		position: relative;
-	}
-	
-	.hideable-sidebar-bg {
-		// giving the sidebar a border-right to seperate it from the content
-		@include full-height();
 		border-right: 1px solid $list-group-border;
-		// fixed doesn't work when inside the sidebar
-		position: absolute;
-	}
-	
-	.hideable-sidebar-footer {
-		background: $body-bg;
 	}
 
-	 main {	
+	main {	
 		// then removing border on list-group 
 		.list-group > li {
 			border-right: none;
