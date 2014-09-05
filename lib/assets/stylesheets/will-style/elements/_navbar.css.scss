@@ -26,6 +26,15 @@
 	@include btn_typography();
 }
 
+// I think BS took this out for some odd reason
+.navbar-text {
+	margin-top: 15.5px;
+	margin-bottom: 15.5px;
+}
+.navbar-toggle {
+	margin-top: 8px;
+}
+
 
 // This is the will specific style .navbar
 // it will accomodate for the will logo
