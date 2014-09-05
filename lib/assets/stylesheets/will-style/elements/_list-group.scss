@@ -182,7 +182,7 @@ a.list-group-item {
 }
   
 .list-group-actions {
-	button, .button {
+	& > button, & > .button {
 		margin-bottom: 0;
 	}
 }
