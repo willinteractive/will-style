@@ -1,0 +1,26 @@
+/* 
+// 
+// PANELS
+// 
+*/
+
+@import "foundation/components/panels";
+
+// Custom
+// -------------------------
+
+// sometimes you want a panel with no padding
+.panel.no-padding {
+	padding: 0;
+}
+
+// but then you can add back in the padding with another element
+.panel-inner {
+	padding: $panel-padding;
+}
+
+// if you're using a button as the panel heading
+.button.panel-header {
+	margin-bottom: 0;
+	display: block;
+}

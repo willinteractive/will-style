@@ -20,3 +20,14 @@ button, .button {
 	&.info   		{ @include button-style($bg:$info-color,
   																		$bg-hover:scale-color($info-color, $lightness: $button-function-factor)); }
 }
+
+// custom mixin that will remove all button styles
+@mixin no-button-styles() {
+	background: transparent;
+	border: none;
+	padding: 0;
+	text-align: inherit;
+	font-weight: inherit;
+	font-size: inherit;
+	color: $body-font-color;
+}
