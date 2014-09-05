@@ -8,29 +8,29 @@
 */
 
 .flexbox-xs-start {
-	@include display-box;
+	display: -webkit-box;
 	@include box-align(start);
 }
 .flexbox-xs-end {
-	@include display-box;
+	display: -webkit-box;
 	@include box-align(end);
 }
 .flexbox-xs-center {
-	@include display-box;
+	display: -webkit-box;
 	@include box-align(center);
 }
 
 @media (min-width: $screen-ms-min) {
 	.flexbox-ms-start {
-		@include display-box;
+		display: -webkit-box;
 		@include box-align(start);
 	}
 	.flexbox-ms-end {
-		@include display-box;
+		display: -webkit-box;
 		@include box-align(end);
 	}
 	.flexbox-ms-center {
-		@include display-box;
+		display: -webkit-box;
 		@include box-align(center);
 	}
 	.flexbox-ms-none {
@@ -41,15 +41,15 @@
 
 @media (min-width: $screen-sm-min) {
 	.flexbox-sm-start {
-		@include display-box;
+		display: -webkit-box;
 		@include box-align(start);
 	}
 	.flexbox-sm-end {
-		@include display-box;
+		display: -webkit-box;
 		@include box-align(end);
 	}
 	.flexbox-sm-center {
-		@include display-box;
+		display: -webkit-box;
 		@include box-align(center);
 	}
 	.flexbox-sm-none {
@@ -60,30 +60,30 @@
 
 @media (min-width: $screen-md-min) {
 	.flexbox-md-start {
-		@include display-box;
+		display: -webkit-box;
 		@include box-align(start);
 	}
 	.flexbox-md-end {
-		@include display-box;
+		display: -webkit-box;
 		@include box-align(end);
 	}
 	.flexbox-md-center {
-		@include display-box;
+		display: -webkit-box;
 		@include box-align(center);
 	}
 }
 
 @media (min-width: $screen-lg-min) {
 	.flexbox-lg-start {
-		@include display-box;
+		display: -webkit-box;
 		@include box-align(start);
 	}
 	.flexbox-lg-end {
-		@include display-box;
+		display: -webkit-box;
 		@include box-align(end);
 	}
 	.flexbox-gl-center {
-		@include display-box;
+		display: -webkit-box;
 		@include box-align(center);
 	}
 	.flexbox-lg-none {
