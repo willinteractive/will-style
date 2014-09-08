@@ -5,7 +5,7 @@
 	.inner-wrap {
 		// @NOTE: Updating to Compass 1.0 removed this deprecated method.
 		// @include display-box;
-		display: box;
+		@include display-flex();
 
 		.hideable-sidebar, main {
 			// @NOTE: Updating to Compass 1.0 removed this deprecated method.
