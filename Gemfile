@@ -6,7 +6,7 @@ gem 'rails'
 
 gem 'coffee-rails'
 
-gem 'sass-rails'
+gem 'sass-rails', "5.0.0.beta1"
 
 gem 'compass-rails'
 
