@@ -136,9 +136,6 @@ table.complex {
 			padding-left: rem_calc(20);
 			padding-right: rem_calc(20);
 			
-			// align to the top
-			vertical-align: top;
-			
 			// lighten text color
 			color: scale-color($table-row-font-color, $lightness: 30%);
 		}
