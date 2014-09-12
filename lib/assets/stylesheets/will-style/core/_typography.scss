@@ -66,6 +66,38 @@ pre > code {
 	background: none;
 }
 
+// creating a custom list style for .large-stats
+// this is a definition list, use the following html:
+// <dl class="large-stats">
+//	<dt>
+//	 <dd class="stat"></dd>
+//  </dt>
+// </dl>
+dl.stats.large {
+	
+	// use flex to justify each item
+	@include display-flex();
+	dd {
+		@include flex-grow(1);
+		
+		@include display-flex();
+		@include flex-direction(column);
+		@include align-items(center);
+		@include justify-content(center);
+		text-align: center;
+	}
+	
+	// make sure the stat is on it's own line and make large
+	.stat {
+		font-size: 4em;
+		line-height: 1.2em;
+		margin: .2em 0;
+		display: block;
+	}
+	
+}
+
+
 // if we are larger than the medium screen size, 
 // change font weight to thin
 @media #{$medium-up} {
