@@ -8,6 +8,9 @@ gem 'coffee-rails'
 
 gem 'sass-rails', "5.0.0.beta1"
 
+# Sticking with sass 3.3 until we fix for 3.4 compatibility
+gem 'sass', "~> 3.3.0"
+
 gem 'compass-rails'
 
 gem 'foundation-rails'

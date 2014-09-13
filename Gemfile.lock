@@ -8,6 +8,7 @@ PATH
       foundation-rails (~> 5.4.3)
       modernizr-rails (~> 2.7)
       rails (~> 4.1)
+      sass (~> 3.3.0)
       sass-rails (= 5.0.0.beta1)
 
 GEM
@@ -115,7 +116,7 @@ GEM
       ffi (>= 0.5.0)
     rdoc (4.1.1)
       json (~> 1.4)
-    sass (3.4.3)
+    sass (3.3.14)
     sass-rails (5.0.0.beta1)
       railties (>= 4.0.0, < 5.0)
       sass (~> 3.2)
@@ -155,5 +156,6 @@ DEPENDENCIES
   modernizr-rails
   rails
   rdoc
+  sass (~> 3.3.0)
   sass-rails (= 5.0.0.beta1)
   will-style!
