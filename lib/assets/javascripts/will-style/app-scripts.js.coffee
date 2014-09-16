@@ -22,6 +22,7 @@
 #= require will-style/foundation
 #= require will-style/search_form
 #= require will-style/hideable-sidebar
+#= require will-style/offline
 
 # -------- LIBRARIES
 

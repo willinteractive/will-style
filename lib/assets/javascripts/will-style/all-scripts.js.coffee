@@ -25,6 +25,7 @@
 # require will-style/datatables
 # require will-style/flot
 #= require will-style/search_form
+# require will-style/offline
 
 # -------- LIBRARIES
 #= require imagesloaded.pkgd.min
