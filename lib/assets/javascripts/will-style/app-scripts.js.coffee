@@ -25,6 +25,7 @@
 #= require will-style/offline
 
 # -------- LIBRARIES
+#= require forms/expanding-textareas
 
 # -------- NO LONGER REQUIRE TREE
 # require_tree .
