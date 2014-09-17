@@ -21,23 +21,29 @@ Foundation.libs.reveal.settings.dismiss_modal_class = 'close-reveal-modal, .reve
 
 # Prevent disabled dropdown buttons from triggering a dropdown
 $(document).on 'click touchstart', 'a.dropdown', (event) ->
-	if $(event.currentTarget).attr("data-dropdown") && ($(event.currentTarget).attr("disabled") || $(event.currentTarget).hasClass "disabled")
-		event.stopImmediatePropagation()
-		event.stopPropagation()
-		event.preventDefault()
+    if $(event.currentTarget).attr("data-dropdown") && ($(event.currentTarget).attr("disabled") || $(event.currentTarget).hasClass "disabled")
+        event.stopImmediatePropagation()
+        event.stopPropagation()
+        event.preventDefault()
 
-		return false
+        return false
 
-	return true
+    return true
 
 # Initialize Foundation
 $ ->
-	$(document).foundation
-		# Focus inputs in dropdowns if they have one
-		dropdown:
-    		opened: (event) ->
-    			if $(this).find("input[type='text']").length > 0
-    				$(this).find("input[type='text']").focus()
-    	# Don't duplicate parent link on topbars
-    	topbar:
-    		mobile_show_parent_link: false
+    # @NOTE: Foundation interchange is currently broken with turbolinks
+    # It keeps a image cache of DOM elements. When turbolinks removes the body,
+    # the cache is gone, but Foundation still thinks it's there, so we have to
+    # manually remove it.
+    delete Foundation.libs.interchange.cached_images
+
+    $(document).foundation
+        # Focus inputs in dropdowns if they have one
+        dropdown:
+            opened: (event) ->
+                if $(this).find("input[type='text']").length > 0
+                    $(this).find("input[type='text']").focus()
+        # Don't duplicate parent link on topbars
+        topbar:
+            mobile_show_parent_link: false
