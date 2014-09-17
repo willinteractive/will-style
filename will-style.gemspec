@@ -18,12 +18,9 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 4.1"
 
   s.add_dependency "compass-rails", "~> 2.0"
-  s.add_dependency "foundation-rails", "~> 5.4.3"
+  s.add_dependency "foundation-rails", "~> 5.4.4"
   s.add_dependency "font-awesome-rails", "~> 4.0"
   s.add_dependency "modernizr-rails", "~> 2.7"
-
-  # Sticking with sass 3.3 until we fix for 3.4 compatibility
-  s.add_dependency "sass", "~> 3.3.0"
 
   s.add_dependency "sass-rails", "5.0.0.beta1"
 
