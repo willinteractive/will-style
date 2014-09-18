@@ -15,3 +15,22 @@
 .alert-box p:last-of-type {
 	margin-bottom: 0;
 }
+
+/* Styles for floating / fading alert boxes */
+
+.alert-box.float {
+	position: absolute;
+	top: 2em;
+	width: 40%;
+	min-width: 350px;
+	right: 2em;
+
+	z-index: 99999999999999999;
+
+	opacity: 0;
+	@include transition(opacity 500ms);
+}
+
+.alert-box.float.active {
+	opacity: 1;
+}

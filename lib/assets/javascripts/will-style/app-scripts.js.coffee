@@ -23,6 +23,7 @@
 #= require will-style/search_form
 #= require will-style/hideable-sidebar
 #= require will-style/offline
+#= require will-style/alert-boxes
 
 # -------- LIBRARIES
 #= require forms/expanding-textareas
