@@ -8,7 +8,7 @@
 // VARIABLES
 $header-font-family: 		inherit;
 $header-font-weight: 		$font-weight-light;
-$paragraph-font-weight: $font-weight-light;
+$paragraph-font-weight: $font-weight-normal;
 $small-font-size: 			75%;
 
 // IMPORT FOUNDATION
@@ -95,19 +95,5 @@ dl.stats.large {
 		display: block;
 	}
 	
-}
-
-
-// if we are larger than the medium screen size, 
-// change font weight to thin
-@media #{$medium-up} {
-	body {
-		font-weight: $font-weight-light;
-	}
-	
-	// except for small
-	small {
-		font-weight: $font-weight-normal;
-	}
 }
 
