@@ -20,8 +20,8 @@
 Foundation.libs.reveal.settings.dismiss_modal_class = 'close-reveal-modal, .reveal-close'
 
 # Prevent disabled dropdown buttons from triggering a dropdown
-$(document).on 'click touchstart', 'a.dropdown', (event) ->
-    if $(event.currentTarget).attr("data-dropdown") && ($(event.currentTarget).attr("disabled") || $(event.currentTarget).hasClass "disabled")
+$(document).on 'click touchstart', 'a[data-dropdown]', (event) ->
+    if $(event.currentTarget).attr("disabled") || $(event.currentTarget).hasClass "disabled"
         event.stopImmediatePropagation()
         event.stopPropagation()
         event.preventDefault()
