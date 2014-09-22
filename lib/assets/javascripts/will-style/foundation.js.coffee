@@ -16,19 +16,10 @@
 #= require foundation/foundation.topbar
 #= require foundation/foundation.equalizer
 
+#= require will-style/foundation/fixes
+
 # Update Foundation components to allow for custom behaviors
 Foundation.libs.reveal.settings.dismiss_modal_class = 'close-reveal-modal, .reveal-close'
-
-# Prevent disabled dropdown buttons from triggering a dropdown
-$(document).on 'click touchstart', 'a[data-dropdown]', (event) ->
-    if $(event.currentTarget).attr("disabled") || $(event.currentTarget).hasClass "disabled"
-        event.stopImmediatePropagation()
-        event.stopPropagation()
-        event.preventDefault()
-
-        return false
-
-    return true
 
 # Initialize Foundation
 $ ->
