@@ -15,3 +15,7 @@ $progress-bar-pad: 0;
 	background-color: white;
 }
 
+/* Add warning color for progress bars */
+.progress.warning .meter {
+	background-color: $warning-color;
+}
