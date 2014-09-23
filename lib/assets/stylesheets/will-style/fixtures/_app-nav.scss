@@ -25,3 +25,18 @@
 	}
 	
 }
+
+
+// this is somewhat private specific
+@media #{$medium-up} {
+	.top-bar li#apps-dropdown {
+		margin-right: 2em;
+		& > a {
+			padding-left: 0;
+		}
+	}
+	
+	.top-bar .name h1 a {
+		padding-right: 0;
+	}
+}
