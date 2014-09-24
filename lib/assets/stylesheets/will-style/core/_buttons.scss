@@ -23,8 +23,8 @@ button, .button {
     }
 
     &.info { 
-        @include button-style($bg: scale-color($info-color, $lightness: $button-function-factor),
-                              $bg-hover: scale-color($info-color, $lightness: $button-function-factor * 2));
+        @include button-style($bg: scale-color($info-color, $lightness: $button-function-factor * 1.5),
+                              $bg-hover: scale-color($info-color, $lightness: $button-function-factor * 2.5));
     }
 }
 
