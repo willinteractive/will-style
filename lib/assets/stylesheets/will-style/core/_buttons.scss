@@ -10,24 +10,31 @@ $button-disabled-opacity: 0.5;
 
 // Custom Button colors
 button, .button {
-  // and adding custom .inverse style
-  &.inverse   { @include button-style($bg:$body-font-color,
-  																		$bg-hover:scale-color($body-font-color, $lightness: $button-function-factor)); }
+    // and adding custom .inverse style
+    &.inverse { 
+    @include button-style($bg: $body-font-color,
+                          $bg-hover: scale-color($body-font-color, $lightness: $button-function-factor)); 
+    }
 
-	// foundation doesn't have enough button colors
-	&.warning   { @include button-style($bg:$warning-color,
-  																		$bg-hover:scale-color($warning-color, $lightness: $button-function-factor)); }
-	&.info   		{ @include button-style($bg:$info-color,
-  																		$bg-hover:scale-color($info-color, $lightness: $button-function-factor)); }
+    // foundation doesn't have enough button colors
+    &.warning { 
+        @include button-style($bg: $warning-color,
+                              $bg-hover: scale-color($warning-color, $lightness: $button-function-factor));
+    }
+
+    &.info { 
+        @include button-style($bg: scale-color($info-color, $lightness: $button-function-factor),
+                              $bg-hover: scale-color($info-color, $lightness: $button-function-factor * 2));
+    }
 }
 
 // custom mixin that will remove all button styles
 @mixin no-button-styles() {
-	background: transparent;
-	border: none;
-	padding: 0;
-	text-align: inherit;
-	font-weight: inherit;
-	font-size: inherit;
-	color: $body-font-color;
+    background: transparent;
+    border: none;
+    padding: 0;
+    text-align: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    color: $body-font-color;
 }
