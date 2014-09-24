@@ -21,12 +21,13 @@
 			border-left: none;
 			
 			// and change color and weight of issue titles
-			h4 a {
-				color: $body-font-color;
-				font-weight: $font-weight-normal;
-				
-				&:hover, &:focus {
-					color: $anchor-font-color;
+			h5 {
+				margin-bottom: 0;
+				a {
+					color: $body-font-color;				
+					&:hover, &:focus {
+						color: $anchor-font-color;
+					}
 				}
 			}
 		}

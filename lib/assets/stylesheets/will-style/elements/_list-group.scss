@@ -172,7 +172,8 @@ a.list-group-item {
 		top: $list-group-item-padding-vertical * 2;
 		left: $list-group-item-padding-horizontal;
 	}
-	.list-group-item {
+	
+	li:not(.list-group-actions) {
 		@include transition(background);
 		
 		&:hover, &:focus {
@@ -182,7 +183,7 @@ a.list-group-item {
 }
   
 .list-group-actions {
-	& > button, & > .button {
+	button, .button {
 		margin-bottom: 0;
 	}
 }

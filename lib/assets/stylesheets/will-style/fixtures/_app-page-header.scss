@@ -16,6 +16,13 @@
 	  // remove colors from breadcrumbs
 	  background: none;
 	  border: none;
+	  
+	   // remove padding
+	  padding: 0;
+	  
+	  // setup margins
+	  margin-top: 0;
+	  margin-bottom: 0;
 
 	  & > li {
 		  // make the text somewhat bigger
@@ -26,25 +33,14 @@
 	  }
   }
   
-  // if it contains a breadcrumb and/or (search) form instead of header
-  .breadcrumbs {
-	  // remove padding
-	  padding: 0;
-	  
-	  // setup margins
-	  margin-top: 0;
-  }
-  
-  // remove margin from inputs
-  input {
-	  margin-bottom: 0;
-  }
-  
   // we don't want buttons messing up the padding
   .button, button {
 	  margin-bottom: 0;
   }
   
+  p {
+	  margin-bottom: 0;
+  }
   
 }
 
