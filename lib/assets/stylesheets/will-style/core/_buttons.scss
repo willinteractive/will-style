@@ -16,15 +16,15 @@ button, .button {
                           $bg-hover: scale-color($body-font-color, $lightness: $button-function-factor)); 
     }
 
-    // foundation doesn't have enough button colors
-    &.warning { 
-        @include button-style($bg: $warning-color,
-                              $bg-hover: scale-color($warning-color, $lightness: $button-function-factor));
-    }
-
     &.info { 
         @include button-style($bg: scale-color($info-color, $lightness: $button-function-factor * 1.5),
                               $bg-hover: scale-color($info-color, $lightness: $button-function-factor * 2.5));
+    }
+    
+    &.disabled, &[disabled] {
+	    &.info {
+		    color: white;
+	    }
     }
 }
 
