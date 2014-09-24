@@ -138,12 +138,8 @@ $row-width: 100%;
 // ----------------------
 @import 
 	"will-style/fixtures/complex-block-grid",
-	"will-style/fixtures/sticky-footer";
-	
-// We don't want the top-bar to collapse
-$topbar-breakpoint: 0em; 
-$topbar-media-query: $small-up;
-@import "will-style/fixtures/top-bar";
+	"will-style/fixtures/sticky-footer",
+	"will-style/fixtures/top-bar";
 
 
 // App Style

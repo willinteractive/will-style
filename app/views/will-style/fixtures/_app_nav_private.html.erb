@@ -1,72 +1,47 @@
 <% app = "" unless defined?(app) %>
 
-<nav class="top-bar show-for-small-only" data-topbar>
-  <section class="top-bar-section">
-    <!-- Left Nav Section -->
-    <ul class="left">
-      <li class="has-dropdown">
-        <a href="#"><%= image_tag "will-style/WILL_Logo_20.png", title: "WILL" %> &emsp;<%= app %></a>
-        <ul class="dropdown">
-          <li><a href="#">Launchpad</a></li>
-          <li><a href="#">Tracker</a></li>
-          <li><a href="#">Testbed</a></li>
-          <li><a href="#">Access</a></li>
-        </ul>
-      </li>
-    </ul>
-    
-    <!-- Right Nav Section -->
-    <ul class="right">
-      <li class="has-dropdown">
-        <a title="User Name" href="#"><%= image_tag "will-style/DefaultGravatar_64.png", width: "32" %></a>
-        <ul class="dropdown">
-          <%= render "will-style/partials/user_nav_list_items" %>
-        </ul>
-      </li>
-    </ul>
-  </section>
-</nav>
-
-<div class="app-nav-private-bg medium-1 columns hide-for-small-only"></div>
-
-<aside class="medium-1 columns hide-for-small-only app-nav-private" >	
-   <%= image_interchange_tag "will-style/WILL_Logo.png", { default: 20, medium: 32 }, class: "logo", title: "WILL" %>
-	
-	<a class="button inverse expand show-for-medium-only app-user-btn" title="User Name" href="#" data-dropdown="user-drop" data-options="align:right">
-		<%= image_tag "will-style/DefaultGravatar_64.png", width: "32" %> <%= fa_icon "angle-right", class: "text-primary" %>
-	</a>
+<div class="contain-to-grid">
+	<nav class="top-bar" data-topbar>
+		<ul class="title-area">
+			<li class="name">
+				<h1>
+						<a href="#"><%= image_tag "will-style/WILL_Logo_20.png", title: "WILL" %> &ensp;<%= app %></a>
+				</h1>
+			</li>
+			<li class="toggle-topbar menu-icon">
+				<a href="#">
+					<span>Menu</span>
+				</a>
+			</li>
+		</ul>
 		
-	<div class="show-for-large-up">
-		<%= render "will-style/partials/user_nav_large" %>
-	</div>
-	
-	<nav class="icon-bar vertical">		
-		<a href="#" class="item<%= app == "launchpad" ? " active" : "" %>">
-			<%= fa_icon "home" %>
-			<label class="show-for-large-up"><small>Launchpad</small></label>     
-		</a>
-
-		<a href="#" class="item<%= app == "tracker" ? " active" : "" %>" >
-			<%= fa_icon "check-square-o" %>
-			<label class="show-for-large-up"><small>Tracker</small></label>     
-		</a>
-		
-		<a href="#" class="item<%= app == "testbed" ? " active" : "" %>" >
-			<%= fa_icon "flask" %>
-			<label class="show-for-large-up"><small>Testbed</small></label>     
-		</a>
-
-		<a href="#" class="item<%= app == "access" ? " active" : "" %>">
-			<%= fa_icon "play-circle-o" %>
-			<label class="show-for-large-up"><small>Access</small></label>      
-		</a>
+	  <section class="top-bar-section">
+	    <ul class="right">
+	    	<li class="has-form">
+				      <input type="text" placeholder="search in Project...">
+				</li>
+		  	<li><a href="#">Projects</a></li>
+		  	<li><a href="#">Admin</a></li>
+		  	<li class="divider"></li>
+	      <li class="has-dropdown user-dropdown">
+	        <a title="User Name" href="#"><span><%= image_tag "will-style/DefaultGravatar_64.png", width: "24" %> <span class="hide-for-medium-only">User Name</span></span></a>
+	        <ul class="dropdown">
+	          <%= render "will-style/partials/user_nav_list_items" %>
+	        </ul>
+	      </li>
+	      <li class="divider"></li>
+	    </ul>
+	    <ul class="left">
+		  	<li id="apps-dropdown" class="has-dropdown">
+		  		<a href="#"><span class="text-success"><span class="show-for-small-only">More Apps</span>&nbsp;</span></a>
+		  		<ul class="dropdown">
+	          <li><a href="#">Launchpad</a></li>
+	          <li><a href="#">Tracker</a></li>
+	          <li><a href="#">Testbed</a></li>
+	          <li><a href="#">Access</a></li>
+		  		</ul>
+		  	</li>
+			</ul>
+	  </section>
 	</nav>
-	
-</aside>
-
-<% # THE USER DROPDOWN %>
-<%= f_dropdown "user-drop" do |d| %>
-	<%= d.list do %>
-		<%= render "will-style/partials/user_nav_list_items" %>
-	<% end %>
-<% end %>
+</div>

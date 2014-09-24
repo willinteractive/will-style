@@ -24,31 +24,11 @@
 	      <li class="has-dropdown user-dropdown">
 	        <a title="User Name" href="#"><%= fa_icon "user" %> User Name</a>
 	        <ul class="dropdown">
-	          <li><a href="#">Settings</a></li>
-	          <li><a href="#">Logout</a></li>
+	          <%= render "will-style/partials/user_nav_list_items" %>
 	        </ul>
 	      </li>
 	      <li class="divider"></li>
 	    </ul>
-	    <ul class="left">
-		  	<li id="apps-dropdown" class="has-dropdown">
-		  		<a href="#"><span class="text-success"><span class="show-for-small-only">More Apps</span>&nbsp;</span></a>
-		  		<ul class="dropdown">
-		  			<li><a href="#">App 1</a></li>
-		  			<li><a href="#">App 2</a></li>
-		  			<li><a href="#">App 3</a></li>
-		  		</ul>
-		  	</li>
-			</ul>
 	  </section>
 	</nav>
 </div>
-
-<%= f_dropdown "will-apps-drop" do |d| %>
-	<%= d.list do %>
-		<%= d.item "Launchpad" %>
-		<%= d.item "Tracker" %>
-		<%= d.item "Testbed" %>
-		<%= d.item "Access" %>
-	<% end %>
-<% end %>
