@@ -20,6 +20,7 @@
 #= require modernizr
 
 # -------- WILL-STYLE DEFAULTS
+#= require will-style/fonts
 #= require will-style/jquery
 #= require will-style/foundation
 # require will-style/datatables
