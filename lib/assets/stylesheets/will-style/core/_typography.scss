@@ -11,6 +11,8 @@ $header-font-weight: 		$font-weight-light;
 $paragraph-font-weight: $font-weight-normal;
 $small-font-size: 			75%;
 
+$secondary-font-color: scale-color($body-font-color, $lightness: 50%);
+
 // IMPORT FOUNDATION
 @import "foundation/components/type";
 
@@ -24,7 +26,7 @@ h5, h6 {
 
 // Colors
 .text-secondary {
-	color: scale-color($body-font-color, $lightness: 50%);
+	color: $secondary-font-color;
 }
 .text-primary {
 	color: $primary-color;
