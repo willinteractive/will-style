@@ -5,4 +5,4 @@
 
 WebFont.load
   google: 
-    families: ["Open Sans:300", "Open Sans:300:italic", "Open Sans", "Open Sans:italic", "Open Sans:700", "Open Sans:700:italic"]
+    families: ["Open Sans:300", "Open Sans:300italic", "Open Sans:400", "Open Sans:400italic", "Open Sans:700", "Open Sans:700italic"]
