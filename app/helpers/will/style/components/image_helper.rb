@@ -47,8 +47,8 @@ module WILL
         # You can use any of the html options available for the image_tag
         #
         # = Examples
-        #  Using filename replace (NOTE: WILL_Logo.png doesn't exist here, the default is appended to the file):
-        #    <%= image_interchange_tag "will-style/WILL_Logo.png", { default: 20, medium: 32 }, class: "logo", title: "WILL" %>
+        #  Using filename replace (NOTE: will_logo.png doesn't exist here, the default is appended to the file):
+        #    <%= image_interchange_tag "will-style/will_logo.png", { default: 20, medium: 32 }, class: "logo", title: "WILL" %>
         #
         #  Using raw filenames
         #    <%= image_interchange_tag "medium_image.png", { small: "small.jpg", medium: "medium_image.png", large: "big-guy.gif" }, true %>
@@ -96,10 +96,3 @@ module WILL
     end
   end
 end
-
-# image_interchange_tag("will-style/WILL_Logo.png", { default: 20, medium: 32 }, class: "logo", title: "WILL")
-
-# image_tag "will-style/WILL_Logo_20.png", class: "logo", title:
-# "WILL", data: { interchange: "[#{asset_path("will-
-# style/WILL_Logo_20.png")}, (default)], [#{asset_path("will-
-# style/WILL_Logo_32.png")}, (medium)]" }
