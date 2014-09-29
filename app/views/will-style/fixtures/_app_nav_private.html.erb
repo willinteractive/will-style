@@ -24,7 +24,7 @@
 		  	<li><a href="#">Admin</a></li>
 		  	<li class="divider"></li>
 	      <li class="has-dropdown user-dropdown">
-	        <a title="User Name" href="#"><span><%= image_tag "will-style/DefaultGravatar_64.png", width: "24" %> <span class="hide-for-medium-only">User Name</span></span></a>
+	        <a title="User Name" href="#"><span><%= image_tag "http://gravatar.com/avatar/#{Digest::MD5.hexdigest("noone@nowhere.com")}.png?s=24&d=mm", width: "24", class: "radius" %> <span class="hide-for-medium-only">User Name</span></span></a>
 	        <ul class="dropdown">
 	          <%= render "will-style/partials/user_nav_list_items" %>
 	        </ul>
