@@ -75,7 +75,7 @@ module WILL
               [
                 block_content,                
                 builder.input(placeholder),
-                options[:include_button] == false ? "" : builder.button,
+                options[:include_button] == false ? builder.hidden_submit_button : builder.button,
                 utf8_enforcer_tag
               ].join.html_safe
             end
@@ -161,6 +161,10 @@ module WILL
                 submit_tag("Submit Search", class: "hide")
               ].join.html_safe
             end
+          end
+
+          def hidden_submit_button(options={})
+            submit_tag("Submit Search", class: "hide")
           end
 
           ##
