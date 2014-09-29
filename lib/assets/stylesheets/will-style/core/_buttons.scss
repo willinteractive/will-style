@@ -8,12 +8,21 @@ $button-disabled-opacity: 0.5;
 
 @import "foundation/components/buttons";
 
+/* Inverts a button so that the background is transparent until hover */
+@mixin inverted-button-style($color:$button-bg-color) {
+    @include button-style($bg: transparent,
+                          $bg-hover: $color);
+
+    color: $color;
+    border: 1px solid $color;
+}
+
 // Custom Button colors
 button, .button {
     // and adding custom .inverse style
     &.inverse { 
-    @include button-style($bg: $body-font-color,
-                          $bg-hover: scale-color($body-font-color, $lightness: $button-function-factor)); 
+        @include button-style($bg: $body-font-color,
+                              $bg-hover: scale-color($body-font-color, $lightness: $button-function-factor)); 
     }
 
     &.info { 
@@ -25,6 +34,35 @@ button, .button {
 	    &.info {
 		    color: white;
 	    }
+    }
+
+    &.inverted {
+        &.success {
+            @include inverted-button-style($success-color);
+        }
+
+        &.alert {
+            @include inverted-button-style($alert-color);
+        }
+
+        &.secondary {
+            @include inverted-button-style($secondary-color);
+
+            /* The secondary font color is very hard to read. */
+            color: $body-font-color;
+        }
+
+        &.warning {
+            @include inverted-button-style($warning-color);
+        }
+
+        &.info {
+            @include inverted-button-style(scale-color($info-color, $lightness: $button-function-factor * 1.5));
+        }
+
+        &.inverse {
+            @include inverted-button-style($body-font-color);
+        }
     }
 }
 
