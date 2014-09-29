@@ -71,15 +71,3 @@ $app-sidebar-padding-horizontal: rem_calc(10);
 		}
 	}
 }
-
-/* Move apps dropdown to be aligned under the main app logo */
-nav.top-bar #apps-dropdown-container {
-	 width: 180px;
-	 left: -141px;
-}
-
-/* Align apps dropdown correctly when on a small size */
-nav.top-bar.expanded #apps-dropdown-container {
-	width: 100%;
-	left: 100%;
-}
