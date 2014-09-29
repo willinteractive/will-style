@@ -16,7 +16,7 @@ module WILL
       ##
       # Helpers for generating our custom WILL Style Search Bar
       #
-      module SearchHelper
+      module FancySearchHelper
 
         ##
         # Generates a search bar. This returns a search builder that you can use to fill in a custom options menu if you want.
@@ -46,20 +46,20 @@ module WILL
         #
         # = Examples
         # Default Functionality
-        #   <%= ws_search %>
+        #   <%= ws_fancy_search %>
         # With ERB Block
-        #   <%= ws_search do |s| %>
+        #   <%= ws_fancy_search do |s| %>
         #     <%= s.input "Search in products" %>
         #     <%= s.button %>
         #   <% end %>
         #
-        def ws_search(path="", query="", placeholder="Search...", options={}, &block)
+        def ws_fancy_search(path="", query="", placeholder="Search...", options={}, &block)
           # Make query and placeholder completely optional
           options = placeholder if placeholder.is_a?(Hash)
           options = query if query.is_a?(Hash)
 
           # Set up mandatory options
-          options[:class] = "#{options[:class]}"
+          options[:class] = "search-form #{options[:class]}"
           options[:action] = "search"
           options[:method] = :get
           options[:enforce_utf8] = false
@@ -68,14 +68,14 @@ module WILL
           options.delete(:autofocus) if options[:autofocus]
 
           form_tag(path, options) do
-            builder = SearchBuilder.new(self, query, autofocus)
+            builder = FancySearchBuilder.new(self, query, autofocus)
             block_content = block_given? ? capture(builder, &block) : ""
 
             content_tag(:div, class: "row collapse") do
               [
                 block_content,                
                 builder.input(placeholder),
-                options[:include_button] == false ? builder.hidden_submit_button : builder.button,
+                builder.button,
                 utf8_enforcer_tag
               ].join.html_safe
             end
@@ -85,7 +85,7 @@ module WILL
         ##
         # Builder used to generate dropdown components.
         #
-        class SearchBuilder
+        class FancySearchBuilder
           ##
           # The parent template used to access ActionView Helper Methods
           #
@@ -147,7 +147,7 @@ module WILL
               options[:data] = { "no-turbolinks" => true }
             end
 
-            content_tag(:div) do
+            content_tag(:div, class: "small-2 columns") do
               [
                 link_to("#", options) do
                   [
@@ -161,10 +161,6 @@ module WILL
                 submit_tag("Submit Search", class: "hide")
               ].join.html_safe
             end
-          end
-
-          def hidden_submit_button(options={})
-            submit_tag("Submit Search", class: "hide")
           end
 
           ##
@@ -200,7 +196,7 @@ module WILL
             
             # Build dropdown button and menu list
             [
-              content_tag(:div) do
+              content_tag(:div, class: "small-2 columns") do
                 d.button(options) do
                   fa_icon "cog"
                 end
@@ -238,7 +234,9 @@ module WILL
             options[:autocomplete] = "off"
             options[:autofocus] = autofocus
 
-            text_field_tag(:q, q, options)
+            content_tag(:div, class: "small-#{self.built_options_menu ? "8" : "10"} columns") do
+              text_field_tag(:q, q, options)
+            end
           end
         end
       end
