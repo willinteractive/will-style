@@ -4,10 +4,20 @@
 // 
 */
 
+$topbar-back-link-size: rem-calc(12);
 
 @import  "foundation/components/top-bar";
 
 // aligning image text inside .name
 .title-area img {
 	vertical-align: text-top;
+}
+
+// style the "Back" link better
+.top-bar-section .dropdown li {
+	&.title h5, &.parent-link {
+		a {
+			color: scale-color($topbar-link-color, $lightness: -40%);
+		}
+	}
 }

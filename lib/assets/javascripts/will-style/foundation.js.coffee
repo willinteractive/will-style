@@ -38,3 +38,4 @@ $ ->
         # Don't duplicate parent link on topbars
         topbar:
             mobile_show_parent_link: false
+            back_text: '<i class="fa fa-arrow-left"></i> BACK'

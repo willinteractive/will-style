@@ -61,3 +61,13 @@ $app-sidebar-padding-horizontal: rem_calc(10);
 		}
 	}
 }
+
+@media #{$topbar-media-query} {
+	#apps-dropdown {
+		.dropdown {
+			// make the apps drowdown, go left instead of right
+			right: 0;
+			left: auto;
+		}
+	}
+}
