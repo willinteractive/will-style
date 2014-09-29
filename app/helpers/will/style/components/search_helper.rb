@@ -59,7 +59,7 @@ module WILL
           options = query if query.is_a?(Hash)
 
           # Set up mandatory options
-          options[:class] = "search-form #{options[:class]}"
+          options[:class] = "#{options[:class]}"
           options[:action] = "search"
           options[:method] = :get
           options[:enforce_utf8] = false
@@ -75,7 +75,7 @@ module WILL
               [
                 block_content,                
                 builder.input(placeholder),
-                builder.button,
+                options[:include_button] == false ? "" : builder.button,
                 utf8_enforcer_tag
               ].join.html_safe
             end
