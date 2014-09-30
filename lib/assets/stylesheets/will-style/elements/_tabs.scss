@@ -37,7 +37,10 @@ $tabs-content-padding: $column-gutter/2 !default;
 	  a {
 		  width: 100%;
 		  text-align: center;
-		  padding: $button-med 0;
+		  
+		  // the following matches it's height to normal buttons
+		  padding: $button-med 0 $button-med + rem-calc(1);
+		  line-height: normal;
 	  }
   }  
 }
