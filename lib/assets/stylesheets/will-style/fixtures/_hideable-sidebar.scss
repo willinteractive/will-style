@@ -22,3 +22,9 @@
 		background-color: $body-bg;
 	}
 }
+
+// Creates a border at the bottom of side navs that don't fill the entire page
+hr.hideable-sidebar-close {
+	width: 100%;
+	margin: 0px;
+}
