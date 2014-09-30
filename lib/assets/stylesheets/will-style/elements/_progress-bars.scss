@@ -19,3 +19,10 @@ $progress-bar-pad: 0;
 .progress.warning .meter {
 	background-color: $warning-color;
 }
+
+/* CUSTOM */
+
+// small size
+.progress.small {
+	height: $progress-bar-height/2;
+}
