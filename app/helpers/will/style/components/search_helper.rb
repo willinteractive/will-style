@@ -40,6 +40,9 @@ module WILL
         #
         # +options+
         #
+        #
+        # :input_id - defaults to :q
+        #
         # Hash of options.
         #
         # You can use any of the html options available in ActionView helpers.
@@ -68,7 +71,7 @@ module WILL
           options.delete(:autofocus) if options[:autofocus]
 
           form_tag(path, options) do
-            builder = SearchBuilder.new(self, query, autofocus)
+            builder = SearchBuilder.new(self, query, options[:input_id] || :q, autofocus)
             block_content = block_given? ? capture(builder, &block) : ""
 
             content_tag(:div, class: "row collapse") do
@@ -97,6 +100,11 @@ module WILL
           attr_accessor :q
 
           ##
+          # The input id
+          #
+          attr_accessor :input_id
+
+          ##
           # Whether or not to autofocus search input
           #
           attr_accessor :autofocus
@@ -109,11 +117,12 @@ module WILL
           ##
           # Initialize the SearchBuilder
           #
-          def initialize(template, q, autofocus=false)
+          def initialize(template, q, input_id, autofocus=false)
             self.template = template
             self.q = q
             self.autofocus = autofocus
-
+            self.input_id = input_id
+            
             self.built_options_menu = false
           end
 
@@ -238,7 +247,7 @@ module WILL
             options[:autocomplete] = "off"
             options[:autofocus] = autofocus
 
-            text_field_tag(:q, q, options)
+            text_field_tag(input_id, q, options)
           end
         end
       end
