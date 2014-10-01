@@ -338,8 +338,8 @@ module WILL
           #   <% end %>
           #
           def item(text="", target="#", active=false, options={}, &block)
-            if active.is_a?(Hash) && options.length == 0
-              options = active
+            if active.is_a?(Hash)
+              options = options.merge(active)
               active = false
             end
 

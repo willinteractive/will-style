@@ -193,7 +193,10 @@ module WILL
           #   <% end %>
           #
           def close_button(text="", type="warning", options={}, &block)
-            options = options.merge(type) if type.is_a?(Hash) if block_given?
+            if type.is_a?(Hash)
+              options = options.merge(type)
+              type = "warning"
+            end
 
             options[:class] = "button #{type} reveal-close #{options[:class]}"
 
