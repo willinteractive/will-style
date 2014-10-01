@@ -195,7 +195,7 @@ module WILL
           def close_button(text="", options={}, &block)
             options = options.merge(text) if text.is_a?(Hash) && block_given?
 
-            options[:class] = "button #{type} reveal-close #{options[:class]}"
+            options[:class] = "button reveal-close #{options[:class]}"
 
             if options[:data] && options[:data].is_a?(Hash)
               options[:data] = options[:data].merge({ "no-turbolinks" => true })
