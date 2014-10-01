@@ -338,7 +338,10 @@ module WILL
           #   <% end %>
           #
           def item(text="", target="#", active=false, options={}, &block)
-            options = active if active.is_a?(Hash)
+            if active.is_a?(Hash) && options.length == 0
+              options = active
+              active = false
+            end
 
             if block_given?
               content = capture(&block)
