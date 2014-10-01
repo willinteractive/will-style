@@ -82,6 +82,8 @@ module WILL
           #
           # :show_trigger - Set to false to hide the trigger arrow.
           #
+          # :position - Set to "top", "left", "down", "right"
+          #
           # +block+
           #
           # ERB Block for the trigger button if it needs to be HTML content.
@@ -109,6 +111,8 @@ module WILL
             hide_trigger = options.has_key?(:show_trigger) && options[:show_trigger] == false
             options[:class] = "button#{ hide_trigger ? "" : " dropdown" } #{options[:class]}"
 
+            options["data-options"] = "align:#{options[:position]}" if options[:position]
+
             if block_given?
               link_to("#", options) do
                 capture(&block)
@@ -133,6 +137,8 @@ module WILL
           # You can use any of the html options available in ActionView helpers.
           #
           # :show_trigger - Set to false to hide the trigger arrow.
+          #
+          # :position - Set to "top", "left", "down", "right"
           #
           # +block+
           #
@@ -160,6 +166,8 @@ module WILL
 
             hide_trigger = options.has_key?(:show_trigger) && options[:show_trigger] == false
             options[:class] = "#{ hide_trigger ? "" : " dropdown" } #{options[:class]}"
+
+            options["data-options"] = "align:#{options[:position]}" if options[:position]
 
             if block_given?
               link_to("#", options) do
@@ -215,6 +223,22 @@ module WILL
             link_to(target, options) do
               content + content_tag(:span, "", data: { dropdown: @id, "no-turbolinks" => true })
             end
+          end
+
+          ##
+          # Generates a divider element
+          # = Params
+          #
+          # +options+
+          #
+          # Hash of options.
+          #
+          # = Examples
+          #   <%= d.trigger %>
+          def divider(options={})
+            options[:class] = "divider #{options[:class]}"
+
+            content_tag(:li, options)
           end
 
           ##
@@ -294,6 +318,10 @@ module WILL
           #
           # Destination for clicking on the item. 
           #
+          # +active+
+          #
+          # Whether or not this is the active element in a dropdown
+          #
           # +options+
           #
           # Hash of options.
@@ -309,7 +337,9 @@ module WILL
           #     <strong>Perform</strong> a search
           #   <% end %>
           #
-          def item(text="", target="#", options={}, &block)
+          def item(text="", target="#", active=false, options={}, &block)
+            options = active if active.is_a?(Hash)
+
             if block_given?
               content = capture(&block)
 
@@ -319,7 +349,7 @@ module WILL
               content = text.html_safe
             end
 
-            content_tag(:li) do
+            content_tag(:li, class: active ? "active" : "") do
               link_to(target, options) do
                 content
               end

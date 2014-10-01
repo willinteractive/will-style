@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>module WILL::Style::Components::SearchHelper - RDoc Documentation</title>
+<title>module WILL::Style::Components::FancySearchHelper - RDoc Documentation</title>
 
 <link href="../../../fonts.css" rel="stylesheet">
 <link href="../../../rdoc.css" rel="stylesheet">
@@ -66,7 +66,7 @@
 
   <ul class="link-list" role="directory">
     
-    <li ><a href="#method-i-ws_search">#ws_search</a>
+    <li ><a href="#method-i-ws_fancy_search">#ws_fancy_search</a>
     
   </ul>
 </div>
@@ -74,9 +74,9 @@
   </div>
 </nav>
 
-<main role="main" aria-labelledby="module-WILL::Style::Components::SearchHelper">
-  <h1 id="module-WILL::Style::Components::SearchHelper" class="module">
-    module WILL::Style::Components::SearchHelper
+<main role="main" aria-labelledby="module-WILL::Style::Components::FancySearchHelper">
+  <h1 id="module-WILL::Style::Components::FancySearchHelper" class="module">
+    module WILL::Style::Components::FancySearchHelper
   </h1>
 
   <section class="description">
@@ -105,10 +105,10 @@ href="../../Style.html">Style</a> Search Bar</p>
        </header>
 
     
-      <div id="method-i-ws_search" class="method-detail ">
+      <div id="method-i-ws_fancy_search" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">ws_search</span><span
+          <span class="method-name">ws_fancy_search</span><span
             class="method-args">(path="", query="", placeholder="Search...", options={}, &block)</span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -122,7 +122,7 @@ href="../../Style.html">Style</a> Search Bar</p>
 fill in a custom options menu if you want. The search bar and button are
 generated for you automatically.</p>
 
-<h1 id="method-i-ws_search-label-Params">Params<span><a href="#method-i-ws_search-label-Params">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="method-i-ws_fancy_search-label-Params">Params<span><a href="#method-i-ws_fancy_search-label-Params">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
 
 <p><code>path</code></p>
 
@@ -144,15 +144,15 @@ generated for you automatically.</p>
 
 <p>You can use any of the html options available in ActionView helpers.</p>
 
-<h1 id="method-i-ws_search-label-Examples">Examples<span><a href="#method-i-ws_search-label-Examples">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="method-i-ws_fancy_search-label-Examples">Examples<span><a href="#method-i-ws_fancy_search-label-Examples">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
 
 <p>Default Functionality</p>
 
-<pre>&lt;%= ws_search %&gt;</pre>
+<pre>&lt;%= ws_fancy_search %&gt;</pre>
 
 <p>With ERB Block</p>
 
-<pre>&lt;%= ws_search do |s| %&gt;
+<pre>&lt;%= ws_fancy_search do |s| %&gt;
   &lt;%= s.input &quot;Search in products&quot; %&gt;
   &lt;%= s.button %&gt;
 &lt;% end %&gt;</pre>
@@ -160,15 +160,15 @@ generated for you automatically.</p>
           
 
           
-          <div class="method-source-code" id="ws_search-source">
-            <pre><span class="ruby-comment"># File app/helpers/will/style/components/search_helper.rb, line 56</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">ws_search</span>(<span class="ruby-identifier">path</span>=<span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">query</span>=<span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">placeholder</span>=<span class="ruby-string">&quot;Search...&quot;</span>, <span class="ruby-identifier">options</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+          <div class="method-source-code" id="ws_fancy_search-source">
+            <pre><span class="ruby-comment"># File app/helpers/will/style/components/fancy_search_helper.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ws_fancy_search</span>(<span class="ruby-identifier">path</span>=<span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">query</span>=<span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">placeholder</span>=<span class="ruby-string">&quot;Search...&quot;</span>, <span class="ruby-identifier">options</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-comment"># Make query and placeholder completely optional</span>
   <span class="ruby-identifier">options</span> = <span class="ruby-identifier">placeholder</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">placeholder</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
   <span class="ruby-identifier">options</span> = <span class="ruby-identifier">query</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">query</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
 
   <span class="ruby-comment"># Set up mandatory options</span>
-  <span class="ruby-identifier">options</span>[<span class="ruby-value">:class</span>] = <span class="ruby-node">&quot;#{options[:class]}&quot;</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:class</span>] = <span class="ruby-node">&quot;search-form #{options[:class]}&quot;</span>
   <span class="ruby-identifier">options</span>[<span class="ruby-value">:action</span>] = <span class="ruby-string">&quot;search&quot;</span>
   <span class="ruby-identifier">options</span>[<span class="ruby-value">:method</span>] = <span class="ruby-value">:get</span>
   <span class="ruby-identifier">options</span>[<span class="ruby-value">:enforce_utf8</span>] = <span class="ruby-keyword">false</span>
@@ -177,14 +177,14 @@ generated for you automatically.</p>
   <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:autofocus</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:autofocus</span>]
 
   <span class="ruby-identifier">form_tag</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">options</span>) <span class="ruby-keyword">do</span>
-    <span class="ruby-identifier">builder</span> = <span class="ruby-constant">SearchBuilder</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">query</span>, <span class="ruby-identifier">autofocus</span>)
+    <span class="ruby-identifier">builder</span> = <span class="ruby-constant">FancySearchBuilder</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">query</span>, <span class="ruby-identifier">autofocus</span>)
     <span class="ruby-identifier">block_content</span> = <span class="ruby-identifier">block_given?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">capture</span>(<span class="ruby-identifier">builder</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>) <span class="ruby-operator">:</span> <span class="ruby-string">&quot;&quot;</span>
 
     <span class="ruby-identifier">content_tag</span>(<span class="ruby-value">:div</span>, <span class="ruby-identifier">class</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;row collapse&quot;</span>) <span class="ruby-keyword">do</span>
       [
         <span class="ruby-identifier">block_content</span>,                
         <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">input</span>(<span class="ruby-identifier">placeholder</span>),
-        <span class="ruby-identifier">options</span>[<span class="ruby-value">:include_button</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">hidden_submit_button</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">button</span>,
+        <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">button</span>,
         <span class="ruby-identifier">utf8_enforcer_tag</span>
       ].<span class="ruby-identifier">join</span>.<span class="ruby-identifier">html_safe</span>
     <span class="ruby-keyword">end</span>
