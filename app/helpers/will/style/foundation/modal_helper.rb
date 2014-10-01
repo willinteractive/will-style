@@ -192,11 +192,8 @@ module WILL
           #     <strong>Close</strong> this modal
           #   <% end %>
           #
-          def close_button(text="", type="warning", options={}, &block)
-            if type.is_a?(Hash)
-              options = options.merge(type)
-              type = "warning"
-            end
+          def close_button(text="", options={}, &block)
+            options = options.merge(text) if text.is_a?(Hash) && block_given?
 
             options[:class] = "button #{type} reveal-close #{options[:class]}"
 
