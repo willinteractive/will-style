@@ -68,6 +68,14 @@ $section-primary-bg:							$primary-color;
 		@include section_color($bg: $section-zebra-bg, $text: $section-zebra-color);
 	}
 	
+	// option to start zebra pattern with gray bg
+	.zebra.offset > section:nth-child(2n) {
+		@include section_color($bg: $body-bg, $text: $body-font-color);
+	}
+	.zebra.offset > section:nth-child(2n-1) {
+		@include section_color($bg: $section-zebra-bg, $text: $section-zebra-color);
+	}
+	
 	.sectioned {
 
 		// Base class
