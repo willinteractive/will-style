@@ -1,4 +1,4 @@
-Wed, 01 Oct 2014 14:18:32 -0400
+Wed, 01 Oct 2014 14:48:39 -0400
 app/helpers/will/style/components/animating_sidebar_helper.rb	Fri, 15 Aug 2014 12:05:37 -0400
 app/helpers/will/style/components/fancy_search_helper.rb	Mon, 29 Sep 2014 17:35:30 -0400
 app/helpers/will/style/components/hideable_sidebar_helper.rb	Thu, 04 Sep 2014 18:00:52 -0400
@@ -7,6 +7,6 @@ app/helpers/will/style/components/list_group_helper.rb	Tue, 02 Sep 2014 13:09:23
 app/helpers/will/style/components/search_helper.rb	Mon, 29 Sep 2014 17:33:40 -0400
 app/helpers/will/style/components_helper.rb	Mon, 29 Sep 2014 17:35:46 -0400
 app/helpers/will/style/foundation/alert_helper.rb	Thu, 14 Aug 2014 18:08:48 -0400
-app/helpers/will/style/foundation/dropdown_helper.rb	Wed, 01 Oct 2014 14:18:30 -0400
+app/helpers/will/style/foundation/dropdown_helper.rb	Wed, 01 Oct 2014 14:48:24 -0400
 app/helpers/will/style/foundation/modal_helper.rb	Fri, 15 Aug 2014 12:03:06 -0400
 app/helpers/will/style/foundation/tooltip_helper.rb	Wed, 13 Aug 2014 11:46:41 -0400

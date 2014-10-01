@@ -360,16 +360,6 @@ module WILL
           end
 
           ##
-          # Sets up a dropdown divider
-          #
-          # = Examples
-          #   <%= d.divider %>
-          #
-          def divider()
-            content_tag(:li, "", class: "divider")
-          end
-
-          ##
           # Generates a dropdown content area.
           # = Params
           #
