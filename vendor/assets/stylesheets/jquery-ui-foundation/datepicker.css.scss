@@ -11,10 +11,19 @@
 }
 
 .ui-datepicker {
+	/* Set default and disabled colors */
 	.ui-state-default {
 		color: gray;
 	}
+	
+	.ui-datepicker-unselectable.ui-state-disabled {
+		.ui-state-default {
+			color: white;
+			background-color: gray;
+		}
+	}
 
+	/* Properly position buttons */
 	.ui-datepicker-next {
 		right: 11px;
 	}
@@ -23,6 +32,7 @@
 		left: -3px;
 	}
 
+	/* Set current day to green with white */
 	td.ui-datepicker-current-day {
 		background-color: #4cbb87;
 
