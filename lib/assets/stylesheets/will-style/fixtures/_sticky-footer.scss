@@ -15,8 +15,9 @@
 }
 
 #main-footer {
-	background: #efefef;
-	height: 80px;
+	background: $component-bg-color;
+	height: 79px;
 	padding-top: 30px;
+	border-top: 1px solid $component-border-color;
 }
 	
