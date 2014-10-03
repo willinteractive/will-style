@@ -599,7 +599,6 @@ body.outlook p {
 
   table[class="body"] .wrapper {
     display: block !important;
-    padding-right: 0 !important;
   }
 
   table[class="body"] .columns,
