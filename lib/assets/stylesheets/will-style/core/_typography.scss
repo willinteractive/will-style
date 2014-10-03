@@ -24,6 +24,11 @@ h5, h6 {
 	font-weight: $font-weight-bold;
 }
 
+// make the large sized paragraphs use the light weight font
+p.lead {
+	font-weight: $font-weight-light;
+}
+
 // Colors
 .text-secondary {
 	color: $secondary-font-color;
