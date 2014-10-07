@@ -18,6 +18,10 @@
 # -------- MODERNIZR
 #= require modernizr
 
+# -------- LIBRARIES
+#= require forms/expanding-textareas
+#= require jquery.urlify
+
 # -------- WILL-STYLE DEFAULTS
 #= require will-style/fonts
 #= require will-style/jquery
@@ -26,8 +30,6 @@
 #= require will-style/hideable-sidebar
 #= require will-style/offline
 #= require will-style/alert-boxes
-
-# -------- LIBRARIES
-#= require forms/expanding-textareas
+#= require will-style/forms/required_inputs
 
 #= require turbolinks
