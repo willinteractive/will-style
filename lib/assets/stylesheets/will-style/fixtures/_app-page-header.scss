@@ -25,7 +25,7 @@
 
 	  & > li {
 		  // make the text somewhat bigger
-	  	font-size: $h1-font-size;
+	  	font-size: $h1-font-size - $h1-font-reduction;
 	  	line-height: $header-line-height;
 	  	text-transform: none;
 	  	font-weight: $font-weight-light;
@@ -55,5 +55,11 @@
 	.app-page-header {			
 	  padding-top: $section-padding / 2;
 	  padding-bottom: $section-padding / 2 - 1.25rem;
+	  
+		.breadcrumbs {		  
+		  & > li {
+		  	font-size: $h1-font-size;
+		  }
+		} 
 	}
 }
