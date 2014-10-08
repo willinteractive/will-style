@@ -39,6 +39,8 @@ $list-group-link-heading-color: $header-font-color;
 $list-group-item-padding-vertical: rem-calc(10);
 $list-group-item-padding-horizontal: rem-calc(15);
 
+$list-group-zebra-color: $component-bg-color;
+
 // Base class
 //
 // Easily usable on <ul>, <ol>, or <div>.
@@ -199,5 +201,14 @@ a.list-group-item {
 		bottom: 0px;
 		width: 3px;
 		background: $primary-color;
+	}
+}
+
+// allow the items to be zebra colored instead of borders
+.list-group.zebra .list-group-item {
+	border-width: 0;
+	
+	&:nth-child(2n) {
+		background-color: $list-group-zebra-color;
 	}
 }
