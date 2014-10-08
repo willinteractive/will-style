@@ -135,9 +135,6 @@ table.complex {
 			// increase left and right padding
 			padding-left: rem_calc(20);
 			padding-right: rem_calc(20);
-			
-			// lighten text color
-			color: scale-color($table-row-font-color, $lightness: 30%);
 		}
 	}
 	
