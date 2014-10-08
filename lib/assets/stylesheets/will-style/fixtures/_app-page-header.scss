@@ -25,7 +25,7 @@
 
 	  & > li {
 		  // make the text somewhat bigger
-	  	font-size: $h3-font-size;
+	  	font-size: $h1-font-size;
 	  	line-height: $header-line-height;
 	  	text-transform: none;
 	  	font-weight: $font-weight-light;
@@ -42,10 +42,6 @@
 	  margin-bottom: 0;
   }
   
-  p {
-	  margin-bottom: 0;
-  }
-  
   // remove bottom margin from forms & inputs
   form, input {
 	  margin-bottom: 0;
@@ -59,11 +55,5 @@
 	.app-page-header {			
 	  padding-top: $section-padding / 2;
 	  padding-bottom: $section-padding / 2 - 1.25rem;
-	  
-		.breadcrumbs {		  
-		  & > li {
-		  	font-size: $h1-font-size;
-		  }
-		} 
 	}
 }

@@ -12,6 +12,13 @@ $header-font-style: 		normal;
 $paragraph-font-weight: $font-weight-normal;
 $small-font-size: 			75%;
 
+$h1-font-reduction: rem-calc(15) !default;
+$h2-font-reduction: rem-calc(13) !default;
+$h3-font-reduction: rem-calc(7) !default;
+$h4-font-reduction: rem-calc(5) !default;
+$h5-font-reduction: rem-calc(1) !default;
+$h6-font-reduction: 0 !default;
+
 $secondary-font-color: scale-color($body-font-color, $lightness: 50%);
 
 // IMPORT FOUNDATION
