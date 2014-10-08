@@ -35,9 +35,11 @@ module WILL
         def ws_page_header(options={}, &block)
           raise ArgumentError, "Missing block" unless block_given?
 
-          options[:class] = "row app-page-header #{options[:class]}"
+          options[:class] = "app-page-header #{options[:class]}"
           content_tag(:header, options) do
-            capture(PageHeaderBuilder.new(self), &block)
+            content_tag(:div, class: "row") do
+              capture(PageHeaderBuilder.new(self), &block)
+            end
           end
         end
 
