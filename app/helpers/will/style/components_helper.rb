@@ -23,6 +23,7 @@ include WILL::Style::Foundation::DropdownHelper
 include WILL::Style::Foundation::BreadcrumbsHelper
 
 include WILL::Style::Components::HideableSidebarHelper
+include WILL::Style::Components::PageHeaderHelper
 include WILL::Style::Components::AnimatingSidebarHelper
 include WILL::Style::Components::SearchHelper
 include WILL::Style::Components::FancySearchHelper
