@@ -28,9 +28,9 @@
 // Global
 // ----------------------
 
-// make grid full-width and use large classes
+// make grid (almost) full-width and use large classes
 $include-xl-html-grid-classes: true;
-$row-width: 100%;
+$row-width: 90em !default;
 
 @import
 	"will-style/core/mixins",
