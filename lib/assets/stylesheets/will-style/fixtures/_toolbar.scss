@@ -1,29 +1,30 @@
 /* 
 // 
-// BUTTON GROUPS
-// 
+// TOOL BAR
+// Custom component for filter/sorting content
+//
 */
 
-
-@import "foundation/components/button-groups";
-
-
-// CUSTOM
-
 // style the ul for list sorters
-.button-group.toolbar {
+.toolbar {
 		
 		// add component bg color
 		background-color: $component-bg-color;
 		
-		& > li {
-			// they margins are to overlapping and doesn't work well with transparent to opaque bg's
+		.button-group > li {
+			// the margins are to overlapping and doesn't work well with transparent to opaque bg's
 			margin: 0;
 		}
 		
-		.button {
-			// remove bottom margin from buttons
+		// remove bottom margin from common elements
+		form, input, .button {
 			margin-bottom: 0;
+		}
+		
+		input[type="search"] {
+			// taken from compiled 
+			height: 2.5rem;
+			margin-top: .45rem;
 		}
 		
 		// only .secondary buttons will lose their background
