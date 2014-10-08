@@ -142,9 +142,11 @@ content. This returns a page header builder you can use to build columns.</p>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">ws_page_header</span>(<span class="ruby-identifier">options</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing block&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
 
-  <span class="ruby-identifier">options</span>[<span class="ruby-value">:class</span>] = <span class="ruby-node">&quot;row app-page-header #{options[:class]}&quot;</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:class</span>] = <span class="ruby-node">&quot;app-page-header #{options[:class]}&quot;</span>
   <span class="ruby-identifier">content_tag</span>(<span class="ruby-value">:header</span>, <span class="ruby-identifier">options</span>) <span class="ruby-keyword">do</span>
-    <span class="ruby-identifier">capture</span>(<span class="ruby-constant">PageHeaderBuilder</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>), <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-identifier">content_tag</span>(<span class="ruby-value">:div</span>, <span class="ruby-identifier">class</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;row&quot;</span>) <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">capture</span>(<span class="ruby-constant">PageHeaderBuilder</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>), <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>

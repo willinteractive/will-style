@@ -40,6 +40,32 @@ module WILL
         end
 
         ##
+        # Generates a standalone breadcrumb item tag.
+        #
+        def f_breadcrumbs_item(text="", current=false, options={}, &block)
+          item = nil
+
+          f_breadcrumbs do |b|
+            item = b.item(text, current, options, &block)
+          end
+
+          item
+        end
+
+        ##
+        # Generates a standalone breadcrumb link tag.
+        #
+        def f_breadcrumbs_link(text="", target="#", current=false, options={}, &block)
+          link = nil
+
+          f_breadcrumbs do |b|
+            link = b.link(text, target, current, options, &block)
+          end
+
+          link
+        end
+
+        ##
         # Builder used to generate breadcrumb components.
         #
         class BreadcrumbsBuilder
