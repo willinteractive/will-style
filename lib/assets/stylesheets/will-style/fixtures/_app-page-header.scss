@@ -30,6 +30,11 @@
 	  	text-transform: none;
 	  	font-weight: $font-weight-light;
 	  }
+	  
+	  // the above also makes any dropdown links the light weight, let's make sure they stay normal
+	  .f-dropdown li {
+		  font-weight: $font-weight-normal;
+	  }
   }
   
   // we don't want buttons messing up the padding
