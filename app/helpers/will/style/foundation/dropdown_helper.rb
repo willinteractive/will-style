@@ -234,11 +234,10 @@ module WILL
           # Hash of options.
           #
           # = Examples
-          #   <%= d.trigger %>
+          #   <%= d.divider %>
           def divider(options={})
             options[:class] = "divider #{options[:class]}"
-
-            content_tag(:li, options)
+            content_tag(:li, "", options)
           end
 
           ##
