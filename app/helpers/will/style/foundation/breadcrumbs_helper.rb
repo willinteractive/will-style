@@ -42,11 +42,11 @@ module WILL
         ##
         # Generates a standalone breadcrumb item tag.
         #
-        def f_breadcrumbs_item(text="", current=false, options={}, &block)
+        def f_breadcrumbs_item(text="", options={}, &block)
           item = nil
 
           f_breadcrumbs do |b|
-            item = b.item(text, current, options, &block)
+            item = b.item(text, options, &block)
           end
 
           item
@@ -55,11 +55,11 @@ module WILL
         ##
         # Generates a standalone breadcrumb link tag.
         #
-        def f_breadcrumbs_link(text="", target="#", current=false, options={}, &block)
+        def f_breadcrumbs_link(text="", target="#", options={}, &block)
           link = nil
 
           f_breadcrumbs do |b|
-            link = b.link(text, target, current, options, &block)
+            link = b.link(text, target, options, &block)
           end
 
           link
@@ -91,16 +91,20 @@ module WILL
           # +text+
           #
           # text you would like to display in the breadcrumbs item.
+            #
+          # +options+
+          #
+          # Hash of options.
+          #
+          # You can use any of the html options available in ActionView helpers, plus:
           #
           # +current+
           #
           # Whether or not this is the current element in the breadcrumbs
           #
-          # +options+
+          # +unavailable+
           #
-          # Hash of options.
-          #
-          # You can use any of the html options available in ActionView helpers.
+          # If this element is unavailable
           #
           # +block+
           #
@@ -111,12 +115,7 @@ module WILL
           #     <strong>Perform</strong> a search
           #   <% end %>
           #
-          def item(text="", current=false, options={}, &block)
-            if current.is_a?(Hash)
-              options = options.merge(current)
-              current = false
-            end
-
+          def item(text="", options={}, &block)
             if block_given?
               content = capture(&block)
               options = options.merge(text) if text.is_a?(Hash)
@@ -124,7 +123,10 @@ module WILL
               content = text.html_safe
             end
 
-            content_tag(:li, class: current ? "current" : "") do
+            li_class = options[:current] == true ? "current" : ""
+            li_class = "#{li_class} unavailable" if options[:unavailable] == true
+
+            content_tag(:li, class: li_class) do
               content
             end
           end
@@ -140,17 +142,19 @@ module WILL
           #
           # +target+
           #
-          # Destination for clicking on the link. 
+          # +options+
+          #
+          # Hash of options.
+          #
+          # You can use any of the html options available in ActionView helpers, plus:
           #
           # +current+
           #
           # Whether or not this is the current element in the breadcrumbs
           #
-          # +options+
+          # +unavailable+
           #
-          # Hash of options.
-          #
-          # You can use any of the html options available in ActionView helpers.
+          # If this element is unavailable
           #
           # +block+
           #
@@ -161,12 +165,7 @@ module WILL
           #     <strong>Perform</strong> a search
           #   <% end %>
           #
-          def link(text="", target="#", current=false, options={}, &block)
-            if current.is_a?(Hash)
-              options = options.merge(current)
-              current = false
-            end
-
+          def link(text="", target="#", options={}, &block)
             if block_given?
               content = capture(&block)
 
@@ -176,7 +175,10 @@ module WILL
               content = text.html_safe
             end
 
-            content_tag(:li, class: current ? "current" : "") do
+            li_class = options[:current] == true ? "current" : ""
+            li_class = "#{li_class} unavailable" if options[:unavailable] == true
+
+            content_tag(:li, class: li_class) do
               link_to(target, options) do
                 content
               end
