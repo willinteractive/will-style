@@ -23,4 +23,9 @@
 		opacity: .7;
 	}
 	
+	// remove margin from .alert-box if it contains one
+	li > .alert-box {
+		margin-bottom: 0;
+	}
+	
 }
