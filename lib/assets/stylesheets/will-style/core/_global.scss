@@ -17,7 +17,8 @@ $primary-color: #4CBB87;
 $secondary-color: scale-color($body-font-color, $lightness: 85%);
 $alert-color: #D6675A;
 $success-color: $primary-color;
-$warning-color: #FFD43F;
+$warning-color: #DBB30E;
+$warning-bg-color: #F7E184;
 $info-color: #6FAED2;
 
 // variables to share among all components
