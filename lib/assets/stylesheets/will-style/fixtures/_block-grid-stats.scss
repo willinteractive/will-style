@@ -1,0 +1,26 @@
+/* 
+// 
+// BLOCK GRID STATS
+// Uses Foundation's block-grid as foundation
+//
+*/
+
+.block-grid-stats {
+	
+	.progress {
+		// make the background less opaque
+		background: rgba(#333, .3);
+		// remove border
+		border-width: 0;
+		
+		// change the color of the meter to white
+		span.meter {
+			background-color: white;
+		}
+	}
+	
+	.count {
+		opacity: .7;
+	}
+	
+}
