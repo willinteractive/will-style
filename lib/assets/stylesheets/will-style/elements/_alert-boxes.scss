@@ -16,6 +16,42 @@
 	margin-bottom: 0;
 }
 
+// Foundation doesn't apply the font-coloring to any header tags
+// creating a mixin based on @mixin alert-style but only colors the font of headers
+@mixin alert-heading-color($bg:$primary-color) {
+
+  // This finds the lightness percentage of the background color.
+  $bg-lightness: lightness($bg);
+  
+  h2 {
+	  color: green;
+  }
+
+  // We control the text color for you based on the background color.
+  @if $bg-lightness > 70% {
+  	h1, h2, h3, h4, h5, h6 {
+	  	color: $alert-font-color-alt;
+  	}
+  }
+  @else { 
+  	h1, h2, h3, h4, h5, h6 {
+			color: $alert-font-color;
+		}
+	}
+}
+
+// now we apply the font coloring
+@if $include-html-alert-classes {
+  .alert-box {
+    &.success   { @include alert-heading-color($success-color);  }
+    &.alert     { @include alert-heading-color($alert-color); }
+    &.secondary { @include alert-heading-color($secondary-color); }
+    &.warning 	{ @include alert-heading-color($warning-color); }
+    &.info 			{ @include alert-heading-color($info-color); }
+  }
+}
+
+
 /* Styles for floating / fading alert boxes */
 
 .alert-box.float {
