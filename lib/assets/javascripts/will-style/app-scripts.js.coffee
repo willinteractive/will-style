@@ -30,6 +30,3 @@
 #= require will-style/offline
 #= require will-style/alert-boxes
 #= require will-style/forms/required_inputs
-
-# -------- NO LONGER REQUIRE TREE
-# require_tree .
