@@ -30,6 +30,11 @@ button, .button {
                               $bg-hover: scale-color($info-color, $lightness: $button-function-factor * 2.5));
     }
     
+    &.warning { 
+        @include button-style($bg: scale-color($warning-bg-color, $lightness: $button-function-factor),
+                              $bg-hover: scale-color($warning-bg-color, $lightness: $button-function-factor));
+    }
+    
     &.disabled, &[disabled] {
 	    &.info {
 		    color: white;
