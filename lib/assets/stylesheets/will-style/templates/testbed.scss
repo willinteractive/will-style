@@ -20,6 +20,10 @@
 			border-bottom-width: 0px;
 		}
 	}
+}
+
+#testbed {
+	// anywhere we want the text aligned left in an expanded button, we usually want some extra padding on the sides
 	.button.expand.text-left {
 		padding-left: 1em;
 		padding-right: 1em;
