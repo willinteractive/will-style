@@ -75,3 +75,8 @@
 .alert-box.float.active {
 	opacity: 1;
 }
+
+/* Give alert headers no padding */
+.alert-box.alert-header {
+  margin-bottom: 0px;
+}
