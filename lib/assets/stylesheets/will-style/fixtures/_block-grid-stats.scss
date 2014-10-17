@@ -9,7 +9,7 @@
 	
 	.progress {
 		// make the background less opaque
-		background: rgba(#333, .3);
+		background: rgba($body-font-color, .3);
 		// remove border
 		border-width: 0;
 		

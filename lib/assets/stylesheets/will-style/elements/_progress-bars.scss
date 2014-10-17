@@ -4,7 +4,7 @@
 // 
 */
 
-$progress-bar-color: $component-bg-color;
+$progress-bar-color: rgba($body-font-color, .2);
 $progress-bar-pad: 0;
 
 @import "foundation/components/progress-bars";
