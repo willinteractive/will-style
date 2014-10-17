@@ -28,8 +28,6 @@ $progress-bar-pad: 0;
 }
 
 // STACKED
-
-// based off of Bootstrap's stacked progress bars
 .progress.stacked {
 	// use this to contain the floated meters
 	@include clearfix();
