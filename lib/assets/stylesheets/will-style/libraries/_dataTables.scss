@@ -136,11 +136,11 @@ a.DTTT_button {
 	&.sorting_disabled,
 	&.sorting_asc_disabled,
 	&.sorting_desc_disabled { 
-		color: $secondary-color;
+		color: $table-head-font-color;
 	}
 	&.sorting_asc,
 	&.sorting_desc {
-		color: $body-font-color;
+		color: $primary-color;
 	}
 	&.sorting,
 	&.sorting_asc,
@@ -152,18 +152,18 @@ a.DTTT_button {
 			content: "\f0dc";
 			float: right;
 			margin-right: -12px;
-			@include opacity(.5);
+			@include opacity(.2);
 		}
 	}	
 	&.sorting_asc::after,
 	&.sorting_asc:hover::after {
 		content: "\f0de";
-		@include opacity(.8);
+		@include opacity(1);
 	}
 	&.sorting_desc::after,
 	&.sorting_desc:hover::after {
 		content: "\f0dd";
-		@include opacity(.8);
+		@include opacity(1);
 	}
 }
 
