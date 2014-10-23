@@ -39,22 +39,22 @@ p.lead {
 
 // Colors
 .text-secondary {
-	color: $secondary-font-color;
+	color: $secondary-font-color !important;
 }
 .text-primary {
-	color: $primary-color;
+	color: $primary-color !important;
 }
 .text-alert {
-	color: $alert-color;
+	color: $alert-color !important;
 }
 .text-warning {
-	color: $warning-color;
+	color: $warning-color !important;
 }
 .text-success {
-	color: $success-color;
+	color: $success-color !important;
 }
 .text-info {
-	color: $info-color;
+	color: $info-color !important;
 }
 
 
@@ -110,5 +110,11 @@ dl.stats.large {
 		display: block;
 	}
 	
+}
+
+
+// Utility for not allowing text to wrap
+.no-break {
+	@include nowrap;
 }
 
