@@ -4,6 +4,10 @@
 // 
 */
 
+// reduce padding
+$button-tny: rem-calc(8);
+$button-sml: rem-calc(10);
+
 $button-disabled-opacity: 0.5;
 
 @import "foundation/components/buttons";
