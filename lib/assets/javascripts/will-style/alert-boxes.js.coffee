@@ -1,9 +1,12 @@
 # Activate / Deactivate floating alert boxes on page load
-$ ->
+$(document).on "show-alert", "div.alert-box.float", (event) ->
 	setTimeout(->
-		$("div.alert-box.float").addClass "active"
+		$(event.target).addClass "active"
 
 		setTimeout(->
-			$("div.alert-box.float").removeClass "active"
+			$(event.target).removeClass "active"
 		, 5000)
 	, 500)
+
+$ ->
+	$("div.alert-box.float").trigger("show-alert")
