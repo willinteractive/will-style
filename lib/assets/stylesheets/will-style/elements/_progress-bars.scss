@@ -9,12 +9,6 @@ $progress-bar-pad: 0;
 
 @import "foundation/components/progress-bars";
 
-// if the progress-bar is in a panel,
-// make it white
-.panel .progress {
-	background-color: white;
-}
-
 /* Add warning color for progress bars */
 .progress.warning .meter {
 	background-color: $warning-color;
