@@ -29,6 +29,11 @@
 	  	line-height: $header-line-height;
 	  	text-transform: none;
 	  	font-weight: $font-weight-light;
+	  	
+	  	// allow for text to be sized down using .tiny
+	  	.tiny {
+		  	font-size: $paragraph-font-size;
+	  	}
 	  }
 	  
 	  // the above also makes any dropdown links the light weight, let's make sure they stay normal
