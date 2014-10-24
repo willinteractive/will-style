@@ -44,3 +44,11 @@ $tabs-content-padding: $column-gutter/2 !default;
 	  }
   }  
 }
+
+// allow the .active tab to be highlighted
+.tabs.highlightable {
+	dd.active a {
+		background: $primary-color;
+		color: white;
+	}
+}
