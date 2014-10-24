@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 4.1"
 
   s.add_dependency "compass-rails", "~> 2.0"
-  s.add_dependency "foundation-rails", "~> 5.4.4"
+  s.add_dependency "foundation-rails", "5.4.4"
   s.add_dependency "font-awesome-rails", "~> 4.0"
   s.add_dependency "modernizr-rails", "~> 2.7"
 

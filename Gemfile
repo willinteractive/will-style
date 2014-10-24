@@ -10,7 +10,7 @@ gem 'sass-rails', "5.0.0.beta1"
 
 gem 'compass-rails'
 
-gem 'foundation-rails'
+gem 'foundation-rails', "5.4.4"
 
 gem 'jquery-rails'
 
