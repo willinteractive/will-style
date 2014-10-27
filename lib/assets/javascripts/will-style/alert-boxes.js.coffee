@@ -8,5 +8,8 @@ $(document).on "show-alert", "div.alert-box.float", (event) ->
 		, 5000)
 	, 500)
 
+$(document).on "click", "div.alert-box.float .close", (event) ->
+	$(event.target).closest("div.alert-box").removeClass("active")
+
 $ ->
 	$("div.alert-box.float").trigger("show-alert")
