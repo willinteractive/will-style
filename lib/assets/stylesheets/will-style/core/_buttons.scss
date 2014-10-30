@@ -35,8 +35,8 @@ button, .button {
     }
     
     &.warning { 
-        @include button-style($bg: scale-color($warning-bg-color, $lightness: $button-function-factor),
-                              $bg-hover: scale-color($warning-bg-color, $lightness: $button-function-factor));
+        @include button-style($bg: $warning-color,
+                              $bg-hover: scale-color($warning-color, $lightness: $button-function-factor));
     }
     
     &.disabled, &[disabled] {
