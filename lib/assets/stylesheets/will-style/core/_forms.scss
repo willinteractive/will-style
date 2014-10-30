@@ -27,6 +27,15 @@ $input-prefix-border-color: $component-border-color;
   "foundation/components/range-slider";
   //not included in gem version
   //"foundation/components/switches";
+  
+
+// style the form labels
+label {
+	text-transform: uppercase;
+	margin-bottom: .5em;
+	font-weight: $font-weight-bold;
+	font-size: $small-font-size;
+}
 
 // add these classes if you want an icon inside of the input
 .has-icon {
