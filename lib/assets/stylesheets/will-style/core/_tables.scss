@@ -20,6 +20,15 @@ $table-row-font-color: $body-font-color;
 // CUSTOM:
 //
 
+// columns with action buttons
+td.actions {
+	vertical-align: baseline;
+	
+	.button {
+		margin-bottom: 0;
+	}
+}
+
 // BORDERED
 // -------------------------
 
