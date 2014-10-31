@@ -28,6 +28,10 @@ $input-prefix-border-color: $component-border-color;
   //not included in gem version
   //"foundation/components/switches";
   
+// remove bottom margin from forms. They should be spaced by their containers
+form {
+	margin-bottom: 0;
+}
 
 // style the form labels
 label {
@@ -115,6 +119,8 @@ textarea {
 
 // this form is sectioned and has headers with icons
 form.detailed {
+	margin-bottom: 0;
+	
 	header {
 		// space out headers
 		margin-bottom: 1.2em;
