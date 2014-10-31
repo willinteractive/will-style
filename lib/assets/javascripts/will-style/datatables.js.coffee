@@ -39,24 +39,3 @@ $(document).on "change", ".table-selectable .checkAll", (event)->
 $(document).on "change", ".table-selectable input:checkbox", (event)->
   $(event.currentTarget).closest('tr').toggleClass("selected", event.currentTarget.checked)
 
-# RESPONSIVE
-resizeDataTables = ->
-  allDataTables = $($.fn.dataTable.fnTables(true))
-
-  return if allDataTables.length == 0
-
-  if($(window).width() > 978)
-    allDataTables.dataTable().fnSetColumnVis( 1, true );
-    allDataTables.dataTable().fnSetColumnVis( 3, true );
-  if($(window).width() <= 978)
-    allDataTables.dataTable().fnSetColumnVis( 1, false );
-    allDataTables.dataTable().fnSetColumnVis( 3, false );
-  if($(window).width() > 480)
-    allDataTables.dataTable().fnSetColumnVis( 4, true );
-  if($(window).width() <= 480)
-    allDataTables.dataTable().fnSetColumnVis( 4, false );
-
-$(window).resize resizeDataTables
-
-$ ->
-  resizeDataTables();
