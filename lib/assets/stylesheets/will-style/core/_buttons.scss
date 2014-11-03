@@ -87,7 +87,7 @@ button, .button {
 }
 
 // create a .active state for button-bar buttons
-.button-bar .button.active {
+.button-group .button.active {
 	background-color: scale-color($primary-color, $lightness: $button-function-factor);
 
 	&.success {
