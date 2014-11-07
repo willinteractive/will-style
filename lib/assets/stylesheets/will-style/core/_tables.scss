@@ -1,0 +1,150 @@
+/* 
+// 
+// TABLES
+// 
+*/
+
+$table-bg: $body-bg;
+$table-even-row-bg: scale-color($component-bg-color, $lightness: 20%);
+
+$table-border-color: $component-border-color;
+
+$table-head-bg: $component-bg-color;
+$table-head-font-color: $body-font-color;
+
+$table-row-font-color: $body-font-color;
+ 
+
+@import "foundation/components/tables";
+
+// CUSTOM:
+//
+
+// columns with action buttons
+td.actions {
+	vertical-align: baseline;
+	
+	.button {
+		margin-bottom: 0;
+	}
+}
+
+// BORDERED
+// -------------------------
+
+table.bordered {
+  border: 1px solid $table-border-color;
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        border: 1px solid $table-border-color;
+      }
+    }
+  }
+  > thead > tr {
+    > th,
+    > td {
+      border-bottom-width: 2px;
+    }
+  }
+}
+
+// HOVERABLE
+// -------------------------
+
+table.hoverable, table.focusable {
+  > tbody > tr:hover {
+    > td,
+    > th {
+      background-color: $component-hover-bg-color;
+    }
+  }
+}
+
+// FOCUSABLE
+// -------------------------
+
+// hover effects of tables that have rows that are selectable
+table.focusable {
+	td {
+		@include transition(all 300ms);
+	}
+	tbody:hover td {
+		color: transparent;
+		text-shadow: 0 0 3px $body-font-color;
+	}
+	tbody:hover tr:hover td {
+		color: $body-font-color;
+		text-shadow: none;
+	}
+}
+
+// hover effects of tables that have rows that are selectable but are very complex
+// this class is added by Javascript
+table.focusable.complex {
+	td { 
+		@include transition(all 300ms);
+	}
+	tbody:hover td {
+		@include opacity(30);
+	}
+	tbody:hover tr:hover td {
+		@include opacity(100);
+	}
+}
+
+// COMPLEX
+// -------------------------
+table.complex {
+		
+	// first get rid of zebra striping
+	tr:nth-of-type(even) {
+		background: $table-bg;
+	}
+	
+	// style the thead a bit differently
+	thead tr {
+		th,
+		td {
+			padding-top: rem-calc(14);
+			padding-bottom: rem-calc(16);
+/* 			font-weight: $font-weight-normal; */
+			border-right: 3px solid $table-bg;
+			&:last-of-type {
+				border-right: none;
+			}
+		}
+	}
+	
+	
+	// give only the .row-heading a border top
+	tr.item-start {
+		border-top: 1px solid $table-border-color;
+		&:first-of-type {
+			border-top: none;
+		}
+		
+		// with extra padding
+		td {
+			padding-top: 2.5em;
+		}
+	}
+	
+	tr.item-end td {
+		// last row in item also should have increased bottom padding
+		padding-bottom: 3em;
+	}
+	
+	
+	tr {
+		& > td, & > th {
+			// increase left and right padding
+			padding-left: rem_calc(20);
+			padding-right: rem_calc(20);
+		}
+	}
+	
+}

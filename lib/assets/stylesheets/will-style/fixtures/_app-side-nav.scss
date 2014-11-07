@@ -1,0 +1,157 @@
+/* 
+// 
+// APP SIDE NAV
+// 
+*/
+
+
+// make the icon bar full-width when vertical
+.icon-bar.vertical {
+	width: 100%;
+}
+
+// background color
+$side-nav-categories-bg: $primary-color;
+
+// change the coloring of the side-nav using variables
+// We use this to control padding.
+$side-nav-padding: rem_calc(20) $column-gutter/2;
+
+// We use these to control list styles.
+$side-nav-list-type: none !default;
+$side-nav-list-position: outside !default;
+$side-nav-list-margin: rem-calc(0 0 14 0);
+
+// We use these to control link styles.
+$side-nav-link-color: scale-color($body-font-color, $lightness: 25%);
+$side-nav-link-color-active: $body-font-color;
+$side-nav-link-color-hover: $side-nav-link-color-active;
+
+$side-nav-link-bg-hover: hsla(0, 0, 0, 0.025) !default;
+$side-nav-link-margin: 0 !default;
+$side-nav-link-padding: rem-calc(0);
+
+$side-nav-font-size: rem-calc(14) !default;
+$side-nav-font-weight: $font-weight-normal !default;
+$side-nav-font-weight-active: $font-weight-bold;
+$side-nav-font-family: $body-font-family !default;
+$side-nav-font-family-active: $side-nav-font-family !default;
+
+// We use these to control heading styles.
+$side-nav-heading-color: $primary-color;
+$side-nav-heading-font-size: $side-nav-font-size !default;
+$side-nav-heading-font-weight: $font-weight-bold;
+$side-nav-heading-text-transform: uppercase !default;
+
+
+@import "foundation/components/side-nav";
+@import "foundation/components/labels";
+
+// CUSTOM STYLING
+
+// default label padding is     (4 8 6);
+$rounded-label-padding: rem-calc(2 4 3);
+
+.side-nav.filtering {
+	
+	// types of spans that extend labels
+	.number, .color {
+		float: right;
+	}
+	
+	// numbers are light squares
+	.number {
+		@include label($bg:$secondary-color, $radius:$global-radius);
+	}
+	
+	// colors are circles
+	.color {
+		@include label($bg:$secondary-color, $radius:$global-rounded, $padding:$rounded-label-padding);
+		// remove the x icon from rounded labels unless active
+		i {
+			visibility: hidden;
+		}
+	}
+	
+		
+	li.heading {
+	
+		// force link tags inside of headings to have the link tags color
+		a:not(.button) {
+			color: $anchor-font-color;
+		}
+		
+	}
+	
+	li.new {
+		
+		// use same padding as .label on icon for better alignment
+		i {
+			padding: $rounded-label-padding;	
+		}
+		
+	}
+	
+	li.active {
+
+		.number {
+			// style the .active .side-nav items' labels
+			background: $side-nav-link-color-active;
+			color: white;
+		}
+		
+		.color > i {
+			visibility: visible;
+		}
+		
+	}
+	
+}
+
+.side-nav.categories {
+	
+	background: $side-nav-categories-bg;
+	
+	// we want the buttons to expand the full width
+	padding: 0;
+	
+	li {
+		// the buttons should be on top of eachother
+		margin-bottom: 0;
+		// but with a slightly darker border than the bg
+		border-bottom: 1px solid scale-color($side-nav-categories-bg, $lightness: -25%);
+		
+		.button {
+			// make full-width and no margin
+			width: 100%;
+			margin-bottom: 0;
+			text-align: left;
+			
+			// make left and right padding same as columns
+			padding-left: $column-gutter / 2;
+			padding-right: $column-gutter / 2;
+						
+			// if it has an icon, give it a bit more spacing
+			& > i {
+				margin-right: rem_calc(20);
+			}
+		}
+		
+		//remove background of active items
+		&.active .button {
+			background: $body-bg;
+			color: $body-font-color;
+		}
+	}
+	
+}
+
+// If the side-nav has a form, darken the bg and remove the margin from the form
+.side-nav.has-form {
+	background: #efefef;
+	border-bottom: 1px solid #ddd;
+	
+	form {
+		margin: 0;
+	}
+}

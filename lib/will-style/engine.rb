@@ -2,13 +2,18 @@
 require "sass"
 require "sass-rails"
 require "compass-rails"
-require "bootstrap-sass"
+require "foundation-rails"
 require "font-awesome-rails"
 require "modernizr-rails"
 
-module Will
+module WILL
   module Style
     class Engine < Rails::Engine
+      isolate_namespace WILL::Style
+
+      # Include Foundation form helpers
+      require "#{config.root}/lib/will-style/form_extensions/form_builder.rb"
+      require "#{config.root}/lib/will-style/form_extensions/action_view_extension.rb"
     end
 
     # Using bootstrap-sass initialization
@@ -36,4 +41,4 @@ module Will
   end
 end
 
-Will::Style.load!
+WILL::Style.load!

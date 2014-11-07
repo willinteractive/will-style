@@ -1,0 +1,34 @@
+<% app = "" unless defined?(app) %>
+
+<div class="contain-to-grid">
+	<nav class="top-bar" data-topbar>
+		<ul class="title-area">
+			<li class="name">
+				<h1>
+					<a href="#"><%= image_tag "will-style/will_logo_20.png", title: "WILL" %> &ensp;<%= app %></a>
+				</h1>
+			</li>
+			<li class="toggle-topbar menu-icon">
+				<a href="#">
+					<span>Menu</span>
+				</a>
+			</li>
+		</ul>
+		
+	  <section class="top-bar-section">
+	    <ul class="right">
+	    	<li class="active"><a href="#">Item 1</a></li>
+		  	<li><a href="#">Item 2</a></li>
+		  	<li><a href="#">Item 3</a></li>
+		  	<li class="divider"></li>
+	      <li class="has-dropdown user-dropdown">
+	        <a title="User Name" href="#"><%= fa_icon "user" %> User Name</a>
+	        <ul class="dropdown">
+	          <%= render "will-style/partials/user_nav_list_items" %>
+	        </ul>
+	      </li>
+	      <li class="divider"></li>
+	    </ul>
+	  </section>
+	</nav>
+</div>

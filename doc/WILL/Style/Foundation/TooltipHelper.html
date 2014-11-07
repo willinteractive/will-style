@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>module WILL::Style::Foundation::TooltipHelper - RDoc Documentation</title>
+
+<link href="../../../fonts.css" rel="stylesheet">
+<link href="../../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../";
+</script>
+
+<script src="../../../js/jquery.js"></script>
+<script src="../../../js/navigation.js"></script>
+<script src="../../../js/search_index.js"></script>
+<script src="../../../js/search.js"></script>
+<script src="../../../js/searcher.js"></script>
+<script src="../../../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../../table_of_contents.html#pages">Pages</a>
+    <a href="../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-f_tooltip">#f_tooltip</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="module-WILL::Style::Foundation::TooltipHelper">
+  <h1 id="module-WILL::Style::Foundation::TooltipHelper" class="module">
+    module WILL::Style::Foundation::TooltipHelper
+  </h1>
+
+  <section class="description">
+    
+<p>Helpers for generating <a href="../Foundation.html">Foundation</a> tooltips</p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-f_tooltip" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">f_tooltip</span><span
+            class="method-args">(text="", title="", position="bottom", options={})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Generates a tooltip span.</p>
+
+<h1 id="method-i-f_tooltip-label-Params">Params<span><a href="#method-i-f_tooltip-label-Params">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p><code>text</code></p>
+
+<p>text you would like to display in the span.</p>
+
+<p><code>title</code></p>
+
+<p>tooltip text.</p>
+
+<p><code>position</code></p>
+
+<p>Position of the tooltip.</p>
+
+<p><em>Possible values</em>: bottom, top, left, right.</p>
+
+<p><em>Default value</em>: bottom.</p>
+
+<p><code>options</code></p>
+
+<p>Hash of options.</p>
+
+<p>You can use any of the html options available in ActionView helpers.</p>
+
+<h1 id="method-i-f_tooltip-label-Examples">Examples<span><a href="#method-i-f_tooltip-label-Examples">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<pre>&lt;%= f_tooltip &quot;Click Here&quot;, &quot;This takes you to a new place&quot;, &quot;top&quot;, class: &quot;round&quot;, options: &quot;disable_for_touch:true&quot; %&gt;</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="f_tooltip-source">
+            <pre><span class="ruby-comment"># File app/helpers/will/style/foundation/tooltip_helper.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">f_tooltip</span>(<span class="ruby-identifier">text</span>=<span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">title</span>=<span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">position</span>=<span class="ruby-string">&quot;bottom&quot;</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-comment"># Merge custom html data options with mandatory tooltip data options</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:data</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:data</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+    <span class="ruby-identifier">options</span>[<span class="ruby-value">:data</span>] = <span class="ruby-identifier">options</span>[<span class="ruby-value">:data</span>].<span class="ruby-identifier">merge</span>({ <span class="ruby-identifier">tooltip</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span> })
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">options</span>[<span class="ruby-value">:data</span>] = { <span class="ruby-identifier">tooltip</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span> }
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:title</span>] = <span class="ruby-identifier">title</span>
+
+  <span class="ruby-comment"># Merge custom classes with mandatory classes</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:class</span>] = <span class="ruby-node">&quot;has-tip tip-#{position} #{options[:class]}&quot;</span>
+
+  <span class="ruby-identifier">content_tag</span>(<span class="ruby-value">:span</span>, <span class="ruby-identifier">options</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">text</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

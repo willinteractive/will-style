@@ -4,4 +4,4 @@
 
 $ ->
   # Make all inputs with a placeholder attribute into a placeholder
-  $(document).ready($('input[placeholder]').placeholder())
+  $('input[placeholder]').placeholder()

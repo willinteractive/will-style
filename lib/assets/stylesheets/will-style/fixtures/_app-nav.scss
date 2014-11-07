@@ -1,0 +1,41 @@
+/* 
+// 
+// APP NAVIGATION
+// both private and public
+// 
+*/
+
+// Large User Nav
+// User icon/gravatar on top of name on top of nav as icons on one line
+// ----------------------
+.user-nav-large {
+
+	// center all elements
+	text-align: center;
+	
+	.user-nav {
+		// extend Foundation's Inline Lists
+		@include inline-list;
+		// BUT, we don't want them to float but display inline
+		// so that they get centered
+		& > li {
+			float: none;
+			display: inline-block;
+		}
+	}
+	
+}
+
+
+// this is somewhat private specific
+@media #{$medium-up} {
+	.top-bar li#apps-dropdown {
+		& > a {
+			padding-left: 0;
+		}
+	}
+	
+	.top-bar .name h1 a {
+		padding-right: 0;
+	}
+}

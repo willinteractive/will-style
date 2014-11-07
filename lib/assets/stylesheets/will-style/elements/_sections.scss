@@ -1,0 +1,120 @@
+/* 
+// 
+// SECTIONS
+//
+// Sections are full-width colored/imaged background areas of a page.
+// add the class ".sectioned" to the <main> element followed by <section> elements
+// 
+*/
+$section-padding:						5rem;
+$section-bg-color: 					inherit;
+$section-text-color: 				inherit;
+
+$section-zebra-color:						inherit;
+$section-zebra-bg:							#efefef;
+
+$section-inverse-color:						#fff;
+$section-inverse-bg:							#444444;
+
+$section-primary-color:						#fff;
+$section-primary-bg:							$primary-color;
+
+
+// MIXIN for use everywhere
+@mixin section_color($bg: $section-bg-color, $text: $section-text-color) {
+	
+	background-color: $bg;
+	
+	&, p, h1, h2, h3, h4, h5, h6 {
+		color: $text;
+	}
+	
+}
+
+@mixin section_image($type:null) {
+
+	// by default, center it and do not tile it
+	background-position: center;
+	background-repeat: no-repeat;
+	
+	@if $type == "cover" {
+		@include background-size(cover);
+		background-size: cover;		
+	}
+	
+	@if $type == "fixed" {
+		background-attachment: fixed;
+		background-position-y: center;		
+	}
+}
+
+@mixin section($padding: $section-padding) {
+	// padding top and bottom for separation
+	padding-top: $padding / 2;
+	padding-bottom: $padding / 2;
+	
+	@media #{$medium-up} {
+		padding-top: $padding;
+		padding-bottom: $padding;
+	}		
+}
+
+// DO THE EXPORTS
+
+@include exports("sections") {
+	
+	// Zebra striping
+	// do this first so we can override colors
+	// -------------------------
+	// color containers in a zebra fashion if the main section has the .zebra class
+	.zebra > section:nth-child(2n) {
+		@include section_color($bg: $section-zebra-bg, $text: $section-zebra-color);
+	}
+	
+	// option to start zebra pattern with gray bg
+	.zebra.offset > section:nth-child(2n) {
+		@include section_color($bg: $body-bg, $text: $body-font-color);
+	}
+	.zebra.offset > section:nth-child(2n-1) {
+		@include section_color($bg: $section-zebra-bg, $text: $section-zebra-color);
+	}
+	
+	.sectioned {
+
+		// Base class
+		// -------------------------
+		> section {
+			@include section();
+		}
+		
+		// Inverse (dark) Background
+		// -------------------------
+		> section.inverse {
+		  @include section_color($bg: $section-inverse-bg, $text: $section-inverse-color);
+		}
+
+	
+		// Primary (brand color) Background
+		// -------------------------
+		> section.primary {
+		  @include section_color($bg: $section-primary-bg, $text: $section-primary-color);
+		}
+		
+		// Background images
+		// -------------------------
+		
+		> section[class*="image"] {
+			@include section_image();
+		}
+		
+		> section[class*="cover"] {
+			@include section_image("cover");
+		}
+		
+		> section[class*="fixed"] {
+			@include section_image("fixed");
+		}
+
+	}	
+
+}

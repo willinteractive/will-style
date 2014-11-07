@@ -1,0 +1,30 @@
+// use flexbox to equalize heights fo borders and backgrounds
+// Used as a mixin so we can better control it
+
+@mixin equalize-sidebar() {
+	.inner-wrap {
+		// @NOTE: Updating to Compass 1.0 removed this deprecated method.
+		// @include display-box;
+		@include display-flex();
+
+		.hideable-sidebar, main {
+			// @NOTE: Updating to Compass 1.0 removed this deprecated method.
+			// @include box-align("stretch");
+			@include align-self(stretch);
+		}
+	}
+}
+
+@media #{$small-only} {
+	// Extend off-canvas class to the sidebar only on small sizes
+	.hideable-sidebar {
+		@include off-canvas-menu($position: left);
+		background-color: $body-bg;
+	}
+}
+
+// Creates a border at the bottom of side navs that don't fill the entire page
+hr.hideable-sidebar-close {
+	width: 100%;
+	margin: 0px;
+}

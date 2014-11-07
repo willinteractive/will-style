@@ -1,0 +1,23 @@
+// HTML MUST LOOK LIKE THIS:
+//	<body>
+//		<div id="wrap"></div>
+//		<footer id="main-footer">
+//			<p></p>
+//		</footer>
+//	</body>
+
+#wrap {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -80px;
+	padding: 0 0 80px;
+}
+
+#main-footer {
+	background: $component-bg-color;
+	height: 79px;
+	padding-top: 30px;
+	border-top: 1px solid $component-border-color;
+}
+	

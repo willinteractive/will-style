@@ -1,0 +1,22 @@
+/* 
+// 
+// PANELS
+// 
+*/
+
+
+// Custom
+// -------------------------
+
+// giving the admin areas a diagonal stripped background
+.panel.admin {
+	background: none;
+	@include gradient-striped(#eee);
+	background-size: 8px 8px;
+	text-align: center;
+	
+	// remove bottom margin from buttons
+	.button {
+		margin-bottom: 0;
+	}
+}

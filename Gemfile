@@ -6,27 +6,22 @@ gem 'rails'
 
 gem 'coffee-rails'
 
-gem 'sass-rails'
+gem 'sass-rails', "5.0.0.beta1"
 
 gem 'compass-rails'
 
-gem 'bootstrap-sass'
+gem 'foundation-rails', "5.4.4"
 
 gem 'jquery-rails'
 
-# FontAwesome for Rails
 gem 'font-awesome-rails'
 
-#jQuery Datatables
 gem 'jquery-datatables-rails'
 
-#jQuery Charts with Flot
 gem "flot-rails"
 
-#Modernizr
 gem 'modernizr-rails'
 
 group :development do
-  # View source maps in Chrome
-  gem 'sass-rails-source-maps'
+  gem "rdoc"
 end

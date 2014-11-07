@@ -1,10 +1,10 @@
 # Place all the behaviors and hooks related to DataTables and other Table functionality here.
 
 #= require dataTables/jquery.dataTables
-#= require dataTables/jquery.dataTables.bootstrap3
-#= require dataTables/extras/ColVis
-#= require dataTables/extras/ZeroClipboard.js
-#= require dataTables/extras/TableTools
+#= require dataTables/jquery.dataTables.foundation
+#= require dataTables/extras/dataTables.colVis
+# require dataTables/extras/ZeroClipboard.js
+#= require dataTables/extras/dataTables.tableTools
 
 # DataTable defaults
 $.extend( $.fn.dataTable.defaults, {
@@ -39,24 +39,3 @@ $(document).on "change", ".table-selectable .checkAll", (event)->
 $(document).on "change", ".table-selectable input:checkbox", (event)->
   $(event.currentTarget).closest('tr').toggleClass("selected", event.currentTarget.checked)
 
-# RESPONSIVE
-resizeDataTables = ->
-  allDataTables = $($.fn.dataTable.fnTables(true))
-
-  return if allDataTables.length == 0
-
-  if($(window).width() > 978)
-    allDataTables.dataTable().fnSetColumnVis( 1, true );
-    allDataTables.dataTable().fnSetColumnVis( 3, true );
-  if($(window).width() <= 978)
-    allDataTables.dataTable().fnSetColumnVis( 1, false );
-    allDataTables.dataTable().fnSetColumnVis( 3, false );
-  if($(window).width() > 480)
-    allDataTables.dataTable().fnSetColumnVis( 4, true );
-  if($(window).width() <= 480)
-    allDataTables.dataTable().fnSetColumnVis( 4, false );
-
-$(window).resize resizeDataTables
-
-$ ->
-  resizeDataTables();

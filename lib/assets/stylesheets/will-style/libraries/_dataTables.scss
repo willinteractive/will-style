@@ -1,0 +1,186 @@
+/* 
+// 
+// DATATABLES
+// 
+*/
+
+
+.dataTable {
+	width: 100% !important;
+}
+
+// if the the table is in side a panel, remove the top and bottom margins
+.panel .dataTable {
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+}
+
+// extras like filter & length 
+// -------------------------
+
+.dataTables_extras_top, .dataTables_extras_bottom {
+	// make the text smaller
+	// @FOUNDATION-FIX
+	// font-size: $font-size-small;
+	// clear the floats
+	@extend .clearfix;
+	// add padding
+	// @FOUNDATION-FIX
+	// padding: $padding-large-vertical $padding-base-horizontal;
+	
+}
+
+// clear default floats
+div.dataTables_filter label, div.dataTables_length label  {
+	float: none;
+}
+// move the length to the far right
+div.dataTables_length {
+	float: right;
+}
+// move the filter form to far left
+div.dataTables_filter {
+	float: left;
+}
+
+// add some padding and correctly float the footer elements
+.dataTables_info {
+	margin-bottom: 10px;
+	@include opacity(.5);
+	float: left;
+}
+.dataTables_paginate {
+	float: right;
+}
+
+
+// ColVis & TableTools (DataTables Extras)
+// -------------------------
+
+/* THE HTML
+<div class="dataTables_buttons">
+	<div class="DTTT_container">
+		<a class="DTTT_button DTTT_button_print btn btn-default"><i class="fa fa-print"></i> <span>Print</span></a>
+		<a class="DTTT_button DTTT_button_collection btn btn-default"<i class="fa fa-save"></i> <span>Save Table as…</span>  <b class="caret"></b></a>
+	</div>
+	<div class="ColVis TableTools">
+		<button class="ColVis_Button TableTools_Button ColVis_MasterButton btn btn-default"><i class="fa fa-columns"></i> <span>Change Columns</span>  <b class="caret"></b></button>
+	</div>
+</div>
+*/
+
+// get all elements in one line
+.DTTT_container, .ColVis {
+	display: inline-block;
+}
+
+
+// if the dataTable is in a .panel:
+.panel-dataTable {
+	// make the buttons appear to be in the panel header
+	position: relative;
+	
+	.dataTables_buttons {
+		position: absolute;
+		top: 0;
+		right: 0;
+		
+		// style the buttons the way we do for buttons inside panel headers
+		//@extend .panel-heading-buttons;
+		
+		.btn {			
+			// but they are on the right, so switch which side gets a border
+			border-right: none;
+			// @FOUNDATION-FIX
+			// border-left: 1px solid $panel-inner-border;		
+		}
+	}
+}
+
+// extend the dropdowns to look like bootstrap
+.ColVis_collection, .DTTT_collection {
+	@include dropdown-style;
+	
+	button, a {
+		background: none;
+		border: none;
+		padding: 5px;
+		text-align: left;
+		
+		&:hover, &:focus {
+			background: $component-hover-bg-color;
+			cursor: pointer;			
+		}
+	}
+}
+
+// the ColVis Buttons contain checkboxes
+.ColVis_collection .ColVis_Button > span {
+	// @FOUNDATION-FIX
+	// @extend .checkbox-inline;
+}
+
+// make the DTTT buttons full-width
+a.DTTT_button {
+	display: block;
+}
+
+
+// Sorting Arrows
+// -------------------------
+
+// Change sorting arrows to FontAwesome (if not IE targeted by flexbox)
+.flexbox .dataTable thead th {
+	// change colors of sortable headers based on state
+	&.sorting,
+	&.sorting_disabled,
+	&.sorting_asc_disabled,
+	&.sorting_desc_disabled { 
+		color: $table-head-font-color;
+	}
+	&.sorting_asc,
+	&.sorting_desc {
+		color: $primary-color;
+	}
+	&.sorting,
+	&.sorting_asc,
+	&.sorting_desc {
+		background-image: none;
+		padding-right: 22px;
+		&::after {
+			font-family: FontAwesome;
+			content: "\f0dc";
+			float: right;
+			margin-right: -12px;
+			@include opacity(.2);
+		}
+	}	
+	&.sorting_asc::after,
+	&.sorting_asc:hover::after {
+		content: "\f0de";
+		@include opacity(1);
+	}
+	&.sorting_desc::after,
+	&.sorting_desc:hover::after {
+		content: "\f0dd";
+		@include opacity(1);
+	}
+}
+
+
+// EXTRA's catcher's and overlays
+// taken from jquery-datatables-rails
+// didn't want the whole thing because it messed up the buttons styles
+// -------------------------
+
+div.ColVis_collectionBackground
+div.DTTT_collection_background {
+  background-color: black;
+  z-index: 1100;
+}
+
+div.ColVis_catcher,
+div.DTTT_catcher {
+  position: absolute;
+  z-index: 1101;
+}

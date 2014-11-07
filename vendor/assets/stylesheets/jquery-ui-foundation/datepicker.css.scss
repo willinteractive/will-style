@@ -1,0 +1,43 @@
+@import "jquery.ui.datepicker";
+
+#ui-datepicker-div {
+	// @include dropdown-container(content);
+	// @include css-triangle($f-dropdown-triangle-size + 1, $f-dropdown-border-color, bottom);
+	background-color: white;
+	border: 1px solid gray;
+
+	margin-top: 15px;
+	// padding: 5px;
+}
+
+.ui-datepicker {
+	/* Set default and disabled colors */
+	.ui-state-default {
+		color: gray;
+	}
+	
+	.ui-datepicker-unselectable.ui-state-disabled {
+		.ui-state-default {
+			color: white;
+			background-color: gray;
+		}
+	}
+
+	/* Properly position buttons */
+	.ui-datepicker-next {
+		right: 11px;
+	}
+
+	.ui-datepicker-prev {
+		left: -3px;
+	}
+
+	/* Set current day to green with white */
+	td.ui-datepicker-current-day {
+		background-color: #4cbb87;
+
+		a.ui-state-default {
+			color: white;
+		}
+	}
+}
