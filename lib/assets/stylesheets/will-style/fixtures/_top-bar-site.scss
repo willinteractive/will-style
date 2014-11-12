@@ -4,12 +4,12 @@
 // 
 */
 
-$topbar-bg-color: transparent;
 $topbar-height: 60px;
 $topbar-dropdown-bg: transparent;
 
 $topbar-link-color-active: $primary-color;
 $topbar-link-weight: $font-weight-bold;
+$topbar-link-bg: transparent;
 $topbar-link-bg-hover: transparent;
 $topbar-link-bg-color-hover: transparent;
 $topbar-link-bg-active: transparent;
@@ -41,8 +41,13 @@ body.f-topbar-fixed {
 	z-index: 999;
 }
 
-.fixed.contain-to-grid {
-	background-color: $body-font-color;
-	@include single-transition(background-color, .5s, .2s);
+@media #{$topbar-media-query} {
+	.contain-to-grid, .top-bar {
+		background: transparent;
+	}
+	.fixed.contain-to-grid {
+		background-color: $topbar-bg-color;
+		@include single-transition(background-color, .5s, .2s);
+	}
 }
 
