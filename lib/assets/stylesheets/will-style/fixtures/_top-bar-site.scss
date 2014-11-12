@@ -1,0 +1,48 @@
+/* 
+// 
+// TOP BAR
+// 
+*/
+
+$topbar-bg-color: transparent;
+$topbar-height: 60px;
+$topbar-dropdown-bg: transparent;
+
+$topbar-link-color-active: $primary-color;
+$topbar-link-weight: $font-weight-bold;
+$topbar-link-bg-hover: transparent;
+$topbar-link-bg-color-hover: transparent;
+$topbar-link-bg-active: transparent;
+$topbar-link-bg-active-hover: transparent;
+$topbar-link-text-transform: uppercase;
+
+@import  "will-style/fixtures/top-bar";
+
+body.f-topbar-fixed {
+	// we want the fixed topbar to sit overtop of the main content
+	padding-top: 0;
+}
+
+// because of the topbar being overlayed
+// we need extra padding for our content
+.sticky + main.sectioned > section {
+	padding-top: $topbar-height*2;
+}
+
+// we are using sticky to add the class of .fixed for us
+// so we can then introduce a background for the nav as the user scrolls
+
+// but we want the sticky bar to always be fixed
+.sticky {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	z-index: 999;
+}
+
+.fixed.contain-to-grid {
+	background-color: $body-font-color;
+	@include single-transition(background-color, .5s, .2s);
+}
+
