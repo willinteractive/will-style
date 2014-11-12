@@ -25,7 +25,7 @@ body.f-topbar-fixed {
 
 // because of the topbar being overlayed
 // we need extra padding for our content
-.sticky + main.sectioned > section {
+.sticky + main.sectioned > section:first-child {
 	padding-top: $topbar-height*2;
 }
 
