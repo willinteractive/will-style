@@ -44,6 +44,7 @@ body.f-topbar-fixed {
 @media #{$topbar-media-query} {
 	.contain-to-grid, .top-bar {
 		background: transparent;
+		@include single-transition(background-color, .3s);
 	}
 	.fixed.contain-to-grid {
 		background-color: $topbar-bg-color;
