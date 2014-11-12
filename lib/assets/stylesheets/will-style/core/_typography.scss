@@ -118,3 +118,18 @@ dl.stats.large {
 	@include nowrap;
 }
 
+// allowing a way to use css3 columns
+// use the following class: text-columns-#
+[class*="text-column"] {
+	@include column-count(2);
+	
+	// if this is a list, we need to move the bullet positions inside
+	// or else they won't show in some browsers
+	li { 
+		list-style-position: inside;
+	}
+	// and remove margin
+	margin-left: 0;
+	
+}
+
