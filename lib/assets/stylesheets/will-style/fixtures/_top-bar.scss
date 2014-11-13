@@ -9,7 +9,7 @@ $topbar-back-link-size: rem-calc(12);
 @import  "foundation/components/top-bar";
 
 // aligning image text inside .name
-.title-area img, .title-area svg {
+.title-area img {
 	vertical-align: text-top;
 }
 

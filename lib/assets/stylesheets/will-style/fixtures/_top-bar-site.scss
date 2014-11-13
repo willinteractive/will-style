@@ -30,6 +30,11 @@ body.f-topbar-fixed {
 	padding-top: $topbar-height*2;
 }
 
+// aligning image text inside .title-area
+.title-area img, .title-area svg {
+	vertical-align: middle;
+}
+
 // we are using sticky to add the class of .fixed for us
 // so we can then introduce a background for the nav as the user scrolls
 
@@ -112,6 +117,12 @@ body.f-topbar-fixed {
 		@include single-transition(all, .3s);
 	}
 	
+	#will-logo-svg {
+		width: 147px;
+		height: 48px;
+		@include single-transition(all, .3s);
+	}
+	
 	.fixed {
 		.top-bar, .top-bar .name h1,
 		.top-bar-section li.active:not(.has-form) a:not(.button),
@@ -131,6 +142,12 @@ body.f-topbar-fixed {
 		#magnify {
 			height: 18px;
 			width: 18px;
+			@include single-transition(all, .5s, .2s);
+		}
+		
+		#will-logo-svg {
+			width: 98px;
+			height: 32px;
 			@include single-transition(all, .5s, .2s);
 		}
 	}
