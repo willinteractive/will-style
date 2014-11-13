@@ -42,17 +42,6 @@ body.f-topbar-fixed {
 	z-index: 999;
 }
 
-@media #{$topbar-media-query} {
-	.contain-to-grid, .top-bar {
-		background: transparent;
-		@include single-transition(background-color, .3s);
-	}
-	.fixed.contain-to-grid {
-		background-color: $topbar-bg-color;
-		@include single-transition(background-color, .5s, .2s);
-	}
-}
-
 // show svg if supported, if not, show image
 .title-area svg {
 	display: none;
@@ -77,3 +66,54 @@ body.f-topbar-fixed {
 	height: 32px;
 }
 
+@media #{$topbar-media-query} {
+	.contain-to-grid, .top-bar {
+		background: transparent;
+		@include single-transition(background-color, .3s);
+	}
+	.fixed.contain-to-grid {
+		background-color: $topbar-bg-color;
+		@include single-transition(background-color, .5s, .2s);
+	}
+}
+
+@media #{$large-up} {
+	// when on large screens, make top bar taller then animate to shorter when scrolling
+	
+	.top-bar, .top-bar .name h1,
+	.top-bar-section li.active:not(.has-form) a:not(.button),
+	.top-bar-section li:not(.has-form) a:not(.button) {
+		height: $topbar-height*2;
+		line-height: $topbar-height*2;
+		@include single-transition(all, .3s);
+	}
+	.top-bar-section {
+		ul li > a {
+			font-size: $topbar-link-font-size*1.2;
+			line-height: $topbar-height*2;
+			@include single-transition(all, .3s);
+		}
+	}
+	
+	// make sure the top padding of the first section is also increased
+	.sticky + main.sectioned > section:first-child {
+		padding-top: $topbar-height*3;
+	}
+	
+	.fixed {
+		.top-bar, .top-bar .name h1,
+		.top-bar-section li.active:not(.has-form) a:not(.button),
+		.top-bar-section li:not(.has-form) a:not(.button) {
+			height: $topbar-height;
+			line-height: $topbar-height;
+			@include single-transition(all, .5s, .2s);
+		}
+		.top-bar-section {
+			ul li > a {
+				font-size: $topbar-link-font-size;
+				line-height: $topbar-height;
+				@include single-transition(all, .5s, .2s);
+			}
+		}
+	}
+}
