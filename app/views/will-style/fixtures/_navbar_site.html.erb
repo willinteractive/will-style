@@ -2,9 +2,14 @@
 	<nav class="top-bar" data-topbar>
 		<ul class="title-area">
 			<li class="name">
-				<h1>
-					<a href="#"><%= image_tag "will-style/will_logo_32.png", title: "WILL" %></a>
-				</h1>
+				<h1><a href="<%= root_path %>">
+					<% if logo %>
+						<%= render "will-style/partials/will_logo_svg" %>
+					<% else %>
+						<%= image_tag "will-style/will_logo_32.png", title: "WILL" %>
+						<%= render "will-style/partials/will_logo_svg" %>
+					<% end %>
+				</a></h1>
 			</li>
 			<li class="toggle-topbar menu-icon">
 				<a href="#">
@@ -15,8 +20,8 @@
 		
 	  <section class="top-bar-section">
 	    <ul class="right">
-	    	<li class="active"><a href="#">Item 1</a></li>
-		  	<li><a href="#">Item 2</a></li>
+	    	<li class="active"><a href="<%= templates_product_path %>">Default</a></li>
+		  	<li><a href="<%= templates_product_featured_path %>">Featured</a></li>
 		  	<li><a href="#">Item 3</a></li>
 	    </ul>
 	  </section>
