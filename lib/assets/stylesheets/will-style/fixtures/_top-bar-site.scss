@@ -52,6 +52,24 @@ body.f-topbar-fixed {
 	}
 }
 
+// show svg if supported, if not, show image
+.title-area svg {
+	display: none;
+	visibility: hidden;
+}
+
+.inlinesvg {
+	.title-area img {
+		display: none;
+		visibility: hidden;
+	}
+	
+	.title-area svg {
+		display: inline-block;
+		visibility: visible;
+	}
+}
+
 // The vector (SVG) logo
 #will-logo-svg {
 	width: 98px;

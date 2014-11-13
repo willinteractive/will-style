@@ -8,24 +8,6 @@ $topbar-back-link-size: rem-calc(12);
 
 @import  "foundation/components/top-bar";
 
-// show svg if supported, if not, show image
-.title-area svg {
-	display: none;
-	visibility: hidden;
-}
-
-.inlinesvg {
-	.title-area img {
-		display: none;
-		visibility: hidden;
-	}
-	
-	.title-area svg {
-		display: inline-block;
-		visibility: visible;
-	}
-}
-
 // aligning image text inside .name
 .title-area img, .title-area svg {
 	vertical-align: text-top;
