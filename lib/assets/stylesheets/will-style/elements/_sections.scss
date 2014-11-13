@@ -93,11 +93,16 @@ $section-primary-bg:							$primary-color;
 		  @include section_color($bg: $section-inverse-bg, $text: $section-inverse-color);
 		}
 
-	
 		// Primary (brand color) Background
 		// -------------------------
 		> section.primary {
 		  @include section_color($bg: $section-primary-bg, $text: $section-primary-color);
+		}
+		
+		// Secondary (zebra color) Background
+		// -------------------------
+		> section.secondary {
+		  @include section_color($bg: $section-zebra-bg, $text: $section-zebra-color);
 		}
 		
 		// Background images
