@@ -75,6 +75,12 @@ body.f-topbar-fixed {
 		background-color: $topbar-bg-color;
 		@include single-transition(background-color, .5s, .2s);
 	}
+	
+	// the search magnifier as nav item
+	#magnify {
+		height: 18px;
+		width: 18px;
+	}
 }
 
 @media #{$large-up} {
@@ -100,6 +106,12 @@ body.f-topbar-fixed {
 		padding-top: $topbar-height*3;
 	}
 	
+	#magnify {
+		height: 24px;
+		width: 24px;
+		@include single-transition(all, .3s);
+	}
+	
 	.fixed {
 		.top-bar, .top-bar .name h1,
 		.top-bar-section li.active:not(.has-form) a:not(.button),
@@ -114,6 +126,12 @@ body.f-topbar-fixed {
 				line-height: $topbar-height;
 				@include single-transition(all, .5s, .2s);
 			}
+		}
+		
+		#magnify {
+			height: 18px;
+			width: 18px;
+			@include single-transition(all, .5s, .2s);
 		}
 	}
 }

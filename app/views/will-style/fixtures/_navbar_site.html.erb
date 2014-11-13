@@ -23,6 +23,8 @@
 	    	<li class="active"><a href="<%= templates_product_path %>">Default</a></li>
 		  	<li><a href="<%= templates_product_featured_path %>">Featured</a></li>
 		  	<li><a href="#">Item 3</a></li>
+		  	<li class="show-for-medium-up"><a href=""><%= render "will-style/partials/magnify_svg" %></a></li>
+		  	<li class="show-for-small-only"><%= ws_fancy_search "#", "Search term", "Search in project...", class: "search-form"%></li>
 	    </ul>
 	  </section>
 	</nav>
