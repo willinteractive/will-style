@@ -7,21 +7,21 @@
 // change body font-size based on viewport width
 // ----------------------
 
-// start small - 12px
+// start small - 14px
 body, html {
-	font-size: $base-font-size*.75;
+	font-size: $base-font-size*.875;
 }
 
 @media #{$medium-up} {
-	// 14px
+	// 16px
 	body, html {
-		font-size: $base-font-size*.875;
+		font-size: $base-font-size;
 	}
 }
 
 @media #{$large-up} {
-	// 16px
+	// 18px
 	body, html {
-		font-size: $base-font-size;
+		font-size: $base-font-size*1.125;
 	}
 }
