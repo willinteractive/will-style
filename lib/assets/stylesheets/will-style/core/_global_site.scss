@@ -1,0 +1,27 @@
+/* 
+// 
+// SITE SPECIFIC GLOBAL SETTINGS
+// 
+*/
+
+// change body font-size based on viewport width
+// ----------------------
+
+// start small - 12px
+body, html {
+	font-size: $base-font-size*.75;
+}
+
+@media #{$medium-up} {
+	// 14px
+	body, html {
+		font-size: $base-font-size*.875;
+	}
+}
+
+@media #{$large-up} {
+	// 16px
+	body, html {
+		font-size: $base-font-size;
+	}
+}
