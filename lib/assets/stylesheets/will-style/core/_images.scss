@@ -20,6 +20,11 @@ img.round {
 	border-radius: $global-rounded;
 }
 
+// allow thumbnails to be round
+th.round {
+	border-radius: $global-rounded;
+}
+
 /* CUSTOM */
 
 // SVG SUPPORT
