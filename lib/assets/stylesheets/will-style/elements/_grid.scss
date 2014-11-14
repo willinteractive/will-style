@@ -1,0 +1,15 @@
+/* 
+// 
+// GRID
+// 
+*/
+
+
+@import "foundation/components/grid";
+
+// Foundation forgot to add a way to uncenter using mixins
+@mixin uncenter() {
+	margin-#{$default-float}: 0;
+  margin-#{$opposite-direction}: 0;
+  float: $default-float;
+}
