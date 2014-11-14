@@ -4,7 +4,7 @@
 // 
 */
 
-$topbar-height: 60px;
+//$topbar-height: 60px;
 $topbar-dropdown-bg: transparent;
 
 $topbar-link-color: $primary-color;
@@ -22,12 +22,6 @@ $topbar-link-text-transform: uppercase;
 body.f-topbar-fixed {
 	// we want the fixed topbar to sit overtop of the main content
 	padding-top: 0;
-}
-
-// because of the topbar being overlayed
-// we need extra padding for our content
-.sticky + main.sectioned > section:first-child {
-	padding-top: $topbar-height*2;
 }
 
 // aligning image text inside .title-area
@@ -67,8 +61,16 @@ body.f-topbar-fixed {
 
 // The vector (SVG) logo
 #will-logo-svg {
-	width: 98px;
-	height: 32px;
+	width: 61px;
+	height: 20px;
+	
+	@media #{$topbar-media-query} {
+		// The vector (SVG) logo
+		#will-logo-svg {
+			width: 98px;
+			height: 32px;
+		}
+	}
 }
 
 @media #{$topbar-media-query} {
