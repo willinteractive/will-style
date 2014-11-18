@@ -109,7 +109,7 @@ body.f-topbar-fixed {
 	}
 	
 	// make sure the top padding of the first section is also increased
-	.sticky + main.sectioned > section:first-child {
+	.sticky + main section:first-of-type {
 		padding-top: $topbar-height*3;
 	}
 	
