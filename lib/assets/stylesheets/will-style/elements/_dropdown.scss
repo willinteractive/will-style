@@ -34,3 +34,15 @@
 }
 
 
+
+// CUSTOM
+// ----------------------
+
+// add the class of .full to the dropdown content to get a full-width dropdown
+.f-dropdown.content.full {
+	max-width: none;
+	
+	&.open {
+		left: 0px !important;
+	}
+}

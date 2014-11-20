@@ -18,15 +18,15 @@
 #= require modernizr
 
 # -------- LIBRARIES
-#= require forms/expanding-textareas
-#= require jquery.urlify
+# --- slick slider for product characters
+#= require slick
+# --- blurring poster backgrounds
+#= require StackBlur
 
 # -------- WILL-STYLE DEFAULTS
 #= require will-style/fonts
 #= require will-style/jquery
 #= require will-style/foundation
 #= require will-style/search_form
-#= require will-style/hideable-sidebar
-#= require will-style/offline
 #= require will-style/alert-boxes
 #= require will-style/forms/required_inputs

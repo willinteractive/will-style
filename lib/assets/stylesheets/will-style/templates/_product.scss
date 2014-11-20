@@ -1,0 +1,447 @@
+/* 
+// 
+// MAIN SITE PRODUCT PAGE
+// 
+*/
+
+// -------------------------
+// Product TITLE
+// ----------------------
+
+// this title only shows on small screens since they are not big enough to see/read the poster
+.product-title {
+	// keep it accessible
+	@extend .visible-for-small-only;
+	
+	// reduce size, but we want to keep it an h1 for hierarchy
+	font-size: $h5-font-size;
+	
+	// add some padding and background color
+	padding: .5em $column-gutter/2;
+	background: $primary-color;
+	color: white;
+	
+	// reduct space between this & next section
+	margin-bottom: 0;
+	
+	// accomodate for fixed top-bar
+	margin-top: $topbar-height;
+}
+
+
+// -------------------------
+// The top MAIN area
+// -------------------------
+
+// if the browser supports canvas
+.canvas .product-main {
+	// The blurred background image:
+	// use the poster image blurred and less opaque as background
+	// http://zurb.com/playground/image-blur-texture
+	position: relative;
+	overflow: hidden;
+	
+	.poster_background {
+		@include stretch;
+		width: 100%;
+		z-index: 1;
+		@include opacity(.5);
+		
+		@media #{$medium-up} {
+			top: -50%;
+		}
+	}
+	
+	img.poster-background {
+		display: none;
+	}
+	
+	.row {
+		// position content above canvas
+		position: relative;
+		z-index: 2;
+	}
+}
+
+.product-main {	
+	.main-poster {
+		text-align: right;
+		// GRID: small-5 medium-4 large-offset-1
+		@include grid-column(5);
+		@media #{$medium-up} { @include grid-column(4); }
+		@media #{$large-up}  { @include grid-column(4, $offset: 1); }
+	}
+	
+	.main-text {
+		margin-top: 2rem;
+		
+		// GRID: small-5 medium-6 large-5 xlarge-4
+		@include grid-column(5);
+		// except for last one which is 12 columns
+		&:last-child {
+			@include grid-column(12);
+		}
+		// have to overide the :last-child selector from above
+		&, &:last-child {
+			@media #{$medium-up} { @include grid-column(6); }
+		}
+		&, &:last-child {
+			@media #{$large-up}  { @include grid-column(5); }
+		}
+	}
+		
+	h2 > span {
+		// put each span on it's own line
+		display: block;
+		
+		// don't show greeting on small screens
+		&.greeting {
+			display: none;
+		}
+		
+		&.name {
+			font-weight: bold;
+		}
+	}
+	
+	@media #{$medium-up} {		
+		h2 > span {
+			
+			// show greeting
+			&.greeting {
+				display: block;
+			}
+			
+		}
+	}
+	
+	@media #{$large-up} {
+		h2 > span {
+			// make them all bold and uppcase now
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+	}
+}	
+	
+
+// -------------------------
+// The featured SLIDER (characters)
+// -------------------------
+
+section.characters-slider {
+	@media #{$medium-up} {
+		// remove bottom padding from section so character image sits at the bototm
+		padding-bottom: 0;
+		
+		// move dots to bottom right (was bottom centered)
+		.slick-dots {
+		  text-align: right;
+		  padding-right: $column-gutter/2;
+		  
+		  // but there was padding of it's parrent that we compensated for
+		  bottom: 10px;
+		}
+	}
+	
+	@media #{$xlarge-up} {
+		// move slick-dots in a bit to accomodate for character text not being all the way right
+		.slick-dots {
+			padding-right: grid-calc(1, $total-columns);
+		}
+	}
+}
+
+// .character is the .row containing 1 character
+// FLEX Setup
+.character {
+	@media #{$medium-up} {		
+		// make sure the image stays at the bottom of the column
+		// & text in the center
+		// won't render well in <= IE9
+		@include display-flex(flex);
+
+		.character-image {
+			@include align-self(flex-end);
+		}
+		
+		.character-text {
+			@include align-self(center);
+		}
+	}
+}
+
+
+.character-image {
+	// in case image is smaller than max-width of the column, center it
+	text-align: center;
+			
+	// GRID: small-7 small-centered medium-uncentered medium-6 large-5 large-offset-2 xlarge-4
+	@include grid-column(7, $center: true);
+	
+	@media #{$medium-up} { 
+		@include grid-column(6);
+		@include uncenter;
+		
+		// on in the medium grid, don't have the image resize and push it off to the left
+		overflow: hidden;		
+		img {
+			max-width: inherit;
+			float: right;
+			margin-right: $column-gutter*-1;
+		}
+	}
+	
+	@media #{$large-up}  { 
+		@include grid-column(5, $offset: 1);
+		
+		// allow extra part of image to show now
+		overflow: visible;
+		
+		// remove negative margin on img
+		img {
+			margin-right: 0;
+		}
+	}
+	
+	@media #{$xlarge-up} { @include grid-column(4); }
+	
+	.holder {
+		// only if we are a small screen, extend the thumbnail class
+		@media #{$small-only} {
+			@include thumb($box-shadow-hover: 0 0 0 1px rgba(#000,.2));
+			// color background white
+			background: white;
+			
+			// and round it
+			@include border-radius($global-rounded);
+			// make sure the image stays within it's borders
+			overflow: hidden;
+		}
+	}
+}
+
+.character-text {
+	text-align: center;
+
+	// GRID: small-12 medium-6 large-4
+	@include grid-column(12);
+	@media #{$medium-up} { @include grid-column(6); }
+	@media #{$large-up}  { @include grid-column(5); }
+	
+	@media #{$medium-up} {
+		text-align: left;
+		
+		h2 > span {
+			// shrink greeting & sub, & uppercase them
+			&.greeting, &.sub {
+				font-size: 80%;
+				text-transform: uppercase;
+			}
+		}
+		
+		p {
+			// give the paragraph extra bottom padding to accomodate for the dots.
+			margin-bottom: 2em;
+		}
+	}
+}
+
+// -------------------------
+// The BLURB (challenge, solution & poster)
+// -------------------------
+
+.product-blurb {
+	h5 {
+		text-transform: uppercase;
+	
+		border-bottom: 1px solid rgba(white, .3);
+		// offset border from text a bit
+		padding-bottom: .5rem;
+		margin-bottom: 1rem;
+	}
+}
+
+.default .product-blurb {	
+	.column {
+		// GRID:  medium-6 large-5 large-offset-1
+		@media #{$medium-up} { @include grid-column(6); }
+		@media #{$large-up}  { @include grid-column(5, $offset: 1); }
+		
+		&:last-child {
+			// don't offset the last column
+			@media #{$large-up}  { @include grid-column(5, $offset: 0); }
+		}
+	}
+}
+
+.featured .blurb-poster {
+	// align the poster in center of column
+	text-align: center;
+	
+	// don't show for small screens
+	@extend .show-for-medium-up;
+	
+	// GRID: medium-4 xlarge-3 xlarge-offset-1
+	@include grid-column(12);
+	@media #{$medium-up} { @include grid-column(4); }
+	@media #{$xlarge-up}  { @include grid-column(3, $offset: 1); }
+	
+	// move to above character stuff
+	z-index: 3;
+	
+}
+
+// add border below challenge/solution headers
+.featured .blurb-text {
+
+	//GRID: medium-7 large-8 xlarge-7
+	@media #{$medium-up} { @include grid-column(7); }
+	@media #{$large-up} { @include grid-column(8); }
+	@media #{$xlarge-up}  { @include grid-column(7); }
+	
+	.row > .column {
+		@media #{$large-up} { @include grid-column(6); }
+	}
+	
+	.blurb-text-poster {
+		// use column sizing to make it 5/12ths the size of the window
+		@include grid-column(5, $float: right);
+		// remove right padding from img so it abuts the column edge
+		padding-right: 0;
+		// only show on small screens
+		@extend .show-for-small-only;
+	}
+}
+
+@media #{$large-up} {
+	.featured .product-blurb {
+		.row {
+			// allow the poster's column to be same height as following columns
+			// this makes sure the poster aligns to the bottom of the blurb text
+			@include display-flex(flex);
+		}	
+		
+		.blurb-poster {
+			// uncenter the img
+			text-align: left;
+			
+			img {
+				// position the poster so it breaks through the top of the blurb row
+				position: absolute;
+				bottom: 0;
+	
+				// because adding flex to the row makes the columns' widths include it's padding
+				// we need to decrease the width of the responsive image
+				max-width: 300px;
+				padding-bottom: 0;
+			}
+		} 
+	}
+}
+
+// -------------------------
+// For large centered list of LEARNING POINTS
+// -------------------------
+
+.learning-points-large {
+	margin-left: 0;
+	margin-bottom: 0;
+	
+	li {
+		list-style: none;
+		font-size: 1.3em;
+		line-height: 1em;
+		margin-bottom: 1em;
+		text-align: center;
+		font-style: italic;
+		color: lighten($body-font-color, 20%);
+		font-weight: $font-weight-light;
+	}
+}
+
+// -------------------------
+// TRAILER Section
+// -------------------------
+
+@media #{$medium-up} {
+	.product-trailer .flex-video {
+		margin-bottom: 0;
+	}
+}
+
+// -------------------------
+// AWARDS Section
+// -------------------------
+.product-awards {
+	svg, img {
+		margin-bottom: 2em;
+	}
+	
+	@media #{$medium-up} {
+		svg, img {
+			margin-bottom: 0px;
+		}
+		p {
+			padding-left: 10em;
+		}
+	}
+}
+
+// -------------------------
+// FEATURES Section
+// -------------------------
+.product-features {
+	ul {
+		// use flex-box to align item
+		@include display-flex(flex);
+		// puts equal space around each item
+		@include justify-content(space-around);
+		// wraps countent instead of squishing
+		@include flex-wrap(wrap);
+		
+		li {
+			list-style: none;
+			padding: 2em 2em 0;
+			@include clearfix;
+			
+			i, strong {
+				float: left;
+			}
+			strong {
+				margin-left: 1em;
+			}
+		}
+	}
+}
+
+// -------------------------
+// UTLITIES
+// -------------------------
+
+@media #{$medium-up} {
+	// use the following class on a row to allow it's columns' contents to align vertically-centered
+	.flex-center {
+		@include display-flex(flex);
+		@include align-items(center);
+	}
+	
+	// unless no flexbox support
+	.no-flexbox .flex-center {
+	  display: table;
+	}
+	.no-flexbox .flex-center > * {
+	  display: table-cell;
+	  vertical-align: middle;
+	  white-space: nowrap;
+	}
+}
+	
+@media #{$large-up} {
+
+	.to-product {
+		// increase the size of the button
+		@include button($padding: $button-lrg);
+	}
+	
+}
