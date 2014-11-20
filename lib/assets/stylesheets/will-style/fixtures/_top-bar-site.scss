@@ -33,7 +33,7 @@ body.f-topbar-fixed {
 // so we can then introduce a background for the nav as the user scrolls
 
 // but we want the sticky bar to always be fixed
-.sticky {
+.sticky .top-bar {
 	position: fixed;
 	top: 0px;
 	left: 0px;
@@ -74,11 +74,11 @@ body.f-topbar-fixed {
 }
 
 @media #{$topbar-media-query} {
-	.contain-to-grid, .top-bar {
+	.contain-to-grid .top-bar {
 		background: transparent;
 		@include single-transition(background-color, .3s);
 	}
-	.fixed.contain-to-grid {
+	.fixed.contain-to-grid .top-bar {
 		background-color: rgba($topbar-bg-color, .9);
 		@include single-transition(background-color, .5s, .2s);
 	}
