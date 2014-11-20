@@ -33,12 +33,23 @@ body.f-topbar-fixed {
 // so we can then introduce a background for the nav as the user scrolls
 
 // but we want the sticky bar to always be fixed
+
+// This is a bit of a hack. Ideally, the foundation top bar would first set 
+// positioning on our sticky container and then we could adjust it here, but
+// what ends up happening is that when a page is scrolled and refreshed, the 
+// sticky container is already set to fixed, which messes up the positioning
+// calculation in the top-bar javascript.
+//
+// By targeting the top-bar element itself for fixed positioning, we achieve
+// the desired effect and also have it function properly on page refresh. The
+// downside is that we have to target the top bar for coloring.
 .sticky .top-bar {
 	position: fixed;
 	top: 0px;
 	left: 0px;
-	width: 100%;
+	right: 0px;
 	z-index: 999;
+	max-width: none;
 }
 
 // show svg if supported, if not, show image
@@ -87,6 +98,12 @@ body.f-topbar-fixed {
 	#magnify {
 		height: 18px;
 		width: 18px;
+	}
+}
+
+@media #{$small-only} {
+	.top-bar .top-bar-section ul {
+		background-color: $topbar-bg-color;
 	}
 }
 
