@@ -1,0 +1,16 @@
+<header id="will-header">
+	<h1>
+		<a href="<%= root_path %>">
+			<%= image_tag "will-style/will_logo_32.png", title: "WILL" %>
+			<%= render "will-style/partials/will_logo_svg" %>
+		</a>
+	</h1>
+
+	<nav>
+		<a href="<%= templates_product_path %>">Default</a>
+		<a href="<%= templates_product_featured_path %>">Featured</a>
+		<a href="#">Item 3</a>
+		<a href=""><%= render "will-style/partials/magnify_svg" %><%= fa_icon "search 2x", class: "svg-alt show-for-medium-up" %></a>
+		<%= ws_fancy_search "#", "Search term", "Search in project...", class: "search-form show-for-small-only"%>
+	</nav>
+</header>

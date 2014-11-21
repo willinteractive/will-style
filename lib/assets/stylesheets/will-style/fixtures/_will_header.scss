@@ -1,70 +1,42 @@
-/* 
-// 
-// TOP BAR
-// 
-*/
-
-//$topbar-height: 60px;
-$topbar-dropdown-bg: transparent;
-
-$topbar-link-color: $primary-color;
-$topbar-link-color-active: white;
-$topbar-link-weight: $font-weight-bold;
-$topbar-link-bg: transparent;
-$topbar-link-bg-hover: transparent;
-$topbar-link-bg-color-hover: transparent;
-$topbar-link-bg-active: transparent;
-$topbar-link-bg-active-hover: transparent;
-$topbar-link-text-transform: uppercase;
+@import "compass/css3/box-sizing";
+@import "compass/css3/transform";
+@import "compass/css3/transition";
 
 @import  "will-style/fixtures/top-bar";
 
-body.f-topbar-fixed {
-	// we want the fixed topbar to sit overtop of the main content
-	padding-top: 0;
-}
+/* WILL Header */
 
-// aligning image text inside .title-area
-.title-area img, .title-area svg {
-	vertical-align: middle;
-}
-
-// we are using sticky to add the class of .fixed for us
-// so we can then introduce a background for the nav as the user scrolls
-
-// but we want the sticky bar to always be fixed
-
-// This is a bit of a hack. Ideally, the foundation top bar would first set 
-// positioning on our sticky container and then we could adjust it here, but
-// what ends up happening is that when a page is scrolled and refreshed, the 
-// sticky container is already set to fixed, which messes up the positioning
-// calculation in the top-bar javascript.
-//
-// By targeting the top-bar element itself for fixed positioning, we achieve
-// the desired effect and also have it function properly on page refresh. The
-// downside is that we have to target the top bar for coloring.
-.sticky .top-bar {
+#will-header {
 	position: fixed;
 	top: 0px;
 	left: 0px;
 	right: 0px;
 	z-index: 999;
-	max-width: none;
+
+	@include transform(translateY(0%));
+	@include transition(all 0.5s);
+}
+
+/* LOGO */
+
+// aligning image text inside .title-area
+#will-header img, #will-header svg {
+	vertical-align: middle;
 }
 
 // show svg if supported, if not, show image
-.title-area svg {
+#will-header svg {
 	display: none;
 	visibility: hidden;
 }
 
 .inlinesvg {
-	.title-area img {
+	#will-header img {
 		display: none;
 		visibility: hidden;
 	}
 	
-	.title-area svg {
+	#will-header svg {
 		display: inline-block;
 		visibility: visible;
 	}
@@ -84,16 +56,93 @@ body.f-topbar-fixed {
 	}
 }
 
+/* NAVIGATION */
+
+#will-header {
+	h1,
+	h1::before,
+	h1 span,
+	nav,
+	nav::before {
+		display: inline-block;
+		vertical-align: middle;
+		text-align: left;
+	}
+
+	h1 {
+		font-weight: 300;
+		font-size: 3.2em;
+		margin: 0;
+		padding: 0 1em 0 0;
+		cursor: default;
+		height: 100%;
+		z-index: 1;
+		@include transition(all 0.5s);
+	}
+
+	h1::before,
+	nav::before {
+		content: '';
+		height: 100%;
+	}
+
+	h1::after {
+		content: '';
+		width: 100px;
+		height: 96px;
+		background: #fff;
+		position: absolute;
+		z-index: 100;
+		top: 0;
+		left: 0;
+		cursor: pointer;
+		box-shadow: inset 0 8px #2d383f, inset 0 16px #fff, inset 0 24px #2d383f, inset 0 32px #fff, inset 0 40px #2d383f, inset 0 48px #fff, inset 0 56px #2d383f;
+		opacity: 0;
+		border: 20px solid #fff;
+
+		@include transition(opacity 0.5s);
+	}
+
+	nav {
+		height: 100%;
+	}
+
+	nav a {
+		display: inline-block;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-weight: 700;
+	    padding: 0.2em 0.4em;
+	    margin: 0 0.4em 0;
+	    font-size: 0.8em;
+	    cursor: pointer;
+	    color: #e74c3c;
+	    outline: none;
+	    text-decoration: none;
+	}
+
+	nav a:hover {
+		color: #bc3c2f;
+	}
+
+	nav a:last-child {
+	    margin-right: 0;
+	}
+}
+
+/* EFFECTS */
+
 @media #{$topbar-media-query} {
-	.contain-to-grid .top-bar {
+	#will-header {
 		background: transparent;
 		@include single-transition(background-color, .3s);
 	}
-	.fixed.contain-to-grid .top-bar {
+	
+	#will-header.opaque {
 		background-color: rgba($topbar-bg-color, .9);
 		@include single-transition(background-color, .5s, .2s);
 	}
-	
+
 	// the search magnifier as nav item
 	#magnify {
 		height: 18px;
@@ -102,7 +151,7 @@ body.f-topbar-fixed {
 }
 
 @media #{$small-only} {
-	.top-bar .top-bar-section ul {
+	#will-header nav {
 		background-color: $topbar-bg-color;
 	}
 }
@@ -110,14 +159,13 @@ body.f-topbar-fixed {
 @media #{$large-up} {
 	// when on large screens, make top bar taller then animate to shorter when scrolling
 	
-	.top-bar, .top-bar .name h1,
-	.top-bar-section li.active:not(.has-form) a:not(.button),
-	.top-bar-section li:not(.has-form) a:not(.button) {
+	#will-header h1,
+	#will-header nav {
 		height: $topbar-height*2;
 		line-height: $topbar-height*2;
 		@include single-transition(all, .3s);
 	}
-	.top-bar-section {
+	#will-header nav {
 		ul li > a {
 			font-size: $topbar-link-font-size*1.2;
 			line-height: $topbar-height*2;
@@ -142,15 +190,14 @@ body.f-topbar-fixed {
 		@include single-transition(all, .3s);
 	}
 	
-	.fixed {
-		.top-bar, .top-bar .name h1,
-		.top-bar-section li.active:not(.has-form) a:not(.button),
-		.top-bar-section li:not(.has-form) a:not(.button) {
+	.opaque {
+		#will-header h1,
+		#will-header nav {
 			height: $topbar-height;
 			line-height: $topbar-height;
 			@include single-transition(all, .5s, .2s);
 		}
-		.top-bar-section {
+		#will-header nav {
 			ul li > a {
 				font-size: $topbar-link-font-size;
 				line-height: $topbar-height;
