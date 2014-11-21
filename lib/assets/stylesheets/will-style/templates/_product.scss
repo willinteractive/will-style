@@ -4,6 +4,14 @@
 // 
 */
 
+// only on small screens, accomodate for the height of the absolute positioned top-bar
+@media #{$small-only} {
+	.product {
+		padding-top: $topbar-height;
+	}
+}
+
+
 // -------------------------
 // Product TITLE
 // ----------------------
@@ -23,9 +31,7 @@
 	
 	// reduct space between this & next section
 	margin-bottom: 0;
-	
-	// accomodate for fixed top-bar
-	margin-top: 45px;
+	margin-top: 0;
 }
 
 

@@ -95,6 +95,7 @@ $column-gutter: 3rem;
   "foundation/components/pagination",
   "foundation/components/side-nav",
   "foundation/components/sub-nav",
+  //"foundation/components/top-bar",
   "will-style/elements/tabs";
 
 
@@ -119,7 +120,7 @@ $column-gutter: 3rem;
   //"foundation/components/magellan",
   //"foundation/components/orbit",
   "foundation/components/pricing-tables",
-  "will-style/elements/progress-bars",
+  //"will-style/elements/progress-bars",
   "foundation/components/reveal";
   //"foundation/components/tooltips";
   
@@ -142,13 +143,6 @@ $column-gutter: 3rem;
 	// "will-style/fixtures/sticky-footer",
 	"will-style/fixtures/toolbar";
 	// "will-style/fixtures/top-bar";
-
-
-// App Style
-// ----------------------
-@import 
-	"will-style/fixtures/app-nav",
-	"will-style/fixtures/app-page-header";
 
 
 // Site Style
