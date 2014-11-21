@@ -1,16 +1,43 @@
-<header id="will-header">
-	<h1>
+<header id="will-header" class="cd-header">
+	<div class="cd-logo">
 		<a href="<%= root_path %>">
 			<%= image_tag "will-style/will_logo_32.png", title: "WILL" %>
-			<%= render "will-style/partials/will_logo_svg" %>
+			<%= render "will-style/partials/will_logo_svg" %>		
 		</a>
-	</h1>
+	</div>
 
 	<nav>
-		<a href="<%= templates_product_path %>">Default</a>
-		<a href="<%= templates_product_featured_path %>">Featured</a>
-		<a href="#">Item 3</a>
-		<a href=""><%= render "will-style/partials/magnify_svg" %><%= fa_icon "search 2x", class: "svg-alt show-for-medium-up" %></a>
-		<%= ws_fancy_search "#", "Search term", "Search in project...", class: "search-form show-for-small-only"%>
-	</nav>
+		<ul class="cd-secondary-nav">
+			<li><a href="<%= templates_product_path %>">Default</a></li>
+			<li><a href="<%= templates_product_featured_path %>">Featured</a></li>
+			<li><%= render "will-style/partials/magnify_svg" %><%= fa_icon "search 2x", class: "svg-alt show-for-medium-up" %></li>
+		</ul>
+	</nav> <!-- cd-nav -->
+
+	<a class="cd-primary-nav-trigger" href="#0">
+		<span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span>
+	</a> <!-- cd-primary-nav-trigger -->
 </header>
+
+<nav>
+	<ul class="cd-primary-nav">
+		<li class="cd-label"><%= ws_fancy_search "#", "Search term", "Search in project...", class: "search-form show-for-small-only"%></li>
+
+		<li><a href="#0">The team</a></li>
+		<li><a href="#0">Our services</a></li>
+		<li><a href="#0">Our projects</a></li>
+
+		<li class="cd-label">Work with us</li>
+
+		<li><a href="#0">Start a project</a></li>
+		<li><a href="#0">Join In</a></li>
+		<li><a href="#0">Create an account</a></li>
+
+		<li class="cd-label">Follow us</li>
+		
+		<li class="cd-social cd-facebook"><a href="#0">Facebook</a></li>
+		<li class="cd-social cd-instagram"><a href="#0">Instagram</a></li>
+		<li class="cd-social cd-dribbble"><a href="#0">Dribbble</a></li>
+		<li class="cd-social cd-twitter"><a href="#0">Twitter</a></li>
+	</ul>
+</nav>
