@@ -133,3 +133,16 @@ dl.stats.large {
 	
 }
 
+
+// adding a class for p tags that sets a max width for ideal line length
+.ideal {
+	max-width: 36em;
+	
+	// make sure text stays centered 
+	&.text-center {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+
