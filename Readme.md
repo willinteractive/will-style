@@ -23,6 +23,40 @@ This will write a custom-will-styles.scss file in your app/assets/stylesheets fo
 
 See the Gemfile for other gems that other components may require.
 
+### IE9 4096 Selector Limit
+
+While IE9 is still alive, we need our sites to respect the 4096 selector limit. You can use this gem to help with that in your site:
+
+https://github.com/zweilove/css_splitter
+
+----------------------------------------
+
+Here are some quick steps for set up.
+
+1. Include gem 'css_splitter' in your gemfile and bundle.
+2. Make an application_split2.css file that contains this code
+
+```
+/*
+ *= require 'application'
+ */
+
+```
+
+3. Add this code to config/application.rb
+
+```
+ config.assets.precompile += %w( application_split2.css )
+ ```
+
+4. Switch the stylesheet include tag to this:
+
+```
+<%= split_stylesheet_link_tag "application", debug: true, media: "all", "data-turbolinks-track" => true  %>
+```
+
+Repeat this for every stylesheet you use in the application. It's not a perfect solution, but it's the one we have...
+
 ### To Work On WILL Style Locally
 
 Clone will-style to your machine.
