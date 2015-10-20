@@ -1,7 +1,7 @@
-/* 
-// 
+/*
+//
 // TOP BAR
-// 
+//
 */
 
 $topbar-back-link-size: rem-calc(12);
@@ -11,6 +11,11 @@ $topbar-back-link-size: rem-calc(12);
 // aligning image text inside .name
 .title-area img {
 	vertical-align: text-top;
+}
+
+// add more space between logo and title if there is a logo
+.title-area .logo {
+	margin-right: .5rem;
 }
 
 // style the "Back" link better
