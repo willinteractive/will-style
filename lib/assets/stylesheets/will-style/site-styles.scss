@@ -20,7 +20,8 @@
 
 // External
 // ----------------------
-@import,
+
+@import
 	"normalize";
 
 // Global
@@ -28,7 +29,7 @@
 
 // make grid (almost) full-width and use large classes
 $include-xl-html-grid-classes: true;
-$row-width: 90em !default;
+$row-width: 90rem;
 $column-gutter: 3rem;
 
 @import

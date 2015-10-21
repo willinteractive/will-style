@@ -6,7 +6,7 @@
 // FOUNDATION
 // ------------------
 
-$topbar-height: 45px;
+$topbar-height: rem-calc(45);
 
 $topbar-bg: transparent;
 $topbar-dropdown-bg: $topbar-bg;
@@ -118,6 +118,7 @@ $topbar-bg-active: rgba($topbar-bg-color, .9);
 	width: 100%;
 
 	transition: background-color .3s;
+
 	/* Force Hardware Acceleration in WebKit */
 	transform: translate3d(0,0,0);
 	-webkit-backface-visibility: hidden;
@@ -256,6 +257,7 @@ $topbar-bg-active: rgba($topbar-bg-color, .9);
 		width: 18px;
 		height: 2px;
 		background-color: $topbar-link-color;
+
 		transition: background-color .3s;
 
 		/* these are the upper and lower lines in the menu icon */

@@ -51,6 +51,7 @@
 		@include stretch;
 		width: 100%;
 		z-index: 1;
+
 		opacity: .5;
 
 		@media #{$medium-up} {
@@ -325,6 +326,7 @@ section.characters-slider {
 		.row {
 			// allow the poster's column to be same height as following columns
 			// this makes sure the poster aligns to the bottom of the blurb text
+
 			display: flex;
 		}
 
