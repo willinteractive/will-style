@@ -176,7 +176,7 @@ a.list-group-item {
 	}
 	
 	li:not(.list-group-actions) {
-		@include transition(background);
+		transition: background;
 		
 		&:hover, &:focus {
 			background: $component-hover-bg-color;

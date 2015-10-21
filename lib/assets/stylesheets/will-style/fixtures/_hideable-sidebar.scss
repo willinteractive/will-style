@@ -3,14 +3,10 @@
 
 @mixin equalize-sidebar() {
 	.inner-wrap {
-		// @NOTE: Updating to Compass 1.0 removed this deprecated method.
-		// @include display-box;
-		@include display-flex();
+		display: flex;
 
 		.hideable-sidebar, main {
-			// @NOTE: Updating to Compass 1.0 removed this deprecated method.
-			// @include box-align("stretch");
-			@include align-self(stretch);
+			align-self: stretch;
 		}
 	}
 }

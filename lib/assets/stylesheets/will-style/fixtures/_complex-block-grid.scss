@@ -1,5 +1,5 @@
-/* 
-// 
+/*
+//
 // CLICKABLE BLOCK GRID
 // Based off of Foundation's Block Grid
 // but with more complex interactions and links
@@ -8,23 +8,23 @@
 
 
 .clickable-block-grid {
-	
+
 	figure {
 		// remove default margins
-		margin:0;	
-		
+		margin:0;
+
 		// for stretching the content (figcaption)
 		position: relative;
 	}
-	
+
 	figcaption {
 		@include stretch();
-		
+
 		// make sure any content that gets position outside of the bounds
 		// does not show or make it scroll
 		overflow: hidden;
-		
-	}	
+
+	}
 }
 
 
@@ -33,49 +33,49 @@
 // -- click the sub-button to open more content
 // we are using the class .no-touch added by modernizr
 .no-touch .clickable-block-grid {
-	
+
 	.go-now {
 		// we want the go-now button to stretch
 		@include stretch;
 		margin: 0; // or else it doesn't go all the way to the bottom
-		
+
 		// and have it's contents moved to the center
 		padding: 50% 0 0;
-		
+
 		// hide it using opacity
 		opacity: 0;
 		// we will animate it's opacity
-		@include single-transition(opacity, .3s);
-	}	
-	
+		transition: opacity .3s;
+	}
+
 	// position the go-later button to anywhere inside the holder
 	.go-later {
 		position: absolute;
 		bottom: -100%;
 		margin: 0; // or else it doesn't go all the way to the bottom
-		
+
 		// make it full-width
 		left: 0px;
 		right: 0px;
-		
+
 		// we will animate it's position
-		@include single-transition(bottom, .3s);
+		single-transition: bottom .3s;
 	}
-	
+
 	// now show both items when hovering over the figcaption
 	figcaption:hover {
-		
+
 		.go-now {
 			// slightly opaque so we can see below it
 			opacity: .8;
 		}
-		
+
 		.go-later {
 			bottom: 0px;
 		}
-		
+
 	}
-	
+
 }
 
 // For touch screens only
@@ -86,15 +86,15 @@
 	.go-now {
 		display: none;
 	}
-	
+
 	.go-later {
 		// we want the go-now button to stretch
 		@include stretch;
 		margin: 0; // or else it doesn't go all the way to the bottom
-		
+
 		// and have it's contents moved to the center
 		padding: 50% 0 0;
-		
+
 		// hide it using opacity
 		opacity: 0;
 	}

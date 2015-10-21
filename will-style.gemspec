@@ -17,10 +17,9 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 4.1"
 
-  s.add_dependency "compass-rails", "~> 2.0.4"
-
   # @NOTE: Need to lock Foundation at 5.5.2 until 5.5.4 comes out
   s.add_dependency "foundation-rails", "5.5.2.1"
+
   s.add_dependency "font-awesome-rails", "~> 4.4"
   s.add_dependency "modernizr-rails", "~> 2.7.1"
 
@@ -29,5 +28,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'coffee-rails', "~> 4.0.1"
 
   s.add_development_dependency "bundler", "~> 1.5"
-  s.add_development_dependency "compass-rails-source-maps", "~> 0.1.0"
+  s.add_development_dependency "sass-rails-source-maps", "~> 0.1.0"
 end

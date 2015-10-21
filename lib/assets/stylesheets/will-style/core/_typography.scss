@@ -1,8 +1,8 @@
-/* 
-// 
+/*
+//
 // TYPOGRAPHY
-// 
-// 
+//
+//
 */
 
 // VARIABLES
@@ -64,10 +64,10 @@ ul.divided, ol.divided {
 		// give items padding top and bottom
 		padding-top: rem_calc(7);
 		padding-bottom: rem_calc(5);
-		
+
 		// then a border top as well as bottom on last item
 		border-top: 1px solid $component-border-color;
-		
+
 		&:last-of-type {
 			border-bottom: 1px solid $component-border-color;
 		}
@@ -89,19 +89,19 @@ pre > code {
 //  </dt>
 // </dl>
 dl.stats.large {
-	
+
 	// use flex to justify each item
-	@include display-flex();
+	display: flex;
 	dd {
-		@include flex-grow(1);
-		
-		@include display-flex();
-		@include flex-direction(column);
-		@include align-items(center);
-		@include justify-content(center);
+		flex-grow: 1;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 		text-align: center;
 	}
-	
+
 	// make sure the stat is on it's own line and make large
 	.stat {
 		font-size: 4em;
@@ -109,36 +109,36 @@ dl.stats.large {
 		margin: .2em 0;
 		display: block;
 	}
-	
+
 }
 
 
 // Utility for not allowing text to wrap
 .no-break {
-	@include nowrap;
+	white-space: nowrap;
 }
 
 // allowing a way to use css3 columns
 // use the following class: text-columns-#
 [class*="text-column"] {
-	@include column-count(2);
-	
+	column-count: 2;
+
 	// if this is a list, we need to move the bullet positions inside
 	// or else they won't show in some browsers
-	li { 
+	li {
 		list-style-position: inside;
 	}
 	// and remove margin
 	margin-left: 0;
-	
+
 }
 
 
 // adding a class for p tags that sets a max width for ideal line length
 .ideal {
 	max-width: 36em;
-	
-	// make sure text stays centered 
+
+	// make sure text stays centered
 	&.text-center {
 		margin-left: auto;
 		margin-right: auto;
