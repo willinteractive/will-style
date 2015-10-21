@@ -70,7 +70,7 @@ $topbar-bg-active: rgba($topbar-bg-color, .9);
 	.top-bar-section li:not(.has-form) a:not(.button) {
 		height: $topbar-height*$multiplier;
 		line-height: $topbar-height*$multiplier;
-		//transition: all, .3s;
+		//transition: all .3s;
 	}
 	.top-bar-section {
 		ul li > a {
@@ -118,7 +118,6 @@ $topbar-bg-active: rgba($topbar-bg-color, .9);
 	width: 100%;
 
 	transition: background-color .3s;
-
 	/* Force Hardware Acceleration in WebKit */
 	transform: translate3d(0,0,0);
 	-webkit-backface-visibility: hidden;
@@ -257,7 +256,6 @@ $topbar-bg-active: rgba($topbar-bg-color, .9);
 		width: 18px;
 		height: 2px;
 		background-color: $topbar-link-color;
-
 		transition: background-color .3s;
 
 		/* these are the upper and lower lines in the menu icon */

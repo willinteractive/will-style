@@ -404,7 +404,7 @@ section.characters-slider {
 		// use flex-box to align item
 		display: flex;
 		// puts equal space around each item
-		justify: space-around;
+		justify-content: space-around;
 		// wraps countent instead of squishing
 		flex-wrap: wrap;
 

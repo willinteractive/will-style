@@ -65,12 +65,12 @@ $list-group-zebra-color: $component-bg-color;
   margin-bottom: -1px;
   background-color: $list-group-bg;
   border: 1px solid $list-group-border;
-	
+
 	&:last-child {
     margin-bottom: 0;
     @include side-radius(bottom, $list-group-border-radius);
   }
-  
+
   // if there is a paragraph in the item, let's remove the bottom margin from the last one
   & > p:last-of-type {
 	  margin-bottom: 0;
@@ -84,7 +84,7 @@ $list-group-zebra-color: $component-bg-color;
   }
   &:last-child {
     @include side-radius(bottom, $list-group-border-radius);
-  }	  
+  }
 }
 
 
@@ -117,7 +117,7 @@ a.list-group-item {
     background-color: $list-group-disabled-bg;
     color: $list-group-disabled-color;
     cursor: not-allowed;
-    
+
     // Force color to inherit for custom content
     .list-group-item-heading {
       color: inherit;
@@ -165,7 +165,7 @@ a.list-group-item {
 // for selectable lists
 .selectable {
 	position: relative;
-	
+
 	.list-group-item, .list-group-actions {
 		padding-left: rem_calc(50);
 	}
@@ -174,16 +174,16 @@ a.list-group-item {
 		top: $list-group-item-padding-vertical * 2;
 		left: $list-group-item-padding-horizontal;
 	}
-	
+
 	li:not(.list-group-actions) {
-		transition: background;
-		
+		transition: background .25s;
+
 		&:hover, &:focus {
 			background: $component-hover-bg-color;
 		}
 	}
 }
-  
+
 .list-group-actions {
 	button, .button {
 		margin-bottom: 0;
@@ -207,7 +207,7 @@ a.list-group-item {
 // allow the items to be zebra colored instead of borders
 .list-group.zebra .list-group-item {
 	border-width: 0;
-	
+
 	&:nth-child(2n) {
 		background-color: $list-group-zebra-color;
 	}

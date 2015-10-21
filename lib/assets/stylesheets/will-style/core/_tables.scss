@@ -89,10 +89,10 @@ table.focusable.complex {
 		transition: all 300ms;
 	}
 	tbody:hover td {
-		opacity: 30;
+		opacity: .3;
 	}
 	tbody:hover tr:hover td {
-		opacity: 100;
+		opacity: 1;
 	}
 }
 

@@ -22,7 +22,7 @@ $tabs-content-padding: $column-gutter/2 !default;
 
 .tabs dd > a {
 	// add transitions
-	// transition: ;
+	transition: all 1s;
 
 	// change color of text on hover
 	&:hover,
