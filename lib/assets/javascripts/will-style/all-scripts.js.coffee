@@ -19,6 +19,9 @@
 # -------- MODERNIZR
 #= require modernizr
 
+# -------- RESPONSIVE
+#= require will-style/responsive
+
 # -------- WILL-STYLE DEFAULTS
 #= require will-style/fonts
 #= require will-style/jquery
