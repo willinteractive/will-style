@@ -11,6 +11,7 @@ gem 'jquery-rails'
 
 gem 'will-style', :git => "https://github.com/willinteractive/will-style"
 ```
+
 To write a template styles sass file in your app, use this generator:
 
 ```ruby
@@ -96,7 +97,7 @@ To use this gem as a bower module, just use this dependency:
 
 Be sure that you've also installed compass to your package file. In your compass configuration, make sure your settings include:
 
-``
+```
 add_import_path "bower_components/foundation/scss"
 add_import_path "bower_components/will-style/lib/assets/stylesheets"
 add_import_path "bower_components/font-awesome/scss"

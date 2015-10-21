@@ -6,11 +6,11 @@ gem 'rails'
 
 gem 'coffee-rails'
 
-gem 'sass-rails', "5.0.0.beta1"
+gem 'sass-rails', "~> 5.0.4"
 
 gem 'compass-rails'
 
-gem 'foundation-rails', "5.4.4"
+gem 'foundation-rails', "~> 5.5.3"
 
 gem 'jquery-rails'
 
