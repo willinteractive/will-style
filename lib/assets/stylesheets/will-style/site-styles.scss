@@ -10,17 +10,17 @@
  *
  */
 
-/* 
+/*
 //
 // CORE
-// HTML tags & more abstract elements like color palettes, 
+// HTML tags & more abstract elements like color palettes,
 // fonts and invisible aspects like animations
 // -------------------------
 */
 
 // External
 // ----------------------
-@import 
+@import
 	"compass",
 	"compass/layout",
 	"normalize";
@@ -30,20 +30,20 @@
 
 // make grid (almost) full-width and use large classes
 $include-xl-html-grid-classes: true;
-$row-width: 90em !default;
+$row-width: 90rem;
 $column-gutter: 3rem;
 
 @import
 	"will-style/core/mixins",
 	"will-style/core/global",
 	"will-style/core/global_site";
-	
+
 // Typography
 // ----------------------
 @import
 	"will-style/core/typography",
 	"foundation/components/inline-lists";
-	
+
 // Images
 // ----------------------
 @import
@@ -51,14 +51,14 @@ $column-gutter: 3rem;
 	"will-style/core/images",
 	"foundation/components/thumbs";
 
-// Buttons	
+// Buttons
 // ----------------------
-@import 
+@import
 	"will-style/core/buttons",
   "foundation/components/button-groups",
   "foundation/components/dropdown-buttons",
   "foundation/components/split-buttons";
-  
+
 // Forms
 // ----------------------
 @import	"will-style/core/forms";
@@ -71,11 +71,11 @@ $column-gutter: 3rem;
 
 
 
-/* 
-// 
+/*
+//
 // ELEMENTS
 // Relatively simple combinations of the CORE built for reuse
-// ------------------------- 
+// -------------------------
 */
 
 // Layout
@@ -110,7 +110,7 @@ $column-gutter: 3rem;
 
 // Extras
 // you probably don't need all of theses
-// ------------------------- 
+// -------------------------
 @import
   //"foundation/components/accordion",
   //"foundation/components/clearing",
@@ -123,7 +123,7 @@ $column-gutter: 3rem;
   //"will-style/elements/progress-bars",
   "foundation/components/reveal";
   //"foundation/components/tooltips";
-  
+
 
 
 
@@ -131,8 +131,8 @@ $column-gutter: 3rem;
 /*
 //
 // FIXTURES
-// Groups of elements joined together to form a relatively complex, 
-// distinct section of an interface. 
+// Groups of elements joined together to form a relatively complex,
+// distinct section of an interface.
 // -------------------------
 */
 
@@ -172,7 +172,7 @@ $column-gutter: 3rem;
 /*
 //
 // LIBRARIES
-// This is where you want to import external library css styles 
+// This is where you want to import external library css styles
 // and will-style overrides if available
 // -------------------------
 // the libraries you can import from WILL-Style are:

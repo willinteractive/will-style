@@ -6,7 +6,7 @@
 // FOUNDATION
 // ------------------
 
-$topbar-height: 45px;
+$topbar-height: rem-calc(45);
 
 $topbar-bg: transparent;
 $topbar-dropdown-bg: $topbar-bg;
@@ -55,7 +55,7 @@ $topbar-bg-active: rgba($topbar-bg-color, .9);
 @mixin topbar-height-change($multiplier:2) {
 	.cd-header {
 		height: $topbar-height*$multiplier;
-		
+
 		&.is-fixed {
 			top: $topbar-height*($multiplier*-1);
 		}
@@ -64,7 +64,7 @@ $topbar-bg-active: rgba($topbar-bg-color, .9);
 		& + main section:first-of-type, & + section:first-of-type {
 			padding-top: $topbar-height*($multiplier*1.5);
 		}
-	} 
+	}
 	.top-bar, .top-bar .name h1,
 	.top-bar-section li.active:not(.has-form) a:not(.button),
 	.top-bar-section li:not(.has-form) a:not(.button) {
@@ -93,7 +93,7 @@ $topbar-bg-active: rgba($topbar-bg-color, .9);
 #will-logo-svg {
   width: 61px;
   height: 20px;
-  
+
   @media #{$topbar-media-query} {
     // The vector (SVG) logo
     width: 98px;
@@ -112,39 +112,39 @@ $topbar-bg-active: rgba($topbar-bg-color, .9);
 	top: 0;
 	left: 0;
 	z-index: 999;
-	
+
 	background: $topbar-bg-color;
 	height: $topbar-height;
 	width: 100%;
-	
+
 	@include transition(background-color .3s);
 	/* Force Hardware Acceleration in WebKit */
 	@include transform(translate3d(0,0,0));
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
-	
+
 	&.is-fixed {
 		// when the user scrolls down, we hide the header right above the viewport
 		position: fixed;
 		top: $topbar-height*-1;
-		
+
 		background-color: $topbar-bg-active;
-		
+
 		-webkit-transition: -webkit-transform 0.3s;
 		-moz-transition: -moz-transform 0.3s;
 		transition: transform 0.3s;
 	}
-	
+
 	&.is-visible {
 		// if the user changes the scrolling direction, we show the header
 		@include transform(translate3d(0,100%,0));
 	}
-	
+
 	&.menu-is-open {
 		/* add a background color to the header when the navigation is open */
 		background-color: $topbar-bg-active;
 	}
-	
+
 	// change to transparent bg when larger than small screen
 	@media #{$topbar-media-query} {
 		background: $topbar-bg;
@@ -156,7 +156,7 @@ $topbar-bg-active: rgba($topbar-bg-color, .9);
 	& + main section:first-of-type, & + section:first-of-type {
 		padding-top: $topbar-height*1.5;
 	}
-} 
+}
 
 @media #{$topbar-media-query} {
 	@include topbar-height-change(1.5);
@@ -191,7 +191,7 @@ $topbar-bg-active: rgba($topbar-bg-color, .9);
 	@include transform(translateY(-100%));
 	@include transition-property(transform);
 	@include transition-duration(.4s);
-	
+
 	ul {
 		// remove default margins
 		margin: 0;
@@ -201,7 +201,7 @@ $topbar-bg-active: rgba($topbar-bg-color, .9);
 		font-size: rem_calc(36);
 		margin: .2em 0;
 		text-transform: capitalize;
-		
+
 		&.active a {
 			color: $topbar-link-color-active;
 		}
@@ -217,7 +217,7 @@ $topbar-bg-active: rgba($topbar-bg-color, .9);
 			color: $topbar-link-color-hover;
 		}
 	}
-	
+
 	&.is-visible {
 		@include transform(translateY(0));
 	}
@@ -257,12 +257,12 @@ $topbar-bg-active: rgba($topbar-bg-color, .9);
 		height: 2px;
 		background-color: $topbar-link-color;
 		@include transition(background-color .3s);
-		
+
 		/* these are the upper and lower lines in the menu icon */
 		&::before, &:after {
 			content: '';
 			width: 100%;
-			height: 100%; 
+			height: 100%;
 			position: absolute;
 			background-color: $topbar-link-color;
 			right: 0;
@@ -271,7 +271,7 @@ $topbar-bg-active: rgba($topbar-bg-color, .9);
 			-moz-transition: -moz-transform .3s, top .3s, background-color 0s;
 			transition: transform .3s, top .3s, background-color 0s;
 		}
-		
+
 		&::before {
 			top: -5px;
 		}
