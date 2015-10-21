@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
   s.add_dependency "sass-rails", "~> 5.0.4"
 
   s.add_dependency 'coffee-rails', "~> 4.0.1"
+  s.add_dependency 'autoprefixer-rails', "~> 6.0.3"
 
   s.add_development_dependency "bundler", "~> 1.5"
   s.add_development_dependency "sass-rails-source-maps", "~> 0.1.0"
