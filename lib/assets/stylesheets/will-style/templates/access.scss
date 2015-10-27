@@ -1,10 +1,14 @@
-/* 
-// 
+/*
+//
 // ACCESS
-// 
+//
 */
 
 #access {
 
-	
+	// We're using a custom Admin dropdown instead since Staff users can be admins as well
+	.integrated-admin {
+		display: none;
+	}
+
 }
