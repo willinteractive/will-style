@@ -24,6 +24,22 @@ $secondary-font-color: scale-color($body-font-color, $lightness: 50%);
 // IMPORT FOUNDATION
 @import "foundation/components/type";
 
+// CUSTOM MIXINS
+// ---------------------
+// force the wrapping of long links/emails/etc.
+@mixin force-wrap() {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+@mixin force-truncate($width: 100%) {
+  width: $width;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
 // CUSTOM STYLES
 // ---------------------
 
