@@ -1,7 +1,7 @@
-/* 
-// 
+/*
+//
 // PROGRESS BARS
-// 
+//
 */
 
 $progress-bar-color: rgba($body-font-color, .2);
@@ -25,31 +25,31 @@ $progress-bar-pad: 0;
 .progress.stacked {
 	// use this to contain the floated meters
 	@include clearfix();
-	
+
 	& > .meter {
 		// float the meters so the are in the same line
 		float: left;
-		
+
 		// allow the meters themselves to be colored
 		&.success { background-color: $success-color; }
 		&.alert 	 { background-color: $alert-color; }
 		&.warning { background-color: $warning-color; }
 		&.info 	 { background-color: $info-color; }
 	}
-	
+
 	// if the meter is rounded or has a radius, clear all corners
 	&.radius, &.round {
 		& > .meter {
-			@include radius(0);
+			border-radius: 0;
 		}
 	}
 	// then just apply them to:
 	&.radius {
-		& > .meter {			
+		& > .meter {
 			// the first meter's left side
 			&:first-of-type {
 				@include side-radius(left, $progress-bar-border-radius - 1);
-			}			
+			}
 			// and last meter's right side
 			&:last-of-type {
 				@include side-radius(right, $progress-bar-border-radius - 1);
@@ -57,19 +57,19 @@ $progress-bar-pad: 0;
 		}
 	}
 	&.round {
-		& > .meter {			
+		& > .meter {
 			// the first meter's left side
 			&:first-of-type {
 				@include side-radius(left, 999px);
-			}			
+			}
 			// and last meter's right side
 			&:last-of-type {
 				@include side-radius(right, 999px);
 			}
 		}
 	}
-	
-	
-	
-	
+
+
+
+
 }

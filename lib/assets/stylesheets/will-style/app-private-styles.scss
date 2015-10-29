@@ -10,19 +10,17 @@
  *
  */
 
-/* 
+/*
 //
 // CORE
-// HTML tags & more abstract elements like color palettes, 
+// HTML tags & more abstract elements like color palettes,
 // fonts and invisible aspects like animations
 // -------------------------
 */
 
 // External
 // ----------------------
-@import 
-	"compass",
-	"compass/layout",
+@import
 	"normalize";
 
 // Global
@@ -35,28 +33,28 @@ $row-width: 90em !default;
 @import
 	"will-style/core/mixins",
 	"will-style/core/global";
-	
+
 // Typography
 // ----------------------
 @import
 	"will-style/core/typography",
 	"foundation/components/inline-lists";
-	
+
 // Images
 // ----------------------
 @import
-	"font-awesome",
+	"font-awesome.css",
 	"will-style/core/images",
 	"foundation/components/thumbs";
 
-// Buttons	
+// Buttons
 // ----------------------
-@import 
+@import
 	"will-style/core/buttons",
   "foundation/components/button-groups",
   "foundation/components/dropdown-buttons",
   "foundation/components/split-buttons";
-  
+
 // Forms
 // ----------------------
 @import	"will-style/core/forms";
@@ -69,11 +67,11 @@ $row-width: 90em !default;
 
 
 
-/* 
-// 
+/*
+//
 // ELEMENTS
 // Relatively simple combinations of the CORE built for reuse
-// ------------------------- 
+// -------------------------
 */
 
 // Layout
@@ -100,6 +98,7 @@ $row-width: 90em !default;
 // ----------------------
 @import
   "will-style/elements/alert-boxes",
+  "will-style/elements/cards",
   "will-style/elements/dropdown",
 	"will-style/elements/labels",
 	"will-style/elements/list-group",
@@ -108,7 +107,7 @@ $row-width: 90em !default;
 
 // Extras
 // you probably don't need all of theses
-// ------------------------- 
+// -------------------------
 @import
   //"foundation/components/accordion",
   //"foundation/components/clearing",
@@ -121,7 +120,7 @@ $row-width: 90em !default;
   "will-style/elements/progress-bars",
   "foundation/components/reveal";
   //"foundation/components/tooltips";
-  
+
 
 
 
@@ -129,14 +128,14 @@ $row-width: 90em !default;
 /*
 //
 // FIXTURES
-// Groups of elements joined together to form a relatively complex, 
-// distinct section of an interface. 
+// Groups of elements joined together to form a relatively complex,
+// distinct section of an interface.
 // -------------------------
 */
 
 // Global
 // ----------------------
-@import 
+@import
 	"will-style/fixtures/complex-block-grid",
 	"will-style/fixtures/sticky-footer",
 	"will-style/fixtures/toolbar",
@@ -145,7 +144,7 @@ $row-width: 90em !default;
 
 // App Style
 // ----------------------
-@import 
+@import
 	"will-style/fixtures/app-nav",
 	"will-style/fixtures/app-nav-private",
 	"will-style/fixtures/app-page-header",
@@ -177,7 +176,7 @@ $row-width: 90em !default;
 /*
 //
 // LIBRARIES
-// This is where you want to import external library css styles 
+// This is where you want to import external library css styles
 // and will-style overrides if available
 // -------------------------
 // the libraries you can import from WILL-Style are:

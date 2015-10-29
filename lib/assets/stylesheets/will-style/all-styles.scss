@@ -13,19 +13,17 @@
 
 
 
-/* 
+/*
 //
 // CORE
-// HTML tags & more abstract elements like color palettes, 
+// HTML tags & more abstract elements like color palettes,
 // fonts and invisible aspects like animations
 // -------------------------
 */
 
 // External
 // ----------------------
-@import 
-	"compass",
-	"compass/layout",
+@import
 	"normalize";
 
 // Global
@@ -33,28 +31,28 @@
 @import
 	"will-style/core/mixins",
 	"will-style/core/global";
-	
+
 // Typography
 // ----------------------
 @import
 	"will-style/core/typography",
 	"foundation/components/inline-lists";
-	
+
 // Images
 // ----------------------
 @import
-	"font-awesome",
+	"font-awesome.css",
 	"will-style/core/images",
 	"foundation/components/thumbs";
 
-// Buttons	
+// Buttons
 // ----------------------
-@import 
+@import
 	"will-style/core/buttons",
   "foundation/components/button-groups",
   "foundation/components/dropdown-buttons",
   "foundation/components/split-buttons";
-  
+
 // Forms
 // ----------------------
 @import	"will-style/core/forms";
@@ -67,11 +65,11 @@
 
 
 
-/* 
-// 
+/*
+//
 // ELEMENTS
 // Relatively simple combinations of the CORE built for reuse
-// ------------------------- 
+// -------------------------
 */
 
 
@@ -98,6 +96,7 @@
 // ----------------------
 @import
   "will-style/elements/alert-boxes",
+  "will-style/elements/cards",
   "will-style/elements/dropdown",
 	"will-style/elements/labels",
 	"will-style/elements/list-group",
@@ -106,7 +105,7 @@
 
 // Extras
 // you probably don't need all of theses
-// ------------------------- 
+// -------------------------
 @import
   "foundation/components/accordion",
   "foundation/components/clearing",
@@ -126,8 +125,8 @@
 /*
 //
 // FIXTURES
-// Groups of elements joined together to form a relatively complex, 
-// distinct section of an interface. 
+// Groups of elements joined together to form a relatively complex,
+// distinct section of an interface.
 // -------------------------
 */
 
@@ -142,7 +141,7 @@
 
 // App Style
 // ----------------------
-@import 
+@import
 	"will-style/fixtures/app-nav",
 	"will-style/fixtures/app-nav-private",
 	"will-style/fixtures/app-page-header",
@@ -175,7 +174,7 @@
 /*
 //
 // LIBRARIES
-// This is where you want to import external library css styles 
+// This is where you want to import external library css styles
 // and will-style overrides if available
 // -------------------------
 // the libraries you can import from WILL-Style are:

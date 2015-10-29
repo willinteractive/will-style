@@ -1,0 +1,55 @@
+/*
+//
+// CARDS
+//
+*/
+
+// Custom
+// -------------------------
+
+.card {
+	background-color: $white;
+	@include shadow-z2;
+	border-radius: $global-radius;
+}
+
+.card_header {
+	border-top-left-radius: $global-radius;
+	border-top-right-radius: $global-radius;
+
+	background-color: $primary-color;
+	h1, h2, h3, h4, h5, p {
+		color: $white;
+	}
+}
+
+.card_header,
+.card_body,
+.card_footer {
+	padding: 1rem;
+}
+
+.card_footer.actions {
+	@extend .clearfix;
+
+	padding: 0;
+	border-top: 1px solid $gainsboro;
+
+	.button {
+		border-bottom-left-radius: $global-radius;
+
+		&.right {
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: $global-radius;
+		}
+	}
+
+	.button,
+	.input {
+		margin-bottom: 0;
+	}
+
+	.button.secondary {
+		background-color: transparent;
+	}
+}

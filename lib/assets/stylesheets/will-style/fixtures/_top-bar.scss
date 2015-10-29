@@ -1,7 +1,7 @@
-/* 
-// 
+/*
+//
 // TOP BAR
-// 
+//
 */
 
 $topbar-back-link-size: rem-calc(12);
@@ -13,6 +13,11 @@ $topbar-back-link-size: rem-calc(12);
 	vertical-align: text-top;
 }
 
+// add more space between logo and title if there is a logo
+.title-area .logo {
+	margin-right: .5rem;
+}
+
 // style the "Back" link better
 .top-bar-section .dropdown li {
 	&.title h5, &.parent-link {
@@ -20,4 +25,10 @@ $topbar-back-link-size: rem-calc(12);
 			color: scale-color($topbar-link-color, $lightness: -40%);
 		}
 	}
+}
+
+// custom class for accenting a particular nav element with a font color
+.top-bar-section ul li.accent > a {
+	color: $primary-color;
+	font-weight: $font-weight-bold;
 }

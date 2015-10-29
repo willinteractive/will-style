@@ -29,10 +29,10 @@ button, .button {
                               $bg-hover: scale-color($body-font-color, $lightness: $button-function-factor)); 
     }
 
-    &.info { 
-        @include button-style($bg: scale-color($info-color, $lightness: $button-function-factor * 1.5),
-                              $bg-hover: scale-color($info-color, $lightness: $button-function-factor * 2.5));
-    }
+    // &.info { 
+    //     @include button-style($bg: scale-color($info-color, $lightness: $button-function-factor * 1.5),
+    //                           $bg-hover: scale-color($info-color, $lightness: $button-function-factor * 2.5));
+    // }
     
     &.warning { 
         @include button-style($bg: $warning-color,

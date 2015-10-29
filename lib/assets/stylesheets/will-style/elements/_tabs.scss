@@ -1,7 +1,7 @@
-/* 
-// 
+/*
+//
 // TABBED NAVIGATION
-// 
+//
 */
 
 
@@ -22,8 +22,8 @@ $tabs-content-padding: $column-gutter/2 !default;
 
 .tabs dd > a {
 	// add transitions
-	@include single-transition();
-		
+	transition: all 1s;
+
 	// change color of text on hover
 	&:hover,
 	&:active {
@@ -37,12 +37,12 @@ $tabs-content-padding: $column-gutter/2 !default;
 	  a {
 		  width: 100%;
 		  text-align: center;
-		  
+
 		  // the following matches it's height to normal buttons
 		  padding: $button-med 0 $button-med + rem-calc(1);
 		  line-height: normal;
 	  }
-  }  
+  }
 }
 
 // allow the .active tab to be highlighted

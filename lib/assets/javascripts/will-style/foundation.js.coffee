@@ -23,11 +23,8 @@ Foundation.libs.reveal.settings.dismiss_modal_class = 'close-reveal-modal, .reve
 
 # Initialize Foundation
 $ ->
-    # @NOTE: Foundation interchange is currently broken with turbolinks
-    # It keeps a image cache of DOM elements. When turbolinks removes the body,
-    # the cache is gone, but Foundation still thinks it's there, so we have to
-    # manually remove it.
-    delete Foundation.libs.interchange.cached_images
+    # @NOTE: Foundation interchange needs to be reflowed when using with turbolinks.
+    # $(document).foundation('interchange', 'reflow');
 
     $(document).foundation
         # Focus inputs in dropdowns if they have one
