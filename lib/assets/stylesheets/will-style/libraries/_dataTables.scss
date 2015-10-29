@@ -1,7 +1,7 @@
-/* 
-// 
+/*
+//
 // DATATABLES
-// 
+//
 */
 
 
@@ -15,7 +15,7 @@
 	margin-bottom: 0px !important;
 }
 
-// extras like filter & length 
+// extras like filter & length
 // -------------------------
 
 .dataTables_extras_top, .dataTables_extras_bottom {
@@ -27,7 +27,7 @@
 	// add padding
 	// @FOUNDATION-FIX
 	// padding: $padding-large-vertical $padding-base-horizontal;
-	
+
 }
 
 // clear default floats
@@ -46,7 +46,7 @@ div.dataTables_filter {
 // add some padding and correctly float the footer elements
 .dataTables_info {
 	margin-bottom: 10px;
-	@include opacity(.5);
+	opacity: .5;
 	float: left;
 }
 .dataTables_paginate {
@@ -79,20 +79,20 @@ div.dataTables_filter {
 .panel-dataTable {
 	// make the buttons appear to be in the panel header
 	position: relative;
-	
+
 	.dataTables_buttons {
 		position: absolute;
 		top: 0;
 		right: 0;
-		
+
 		// style the buttons the way we do for buttons inside panel headers
 		//@extend .panel-heading-buttons;
-		
-		.btn {			
+
+		.btn {
 			// but they are on the right, so switch which side gets a border
 			border-right: none;
 			// @FOUNDATION-FIX
-			// border-left: 1px solid $panel-inner-border;		
+			// border-left: 1px solid $panel-inner-border;
 		}
 	}
 }
@@ -100,16 +100,16 @@ div.dataTables_filter {
 // extend the dropdowns to look like bootstrap
 .ColVis_collection, .DTTT_collection {
 	@include dropdown-style;
-	
+
 	button, a {
 		background: none;
 		border: none;
 		padding: 5px;
 		text-align: left;
-		
+
 		&:hover, &:focus {
 			background: $component-hover-bg-color;
-			cursor: pointer;			
+			cursor: pointer;
 		}
 	}
 }
@@ -135,7 +135,7 @@ a.DTTT_button {
 	&.sorting,
 	&.sorting_disabled,
 	&.sorting_asc_disabled,
-	&.sorting_desc_disabled { 
+	&.sorting_desc_disabled {
 		color: $table-head-font-color;
 	}
 	&.sorting_asc,
@@ -152,18 +152,18 @@ a.DTTT_button {
 			content: "\f0dc";
 			float: right;
 			margin-right: -12px;
-			@include opacity(.2);
+			opacity: .2;
 		}
-	}	
+	}
 	&.sorting_asc::after,
 	&.sorting_asc:hover::after {
 		content: "\f0de";
-		@include opacity(1);
+		opacity: 1;
 	}
 	&.sorting_desc::after,
 	&.sorting_desc:hover::after {
 		content: "\f0dd";
-		@include opacity(1);
+		opacity: 1;
 	}
 }
 

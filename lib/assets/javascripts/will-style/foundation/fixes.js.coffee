@@ -1,14 +1,3 @@
-# @FIX: Prevent disabled dropdown buttons from triggering a dropdown
-$(document).on 'click touchstart', 'a[data-dropdown]', (event) ->
-    if $(event.currentTarget).attr("disabled") || $(event.currentTarget).hasClass "disabled"
-        event.stopImmediatePropagation()
-        event.stopPropagation()
-        event.preventDefault()
-
-        return false
-
-    return true
-
 # @FIX: Support for jQuery datepickers inline in Foundation dropdowns.
 #
 # jQuery Datepicker doesn't actually render inline,

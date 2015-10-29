@@ -1,9 +1,9 @@
 # Dependencies
 require "sass"
 require "sass-rails"
-require "compass-rails"
 require "foundation-rails"
 require "font-awesome-rails"
+require "autoprefixer-rails"
 require "modernizr-rails"
 
 module WILL

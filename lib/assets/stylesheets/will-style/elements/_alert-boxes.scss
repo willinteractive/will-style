@@ -65,7 +65,7 @@
 	z-index: 99999999999999999;
 
 	opacity: 0;
-	@include transition(opacity 500ms);
+	transition: opacity 500ms;
 }
 
 .alert-box.float.active {

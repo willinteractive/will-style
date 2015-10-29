@@ -1,10 +1,8 @@
-/* 
-// 
+/*
+//
 // LANDING PAGES
-// 
+//
 */
-
-@import "compass/layout/stretching";
 
 // add a bg to the navbar because it stays on top and right now it's transparent
 .navbar-default {
@@ -21,7 +19,8 @@
 	text-align: center;
 	padding-top: 20%;
 	opacity: 0;
-  @include transition(opacity 300ms);
+
+  	transition: opacity 300ms;
 	&:hover, &:focus {
 		opacity: 1;
 	}
@@ -37,7 +36,7 @@
 	padding-top: 1rem;
 	padding-bottom: .5rem;
 	margin-bottom: 1px;
-	
+
 	// colors
 	background-color: $brand-primary;
 	color: $white;
@@ -46,7 +45,7 @@
 	&:nth-of-type(2n) {
 		border-right-width: 0px;
 	}
-	
+
 	// the time period in a rounded green box
 	dt {
 		padding-top: .5em;
@@ -54,16 +53,16 @@
 		margin-bottom: .5rem;
 		text-align: center;
 		background: $brand-success;
-		@include border-radius(5px);
+		border-radius: 5px;
 	}
-	
+
 	// the price centered with no margin
 	dd {
 		text-align: center;
 		margin: 0;
 	}
 }
-	
+
 // when the window reaches screen-sm, th 2nd price-block needs a border
 @media (min-width: $screen-sm-min) {
 	.price-block:nth-of-type(2n) {
