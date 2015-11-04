@@ -32,7 +32,7 @@
 // -- be able to click the element and go or
 // -- click the sub-button to open more content
 // we are using the class .no-touch added by modernizr
-.no-touch .clickable-block-grid {
+.touch .clickable-block-grid {
 
 	.go-now {
 		// we want the go-now button to stretch
@@ -78,10 +78,12 @@
 
 }
 
-// For touch screens only
+// For touch screens only (or IE8)
 // -- the sub-button is now the full clickable thing, but never shows
 // we are using the class .touch added by modernizr
-.touch .clickable-block-grid {
+
+.ie8 .clickable-block-grid,
+.no-touch .clickable-block-grid {
 
 	.go-now {
 		display: none;
@@ -99,4 +101,14 @@
 		opacity: 0;
 	}
 
+}
+
+// FOR IE8
+// because we need the go-later button to be clickable but not seen, we'll use a transparent png as the background
+
+.ie8 .clickable-block-grid {
+	.go-later {
+		background: asset-url("will-style/transparent.png");
+		font-size: 0px;
+	}
 }
