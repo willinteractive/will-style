@@ -32,3 +32,10 @@ $topbar-back-link-size: rem-calc(12);
 	color: $primary-color;
 	font-weight: $font-weight-bold;
 }
+
+
+// Make sure IE8 handles the contain correctly
+.ie8 .contain-to-grid .top-bar {
+  margin: 0 auto;
+  width: $row-width;
+}
