@@ -53,7 +53,7 @@ Here are some quick steps for set up.
 4. Switch the stylesheet include tag to this:
 
 ```
-<%= split_stylesheet_link_tag "application", debug: true, media: "all", "data-turbolinks-track" => true  %>
+<%= split_stylesheet_link_tag "application", debug: false, media: "all", "data-turbolinks-track" => true  %>
 ```
 
 Repeat this for every stylesheet you use in the application. It's not a perfect solution, but it's the one we have...
