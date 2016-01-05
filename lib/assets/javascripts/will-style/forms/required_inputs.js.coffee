@@ -5,7 +5,7 @@ update_submit = (form) ->
 
   form.find(".required").each ->
     # Ensure we're in the correct form and it's not a select2 hidden element
-    if $(this).closest("form").is(form) and $(this).attr("id").indexOf("s2") isnt 0
+    if $(this).closest("form").is(form) and ($(this).attr("id") and $(this).attr("id").indexOf("s2") isnt 0)
       disabled = true if $(this).val() is null or $(this).val() is ""
 
       # Enforce valid email addresses on email fields
@@ -35,7 +35,7 @@ update_required = (element) ->
 
 $(document).on "change propertychange keyup input paste", ".required", ->
   update_required(this)
-  update_submit($(this).closest("form"))  
+  update_submit($(this).closest("form"))
 
 $ ->
   $(".required").trigger "change"
