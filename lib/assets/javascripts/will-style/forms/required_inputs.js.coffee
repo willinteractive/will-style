@@ -19,7 +19,7 @@ update_required = (element) ->
   label = $(element).closest("section").find(".required-label") if label.length == 0
 
   # Ensure it's not a select2 hidden element
-  unless $(element).attr("id").indexOf("s2") is 0
+  unless $(element).attr("id") and $(element).attr("id").indexOf("s2") is 0
     disabled = false
     disabled = true if $(element).val() is null or $(element).val() is ""
 
