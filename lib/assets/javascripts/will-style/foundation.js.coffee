@@ -3,7 +3,7 @@
 #= require foundation/foundation.accordion
 #= require foundation/foundation.alert
 #= require foundation/foundation.clearing
-#= require foundation/foundation.dropdown
+#= require will-style/foundation/foundation.dropdown.fixed
 #= require foundation/foundation.interchange
 #= require foundation/foundation.joyride
 #= require foundation/foundation.magellan
