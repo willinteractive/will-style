@@ -32,7 +32,7 @@
 // -- be able to click the element and go or
 // -- click the sub-button to open more content
 // we are using the class .no-touch added by modernizr
-.touch .clickable-block-grid {
+.no-touch .clickable-block-grid {
 
 	.go-now {
 		// we want the go-now button to stretch
@@ -83,7 +83,7 @@
 // we are using the class .touch added by modernizr
 
 .ie8 .clickable-block-grid,
-.no-touch .clickable-block-grid {
+.touch .clickable-block-grid {
 
 	.go-now {
 		display: none;
