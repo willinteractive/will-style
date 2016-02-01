@@ -188,7 +188,7 @@ section.characters-slider {
 
 	@media #{$medium-up} {
 		@include grid-column(6);
-		@include uncenter;
+		// @include uncenter;
 
 		// on in the medium grid, don't have the image resize and push it off to the left
 		overflow: hidden;
