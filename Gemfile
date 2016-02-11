@@ -6,7 +6,7 @@ gem 'rails'
 
 gem 'coffee-rails'
 
-gem 'sass-rails', "~> 5.0.4"
+gem 'sassc-rails'
 
 gem 'compass-rails'
 
