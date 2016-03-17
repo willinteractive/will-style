@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2016 by original authors @ fontello.com</metadata>
+<defs>
+<font id="will" horiz-adv-x="1000" >
+<font-face font-family="will" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="will_logo" unicode="&#xe800;" d="M1117 850l-142-590-107 378-318 0-96-387-157 599-297 0 229-1000 356 0 129 408 115-408 357 0 230 1000-299 0z m837 0l0-1000 648 0 0 292-351 0 0 708-297 0z m799 0l0-1000 649 0 0 292-351 0 0 708-298 0z m-1184 0l-66-323 0-677 298 0 0 1000-232 0z m2482-397l143 93-274 191 87-268a28 28 0 0 1 44-16z m-103-67a53 53 0 0 1 21 58l-108 335-90 62c-23 18-45 7-45-23v-575z m481-4l-195 136-169-109a53 53 0 0 1-20-58l79-246 305 214a36 36 0 0 1 0 63z m-423-56a28 28 0 0 1-44 16l-235-152v-309c0-31 21-41 45-24l315 220z" horiz-adv-x="4447" />
+</font>
+</defs>
+</svg>
