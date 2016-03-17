@@ -4,42 +4,46 @@
 @font-face {
 	font-family: 'will-icons';
 	src: url('will-icons.eot');
+
 	src: url('will-icons.eot') format('embedded-opentype'),
-			 url('will-icons.woff') format('woff'),
-			 url('will-icons.ttf') format('truetype'),
-			 url('will-icons.svg') format('svg');
+		 url('will-icons.woff') format('woff'),
+		 url('will-icons.ttf') format('truetype'),
+		 url('will-icons.svg') format('svg');
+
 	font-weight: normal;
 	font-style: normal;
 }
 
 [class^="will-icon-"]:before, [class*=" will-icon-"]:before {
-  font-family: "will-icons";
-  font-style: normal;
-  font-weight: normal;
-  speak: none;
+	font-family: "will-icons";
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
 
-  display: inline-block;
-  text-decoration: inherit;
-  width: 4.5em;
+	display: inline-block;
+	text-decoration: inherit;
+	width: 1em;
 
-  text-align: center;
+	text-align: center;
 
-  /* For safety - reset parent styles, that can break glyph codes*/
-  font-variant: normal;
-  text-transform: none;
+	/* For safety - reset parent styles, that can break glyph codes*/
+	font-variant: normal;
+	text-transform: none;
 
-  /* fix buttons height, for twitter bootstrap */
-  line-height: 1em;
+	/* fix buttons height, for twitter bootstrap */
+	line-height: 1em;
 
-  /* Animation center compensation - margins should be symmetric */
-  /* remove if not needed */
-  margin-left: .2em;
+	/* Animation center compensation - margins should be symmetric */
+	/* remove if not needed */
+	margin-left: .2em;
 
-  /* Font smoothing. That was taken from TWBS */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	/* Font smoothing. That was taken from TWBS */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .will-icon-will_logo:before {
-  content: '\e800';
+	content: '\e800';
+
+	width: 4.5em;
 }
