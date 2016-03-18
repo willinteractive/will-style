@@ -3,10 +3,10 @@
 <svg xmlns="http://www.w3.org/2000/svg">
 <metadata>Copyright (C) 2016 by original authors @ fontello.com</metadata>
 <defs>
-<font id="will" horiz-adv-x="1000" >
-<font-face font-family="will" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<font id="will-icons" horiz-adv-x="1000" >
+<font-face font-family="will-icons" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
 <missing-glyph horiz-adv-x="1000" />
-<glyph glyph-name="will_logo" unicode="&#xe800;" d="M1117 850l-142-590-107 378-318 0-96-387-157 599-297 0 229-1000 356 0 129 408 115-408 357 0 230 1000-299 0z m837 0l0-1000 648 0 0 292-351 0 0 708-297 0z m799 0l0-1000 649 0 0 292-351 0 0 708-298 0z m-1184 0l-66-323 0-677 298 0 0 1000-232 0z m2482-397l143 93-274 191 87-268a28 28 0 0 1 44-16z m-103-67a53 53 0 0 1 21 58l-108 335-90 62c-23 18-45 7-45-23v-575z m481-4l-195 136-169-109a53 53 0 0 1-20-58l79-246 305 214a36 36 0 0 1 0 63z m-423-56a28 28 0 0 1-44 16l-235-152v-309c0-31 21-41 45-24l315 220z" horiz-adv-x="4447" />
+<glyph glyph-name="will_logo" unicode="&#xe800;" d="M826 736l-102-426-76 273-229 0-69-278-114 431h-215l165-722h257l93 296 83-296h257l165 722h-215z m605 0v-722h469v210h-255v512h-214z m576 0v-722h469v210h-255v512h-214z m-855 0l-47-234v-488h214v722h-167z m1793-286l103 67-198 138 62-193c2-12 14-17 24-14 5 0 7 0 9 2z m-76-48c14 10 19 27 14 41l-78 243-62 45c-17 12-33 5-33-17v-414l159 102z m348-4l-141 97-121-78c-14-10-19-26-14-41l57-178 221 154c12 8 17 24 10 36-5 5-8 10-12 10z m-305-38c-2 11-14 16-24 14-2 0-5-3-7-3l-169-109v-224c0-21 14-28 33-17l226 160-59 179z" horiz-adv-x="3264" />
 </font>
 </defs>
 </svg>
