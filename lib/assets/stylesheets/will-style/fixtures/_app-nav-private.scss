@@ -1,8 +1,8 @@
-/* 
-// 
+/*
+//
 // APP NAVIGATION - PRIVATE
 // logged in WILLies
-// 
+//
 */
 
 $app-sidebar-padding-horizontal: rem_calc(10);
@@ -16,7 +16,7 @@ $app-sidebar-padding-horizontal: rem_calc(10);
 .app-nav-private {
 	background-color: $icon-bar-bg;
 	color: $icon-bar-font-color;
-	
+
 	.icon-bar.vertical {
 		width: 100%;
 
@@ -26,27 +26,27 @@ $app-sidebar-padding-horizontal: rem_calc(10);
 			padding-right: $app-sidebar-padding-horizontal;
 		}
 	}
-	
-	.logo {			
+
+	.logo {
 		padding: rem_calc(15 5 10);
 		text-align: center;
 	}
-	
-	
+
+
 	.user-nav-large {
 		// add padding once larger than medium
 		@media #{$large-up} {
 			padding: rem_calc(15 0);
 		}
-		
+
 		.user-image img {
 			max-width: 48px;
 		}
-		
+
 		.user-name {
 			font-size: $small-font-size;
 		}
-		
+
 		// reduce margins between icons
 		// the margins of the ul and li have to relate to each other
 		.user-nav {
@@ -55,7 +55,7 @@ $app-sidebar-padding-horizontal: rem_calc(10);
 				margin-left: $inline-list-default-float-list-margin/2;
 			}
 		}
-		
+
 		p {
 			margin-bottom: $paragraph-margin-bottom/2;
 		}

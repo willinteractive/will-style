@@ -1,8 +1,8 @@
-/* 
-// 
+/*
+//
 // APP NAVIGATION
 // both private and public
-// 
+//
 */
 
 // Large User Nav
@@ -12,7 +12,7 @@
 
 	// center all elements
 	text-align: center;
-	
+
 	.user-nav {
 		// extend Foundation's Inline Lists
 		@include inline-list;
@@ -23,7 +23,7 @@
 			display: inline-block;
 		}
 	}
-	
+
 }
 
 
@@ -34,8 +34,9 @@
 			padding-left: 0;
 		}
 	}
-	
+
+	// Prevent overlap on WILL App name
 	.top-bar .name h1 a {
-		padding-right: 0;
+		padding-right: 1rem;
 	}
 }
