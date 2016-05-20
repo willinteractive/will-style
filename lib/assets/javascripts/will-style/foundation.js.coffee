@@ -22,17 +22,18 @@
 Foundation.libs.reveal.settings.dismiss_modal_class = 'close-reveal-modal, .reveal-close'
 
 # Initialize Foundation
-$ ->
-    # @NOTE: Foundation interchange needs to be reflowed when using with turbolinks.
-    # $(document).foundation('interchange', 'reflow');
+$(document).on 'turbolinks:load', ->
+  # @NOTE: Foundation interchange needs to be reflowed when using with turbolinks.
+  # $(document).foundation('interchange', 'reflow');
 
-    $(document).foundation
-        # Focus inputs in dropdowns if they have one
-        dropdown:
-            opened: (event) ->
-                if $(this).find("input[type='text']").length > 0
-                    $(this).find("input[type='text']").focus()
-        # Don't duplicate parent link on topbars
-        topbar:
-            mobile_show_parent_link: false
-            back_text: '<i class="fa fa-arrow-left"></i> BACK'
+  $(document).foundation
+    # Focus inputs in dropdowns if they have one
+    dropdown:
+      opened: (event) ->
+        if $(this).find("input[type='text']").length > 0
+            $(this).find("input[type='text']").focus()
+
+    # Don't duplicate parent link on topbars
+    topbar:
+      mobile_show_parent_link: false
+      back_text: '<i class="fa fa-arrow-left"></i> BACK'

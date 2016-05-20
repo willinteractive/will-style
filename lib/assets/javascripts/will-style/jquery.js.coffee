@@ -2,6 +2,6 @@
 
 #= require jquery.placeholder.js
 
-$ ->
+$(document).on 'turbolinks:load', ->
   # Make all inputs with a placeholder attribute into a placeholder
   $('input[placeholder]').placeholder()

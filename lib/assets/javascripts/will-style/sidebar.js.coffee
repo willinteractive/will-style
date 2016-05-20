@@ -40,11 +40,11 @@
 
         if target.find(".sidebar-content").length isnt 0
             target.find(".sidebar-pusher").append target.find(".sidebar-content")
-        
+
     target.find(".sidebar-pusher").append('<div class="sidebar-content"></nav>') if target.find(".sidebar-content").length is 0
 
     # Store the original sidebar-container class so we can reset
-    target.addClass("sidebar-container") 
+    target.addClass("sidebar-container")
     original_target_class = target.attr("class")
 
     # Store the original menu class so we can reset
@@ -66,7 +66,7 @@
     target.on event_type, ".sidebar-button", (event) ->
         event.stopPropagation()
         event.preventDefault()
-        
+
         # Get the effect type (default or custom if specified in data-effect)
         new_effect = settings.default_effect
         if $(event.currentTarget).attr("data-effect") && effects.concat(push_effects).indexOf($(event.currentTarget).attr("data-effect")) isnt -1
@@ -106,6 +106,6 @@
 ) jQuery
 
 # Initialize any sidebar container divs as a Sidebar
-$ ->
+$(document).on 'turbolinks:load', ->
     $("div.sidebar-container").sidebar
         default_effect: "reveal"
