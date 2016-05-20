@@ -1,6 +1,6 @@
 # Dependencies
-require "sass"
-require "sass-rails"
+require "sassc"
+require "sassc-rails"
 require "foundation-rails"
 require "font-awesome-rails"
 require "autoprefixer-rails"
@@ -19,10 +19,6 @@ module WILL
     # Using bootstrap-sass initialization
     class << self
       def load!
-        if defined?(::Rails)
-          require 'sass-rails'
-          ::Sass.load_paths << stylesheets_path
-        end
       end
 
       # Paths
