@@ -213,6 +213,12 @@
     if(window.console && console.warn) console.warn(text);
   }
 
+  $(document).on('turbolinks:load', function() {
+    if ($.expanding.autoInitialize) {
+      $($.expanding.initialSelector).expanding();
+    }
+  });
+
   $(function () {
     if ($.expanding.autoInitialize) {
       $($.expanding.initialSelector).expanding();
