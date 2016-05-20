@@ -7,8 +7,6 @@ lastLocation = ""
 
 $(document).on 'turbolinks:load', ->
   if window.location.href isnt lastLocation
-    console.log "SENDING"
-
     lastLocation = window.location.href
 
     if document.createEvent
