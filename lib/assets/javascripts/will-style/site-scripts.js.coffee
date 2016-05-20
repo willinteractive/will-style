@@ -31,3 +31,5 @@
 #= require will-style/alert-boxes
 #= require will-style/forms/required_inputs
 #= require will-style/will_header
+
+#= require turbolinks.beta

@@ -12,9 +12,9 @@ $.extend( $.fn.dataTable.defaults, {
   "sPaginationType": "bootstrap",
 
   "fnInitComplete": (oSettings, json)->
-    $(this).siblings('.dataTables_extras_top').find(".dataTables_filter input").attr("placeholder", "type to filter..."); 
-    $(this).siblings('.dataTables_buttons').find('.ColVis_MasterButton').addClass("btn btn-default dropdown-toggle pull-right").prepend('<i class="fa fa-columns"></i> ').append('&ensp; <b class="caret"></b>').attr('title', 'Change Columns');  
-    $(this).siblings('.dataTables_buttons').find('.DTTT_button_collection').addClass("btn btn-default dropdown-toggle pull-right").prepend('<i class="fa fa-save"></i> ').append('&ensp; <b class="caret"></b>').attr('title', 'Save Table as…');  
+    $(this).siblings('.dataTables_extras_top').find(".dataTables_filter input").attr("placeholder", "type to filter...");
+    $(this).siblings('.dataTables_buttons').find('.ColVis_MasterButton').addClass("btn btn-default dropdown-toggle pull-right").prepend('<i class="fa fa-columns"></i> ').append('&ensp; <b class="caret"></b>').attr('title', 'Change Columns');
+    $(this).siblings('.dataTables_buttons').find('.DTTT_button_collection').addClass("btn btn-default dropdown-toggle pull-right").prepend('<i class="fa fa-save"></i> ').append('&ensp; <b class="caret"></b>').attr('title', 'Save Table as…');
     $(this).siblings('.dataTables_buttons').find('.DTTT_button_print').prepend('<i class="fa fa-print"></i> ').addClass("btn btn-default dropdown-toggle pull-right").attr('title', 'Print Table');
 } );
 
@@ -34,7 +34,7 @@ TableTools.DEFAULTS.aButtons = [
 # toggle all subsequent checkboxes when the header checkbox is checked
 $(document).on "change", ".table-selectable .checkAll", (event)->
   $(event.currentTarget).closest("table").find("input:checkbox").attr("checked", event.currentTarget.checked)
-    
+
 # make table rows selectable by checking the checkbox
 $(document).on "change", ".table-selectable input:checkbox", (event)->
   $(event.currentTarget).closest('tr').toggleClass("selected", event.currentTarget.checked)

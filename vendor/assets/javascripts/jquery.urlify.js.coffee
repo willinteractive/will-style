@@ -1,8 +1,8 @@
-$.urlify = (value, isEditing=false) -> 
+$.urlify = (value, isEditing=false) ->
 	# turn spaces into dashes and convert to lowercase
 	value = value.toLowerCase().replace(/\s+/g, "-")
 
-	# Replace all non word characters and dashes with nothing 
+	# Replace all non word characters and dashes with nothing
 	# and dashes at the beginning of the name with nothing
 	value = value.replace(/[^\w\-]/g, "").replace(/^[\-]+/g, "")
 

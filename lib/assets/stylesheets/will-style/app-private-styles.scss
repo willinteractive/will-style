@@ -64,10 +64,6 @@ $row-width: 90em !default;
 // ----------------------
 @import "will-style/core/tables";
 
-
-
-
-
 /*
 //
 // ELEMENTS
@@ -153,8 +149,6 @@ $row-width: 90em !default;
 	"will-style/fixtures/block-grid-stats",
 	"will-style/fixtures/hideable-sidebar";
 
-
-
 /*
 //
 // TEMPLATES
@@ -183,8 +177,9 @@ $row-width: 90em !default;
 // the libraries you can import from WILL-Style are:
 // dataTables, flot, offline, and piety
 */
-@import "will-style/libraries/offline";
-
+@import
+  "will-style/libraries/offline",
+  "will-style/libraries/turbolinks";
 
 /*
 //

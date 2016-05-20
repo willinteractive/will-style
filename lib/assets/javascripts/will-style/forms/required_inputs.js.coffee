@@ -37,5 +37,5 @@ $(document).on "change propertychange keyup input paste", ".required", ->
   update_required(this)
   update_submit($(this).closest("form"))
 
-$ ->
+$(document).on 'turbolinks:load', ->
   $(".required").trigger "change"

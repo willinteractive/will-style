@@ -11,5 +11,5 @@ $(document).on "show-alert", "div.alert-box.float", (event) ->
 $(document).on "click", "div.alert-box.float .close", (event) ->
 	$(event.target).closest("div.alert-box").removeClass("active")
 
-$ ->
+$(document).on 'turbolinks:load', ->
 	$("div.alert-box.float").trigger("show-alert")
