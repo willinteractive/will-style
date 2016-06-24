@@ -32,4 +32,5 @@
 #= require will-style/forms/required_inputs
 #= require will-style/will_header
 
+#= require history
 #= require turbolinks.beta
