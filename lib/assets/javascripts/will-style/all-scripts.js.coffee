@@ -38,5 +38,4 @@
 # -------- NO LONGER REQUIRE TREE
 # require_tree .
 
-#= require history
 #= require turbolinks.beta
