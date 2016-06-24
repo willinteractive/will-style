@@ -1,3 +1,10 @@
+// @NOTE: Turbolinks fails when trying to run replaceState on IE9 in production, killing all Javascript. This should fix it.
+if (typeof window.history.replaceState == "undefined") {
+	window.history.replaceState = function() {
+		// Do nothing
+	}
+}
+
 /*
 Turbolinks 5.0.0.beta5
 Copyright © 2016 Basecamp, LLC
