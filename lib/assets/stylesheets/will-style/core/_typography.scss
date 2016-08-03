@@ -1,15 +1,13 @@
-/*
 //
 // TYPOGRAPHY
 //
 //
-*/
 
 // VARIABLES
 $header-font-family: 		inherit;
 $header-font-weight: 		$font-weight-light;
 $header-font-style: 		normal;
-$paragraph-font-weight: $font-weight-normal;
+$paragraph-font-weight:		$font-weight-normal;
 $small-font-size: 			75%;
 
 $h1-font-reduction: rem-calc(15) !default;
@@ -45,7 +43,6 @@ $secondary-font-color: scale-color($body-font-color, $lightness: 50%);
 	text-overflow: ellipsis;
 }
 
-
 // CUSTOM STYLES
 // ---------------------
 
@@ -78,7 +75,6 @@ p.lead {
 .text-info {
 	color: $info-color !important;
 }
-
 
 // custom class for creating borders between list items
 ul.divided, ol.divided {
@@ -131,9 +127,7 @@ dl.stats.large {
 		margin: .2em 0;
 		display: block;
 	}
-
 }
-
 
 // Utility for not allowing text to wrap
 .no-break {
@@ -154,7 +148,6 @@ dl.stats.large {
 	margin-left: 0;
 
 }
-
 
 // adding a class for p tags that sets a max width for ideal line length
 .ideal {

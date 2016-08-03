@@ -1,11 +1,8 @@
-/*
 //
 // CLICKABLE BLOCK GRID
 // Based off of Foundation's Block Grid
 // but with more complex interactions and links
 //
-*/
-
 
 .clickable-block-grid {
 
@@ -23,15 +20,14 @@
 		// make sure any content that gets position outside of the bounds
 		// does not show or make it scroll
 		overflow: hidden;
-
 	}
 }
-
 
 // For non-touch screens only
 // -- be able to click the element and go or
 // -- click the sub-button to open more content
 // we are using the class .no-touch added by modernizr
+
 .no-touch .clickable-block-grid {
 
 	.go-now {
@@ -73,9 +69,7 @@
 		.go-later {
 			bottom: 0px;
 		}
-
 	}
-
 }
 
 // For touch screens only (or IE8)

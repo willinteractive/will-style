@@ -1,8 +1,6 @@
-/*
 //
 // TABLES
 //
-*/
 
 $table-bg: $body-bg;
 $table-even-row-bg: scale-color($component-bg-color, $lightness: 20%);
@@ -14,11 +12,7 @@ $table-head-font-color: $body-font-color;
 
 $table-row-font-color: $body-font-color;
 
-
 @import "foundation/components/tables";
-
-// CUSTOM:
-//
 
 // columns with action buttons
 td.actions {
@@ -111,14 +105,13 @@ table.complex {
 		td {
 			padding-top: rem-calc(14);
 			padding-bottom: rem-calc(16);
-/* 			font-weight: $font-weight-normal; */
+			font-weight: $font-weight-normal;
 			border-right: 3px solid $table-bg;
 			&:last-of-type {
 				border-right: none;
 			}
 		}
 	}
-
 
 	// give only the .row-heading a border top
 	tr.item-start {
@@ -138,7 +131,6 @@ table.complex {
 		padding-bottom: 3em;
 	}
 
-
 	tr {
 		& > td, & > th {
 			// increase left and right padding
@@ -146,5 +138,4 @@ table.complex {
 			padding-right: rem_calc(20);
 		}
 	}
-
 }

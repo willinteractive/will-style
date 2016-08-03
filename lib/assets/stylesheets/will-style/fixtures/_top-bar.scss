@@ -1,8 +1,6 @@
-/*
 //
 // TOP BAR
 //
-*/
 
 $topbar-back-link-size: rem-calc(12);
 
@@ -36,6 +34,6 @@ $topbar-back-link-size: rem-calc(12);
 
 // Make sure IE8 handles the contain correctly
 .ie8 .contain-to-grid .top-bar {
-  margin: 0 auto;
-  width: $row-width;
+	margin: 0 auto;
+	width: $row-width;
 }

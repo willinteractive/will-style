@@ -1,5 +1,6 @@
+//
 // FLOT
-// -----------------
+//
 
 .graph-padding {
 	padding: 10px;
@@ -11,13 +12,13 @@
 	height: 300px;
 	padding: 0;
 	overflow: hidden;
-	
+
 	& > div {
 		position: absolute;
 		width: 100%;
 		height: 100%;
 	}
-	
+
 	table {
 		background: none;
 	}
