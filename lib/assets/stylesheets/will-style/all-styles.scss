@@ -1,33 +1,18 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- */
-
-
-
-
-/*
 //
 // CORE
 // HTML tags & more abstract elements like color palettes,
 // fonts and invisible aspects like animations
 // -------------------------
-*/
 
 // External
 // ----------------------
+
 @import
 	"normalize";
 
 // Global
 // ----------------------
+
 @import
 	"will-style/core/mixins",
 	"will-style/core/global",
@@ -35,12 +20,14 @@
 
 // Typography
 // ----------------------
+
 @import
 	"will-style/core/typography",
 	"foundation/components/inline-lists";
 
 // Images
 // ----------------------
+
 @import
 	"font-awesome",
 	"will-style/core/images",
@@ -48,6 +35,7 @@
 
 // Buttons
 // ----------------------
+
 @import
 	"will-style/core/buttons",
   "foundation/components/button-groups",
@@ -56,26 +44,22 @@
 
 // Forms
 // ----------------------
+
 @import	"will-style/core/forms";
 
 // Tables
 // ----------------------
+
 @import "will-style/core/tables";
 
-
-
-
-
-/*
 //
 // ELEMENTS
 // Relatively simple combinations of the CORE built for reuse
 // -------------------------
-*/
-
 
 // Layout
 // ----------------------
+
 @import
   "foundation/components/grid",
 	"will-style/elements/sections",
@@ -85,6 +69,7 @@
 
 // Navigation
 // ----------------------
+
 @import
   "will-style/elements/breadcrumbs",
   "will-style/elements/icon-bar",
@@ -95,6 +80,7 @@
 
 // Blocks
 // ----------------------
+
 @import
   "will-style/elements/alert-boxes",
   "will-style/elements/cards",
@@ -107,6 +93,7 @@
 // Extras
 // you probably don't need all of theses
 // -------------------------
+
 @import
   "foundation/components/accordion",
   "foundation/components/clearing",
@@ -120,19 +107,15 @@
   "foundation/components/reveal",
   "foundation/components/tooltips";
 
-
-
-
-/*
 //
 // FIXTURES
 // Groups of elements joined together to form a relatively complex,
 // distinct section of an interface.
 // -------------------------
-*/
 
 // Global
 // ----------------------
+
 @import
 	"will-style/fixtures/complex-block-grid",
 	"will-style/fixtures/sticky-footer",
@@ -142,6 +125,7 @@
 
 // App Style
 // ----------------------
+
 @import
 	"will-style/fixtures/app-nav",
 	"will-style/fixtures/app-nav-private",
@@ -150,29 +134,18 @@
 	"will-style/fixtures/block-grid-stats",
 	"will-style/fixtures/hideable-sidebar";
 
-
-
-/*
 //
 // TEMPLATES
 // Very concrete and provide context to all these relatively abstract Fixtures and elements.
 // -------------------------
 // You don't need to import any templates unless you plan to use them
-*/
 
-
-
-/*
 //
 // PAGES
 // The highest level of fidelity and the most tangible.
 // -------------------------
 // import your project specific pages here
-*/
 
-
-
-/*
 //
 // LIBRARIES
 // This is where you want to import external library css styles
@@ -180,14 +153,12 @@
 // -------------------------
 // the libraries you can import from WILL-Style are:
 // dataTables, flot, offline, and piety
-*/
+
 @import "will-style/libraries/turbolinks";
 
-
-/*
 //
 // ENDING UTILITIES
 // Required utility classes that must come at the end of the document.
 // -------------------------
-*/
+
 @import "foundation/components/visibility";

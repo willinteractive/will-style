@@ -1,8 +1,6 @@
-/*
 //
 // MAIN SITE PRODUCT PAGE
 //
-*/
 
 // only on small screens, accomodate for the height of the absolute positioned top-bar
 @media #{$small-only} {
@@ -10,7 +8,6 @@
 		padding-top: $topbar-height;
 	}
 }
-
 
 // -------------------------
 // Product TITLE
@@ -33,7 +30,6 @@
 	margin-bottom: 0;
 	margin-top: 0;
 }
-
 
 // -------------------------
 // The top MAIN area
@@ -131,7 +127,6 @@
 	}
 }
 
-
 // -------------------------
 // The featured SLIDER (characters)
 // -------------------------
@@ -177,7 +172,6 @@ section.characters-slider {
 		}
 	}
 }
-
 
 .character-image {
 	// in case image is smaller than max-width of the column, center it

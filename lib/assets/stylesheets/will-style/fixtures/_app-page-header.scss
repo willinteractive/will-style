@@ -1,70 +1,67 @@
-/* 
-// 
+//
 // PAGE HEADER
-// 
-*/
-
+//
 
 .app-page-header {
 	// give it a bg color
-  background-color: $component-bg-color;
-  padding-top: $section-padding / 3;
-  padding-bottom: $section-padding / 3 - 1.25rem;
+	background-color: $component-bg-color;
+	padding-top: $section-padding / 3;
+	padding-bottom: $section-padding / 3 - 1.25rem;
 	border-bottom: 1px solid $component-border-color;
 
  .breadcrumbs {
-	  // remove colors from breadcrumbs
-	  background: none;
-	  border: none;
-	  
-	   // remove padding
-	  padding: 0;
-	  
-	  // setup margins
-	  margin-top: 0;
+		// remove colors from breadcrumbs
+		background: none;
+		border: none;
 
-	  & > li {
-		  // make the text somewhat bigger
-	  	font-size: $h1-font-size - $h1-font-reduction;
-	  	line-height: $header-line-height;
-	  	text-transform: none;
-	  	font-weight: $font-weight-light;
-	  	
-	  	// allow for text to be sized down using .tiny
-	  	.tiny {
-		  	font-size: $paragraph-font-size;
-	  	}
-	  }
-	  
-	  // the above also makes any dropdown links the light weight, let's make sure they stay normal
-	  .f-dropdown li {
-		  font-weight: $font-weight-normal;
-	  }
-  }
-  
-  // we don't want buttons messing up the padding
-  .button, button {
-	  margin-bottom: 0;
-  }
-  
-  // remove bottom margin from forms & inputs
-  form, input {
-	  margin-bottom: 0;
-  }
-  
+		 // remove padding
+		padding: 0;
+
+		// setup margins
+		margin-top: 0;
+
+		& > li {
+			// make the text somewhat bigger
+			font-size: $h1-font-size - $h1-font-reduction;
+			line-height: $header-line-height;
+			text-transform: none;
+			font-weight: $font-weight-light;
+
+			// allow for text to be sized down using .tiny
+			.tiny {
+				font-size: $paragraph-font-size;
+			}
+		}
+
+		// the above also makes any dropdown links the light weight, let's make sure they stay normal
+		.f-dropdown li {
+			font-weight: $font-weight-normal;
+		}
+	}
+
+	// we don't want buttons messing up the padding
+	.button, button {
+		margin-bottom: 0;
+	}
+
+	// remove bottom margin from forms & inputs
+	form, input {
+		margin-bottom: 0;
+	}
+
 }
 
 
 // only increase the size of the text to h1 when above small
 @media #{$medium-up} {
-	.app-page-header {			
-	  padding-top: $section-padding / 2;
-	  padding-bottom: $section-padding / 2 - 1.25rem;
-	  
-		.breadcrumbs {		  
-		  & > li {
-		  	font-size: $h1-font-size;
-		  }
-		} 
+	.app-page-header {
+		padding-top: $section-padding / 2;
+		padding-bottom: $section-padding / 2 - 1.25rem;
+
+		.breadcrumbs {
+			& > li {
+				font-size: $h1-font-size;
+			}
+		}
 	}
 }

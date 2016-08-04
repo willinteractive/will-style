@@ -1,21 +1,19 @@
-/* 
-// 
+//
 // TESTBED
-// 
-*/
+//
 
 #tp_list, .list-group.tp-list {
 	.list-group-item {
-		
+
 		@include section($section-padding / 2);
-		
+
 		border-left-width: 0px;
 		border-right-width: 0px;
-		
+
 		&:first-of-type {
 			border-top-width: 0px;
 		}
-		
+
 		&:last-of-type {
 			border-bottom-width: 0px;
 		}
@@ -29,4 +27,3 @@
 		padding-right: 1em;
 	}
 }
-	

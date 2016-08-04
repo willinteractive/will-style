@@ -1,9 +1,6 @@
-/* 
-// 
+//
 // APP SIDE NAV
-// 
-*/
-
+//
 
 // make the icon bar full-width when vertical
 .icon-bar.vertical {
@@ -43,7 +40,6 @@ $side-nav-heading-font-size: $side-nav-font-size !default;
 $side-nav-heading-font-weight: $font-weight-bold;
 $side-nav-heading-text-transform: uppercase !default;
 
-
 @import "foundation/components/side-nav";
 @import "foundation/components/labels";
 
@@ -53,17 +49,17 @@ $side-nav-heading-text-transform: uppercase !default;
 $rounded-label-padding: rem-calc(2 4 3);
 
 .side-nav.filtering {
-	
+
 	// types of spans that extend labels
 	.number, .color {
 		float: right;
 	}
-	
+
 	// numbers are light squares
 	.number {
 		@include label($bg:$secondary-color, $radius:$global-radius);
 	}
-	
+
 	// colors are circles
 	.color {
 		@include label($bg:$secondary-color, $radius:$global-rounded, $padding:$rounded-label-padding);
@@ -72,26 +68,23 @@ $rounded-label-padding: rem-calc(2 4 3);
 			visibility: hidden;
 		}
 	}
-	
-		
+
 	li.heading {
-	
+
 		// force link tags inside of headings to have the link tags color
 		a:not(.button) {
 			color: $anchor-font-color;
 		}
-		
 	}
-	
+
 	li.new {
-		
+
 		// use same padding as .label on icon for better alignment
 		i {
-			padding: $rounded-label-padding;	
+			padding: $rounded-label-padding;
 		}
-		
 	}
-	
+
 	li.active {
 
 		.number {
@@ -99,58 +92,55 @@ $rounded-label-padding: rem-calc(2 4 3);
 			background: $side-nav-link-color-active;
 			color: white;
 		}
-		
+
 		.color > i {
 			visibility: visible;
 		}
-		
 	}
-	
 }
 
 .side-nav.categories {
-	
+
 	background: $side-nav-categories-bg;
-	
+
 	// we want the buttons to expand the full width
 	padding: 0;
-	
+
 	li {
 		// the buttons should be on top of eachother
 		margin-bottom: 0;
 		// but with a slightly darker border than the bg
 		border-bottom: 1px solid scale-color($side-nav-categories-bg, $lightness: -25%);
-		
+
 		.button {
 			// make full-width and no margin
 			width: 100%;
 			margin-bottom: 0;
 			text-align: left;
-			
+
 			// make left and right padding same as columns
 			padding-left: $column-gutter / 2;
 			padding-right: $column-gutter / 2;
-						
+
 			// if it has an icon, give it a bit more spacing
 			& > i {
 				margin-right: rem_calc(20);
 			}
 		}
-		
+
 		//remove background of active items
 		&.active .button {
 			background: $body-bg;
 			color: $body-font-color;
 		}
 	}
-	
 }
 
 // If the side-nav has a form, darken the bg and remove the margin from the form
 .side-nav.has-form {
 	background: #efefef;
 	border-bottom: 1px solid #ddd;
-	
+
 	form {
 		margin: 0;
 	}
