@@ -3,12 +3,12 @@
 
 @font-face {
 	font-family: 'will-icons';
-	src: asset-url('will-icons.eot');
+	src: asset-url('will-icons/will-icons.eot');
 
-	src: asset-url('will-icons.eot') format('embedded-opentype'),
-		 asset-url('will-icons.woff') format('woff'),
-		 asset-url('will-icons.ttf') format('truetype'),
-		 asset-url('will-icons.svg') format('svg');
+	src: asset-url('will-icons/will-icons.eot') format('embedded-opentype'),
+		 asset-url('will-icons/will-icons.woff') format('woff'),
+		 asset-url('will-icons/will-icons.ttf') format('truetype'),
+		 asset-url('will-icons/will-icons.svg') format('svg');
 
 	font-weight: normal;
 	font-style: normal;
