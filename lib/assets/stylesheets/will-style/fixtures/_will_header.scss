@@ -6,16 +6,16 @@
 // FOUNDATION
 // ------------------
 
-$topbar-height: rem-calc(45);
+$topbar-height: rem-calc(24);
 
 $topbar-bg: transparent;
 $topbar-dropdown-bg: $topbar-bg;
 
-$topbar-link-color: $primary-color;
-$topbar-link-color-hover: darken($primary-color, 10%);
-$topbar-link-color-active: $white;
-$topbar-link-color-active-hover: $white;
-$topbar-link-weight: $font-weight-bold;
+$topbar-link-color: $white;
+$topbar-link-color-hover: darken($white, 10%);
+$topbar-link-color-active: $primary-color;
+$topbar-link-color-active-hover: darken($primary-color, 10%);
+$topbar-link-weight: $font-weight-normal;
 $topbar-link-font-size: rem-calc(13);
 $topbar-link-bg: $topbar-bg;
 $topbar-link-bg-hover: $topbar-bg;
@@ -29,26 +29,26 @@ $topbar-link-text-transform: uppercase;
 
 // CUSTOM VARIABLES & MIXINS
 // ------------------
-$topbar-bg-active: rgba($topbar-bg-color, .9);
+$topbar-bg-active: $topbar-bg-color;
 
 @mixin center($xy:xy) {
-  @if $xy == xy {
-    left: 50%;
-    top: 50%;
-    bottom: auto;
-    right: auto;
-    transform: translateX(-50%) translateY(-50%);
-  }
-  @else if $xy == x {
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
-  }
-  @else if $xy == y {
-    top: 50%;
-    bottom: auto;
-    transform: translateY(-50%);
-  }
+	@if $xy == xy {
+		left: 50%;
+		top: 50%;
+		bottom: auto;
+		right: auto;
+		transform: translateX(-50%) translateY(-50%);
+	}
+	@else if $xy == x {
+		left: 50%;
+		right: auto;
+		transform: translateX(-50%);
+	}
+	@else if $xy == y {
+		top: 50%;
+		bottom: auto;
+		transform: translateY(-50%);
+	}
 }
 
 @mixin topbar-height-change($multiplier:2) {
@@ -73,9 +73,11 @@ $topbar-bg-active: rgba($topbar-bg-color, .9);
 	}
 	.top-bar-section {
 		ul li > a {
-			font-size: $topbar-link-font-size*($multiplier*.6);
-			line-height: $topbar-height*$multiplier;
-			//transition: all .3s;
+			font-size: $topbar-link-font-size * ($multiplier * .6);
+			line-height: $topbar-height * $multiplier;
+
+			font-weight: normal;
+			font-family: $header-font-family;
 		}
 	}
 }
@@ -85,19 +87,19 @@ $topbar-bg-active: rgba($topbar-bg-color, .9);
 
 // aligning image text inside .title-area
 #will-header img, #will-header svg {
-  vertical-align: middle;
+	vertical-align: middle;
 }
 
 // The vector (SVG) logo
 #will-logo-svg {
-  width: 61px;
-  height: 20px;
+	width: 61px;
+	height: 20px;
 
-  @media #{$topbar-media-query} {
-    // The vector (SVG) logo
-    width: 98px;
-    height: 32px;
-  }
+	@media #{$topbar-media-query} {
+		// The vector (SVG) logo
+		width: 98px;
+		height: 32px;
+	}
 }
 
 
