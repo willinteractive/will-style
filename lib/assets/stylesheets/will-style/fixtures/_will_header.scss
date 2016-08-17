@@ -53,22 +53,22 @@ $topbar-bg-active: $topbar-bg-color;
 
 @mixin topbar-height-change($multiplier:2) {
 	.cd-header {
-		height: $topbar-height*$multiplier;
+		height: $topbar-height * $multiplier;
 
 		&.is-fixed {
-			top: $topbar-height*($multiplier*-1);
+			top: $topbar-height * ($multiplier * -1);
 		}
 	}
 	.cd-primary-nav {
 		& + main section:first-of-type, & + section:first-of-type {
-			padding-top: $topbar-height*($multiplier*1.5);
+			padding-top: $topbar-height * ($multiplier * 1.5);
 		}
 	}
 	.top-bar, .top-bar .name h1,
 	.top-bar-section li.active:not(.has-form) a:not(.button),
 	.top-bar-section li:not(.has-form) a:not(.button) {
-		height: $topbar-height*$multiplier;
-		line-height: $topbar-height*$multiplier;
+		height: $topbar-height * $multiplier;
+		line-height: $topbar-height * $multiplier;
 		//transition: all .3s;
 	}
 	.top-bar-section {
