@@ -113,6 +113,7 @@ $topbar-bg-active: $topbar-bg-color;
 
 					@media #{$small-only} {
 						padding: 0.25rem;
+						padding-left: 0.5rem;
 					}
 				}
 			}
@@ -161,10 +162,7 @@ $topbar-bg-active: $topbar-bg-color;
 		background-color: $topbar-bg-active;
 	}
 
-	// change to transparent bg when larger than small screen
-	@media #{$topbar-media-query} {
-		background: $topbar-bg;
-	}
+	background: $topbar-bg;
 }
 
 // add padding to first section after nav
@@ -186,7 +184,7 @@ $topbar-bg-active: $topbar-bg-color;
 // NAV OVERLAY
 
 .cd-primary-nav {
-	/* by default it's hidden - on top of the viewport */
+	// by default it's hidden - on top of the viewport
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -200,7 +198,7 @@ $topbar-bg-active: $topbar-bg-color;
 	backface-visibility: hidden;
 
 	overflow: auto;
-	/* this fixes the buggy scrolling on webkit browsers - mobile devices only - when overflow property is applied */
+	// this fixes the buggy scrolling on webkit browsers - mobile devices only - when overflow property is applied
 	-webkit-overflow-scrolling: touch;
 
 	transform: translateY(-100%);
@@ -227,6 +225,7 @@ $topbar-bg-active: $topbar-bg-color;
 		padding: .4em 1em;
 		transition: background .2s;
 		text-transform: uppercase;
+		font-family: $header-font-family;
 
 		&:hover {
 			color: $topbar-link-color-hover;
