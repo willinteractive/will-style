@@ -1,33 +1,25 @@
 <header id="will-header" class="cd-header contain-to-grid">
 	<nav class="top-bar">
 		<ul class="title-area">
-	    <li class="name">
-	      <h1><a href="#">
-					<%= image_tag "will-style/will_logo_32.png", title: "WILL", class: "svg-alt" %>
-					<%= render "will-style/partials/will_logo_svg" %>
-	      </a></h1>
-	    </li>
-	    <li class="toggle-topbar">
-		    <a class="cd-primary-nav-trigger" href="#0">
+			<li class="name">
+				<%= link_to root_path do %>
+					<%= render "will-style/layouts/will_logo_svg" %>
+				<% end %>
+			</li>
+
+			<li class="toggle-topbar">
+				<a class="cd-primary-nav-trigger" href="">
 					<span class="cd-menu-icon"></span>
 				</a>
-	    </li>
-	  </ul>
-		
+			</li>
+		</ul>
+
 		<section class="top-bar-section right">
-			<ul>
-				<li class="active"><a href="<%= templates_product_path %>">Default</a></li>
-				<li><a href="<%= templates_product_featured_path %>">Featured</a></li>
-				<li><a href="#">Link 3</a></li>
-			</ul>
+			<%= render_navigation %>
 		</section>
 	</nav>
 </header>
 
 <nav class="cd-primary-nav">
-	<ul>
-		<li class="active"><a href="<%= templates_product_path %>">Default</a></li>
-		<li><a href="<%= templates_product_featured_path %>">Featured</a></li>
-		<li><a href="#">Link 3</a></li>
-	</ul>
+	<%= render_navigation %>
 </nav>
