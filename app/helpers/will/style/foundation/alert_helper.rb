@@ -28,9 +28,9 @@ module WILL
         #
         # +type+
         #
-        # Type of alert. 
+        # Type of alert.
         #
-        # <i>Possible values</i>: success, warning, info, alert, secondary. 
+        # <i>Possible values</i>: success, warning, info, alert, secondary.
         #
         # <i>Default value</i>: info.
         #

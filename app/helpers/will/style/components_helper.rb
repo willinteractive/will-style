@@ -11,7 +11,7 @@ module WILL
     ##
     # Helpers for generating HTML elements
     #
-    module ComponentsHelper   
+    module ComponentsHelper
     end
   end
 end
@@ -21,6 +21,8 @@ include WILL::Style::Foundation::TooltipHelper
 include WILL::Style::Foundation::ModalHelper
 include WILL::Style::Foundation::DropdownHelper
 include WILL::Style::Foundation::BreadcrumbsHelper
+
+include WILL::Style::FontAwesome::IconHelper
 
 include WILL::Style::Components::HideableSidebarHelper
 include WILL::Style::Components::PageHeaderHelper
