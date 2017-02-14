@@ -108,3 +108,26 @@ button, .button {
 		background-color: scale-color($info-color, $lightness: $button-function-factor * 2.5);
 	}
 }
+
+//
+// Blocked Buttons
+//
+
+// @TODO: We can use this: https://css-tricks.com/snippets/css/gradient-text/
+// to apply a gradient animation on the text, but getting the background gradient is going to be tough.
+// We could make the anchor tag full height and use a second background on that.
+// Worth noting this is only available in webkit, so the following animations would have to be a fallback, anyways.
+
+h1.blocked-button,
+h2.blocked-button,
+h3.blocked-button,
+h4.blocked-button,
+h5.blocked-button {
+	@include blocked-text($primary-color);
+	@include blocked-button($primary-color);
+
+	&.light {
+		@include blocked-text(#FFFFFF);
+		@include blocked-button(#FFFFFF);
+	}
+}
