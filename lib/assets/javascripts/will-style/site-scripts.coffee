@@ -24,6 +24,7 @@
 #= require StackBlur
 
 # -------- WILL-STYLE DEFAULTS
+#= require will-style/forms/selected_buttons
 #= require will-style/fonts
 #= require will-style/jquery
 #= require will-style/foundation

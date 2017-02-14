@@ -250,6 +250,7 @@ $animation-curve-default: $animation-curve-fast-out-slow-in;
 						background-position .05s 0s ease-in;
 
 			color: #fff;
+			
 			.blocked-button.dark &,
 			.blocked-button.light & {
 				color: $theme-grey;
@@ -283,8 +284,7 @@ $animation-curve-default: $animation-curve-fast-out-slow-in;
 		}
 	}
 
-	&.dark,
-	&.light {
+	&.dark {
 		span,
 		input {
 			&:hover,
@@ -293,6 +293,49 @@ $animation-curve-default: $animation-curve-fast-out-slow-in;
 			&.selected {
 				color: $theme-grey !important;
 			}
+		}
+	}
+
+	&.dark,
+	&.light {
+		span,
+		input {
+			&:hover,
+			&:focus,
+			&:active,
+			&.selected {
+				color: $primary-color !important;
+			}
+		}
+	}
+}
+
+
+//
+// Animated Links
+
+@mixin animated-link($color: $primary-color, $max-width: 100px) {
+	position: relative;
+	transition: color .2s;
+
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+
+		border-bottom: 1px solid $color;
+		transition: transform .4s ease-out;
+
+		transform: scaleX(0);
+		transform-origin: center right;
+	}
+
+	&:hover,
+	&:focus {
+		&:after {
+			transform: scaleX(1);
 		}
 	}
 }
