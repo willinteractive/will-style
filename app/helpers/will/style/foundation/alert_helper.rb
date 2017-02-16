@@ -78,7 +78,7 @@ module WILL
             if options.has_key?(:dismissable) && options[:dismissable] == true
               content + link_to("&times;".html_safe, "#", class: "close")
             else
-              content
+              "<p>#{content}</p>".html_safe
             end
           end
         end

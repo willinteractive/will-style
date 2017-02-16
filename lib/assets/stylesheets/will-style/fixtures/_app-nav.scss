@@ -7,18 +7,37 @@
 // User icon/gravatar on top of name on top of nav as icons on one line
 // ----------------------
 .user-nav-large {
+	color: #fff;
 
-	// center all elements
-	text-align: center;
+	padding-top: 2rem;
+	padding-left: 10%;
 
+	margin: 0;
+
+	@media #{$small-only} {
+		padding-left: 2rem;
+	}
+
+	.small {
+		font-size: rem-calc(28px);
+	}
+
+.user-image {
+	margin-right: 2rem;
+	float: left;
+}
 	.user-nav {
-		// extend Foundation's Inline Lists
-		@include inline-list;
+
+		h2 {
+			margin: 0;
+		}
+		// float: left;
 		// BUT, we don't want them to float but display inline
 		// so that they get centered
-		& > li {
+		li {
 			float: none;
 			display: inline-block;
+			padding-right: 1rem;
 		}
 	}
 
