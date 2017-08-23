@@ -10,11 +10,12 @@ $body-bg: #fff;
 $body-font-color: #333;
 $action-color: #8562a7;
 
-
-$body-font-family: "Capita", "Hoefler Text", "Cambria", Arial, serif;
-
 // We use these as default colors throughout
 $primary-color: #48BC97;
+
+$primary-color-darker:		darken($primary-color, 20%);
+$primary-color-lighter:		#BFDC98;
+
 $sub-primary-color: #BFDC98;
 $secondary-color: scale-color($body-font-color, $lightness: 85%);
 $alert-color: #D6675A;
