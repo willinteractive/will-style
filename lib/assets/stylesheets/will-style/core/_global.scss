@@ -10,57 +10,6 @@ $body-bg: #fff;
 $body-font-color: #333;
 $action-color: #8562a7;
 
-@font-face {
-	font-family: 'Capita';
-	src: asset-url('capita/capita.eot');
-
-	src: asset-url('capita/capita.eot?#iefix') format('embedded-opentype'),
-		 asset-url('capita/capita.woff2') format('woff2'),
-		 asset-url('capita/capita.woff') format('woff'),
-		 asset-url('capita/capita.ttf') format('truetype');
-
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Capita';
-	src: asset-url('capita/capita-italic.eot');
-
-	src: asset-url('capita/capita-italic.eot?#iefix') format('embedded-opentype'),
-		 asset-url('capita/capita-italic.woff2') format('woff2'),
-		 asset-url('capita/capita-italic.woff') format('woff'),
-		 asset-url('capita/capita-italic.ttf') format('truetype');
-
-	font-weight: normal;
-	font-style: italic;
-}
-
-@font-face {
-	font-family: 'Capita';
-	src: asset-url('capita/capita-medium.eot');
-
-	src: asset-url('capita/capita-medium.eot?#iefix') format('embedded-opentype'),
-		 asset-url('capita/capita-medium.woff2') format('woff2'),
-		 asset-url('capita/capita-medium.woff') format('woff'),
-		 asset-url('capita/capita-medium.ttf') format('truetype');
-
-	font-weight: bold;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Capita';
-	src: asset-url('capita/capita-medium-italic.eot');
-
-	src: asset-url('capita/capita-medium-italic.eot?#iefix') format('embedded-opentype'),
-		 asset-url('capita/capita-medium-italic.woff2') format('woff2'),
-		 asset-url('capita/capita-medium-italic.woff') format('woff'),
-		 asset-url('capita/capita-medium-italic.ttf') format('truetype');
-
-	font-weight: bold;
-	font-style: italic;
-}
 
 $body-font-family: "Capita", "Hoefler Text", "Cambria", Arial, serif;
 
