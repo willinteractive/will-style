@@ -13,8 +13,6 @@
 # -------- JQUERY
 #= require jquery
 #= require jquery_ujs
-# -- Social Plugin - https:#github.com/carrot/share-button
-#= require share.min
 
 # -------- MODERNIZR
 #= require modernizr
@@ -23,7 +21,6 @@
 #= require will-style/responsive
 
 # -------- WILL-STYLE DEFAULTS
-#= require will-style/fonts
 #= require will-style/jquery
 #= require will-style/foundation
 # require will-style/datatables
