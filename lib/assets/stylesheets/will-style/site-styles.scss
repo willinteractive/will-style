@@ -98,17 +98,17 @@ $column-gutter: 3rem;
 // -------------------------
 
 @import
-  //"foundation/components/accordion",
-  //"foundation/components/clearing",
+  "foundation/components/accordion",
+  "foundation/components/clearing",
   "foundation/components/flex-video",
-  //"foundation/components/joyride",
-  //"foundation/components/keystrokes",
-  //"foundation/components/magellan",
-  //"foundation/components/orbit",
+  "foundation/components/joyride",
+  "foundation/components/keystrokes",
+  "foundation/components/magellan",
+  "foundation/components/orbit",
   "foundation/components/pricing-tables",
-  //"will-style/elements/progress-bars",
-  "foundation/components/reveal";
-  //"foundation/components/tooltips";
+  "will-style/elements/progress-bars",
+  "foundation/components/reveal",
+  "foundation/components/tooltips";
 
 //
 // FIXTURES
@@ -121,7 +121,8 @@ $column-gutter: 3rem;
 
 @import
 	"will-style/fixtures/complex-block-grid",
-	// "will-style/fixtures/sticky-footer",
+	"will-style/fixtures/sticky-footer",
+  "will-style/fixtures/blocked-text",
 	"will-style/fixtures/toolbar";
 	// "will-style/fixtures/top-bar";
 

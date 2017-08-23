@@ -1,9 +1,11 @@
+<% app = "" unless defined?(app) %>
+
 <header id="will-header" class="cd-header contain-to-grid">
 	<nav class="top-bar">
 		<ul class="title-area">
 			<li class="name">
 				<%= link_to root_path do %>
-					<%= render "will-style/layouts/will_logo_svg" %>
+					<%= render "will-style/fixtures/will_logo_svg" %>&nbsp;<%= app %>
 				<% end %>
 			</li>
 
