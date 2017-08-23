@@ -1,9 +1,6 @@
 # -------- JQUERY
 #= require jquery
 
-# -- Social Plugin - https:#github.com/carrot/share-button
-#= require share.min
-
 # -------- MODERNIZR
 #= require modernizr
 
