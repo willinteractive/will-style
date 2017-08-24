@@ -118,8 +118,7 @@
 @import
 	"will-style/fixtures/complex-block-grid",
 	"will-style/fixtures/sticky-footer",
-	"will-style/fixtures/toolbar",
-	"will-style/fixtures/top-bar";
+	"will-style/fixtures/toolbar";
 
 
 // App Style
@@ -128,6 +127,8 @@
 @import
 	"will-style/fixtures/app-nav",
 	"will-style/fixtures/app-page-header";
+
+@import "will-style/fixtures/app_header";
 
 //
 // TEMPLATES

@@ -27,6 +27,7 @@
 #= require will-style/foundation
 #= require will-style/search_form
 #= require will-style/hideable-sidebar
+#= require will-style/app_header
 #= require will-style/offline
 #= require will-style/alert-boxes
 #= require will-style/forms/required_inputs

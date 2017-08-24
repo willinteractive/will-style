@@ -80,7 +80,6 @@ $column-gutter: 3rem;
   "foundation/components/pagination",
   "foundation/components/side-nav",
   "foundation/components/sub-nav",
-  //"foundation/components/top-bar",
   "will-style/elements/tabs";
 
 // Blocks
@@ -131,7 +130,7 @@ $column-gutter: 3rem;
 // Site Style
 // ----------------------
 
-@import "will-style/fixtures/will_header";
+@import "will-style/fixtures/app_header";
 
 //
 // TEMPLATES

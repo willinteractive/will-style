@@ -83,6 +83,10 @@ $topbar-bg-active: $topbar-bg-color;
 			font-weight: normal;
 			font-family: $header-font-family;
 		}
+
+		ul .divider {
+			height: $topbar-height * $multiplier;
+		}
 	}
 }
 
@@ -90,8 +94,8 @@ $topbar-bg-active: $topbar-bg-color;
 
 // aligning image text inside .title-area
 
-#will-header img,
-#will-header svg {
+.cd-header img,
+.cd-header svg {
 	vertical-align: middle;
 }
 
@@ -116,6 +120,10 @@ $topbar-bg-active: $topbar-bg-color;
 						padding-left: 0.5rem;
 					}
 				}
+
+				.app-name {
+					color: $white;
+				}
 			}
 		}
 	}
@@ -130,7 +138,10 @@ $topbar-bg-active: $topbar-bg-color;
 	left: 0;
 	z-index: 999;
 
-	background: $topbar-bg-color;
+	&:not(.color) {
+		background: $topbar-bg-color;
+	}
+
 	height: $topbar-height;
 	width: 100%;
 
@@ -140,6 +151,11 @@ $topbar-bg-active: $topbar-bg-color;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 
+	&.permanent {
+		position: relative;
+		background-color: $topbar-bg-active;
+	}
+
 	&.is-fixed {
 		// when the user scrolls down, we hide the header right above the viewport
 		position: fixed;
@@ -147,8 +163,6 @@ $topbar-bg-active: $topbar-bg-color;
 
 		background-color: $topbar-bg-active;
 
-		-webkit-transition: -webkit-transform 0.3s;
-		-moz-transition: -moz-transform 0.3s;
 		transition: transform 0.3s;
 	}
 
@@ -162,7 +176,12 @@ $topbar-bg-active: $topbar-bg-color;
 		background-color: $topbar-bg-active;
 	}
 
-	background: $topbar-bg;
+	.top-bar-section {
+		.has-dropdown > a:after {
+			top: 50%;
+			margin-top: -4.5px;
+		}
+	}
 }
 
 // add padding to first section after nav
@@ -198,6 +217,7 @@ $topbar-bg-active: $topbar-bg-color;
 	backface-visibility: hidden;
 
 	overflow: auto;
+
 	// this fixes the buggy scrolling on webkit browsers - mobile devices only - when overflow property is applied
 	-webkit-overflow-scrolling: touch;
 
@@ -235,6 +255,10 @@ $topbar-bg-active: $topbar-bg-color;
 	&.is-visible {
 		transform: translateY(0);
 	}
+
+	a[href="#"] {
+		display: none;
+	}
 }
 
 // if the browser supports flex, make the links expand the whole height
@@ -244,7 +268,8 @@ $topbar-bg-active: $topbar-bg-color;
 		height: 100%;
 		display: flex;
 		flex-direction: column;
-		justify-content: space-around;
+		justify-content: center;
+		float: none !important;
 	}
 }
 
@@ -281,8 +306,6 @@ $topbar-bg-active: $topbar-bg-color;
 			background-color: $topbar-link-color;
 			right: 0;
 
-			-webkit-transition: -webkit-transform .3s, top .3s, background-color 0s;
-			-moz-transition: -moz-transform .3s, top .3s, background-color 0s;
 			transition: transform .3s, top .3s, background-color 0s;
 		}
 
