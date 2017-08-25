@@ -343,31 +343,159 @@ $animation-curve-default: $animation-curve-fast-out-slow-in;
 }
 
 
-//
-// Animated Links
-
-@mixin animated-link($color: $primary-color, $max-width: 100px) {
+@mixin outlined-button($animation-time: 0.5s, $include-border: false) {
 	position: relative;
-	transition: color .2s;
+	overflow: visible;
 
-	&:after {
-		content: "";
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-
-		border-bottom: 1px solid $color;
-		transition: transform .4s ease-out;
-
-		transform: scaleX(0);
-		transform-origin: center right;
+	@if $include-border == true {
+		border: 2px solid $body-font-color;
+	} @else {
+		border: 2px solid transparent !important;
 	}
 
-	&:hover,
-	&:focus {
-		&:after {
-			transform: scaleX(1);
+	background: transparent;
+
+	p {
+		line-height: 1;
+		margin-bottom: 0;
+
+		color: $body-font-color;
+	}
+
+	p:before,
+	p:after {
+		content: "";
+
+		margin-top: 0;
+
+		position: absolute;
+
+		top: -2px;
+		bottom: -2px;
+		left: -2px;
+		right: -2px;
+
+		z-index: 0;
+
+		height: auto;
+
+		transition-timing-function: linear;
+
+		background-repeat: no-repeat;
+
+		background-size: 100% 2px,
+						 2px 100%;
+
+		transform: scaleX(0);
+	}
+
+	&.disabled {
+		p:before,
+		p:after {
+			display: none;
+		}
+	}
+
+	p:before {
+		background-image: 	linear-gradient(to right, $primary-color-lighter, $primary-color),
+							linear-gradient(to right, $primary-color, $primary-color);
+
+		background-position: center top,
+							 right top;
+
+		transform-origin: left top;
+
+		bottom: 100%;
+
+		transition: transform $animation-time / 2 $animation-time / 4,
+							  bottom $animation-time / 4;
+	}
+
+	p:after {
+		background-image: 	linear-gradient(to bottom, $primary-color, $primary-color),
+							linear-gradient(to bottom, $primary-color-lighter, $primary-color);
+
+		background-position: center bottom,
+							 left bottom;
+
+		transform-origin: right bottom;
+
+		top: 100%;
+
+		transition: transform $animation-time / 2 $animation-time / 4,
+							  top $animation-time / 4;
+	}
+
+	&:not([disabled]) {
+		&:hover,
+		&:focus {
+			background-color: transparent;
+
+			p:before {
+				transform: scaleX(1);
+
+				transition: transform $animation-time,
+							bottom $animation-time / 2 $animation-time;
+			}
+
+			p:after {
+				transform: scaleX(1);
+
+				transition: transform $animation-time,
+							top $animation-time / 2 $animation-time;
+			}
+
+			p:before {
+				bottom: -2px;
+			}
+
+			p:after {
+				top: -2px;
+			}
 		}
 	}
 }
+
+//
+// Animated Links
+
+@mixin animated-link($fg-color: $primary-color, $bg-color: $body-bg) {
+	transition: color .2s,
+				box-shadow .2s;
+
+	text-shadow:	-0.025em 0 $bg-color,
+					0.025em 0 $bg-color,
+
+					0 -0.025em $bg-color,
+					0 0.025em $bg-color,
+
+					-0.05em 0.01em $bg-color,
+					0.05em 0.01em $bg-color,
+
+					-0.075em 0.01em $bg-color,
+					0.075em 0.01em $bg-color,
+
+					-0.10em 0.01em $bg-color,
+					0.10em 0.01em $bg-color,
+
+					-0.125em 0.01em $bg-color,
+					0.125em 0.01em $bg-color,
+
+					-0.15em 0.01em $bg-color,
+					0.15em 0.01em $bg-color;
+
+	box-shadow: 0px -2px 0px 0px $fg-color inset;
+
+	&:hover,
+	&:focus {
+		color: $fg-color;
+	}
+
+	&::selection {
+		// @NOTE: We're setting the background color here to 0.99 opacity to trick the browser into not using the default, non-overrideable opacity on backgrounds
+		background: rgba($primary-color, 0.99);
+
+  		text-shadow: none !important;
+	}
+}
+

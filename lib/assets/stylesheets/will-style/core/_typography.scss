@@ -231,3 +231,9 @@ dl.stats.large {
 		margin-right: auto;
 	}
 }
+
+::selection {
+	// @NOTE: We're setting the background color here to 0.99 opacity to trick the browser into not using the default, non-overrideable opacity on backgrounds
+	background: rgba($primary-color, 0.99);
+}
+

@@ -72,14 +72,29 @@ $section-primary-bg:							$primary-color;
 	// color containers in a zebra fashion if the main section has the .zebra class
 	.zebra > section:nth-child(2n) {
 		@include section_color($bg: $section-zebra-bg, $text: $section-zebra-color);
+
+			a.animated {
+				color: $body-font-color;
+				@include animated-link($primary-color, $section-zebra-bg);
+			}
 	}
 
 	// option to start zebra pattern with gray bg
 	.zebra.offset > section:nth-child(2n) {
 		@include section_color($bg: $body-bg, $text: $body-font-color);
+
+			a.animated {
+				color: $body-font-color;
+				@include animated-link($primary-color, $body-bg);
+			}
 	}
 	.zebra.offset > section:nth-child(2n-1) {
 		@include section_color($bg: $section-zebra-bg, $text: $section-zebra-color);
+
+			a.animated {
+				color: $body-font-color;
+				@include animated-link($primary-color, $section-zebra-bg);
+			}
 	}
 
 	.sectioned {
@@ -94,18 +109,33 @@ $section-primary-bg:							$primary-color;
 		// -------------------------
 		> section.inverse {
 		  @include section_color($bg: $section-inverse-bg, $text: $section-inverse-color);
+
+		  a.animated {
+			color: $section-inverse-color;
+		  	@include animated-link($primary-color, $section-inverse-bg);
+		  }
 		}
 
 		// Primary (brand color) Background
 		// -------------------------
 		> section.primary {
 		  @include section_color($bg: $section-primary-bg, $text: $section-primary-color);
+
+			a.animated {
+				color: $body-font-color;
+				@include animated-link($primary-color, $section-primary-bg);
+			}
 		}
 
 		// Secondary (zebra color) Background
 		// -------------------------
 		> section.secondary {
 		  @include section_color($bg: $section-zebra-bg, $text: $section-zebra-color);
+
+			a.animated {
+				color: $body-font-color;
+				@include animated-link($primary-color, $section-zebra-bg);
+			}
 		}
 
 		// Background images
