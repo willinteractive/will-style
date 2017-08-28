@@ -131,7 +131,8 @@ $column-gutter: 3rem;
 // Site Style
 // ----------------------
 
-@import "will-style/fixtures/app_header";
+@import "will-style/fixtures/app_header",
+        "will-style/fixtures/sticky-elements";
 
 //
 // TEMPLATES

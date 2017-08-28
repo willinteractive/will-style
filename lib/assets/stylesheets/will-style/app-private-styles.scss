@@ -136,7 +136,8 @@ $row-width: 90em !default;
 	"will-style/fixtures/block-grid-stats",
 	"will-style/fixtures/hideable-sidebar";
 
-@import "will-style/fixtures/app_header";
+@import "will-style/fixtures/app_header",
+        "will-style/fixtures/sticky-elements";
 
 //
 // TEMPLATES

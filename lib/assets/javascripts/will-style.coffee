@@ -31,5 +31,6 @@
 #= require will-style/offline
 #= require will-style/alert-boxes
 #= require will-style/forms/required_inputs
+#= require will-style/sticky-elements
 
 #= require turbolinks.beta
