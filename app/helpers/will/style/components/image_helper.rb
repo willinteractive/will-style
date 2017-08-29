@@ -18,7 +18,7 @@ module WILL
       #
       module ImageHelper
 
-        # Simplifies creating an image interchange tag. 
+        # Simplifies creating an image interchange tag.
         #
         # = Params
         #
@@ -88,7 +88,7 @@ module WILL
 
           options[:data] = {} unless options[:data]
           options[:data][:interchange] = fixed_interchange.join(", ")
-          
+
           options[:data][:interchange]
           image_tag source, options
         end

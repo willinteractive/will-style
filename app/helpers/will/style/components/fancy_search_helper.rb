@@ -73,7 +73,7 @@ module WILL
 
             content_tag(:div, class: "row collapse") do
               [
-                block_content,                
+                block_content,
                 builder.input(placeholder),
                 builder.button,
                 utf8_enforcer_tag
@@ -192,8 +192,8 @@ module WILL
             options[:class] = "button secondary prefix #{options[:class]}"
             options[:show_trigger] = false
 
-            d = DropdownBuilder.new(id, template)          
-            
+            d = DropdownBuilder.new(id, template)
+
             # Build dropdown button and menu list
             [
               content_tag(:div, class: "small-2 columns") do
