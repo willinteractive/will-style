@@ -7,3 +7,7 @@ a.animated {
 	color: $body-font-color;
 	@include animated-link();
 }
+
+p.underlined {
+	@include underlined($position: 'bottom');
+}

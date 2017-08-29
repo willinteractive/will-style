@@ -1,4 +1,6 @@
-.sticky.is-fixed {
-	position: fixed;
-	top: 0;
+.sticky {
+	&.is-fixed {
+		position: fixed;
+		top: 0;
+	}
 }

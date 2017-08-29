@@ -499,3 +499,36 @@ $animation-curve-default: $animation-curve-fast-out-slow-in;
 	}
 }
 
+@mixin underlined($position: 'bottom', $height: 2px) {
+	position: relative;
+
+	@if $position == 'bottom' {
+		padding-bottom: $height * 2;
+		padding-top: inherit;
+	} @else {
+		padding-top: $height * 2;
+		padding-bottom: inherit;
+	}
+
+	&:before {
+		content: "";
+
+		position: absolute;
+
+		@if $position == 'bottom' {
+			bottom: 0;
+			top: auto;
+		} @else {
+			top: 0;
+			bottom: auto;
+		}
+
+		left: 0;
+		right: 0;
+
+		height: $height;
+
+		background-color: $primary-color;
+		background-image: linear-gradient(to right, $primary-color-lighter, $primary-color);
+	}
+}

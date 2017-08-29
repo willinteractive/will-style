@@ -1,0 +1,23 @@
+.side-nav {
+	p.underlined {
+		margin-bottom: 0;
+	}
+
+	.accordion,
+	[data-accordion],
+	&.accordion,
+	&[data-accordion] {
+		li {
+
+			& > a,
+			&.active > a {
+				background: none;
+
+				&:hover,
+				&:focus {
+					background: none !important;
+				}
+			}
+		}
+	}
+}
