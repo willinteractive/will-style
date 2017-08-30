@@ -33,7 +33,7 @@ module WILL
         #
         # Position of the tooltip.
         #
-        # <i>Possible values</i>: bottom, top, left, right. 
+        # <i>Possible values</i>: bottom, top, left, right.
         #
         # <i>Default value</i>: bottom.
         #

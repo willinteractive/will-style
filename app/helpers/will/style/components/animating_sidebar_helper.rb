@@ -129,7 +129,7 @@ module WILL
           #
           def menu(options={}, &block)
             raise ArgumentError, "Missing block" unless block_given?
-  
+
             options[:class] = "sidebar-menu #{options[:class]}"
 
             content_tag(:nav, options) do

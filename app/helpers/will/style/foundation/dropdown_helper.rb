@@ -315,7 +315,7 @@ module WILL
           #
           # +target+
           #
-          # Destination for clicking on the item. 
+          # Destination for clicking on the item.
           #
           # +active+
           #

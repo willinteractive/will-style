@@ -98,7 +98,7 @@ module WILL
               options[:data] = options[:data].merge({ "reveal-id" => @id, "no-turbolinks" => true })
             else
               options[:data] = { "reveal-id" => @id, "no-turbolinks" => true }
-            end   
+            end
 
             if block_given?
               link_to("#", options) do
@@ -171,9 +171,9 @@ module WILL
           #
           # +type+
           #
-          # Type of button. 
+          # Type of button.
           #
-          # <i>Possible values</i>: success, warning, info, alert, secondary. 
+          # <i>Possible values</i>: success, warning, info, alert, secondary.
           #
           # <i>Default value</i>: warning.
           #

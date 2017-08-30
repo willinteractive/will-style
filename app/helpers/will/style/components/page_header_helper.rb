@@ -82,7 +82,7 @@ module WILL
           #
           def column(sizes="small-12", options={}, &block)
             raise ArgumentError, "Missing block" unless block_given?
-            
+
             if sizes.is_a?(Hash)
               options = options.merge(sizes)
               sizes = ""

@@ -76,7 +76,7 @@ module WILL
 
             content_tag(:div, class: "row collapse") do
               [
-                block_content,                
+                block_content,
                 builder.input(placeholder),
                 options[:include_button] == false ? builder.hidden_submit_button : builder.button,
                 utf8_enforcer_tag
@@ -122,7 +122,7 @@ module WILL
             self.q = q
             self.autofocus = autofocus
             self.input_id = input_id
-            
+
             self.built_options_menu = false
           end
 
@@ -205,8 +205,8 @@ module WILL
             options[:class] = "button secondary prefix #{options[:class]}"
             options[:show_trigger] = false
 
-            d = DropdownBuilder.new(id, template)          
-            
+            d = DropdownBuilder.new(id, template)
+
             # Build dropdown button and menu list
             [
               content_tag(:div) do

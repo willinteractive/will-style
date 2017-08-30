@@ -99,7 +99,7 @@ module WILL
           #
           def wrapper(options={}, &block)
             raise ArgumentError, "Missing block" unless block_given?
-  
+
             options[:class] = "off-canvas-wrap #{options[:class]}"
 
             # Merge custom html data options with mandatory alert data options
@@ -183,7 +183,7 @@ module WILL
           #
           def sidebar(options={}, &block)
             raise ArgumentError, "Missing block" unless block_given?
-  
+
             options[:class] = "hideable-sidebar columns #{options[:class]}"
 
             content_tag(:aside, options) do
@@ -212,7 +212,7 @@ module WILL
           #
           def content(options={}, &block)
             raise ArgumentError, "Missing block" unless block_given?
-  
+
             options[:class] = "columns #{options[:class]}"
 
             content_tag(:main, options) do
