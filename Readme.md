@@ -86,28 +86,3 @@ $ rake rdoc
 ```
 
 RDoc Formatting Guide: http://ruby-doc.org/gems/docs/r/rdoc-4.1.1/RDoc/Markup.html
-
-#### Bower configuration
-
-To use this gem as a bower module, just use this dependency:
-
-```
-"will-style": "git@github.com:willinteractive/will-style.git#foundation"
-```
-
-Be sure that you've also installed compass to your package file. In your compass configuration, make sure your settings include:
-
-```
-add_import_path "bower_components/foundation/scss"
-add_import_path "bower_components/will-style/lib/assets/stylesheets"
-add_import_path "bower_components/font-awesome/scss"
-```
-
-You can also add this to your gruntfile in the compass config like so (this is for a yeoman installation):
-
-```
-raw: 'add_import_path "<%= yeoman.app %>/_bower_components/foundation/scss"\nadd_import_path "<%= yeoman.app %>/_bower_components/will-style/lib/assets/stylesheets"\nadd_import_path "<%= yeoman.app %>/_bower_components/will-style/lib/assets/stylesheets/will-style/core"\nadd_import_path "<%= yeoman.app %>/_bower_components/font-awesome/scss"\n'
-```
-
-@TODO: Figure out javascript configuration
-

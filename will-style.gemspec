@@ -26,10 +26,10 @@ Gem::Specification.new do |s|
   s.add_dependency "font-awesome-rails", "~> 4.4"
   s.add_dependency "modernizr-rails", "~> 2.7.1"
 
-  s.add_dependency "sassc-rails", "~> 1.2.0"
+  s.add_dependency "sassc-rails", "~> 1.3.0"
 
   s.add_dependency 'coffee-rails', "~> 4.0.1"
-  s.add_dependency 'autoprefixer-rails', "~> 6.0.3"
+  s.add_dependency 'autoprefixer-rails', "~> 7.1.3"
 
   # @NOTE: We can use this, once turbolinks-rails is out of beta
   # s.add_dependency 'turbolinks-rails', "~> 5.0.3"
