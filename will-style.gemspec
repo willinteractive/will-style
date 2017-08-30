@@ -15,10 +15,14 @@ Gem::Specification.new do |s|
 
   s.files = `git ls-files`.split("\n")
 
-  s.add_dependency "rails", "~> 4.1"
+  s.add_dependency "rails", "~> 4.2"
+
+  s.add_dependency "jquery-rails", "~> 4.3"
 
   # @NOTE: Need to lock Foundation at 5.5.2 until 5.5.4 comes out
+  # @NOTE2: Foundation-Rails 5.5.4 is never coming out, we'll need to update to 6
   s.add_dependency "foundation-rails", "5.5.2.1"
+
   s.add_dependency "font-awesome-rails", "~> 4.4"
   s.add_dependency "modernizr-rails", "~> 2.7.1"
 
@@ -27,10 +31,9 @@ Gem::Specification.new do |s|
   s.add_dependency 'coffee-rails', "~> 4.0.1"
   s.add_dependency 'autoprefixer-rails', "~> 6.0.3"
 
-  # @NOTE: Once Turbolinks Source gets finalized, we can include this
-  # s.add_dependency 'turbolinks-source', "~> 5.0.0.beta"
+  # @NOTE: We can use this, once turbolinks-rails is out of beta
+  # s.add_dependency 'turbolinks-rails', "~> 5.0.3"
 
   s.add_development_dependency "bundler", "~> 1.5"
 
-  # s.add_development_dependency "sass-rails-source-maps", "~> 0.1.0"
 end

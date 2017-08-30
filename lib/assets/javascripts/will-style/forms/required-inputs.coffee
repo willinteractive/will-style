@@ -1,5 +1,5 @@
 #= require jquery.isEmail
-# expect(page.has_selector?('input[type=submit][disabled]')).to be_truthy
+
 update_submit = (form) ->
   disabled = false
 

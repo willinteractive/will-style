@@ -5,6 +5,7 @@ require "foundation-rails"
 require "font-awesome-rails"
 require "autoprefixer-rails"
 require "modernizr-rails"
+require "jquery-rails"
 
 module WILL
   module Style
