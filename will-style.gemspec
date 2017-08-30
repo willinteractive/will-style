@@ -6,16 +6,16 @@ require 'will-style/version'
 Gem::Specification.new do |s|
   s.name     = "will-style"
   s.version  = Will::Style::VERSION
-  s.authors  = ["The WILL Ninja Team"]
-  s.email    = ["ninja.team@willinteractive.com"]
+  s.authors  = ["The WILL Developers"]
+  s.email    = ["developers@willinteractive.com"]
   s.summary  = "WILL custom styling built on top of foundation"
   s.description  = "WILL Style"
-  s.homepage = "http://github.com/willinteractive/will-style"
+  s.homepage = "https://github.com/willinteractive/will-style"
   s.license  = 'MIT'
 
   s.files = `git ls-files`.split("\n")
 
-  s.add_dependency "rails", "~> 5.0"
+  s.add_dependency "rails", "> 4.2"
 
   s.add_dependency "jquery-rails", "~> 4.3"
 
