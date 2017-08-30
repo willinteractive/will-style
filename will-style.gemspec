@@ -28,7 +28,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "sassc-rails", "~> 1.3.0"
 
-  s.add_dependency 'coffee-rails', "~> 4.0.1"
+  s.add_dependency 'coffee-rails', "~> 4.2.2"
   s.add_dependency 'autoprefixer-rails', "~> 7.1.3"
 
   # @NOTE: We can use this, once turbolinks-rails is out of beta
