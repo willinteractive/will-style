@@ -45,7 +45,11 @@
 .will-icon-will_logo:before {
 	content: '\e800';
 
-	width: 3.3em;
+	// @NOTE: Working around fontastic making will icons a monospace font and shrinking our logo
+	font-size: 3.1em;
+	line-height: 0;
+	transform: translateY(0.38em);
+
 	margin-left: 0;
 }
 
@@ -55,3 +59,6 @@
 .will-icon-next_arrow:before { content: '\e804'; } /* '' */
 .will-icon-previous_arrow:before { content: '\e805'; } /* '' */
 .will-icon-settings:before { content: '\e806'; } /* '' */
+.will-icon-start_over:before { content: '\e807'; } /* '' */
+.will-icon-next_arrow_thick:before { content: '\e808'; } /* '' */
+.will-icon-previous_arrow_thick:before { content: '\e809'; } /* '' */
