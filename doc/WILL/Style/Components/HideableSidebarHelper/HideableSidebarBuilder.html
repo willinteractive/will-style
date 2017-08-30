@@ -6,19 +6,16 @@
 
 <title>class WILL::Style::Components::HideableSidebarHelper::HideableSidebarBuilder - RDoc Documentation</title>
 
-<link href="../../../../fonts.css" rel="stylesheet">
-<link href="../../../../rdoc.css" rel="stylesheet">
-
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../../../";
 </script>
 
 <script src="../../../../js/jquery.js"></script>
-<script src="../../../../js/navigation.js"></script>
-<script src="../../../../js/search_index.js"></script>
-<script src="../../../../js/search.js"></script>
-<script src="../../../../js/searcher.js"></script>
 <script src="../../../../js/darkfish.js"></script>
+
+<link href="../../../../css/fonts.css" rel="stylesheet">
+<link href="../../../../css/rdoc.css" rel="stylesheet">
+
 
 
 <body id="top" role="document" class="class">
@@ -197,7 +194,7 @@
           <p>Generates a hideable sidebar toggle button. You can either specify button
 text or use an ERB Block to fill in HTML content.</p>
 
-<h1 id="method-i-button-label-Params">Params<span><a href="#method-i-button-label-Params">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="method-i-button-label-Params">Params<span><a href="#method-i-button-label-Params">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
 <p><code>text</code></p>
 
@@ -213,7 +210,7 @@ text or use an ERB Block to fill in HTML content.</p>
 
 <p>ERB Block for the sidebar button if it needs to be HTML content.</p>
 
-<h1 id="method-i-button-label-Examples">Examples<span><a href="#method-i-button-label-Examples">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="method-i-button-label-Examples">Examples<span><a href="#method-i-button-label-Examples">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
 <p>Default Functionality</p>
 
@@ -274,7 +271,7 @@ text or use an ERB Block to fill in HTML content.</p>
           
           <p>Generates the main content area.</p>
 
-<h1 id="method-i-content-label-Params">Params<span><a href="#method-i-content-label-Params">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="method-i-content-label-Params">Params<span><a href="#method-i-content-label-Params">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
 <p><code>options</code></p>
 
@@ -286,7 +283,7 @@ text or use an ERB Block to fill in HTML content.</p>
 
 <p>ERB Block for the content area.</p>
 
-<h1 id="method-i-content-label-Examples">Examples<span><a href="#method-i-content-label-Examples">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="method-i-content-label-Examples">Examples<span><a href="#method-i-content-label-Examples">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
 <pre>&lt;%= h.content do %&gt;
   &lt;h1&gt;This is the main content area&lt;/h1&gt;
@@ -299,7 +296,7 @@ text or use an ERB Block to fill in HTML content.</p>
             <pre><span class="ruby-comment"># File app/helpers/will/style/components/hideable_sidebar_helper.rb, line 213</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">content</span>(<span class="ruby-identifier">options</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing block&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
-  
+
   <span class="ruby-identifier">options</span>[<span class="ruby-value">:class</span>] = <span class="ruby-node">&quot;columns #{options[:class]}&quot;</span>
 
   <span class="ruby-identifier">content_tag</span>(<span class="ruby-value">:main</span>, <span class="ruby-identifier">options</span>) <span class="ruby-keyword">do</span>
@@ -331,7 +328,7 @@ text or use an ERB Block to fill in HTML content.</p>
           
           <p>Generates the hideable sidebar.</p>
 
-<h1 id="method-i-sidebar-label-Params">Params<span><a href="#method-i-sidebar-label-Params">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="method-i-sidebar-label-Params">Params<span><a href="#method-i-sidebar-label-Params">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
 <p><code>options</code></p>
 
@@ -343,7 +340,7 @@ text or use an ERB Block to fill in HTML content.</p>
 
 <p>ERB Block for the sidebar.</p>
 
-<h1 id="method-i-sidebar-label-Examples">Examples<span><a href="#method-i-sidebar-label-Examples">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="method-i-sidebar-label-Examples">Examples<span><a href="#method-i-sidebar-label-Examples">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
 <pre>&lt;%= h.sidebar do %&gt;
   &lt;h1&gt;This is the menu area&lt;/h1&gt;
@@ -356,7 +353,7 @@ text or use an ERB Block to fill in HTML content.</p>
             <pre><span class="ruby-comment"># File app/helpers/will/style/components/hideable_sidebar_helper.rb, line 184</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">sidebar</span>(<span class="ruby-identifier">options</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing block&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
-  
+
   <span class="ruby-identifier">options</span>[<span class="ruby-value">:class</span>] = <span class="ruby-node">&quot;hideable-sidebar columns #{options[:class]}&quot;</span>
 
   <span class="ruby-identifier">content_tag</span>(<span class="ruby-value">:aside</span>, <span class="ruby-identifier">options</span>) <span class="ruby-keyword">do</span>
@@ -388,7 +385,7 @@ text or use an ERB Block to fill in HTML content.</p>
           
           <p>Generates the wrapper to hold the sidebar and the main content area.</p>
 
-<h1 id="method-i-wrapper-label-Params">Params<span><a href="#method-i-wrapper-label-Params">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="method-i-wrapper-label-Params">Params<span><a href="#method-i-wrapper-label-Params">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
 <p><code>options</code></p>
 
@@ -400,7 +397,7 @@ text or use an ERB Block to fill in HTML content.</p>
 
 <p>ERB Block for the wrapper.</p>
 
-<h1 id="method-i-wrapper-label-Examples">Examples<span><a href="#method-i-wrapper-label-Examples">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+<h1 id="method-i-wrapper-label-Examples">Examples<span><a href="#method-i-wrapper-label-Examples">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
 <pre>&lt;%= h.wrapper do %&gt;
   &lt;%= h.sidebar do %&gt;
@@ -419,7 +416,7 @@ text or use an ERB Block to fill in HTML content.</p>
             <pre><span class="ruby-comment"># File app/helpers/will/style/components/hideable_sidebar_helper.rb, line 100</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">wrapper</span>(<span class="ruby-identifier">options</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Missing block&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
-  
+
   <span class="ruby-identifier">options</span>[<span class="ruby-value">:class</span>] = <span class="ruby-node">&quot;off-canvas-wrap #{options[:class]}&quot;</span>
 
   <span class="ruby-comment"># Merge custom html data options with mandatory alert data options</span>
@@ -453,7 +450,7 @@ text or use an ERB Block to fill in HTML content.</p>
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
-  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 
