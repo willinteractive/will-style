@@ -152,7 +152,5 @@ $section-primary-bg:						$primary-color;
 		> section[class*="fixed"] {
 			@include section_image("fixed");
 		}
-
 	}
-
 }

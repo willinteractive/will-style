@@ -1,5 +1,8 @@
 .side-nav {
 	p.underlined {
+		display: inline-block;
+		width: auto;
+
 		@include underlined($position: 'bottom');
 		margin-bottom: 0;
 	}
