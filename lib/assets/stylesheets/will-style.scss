@@ -13,21 +13,21 @@
 // Global
 // ----------------------
 
-// make grid (almost) full-width and use large classes
-$include-xl-html-grid-classes: true;
-$row-width: 90rem;
-$column-gutter: 3rem;
+@import "will-style/core/global";
 
 @import
-	"will-style/core/mixins",
-	"will-style/core/global",
-	"will-style/core/will_icons";
+	"will-style/mixins/animation",
+	"will-style/mixins/gradients",
+	"will-style/mixins/layout",
+	"will-style/mixins/outlines",
+	"will-style/mixins/shadows";
 
 // Typography
 // ----------------------
 
 @import
 	"will-style/core/typography",
+	"will-style/core/will_icons",
 	"foundation/components/inline-lists";
 
 // Images
@@ -92,7 +92,7 @@ $column-gutter: 3rem;
 	"will-style/elements/labels",
 	"will-style/elements/list-group",
 	"will-style/elements/panels",
-	"will-style/fixtures/image-downloads";
+	"will-style/components/image-downloads";
 
 // Extras
 // you probably don't need all of theses
@@ -111,10 +111,8 @@ $column-gutter: 3rem;
 	"foundation/components/reveal",
 	"foundation/components/tooltips";
 
-@import "will-style/elements/buttons";
-
 //
-// FIXTURES
+// COMPONENTS
 // Groups of elements joined together to form a relatively complex,
 // distinct section of an interface.
 // -------------------------
@@ -123,17 +121,17 @@ $column-gutter: 3rem;
 // ----------------------
 
 @import
-	"will-style/fixtures/complex-block-grid",
-	"will-style/fixtures/sticky-footer",
-	"will-style/fixtures/blocked-text",
-	"will-style/fixtures/toolbar",
-	"will-style/fixtures/hideable-sidebar";
+	"will-style/components/complex-block-grid",
+	"will-style/components/sticky-footer",
+	"will-style/components/blocked-text",
+	"will-style/components/toolbar",
+	"will-style/components/hideable-sidebar";
 
 // Site Style
 // ----------------------
 
-@import "will-style/fixtures/app-nav",
-        "will-style/fixtures/sticky-elements";
+@import "will-style/components/app-nav",
+        "will-style/components/sticky-elements";
 
 //
 // LIBRARIES

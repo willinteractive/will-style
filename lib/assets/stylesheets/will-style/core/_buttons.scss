@@ -11,7 +11,7 @@ $button-disabled-opacity: 0.5;
 @import "foundation/components/buttons";
 
 // Inverts a button so that the background is transparent until hover
-@mixin inverted-button-style($color:$button-bg-color) {
+@mixin inverted-button($color:$button-bg-color) {
 	@include button-style(	$bg: transparent,
 							$bg-hover: $color);
 
@@ -20,24 +20,26 @@ $button-disabled-opacity: 0.5;
 }
 
 // Custom Button colors
-button, .button {
+button,
+.button {
 	// and adding custom .inverse style
 	&.inverse {
 			@include button-style(	$bg: $body-font-color,
 									$bg-hover: scale-color($body-font-color, $lightness: $button-function-factor));
 	}
 
-	// &.info {
-	// 	@include button-style(	$bg: scale-color($info-color, $lightness: $button-function-factor * 1.5),
-	// 							$bg-hover: scale-color($info-color, $lightness: $button-function-factor * 2.5));
-	// }
+	&.info {
+		@include button-style(	$bg: scale-color($info-color, $lightness: $button-function-factor * 1.5),
+								$bg-hover: scale-color($info-color, $lightness: $button-function-factor * 2.5));
+	}
 
 	&.warning {
 			@include button-style(	$bg: $warning-color,
 									$bg-hover: scale-color($warning-color, $lightness: $button-function-factor));
 	}
 
-	&.disabled, &[disabled] {
+	&.disabled,
+	&[disabled] {
 		&.info {
 			color: white;
 		}
@@ -45,30 +47,30 @@ button, .button {
 
 	&.inverted {
 		&.success {
-			@include inverted-button-style($success-color);
+			@include inverted-button($success-color);
 		}
 
 		&.alert {
-			@include inverted-button-style($alert-color);
+			@include inverted-button($alert-color);
 		}
 
 		&.secondary {
-			@include inverted-button-style($secondary-color);
+			@include inverted-button($secondary-color);
 
 			// The secondary font color is very hard to read.
 			color: $body-font-color;
 		}
 
 		&.warning {
-			@include inverted-button-style($warning-color);
+			@include inverted-button($warning-color);
 		}
 
 		&.info {
-			@include inverted-button-style(scale-color($info-color, $lightness: $button-function-factor * 1.5));
+			@include inverted-button(scale-color($info-color, $lightness: $button-function-factor * 1.5));
 		}
 
 		&.inverse {
-			@include inverted-button-style($body-font-color);
+			@include inverted-button($body-font-color);
 		}
 	}
 }
@@ -127,7 +129,21 @@ h5.blocked-button {
 	@include blocked-button($primary-color);
 
 	&.light {
-		@include blocked-text(#FFFFFF);
-		@include blocked-button(#FFFFFF);
+		@include blocked-text($white);
+		@include blocked-button($white);
 	}
+}
+
+//
+// Outlined Buttons
+//
+
+button.outlined,
+a.outlined {
+	@include outlined-button(0.4s, true);
+}
+
+a.animated {
+	color: $body-font-color;
+	@include animated-link();
 }

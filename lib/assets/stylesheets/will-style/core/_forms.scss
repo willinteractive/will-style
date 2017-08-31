@@ -70,7 +70,21 @@ input[type="tel"],
 input[type="time"],
 input[type="url"],
 textarea {
-	@include placeholder($input-border-color);
+	&::-moz-placeholder {
+		color: $input-border-color;
+		font-style: italic;
+		opacity: 1;
+	}
+
+	&:-ms-input-placeholder {
+		color: $input-border-color;
+		font-style: italic;
+	}
+
+	&::-webkit-input-placeholder {
+		color: $input-border-color;
+		font-style: italic;
+	}
 }
 
 // CUSTOM

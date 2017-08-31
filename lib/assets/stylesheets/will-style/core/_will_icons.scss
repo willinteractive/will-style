@@ -48,17 +48,17 @@
 	// @NOTE: Working around fontastic making will icons a monospace font and shrinking our logo
 	font-size: 3.1em;
 	line-height: 0;
-	transform: translateY(0.38em);
+	transform: translateY(0.37em);
 
 	margin-left: 0;
 }
 
-.will-icon-pause:before { content: '\e801'; } /* '' */
-.will-icon-info_link:before { content: '\e802'; } /* '' */
-.will-icon-play:before { content: '\e803'; } /* '' */
-.will-icon-next_arrow:before { content: '\e804'; } /* '' */
-.will-icon-previous_arrow:before { content: '\e805'; } /* '' */
-.will-icon-settings:before { content: '\e806'; } /* '' */
-.will-icon-start_over:before { content: '\e807'; } /* '' */
-.will-icon-next_arrow_thick:before { content: '\e808'; } /* '' */
-.will-icon-previous_arrow_thick:before { content: '\e809'; } /* '' */
+.will-icon-pause:before { content: '\e801'; }
+.will-icon-info_link:before { content: '\e802'; }
+.will-icon-play:before { content: '\e803'; }
+.will-icon-next_arrow:before { content: '\e804'; }
+.will-icon-previous_arrow:before { content: '\e805'; }
+.will-icon-settings:before { content: '\e806'; }
+.will-icon-start_over:before { content: '\e807'; }
+.will-icon-next_arrow_thick:before { content: '\e808'; }
+.will-icon-previous_arrow_thick:before { content: '\e809'; }
