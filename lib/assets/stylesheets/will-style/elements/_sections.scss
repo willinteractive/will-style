@@ -6,18 +6,18 @@
 // add the class ".sectioned" to the <main> element followed by <section> elements
 //
 */
-$section-padding:						5rem;
+$section-padding:					5rem;
 $section-bg-color: 					null;
 $section-text-color: 				null;
 
 $section-zebra-color:						null;
 $section-zebra-bg:							#efefef;
 
-$section-inverse-color:						#fff;
-$section-inverse-bg:							#444444;
+$section-inverse-color:						$body-bg;
+$section-inverse-bg:						#444444;
 
-$section-primary-color:						#fff;
-$section-primary-bg:							$primary-color;
+$section-primary-color:						$body-bg;
+$section-primary-bg:						$primary-color;
 
 
 // MIXIN for use everywhere

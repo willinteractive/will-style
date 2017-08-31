@@ -7,7 +7,12 @@
 	[data-accordion],
 	&.accordion,
 	&[data-accordion] {
+		.accordion-navigation > .content.active {
+			background: none;
+		}
+
 		li {
+			background: none;
 
 			& > a,
 			&.active > a {

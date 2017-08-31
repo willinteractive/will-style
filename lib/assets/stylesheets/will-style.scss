@@ -21,7 +21,7 @@ $column-gutter: 3rem;
 @import
 	"will-style/core/mixins",
 	"will-style/core/global",
-  "will-style/core/will_icons";
+	"will-style/core/will_icons";
 
 // Typography
 // ----------------------
@@ -43,9 +43,9 @@ $column-gutter: 3rem;
 
 @import
 	"will-style/core/buttons",
-  "foundation/components/button-groups",
-  "foundation/components/dropdown-buttons",
-  "foundation/components/split-buttons";
+	"foundation/components/button-groups",
+	"foundation/components/dropdown-buttons",
+	"foundation/components/split-buttons";
 
 // Forms
 // ----------------------
@@ -66,50 +66,50 @@ $column-gutter: 3rem;
 // ----------------------
 
 @import
-  "will-style/elements/grid",
+	"will-style/elements/grid",
 	"will-style/elements/sections",
-  "will-style/elements/side-nav",
-  "foundation/components/block-grid",
-  "foundation/components/offcanvas";
+	"will-style/elements/side-nav",
+	"foundation/components/block-grid",
+	"foundation/components/offcanvas";
 
 // Navigation
 // ----------------------
 
 @import
-  "will-style/elements/breadcrumbs",
-  "will-style/elements/icon-bar",
-  "foundation/components/pagination",
-  "foundation/components/side-nav",
-  "foundation/components/sub-nav",
-  "will-style/elements/tabs";
+	"will-style/elements/breadcrumbs",
+	"will-style/elements/icon-bar",
+	"foundation/components/pagination",
+	"foundation/components/side-nav",
+	"foundation/components/sub-nav",
+	"will-style/elements/tabs";
 
 // Blocks
 // ----------------------
 
 @import
-  "will-style/elements/alert-boxes",
-  "will-style/elements/dropdown",
+	"will-style/elements/alert-boxes",
+	"will-style/elements/dropdown",
 	"will-style/elements/labels",
 	"will-style/elements/list-group",
-  "will-style/elements/panels",
-  "will-style/fixtures/image-downloads";
+	"will-style/elements/panels",
+	"will-style/fixtures/image-downloads";
 
 // Extras
 // you probably don't need all of theses
 // -------------------------
 
 @import
-  "foundation/components/accordion",
-  "foundation/components/clearing",
-  "foundation/components/flex-video",
-  "foundation/components/joyride",
-  "foundation/components/keystrokes",
-  "foundation/components/magellan",
-  "foundation/components/orbit",
-  "foundation/components/pricing-tables",
-  "will-style/elements/progress-bars",
-  "foundation/components/reveal",
-  "foundation/components/tooltips";
+	"foundation/components/accordion",
+	"foundation/components/clearing",
+	"foundation/components/flex-video",
+	"foundation/components/joyride",
+	"foundation/components/keystrokes",
+	"foundation/components/magellan",
+	"foundation/components/orbit",
+	"foundation/components/pricing-tables",
+	"will-style/elements/progress-bars",
+	"foundation/components/reveal",
+	"foundation/components/tooltips";
 
 @import "will-style/elements/buttons";
 
@@ -137,28 +137,15 @@ $column-gutter: 3rem;
         "will-style/fixtures/sticky-elements";
 
 //
-// TEMPLATES
-// Very concrete and provide context to all these relatively abstract Fixtures and elements.
-// -------------------------
-// You don't need to import any templates unless you plan to use them
-
-//
-// PAGES
-// The highest level of fidelity and the most tangible.
-// -------------------------
-// import your project specific pages here
-
-//
 // LIBRARIES
 // This is where you want to import external library css styles
 // and will-style overrides if available
 // -------------------------
-// the libraries you can import from WILL-Style are:
-// dataTables, flot, offline, and piety
 
 @import
   "will-style/libraries/offline",
-  "will-style/libraries/turbolinks";
+  "will-style/libraries/turbolinks",
+  "will-style/libraries/select2";
 
 //
 // ENDING UTILITIES
