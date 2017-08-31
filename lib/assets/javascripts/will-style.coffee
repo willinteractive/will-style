@@ -1,5 +1,5 @@
 # -------- JQUERY
-#= require jquery3
+#= require jquery2
 #= require jquery_ujs
 
 # -------- MODERNIZR
@@ -12,9 +12,7 @@
 #= require will-style/offline
 
 #= require will-style/foundation
-#= require will-style/search-form
-#= require will-style/hideable-sidebar
-#= require will-style/app-header
+#= require will-style/app-nav
 #= require will-style/sticky-elements
 
 # -------- FORMS
@@ -22,5 +20,6 @@
 #= require will-style/forms/expanding-textareas
 #= require will-style/forms/selected-buttons
 #= require will-style/forms/placeholder
+#= require will-style/forms/search
 
 #= require turbolinks.beta

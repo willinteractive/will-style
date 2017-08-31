@@ -125,15 +125,14 @@ $column-gutter: 3rem;
 @import
 	"will-style/fixtures/complex-block-grid",
 	"will-style/fixtures/sticky-footer",
-  "will-style/fixtures/blocked-text",
+	"will-style/fixtures/blocked-text",
 	"will-style/fixtures/toolbar",
-	// "will-style/fixtures/top-bar";
-  "will-style/fixtures/hideable-sidebar";
+	"will-style/fixtures/hideable-sidebar";
 
 // Site Style
 // ----------------------
 
-@import "will-style/fixtures/app_header",
+@import "will-style/fixtures/app-nav",
         "will-style/fixtures/sticky-elements";
 
 //

@@ -12,6 +12,8 @@ $(document).on "scroll", ->
   lastWindowHeight = $(window).height()
   lastWindowWidth = $(window).width()
 
+  # checkScroll()
+
 checkScroll = ->
   windowHeight = $(window).height()
 
