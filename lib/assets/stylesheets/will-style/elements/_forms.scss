@@ -22,9 +22,8 @@ $input-prefix-border-color: $component-border-color;
 
 @import
 	"foundation/components/forms",
-	"foundation/components/range-slider";
-	//not included in gem version
-	//"foundation/components/switches";
+	"foundation/components/range-slider",
+	"foundation/components/switches";
 
 // remove bottom margin from forms. They should be spaced by their containers
 form {

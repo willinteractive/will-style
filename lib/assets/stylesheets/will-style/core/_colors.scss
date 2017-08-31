@@ -1,0 +1,45 @@
+//
+// COLORS
+//
+
+$font-weight-light: 	300;
+$font-weight-normal: 	400;
+$font-weight-bold: 		700;
+
+$white:		#F5F5F5;
+$dark-gray:	#2d2f2e;
+
+// Foundation Overrides
+
+$body-bg:			$white;
+$body-font-color:	$dark-gray;
+
+$action-color:		#8562a7;
+
+// We use these as default colors throughout
+$primary-color:			#48BC97;
+
+$primary-color-darker:	darken($primary-color, 20%);
+$primary-color-lighter:	#BFDC98;
+
+$secondary-color:		scale-color($body-font-color, $lightness: 85%);
+
+$alert-color:			#D6675A;
+$success-color:			$primary-color;
+$warning-color:			#DBB30E;
+$warning-bg-color:		#F7E184;
+$info-color:			#6FAED2;
+
+$theme-grey:			#444444;
+
+// Player frame types
+$choice-color: 			rgb(200, 66, 66);
+$text-color:	 		rgb(113, 191, 70);
+$video-color:	 		rgb(59, 154, 199);
+
+// variables to share among all components
+$component-bg-color:		scale-color($secondary-color, $lightness: 50%);
+$component-border-color:	scale-color($body-font-color, $lightness: 80%);
+$component-hover-bg-color:	scale-color($primary-color, $lightness: 92%);
+
+@import "foundation/components/global";

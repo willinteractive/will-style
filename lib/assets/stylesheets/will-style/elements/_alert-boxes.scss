@@ -1,15 +1,14 @@
-/* 
-// 
+//
 // ALERT BOXES
-// 
-*/
-
+//
 
 @import "foundation/components/alert-boxes";
 
 // use the warning-bg-color for warning alerts
 @if $include-html-alert-classes {
-  .alert-box.warning 	{ @include alert-style($warning-bg-color); }
+	.alert-box.warning {
+		@include alert-style($warning-bg-color);
+	}
 }
 
 // Because font-sizing is applied to paragraphs, unles you put a <p> inside an alert
@@ -25,17 +24,17 @@
 // creating a mixin based on @mixin alert-style but only colors the font of headers
 @mixin alert-heading-color($bg:$primary-color) {
 
-  // This finds the lightness percentage of the background color.
-  $bg-lightness: lightness($bg);
+	// This finds the lightness percentage of the background color.
+	$bg-lightness: lightness($bg);
 
-  // We control the text color for you based on the background color.
-  @if $bg-lightness > 70% {
-  	h1, h2, h3, h4, h5, h6, small {
-	  	color: $alert-font-color-alt;
-  	}
-  }
-  @else { 
-  	h1, h2, h3, h4, h5, h6, small {
+	// We control the text color for you based on the background color.
+	@if $bg-lightness > 70% {
+		h1, h2, h3, h4, h5, h6, small {
+			color: $alert-font-color-alt;
+		}
+	}
+	@else {
+		h1, h2, h3, h4, h5, h6, small {
 			color: $alert-font-color;
 		}
 	}
@@ -43,17 +42,30 @@
 
 // now we apply the font coloring
 @if $include-html-alert-classes {
-  .alert-box {
-    &.success   { @include alert-heading-color($success-color);  }
-    &.alert     { @include alert-heading-color($alert-color); }
-    &.secondary { @include alert-heading-color($secondary-color); }
-    &.warning 	{ @include alert-heading-color($warning-bg-color); }
-    &.info 			{ @include alert-heading-color($info-color); }
-  }
+	.alert-box {
+		&.success {
+			@include alert-heading-color($success-color);
+		}
+
+		&.alert {
+			@include alert-heading-color($alert-color);
+		}
+
+		&.secondary {
+			@include alert-heading-color($secondary-color);
+		}
+
+		&.warning {
+			@include alert-heading-color($warning-bg-color);
+		}
+
+		&.info {
+			@include alert-heading-color($info-color);
+		}
+	}
 }
 
-
-/* Styles for floating / fading alert boxes */
+// Styles for floating / fading alert boxes
 
 .alert-box.float {
 	position: fixed;
@@ -72,7 +84,8 @@
 	opacity: 1;
 }
 
-/* Give alert headers no padding */
+// Give alert headers no padding
+
 .alert-box.alert-header {
-  margin-bottom: 0px;
+	margin-bottom: 0px;
 }

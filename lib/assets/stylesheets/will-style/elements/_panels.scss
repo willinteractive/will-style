@@ -1,13 +1,10 @@
-/* 
-// 
+//
 // PANELS
-// 
-*/
+//
 
 @import "foundation/components/panels";
 
 // Custom
-// -------------------------
 
 // sometimes you want a panel with no padding
 .panel.no-padding {
@@ -23,4 +20,17 @@
 .button.panel-header {
 	margin-bottom: 0;
 	display: block;
+}
+
+// giving the admin areas a diagonal stripped background
+.panel.admin {
+	background: none;
+	@include gradient-striped(#eee);
+	background-size: 8px 8px;
+	text-align: center;
+
+	// remove bottom margin from buttons
+	.button {
+		margin-bottom: 0;
+	}
 }

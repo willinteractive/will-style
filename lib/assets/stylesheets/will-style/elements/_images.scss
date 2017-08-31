@@ -22,22 +22,3 @@ img.round {
 .th.round {
 	border-radius: $global-rounded;
 }
-
-/* CUSTOM */
-
-// SVG SUPPORT
-// -------------------
-
-/* Add these classes to the svg and svg fallback */
-svg {
-	display: none;
-}
-
-.svg {
-	svg {
-		display: inline-block;
-	}
-	.svg-alt {
-		display: none;
-	}
-}

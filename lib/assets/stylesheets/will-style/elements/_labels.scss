@@ -1,8 +1,6 @@
-/* 
-// 
-// PANELS
-// 
-*/
+//
+// LABELS
+//
 
 @import "foundation/components/labels";
 
@@ -11,13 +9,13 @@
 
 // add coloring for session Frame Types
 .label.choice {
-	@include label($bg:$choice-color, $radius:true);
+	@include label($bg: $choice-color, $radius: true);
 }
 
 .label.text {
-	@include label($bg:$text-color, $radius:true);
+	@include label($bg: $text-color, $radius: true);
 }
 
 .label.video {
-	@include label($bg:$video-color, $radius:true);
+	@include label($bg: $video-color, $radius: true);
 }

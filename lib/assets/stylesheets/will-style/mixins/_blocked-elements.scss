@@ -1,3 +1,7 @@
+//
+// Block Outlined Elements
+//
+
 @mixin blocked-text($border-color: $body-font-color) {
 	// use condensed font-family for h1
 	text-transform: uppercase;
@@ -32,6 +36,11 @@
 		width: 100%;
 	}
 }
+
+// @TODO: We can use this: https://css-tricks.com/snippets/css/gradient-text/
+// to apply a gradient animation on the text, but getting the background gradient is going to be tough.
+// We could make the anchor tag full height and use a second background on that.
+// Worth noting this is only available in webkit, so the following animations would have to be a fallback, anyways.
 
 @mixin blocked-button($color: $primary-color) {
 	span,
@@ -78,7 +87,7 @@
 			color: #fff;
 			.blocked-button.dark &,
 			.blocked-button.light & {
-				color: $footer-bg;
+				color: $body-font-color;
 			}
 
 			background-position: 99% 100%;
@@ -120,16 +129,8 @@
 			&:focus,
 			&:active,
 			&.selected {
-				color: $footer-bg !important;
+				color: $body-font-color !important;
 			}
 		}
 	}
-}
-
-h1.blocked,
-h2.blocked,
-h3.blocked,
-h4.blocked,
-h5.blocked {
-	@include blocked-text;
 }

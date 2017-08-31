@@ -5,98 +5,95 @@
 // -------------------------
 
 // External
-// ----------------------
 
 @import
 	"normalize";
 
-// Global
-// ----------------------
+// Core
 
-@import "will-style/core/global";
+@import
+	"will-style/core/colors",
+	"will-style/core/typography",
+	"will-style/core/will_icons",
+
+	"font-awesome";
+
+// Mixins
 
 @import
 	"will-style/mixins/animation",
 	"will-style/mixins/gradients",
 	"will-style/mixins/layout",
-	"will-style/mixins/outlines",
+	"will-style/mixins/blocked-elements",
+	"will-style/mixins/outlined-elements",
 	"will-style/mixins/shadows";
 
-// Typography
-// ----------------------
-
-@import
-	"will-style/core/typography",
-	"will-style/core/will_icons",
-	"foundation/components/inline-lists";
-
 // Images
-// ----------------------
 
 @import
-	"font-awesome",
-	"will-style/core/images",
+	"will-style/elements/images",
+
 	"foundation/components/thumbs";
 
 // Buttons
-// ----------------------
 
 @import
-	"will-style/core/buttons",
+	"will-style/elements/buttons",
+
 	"foundation/components/button-groups",
 	"foundation/components/dropdown-buttons",
 	"foundation/components/split-buttons";
 
 // Forms
-// ----------------------
 
-@import	"will-style/core/forms";
+@import
+	"will-style/elements/forms";
 
 // Tables
-// ----------------------
 
-@import "will-style/core/tables";
+@import
+	"will-style/elements/tables";
 
 //
 // ELEMENTS
+//
 // Relatively simple combinations of the CORE built for reuse
-// -------------------------
+//
 
 // Layout
-// ----------------------
 
 @import
-	"will-style/elements/grid",
-	"will-style/elements/sections",
-	"will-style/elements/side-nav",
+	"foundation/components/grid",
 	"foundation/components/block-grid",
-	"foundation/components/offcanvas";
+	"foundation/components/offcanvas",
+
+	"will-style/elements/sections",
+	"will-style/elements/side-nav";
 
 // Navigation
-// ----------------------
 
 @import
-	"will-style/elements/breadcrumbs",
-	"will-style/elements/icon-bar",
 	"foundation/components/pagination",
 	"foundation/components/side-nav",
 	"foundation/components/sub-nav",
+
+	"will-style/elements/breadcrumbs",
+	"will-style/elements/icon-bar",
 	"will-style/elements/tabs";
 
 // Blocks
-// ----------------------
 
 @import
+	"foundation/components/inline-lists",
+
+	"will-style/elements/headings",
 	"will-style/elements/alert-boxes",
 	"will-style/elements/dropdown",
 	"will-style/elements/labels",
 	"will-style/elements/list-group",
-	"will-style/elements/panels",
-	"will-style/components/image-downloads";
+	"will-style/elements/panels";
 
 // Extras
-// you probably don't need all of theses
-// -------------------------
 
 @import
 	"foundation/components/accordion",
@@ -107,37 +104,34 @@
 	"foundation/components/magellan",
 	"foundation/components/orbit",
 	"foundation/components/pricing-tables",
-	"will-style/elements/progress-bars",
 	"foundation/components/reveal",
-	"foundation/components/tooltips";
+	"foundation/components/tooltips",
+
+	"will-style/elements/progress-bars";
 
 //
 // COMPONENTS
+//
 // Groups of elements joined together to form a relatively complex,
 // distinct section of an interface.
-// -------------------------
+//
 
 // Global
-// ----------------------
 
 @import
 	"will-style/components/complex-block-grid",
 	"will-style/components/sticky-footer",
-	"will-style/components/blocked-text",
 	"will-style/components/toolbar",
-	"will-style/components/hideable-sidebar";
-
-// Site Style
-// ----------------------
-
-@import "will-style/components/app-nav",
-        "will-style/components/sticky-elements";
+	"will-style/components/hideable-sidebar",
+	"will-style/components/app-nav",
+	"will-style/components/sticky-elements";
 
 //
 // LIBRARIES
+//
 // This is where you want to import external library css styles
 // and will-style overrides if available
-// -------------------------
+//
 
 @import
   "will-style/libraries/offline",
@@ -147,6 +141,7 @@
 //
 // ENDING UTILITIES
 // Required utility classes that must come at the end of the document.
-// -------------------------
+//
 
-@import "foundation/components/visibility";
+@import
+	"foundation/components/visibility";

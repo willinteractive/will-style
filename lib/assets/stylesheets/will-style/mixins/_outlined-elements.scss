@@ -1,142 +1,6 @@
-// Blocked Text and buttons
-
-@mixin blocked-text($border-color: $body-font-color) {
-	// use condensed font-family for h1
-	text-transform: uppercase;
-
-	// add a span around text if you want a border
-	span, input {
-		background: none;
-
-		// This allows us to set even padding for spacing
-		line-height: 1;
-
-		padding: 2rem 6rem;
-
-		border: 3px solid $border-color;
-
-		// make sure the border doesn't break when the line does
-		display: inline-block;
-
-		// reduce padding on collapsed
-
-		// reduce padding on small screens to prevent word wrap
-		@media #{$small-only} {
-			padding: 1rem 2rem;
-		}
-	}
-
-	&.collapsed span {
-		padding: 2rem;
-	}
-
-	input {
-		width: 100%;
-	}
-}
-
-@mixin blocked-button($color: $primary-color) {
-	span,
-	input {
-		cursor: pointer;
-		overflow: hidden;
-
-		background-image: linear-gradient(315deg, $color 0%, $color 50%, transparent 50%);
-		background-size: 202% 200%;
-		background-position: 0% 0%;
-
-		will-change: background-position;
-		will-change: color;
-
-		color: $color;
-
-		transition: color .2s 0s ease-in,
-					background-position .2s 0s ease-in;
-
-		//
-		// Hover States
-		//
-
-		html.no-touch &:hover,
-		html.no-touch &:focus {
-			transition: color .2s .2s ease-out,
-						background-position .2s 0s ease-in;
-
-			color: #fff;
-
-			background-position: 90% 90%;
-		}
-
-		//
-		// Selected States
-		//
-
-		html.no-touch &:active,
-		html.no-touch &.selected,
-		html.touch &:focus {
-			transition: color .2s 0s ease-in,
-						background-position .05s 0s ease-in;
-
-			color: #fff;
-
-			.blocked-button.dark &,
-			.blocked-button.light & {
-				color: $theme-grey;
-			}
-
-			background-position: 99% 100%;
-
-			border-right: 2px solid $color;
-		}
-
-		&:disabled {
-			background: none !important;
-			color: $color !important;
-			cursor: not-allowed;
-			opacity: .6;
-		}
-
-		//
-		// IE9 Fallback States
-		//
-
-		html.no-cssanimations & {
-			background-image: none !important;
-			background-size: 100% 100% !important;
-
-			&:hover,
-			&:focus,
-			&.selected {
-				background-color: $color;
-			}
-		}
-	}
-
-	&.dark {
-		span,
-		input {
-			&:hover,
-			&:focus,
-			&:active,
-			&.selected {
-				color: $theme-grey !important;
-			}
-		}
-	}
-
-	&.dark,
-	&.light {
-		span,
-		input {
-			&:hover,
-			&:focus,
-			&:active,
-			&.selected {
-				color: $primary-color !important;
-			}
-		}
-	}
-}
+//
+// Aniamting Outlined Elements
+//
 
 @mixin outlined-button($animation-time: 0.5s, $include-border: false) {
 	position: relative;
@@ -254,7 +118,7 @@
 //
 // Animated Links
 
-@mixin animated-link($fg-color: $primary-color, $bg-color: $body-bg) {
+@mixin underlined-link($fg-color: $primary-color, $bg-color: $body-bg) {
 	transition: color .2s,
 				box-shadow .2s;
 
@@ -294,7 +158,7 @@
 	}
 }
 
-@mixin underlined($position: 'bottom', $height: 2px) {
+@mixin underlined-element($position: 'bottom', $height: 2px) {
 	position: relative;
 
 	@if $position == 'bottom' {

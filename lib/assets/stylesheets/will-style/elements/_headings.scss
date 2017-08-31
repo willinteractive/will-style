@@ -1,0 +1,11 @@
+//
+// Headings
+//
+
+h1.blocked,
+h2.blocked,
+h3.blocked,
+h4.blocked,
+h5.blocked {
+	@include blocked-text;
+}

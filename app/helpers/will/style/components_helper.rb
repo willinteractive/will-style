@@ -31,4 +31,3 @@ include WILL::Style::Components::SearchHelper
 include WILL::Style::Components::FancySearchHelper
 include WILL::Style::Components::ListGroupHelper
 include WILL::Style::Components::ImageHelper
-include WILL::Style::Components::ImageDownloadHelper

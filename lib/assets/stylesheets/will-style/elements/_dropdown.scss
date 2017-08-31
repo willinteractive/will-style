@@ -1,12 +1,8 @@
-/*
 //
 // DROPDOWNS
 //
-*/
-
 
 @import "foundation/components/dropdown";
-
 
 // Foundation's dropdowns don't come with
 // .active or .divider styles
@@ -33,10 +29,7 @@
 	box-shadow: rgba(#333, .3) 0px 3px 8px;
 }
 
-
-
 // CUSTOM
-// ----------------------
 
 // add the class of .full to the dropdown content to get a full-width dropdown
 .f-dropdown.content.full {

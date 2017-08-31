@@ -1,9 +1,13 @@
+//
+// Side Navigation
+//
+
 .side-nav {
 	p.underlined {
 		display: inline-block;
 		width: auto;
 
-		@include underlined($position: 'bottom');
+		@include underlined-element($position: 'bottom');
 		margin-bottom: 0;
 	}
 

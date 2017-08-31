@@ -1,16 +1,13 @@
-/* 
-// 
+//
 // ICON BAR
-// 
-*/
+//
 
 $icon-bar-bg: $body-font-color;
 
 @import "foundation/components/icon-bar";
 
-
 .icon-bar > * {
-	
+
 	// Coloring small labels
 	label small {
 		color: $icon-bar-font-color;
@@ -22,18 +19,15 @@ $icon-bar-bg: $body-font-color;
 	&.active {
 		background: $icon-bar-active-color;
 	}
-	
-
 }
 
 .icon-bar.vertical > * {
-	// barely visible border top and bottom of vertical 
+	// barely visible border top and bottom of vertical
 	border-color: scale-color($icon-bar-bg, $lightness: 10%);
 	border-width: 1px 0 0;
 	border-style: solid;
-	
+
 	&:last-of-type {
 		border-bottom-width: 1px;
 	}
 }
-

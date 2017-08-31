@@ -115,11 +115,6 @@ button,
 // Blocked Buttons
 //
 
-// @TODO: We can use this: https://css-tricks.com/snippets/css/gradient-text/
-// to apply a gradient animation on the text, but getting the background gradient is going to be tough.
-// We could make the anchor tag full height and use a second background on that.
-// Worth noting this is only available in webkit, so the following animations would have to be a fallback, anyways.
-
 h1.blocked-button,
 h2.blocked-button,
 h3.blocked-button,
@@ -145,5 +140,5 @@ a.outlined {
 
 a.animated {
 	color: $body-font-color;
-	@include animated-link();
+	@include underlined-link();
 }

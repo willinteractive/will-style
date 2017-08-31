@@ -2,12 +2,12 @@
 // TABLES
 //
 
-$table-bg: $body-bg;
-$table-even-row-bg: scale-color($component-bg-color, $lightness: 20%);
+$table-bg:			$body-bg;
+$table-even-row-bg:	scale-color($component-bg-color, $lightness: 20%);
 
 $table-border-color: $component-border-color;
 
-$table-head-bg: $component-bg-color;
+$table-head-bg:			$component-bg-color;
 $table-head-font-color: $body-font-color;
 
 $table-row-font-color: $body-font-color;
@@ -24,42 +24,40 @@ td.actions {
 }
 
 // BORDERED
-// -------------------------
 
 table.bordered {
-  border: 1px solid $table-border-color;
-  > thead,
-  > tbody,
-  > tfoot {
-    > tr {
-      > th,
-      > td {
-        border: 1px solid $table-border-color;
-      }
-    }
-  }
-  > thead > tr {
-    > th,
-    > td {
-      border-bottom-width: 2px;
-    }
-  }
+	border: 1px solid $table-border-color;
+	> thead,
+	> tbody,
+	> tfoot {
+		> tr {
+			> th,
+			> td {
+				border: 1px solid $table-border-color;
+			}
+		}
+	}
+	> thead > tr {
+		> th,
+		> td {
+			border-bottom-width: 2px;
+		}
+	}
 }
 
 // HOVERABLE
-// -------------------------
 
-table.hoverable, table.focusable {
-  > tbody > tr:hover {
-    > td,
-    > th {
-      background-color: $component-hover-bg-color;
-    }
-  }
+table.hoverable,
+table.focusable {
+	> tbody > tr:hover {
+		> td,
+		> th {
+			background-color: $component-hover-bg-color;
+		}
+	}
 }
 
 // FOCUSABLE
-// -------------------------
 
 // hover effects of tables that have rows that are selectable
 table.focusable {
@@ -91,7 +89,7 @@ table.focusable.complex {
 }
 
 // COMPLEX
-// -------------------------
+
 table.complex {
 
 	// first get rid of zebra striping

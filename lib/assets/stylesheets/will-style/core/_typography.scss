@@ -73,7 +73,10 @@
 	font-style: normal;
 }
 
+//
 // VARIABLES
+//
+
 $header-font-family: 		"Core Sans", "Open Sans", "San Francisco", "Calibri", Helvetica, sans-serif;
 $body-font-family:			"Core Sans", "Open Sans", "San Francisco", "Calibri", Helvetica, sans-serif;
 
@@ -236,4 +239,3 @@ dl.stats.large {
 	// @NOTE: We're setting the background color here to 0.99 opacity to trick the browser into not using the default, non-overrideable opacity on backgrounds
 	background: rgba($primary-color, 0.99);
 }
-
