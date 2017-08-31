@@ -1,17 +1,10 @@
 //
 // CORE
-// HTML tags & more abstract elements like color palettes,
-// fonts and invisible aspects like animations
-// -------------------------
-
-// External
+//
 
 @import
-	"normalize";
+	"normalize",
 
-// Core
-
-@import
 	"will-style/core/colors",
 	"will-style/core/typography",
 	"will-style/core/will_icons",
@@ -140,6 +133,7 @@
 
 //
 // ENDING UTILITIES
+//
 // Required utility classes that must come at the end of the document.
 //
 
