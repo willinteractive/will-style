@@ -92,4 +92,9 @@ $video-color:	 		$will-action-blue;
 	color: $will-action-gray;
 }
 
+// variables to share among all components
+$component-bg-color:		scale-color($secondary-color, $lightness: 50%);
+$component-border-color:	scale-color($body-font-color, $lightness: 80%);
+$component-hover-bg-color:	scale-color($primary-color, $lightness: 92%);
+
 @import "foundation/components/global";
