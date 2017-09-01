@@ -30,7 +30,7 @@ $topbar-link-text-transform:		uppercase;
 
 // CUSTOM VARIABLES & MIXINS
 
-$topbar-bg-active: $dark-gray;
+$topbar-bg-active: $will-dark-gray;
 
 @mixin center($xy: xy) {
 	@if $xy == xy {
