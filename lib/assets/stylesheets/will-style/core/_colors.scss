@@ -6,40 +6,90 @@ $font-weight-light: 	300;
 $font-weight-normal: 	400;
 $font-weight-bold: 		700;
 
-$white:		#F5F5F5;
-$dark-gray:	#2d2f2e;
+$will-white:		#F5F5F5;
+
+$will-teal:			#48BC97;
+$will-green:		#BFDC98;
+
+$will-light-gray:	#696868;
+$will-dark-gray:	#2d2f2e;
+
+$will-action-red:		#FF4967;
+$will-action-yellow:	#FFD01E;
+$will-action-blue:		#5B9ACF;
+$will-action-green:		$will-teal;
+$will-action-gray:		#DADADA;
+
+$will-action-purple:	#8562a7;
 
 // Foundation Overrides
 
-$body-bg:			$white;
-$body-font-color:	$dark-gray;
+$white:				$will-white;
 
-$action-color:		#8562a7;
+$body-bg:			$white;
+$body-font-color:	$will-dark-gray;
+
+$action-color:		$will-action-purple;
 
 // We use these as default colors throughout
-$primary-color:			#48BC97;
+$primary-color:			$will-teal;
 
-$primary-color-darker:	darken($primary-color, 20%);
-$primary-color-lighter:	#BFDC98;
+$primary-color-lighter:	$will-green;
 
-$secondary-color:		scale-color($body-font-color, $lightness: 85%);
+$secondary-color:		$will-action-blue;
 
-$alert-color:			#D6675A;
-$success-color:			$primary-color;
-$warning-color:			#DBB30E;
-$warning-bg-color:		#F7E184;
-$info-color:			#6FAED2;
-
-$theme-grey:			#444444;
+$alert-color:			$will-action-red;
+$success-color:			$will-action-green;
+$warning-color:			$will-action-yellow;
+$warning-bg-color:		$will-action-yellow;
+$info-color:			$will-action-blue;
 
 // Player frame types
-$choice-color: 			rgb(200, 66, 66);
-$text-color:	 		rgb(113, 191, 70);
-$video-color:	 		rgb(59, 154, 199);
 
-// variables to share among all components
-$component-bg-color:		scale-color($secondary-color, $lightness: 50%);
-$component-border-color:	scale-color($body-font-color, $lightness: 80%);
-$component-hover-bg-color:	scale-color($primary-color, $lightness: 92%);
+$choice-color: 			$will-action-red;
+$text-color:	 		$will-action-green;
+$video-color:	 		$will-action-blue;
+
+// Utility Classes
+
+.will-teal {
+	color: $will-teal;
+}
+
+.will-green {
+	color: $will-green;
+}
+
+.will-light-gray {
+	color: $will-light-gray;
+}
+
+.will-dark-gray {
+	color: $will-dark-gray;
+}
+
+.will-white {
+	color: $will-white;
+}
+
+.will-action-red {
+	color: $will-action-red;
+}
+
+.will-action-yellow {
+	color: $will-action-yellow;
+}
+
+.will-action-blue {
+	color: $will-action-blue;
+}
+
+.will-action-green {
+	color: $will-action-green;
+}
+
+.will-action-gray {
+	color: $will-action-gray;
+}
 
 @import "foundation/components/global";

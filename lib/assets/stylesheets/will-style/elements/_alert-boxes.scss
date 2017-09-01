@@ -22,7 +22,7 @@
 
 // Foundation doesn't apply the font-coloring to any header tags
 // creating a mixin based on @mixin alert-style but only colors the font of headers
-@mixin alert-heading-color($bg:$primary-color) {
+@mixin alert-heading-color($bg: $primary-color) {
 
 	// This finds the lightness percentage of the background color.
 	$bg-lightness: lightness($bg);
@@ -63,25 +63,6 @@
 			@include alert-heading-color($info-color);
 		}
 	}
-}
-
-// Styles for floating / fading alert boxes
-
-.alert-box.float {
-	position: fixed;
-	top: 50px;
-	width: 40%;
-	min-width: 350px;
-	right: 5px;
-
-	z-index: 99999999999999999;
-
-	opacity: 0;
-	transition: opacity 500ms;
-}
-
-.alert-box.float.active {
-	opacity: 1;
 }
 
 // Give alert headers no padding
