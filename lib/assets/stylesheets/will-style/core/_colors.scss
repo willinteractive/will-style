@@ -22,6 +22,29 @@ $will-action-gray:		#DADADA;
 
 $will-action-purple:	#8562a7;
 
+// Color Helpers
+
+$color-list: (
+	will-teal: $will-teal,
+	will-green: $will-green
+);
+
+// Utility Classes
+
+// Add .will-* utility classes to color the foreground and background
+
+@each $name, $color in $color-list {
+	.#{$name} {
+		&:not(.background) {
+			color: $color;
+		}
+
+		&.background {
+			background-color: $color;
+		}
+	}
+}
+
 // Foundation Overrides
 
 $white:				$will-white;
@@ -49,48 +72,6 @@ $info-color:			$will-action-blue;
 $choice-color: 			$will-action-red;
 $text-color:	 		$will-action-green;
 $video-color:	 		$will-action-blue;
-
-// Utility Classes
-
-.will-teal {
-	color: $will-teal;
-}
-
-.will-green {
-	color: $will-green;
-}
-
-.will-light-gray {
-	color: $will-light-gray;
-}
-
-.will-dark-gray {
-	color: $will-dark-gray;
-}
-
-.will-white {
-	color: $will-white;
-}
-
-.will-action-red {
-	color: $will-action-red;
-}
-
-.will-action-yellow {
-	color: $will-action-yellow;
-}
-
-.will-action-blue {
-	color: $will-action-blue;
-}
-
-.will-action-green {
-	color: $will-action-green;
-}
-
-.will-action-gray {
-	color: $will-action-gray;
-}
 
 // variables to share among all components
 $component-bg-color:		scale-color($secondary-color, $lightness: 50%);
