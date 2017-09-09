@@ -20,13 +20,53 @@ $will-action-blue:		#5B9ACF;
 $will-action-green:		$will-teal;
 $will-action-gray:		#DADADA;
 
+$will-accent-red:		#d82b35;
+$will-accent-orange: 	#df8235;
+$will-accent-yellow:	#e9b000;
+$will-accent-green:		$will-teal;
+$will-accent-blue:		#3a8bc2;
+$will-accent-purple:	#a9418c;
+$will-accent-magenta:	#e65288;
+
+$will-bg-light: 	#d4d4d4;
+$will-bg-lighter:	#eaeaea;
+$will-bg-lightest:	$will-white;
+$will-bg-dark:		#6a6567;
+$will-bg-darker:	#3b3839;
+$will-bg-darkest:	$will-dark-gray;
+
+//this needs to be removed once we change the website
 $will-action-purple:	#8562a7;
 
 // Color Helpers
 
 $color-list: (
-	will-teal: $will-teal,
-	will-green: $will-green
+	will-teal: 			$will-teal,
+	will-green: 		$will-green,
+	will-light-gray: 	$will-light-gray,
+	will-dark-gray:		$will-dark-gray,
+	will-white:			$will-white,
+
+	will-action-red:	$will-action-red,
+	will-action-yellow:	$will-action-yellow,
+	will-action-blue:	$will-action-blue,
+	will-action-green: 	$will-action-green,
+	will-action-gray:	$will-action-gray,
+
+	will-accent-red:		$will-accent-red,
+	will-accent-orange:		$will-accent-orange,
+	will-accent-yellow:		$will-accent-yellow,
+	will-accent-green:		$will-accent-green,
+	will-accent-blue:		$will-accent-blue,
+	will-accent-purple:		$will-accent-purple,
+	will-accent-magenta:	$will-accent-magenta,
+
+	will-bg-light:		$will-bg-light,
+	will-bg-lighter:	$will-bg-lighter,
+	will-bg-lightest:	$will-bg-lightest,
+	will-bg-dark:		$will-bg-dark,
+	will-bg-darker:		$will-bg-darker,
+	will-bg-darkest:	$will-bg-darkest
 );
 
 // Utility Classes
