@@ -114,8 +114,8 @@ $text-color:	 		$will-action-green;
 $video-color:	 		$will-action-blue;
 
 // variables to share among all components
-$component-bg-color:		scale-color($secondary-color, $lightness: 50%);
-$component-border-color:	scale-color($body-font-color, $lightness: 80%);
-$component-hover-bg-color:	scale-color($primary-color, $lightness: 92%);
+$component-bg-color:		$body-font-color;
+$component-border-color:	$body-font-color;
+$component-hover-bg-color:	$primary-color;
 
 @import "foundation/components/global";
