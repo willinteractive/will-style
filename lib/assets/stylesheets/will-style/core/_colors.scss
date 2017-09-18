@@ -83,6 +83,14 @@ $color-list: (
 			background-color: $color;
 		}
 	}
+
+	.#{$name}-fg {
+		color: $color;
+	}
+
+	.#{$name}-bg {
+		background-color: $color;
+	}
 }
 
 // Foundation Overrides
