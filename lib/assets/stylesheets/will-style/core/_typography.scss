@@ -77,15 +77,17 @@
 // VARIABLES
 //
 
-$header-font-family: 		"Core Sans", "Open Sans", "San Francisco", "Calibri", Helvetica, sans-serif;
-$body-font-family:			"Core Sans", "Open Sans", "San Francisco", "Calibri", Helvetica, sans-serif;
+$font-family-sans-serif:	"Core Sans", "Open Sans", "San Francisco", "Calibri", Helvetica, sans-serif;
+$font-family-serif:			$font-family-sans-serif;
 
 $will-government-serif:	"Times New Roman", Times New Roman;
 $will-government-sans:	"Arial", Arial;
 
 $header-font-weight: 		$font-weight-light;
 $header-font-style: 		normal;
+
 $paragraph-font-weight:		$font-weight-normal;
+
 $small-font-size: 			75%;
 
 $h1-font-reduction: rem-calc(15) !default;
