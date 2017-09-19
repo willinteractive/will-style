@@ -44,49 +44,47 @@ $section-inverse-bg:	$body-font-color;
 	}
 }
 
-// DO THE EXPORTS
+// Colors
+// -------------------------
 
-@include exports("sections") {
-	.sections {
+section.inverse {
+	@include section_color($bg: $section-inverse-bg, $text: $section-inverse-color);
 
-		// Base class
-		// -------------------------
+	a.animated {
+		color: $section-inverse-color;
+		@include underlined-link($primary-color, $section-inverse-bg);
+	}
+}
 
-		> section {
-			// padding top and bottom for separation
-			padding-top: $section-padding / 2;
-			padding-bottom: $section-padding / 2;
+// Background images
+// -------------------------
 
-			@media #{$medium-up} {
-				padding-top: $section-padding;
-				padding-bottom: $section-padding;
-			}
-		}
+section[class*="image"] {
+	@include section_image();
+}
 
-		// Inverse (dark) Background
-		// -------------------------
-		> section.inverse {
-			@include section_color($bg: $section-inverse-bg, $text: $section-inverse-color);
+section[class*="cover"] {
+	@include section_image("cover");
+}
 
-			a.animated {
-				color: $section-inverse-color;
-				@include underlined-link($primary-color, $section-inverse-bg);
-			}
-		}
+section[class*="fixed"] {
+	@include section_image("fixed");
+}
 
-		// Background images
-		// -------------------------
+section.expanded {
 
-		> section[class*="image"] {
-			@include section_image();
-		}
+	// padding top and bottom for separation
 
-		> section[class*="cover"] {
-			@include section_image("cover");
-		}
+	padding-top: $section-padding / 2;
+	padding-bottom: $section-padding / 2;
 
-		> section[class*="fixed"] {
-			@include section_image("fixed");
-		}
+	@media #{$medium-up} {
+		padding-top: $section-padding;
+		padding-bottom: $section-padding;
+	}
+
+	.row {
+		padding-top: 5rem;
+		padding-bottom: 5rem;
 	}
 }
