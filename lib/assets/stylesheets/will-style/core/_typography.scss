@@ -108,13 +108,6 @@ $small-font-size: 			75%;
 // $h5-font-size: rem-calc(44);
 // $h6-font-size: rem-calc(16);
 
-// $h1-font-size: 44px;
-// $h2-font-size: 37px;
-// $h3-font-size: 27px;
-// $h4-font-size: 23px;
-// $h5-font-size: 44px;
-// $h6-font-size: 16px;
-
 // $header-styles: (
 // 	'h1': ('font-size': 44),
 // 	'h2': ('font-size': 37),
@@ -168,11 +161,6 @@ $secondary-font-color: scale-color($body-font-color, $lightness: 50%);
 
 // CUSTOM STYLES
 // ---------------------
-
-// Make the smaller headers bold
-h5, h6 {
-	font-weight: $font-weight-bold;
-}
 
 // make the large sized paragraphs use the light weight font
 p.lead {
