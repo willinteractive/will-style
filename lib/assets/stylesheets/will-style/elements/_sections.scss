@@ -5,7 +5,7 @@
 // add the class ".sections" to a wrapping element followed by <section> elements
 //
 
-$section-padding:		5rem;
+$section-padding:		1rem;
 
 $section-inverse-color:	$body-bg;
 $section-inverse-bg:	$body-font-color;
@@ -83,8 +83,13 @@ section.expanded {
 		padding-bottom: $section-padding;
 	}
 
-	.row {
-		padding-top: 5rem;
-		padding-bottom: 5rem;
+	.row:not(.collapsed) {
+		padding-top: 1rem;
+		padding-bottom: 2rem;
+	}
+
+	.row.collapsed {
+		padding-top: 0;
+		padding-bottom: 1rem;
 	}
 }
