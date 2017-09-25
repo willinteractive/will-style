@@ -1,4 +1,57 @@
+@charset "UTF-8";
+
 $primary-color: orange;
 
-@import "../../../../foundation/scss/foundation.scss";
-// @import "foundation";
+@import "../../../../foundation/scss/foundation/functions";
+
+// @FIXME: index($modules, $name) == false is not validating to true, it's returning null.
+@mixin exports($name) {
+  @if (index($modules, $name) == false or index($modules, $name) == null) {
+    $modules: append($modules, $name);
+    @content;
+  }
+}
+
+@import "../../../../foundation/scss/normalize";
+
+@import "../../../../foundation/scss/foundation/components/global";
+
+@import "../../../../foundation/scss/foundation/components/top-bar";
+
+@import "../../../../foundation/scss/foundation/components/grid";
+@import "../../../../foundation/scss/foundation/components/accordion";
+@import "../../../../foundation/scss/foundation/components/alert-boxes";
+@import "../../../../foundation/scss/foundation/components/block-grid";
+@import "../../../../foundation/scss/foundation/components/breadcrumbs";
+@import "../../../../foundation/scss/foundation/components/button-groups";
+@import "../../../../foundation/scss/foundation/components/buttons";
+@import "../../../../foundation/scss/foundation/components/clearing";
+@import "../../../../foundation/scss/foundation/components/dropdown";
+@import "../../../../foundation/scss/foundation/components/dropdown-buttons";
+@import "../../../../foundation/scss/foundation/components/flex-video";
+@import "../../../../foundation/scss/foundation/components/forms";
+@import "../../../../foundation/scss/foundation/components/icon-bar";
+@import "../../../../foundation/scss/foundation/components/inline-lists";
+@import "../../../../foundation/scss/foundation/components/joyride";
+@import "../../../../foundation/scss/foundation/components/keystrokes";
+@import "../../../../foundation/scss/foundation/components/labels";
+@import "../../../../foundation/scss/foundation/components/magellan";
+@import "../../../../foundation/scss/foundation/components/orbit";
+@import "../../../../foundation/scss/foundation/components/pagination";
+@import "../../../../foundation/scss/foundation/components/panels";
+@import "../../../../foundation/scss/foundation/components/pricing-tables";
+@import "../../../../foundation/scss/foundation/components/progress-bars";
+@import "../../../../foundation/scss/foundation/components/range-slider";
+@import "../../../../foundation/scss/foundation/components/reveal";
+@import "../../../../foundation/scss/foundation/components/side-nav";
+@import "../../../../foundation/scss/foundation/components/split-buttons";
+@import "../../../../foundation/scss/foundation/components/sub-nav";
+@import "../../../../foundation/scss/foundation/components/switches";
+@import "../../../../foundation/scss/foundation/components/tables";
+@import "../../../../foundation/scss/foundation/components/tabs";
+@import "../../../../foundation/scss/foundation/components/thumbs";
+@import "../../../../foundation/scss/foundation/components/tooltips";
+@import "../../../../foundation/scss/foundation/components/top-bar";
+@import "../../../../foundation/scss/foundation/components/type";
+@import "../../../../foundation/scss/foundation/components/offcanvas";
+@import "../../../../foundation/scss/foundation/components/visibility";
