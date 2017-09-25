@@ -1,12 +1,3 @@
-//
-// PROGRESS BARS
-//
-
-$progress-bar-color: rgba($body-font-color, .2);
-$progress-bar-pad: 0;
-
-@import "foundation/components/progress-bars";
-
 // Add warning color for progress bars
 .progress.warning .meter {
 	background-color: $warning-color;

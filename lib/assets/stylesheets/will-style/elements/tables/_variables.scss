@@ -1,0 +1,9 @@
+$table-bg:			$body-bg;
+$table-even-row-bg:	scale-color($component-bg-color, $lightness: 20%);
+
+$table-border-color: $component-border-color;
+
+$table-head-bg:			$component-bg-color;
+$table-head-font-color: $body-font-color;
+
+$table-row-font-color: $body-font-color;

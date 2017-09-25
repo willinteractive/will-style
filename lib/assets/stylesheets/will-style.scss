@@ -7,7 +7,12 @@
 	"foundation/functions",
 
 	"will-style/core/colors",
+
+	"will-style/core/typography/rails",
 	"will-style/core/typography",
+	"foundation/components/type",
+
+	"will-style/core/will_icons/rails",
 	"will-style/core/will_icons",
 
 	"font-awesome",
@@ -33,7 +38,10 @@
 // Buttons
 
 @import
-	"will-style/elements/buttons",
+
+	"will-style/elements/buttons/variables",
+	"foundation/components/buttons",
+	"will-style/elements/buttons/overrides",
 
 	"foundation/components/button-groups",
 	"foundation/components/dropdown-buttons",
@@ -42,12 +50,20 @@
 // Forms
 
 @import
-	"will-style/elements/forms";
+	"will-style/elements/forms/variables",
+
+	"foundation/components/forms",
+	"foundation/components/range-slider",
+	"foundation/components/switches",
+
+	"will-style/elements/forms/overrides";
 
 // Tables
 
 @import
-	"will-style/elements/tables";
+	"will-style/elements/tables/variables",
+	"foundation/components/tables",
+	"will-style/elements/tables/overrides";
 
 //
 // ELEMENTS
@@ -73,8 +89,15 @@
 	"foundation/components/sub-nav",
 
 	"will-style/elements/breadcrumbs",
-	"will-style/elements/icon-bar",
-	"will-style/elements/tabs";
+	"foundation/components/breadcrumbs",
+
+
+	"will-style/elements/icon-bar/variables",
+	"foundation/components/icon-bar",
+	"will-style/elements/icon-bar/overrides",
+
+	"will-style/elements/tabs",
+	"foundation/components/tabs";
 
 // Blocks
 
@@ -82,10 +105,19 @@
 	"foundation/components/inline-lists",
 
 	"will-style/elements/headings",
+
+	"foundation/components/alert-boxes",
 	"will-style/elements/alert-boxes",
+
+	"foundation/components/dropdown",
 	"will-style/elements/dropdown",
+
+	"foundation/components/labels",
 	"will-style/elements/labels",
+
 	"will-style/elements/list-group",
+
+	"foundation/components/panels",
 	"will-style/elements/panels";
 
 // Extras
@@ -102,7 +134,9 @@
 	"foundation/components/reveal",
 	"foundation/components/tooltips",
 
-	"will-style/elements/progress-bars";
+	"will-style/elements/progress-bars/variables",
+	"foundation/components/progress-bars",
+	"will-style/elements/progress-bars/overrides";
 
 //
 // COMPONENTS
@@ -118,7 +152,11 @@
 	"will-style/components/sticky-footer",
 	"will-style/components/toolbar",
 	"will-style/components/hideable-sidebar",
-	"will-style/components/app-nav",
+
+	"will-style/components/app-nav/variables",
+	"foundation/components/top-bar",
+	"will-style/components/app-nav/overrides",
+
 	"will-style/components/sticky-elements";
 
 //

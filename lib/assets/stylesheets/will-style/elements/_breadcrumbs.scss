@@ -5,10 +5,8 @@
 $crumb-slash: ":";
 $crumb-link-decor: none;
 
-@import "foundation/components/breadcrumbs";
-
 // forcing links inside of current breadcrumb to be the link color
 .breadcrumbs > *.current a {
-	color: $anchor-font-color;
-	cursor: auto;
+	color: $anchor-font-color !important;
+	cursor: auto !important;
 }

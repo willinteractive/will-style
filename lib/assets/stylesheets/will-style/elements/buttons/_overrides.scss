@@ -1,15 +1,3 @@
-//
-// BUTTONS
-//
-
-// reduce padding
-$button-tny: rem-calc(8);
-$button-sml: rem-calc(10);
-
-$button-disabled-opacity: 0.5;
-
-@import "foundation/components/buttons";
-
 // Inverts a button so that the background is transparent until hover
 @mixin inverted-button($color:$button-bg-color) {
 	@include button-style(	$bg: transparent,

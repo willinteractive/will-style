@@ -1,30 +1,3 @@
-//
-// FORMS
-//
-
-// changing this to match regular button sizes
-// was rem-calc(16) BUT
-// buttons' font size is 18px, and the calc for height of form inputs is
-// height: ($input-font-size + ($form-spacing * 1.5) - rem-calc(1));
-// so we mutiply 17 * 1.5 to get 25.5 and round up to 26
-$form-spacing: rem-calc(26);
-
-// increasing font size of inputs and labels to be same as buttons
-$form-label-font-size: $button-font-med;
-$input-font-size: $button-font-med;
-
-$input-border-color: $component-border-color;
-$input-focus-border-color: scale-color($component-border-color, $lightness: -20%);
-$fieldset-border-color: $input-border-color;
-$legend-bg: $body-bg;
-$input-prefix-bg: $component-bg-color;
-$input-prefix-border-color: $component-border-color;
-
-@import
-	"foundation/components/forms",
-	"foundation/components/range-slider",
-	"foundation/components/switches";
-
 // remove bottom margin from forms. They should be spaced by their containers
 form {
 	margin-bottom: 0;

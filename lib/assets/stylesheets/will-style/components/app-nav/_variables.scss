@@ -1,0 +1,28 @@
+//
+// CUSTOM WILL HEADER
+//
+
+// Full-Screen Pop-Out Navigation
+// http://codyhouse.co/gem/full-screen-pop-out-navigation/
+
+// FOUNDATION
+
+$topbar-height: rem-calc(24);
+
+$topbar-bg-color:		transparent;
+$topbar-dropdown-bg:	$topbar-bg-color;
+
+$topbar-link-color:					$white;
+$topbar-link-color-hover:			darken($white, 10%);
+$topbar-link-color-active:			$primary-color;
+$topbar-link-color-active-hover:	darken($primary-color, 10%);
+$topbar-link-weight:				$font-weight-normal;
+$topbar-link-font-size:				rem-calc(13);
+$topbar-link-bg:					$topbar-bg-color;
+$topbar-link-bg-hover:				$topbar-bg-color;
+$topbar-link-bg-color-hover:		$topbar-bg-color;
+$topbar-link-bg-active:				$topbar-bg-color;
+$topbar-link-bg-active-hover:		$topbar-bg-color;
+$topbar-link-text-transform:		uppercase;
+
+$topbar-bg-active: $will-dark-gray;

@@ -2,8 +2,6 @@
 // ALERT BOXES
 //
 
-@import "foundation/components/alert-boxes";
-
 // use the warning-bg-color for warning alerts
 @if $include-html-alert-classes {
 	.alert-box.warning {
