@@ -5,7 +5,7 @@
 //
 
 @import
-	"../../../../foundation/scss/foundation/functions";
+	"bower_components/foundation/scss/foundation/functions";
 
 // @NOTE: Foundation's import function is returning null on exports on newer SASS. This fixes that.
 $applied-modules: () !global;
@@ -20,64 +20,64 @@ $applied-modules: () !global;
 }
 
 @import
-	"will-style/core/colors",
+	"bower_components/will-style/lib/assets/stylesheets/will-style/core/colors",
 
-	"will-style/core/typography/bower",
-	"will-style/core/typography",
-	"../../../../foundation/scss/foundation/components/type",
+	"bower_components/will-style/lib/assets/stylesheets/will-style/core/typography/bower",
+	"bower_components/will-style/lib/assets/stylesheets/will-style/core/typography",
+	"bower_components/foundation/scss/foundation/components/type",
 
-	"will-style/core/will_icons/bower",
-	"will-style/core/will_icons",
+	"bower_components/will-style/lib/assets/stylesheets/will-style/core/will_icons/bower",
+	"bower_components/will-style/lib/assets/stylesheets/will-style/core/will_icons",
 
-	"will-style/core/font-awesome/bower",
-	"../../../../foundation/scss/foundation/components/global";
+	"bower_components/will-style/lib/assets/stylesheets/will-style/libraries/font-awesome/bower",
+
+	"bower_components/foundation/scss/foundation/components/global";
 
 // Mixins
 
 @import
-	"will-style/mixins/animation",
-	"will-style/mixins/gradients",
-	"will-style/mixins/layout",
-	"will-style/mixins/blocked-elements",
-	"will-style/mixins/outlined-elements",
-	"will-style/mixins/shadows";
+	"bower_components/will-style/lib/assets/stylesheets/will-style/mixins/animation",
+	"bower_components/will-style/lib/assets/stylesheets/will-style/mixins/gradients",
+	"bower_components/will-style/lib/assets/stylesheets/will-style/mixins/layout",
+	"bower_components/will-style/lib/assets/stylesheets/will-style/mixins/blocked-elements",
+	"bower_components/will-style/lib/assets/stylesheets/will-style/mixins/outlined-elements",
+	"bower_components/will-style/lib/assets/stylesheets/will-style/mixins/shadows";
 
 // Images
 
 @import
-	"will-style/elements/images",
+	"bower_components/will-style/lib/assets/stylesheets/will-style/elements/images",
 
-	"../../../../foundation/scss/foundation/components/thumbs";
+	"bower_components/foundation/scss/foundation/components/thumbs";
 
 // Buttons
 
 @import
+	"bower_components/will-style/lib/assets/stylesheets/will-style/elements/buttons/variables",
+	"bower_components/foundation/scss/foundation/components/buttons",
+	"bower_components/will-style/lib/assets/stylesheets/will-style/elements/buttons/overrides",
 
-	"will-style/elements/buttons/variables",
-	"../../../../foundation/scss/foundation/components/buttons",
-	"will-style/elements/buttons/overrides",
-
-	"../../../../foundation/scss/foundation/components/button-groups",
-	"../../../../foundation/scss/foundation/components/dropdown-buttons",
-	"../../../../foundation/scss/foundation/components/split-buttons";
+	"bower_components/foundation/scss/foundation/components/button-groups",
+	"bower_components/foundation/scss/foundation/components/dropdown-buttons",
+	"bower_components/foundation/scss/foundation/components/split-buttons";
 
 // Forms
 
 @import
-	"will-style/elements/forms/variables",
+	"bower_components/will-style/lib/assets/stylesheets/will-style/elements/forms/variables",
 
-	"../../../../foundation/scss/foundation/components/forms",
-	"../../../../foundation/scss/foundation/components/range-slider",
-	"../../../../foundation/scss/foundation/components/switches",
+	"bower_components/foundation/scss/foundation/components/forms",
+	"bower_components/foundation/scss/foundation/components/range-slider",
+	"bower_components/foundation/scss/foundation/components/switches",
 
-	"will-style/elements/forms/overrides";
+	"bower_components/will-style/lib/assets/stylesheets/will-style/elements/forms/overrides";
 
 // Tables
 
 @import
-	"will-style/elements/tables/variables",
-	"../../../../foundation/scss/foundation/components/tables",
-	"will-style/elements/tables/overrides";
+	"bower_components/will-style/lib/assets/stylesheets/will-style/elements/tables/variables",
+	"bower_components/foundation/scss/foundation/components/tables",
+	"bower_components/will-style/lib/assets/stylesheets/will-style/elements/tables/overrides";
 
 //
 // ELEMENTS
@@ -88,69 +88,69 @@ $applied-modules: () !global;
 // Layout
 
 @import
-	"../../../../foundation/scss/foundation/components/grid",
-	"../../../../foundation/scss/foundation/components/block-grid",
-	"../../../../foundation/scss/foundation/components/offcanvas",
+	"bower_components/foundation/scss/foundation/components/grid",
+	"bower_components/foundation/scss/foundation/components/block-grid",
+	"bower_components/foundation/scss/foundation/components/offcanvas",
 
-	"will-style/elements/sections",
-	"will-style/elements/side-nav";
+	"bower_components/will-style/lib/assets/stylesheets/will-style/elements/sections",
+	"bower_components/will-style/lib/assets/stylesheets/will-style/elements/side-nav";
 
 // Navigation
 
 @import
-	"../../../../foundation/scss/foundation/components/pagination",
-	"../../../../foundation/scss/foundation/components/side-nav",
-	"../../../../foundation/scss/foundation/components/sub-nav",
+	"bower_components/foundation/scss/foundation/components/pagination",
+	"bower_components/foundation/scss/foundation/components/side-nav",
+	"bower_components/foundation/scss/foundation/components/sub-nav",
 
-	"will-style/elements/breadcrumbs",
-	"../../../../foundation/scss/foundation/components/breadcrumbs",
+	"bower_components/will-style/lib/assets/stylesheets/will-style/elements/breadcrumbs",
+	"bower_components/foundation/scss/foundation/components/breadcrumbs",
 
 
-	"will-style/elements/icon-bar/variables",
-	"../../../../foundation/scss/foundation/components/icon-bar",
-	"will-style/elements/icon-bar/overrides",
+	"bower_components/will-style/lib/assets/stylesheets/will-style/elements/icon-bar/variables",
+	"bower_components/foundation/scss/foundation/components/icon-bar",
+	"bower_components/will-style/lib/assets/stylesheets/will-style/elements/icon-bar/overrides",
 
-	"will-style/elements/tabs",
-	"../../../../foundation/scss/foundation/components/tabs";
+	"bower_components/will-style/lib/assets/stylesheets/will-style/elements/tabs",
+	"bower_components/foundation/scss/foundation/components/tabs";
 
 // Blocks
 
 @import
-	"../../../../foundation/scss/foundation/components/inline-lists",
+	"bower_components/foundation/scss/foundation/components/inline-lists",
 
-	"will-style/elements/headings",
+	"bower_components/will-style/lib/assets/stylesheets/will-style/elements/headings",
 
-	"../../../../foundation/scss/foundation/components/alert-boxes",
-	"will-style/elements/alert-boxes",
+	"bower_components/foundation/scss/foundation/components/alert-boxes",
+	"bower_components/will-style/lib/assets/stylesheets/will-style/elements/alert-boxes",
 
-	"../../../../foundation/scss/foundation/components/dropdown",
-	"will-style/elements/dropdown",
+	"bower_components/foundation/scss/foundation/components/dropdown",
+	"bower_components/will-style/lib/assets/stylesheets/will-style/elements/dropdown",
 
-	"../../../../foundation/scss/foundation/components/labels",
-	"will-style/elements/labels",
+	"bower_components/foundation/scss/foundation/components/labels",
+	"bower_components/will-style/lib/assets/stylesheets/will-style/elements/labels",
 
-	"will-style/elements/list-group",
+	"bower_components/will-style/lib/assets/stylesheets/will-style/elements/list-group",
 
-	"../../../../foundation/scss/foundation/components/panels",
-	"will-style/elements/panels";
+	"bower_components/foundation/scss/foundation/components/panels",
+	"bower_components/will-style/lib/assets/stylesheets/will-style/elements/panels";
 
 // Extras
 
 @import
-	"../../../../foundation/scss/foundation/components/accordion",
-	"../../../../foundation/scss/foundation/components/clearing",
-	"../../../../foundation/scss/foundation/components/flex-video",
-	"../../../../foundation/scss/foundation/components/joyride",
-	"../../../../foundation/scss/foundation/components/keystrokes",
-	"../../../../foundation/scss/foundation/components/magellan",
-	"../../../../foundation/scss/foundation/components/orbit",
-	"../../../../foundation/scss/foundation/components/pricing-tables",
-	"../../../../foundation/scss/foundation/components/reveal",
-	"../../../../foundation/scss/foundation/components/tooltips",
+	"bower_components/foundation/scss/foundation/components/accordion",
+	"bower_components/foundation/scss/foundation/components/clearing",
+	"bower_components/foundation/scss/foundation/components/flex-video",
+	"bower_components/foundation/scss/foundation/components/joyride",
+	"bower_components/foundation/scss/foundation/components/keystrokes",
+	"bower_components/foundation/scss/foundation/components/magellan",
+	"bower_components/foundation/scss/foundation/components/orbit",
+	"bower_components/foundation/scss/foundation/components/pricing-tables",
+	"bower_components/foundation/scss/foundation/components/reveal",
+	"bower_components/foundation/scss/foundation/components/tooltips",
 
-	"will-style/elements/progress-bars/variables",
-	"../../../../foundation/scss/foundation/components/progress-bars",
-	"will-style/elements/progress-bars/overrides";
+	"bower_components/will-style/lib/assets/stylesheets/will-style/elements/progress-bars/variables",
+	"bower_components/foundation/scss/foundation/components/progress-bars",
+	"bower_components/will-style/lib/assets/stylesheets/will-style/elements/progress-bars/overrides";
 
 //
 // COMPONENTS
@@ -162,16 +162,16 @@ $applied-modules: () !global;
 // Global
 
 @import
-	"will-style/components/complex-block-grid",
-	"will-style/components/sticky-footer",
-	"will-style/components/toolbar",
-	"will-style/components/hideable-sidebar",
+	"bower_components/will-style/lib/assets/stylesheets/will-style/components/complex-block-grid",
+	"bower_components/will-style/lib/assets/stylesheets/will-style/components/sticky-footer",
+	"bower_components/will-style/lib/assets/stylesheets/will-style/components/toolbar",
+	"bower_components/will-style/lib/assets/stylesheets/will-style/components/hideable-sidebar",
 
-	"will-style/components/app-nav/variables",
-	"../../../../foundation/scss/foundation/components/top-bar",
-	"will-style/components/app-nav/overrides",
+	"bower_components/will-style/lib/assets/stylesheets/will-style/components/app-nav/variables",
+	"bower_components/foundation/scss/foundation/components/top-bar",
+	"bower_components/will-style/lib/assets/stylesheets/will-style/components/app-nav/overrides",
 
-	"will-style/components/sticky-elements";
+	"bower_components/will-style/lib/assets/stylesheets/will-style/components/sticky-elements";
 
 //
 // ENDING UTILITIES
@@ -180,4 +180,4 @@ $applied-modules: () !global;
 //
 
 @import
-	"../../../../foundation/scss/foundation/components/visibility";
+	"bower_components/foundation/scss/foundation/components/visibility";
