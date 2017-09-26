@@ -7,18 +7,6 @@
 @import
 	"bower_components/foundation/scss/foundation/functions";
 
-// @NOTE: Foundation's import function is returning null on exports on newer SASS. This fixes that.
-$applied-modules: () !global;
-
-@mixin exports($name) {
-	$module_index: index($applied-modules, $name);
-
-	@if (($module_index == null) or ($module_index == false)) {
-		$applied-modules: append($applied-modules, $name) !global;
-		@content;
-	}
-}
-
 @import
 	"bower_components/will-style/lib/assets/stylesheets/will-style/core/colors",
 
