@@ -6,6 +6,7 @@ require "font-awesome-rails"
 require "autoprefixer-rails"
 require "modernizr-rails"
 require "jquery-rails"
+require "turbolinks"
 
 module WILL
   module Style

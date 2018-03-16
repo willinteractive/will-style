@@ -9,8 +9,6 @@
 #= require jquery.isEmail
 #= require jquery.urlify
 
-#= require will-style/offline
-
 #= require will-style/foundation
 #= require will-style/app-nav
 #= require will-style/sticky-elements
@@ -22,4 +20,5 @@
 #= require will-style/forms/placeholder
 #= require will-style/forms/search
 
-#= require turbolinks.beta
+#= require will-style/libraries/turbolinks
+#= require turbolinks
