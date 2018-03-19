@@ -3,11 +3,12 @@
 //
 
 // use the warning-bg-color for warning alerts
-@if $include-html-alert-classes {
-	.alert-box.warning {
-		@include alert-style($warning-bg-color);
-	}
-}
+// BSFIX
+// @if $include-html-alert-classes {
+// 	.alert-box.warning {
+// 		// @include alert-style($warning-bg-color);
+// 	}
+// }
 
 // Because font-sizing is applied to paragraphs, unles you put a <p> inside an alert
 // the font will be small - which is sometimes good.
@@ -39,29 +40,30 @@
 }
 
 // now we apply the font coloring
-@if $include-html-alert-classes {
-	.alert-box {
-		&.success {
-			@include alert-heading-color($success-color);
-		}
+// BSFIX
+// @if $include-html-alert-classes {
+// 	.alert-box {
+// 		&.success {
+// 			@include alert-heading-color($success-color);
+// 		}
 
-		&.alert {
-			@include alert-heading-color($alert-color);
-		}
+// 		&.alert {
+// 			@include alert-heading-color($alert-color);
+// 		}
 
-		&.secondary {
-			@include alert-heading-color($secondary-color);
-		}
+// 		&.secondary {
+// 			@include alert-heading-color($secondary-color);
+// 		}
 
-		&.warning {
-			@include alert-heading-color($warning-bg-color);
-		}
+// 		&.warning {
+// 			@include alert-heading-color($warning-bg-color);
+// 		}
 
-		&.info {
-			@include alert-heading-color($info-color);
-		}
-	}
-}
+// 		&.info {
+// 			@include alert-heading-color($info-color);
+// 		}
+// 	}
+// }
 
 // Give alert headers no padding
 

@@ -19,9 +19,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "jquery-rails", "~> 4.3"
 
-  # @NOTE: Need to lock Foundation at 5.5.2 until 5.5.4 comes out
-  # @NOTE2: Foundation-Rails 5.5.4 is never coming out, we'll need to update to 6
-  s.add_dependency "foundation-rails", "5.5.2.1"
+  s.add_dependency "bootstrap", "~> 4.0.0"
 
   s.add_dependency "font-awesome-rails", "~> 4.7"
   s.add_dependency "modernizr-rails", "~> 2.7.1"

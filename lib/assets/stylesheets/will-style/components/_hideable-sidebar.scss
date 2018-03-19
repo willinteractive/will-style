@@ -11,10 +11,11 @@
 	}
 }
 
-@media #{$small-only} {
+@include media-breakpoint-up(sm) {
 	// Extend off-canvas class to the sidebar only on small sizes
 	.hideable-sidebar {
-		@include off-canvas-menu($position: left);
+		// BSFIX
+		// @include off-canvas-menu($position: left);
 		background-color: $body-bg;
 	}
 }

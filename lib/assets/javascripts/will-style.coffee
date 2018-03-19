@@ -1,5 +1,5 @@
 # -------- JQUERY
-#= require jquery2
+#= require jquery3
 #= require jquery_ujs
 
 # -------- MODERNIZR
@@ -9,7 +9,9 @@
 #= require jquery.isEmail
 #= require jquery.urlify
 
-#= require will-style/foundation
+#= require popper
+#= require bootstrap-sprockets
+
 #= require will-style/app-nav
 #= require will-style/sticky-elements
 

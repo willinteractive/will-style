@@ -6,7 +6,8 @@
 Version: 3.4.5 Timestamp: Mon Nov  4 08:22:42 PST 2013
 */
 .select2-container {
-	margin: 0 0 $form-spacing 0;
+	// BSFIX
+	// margin: 0 0 $form-spacing 0;
 	position: relative;
 	vertical-align: middle;
 	font-family: inherit;
@@ -58,8 +59,9 @@ Version: 3.4.5 Timestamp: Mon Nov  4 08:22:42 PST 2013
 	   -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 	        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 
-	@include form-select;
-  height: ($input-font-size + ($form-spacing * 1.5) - rem-calc(1));
+	// BSFIX
+	// @include form-select;
+ //  	height: ($input-font-size + ($form-spacing * 1.5) - rem-calc(1));
 
 	-webkit-touch-callout: none;
 	  -webkit-user-select: none;
@@ -139,8 +141,9 @@ Version: 3.4.5 Timestamp: Mon Nov  4 08:22:42 PST 2013
 	top: 100%;
 
 	background: #fafafa;
-	color: $body-font-color;
-	border: 1px solid $input-border-color;
+	// BSFIX
+	// color: $body-font-color;
+	// border: 1px solid $input-border-color;
 	border-top: 0;
 
 	outline: none;
@@ -181,12 +184,14 @@ Version: 3.4.5 Timestamp: Mon Nov  4 08:22:42 PST 2013
 }
 
 .select2-drop-active {
-	border: 1px solid $input-focus-border-color;
+	// BSFIX
+	// border: 1px solid $input-focus-border-color;
 	border-top: none;
 }
 
 .select2-drop.select2-drop-above.select2-drop-active {
-	border-top: 1px solid $input-focus-border-color;
+	// BSFIX
+	// border-top: 1px solid $input-focus-border-color;
 }
 
 .select2-container .select2-choice .select2-arrow {
@@ -233,7 +238,8 @@ Version: 3.4.5 Timestamp: Mon Nov  4 08:22:42 PST 2013
 	        box-shadow: none !important;
 
 	&, &:focus {
-		background: $input-bg-color url('select2.png') no-repeat 100% -22px;
+		// BSFIX
+		// background: $input-bg-color url('select2.png') no-repeat 100% -22px;
 	}
 }
 
@@ -246,12 +252,14 @@ Version: 3.4.5 Timestamp: Mon Nov  4 08:22:42 PST 2013
 }
 
 .select2-container-active {
-	border-color: $input-focus-border-color;
+	// BSFIX
+	// border-color: $input-focus-border-color;
 }
 
 .select2-container-active .select2-choice,
 .select2-container-active .select2-choices {
-	border: 1px solid $input-focus-border-color;
+	// BSFIX
+	// border: 1px solid $input-focus-border-color;
 	outline: none;
 
 	-webkit-box-shadow: 0 0 5px #999;
@@ -272,7 +280,8 @@ Version: 3.4.5 Timestamp: Mon Nov  4 08:22:42 PST 2013
 .select2-dropdown-open.select2-drop-above .select2-choice,
 .select2-dropdown-open.select2-drop-above .select2-choices {
 	/*border: 1px solid #999;*/
-	border-top-color: $input-focus-border-color;
+	// BSFIX
+	// border-top-color: $input-focus-border-color;
 	border-bottom-width: 1px;
 }
 
@@ -334,7 +343,8 @@ Version: 3.4.5 Timestamp: Mon Nov  4 08:22:42 PST 2013
 }
 
 .select2-results .select2-highlighted {
-	background: $primary-color;
+	// BSFIX
+	// background: $primary-color;
 	color: #fff;
 }
 
@@ -348,8 +358,9 @@ Version: 3.4.5 Timestamp: Mon Nov  4 08:22:42 PST 2013
 }
 
 .select2-results .select2-highlighted ul {
-	background: $body-bg;
-	color: $body-font-color;
+	// BSFIX
+	// background: $body-bg;
+	// color: $body-font-color;
 }
 
 
@@ -359,7 +370,8 @@ Version: 3.4.5 Timestamp: Mon Nov  4 08:22:42 PST 2013
 	background: transparent;
 	display: list-item;
 	padding: 0.25rem;
-	color: $input-border-color;
+	// BSFIX
+	// color: $input-border-color;
 	font-style: italic;
 }
 
@@ -394,13 +406,15 @@ disabled look for disabled choices in the results dropdown
 /* disabled styles */
 
 .select2-container.select2-container-disabled .select2-choice {
-	background-color: $input-disabled-bg;
-	background-image: none;
-	cursor: $input-disabled-cursor;
+	// BSFIX
+	// background-color: $input-disabled-bg;
+	// background-image: none;
+	// cursor: $input-disabled-cursor;
 }
 
 .select2-container.select2-container-disabled .select2-choice .select2-arrow {
-	background-color: $input-disabled-bg;
+	// BSFIX
+	// background-color: $input-disabled-bg;
 	background-image: none;
 	border-left: 0;
 }
@@ -422,8 +436,9 @@ disabled look for disabled choices in the results dropdown
 	cursor: text;
 	overflow: hidden;
 
-	background-color: $input-bg-color;
-	border: 1px solid $input-border-color;
+	// BSFIX
+	// background-color: $input-bg-color;
+	// border: 1px solid $input-border-color;
 }
 
 .select2-locked {
@@ -478,7 +493,8 @@ disabled look for disabled choices in the results dropdown
 }
 
 .select2-default {
-	color: $input-border-color !important;
+	// BSFIX
+	// color: $input-border-color !important;
 	font-style: italic;
 }
 
@@ -488,10 +504,12 @@ disabled look for disabled choices in the results dropdown
 	position: relative;
 
 	line-height: 1.5rem;
-	color: $body-font-color;
+	// BSFIX
+	// color: $body-font-color;
 	cursor: default;
 
-	background-color: $secondary-color;
+	// BSFIX
+	// background-color: $secondary-color;
 
 	background-clip: padding-box;
 

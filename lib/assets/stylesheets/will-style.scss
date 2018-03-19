@@ -3,24 +3,19 @@
 //
 
 @import
-	"normalize",
-	"foundation/functions",
+	"bootstrap/functions",
 
 	"will-style/core/colors",
 
-	"will-style/core/typography/rails",
-	"will-style/core/typography",
-	"foundation/components/type",
-
-	"will-style/core/will_icons/rails",
-	"will-style/core/will_icons",
-
-	"font-awesome",
-	"foundation/components/global";
+	"bootstrap/variables";
 
 // Mixins
 
 @import
+	"bootstrap/mixins",
+	"bootstrap/root",
+	"bootstrap/reboot",
+
 	"will-style/mixins/animation",
 	"will-style/mixins/gradients",
 	"will-style/mixins/layout",
@@ -28,33 +23,48 @@
 	"will-style/mixins/outlined-elements",
 	"will-style/mixins/shadows";
 
+// Type
+
+@import
+	"will-style/core/typography/rails",
+	"will-style/core/typography",
+
+	"will-style/core/will_icons/rails",
+	"will-style/core/will_icons",
+
+	"font-awesome",
+	"bootstrap/type",
+	"bootstrap/code";
+
 // Images
 
 @import
 	"will-style/elements/images",
 
-	"foundation/components/thumbs";
+	"bootstrap/images";
 
 // Buttons
 
 @import
 
 	"will-style/elements/buttons/variables",
-	"foundation/components/buttons",
+	"bootstrap/buttons",
 	"will-style/elements/buttons/overrides",
 
-	"foundation/components/button-groups",
-	"foundation/components/dropdown-buttons",
-	"foundation/components/split-buttons";
+	"bootstrap/button-group",
+	"bootstrap/input-group";
+
+// Transitions
+@import
+	"bootstrap/transitions";
 
 // Forms
 
 @import
 	"will-style/elements/forms/variables",
 
-	"foundation/components/forms",
-	"foundation/components/range-slider",
-	"foundation/components/switches",
+	"bootstrap/forms",
+	"bootstrap/custom-forms",
 
 	"will-style/elements/forms/overrides";
 
@@ -62,7 +72,7 @@
 
 @import
 	"will-style/elements/tables/variables",
-	"foundation/components/tables",
+	"bootstrap/tables",
 	"will-style/elements/tables/overrides";
 
 //
@@ -74,9 +84,7 @@
 // Layout
 
 @import
-	"foundation/components/grid",
-	"foundation/components/block-grid",
-	"foundation/components/offcanvas",
+	"bootstrap/grid",
 
 	"will-style/elements/sections",
 	"will-style/elements/side-nav";
@@ -84,59 +92,48 @@
 // Navigation
 
 @import
-	"foundation/components/pagination",
-	"foundation/components/side-nav",
-	"foundation/components/sub-nav",
+	"bootstrap/pagination",
 
 	"will-style/elements/breadcrumbs",
-	"foundation/components/breadcrumbs",
-
-
-	"will-style/elements/icon-bar/variables",
-	"foundation/components/icon-bar",
-	"will-style/elements/icon-bar/overrides",
-
-	"will-style/elements/tabs",
-	"foundation/components/tabs";
+	"bootstrap/breadcrumb";
 
 // Blocks
 
 @import
-	"foundation/components/inline-lists",
+	"bootstrap/list-group",
 
 	"will-style/elements/headings",
 
-	"foundation/components/alert-boxes",
-	"will-style/elements/alert-boxes",
+	"bootstrap/alert",
+	"will-style/elements/alert",
 
-	"foundation/components/dropdown",
-	"will-style/elements/dropdown",
+	"bootstrap/dropdown",
 
-	"foundation/components/labels",
-	"will-style/elements/labels",
+	// BSFIX
+	// "foundation/components/labels",
+	// "will-style/elements/labels",
 
-	"will-style/elements/list-group",
+	// BSFIX
+	// "will-style/elements/list-group",
 
-	"foundation/components/panels",
-	"will-style/elements/panels";
+	// BSFIX
+	// "foundation/components/panels",
+	// "will-style/elements/panels",
+
+	"bootstrap/card",
+	"bootstrap/close",
+	"bootstrap/modal",
+	"bootstrap/jumbotron";
 
 // Extras
 
 @import
-	"foundation/components/accordion",
-	"foundation/components/clearing",
-	"foundation/components/flex-video",
-	"foundation/components/joyride",
-	"foundation/components/keystrokes",
-	"foundation/components/magellan",
-	"foundation/components/orbit",
-	"foundation/components/pricing-tables",
-	"foundation/components/reveal",
-	"foundation/components/tooltips",
+	"bootstrap/media",
 
-	"will-style/elements/progress-bars/variables",
-	"foundation/components/progress-bars",
-	"will-style/elements/progress-bars/overrides";
+	// BSFIX
+	// "will-style/elements/progress-bars/variables",
+	"bootstrap/progress";
+	// "will-style/elements/progress-bars/overrides";
 
 //
 // COMPONENTS
@@ -153,12 +150,29 @@
 	"will-style/components/toolbar",
 	"will-style/components/hideable-sidebar",
 
-	"will-style/components/app-nav/variables",
-	"foundation/components/top-bar",
-	"will-style/components/app-nav/overrides",
+	// BSFIX
+	// "will-style/components/app-nav/variables",
+	"bootstrap/nav",
+	"bootstrap/navbar",
+	// "will-style/components/app-nav/overrides",
 
-	"will-style/components/sticky-elements";
+	"will-style/components/sticky-elements",
 
+	"bootstrap/tooltip",
+	"bootstrap/popover",
+	"bootstrap/carousel";
+
+//
+// UTILITIES
+//
+// This is for extra utilities that are needed
+//
+
+@import
+	"bootstrap/badge",
+	"bootstrap/utilities",
+	"bootstrap/print";
+//
 //
 // LIBRARIES
 //
@@ -169,12 +183,3 @@
 @import
   "will-style/libraries/turbolinks",
   "will-style/libraries/select2";
-
-//
-// ENDING UTILITIES
-//
-// Required utility classes that must come at the end of the document.
-//
-
-@import
-	"foundation/components/visibility";

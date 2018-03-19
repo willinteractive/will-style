@@ -23,7 +23,7 @@
 		// reduce padding on collapsed
 
 		// reduce padding on small screens to prevent word wrap
-		@media #{$small-only} {
+		@include media-breakpoint-up(sm) {
 			padding: 1rem 2rem;
 		}
 	}

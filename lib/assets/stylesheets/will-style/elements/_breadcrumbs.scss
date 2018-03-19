@@ -1,3 +1,5 @@
+// BSFIX
+
 //
 // BREADCRUMBS
 //
@@ -6,7 +8,7 @@ $crumb-slash: ":";
 $crumb-link-decor: none;
 
 // forcing links inside of current breadcrumb to be the link color
-.breadcrumbs > *.current a {
-	color: $anchor-font-color !important;
-	cursor: auto !important;
-}
+// .breadcrumbs > *.current a {
+// 	color: $anchor-font-color !important;
+// 	cursor: auto !important;
+// }

@@ -78,7 +78,7 @@ section.expanded {
 	padding-top: $section-padding / 2;
 	padding-bottom: $section-padding / 2;
 
-	@media #{$medium-up} {
+	@include media-breakpoint-up(sm) {
 		padding-top: $section-padding;
 		padding-bottom: $section-padding;
 	}

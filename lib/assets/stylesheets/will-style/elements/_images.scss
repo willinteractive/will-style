@@ -11,14 +11,15 @@ img.logo {
 
 // allow for making images have round corners
 img.radius {
-	border-radius: $global-radius;
+	// BSFIX
+	// border-radius: $global-radius;
 }
 
 img.round {
-	border-radius: $global-rounded;
+	border-radius: 50%;
 }
 
 // allow thumbnails to be round
 .th.round {
-	border-radius: $global-rounded;
+	border-radius: 50%;
 }
