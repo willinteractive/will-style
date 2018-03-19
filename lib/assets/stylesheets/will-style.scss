@@ -6,6 +6,9 @@
 	"bootstrap/functions",
 
 	"will-style/core/colors",
+	"will-style/core/typography/rails",
+
+	"will-style/core/variables",
 
 	"bootstrap/variables";
 
@@ -25,15 +28,12 @@
 // Type
 
 @import
-	"will-style/core/typography/rails",
-	"will-style/core/typography",
-
-	"will-style/core/will_icons/rails",
-	"will-style/core/will_icons",
-
 	"font-awesome",
 	"bootstrap/type",
-	"bootstrap/code";
+	"bootstrap/code",
+
+	"will-style/core/will_icons/rails",
+	"will-style/core/will_icons";
 
 // Images
 
