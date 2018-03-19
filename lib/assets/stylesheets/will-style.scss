@@ -16,7 +16,6 @@
 	"bootstrap/root",
 	"bootstrap/reboot",
 
-	"will-style/mixins/animation",
 	"will-style/mixins/gradients",
 	"will-style/mixins/layout",
 	"will-style/mixins/blocked-elements",
@@ -39,14 +38,11 @@
 // Images
 
 @import
-	"will-style/elements/images",
-
 	"bootstrap/images";
 
 // Buttons
 
 @import
-
 	"will-style/elements/buttons/variables",
 	"bootstrap/buttons",
 	"will-style/elements/buttons/overrides",
@@ -55,71 +51,38 @@
 	"bootstrap/input-group";
 
 // Transitions
+
 @import
 	"bootstrap/transitions";
 
 // Forms
 
 @import
-	"will-style/elements/forms/variables",
-
 	"bootstrap/forms",
-	"bootstrap/custom-forms",
-
-	"will-style/elements/forms/overrides";
+	"bootstrap/custom-forms";
 
 // Tables
 
 @import
-	"will-style/elements/tables/variables",
-	"bootstrap/tables",
-	"will-style/elements/tables/overrides";
-
-//
-// ELEMENTS
-//
-// Relatively simple combinations of the CORE built for reuse
-//
+	"bootstrap/tables";
 
 // Layout
 
 @import
-	"bootstrap/grid",
-
-	"will-style/elements/sections",
-	"will-style/elements/side-nav";
+	"bootstrap/grid";
 
 // Navigation
 
 @import
 	"bootstrap/pagination",
-
-	"will-style/elements/breadcrumbs",
 	"bootstrap/breadcrumb";
 
 // Blocks
 
 @import
 	"bootstrap/list-group",
-
-	"will-style/elements/headings",
-
 	"bootstrap/alert",
-	"will-style/elements/alert",
-
 	"bootstrap/dropdown",
-
-	// BSFIX
-	// "foundation/components/labels",
-	// "will-style/elements/labels",
-
-	// BSFIX
-	// "will-style/elements/list-group",
-
-	// BSFIX
-	// "foundation/components/panels",
-	// "will-style/elements/panels",
-
 	"bootstrap/card",
 	"bootstrap/close",
 	"bootstrap/modal",
@@ -129,56 +92,25 @@
 
 @import
 	"bootstrap/media",
-
-	// BSFIX
-	// "will-style/elements/progress-bars/variables",
 	"bootstrap/progress";
-	// "will-style/elements/progress-bars/overrides";
 
-//
-// COMPONENTS
-//
-// Groups of elements joined together to form a relatively complex,
-// distinct section of an interface.
-//
-
-// Global
+// Components
 
 @import
-	"will-style/components/complex-block-grid",
 	"will-style/components/sticky-footer",
-	"will-style/components/toolbar",
 	"will-style/components/hideable-sidebar",
-
-	// BSFIX
-	// "will-style/components/app-nav/variables",
-	"bootstrap/nav",
-	"bootstrap/navbar",
-	// "will-style/components/app-nav/overrides",
-
 	"will-style/components/sticky-elements",
 
+	"bootstrap/nav",
+	"bootstrap/navbar",
 	"bootstrap/tooltip",
 	"bootstrap/popover",
 	"bootstrap/carousel";
-
-//
-// UTILITIES
-//
-// This is for extra utilities that are needed
-//
 
 @import
 	"bootstrap/badge",
 	"bootstrap/utilities",
 	"bootstrap/print";
-//
-//
-// LIBRARIES
-//
-// This is where you want to import external library css styles
-// and will-style overrides if available
-//
 
 @import
   "will-style/libraries/turbolinks",

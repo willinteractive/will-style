@@ -1,105 +1,3 @@
-// Inverts a button so that the background is transparent until hover
-@mixin inverted-button($color:$button-bg-color) {
-	@include button-style(	$bg: transparent,
-							$bg-hover: $color);
-
-	color: $color;
-	border: 1px solid $color;
-}
-
-// BSFIX
-// Custom Button colors
-// button,
-// .button {
-// 	// and adding custom .inverse style
-// 	&.inverse {
-// 			@include button-style(	$bg: $body-font-color,
-// 									$bg-hover: scale-color($body-font-color, $lightness: $button-function-factor));
-// 	}
-
-// 	&.info {
-// 		@include button-style(	$bg: scale-color($info-color, $lightness: $button-function-factor * 1.5),
-// 								$bg-hover: scale-color($info-color, $lightness: $button-function-factor * 2.5));
-// 	}
-
-// 	&.warning {
-// 			@include button-style(	$bg: $warning-color,
-// 									$bg-hover: scale-color($warning-color, $lightness: $button-function-factor));
-// 	}
-
-// 	&.disabled,
-// 	&[disabled] {
-// 		&.info {
-// 			color: white;
-// 		}
-// 	}
-
-// 	&.inverted {
-// 		&.success {
-// 			@include inverted-button($success-color);
-// 		}
-
-// 		&.alert {
-// 			@include inverted-button($alert-color);
-// 		}
-
-// 		&.secondary {
-// 			@include inverted-button($secondary-color);
-
-// 			// The secondary font color is very hard to read.
-// 			color: $body-font-color;
-// 		}
-
-// 		&.warning {
-// 			@include inverted-button($warning-color);
-// 		}
-
-// 		&.info {
-// 			@include inverted-button(scale-color($info-color, $lightness: $button-function-factor * 1.5));
-// 		}
-
-// 		&.inverse {
-// 			@include inverted-button($body-font-color);
-// 		}
-// 	}
-// }
-
-// // custom mixin that will remove all button styles
-// @mixin no-button-styles() {
-// 	background: transparent;
-// 	border: none;
-// 	padding: 0;
-// 	text-align: inherit;
-// 	font-weight: inherit;
-// 	font-size: inherit;
-// 	color: $body-font-color;
-// }
-
-// // create a .active state for button-bar buttons
-// .button-group .button.active {
-// 	background-color: scale-color($primary-color, $lightness: $button-function-factor);
-
-// 	&.success {
-// 		background-color: scale-color($success-color, $lightness: $button-function-factor);
-// 	}
-
-// 	&.alert {
-// 		background-color: scale-color($alert-color, $lightness: $button-function-factor);
-// 	}
-
-// 	&.secondary {
-// 		background-color: scale-color($secondary-color, $lightness: $button-function-factor);
-// 	}
-
-// 	&.warning {
-// 		background-color: scale-color($warning-color, $lightness: $button-function-factor);
-// 	}
-
-// 	&.info {
-// 		background-color: scale-color($info-color, $lightness: $button-function-factor * 2.5);
-// 	}
-// }
-
 //
 // Blocked Buttons
 //
@@ -109,8 +7,8 @@ h2.blocked-button,
 h3.blocked-button,
 h4.blocked-button,
 h5.blocked-button {
-	@include blocked-text($primary-color);
-	@include blocked-button($primary-color);
+	@include blocked-text($primary);
+	@include blocked-button($primary);
 
 	&.light {
 		@include blocked-text($white);
@@ -128,6 +26,6 @@ a.outlined {
 }
 
 a.animated {
-	color: $body-font-color;
+	color: $body-color;
 	@include underlined-link();
 }

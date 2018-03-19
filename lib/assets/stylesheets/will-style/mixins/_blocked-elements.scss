@@ -42,7 +42,7 @@
 // We could make the anchor tag full height and use a second background on that.
 // Worth noting this is only available in webkit, so the following animations would have to be a fallback, anyways.
 
-@mixin blocked-button($color: $primary-color) {
+@mixin blocked-button($color: $primary) {
 	span,
 	input {
 		cursor: pointer;
@@ -87,7 +87,7 @@
 			color: #fff;
 			.blocked-button.dark &,
 			.blocked-button.light & {
-				color: $body-font-color;
+				color: $body-color;
 			}
 
 			background-position: 99% 100%;
@@ -129,7 +129,7 @@
 			&:focus,
 			&:active,
 			&.selected {
-				color: $body-font-color !important;
+				color: $body-color !important;
 			}
 		}
 	}

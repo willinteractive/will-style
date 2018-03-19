@@ -7,7 +7,7 @@
 	overflow: visible;
 
 	@if $include-border == true {
-		border: 2px solid $body-font-color;
+		border: 2px solid $body-color;
 	} @else {
 		border: 2px solid transparent !important;
 	}
@@ -18,7 +18,7 @@
 		line-height: 1;
 		margin-bottom: 0;
 
-		color: $body-font-color;
+		color: $body-color;
 	}
 
 	p:before,
@@ -56,8 +56,8 @@
 	}
 
 	p:before {
-		background-image: 	linear-gradient(to right, $primary-color-lighter, $primary-color),
-							linear-gradient(to right, $primary-color, $primary-color);
+		background-image: 	linear-gradient(to right, $primary-lighter, $primary),
+							linear-gradient(to right, $primary, $primary);
 
 		background-position: center top,
 							 right top;
@@ -71,8 +71,8 @@
 	}
 
 	p:after {
-		background-image: 	linear-gradient(to bottom, $primary-color, $primary-color),
-							linear-gradient(to bottom, $primary-color-lighter, $primary-color);
+		background-image: 	linear-gradient(to bottom, $primary, $primary),
+							linear-gradient(to bottom, $primary-lighter, $primary);
 
 		background-position: center bottom,
 							 left bottom;
@@ -118,7 +118,7 @@
 //
 // Animated Links
 
-@mixin underlined-link($fg-color: $primary-color, $bg-color: $body-bg) {
+@mixin underlined-link($fg-color: $primary, $bg-color: $body-bg) {
 	transition: color .2s,
 				box-shadow .2s;
 
@@ -152,7 +152,7 @@
 
 	&::selection {
 		// @NOTE: We're setting the background color here to 0.99 opacity to trick the browser into not using the default, non-overrideable opacity on backgrounds
-		background: rgba($primary-color, 0.99);
+		background: rgba($primary, 0.99);
 
   		text-shadow: none !important;
 	}
@@ -187,7 +187,7 @@
 
 		height: $height;
 
-		background-color: $primary-color;
-		background-image: linear-gradient(to right, $primary-color-lighter, $primary-color);
+		background-color: $primary;
+		background-image: linear-gradient(to right, $primary-lighter, $primary);
 	}
 }
