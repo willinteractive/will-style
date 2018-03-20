@@ -30,7 +30,7 @@ module WILL
         # 3] Use h.button to build a trigger for the sidebar.
         #
         # = Examples
-        #   <%= ws_hideable_sidebar_container do |h| %>
+        #   <%= ws_hideable_sidebar do |h| %>
         #     <h1>Header information</h1>
         #
         #     <div id="main-content-area" class="row">
@@ -48,7 +48,7 @@ module WILL
         #     </div>
         #   <% end %>
         #
-        def ws_hideable_sidebar_container(&block)
+        def ws_hideable_sidebar(&block)
           raise ArgumentError, "Missing block" unless block_given?
 
           capture(HideableSidebarBuilder.new(self), &block)
@@ -100,17 +100,16 @@ module WILL
           def wrapper(options={}, &block)
             raise ArgumentError, "Missing block" unless block_given?
 
-            options[:class] = "off-canvas-wrap #{options[:class]}"
+            options[:class] = "container hideable-sidebar-wrap #{options[:class]}"
 
-            # Merge custom html data options with mandatory alert data options
             if options[:data] && options[:data].is_a?(Hash)
-              options[:data] = options[:data].merge({ offcanvas: true })
+              options[:data] = options[:data].merge({ "hideable-sidebar" => "" })
             else
-              options[:data] = { offcanvas: true }
+              options[:data] = { "hideable-sidebar" => "" }
             end
 
             content_tag(:div, options) do
-              content_tag(:div, class: "row collapse inner-wrap") do
+              content_tag(:div, class: "row") do
                 capture(&block)
               end
             end
@@ -145,12 +144,12 @@ module WILL
           def button(text="", options={}, &block)
             options = options.merge(text) if block_given? && text.is_a?(Hash)
 
-            options[:class] = "left-off-canvas-toggle #{options[:class]}"
+            options[:class] = "hideable-sidebar-toggle #{options[:class]}"
 
             if options[:data] && options[:data].is_a?(Hash)
-              options[:data] = options[:data].merge({ "no-turbolinks" => true })
+              options[:data] = options[:data].merge({ "no-turbolinks" => true, "hideable-sidebar-toggle" => "" })
             else
-              options[:data] = { "no-turbolinks" => true }
+              options[:data] = { "no-turbolinks" => true, "hideable-sidebar-toggle" => "" }
             end
 
             if block_given?
@@ -184,10 +183,13 @@ module WILL
           def sidebar(options={}, &block)
             raise ArgumentError, "Missing block" unless block_given?
 
-            options[:class] = "hideable-sidebar columns #{options[:class]}"
+            options[:class] = "hideable-sidebar #{options[:class]}"
 
-            content_tag(:aside, options) do
-              capture(&block)
+            content_tag(:div, options) do
+              [
+                options[:include_close_button] != false ? button("Close") : "",
+                capture(&block)
+              ].join.html_safe
             end
           end
 
@@ -213,9 +215,9 @@ module WILL
           def content(options={}, &block)
             raise ArgumentError, "Missing block" unless block_given?
 
-            options[:class] = "columns #{options[:class]}"
+            options[:class] = "cols #{options[:class]}"
 
-            content_tag(:main, options) do
+            content_tag(:div, options) do
               capture(&block)
             end
           end

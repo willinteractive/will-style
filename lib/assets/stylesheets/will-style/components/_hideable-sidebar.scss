@@ -1,27 +1,77 @@
-// use flexbox to equalize heights fo borders and backgrounds
-// Used as a mixin so we can better control it
+//
+// Hideable Sidebar
+//
 
-@mixin equalize-sidebar() {
-	.inner-wrap {
-		display: flex;
+// Add fallback color for hideable-sidebar in case it doesn't have one
+.hideable-sidebar {
+	background-color: $body-bg;
+}
 
-		.hideable-sidebar, main {
-			align-self: stretch;
+.hideable-sidebar-wrap {
+
+	// Hiding Sidebar
+
+	.hideable-sidebar {
+		.hideable-sidebar-toggle {
+			display: none;
 		}
 	}
-}
 
-@include media-breakpoint-up(sm) {
-	// Extend off-canvas class to the sidebar only on small sizes
-	.hideable-sidebar {
-		// BSFIX
-		// @include off-canvas-menu($position: left);
-		background-color: $body-bg;
+	@include media-breakpoint-down(sm) {
+		position: relative;
+
+		&:before {
+			content: "";
+
+			// @NOTE: Give background fade a non-zero z-index to appear above the content
+			z-index: 1;
+
+			pointer-events: none;
+
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+
+			background-image: $lightbox-bg-gradient;
+
+			transform: translateX(-200%);
+			opacity: 0;
+
+			transition: opacity $transition-duration $transition-timing-function,
+						transform 0s $transition-duration $transition-timing-function;
+		}
+
+		.hideable-sidebar {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+
+			// @NOTE: Give background fade a non-zero z-index to appear above the content
+			z-index: 2;
+
+			transform: translateX(-100%);
+
+			transition: transform $transition-duration $transition-timing-function;
+
+			.hideable-sidebar-toggle {
+				display: block;
+			}
+		}
+
+		&.active {
+			&:before {
+				transform: translateX(0);
+				opacity: 1;
+
+				transition: opacity $transition-duration $transition-timing-function,
+							transform 0s $transition-timing-function;
+			}
+
+			.hideable-sidebar {
+				transform: translateX(0);
+			}
+		}
 	}
-}
-
-// Creates a border at the bottom of side navs that don't fill the entire page
-hr.hideable-sidebar-close {
-	width: 100%;
-	margin: 0px;
 }

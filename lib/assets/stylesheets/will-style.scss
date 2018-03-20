@@ -25,6 +25,12 @@
 	"will-style/mixins/outlined-elements",
 	"will-style/mixins/shadows";
 
+// Transitions
+
+@import
+	"will-style/core/transitions",
+	"bootstrap/transitions";
+
 // Type
 
 @import
@@ -49,11 +55,6 @@
 
 	"bootstrap/button-group",
 	"bootstrap/input-group";
-
-// Transitions
-
-@import
-	"bootstrap/transitions";
 
 // Forms
 
@@ -99,7 +100,6 @@
 @import
 	"will-style/components/footer",
 	"will-style/components/hideable-sidebar",
-	"will-style/components/sticky-elements",
 
 	"bootstrap/nav",
 	"bootstrap/navbar",

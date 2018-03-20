@@ -92,3 +92,7 @@ $color-list: (
 		background-color: $color;
 	}
 }
+
+// WILL-Specific Variables
+
+$lightbox-bg-gradient: linear-gradient(to bottom, rgba($will-bg-darkest, 0.8), rgba($will-bg-darkest, 0.8));

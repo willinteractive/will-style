@@ -12,8 +12,8 @@
 #= require popper
 #= require bootstrap-sprockets
 
-#= require will-style/app-nav
-#= require will-style/sticky-elements
+# -------- COMPONENTS
+#= require will-style/components/hideable-sidebar
 
 # -------- FORMS
 #= require will-style/forms/required-inputs
