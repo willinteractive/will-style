@@ -215,8 +215,6 @@ module WILL
           def content(options={}, &block)
             raise ArgumentError, "Missing block" unless block_given?
 
-            options[:class] = "cols #{options[:class]}"
-
             content_tag(:div, options) do
               capture(&block)
             end
