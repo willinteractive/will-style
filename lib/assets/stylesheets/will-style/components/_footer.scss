@@ -1,0 +1,29 @@
+//
+// FOOTER
+//
+
+$footer-height: 45px !default;
+
+body {
+	margin-bottom: $footer-height;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+
+	overflow: hidden;
+
+	height: $footer-height;
+	max-height: $footer-height;
+
+	padding-top: 10px;
+	padding-bottom: 0;
+
+	margin-bottom: 0;
+
+	p {
+		margin: 0px;
+
+	}
+}
