@@ -1,0 +1,12 @@
+//
+// Navbar Overrides
+//
+
+nav.navbar {
+
+	// Ensure Navbar Logo is big enough for logo to be by itself
+
+	a.navbar-brand {
+		min-width: 50px;
+	}
+}
