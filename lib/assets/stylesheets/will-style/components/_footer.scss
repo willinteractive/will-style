@@ -6,7 +6,9 @@ $footer-height: 45px !default;
 
 .wrap {
 	min-height: 100vh;
-	margin-bottom: $footer-height;
+
+	margin-bottom: 0 - $footer-height;
+ 	padding-bottom: $footer-height;
 }
 
 footer {
