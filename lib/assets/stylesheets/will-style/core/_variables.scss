@@ -45,7 +45,11 @@ $border-radius-sm:            0;
 
 // Typography
 
-$font-family-sans-serif:	"Core Sans", "Open Sans", "San Francisco", "Calibri", Helvetica, sans-serif;
+$will-sans-serif:		"Core Sans", "Open Sans", "San Francisco", "Calibri", Helvetica, sans-serif;
+$will-bold-sans-serif:	"Core Sans Bold", "Open Sans", "San Francisco", "Calibri", Helvetica, sans-serif;
 
-$will-government-serif:	"Times New Roman", Times New Roman;
-$will-government-sans:	"Arial", Arial;
+$font-family-sans-serif:	$will-sans-serif;
+$headings-font-family:		$will-bold-sans-serif;
+
+$will-government-serif:			"Times New Roman", Times New Roman;
+$will-government-sans-serif:	"Arial", Arial;

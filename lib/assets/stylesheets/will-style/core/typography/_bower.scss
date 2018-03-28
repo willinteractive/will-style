@@ -57,14 +57,14 @@ $will-style-font-location: "/fonts" !default;
 }
 
 @font-face {
-	font-family: 'Core Sans Condensed';
-	src: url('#{$will-style-font-location}/core-sans/core-sans-condensed.woff2') format('woff2'),
+	font-family: 'Core Sans Bold';
+	src: url('#{$will-style-font-location}/core-sans/core-sans-bold.woff2') format('woff2'),
 
 		 // @NOTE: woff version is funky on IE9
-		 // url('#{$will-style-font-location}/core-sans/core-sans-condensed.eot') format('embedded-opentype'),
-		 // url('#{$will-style-font-location}/core-sans/core-sans-condensed.woff') format('woff'),
-		 url('#{$will-style-font-location}/core-sans/core-sans-condensed.ttf') format('truetype'),
-		 url('#{$will-style-font-location}/core-sans/core-sans-condensed.svg') format('svg');
+		 // url('#{$will-style-font-location}/core-sans/core-sans-bold.eot') format('embedded-opentype'),
+		 // url('#{$will-style-font-location}/core-sans/core-sans-bold.woff') format('woff'),
+		 url('#{$will-style-font-location}/core-sans/core-sans-bold.ttf') format('truetype'),
+		 url('#{$will-style-font-location}/core-sans/core-sans-bold.svg') format('svg');
 
 	font-weight: normal;
 	font-style: normal;
