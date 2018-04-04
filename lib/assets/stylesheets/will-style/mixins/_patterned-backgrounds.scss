@@ -1,0 +1,39 @@
+//
+// Patterned Background Overlays
+//
+
+@mixin patterned-background($include-overlay: true) {
+	// @FIXME: We shouldn't muck around with z-index here.
+	// Is there another way to get the after element underneath the content?
+	& > * {
+		position: relative;
+		z-index: 1;
+	}
+
+	&:before,
+	&:after {
+		content: "";
+
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		z-index: 0;
+	}
+
+	@if $include-overlay == true {
+		&:before {
+			background-color: $body-color;
+			opacity: 0.4;
+		}
+	}
+
+	&:after {
+		background-image: asset_url("will-style/patterns/bg-pattern.jpg");
+		background-repeat: repeat;
+
+		opacity: 0.02;
+	}
+}

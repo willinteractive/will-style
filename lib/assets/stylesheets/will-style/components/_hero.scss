@@ -1,0 +1,15 @@
+//
+// Hero
+//
+
+.hero {
+	background-color: $body-color;
+
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	& > .row {
+		min-height: 80vh;
+	}
+}

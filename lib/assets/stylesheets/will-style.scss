@@ -23,7 +23,8 @@
 	"will-style/mixins/layout",
 	"will-style/mixins/blocked-elements",
 	"will-style/mixins/outlined-elements",
-	"will-style/mixins/shadows";
+	"will-style/mixins/shadows",
+	"will-style/mixins/patterned-backgrounds";
 
 // Transitions
 
@@ -95,6 +96,11 @@
 	"bootstrap/media",
 	"bootstrap/progress";
 
+// Elements
+
+@import
+	"will-style/elements/patterned-backgrounds";
+
 // Components
 
 @import
@@ -108,7 +114,9 @@
 
 	"bootstrap/tooltip",
 	"bootstrap/popover",
-	"bootstrap/carousel";
+	"bootstrap/carousel",
+
+	"will-style/components/hero";
 
 @import
 	"bootstrap/badge",

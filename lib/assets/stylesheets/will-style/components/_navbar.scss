@@ -4,9 +4,20 @@
 
 nav.navbar {
 
+	// Add absolutely positioned navbars with the navbar-abs class
+
+	&.navbar-abs {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+
+		z-index: $navbar-z-index;
+	}
+
 	// Ensure Navbar Logo is big enough for logo to be by itself
 
 	a.navbar-brand {
-		min-width: 50px;
+		min-width: #{($nav-link-padding-y * 2 + $font-size-base * $line-height-base) * $will-logo-aspect-ratio};
 	}
 }

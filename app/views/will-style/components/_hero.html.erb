@@ -1,0 +1,32 @@
+<% name = controller_name + "-" + action_name %>
+
+<section id="<%= name %>-top" class="hero container-fluid"
+	<% if defined?(background_image) %>
+		style="background-image: url('<%= asset_url(background_image) %>')"
+	<% end %>
+>
+
+	<% unless defined?(custom_content) && custom_content == true %>
+		<%= yield %>
+	<% end %>
+
+	<div class="row align-items-center<%= (defined?(include_pattern) && include_pattern == false) ? "" : " patterned-bg" %>">
+		<div class="col-sm-12">
+			<% if defined?(custom_content) && custom_content == true %>
+				<%= yield %>
+			<% else %>
+				<% if defined?(title) %>
+					<h2 class="text-light">
+						<span><%= raw title %></span>
+					</h2>
+				<% end %>
+
+				<% if defined?(tagline) %>
+					<h1 class="text-light">
+						<span><%= raw tagline %></span>
+					</h1>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+</section>
