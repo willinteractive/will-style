@@ -28,7 +28,7 @@ $patterned-background-opacity: 0.02;
 
 	@if $include-overlay == true {
 		&:before {
-			background-color: $body-color;
+			background-color: $dark;
 			opacity: $patterned-background-overlay-opacity;
 		}
 	}
