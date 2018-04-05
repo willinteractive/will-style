@@ -1,16 +1,18 @@
 <% name = controller_name + "-" + action_name %>
 
-<section id="<%= name %>-top" class="hero container-fluid"
-	<% if defined?(background_image) %>
-		style="background-image: url('<%= asset_url(background_image) %>')"
-	<% end %>
->
+<section id="<%= name %>-top" class="hero container-fluid">
 
 	<% unless defined?(custom_content) && custom_content == true %>
 		<%= yield %>
 	<% end %>
 
-	<div class="row align-items-center<%= (defined?(include_pattern) && include_pattern == false) ? "" : " patterned-bg" %>">
+	<div class="row align-items-center image-bg<%= (defined?(include_pattern) && include_pattern == false) ? "" : " patterned-bg" %>"
+
+		<% if defined?(background_image) %>
+			style="background-image: url('<%= asset_url(background_image) %>')"
+		<% end %>
+		>
+
 		<div class="col-sm-12">
 			<% if defined?(custom_content) && custom_content == true %>
 				<%= yield %>

@@ -5,10 +5,26 @@
 .hero {
 	background-color: $body-color;
 
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
+	.image-bg {
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
 
+		// Image Loading
+		// @NOTE: Use the overlay to hide the image so that it doesn't hide the title
+		opacity: 1;
+
+		&:before {
+			opacity: 1;
+			transition: opacity 0.2s;
+		}
+
+		&.loaded:before {
+			opacity: $patterned-background-overlay-opacity;
+		}
+	}
+
+	// @TODO: What should this be?
 	& > .row {
 		min-height: 80vh;
 	}

@@ -1,0 +1,9 @@
+.image-bg,
+img {
+	transition: opacity 0.2s;
+	opacity: 0;
+
+	&.loaded {
+		opacity: 1;
+	}
+}
