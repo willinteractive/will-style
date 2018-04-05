@@ -1,0 +1,16 @@
+<% unless defined?(invert_colors) %>
+	<% invert_colors = false %>
+<% end %>
+
+<div class="will-heading">
+	<div class="subtitle-container">
+		<h3 class="subtitle will-teal"><%= subtitle %></h3>
+		<div class="subtitle-line <%= invert_colors ? " bg-light" : "bg-dark" %>"></div>
+	</div>
+
+	<h1 class="title<%= invert_colors ? " text-light" : "" %>"><%= title %></h1>
+
+	<% if defined?(text) %>
+		<p class="text<%= invert_colors ? " text-light" : "" %>"><%= text %></p>
+	<% end %>
+</div>

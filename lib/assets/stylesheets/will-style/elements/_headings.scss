@@ -2,10 +2,36 @@
 // Headings
 //
 
-h1.blocked,
-h2.blocked,
-h3.blocked,
-h4.blocked,
-h5.blocked {
-	@include blocked-text;
+.will-heading {
+	&,
+	.subtitle,
+	.title,
+	.text {
+		display: inline-block;
+		width: auto;
+		max-width: 100%;
+
+		margin-bottom: 0px;
+	}
+
+	.title {
+		font-size: 400%;
+	}
+
+	// Accent Line
+
+	.subtitle-container {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+
+		max-width: 90%;
+
+		.subtitle-line {
+			flex-grow: 1;
+
+			height: 2px;
+			margin-left: 1rem;
+		}
+	}
 }
