@@ -7,10 +7,6 @@
 	.subtitle,
 	.title,
 	.text {
-		display: inline-block;
-		width: auto;
-		max-width: 100%;
-
 		margin-bottom: 0px;
 	}
 
@@ -24,11 +20,12 @@
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-
-		max-width: 90%;
+		padding-right: 1rem;
 
 		.subtitle-line {
 			flex-grow: 1;
+
+			max-width: 250px;
 
 			height: 2px;
 			margin-left: 1rem;
