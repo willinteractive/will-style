@@ -1,4 +1,5 @@
 $patterned-background-overlay-opacity: 0.4;
+$patterned-background-opacity: 0.02;
 
 //
 // Patterned Background Overlays
@@ -36,6 +37,6 @@ $patterned-background-overlay-opacity: 0.4;
 		background-image: asset_url("will-style/patterns/bg-pattern.jpg");
 		background-repeat: repeat;
 
-		opacity: 0.02;
+		opacity: $patterned-background-opacity;
 	}
 }

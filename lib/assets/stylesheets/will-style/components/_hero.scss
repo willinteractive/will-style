@@ -14,13 +14,27 @@
 		// @NOTE: Use the overlay to hide the image so that it doesn't hide the title
 		opacity: 1;
 
-		&:before {
-			opacity: 1;
+		&:before,
+		&:after {
 			transition: opacity 0.2s;
 		}
 
-		&.loaded:before {
-			opacity: $patterned-background-overlay-opacity;
+		&:before {
+			opacity: 1;
+		}
+
+		&:after {
+			opacity: 0;
+		}
+
+		&.loaded {
+			&:before {
+				opacity: $patterned-background-overlay-opacity;
+			}
+
+			&:after {
+				opacity: $patterned-background-opacity;
+			}
 		}
 	}
 
