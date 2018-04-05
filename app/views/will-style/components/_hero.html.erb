@@ -17,17 +17,7 @@
 			<% if defined?(custom_content) && custom_content == true %>
 				<%= yield %>
 			<% else %>
-				<% if defined?(title) %>
-					<h2 class="text-light">
-						<span><%= raw title %></span>
-					</h2>
-				<% end %>
-
-				<% if defined?(tagline) %>
-					<h1 class="text-light">
-						<span><%= raw tagline %></span>
-					</h1>
-				<% end %>
+				<%= render partial: "will-style/components/heading", locals: { subtitle: defined?(subtitle) ? subtitle : "", title: defined?(title) ? title : "", invert_colors: true } %>
 			<% end %>
 		</div>
 	</div>
