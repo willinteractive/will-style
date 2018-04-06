@@ -1,11 +1,13 @@
 $patterned-background-overlay-opacity: 0.4;
 $patterned-background-opacity: 0.02;
 
+$patterned-background-overlay-opacity-darker: 0.9;
+
 //
 // Patterned Background Overlays
 //
 
-@mixin patterned-background($include-overlay: true) {
+@mixin patterned-background($include-overlay: true, $darker: false) {
 	// @FIXME: We shouldn't muck around with z-index here.
 	// Is there another way to get the after element underneath the content?
 	& > * {
@@ -29,7 +31,12 @@ $patterned-background-opacity: 0.02;
 	@if $include-overlay == true {
 		&:before {
 			background-color: $dark;
-			opacity: $patterned-background-overlay-opacity;
+
+			@if $darker == true {
+				opacity: $patterned-background-overlay-opacity-darker;
+			} @else {
+				opacity: $patterned-background-overlay-opacity;
+			}
 		}
 	}
 

@@ -6,51 +6,5 @@
 	.image-bg {
 		padding-top:	$navbar-height;
 		padding-bottom: $navbar-height;
-
-		background-position: center;
-		background-size: cover;
-		background-repeat: no-repeat;
-
-		// Image Loading
-		// @NOTE: Use the overlay to hide the image so that it doesn't hide the title
-		opacity: 1;
-
-		&:before,
-		&:after {
-			transition: opacity 0.2s;
-		}
-
-		&:before {
-			opacity: 1;
-		}
-
-		&:after {
-			opacity: 0;
-		}
-
-		&.loaded {
-			&:before {
-				opacity: $patterned-background-overlay-opacity;
-			}
-
-			&:after {
-				opacity: $patterned-background-opacity;
-			}
-		}
-	}
-
-	// @TODO: Fine-tune hero minimum heights based on sizes
-	& > .row {
-		min-height: 100vh;
-
-		@include media-breakpoint-up(md) {
-			@media (orientation: landscape) {
-				min-height: 80vh;
-			}
-
-			@media (orientation: portrait) {
-				min-height: 50vh;
-			}
-		}
 	}
 }

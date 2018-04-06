@@ -5,7 +5,7 @@
 		<%= yield %>
 	<% end %>
 
-	<div class="row align-items-center image-bg<%= (defined?(include_pattern) && include_pattern == false) ? "" : " patterned-bg" %>"
+	<div class="row full-height align-items-center image-bg<%= (defined?(include_pattern) && include_pattern == false) ? "" : " patterned-bg" %>"
 
 		<% if defined?(background_image) %>
 			style="background-image: url('<%= asset_url(background_image) %>')"
