@@ -2,13 +2,18 @@
 	<% invert_colors = false %>
 <% end %>
 
+<% title_class = defined?(page_heading) && page_heading == true ? "display-1" : "" %>
+<% title_class += invert_colors ? " text-light" : "" %>
+
 <div class="will-heading">
 	<div class="subtitle-container">
 		<h3 class="subtitle will-teal"><%= subtitle %></h3>
-		<div class="subtitle-line <%= invert_colors ? " bg-light" : "bg-dark" %>"></div>
+		<% unless subtitle.blank? %>
+			<div class="subtitle-line <%= invert_colors ? " bg-light" : "bg-dark" %>"></div>
+		<% end %>
 	</div>
 
-	<h1 class="title<%= invert_colors ? " text-light" : "" %>"><%= title %></h1>
+	<h1 class="title <%= title_class %>"><%= raw title %></h1>
 
 	<% if defined?(text) %>
 		<p class="text<%= invert_colors ? " text-light" : "" %>"><%= text %></p>

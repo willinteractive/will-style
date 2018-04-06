@@ -10,7 +10,9 @@
 
 	"will-style/core/variables",
 
-	"bootstrap/variables";
+	"bootstrap/variables",
+
+	"will-style/core/calculations";
 
 // Mixins
 
@@ -119,6 +121,13 @@
 	"bootstrap/carousel",
 
 	"will-style/components/hero";
+
+// Animations
+
+@import
+	"will-style/animations/page";
+
+// Libraries
 
 @import
 	"bootstrap/badge",

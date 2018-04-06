@@ -4,6 +4,9 @@
 
 .hero {
 	.image-bg {
+		padding-top:	$navbar-height;
+		padding-bottom: $navbar-height;
+
 		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -36,8 +39,18 @@
 		}
 	}
 
-	// @TODO: What should this be?
+	// @TODO: Fine-tune hero minimum heights based on sizes
 	& > .row {
-		min-height: 80vh;
+		min-height: 100vh;
+
+		@include media-breakpoint-up(md) {
+			@media (orientation: landscape) {
+				min-height: 80vh;
+			}
+
+			@media (orientation: portrait) {
+				min-height: 50vh;
+			}
+		}
 	}
 }
