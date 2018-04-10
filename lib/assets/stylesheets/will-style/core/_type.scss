@@ -1,0 +1,20 @@
+//
+// Type Overrides for Bootstrap
+//
+
+// Ensure headings with font-weight-normal have the normal font
+
+h1.font-weight-normal,
+h2.font-weight-normal,
+h3.font-weight-normal,
+h4.font-weight-normal,
+h5.font-weight-normal,
+h6.font-weight-normal {
+	font-family: $font-family-sans-serif;
+}
+
+// Add rotation classes to icons
+
+i.rotated:before {
+	transform: rotate(90deg);
+}

@@ -26,7 +26,8 @@
 	"will-style/mixins/blocked-elements",
 	"will-style/mixins/outlined-elements",
 	"will-style/mixins/shadows",
-	"will-style/mixins/patterned-backgrounds";
+	"will-style/mixins/patterned-backgrounds",
+	"will-style/mixins/expanded-items";
 
 // Transitions
 
@@ -41,6 +42,8 @@
 	"bootstrap/type",
 	"bootstrap/code",
 
+
+	"will-style/core/type",
 	"will-style/core/will_icons/rails",
 	"will-style/core/will_icons";
 
@@ -101,7 +104,7 @@
 // Elements
 
 @import
-	"will-style/elements/expanded-rows",
+	"will-style/elements/expanded-items",
 	"will-style/elements/patterned-backgrounds",
 	"will-style/elements/image-loading",
 	"will-style/elements/image-backgrounds",

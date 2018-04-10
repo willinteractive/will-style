@@ -1,0 +1,35 @@
+//
+// Mixins for Expanded Items
+//
+
+@mixin expand-item($x: true, $y: true) {
+	@if $x == true {
+		padding-left: 6rem;
+		padding-right: 6rem;
+
+		@include media-breakpoint-only(md) {
+			padding-left: 3rem;
+			padding-right: 3rem;
+		}
+
+		@include media-breakpoint-down(sm) {
+			padding-left: 2rem;
+			padding-right: 2rem;
+		}
+	}
+
+	@if $y == true {
+		padding-top: 6rem;
+		padding-bottom: 6rem;
+
+		@include media-breakpoint-only(md) {
+			padding-top: 3rem;
+			padding-bottom: 3rem;
+		}
+
+		@include media-breakpoint-down(sm) {
+			padding-top: 2rem;
+			padding-bottom: 2rem;
+		}
+	}
+}
