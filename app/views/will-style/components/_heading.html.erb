@@ -5,8 +5,10 @@
 <% title_class = defined?(page_heading) && page_heading == true ? "display-1" : "display-4" %>
 <% title_class += invert_colors ? " text-light" : "" %>
 
+<% delay_prop = defined?(animated_delay) ? "data-animated-delay=#{animated_delay}" : "" %>
+
 <div class="will-heading">
-	<div class="title-container" data-animated>
+	<div class="title-container" data-animated <%= delay_prop %>>
 		<div class="subtitle-container">
 			<h3 class="will-teal font-weight-normal subtitle"><%= subtitle %></h3>
 			<% unless subtitle.blank? %>
@@ -18,6 +20,6 @@
 	</div>
 
 	<% if defined?(text) %>
-		<p class="text lead<%= invert_colors ? " text-light" : "" %>" data-animated data-animated-target=".title-container"><%= text %></p>
+		<p class="text lead<%= invert_colors ? " text-light" : "" %>" data-animated data-animated-target=".title-container" <%= delay_prop %>><%= text %></p>
 	<% end %>
 </div>

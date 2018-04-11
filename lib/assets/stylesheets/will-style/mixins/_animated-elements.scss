@@ -40,18 +40,30 @@ $animated-element-active-selector: "[#{$animated-element-active-prop}]" !default
 	}
 }
 
-@mixin animated-element-delay($ms: 0, $includes-root-element: true) {
+@mixin animated-element-delay($ms: 0, $delay: -1, $includes-root-element: true) {
+	@if $delay == -1 {
+		$delay: $ms;
+	}
+
 	@if $includes-root-element == true {
 		&[#{$animated-element-delay-prop}="#{$ms}"] {
 			@include animated-element-active {
-				transition-delay: #{$ms}ms;
+				transition-delay: #{$delay}ms;
 			}
 		}
 	} @else {
 		[#{$animated-element-delay-prop}="#{$ms}"] {
 			@include animated-element-active {
-				transition-delay: #{$ms}ms;
+				transition-delay: #{$delay}ms;
 			}
+		}
+	}
+}
+
+@mixin animated-element-delay-block($ms: 0) {
+	&[#{$animated-element-delay-prop}="#{$ms}"] {
+		@include animated-element-active {
+			@content;
 		}
 	}
 }

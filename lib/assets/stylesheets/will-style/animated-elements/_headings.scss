@@ -40,6 +40,23 @@
 				transform: scaleX(1);
 			}
 		}
+
+		// Add delay capabilities
+		@for $i from 1 through 15 {
+			@include animated-element-delay-block($ms: $i * 100) {
+				.title {
+					transition-delay: #{$i * 100}ms;
+				}
+
+				.subtitle {
+					transition-delay: #{$i * 100 + 300}ms;
+				}
+
+				.subtitle-line {
+					transition-delay: #{$i * 100 + 600}ms;
+				}
+			}
+		}
 	}
 
 	.text {
@@ -54,6 +71,11 @@
 		@include animated-element-active {
 			opacity: 1;
 			transform: translateY(0);
+		}
+
+		// Add delay capabilities
+		@for $i from 1 through 15 {
+			@include animated-element-delay($ms: $i * 100, $delay: $i * 100 + 1000);
 		}
 	}
 }
