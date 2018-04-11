@@ -3,14 +3,19 @@
 //
 
 // Variables
+$animated-element-prop: "data-animated" !default;
+$animated-element-default-prop: "data-animated-default" !default;
+$animated-element-delay-prop: "data-animated-delay" !default;
+$animated-element-active-prop: "data-animated-active" !default;
 
-$animated-selector: "[data-animated]";
-$animated-active-selector: "[data-animated-active]";
+$animated-element-selector: "[#{$animated-element-prop}]" !default;
+$animated-element-default-selector: "[#{$animated-element-default-prop}]" !default;
+$animated-element-active-selector: "[#{$animated-element-active-prop}]" !default;
 
 // Yield function for initializing transitions on animated elements
 
 @mixin animated-element-init {
-	&#{$animated-selector} {
+	&#{$animated-element-selector} {
 		@content;
 	}
 }
@@ -18,7 +23,35 @@ $animated-active-selector: "[data-animated-active]";
 // Yield function for setting up transitions on animated elements activating
 
 @mixin animated-element-active {
-	&#{$animated-active-selector} {
+	&#{$animated-element-active-selector} {
 		@content;
+	}
+}
+
+@mixin animated-element-default($includes-root-element: true) {
+	@if $includes-root-element == true {
+		&#{$animated-element-default-selector} {
+			@content;
+		}
+	} @else {
+		#{$animated-element-default-selector} {
+			@content;
+		}
+	}
+}
+
+@mixin animated-element-delay($ms: 0, $includes-root-element: true) {
+	@if $includes-root-element == true {
+		&[#{$animated-element-delay-prop}="#{$ms}"] {
+			@include animated-element-active {
+				transition-delay: #{$ms}ms;
+			}
+		}
+	} @else {
+		[#{$animated-element-delay-prop}="#{$ms}"] {
+			@include animated-element-active {
+				transition-delay: #{$ms}ms;
+			}
+		}
 	}
 }

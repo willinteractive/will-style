@@ -2,7 +2,7 @@
 // Default Animation for Animated Elements
 //
 
-[data-animated-default] {
+@include animated-element-default($includes-root-element: false) {
 	@include animated-element-init {
 		opacity: 0;
 		transform: translateY(15%);
@@ -18,9 +18,5 @@
 }
 
 @for $i from 1 through 50 {
-	[data-animated-delay="#{$i * 100}"] {
-		@include animated-element-active {
-			transition-delay: #{$i * 100}ms;
-		}
-	}
+	@include animated-element-delay($ms: $i * 100, $includes-root-element: false);
 }
