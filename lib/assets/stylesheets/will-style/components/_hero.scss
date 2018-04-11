@@ -8,5 +8,9 @@
 		padding-bottom: $navbar-height;
 
 		background-attachment: fixed;
+
+		&:after {
+			background-attachment: fixed;
+		}
 	}
 }
