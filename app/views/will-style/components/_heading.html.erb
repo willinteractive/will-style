@@ -6,16 +6,18 @@
 <% title_class += invert_colors ? " text-light" : "" %>
 
 <div class="will-heading">
-	<div class="subtitle-container">
-		<h3 class="will-teal font-weight-normal"><%= subtitle %></h3>
-		<% unless subtitle.blank? %>
-			<div class="subtitle-line <%= invert_colors ? " bg-light" : "bg-dark" %>"></div>
-		<% end %>
+	<div class="title-container" data-animated>
+		<div class="subtitle-container">
+			<h3 class="will-teal font-weight-normal subtitle"><%= subtitle %></h3>
+			<% unless subtitle.blank? %>
+				<div class="subtitle-line <%= invert_colors ? " bg-light" : "bg-dark" %>"></div>
+			<% end %>
+		</div>
+
+		<h1 class="title <%= title_class %>"><%= raw title %></h1>
 	</div>
 
-	<h1 class="title <%= title_class %>"><%= raw title %></h1>
-
 	<% if defined?(text) %>
-		<p class="text lead<%= invert_colors ? " text-light" : "" %>"><%= text %></p>
+		<p class="text lead<%= invert_colors ? " text-light" : "" %>" data-animated data-animated-target=".title-container"><%= text %></p>
 	<% end %>
 </div>

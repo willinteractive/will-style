@@ -1,0 +1,24 @@
+//
+// Animated Elements Mixins and Helpers
+//
+
+// Variables
+
+$animated-selector: "[data-animated]";
+$animated-active-selector: "[data-animated-active]";
+
+// Yield function for initializing transitions on animated elements
+
+@mixin animated-element-init {
+	&#{$animated-selector} {
+		@content;
+	}
+}
+
+// Yield function for setting up transitions on animated elements activating
+
+@mixin animated-element-active {
+	&#{$animated-active-selector} {
+		@content;
+	}
+}

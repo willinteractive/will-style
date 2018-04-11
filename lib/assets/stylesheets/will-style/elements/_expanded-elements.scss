@@ -1,23 +1,23 @@
 //
-// Expanding Items
+// Expanding Elements
 //
 
 .row.expanded,
 .col.expanded,
 [class*='col-'].expanded {
-	@include expand-item($x: true, $y: true);
+	@include expand-element($x: true, $y: true);
 }
 
 .row.expanded-x,
 .col.expanded-x,
 [class*='col-'].expanded-x {
-	@include expand-item($x: true, $y: false);
+	@include expand-element($x: true, $y: false);
 }
 
 .row.expanded-y,
 .col.expanded-y,
 [class*='col-'].expanded-y {
-	@include expand-item($x: false, $y: true);
+	@include expand-element($x: false, $y: true);
 }
 
 .row.full-height,

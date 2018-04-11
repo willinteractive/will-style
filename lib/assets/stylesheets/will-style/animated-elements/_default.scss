@@ -1,0 +1,26 @@
+//
+// Default Animation for Animated Elements
+//
+
+[data-animated-default] {
+	@include animated-element-init {
+		opacity: 0;
+		transform: translateY(15%);
+
+		transition: opacity 0.4s,
+					transform 0.4s;
+	}
+
+	@include animated-element-active {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@for $i from 1 through 50 {
+	[data-animated-delay="#{$i * 100}"] {
+		@include animated-element-active {
+			transition-delay: #{$i * 100}ms;
+		}
+	}
+}

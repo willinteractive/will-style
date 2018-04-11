@@ -27,7 +27,8 @@
 	"will-style/mixins/outlined-elements",
 	"will-style/mixins/shadows",
 	"will-style/mixins/patterned-backgrounds",
-	"will-style/mixins/expanded-items";
+	"will-style/mixins/expanded-elements",
+	"will-style/mixins/animated-elements";
 
 // Transitions
 
@@ -104,7 +105,7 @@
 // Elements
 
 @import
-	"will-style/elements/expanded-items",
+	"will-style/elements/expanded-elements",
 	"will-style/elements/patterned-backgrounds",
 	"will-style/elements/image-loading",
 	"will-style/elements/image-backgrounds",
@@ -130,7 +131,8 @@
 // Animations
 
 @import
-	"will-style/animations/page";
+	"will-style/animated-elements/default",
+	"will-style/animated-elements/headers";
 
 // Libraries
 

@@ -15,8 +15,9 @@
 # -------- COMPONENTS
 #= require will-style/components/hideable-sidebar
 
-# -------- ELEMENTS
-#= require will-style/elements/image-loading
+# -------- FEATURES
+#= require will-style/features/image-loading
+#= require will-style/features/animated-elements
 
 # -------- FORMS
 #= require will-style/forms/required-inputs
