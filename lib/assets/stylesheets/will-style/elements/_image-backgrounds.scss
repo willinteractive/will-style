@@ -1,32 +1,48 @@
 .image-bg {
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
+	position: relative;
+	overflow: hidden;
 
-	// Image Loading
-	// @NOTE: Use the overlay to hide the image so that it doesn't hide the title
-	opacity: 1;
+	.image-bg-display {
+		position: absolute;
 
-	&:before,
-	&:after {
-		transition: opacity 0.2s;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
 	}
 
-	&:before {
+	&,
+	.image-bg-display {
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+
+		// Image Loading
+		// @NOTE: Use the overlay to hide the image so that it doesn't hide the title
 		opacity: 1;
-	}
+		will-change: opacity;
 
-	&:after {
-		opacity: 0;
-	}
+		&:before,
+		&:after {
+			transition: opacity 0.2s;
+		}
 
-	&.loaded {
 		&:before {
-			opacity: $patterned-background-overlay-opacity;
+			opacity: 1;
 		}
 
 		&:after {
-			opacity: $patterned-background-opacity;
+			opacity: 0;
+		}
+
+		&.loaded {
+			&:before {
+				opacity: $patterned-background-overlay-opacity;
+			}
+
+			&:after {
+				opacity: $patterned-background-opacity;
+			}
 		}
 	}
 }

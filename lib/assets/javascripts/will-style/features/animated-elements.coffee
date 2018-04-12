@@ -1,8 +1,8 @@
-# @TODO: Handle parallax-0 to parallax-100
+# @TODO: Measure and improve performance
 
-#------------------------------------------------------------------------------------------
+#----------------------------------------------------------------------------------------------
 # This class will add before, after and active classes to elements with an animating property -
-#------------------------------------------------------------------------------------------
+#----------------------------------------------------------------------------------------------
 
 #---------------------
 # Private Constants  -
@@ -90,9 +90,7 @@ _updateAnimatedElements = ->
     # If we're using another element for targeting, use it
     if element.data("animated-target")?
       potentialTarget = _getTargetForElement(element)
-
-      if potentialTarget
-        target = $(potentialTarget)
+      target = $(potentialTarget) if potentialTarget
 
     if target.data("animate-id") and _heightCache[target.data("animate-id")]
       targetTop = _heightCache[target.data("animate-id")].top
@@ -118,9 +116,10 @@ _updateAnimatedElements = ->
 
       progressivePosition = 0
 
-      # @TODO: position 0 is correct but position 100 is when the top of the element is at the top of the window
-      travelDistance = windowHeight + targetHeight
-      progressivePosition = Math.floor(Math.abs(1.0 - travelDistance / (targetBottom - windowTop)) * 100)
+      totalDistance = windowHeight + targetHeight
+      traveledDistance = targetBottom - windowTop
+
+      progressivePosition = Math.floor((totalDistance - traveledDistance) / totalDistance * 100)
 
       progressivePosition = 0 if progressivePosition < 0
       progressivePosition = 100 if progressivePosition > 100
