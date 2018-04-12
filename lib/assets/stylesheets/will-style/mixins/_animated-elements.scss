@@ -5,11 +5,15 @@
 // Variables
 $animated-element-prop: "data-animated" !default;
 $animated-element-default-prop: "data-animated-default" !default;
+$animated-element-left-prop: "data-animated-left" !default;
+$animated-element-right-prop: "data-animated-right" !default;
 $animated-element-delay-prop: "data-animated-delay" !default;
 $animated-element-active-prop: "data-animated-active" !default;
 
 $animated-element-selector: "[#{$animated-element-prop}]" !default;
 $animated-element-default-selector: "[#{$animated-element-default-prop}]" !default;
+$animated-element-left-selector: "[#{$animated-element-left-prop}]" !default;
+$animated-element-right-selector: "[#{$animated-element-right-prop}]" !default;
 $animated-element-active-selector: "[#{$animated-element-active-prop}]" !default;
 
 // Yield function for initializing transitions on animated elements
@@ -40,6 +44,31 @@ $animated-element-active-selector: "[#{$animated-element-active-prop}]" !default
 	}
 }
 
+@mixin animated-element-left($includes-root-element: true) {
+	@if $includes-root-element == true {
+		&#{$animated-element-left-selector} {
+			@content;
+		}
+	} @else {
+		#{$animated-element-left-selector} {
+			@content;
+		}
+	}
+}
+
+@mixin animated-element-right($includes-root-element: true) {
+	@if $includes-root-element == true {
+		&#{$animated-element-right-selector} {
+			@content;
+		}
+	} @else {
+		#{$animated-element-right-selector} {
+			@content;
+		}
+	}
+}
+
+
 @mixin animated-element-delay($ms: 0, $delay: -1, $includes-root-element: true) {
 	@if $delay == -1 {
 		$delay: $ms;
@@ -48,13 +77,13 @@ $animated-element-active-selector: "[#{$animated-element-active-prop}]" !default
 	@if $includes-root-element == true {
 		&[#{$animated-element-delay-prop}="#{$ms}"] {
 			@include animated-element-active {
-				transition-delay: #{$delay}ms;
+				transition-delay: #{$delay}ms !important;
 			}
 		}
 	} @else {
 		[#{$animated-element-delay-prop}="#{$ms}"] {
 			@include animated-element-active {
-				transition-delay: #{$delay}ms;
+				transition-delay: #{$delay}ms !important;
 			}
 		}
 	}
