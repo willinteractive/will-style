@@ -20,3 +20,33 @@
 @for $i from 1 through 50 {
 	@include animated-element-delay($ms: $i * 100, $includes-root-element: false);
 }
+
+@include animated-element-left($includes-root-element: false) {
+	@include animated-element-init {
+		opacity: 0;
+		transform: translateX(-15%);
+
+		transition: opacity 0.4s,
+					transform 0.4s;
+	}
+
+	@include animated-element-active {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@include animated-element-right($includes-root-element: false) {
+	@include animated-element-init {
+		opacity: 0;
+		transform: translateX(15%);
+
+		transition: opacity 0.4s,
+					transform 0.4s;
+	}
+
+	@include animated-element-active {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
