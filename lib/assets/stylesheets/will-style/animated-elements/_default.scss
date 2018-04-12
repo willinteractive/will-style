@@ -3,6 +3,8 @@
 //
 
 @include animated-element-default($includes-root-element: false) {
+	will-change: opacity, transform;
+
 	@include animated-element-init {
 		opacity: 0;
 		transform: translateY(15%);
@@ -22,6 +24,8 @@
 }
 
 @include animated-element-left($includes-root-element: false) {
+	will-change: opacity, transform;
+
 	@include animated-element-init {
 		opacity: 0;
 		transform: translateX(-15%);
@@ -37,6 +41,8 @@
 }
 
 @include animated-element-right($includes-root-element: false) {
+	will-change: opacity, transform;
+
 	@include animated-element-init {
 		opacity: 0;
 		transform: translateX(15%);

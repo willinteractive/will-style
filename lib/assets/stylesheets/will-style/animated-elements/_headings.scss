@@ -4,6 +4,12 @@
 
 .will-heading {
 	.title-container {
+		.title,
+		.subtitle,
+		.subtitle-line {
+			will-change: opacity, transform;
+		}
+
 		@include animated-element-init {
 			.title {
 				opacity: 0;
@@ -60,6 +66,8 @@
 	}
 
 	.text {
+		will-change: opacity, transform;
+
 		@include animated-element-init {
 			opacity: 0;
 			transform: translateY(15%);
