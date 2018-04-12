@@ -1,5 +1,13 @@
+.image-bg[data-animated-progressive] {
+	will-change: background-position-y;
+
+	// @TODO: We need to make the background size big enough for the animation
+}
+
 @for $i from 1 through 100 {
 	.image-bg[data-animated-progressive][data-animated-progressive-position="#{$i}"] {
-		background-position-y: calc(50% - #{$i / 5}px);
+
+	transition: background-position-y 300ms;
+		background-position-y: calc(50% - #{$i}px);
 	}
 }

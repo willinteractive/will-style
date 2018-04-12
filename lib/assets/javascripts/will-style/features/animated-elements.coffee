@@ -79,6 +79,9 @@ _updateAnimatedElements = ->
   $(_animatedElementSelector).each ->
     element = $(this)
 
+    # Don't bother with calculations if we're already active and we don't need progressive stuff
+    return if element.data("animated-active")? and not element.data("animated-progressive")?
+
     targetTop = -1
     targetHeight = -1
 
