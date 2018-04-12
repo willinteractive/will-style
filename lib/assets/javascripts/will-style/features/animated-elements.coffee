@@ -85,7 +85,7 @@ _updateAnimatedElements = ->
     target = element
 
     # If we're using another element for targeting, use it
-    if element.data("animated-target")
+    if element.data("animated-target")?
       potentialTarget = _getTargetForElement(element)
 
       if potentialTarget
@@ -109,6 +109,24 @@ _updateAnimatedElements = ->
     if targetTop + targetHeight < windowTop + windowHeight
       element.attr("data-animated-active", "true")
 
+    # Set progressive classes if element is asking for it
+    if element.data("animated-progressive")?
+      targetBottom = targetTop + targetHeight
+
+      progressivePosition = 0
+
+      # @TODO: position 0 is correct but position 100 is when the top of the element is at the top of the window
+      travelDistance = windowHeight + targetHeight
+      progressivePosition = Math.floor(Math.abs(1.0 - travelDistance / (targetBottom - windowTop)) * 100)
+
+      progressivePosition = 0 if progressivePosition < 0
+      progressivePosition = 100 if progressivePosition > 100
+
+      if progressivePosition > 0
+        element.attr("data-animated-progressive-position", progressivePosition)
+      else
+        element.removeAttr("data-animated-progressive-position")
+
   clearTimeout(_updateTimer) if _updateTimer
 
   _updateTimer = setTimeout ->
@@ -117,6 +135,10 @@ _updateAnimatedElements = ->
   , _frameRate
 
 _scheduleAnimatedElementsUpdate = ->
+  if _isUpdating is true
+    _requiresUpdate = true
+    return
+
   if window.requestAnimationFrame
     window.requestAnimationFrame(_updateAnimatedElements)
   else

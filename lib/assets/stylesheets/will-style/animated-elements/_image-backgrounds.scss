@@ -1,0 +1,5 @@
+@for $i from 1 through 100 {
+	.image-bg[data-animated-progressive][data-animated-progressive-position="#{$i}"] {
+		background-position-y: calc(50% - #{$i / 5}px);
+	}
+}
