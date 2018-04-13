@@ -9,7 +9,7 @@
 #---------------------
 
 _animatedElementSelector = "[data-animated]"
-_frameRate = 1000 / 12
+_frameRate = 1000 / 60
 
 #---------------------
 # Private Properties -
