@@ -13,6 +13,10 @@ $animated-element-active-prop: "data-animated-active" !default;
 $animated-element-progressive-prop: "data-animated-progressive" !default;
 $animated-element-progressive-position-prop: "data-animated-progressive-position" !default;
 
+$animated-number-top-prop: "data-animated-number-top" !default;
+$animated-number-bottom-prop: "data-animated-number-bottom" !default;
+
+
 $animated-element-selector: "[#{$animated-element-prop}]" !default;
 $animated-element-default-selector: "[#{$animated-element-default-prop}]" !default;
 $animated-element-left-selector: "[#{$animated-element-left-prop}]" !default;
@@ -20,6 +24,9 @@ $animated-element-right-selector: "[#{$animated-element-right-prop}]" !default;
 $animated-element-top-selector: "[#{$animated-element-top-prop}]" !default;
 $animated-element-active-selector: "[#{$animated-element-active-prop}]" !default;
 $animated-element-progressive-selector: "[#{$animated-element-progressive-prop}]" !default;
+
+$animated-number-top-selector: "[#{$animated-number-top-prop}]" !default;
+$animated-number-bottom-selector: "[#{$animated-number-bottom-prop}]" !default;
 
 // Yield function for initializing transitions on animated elements
 
@@ -122,6 +129,33 @@ $animated-element-progressive-selector: "[#{$animated-element-progressive-prop}]
 @mixin animated-element-delay-block($ms: 0) {
 	&[#{$animated-element-delay-prop}="#{$ms}"] {
 		@include animated-element-active {
+			@content;
+		}
+	}
+}
+
+
+// STAT NUMS
+
+@mixin animated-number-top($includes-root-element: true) {
+	@if $includes-root-element == true {
+		&#{$animated-number-top-selector} {
+			@content;
+		}
+	} @else {
+		#{$animated-number-top-selector} {
+			@content;
+		}
+	}
+}
+
+@mixin animated-number-bottom($includes-root-element: true) {
+	@if $includes-root-element == true {
+		&#{$animated-number-bottom-selector} {
+			@content;
+		}
+	} @else {
+		#{$animated-number-bottom-selector} {
 			@content;
 		}
 	}

@@ -75,3 +75,44 @@
 		transform: translateY(0);
 	}
 }
+
+
+// STAT NUMS => Move a Greater Distance on the Y
+
+
+@include animated-number-top($includes-root-element: false) {
+	will-change: opacity, transform;
+
+	@include animated-element-init {
+		opacity: 0;
+		transform: translateY(50%);
+		display: block;
+		transition: opacity 0.4s,
+					transform 0.4s;
+	}
+
+	@include animated-element-active {
+		opacity: 1;
+		display: block;
+		transform: translateY(0);
+	}
+}
+
+@include animated-number-bottom($includes-root-element: false) {
+	will-change: opacity, transform;
+
+	@include animated-element-init {
+		opacity: 0;
+		transform: translateY(-50%);
+		display: block;
+		transition: opacity 0.4s,
+					transform 0.4s;
+	}
+
+	@include animated-element-active {
+		opacity: 1;
+		display: block;
+		transform: translateY(0);
+	}
+}
+
