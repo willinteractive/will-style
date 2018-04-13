@@ -1,0 +1,35 @@
+//
+// Scale Properties
+//
+
+$global-scale-factor: 0.2 !default;
+
+@mixin scale-property($property: 'font-size', $value: $font-size-base, $scale-factor: $global-scale-factor) {
+	#{$property}: $value;
+
+	// @include media-breakpoint-only(md) {
+	// 	#{$property}: $value;
+	// }
+
+	@include media-breakpoint-only(lg) {
+		#{$property}: $value + $value * $scale-factor;
+	}
+
+	@include media-breakpoint-only(xl) {
+		#{$property}: $value + $value * $scale-factor * 2;
+	}
+
+	@include media-breakpoint-only(xxl) {
+		#{$property}: $value + $value * $scale-factor * 4;
+	}
+
+	@include media-breakpoint-up(xxxl) {
+		#{$property}: $value + $value * $scale-factor * 6;
+	}
+}
+
+// Shortcut to scale font-size property
+
+@mixin scale-font-size($size: $paragraph-font-size, $scale-factor: $global-scale-factor) {
+	@include scale-property('font-size', $size, $scale-factor);
+}

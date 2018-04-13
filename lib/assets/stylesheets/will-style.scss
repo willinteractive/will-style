@@ -9,10 +9,9 @@
 	"will-style/core/typography/rails",
 
 	"will-style/core/variables",
-
 	"bootstrap/variables",
 
-	"will-style/core/calculations";
+	"will-style/core/overrides";
 
 // Mixins
 
@@ -28,7 +27,8 @@
 	"will-style/mixins/shadows",
 	"will-style/mixins/patterned-backgrounds",
 	"will-style/mixins/expanded-elements",
-	"will-style/mixins/animated-elements";
+	"will-style/mixins/animated-elements",
+	"will-style/mixins/scaled-properties";
 
 // Transitions
 

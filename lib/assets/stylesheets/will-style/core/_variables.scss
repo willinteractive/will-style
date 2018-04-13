@@ -6,7 +6,7 @@ $gray-100: $will-bg-lighter;
 $gray-200: $will-action-gray;
 $gray-300: $will-bg-light;
 $gray-400: $will-action-gray;
-$gray-500: #adb5bd !default;
+$gray-500: #adb5bd;
 $gray-600: $will-bg-dark;
 $gray-700: $will-light-gray;
 $gray-800: $will-bg-darker;
@@ -36,6 +36,24 @@ $body-bg:		$white;
 $body-color:	$will-dark-gray;
 
 $primary-lighter:	$will-green;
+
+// Type
+
+$font-size-base:              1rem;
+
+$h1-font-size:                $font-size-base * 2.5;
+$h2-font-size:                $font-size-base * 2;
+$h3-font-size:                $font-size-base * 1.75;
+$h4-font-size:                $font-size-base * 1.5;
+$h5-font-size:                $font-size-base * 1.25;
+$h6-font-size:                $font-size-base;
+
+$display1-size:               3rem;
+$display2-size:               2.75rem;
+$display3-size:               2.5rem;
+$display4-size:               2.25rem;
+
+$lead-font-size:              $font-size-base * 1.25;
 
 // Components
 
