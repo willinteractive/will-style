@@ -18,18 +18,38 @@
 	// Accent Line
 
 	.subtitle-container {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		padding-right: 1rem;
+		@include media-breakpoint-up(md) {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			padding-right: 1rem;
+		}
+
+		@include media-breakpoint-down(sm) {
+			&,
+			.subtitle {
+				display: inline-block;
+				width: auto;
+
+				margin-bottom: 0;
+				line-height: 1;
+			}
+		}
 
 		.subtitle-line {
-			flex-grow: 1;
-
-			max-width: 250px;
-
 			height: 2px;
-			margin-left: 1rem;
+
+			@include media-breakpoint-up(md) {
+				flex-grow: 1;
+
+				max-width: 250px;
+				margin-left: 1rem;
+			}
+
+			@include media-breakpoint-down(sm) {
+				display: inline-block;
+				width: 100%;
+			}
 		}
 	}
 }
