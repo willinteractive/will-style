@@ -9,7 +9,7 @@
 			bottom: -101px;
 
 			will-change: transform;
-			transition: transform 300ms;
+			transition: transform 300ms linear;
 		}
 	}
 }
