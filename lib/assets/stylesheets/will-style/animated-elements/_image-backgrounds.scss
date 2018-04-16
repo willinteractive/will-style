@@ -6,7 +6,7 @@
 	@include animated-element-progressive {
 		.image-bg-display {
 			// Add extra space for transition
-			bottom: -101px;
+			bottom: -201px;
 
 			will-change: transform;
 			transition: transform 300ms linear;
@@ -17,7 +17,7 @@
 @for $i from 1 through 100 {
 	@include animated-element-progressive-position($i) {
 		.image-bg-display {
-			transform: translateY(#{0 - $i}px);
+			transform: translateY(#{0 - $i * 2}px);
 		}
 	}
 }
