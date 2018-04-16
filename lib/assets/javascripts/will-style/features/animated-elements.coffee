@@ -1,5 +1,3 @@
-# @TODO: Measure and improve performance
-
 #----------------------------------------------------------------------------------------------
 # This class will add before, after and active classes to elements with an animating property -
 #----------------------------------------------------------------------------------------------
@@ -25,7 +23,10 @@ _requiresUpdate = false
 
 _cachedScrollTop = -1
 _cachedWindowHeight = -1
+_cachedElements = undefined
+
 _heightCache = {}
+_targetCache = {}
 
 #---------------------
 # Private Methods    -
@@ -38,9 +39,15 @@ _generateID = ->
     v.toString 16
 
 _getTargetForElement = (element) ->
+  # Pull element from target cache if it's there
+  return _targetCache[element.data("animate-id")] if _targetCache[element.data("animate-id")]
+
   # If target is inside the element, return it
   if element.find(element.data("animated-target")).length > 0
-    return element.find(element.data("animated-target"))[0]
+    target = element.find(element.data("animated-target"))[0]
+    _targetCache[element.data("animate-id")] = target
+
+    return target
 
   # Loop through parents to find target
   parent = element.parent()
@@ -50,7 +57,10 @@ _getTargetForElement = (element) ->
     targets = parent.find(element.data("animated-target"))
 
     if targets.length > 0
-      return targets[0]
+      target = targets[0]
+      _targetCache[element.data("animate-id")] = target
+
+      return target
 
     parent = parent.parent()
 
@@ -76,7 +86,9 @@ _updateAnimatedElements = ->
   windowCenter = windowHeight / 2 + windowTop
   windowBottom = windowHeight + windowTop
 
-  $(_animatedElementSelector).each ->
+  _cachedElements = $(_animatedElementSelector) unless _cachedElements
+
+  _cachedElements.each ->
     element = $(this)
 
     # Don't bother with calculations if we're already active and we don't need progressive stuff
@@ -87,6 +99,10 @@ _updateAnimatedElements = ->
 
     target = element
 
+    # Set animation ids for cache reference
+    target.data("animate-id", _generateID()) unless target.data("animate-id")
+    element.data("animate-id", _generateID()) unless element.data("animate-id")
+
     # If we're using another element for targeting, use it
     if element.data("animated-target")?
       potentialTarget = _getTargetForElement(element)
@@ -95,8 +111,6 @@ _updateAnimatedElements = ->
     if target.data("animate-id") and _heightCache[target.data("animate-id")]
       targetTop = _heightCache[target.data("animate-id")].top
       targetHeight = _heightCache[target.data("animate-id")].height
-    else unless target.data("animate-id")
-      target.data("animate-id", _generateID())
 
     if targetTop < 1
       targetTop = target.offset().top
@@ -194,8 +208,11 @@ $(window).on "resize", ->
 
 $(document).on 'turbolinks:load', ->
   _heightCache = {}
+  _targetCache = {}
+
   _cachedScrollTop = -1
   _cachedWindowHeight = -1
+  _cachedElements = undefined
 
   _setupImageLoading()
   _scheduleAnimatedElementsUpdate()
