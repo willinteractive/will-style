@@ -40,6 +40,10 @@
 				opacity: $patterned-background-overlay-opacity;
 			}
 
+			&.patterned-bg-dark:before {
+				opacity: $patterned-background-overlay-opacity-darker;
+			}
+
 			&:after {
 				opacity: $patterned-background-opacity;
 			}
