@@ -32,10 +32,19 @@ nav.navbar {
 	 	}
 	 }
 
-	// Add absolutely positioned navbars with the navbar-abs class
+	// Add absolutely positioned and fixed position navbars with the navbar-abs class
 
 	&.navbar-abs {
 		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+
+		z-index: $navbar-z-index;
+	}
+
+	&.navbar-fixed {
+		position: fixed;
 		top: 0;
 		left: 0;
 		right: 0;
