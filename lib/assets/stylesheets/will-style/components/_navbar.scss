@@ -4,6 +4,34 @@
 
 nav.navbar {
 
+	 .nav-link {
+	 	transition: color 0.2s ease-in-out;
+
+	 	position: relative;
+
+	 	&:after {
+	 		content: "";
+	 		position: absolute;
+	 		bottom: 0;
+	 		left: 0;
+	 		right: 0;
+
+	 		@include scale-property(height, 1px, $global-scale-factor);
+
+	 		background-color: $navbar-dark-hover-color;
+
+	 		transform: scaleX(0);
+	 		transform-origin: left center;
+	 		transition: transform 0.4s ease-in-out;
+	 	}
+
+	 	@include hover-focus {
+	 		&:after {
+	 			transform: scaleX(1);
+	 		}
+	 	}
+	 }
+
 	// Add absolutely positioned navbars with the navbar-abs class
 
 	&.navbar-abs {

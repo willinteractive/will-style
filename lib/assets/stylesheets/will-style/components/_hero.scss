@@ -16,6 +16,8 @@
 
 	// Fix video bg positioning for parallax animation
 	.video-bg {
-		position: fixed;
+		video {
+			position: fixed;
+		}
 	}
 }
