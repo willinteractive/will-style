@@ -19,20 +19,26 @@
 		<% end %>
 
 		<div class="col-sm-12">
-			<% if defined?(custom_content) && custom_content == true %>
-				<%= yield %>
-			<% else %>
-				<%= render partial: "will-style/components/heading", locals: {
-					subtitle: defined?(subtitle) ? subtitle : "",
-					title: defined?(title) ? title : "",
-					invert_colors: true,
-					page_heading: true
-				} %>
-			<% end %>
-		</div>
+			<div class="row expanded-y">
+				<div class="col-sm-12">
+					<% if defined?(custom_content) && custom_content == true %>
+						<%= yield %>
+					<% else %>
+						<%= render partial: "will-style/components/heading", locals: {
+							subtitle: defined?(subtitle) ? subtitle : "",
+							title: defined?(title) ? title : "",
+							invert_colors: true,
+							page_heading: true
+						} %>
+					<% end %>
+				</div>
+			</div>
 
-		<div class="col-sm-12 text-center" data-animated data-animated-default data-animated-delay="1200" data-animated-hidden-after>
-			<i class="will-icon-next_arrow text-light display-4 rotated"></i>
+			<div class="row expanded-y">
+				<div class="col-sm-12 text-center" data-animated data-animated-default data-animated-delay="1200" data-animated-hidden-after>
+					<i class="will-icon-next_arrow text-light display-4 rotated"></i>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
