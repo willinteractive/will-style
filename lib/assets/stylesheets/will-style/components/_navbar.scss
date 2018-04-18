@@ -4,37 +4,75 @@
 
 nav.navbar {
 
-	 .nav-link {
+	// Styling Navbar links
+
+	.nav-link {
 	 	transition: color 0.2s ease-in-out;
 
 	 	position: relative;
 
 	 	@include text-shadow-z2;
 
-	 	&:after {
-	 		content: "";
-	 		position: absolute;
-	 		bottom: 0;
-	 		left: 0;
-	 		right: 0;
+	 	@include media-breakpoint-up(lg) {
+		 	&:after {
+		 		content: "";
+		 		position: absolute;
+		 		bottom: 0;
+		 		left: 0;
+		 		right: 0;
 
-	 		@include scale-property(height, 1px, $global-scale-factor);
+		 		@include scale-property(height, 1px, $global-scale-factor);
 
-	 		background-color: $navbar-dark-hover-color;
+		 		background-color: $navbar-dark-hover-color;
 
-	 		transform: scaleX(0);
-	 		transform-origin: left center;
-	 		transition: transform 0.4s ease-in-out;
+		 		transform: scaleX(0);
+		 		transform-origin: left center;
+		 		transition: transform 0.4s ease-in-out;
 
-	 		@include shadow-z2;
-	 	}
+		 		@include shadow-z2;
+		 	}
 
-	 	@include hover-focus {
-	 		&:after {
-	 			transform: scaleX(1);
-	 		}
-	 	}
+		 	@include hover-focus {
+		 		&:after {
+		 			transform: scaleX(1);
+		 		}
+		 	}
+		}
 	 }
+
+	// Navbar on small screens
+
+	@include media-breakpoint-down(md) {
+		.navbar-collapse {
+			&:before {
+				content: "";
+
+				position: fixed;
+
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+
+				background-color: $dark;
+
+				opacity: 0;
+
+				transition: opacity 0.2s ease-in-out;
+
+				z-index: -1;
+			}
+
+			.nav-item {
+
+			}
+
+			&.collapsing:before,
+			&.show:before {
+				opacity: 0.98;
+			}
+		}
+	}
 
 	// Add absolutely positioned and fixed position navbars with the navbar-abs class
 
