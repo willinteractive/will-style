@@ -1,17 +1,11 @@
 <% name = controller_name + "-" + action_name %>
 
-<% pattern_class = "patterned-bg" %>
-
-<% if defined?(background_video) %>
-	<% pattern_class = " patterned-bg-dark" %>
-<% end %>
-
 <section id="<%= name %>-top" class="hero container-fluid bg-dark">
 	<% unless defined?(custom_content) && custom_content == true %>
 		<%= yield %>
 	<% end %>
 
-	<div class="row full-height align-items-center image-bg<%= (defined?(include_pattern) && include_pattern == false) ? "" : " #{pattern_class}" %>"
+	<div class="row full-height align-items-center image-bg<%= (defined?(include_pattern) && include_pattern == false) ? "" : " patterned-bg-dark" %>"
 
 		<% if defined?(background_image) %>
 			style="background-image: url('<%= asset_url(background_image) %>')"
