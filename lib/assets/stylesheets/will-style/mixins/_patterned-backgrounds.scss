@@ -43,6 +43,7 @@ $patterned-background-overlay-opacity-darker: 0.9;
 	&:after {
 		background-image: asset_url("will-style/patterns/bg-pattern.jpg");
 		background-repeat: repeat;
+		background-attachment: fixed;
 
 		opacity: $patterned-background-opacity;
 	}
