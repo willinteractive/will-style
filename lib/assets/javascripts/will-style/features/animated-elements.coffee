@@ -91,9 +91,6 @@ _updateAnimatedElements = ->
   _cachedElements.each ->
     element = $(this)
 
-    # Don't bother with calculations if we're already active and we don't need progressive stuff
-    return if element.data("animated-active")? and not element.data("animated-progressive")?
-
     targetTop = -1
     targetHeight = -1
 
@@ -123,6 +120,12 @@ _updateAnimatedElements = ->
     # Element is fully visible
     if targetTop + targetHeight < windowTop + windowHeight
       element.attr("data-animated-active", "true")
+
+    # Element is completely off the screen
+    if targetTop + targetHeight < windowTop
+      element.attr("data-animated-after", "true")
+    else
+      element.removeAttr("data-animated-after")
 
     # Set progressive classes if element is asking for it
     if element.data("animated-progressive")?

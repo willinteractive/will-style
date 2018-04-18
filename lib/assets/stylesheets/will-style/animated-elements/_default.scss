@@ -37,7 +37,6 @@
 	}
 }
 
-
 @for $i from 1 through 50 {
 	@include animated-element-delay($ms: $i * 100, $includes-root-element: false);
 }
@@ -76,6 +75,12 @@
 	}
 }
 
+@include animated-element-hidden-after($includes-root-element: false) {
+	@include animated-element-after {
+		opacity: 0;
+		transition-delay: 0 !important;
+	}
+}
 
 // STAT NUMS => Move a Greater Distance on the Y
 

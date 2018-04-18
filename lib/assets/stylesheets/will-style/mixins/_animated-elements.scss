@@ -10,12 +10,13 @@ $animated-element-right-prop: "data-animated-right" !default;
 $animated-element-top-prop: "data-animated-top" !default;
 $animated-element-delay-prop: "data-animated-delay" !default;
 $animated-element-active-prop: "data-animated-active" !default;
+$animated-element-after-prop: "data-animated-after" !default;
+$animated-element-hidden-after-prop: "data-animated-hidden-after" !default;
 $animated-element-progressive-prop: "data-animated-progressive" !default;
 $animated-element-progressive-position-prop: "data-animated-progressive-position" !default;
 
 $animated-number-top-prop: "data-animated-number-top" !default;
 $animated-number-bottom-prop: "data-animated-number-bottom" !default;
-
 
 $animated-element-selector: "[#{$animated-element-prop}]" !default;
 $animated-element-default-selector: "[#{$animated-element-default-prop}]" !default;
@@ -23,6 +24,8 @@ $animated-element-left-selector: "[#{$animated-element-left-prop}]" !default;
 $animated-element-right-selector: "[#{$animated-element-right-prop}]" !default;
 $animated-element-top-selector: "[#{$animated-element-top-prop}]" !default;
 $animated-element-active-selector: "[#{$animated-element-active-prop}]" !default;
+$animated-element-hidden-after-selector: "[#{$animated-element-hidden-after-prop}]" !default;
+$animated-element-after-selector: "[#{$animated-element-after-prop}]" !default;
 $animated-element-progressive-selector: "[#{$animated-element-progressive-prop}]" !default;
 
 $animated-number-top-selector: "[#{$animated-number-top-prop}]" !default;
@@ -40,6 +43,14 @@ $animated-number-bottom-selector: "[#{$animated-number-bottom-prop}]" !default;
 
 @mixin animated-element-active {
 	&#{$animated-element-active-selector} {
+		@content;
+	}
+}
+
+// Yield function for setting up transitions on animated elements after they're off the screen
+
+@mixin animated-element-after {
+	&#{$animated-element-after-selector} {
 		@content;
 	}
 }
@@ -87,6 +98,18 @@ $animated-number-bottom-selector: "[#{$animated-number-bottom-prop}]" !default;
 		}
 	} @else {
 		#{$animated-element-top-selector} {
+			@content;
+		}
+	}
+}
+
+@mixin animated-element-hidden-after($includes-root-element: true) {
+	@if $includes-root-element == true {
+		&#{$animated-element-hidden-after-selector} {
+			@content;
+		}
+	} @else {
+		#{$animated-element-hidden-after-selector} {
 			@content;
 		}
 	}
