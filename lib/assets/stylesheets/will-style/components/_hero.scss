@@ -8,16 +8,5 @@
 		padding-bottom: $navbar-height;
 
 		background-attachment: fixed;
-
-		&:after {
-			background-attachment: fixed;
-		}
-	}
-
-	// Fix video bg positioning for parallax animation
-	.video-bg {
-		video {
-			position: fixed;
-		}
 	}
 }

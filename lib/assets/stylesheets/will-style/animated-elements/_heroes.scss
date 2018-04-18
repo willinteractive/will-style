@@ -1,0 +1,26 @@
+//
+// Hero Animations
+//
+
+.hero .will-heading {
+	.title-container {
+		@include animated-element-after {
+			.title,
+			.subtitle {
+				transition-delay: 0.2s;
+				opacity: 0;
+			}
+
+			.subtitle-line {
+				transition-delay: 0;
+				transform: scaleX(0);
+			}
+		}
+	}
+
+	.text {
+		@include animated-element-after {
+			opacity: 0;
+		}
+	}
+}
