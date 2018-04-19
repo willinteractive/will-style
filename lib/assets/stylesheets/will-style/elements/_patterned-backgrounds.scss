@@ -1,7 +1,3 @@
 .patterned-bg {
 	@include patterned-background();
 }
-
-.patterned-bg-dark {
-	@include patterned-background($darker: true);
-}
