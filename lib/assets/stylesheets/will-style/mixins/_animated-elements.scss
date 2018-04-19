@@ -8,6 +8,7 @@ $animated-element-default-prop: "data-animated-default" !default;
 $animated-element-left-prop: "data-animated-left" !default;
 $animated-element-right-prop: "data-animated-right" !default;
 $animated-element-top-prop: "data-animated-top" !default;
+$animated-element-opacity-prop: "data-animated-opacity" !default;
 $animated-element-delay-prop: "data-animated-delay" !default;
 $animated-element-active-prop: "data-animated-active" !default;
 $animated-element-after-prop: "data-animated-after" !default;
@@ -23,6 +24,7 @@ $animated-element-default-selector: "[#{$animated-element-default-prop}]" !defau
 $animated-element-left-selector: "[#{$animated-element-left-prop}]" !default;
 $animated-element-right-selector: "[#{$animated-element-right-prop}]" !default;
 $animated-element-top-selector: "[#{$animated-element-top-prop}]" !default;
+$animated-element-opacity-selector: "[#{$animated-element-opacity-prop}]" !default;
 $animated-element-active-selector: "[#{$animated-element-active-prop}]" !default;
 $animated-element-hidden-after-selector: "[#{$animated-element-hidden-after-prop}]" !default;
 $animated-element-after-selector: "[#{$animated-element-after-prop}]" !default;
@@ -98,6 +100,18 @@ $animated-number-bottom-selector: "[#{$animated-number-bottom-prop}]" !default;
 		}
 	} @else {
 		#{$animated-element-top-selector} {
+			@content;
+		}
+	}
+}
+
+@mixin animated-element-opacity($includes-root-element: true) {
+	@if $includes-root-element == true {
+		&#{$animated-element-opacity-selector} {
+			@content;
+		}
+	} @else {
+		#{$animated-element-opacity-selector} {
 			@content;
 		}
 	}

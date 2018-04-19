@@ -19,7 +19,6 @@
 	}
 }
 
-
 @include animated-element-top($includes-root-element: false) {
 	will-change: opacity, transform;
 
@@ -35,10 +34,6 @@
 		opacity: 1;
 		transform: translateY(0);
 	}
-}
-
-@for $i from 1 through 50 {
-	@include animated-element-delay($ms: $i * 100, $includes-root-element: false);
 }
 
 @include animated-element-left($includes-root-element: false) {
@@ -73,6 +68,24 @@
 		opacity: 1;
 		transform: translateY(0);
 	}
+}
+
+@include animated-element-opacity($includes-root-element: false) {
+	will-change: opacity;
+
+	@include animated-element-init {
+		opacity: 0;
+
+		transition: opacity 0.4s ease-in-out;
+	}
+
+	@include animated-element-active {
+		opacity: 1;
+	}
+}
+
+@for $i from 1 through 50 {
+	@include animated-element-delay($ms: $i * 100, $includes-root-element: false);
 }
 
 @include animated-element-hidden-after($includes-root-element: false) {
