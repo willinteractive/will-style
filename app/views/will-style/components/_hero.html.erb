@@ -5,7 +5,7 @@
 		<%= yield %>
 	<% end %>
 
-	<div class="row full-height align-items-center image-bg<%= (defined?(include_pattern) && include_pattern == false) ? "" : " patterned-bg-dark" %>"
+	<div class="row full-height align-items-center image-bg<%= (defined?(include_pattern) && include_pattern == false) ? "" : " patterned-bg" %>"
 
 		<% if defined?(background_image) %>
 			style="background-image: url('<%= asset_url(background_image) %>')"
@@ -19,8 +19,8 @@
 		<% end %>
 
 		<div class="col-sm-12">
-			<div class="row expanded-y">
-				<div class="col-sm-12">
+			<div class="row">
+				<div class="col-sm-12 expanded">
 					<% if defined?(custom_content) && custom_content == true %>
 						<%= yield %>
 					<% else %>
@@ -34,8 +34,8 @@
 				</div>
 			</div>
 
-			<div class="row expanded-y">
-				<div class="col-sm-12 text-center" data-animated data-animated-default data-animated-delay="1200" data-animated-hidden-after>
+			<div class="row">
+				<div class="col-sm-12 expanded-y text-center" data-animated data-animated-default data-animated-delay="1200" data-animated-hidden-after>
 					<i class="will-icon-next_arrow text-light display-4 rotated"></i>
 				</div>
 			</div>
