@@ -117,6 +117,10 @@ _updateAnimatedElements = ->
         top: targetTop
         height: targetHeight
 
+    # Remove scroll top if element is data-animation-fixed
+    if element.data("animated-fixed")?
+      targetTop -= windowTop
+
     # Element is fully visible
     if targetTop + targetHeight < windowTop + windowHeight
       element.attr("data-animated-active", "true")
@@ -204,6 +208,7 @@ $(window).on "resize", ->
     _lastWindowHeight = $(window).outerHeight()
     _lastWindowWidth = $(window).outerWidth()
 
+    _cachedScrollTop = -1
     _cachedWindowHeight = -1
     _heightCache = {}
 
