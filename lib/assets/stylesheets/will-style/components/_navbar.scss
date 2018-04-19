@@ -11,8 +11,6 @@ nav.navbar {
 
 	 	position: relative;
 
-	 	@include text-shadow-z2;
-
 	 	@include media-breakpoint-up(lg) {
 		 	&:after {
 		 		content: "";
@@ -28,8 +26,6 @@ nav.navbar {
 		 		transform: scaleX(0);
 		 		transform-origin: left center;
 		 		transition: transform 0.4s ease-in-out;
-
-		 		@include shadow-z2;
 		 	}
 
 		 	@include hover-focus {
