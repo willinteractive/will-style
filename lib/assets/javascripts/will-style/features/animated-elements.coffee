@@ -7,6 +7,7 @@
 #---------------------
 
 _animatedElementSelector = "[data-animated]"
+_staticAnimatedElementSelector = "[data-animated-static]"
 _frameRate = 1000 / 60
 
 #---------------------
@@ -224,3 +225,10 @@ $(document).on 'turbolinks:load', ->
 
   _setupImageLoading()
   _scheduleAnimatedElementsUpdate()
+
+$(document).on 'turbolinks:before-render', (event) ->
+  $(_staticAnimatedElementSelector).each ->
+    element = $(this)
+
+    if element.attr("data-animated-active")? and element.attr("id") isnt ""
+      $(event.originalEvent.data.newBody).find("##{element.attr("id")}").attr("data-animated-active", true)
