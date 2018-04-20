@@ -9,4 +9,19 @@
 
 		background-attachment: fixed;
 	}
+
+	.arrow-wrap {
+		position: absolute;
+
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		padding-bottom: 2rem;
+
+		svg {
+			max-width: 3rem;
+			fill: $will-white;
+		}
+	}
 }
