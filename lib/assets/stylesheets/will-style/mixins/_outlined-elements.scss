@@ -2,27 +2,39 @@
 // Aniamting Outlined Elements
 //
 
-@mixin outlined-button($animation-time: 0.5s, $include-border: false) {
+@mixin outlined-input($light: false) {
+	$bg-color: $will-dark-gray;
+	$fg-color: $will-white;
+
+	@if $light == true {
+		$bg-color: $will-white;
+		$fg-color: $will-dark-gray;
+	}
+
+	$animation-time: 0.2s;
+
 	position: relative;
 	overflow: visible;
 
-	@if $include-border == true {
-		border: 2px solid $body-color;
-	} @else {
-		border: 2px solid transparent !important;
+	background-color: transparent;
+	transition: background-color $animation-time / 2 ease-in-out;
+
+	border: none;
+
+	input,
+	textarea {
+		transition: color $animation-time / 2 ease-in-out;
+		color: $bg-color;
+
+		outline: none;
+
+		background: none;
+		border: none;
+		width: 100%;
 	}
 
-	background: transparent;
-
-	p {
-		line-height: 1;
-		margin-bottom: 0;
-
-		color: $body-color;
-	}
-
-	p:before,
-	p:after {
+	&:before,
+	&:after {
 		content: "";
 
 		margin-top: 0;
@@ -34,11 +46,14 @@
 		left: -2px;
 		right: -2px;
 
-		z-index: 0;
+		z-index: -1;
 
 		height: auto;
 
 		transition-timing-function: linear;
+
+		background-image: 	linear-gradient(to bottom, $bg-color, $bg-color),
+							linear-gradient(to bottom, $bg-color, $bg-color);
 
 		background-repeat: no-repeat;
 
@@ -49,67 +64,70 @@
 	}
 
 	&.disabled {
-		p:before,
-		p:after {
+		&:before,
+		&:after {
 			display: none;
 		}
 	}
 
-	p:before {
-		background-image: 	linear-gradient(to right, $primary-lighter, $primary),
-							linear-gradient(to right, $primary, $primary);
-
-		background-position: center top,
-							 right top;
-
-		transform-origin: left top;
-
-		bottom: 100%;
-
-		transition: transform $animation-time / 2 $animation-time / 4,
-							  bottom $animation-time / 4;
-	}
-
-	p:after {
-		background-image: 	linear-gradient(to bottom, $primary, $primary),
-							linear-gradient(to bottom, $primary-lighter, $primary);
-
+	&:before {
 		background-position: center bottom,
-							 left bottom;
+							 right bottom;
 
-		transform-origin: right bottom;
+		transform-origin: left bottom;
 
 		top: 100%;
 
-		transition: transform $animation-time / 2 $animation-time / 4,
-							  top $animation-time / 4;
+		transition: transform $animation-time / 2 $animation-time / 4 ease-in-out,
+					top $animation-time / 4 ease-in-out;
+	}
+
+	&:after {
+		background-position: center top,
+							 left top;
+
+		transform-origin: right bottom;
+
+		bottom: 100%;
+
+		transition: transform $animation-time / 2 $animation-time / 4 ease-in-out,
+					bottom $animation-time / 4 ease-in-out;
 	}
 
 	&:not([disabled]) {
-		&:hover,
-		&:focus {
-			background-color: transparent;
-
-			p:before {
+		&:hover {
+			&:before {
 				transform: scaleX(1);
 
-				transition: transform $animation-time,
-							bottom $animation-time / 2 $animation-time;
+				transition: transform $animation-time ease-in-out,
+							top $animation-time / 2 $animation-time ease-in-out;
+			}
+		}
+
+		&.focus {
+			background-color: $bg-color;
+			transition: background-color $animation-time / 2 $animation-time * 3 ease-in-out;
+
+			input,
+			textarea {
+				color: $fg-color;
+				transition: color $animation-time $animation-time * 3 ease-in-out;
 			}
 
-			p:after {
+			&:before {
 				transform: scaleX(1);
-
-				transition: transform $animation-time,
-							top $animation-time / 2 $animation-time;
-			}
-
-			p:before {
-				bottom: -2px;
-			}
-
-			p:after {
 				top: -2px;
+
+				transition: transform $animation-time ease-in-out,
+							top $animation-time / 2 $animation-time ease-in-out;
+			}
+
+			&:after {
+				transform: scaleX(1);
+				bottom: -2px;
+
+				transition: transform $animation-time $animation-time + $animation-time / 2 ease-in-out,
+							bottom $animation-time / 2 $animation-time * 2 + $animation-time / 2 ease-in-out;
 			}
 		}
 	}

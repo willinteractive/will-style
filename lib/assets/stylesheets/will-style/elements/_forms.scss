@@ -1,3 +1,22 @@
 //
 // Form Elements
 //
+
+// Container styles
+
+.form-container {
+	@include scale-property(margin-bottom, 0.25rem);
+	@include scale-property(padding, 0.25rem);
+
+	&.light {
+		@include outlined-input($light: true);
+	}
+
+	&:not(.light) {
+		@include outlined-input($light: false);
+	}
+}
+
+// @TODO: Submit Buttons
+
+input

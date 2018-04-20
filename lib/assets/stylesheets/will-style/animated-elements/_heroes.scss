@@ -5,6 +5,8 @@
 .hero .will-heading {
 	.title-container {
 		@include animated-element-after {
+			pointer-events: none;
+
 			.title,
 			.subtitle {
 				transition-delay: 0.2s;
@@ -21,6 +23,7 @@
 	.text {
 		@include animated-element-after {
 			opacity: 0;
+			pointer-events: none;
 		}
 	}
 }
