@@ -5,7 +5,7 @@
 // Container styles
 
 .form-container {
-	@include scale-property(margin-bottom, 0.25rem);
+	@include scale-property(margin-bottom, 0.5rem);
 	@include scale-property(padding, 0.25rem);
 
 	&.light {

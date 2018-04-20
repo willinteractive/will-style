@@ -1,0 +1,16 @@
+//
+// Accessibility Styles
+//
+
+::selection {
+	background: $body-color;
+	color: $body-bg;
+}
+
+.text-light {
+	::selection,
+	&::selection {
+		background: $body-bg;
+		color: $body-color;
+	}
+}
