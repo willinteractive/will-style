@@ -17,8 +17,74 @@
 	}
 }
 
-// @TODO: Submit Buttons
+.button-container {
+	@include will-patterned-bg($dark: false);
+	background-color: transparent;
 
-input[type="submit"] {
+	&:after {
+		background-size: 960px 960px;
+		animation-duration: 31s;
+	}
 
+	&:before,
+	&:after {
+		opacity: 0;
+
+		transition: opacity 0.2s ease-in-out;
+	}
+
+
+	&:after {
+		transition-delay: 0.2s;
+	}
+
+	width: 100%;
+
+	border: 2px solid $will-white;
+
+	input {
+		padding: 2rem;
+
+		border: none;
+		cursor: pointer;
+
+		width: 100%;
+
+		font-family: $headings-font-family;
+		@include scale-font-size($h5-font-size);
+
+		transition: color 0.2s 0.2s ease-in-out;
+	}
+
+	&.light input {
+		background-color: $will-white;
+		color: $will-dark-gray;
+
+		&:disabled {
+			background-color: transparent;
+			color: $will-white;
+		}
+	}
+
+	&:hover,
+	&:focus,
+	&.hover {
+		&:before,
+		&:after {
+			opacity: 1;
+		}
+
+		&:before {
+			transition-delay: 0.2s;
+		}
+
+		&:after {
+			transition-delay: 0s;
+		}
+
+		input {
+			color: $will-dark-gray !important;
+			transition-delay: 0;
+		}
+	}
 }

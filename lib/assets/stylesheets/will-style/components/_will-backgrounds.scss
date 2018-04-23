@@ -4,57 +4,13 @@
 
 // This is a floating will background that has a dark pattern underneath WILL triangles of varying size
 
-.will-bg-pattern-dark,
-.will-bg-pattern-light {
-	@include patterned-background-light;
-
-	position: relative;
-	overflow: hidden;
-
-	&:before {
-		opacity: 0.1;
-	}
-
-	&:after {
-		content: "";
-
-		position: absolute;
-
-		top: 0;
-
-		height: 200%;
-		min-height: 3840px;
-
-		left: 0;
-		right: 0;
-
-		z-index: 0;
-
-		background-image: asset_url("will-style/patterns/bg-will-arrow-pattern-dark.svg");
-
-		background-repeat: repeat;
-		background-size: 1920px 1920px;
-
-		animation: animate-will-bg-pattern 124s linear infinite;
-	}
-}
 
 .will-bg-pattern-dark {
-	background-color: $will-bg-darker;
+	@include will-patterned-bg;
 }
 
-.will-bg-pattern-light:after {
-	background-image: asset_url("will-style/patterns/bg-will-arrow-pattern-light.svg");
-}
-
-@keyframes animate-will-bg-pattern {
-	0% {
-		transform: translateY(0);
-	}
-
-	100% {
-		transform: translateY(-1920px);
-	}
+.will-bg-pattern-light {
+	@include will-patterned-bg($dark: false);
 }
 
 // This is a rotating will background that has a light pattern underneath an oversized arrow in white
