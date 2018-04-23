@@ -53,3 +53,28 @@
 		}
 	}
 }
+
+.section-heading {
+	padding-top: 1rem;
+
+	&:before {
+		content: "";
+
+		position: absolute;
+		top: 0;
+		height: 2px;
+
+		left: calc(50% - 3rem);
+		width: 6rem;
+
+		background-color: $will-teal;
+	}
+
+	small {
+		display: block;
+		font-size: 75%;
+		font-weight: normal;
+
+		font-family: $font-family-sans-serif;
+	}
+}
