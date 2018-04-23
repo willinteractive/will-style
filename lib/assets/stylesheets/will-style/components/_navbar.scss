@@ -125,7 +125,6 @@ nav.navbar {
 			display: block;
 
 			transform: translateX(-100%);
-			transition: transform 0s 0.4s linear;
 
 			&:before {
 				content: "";
@@ -161,7 +160,6 @@ nav.navbar {
 			&.collapsing,
 			&.show {
 				transform: translateX(0);
-				transition: transform 0s;
 
 				&:before {
 					opacity: 1;
