@@ -111,7 +111,7 @@ nav.navbar {
 		}
 
 		.navbar-collapse {
-			padding: 0 1rem;
+			padding: 1rem 2rem;
 
 			position: absolute;
 			z-index: 10;
@@ -120,7 +120,7 @@ nav.navbar {
 			left: 0;
 
 			width: 100vw;
-			min-height: 100vh;
+			min-height: 100vh !important;
 
 			display: block;
 
@@ -149,9 +149,6 @@ nav.navbar {
 				transform: translate(-5px, -5px);
 				opacity: 0;
 
-				transition: transform 0.2s ease-in-out,
-							opacity 0.2s ease-in-out;
-
 				.nav-link {
 					@include scale-font-size(2rem);
 				}
@@ -166,10 +163,20 @@ nav.navbar {
 				}
 			}
 
+			&.collapsing {
+				.nav-item {
+					opacity: 0;
+					transition: none;
+				}
+			}
+
 			&.show {
 				.nav-item {
 					transform: translate(0, 0);
 					opacity: 1;
+
+					transition: transform 0.2s ease-in-out,
+								opacity 0.2s ease-in-out;
 				}
 			}
 		}
