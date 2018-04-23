@@ -62,18 +62,9 @@ nav.navbar {
 			top: calc(50% - 1px);
 		}
 
-		&:before {
-			transition: transform 0.2s ease-in-out;
-		}
-
 		&:after {
 			opacity: 0;
 			transform: rotate(-225deg);
-		}
-
-		.navbar-toggler-icon:before,
-		.navbar-toggler-icon:after {
-			transition: transform 0.2s ease-in-out;
 		}
 
 		.navbar-toggler-icon:before {
