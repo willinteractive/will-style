@@ -5,8 +5,28 @@
 // Container styles
 
 .form-container {
-	@include scale-property(margin-bottom, 0.5rem);
+	@include scale-property(margin-bottom, 1.5rem);
 	@include scale-property(padding, 0.25rem);
+
+	&.shrunk {
+		margin-bottom: 0 !important;
+	}
+
+	.label-container {
+		position: absolute;
+
+		@include scale-property(top, 0.25rem);
+		@include scale-property(left, 0.25rem);
+		right: 0;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		label {
+			line-height: 1;
+		}
+	}
 
 	&.light {
 		@include outlined-input($light: true);
@@ -29,13 +49,7 @@
 	&:before,
 	&:after {
 		opacity: 0;
-
 		transition: opacity 0.2s ease-in-out;
-	}
-
-
-	&:after {
-		transition-delay: 0.2s;
 	}
 
 	width: 100%;
@@ -53,12 +67,13 @@
 		font-family: $headings-font-family;
 		@include scale-font-size($h5-font-size);
 
-		transition: color 0.2s 0.2s ease-in-out;
+		transition: color 0.2s ease-in-out;
+
+		background-color: transparent;
 	}
 
 	&.light input {
-		background-color: $will-white;
-		color: $will-dark-gray;
+		color: $will-white;
 
 		&:disabled {
 			background-color: transparent;
@@ -66,25 +81,17 @@
 		}
 	}
 
-	&:hover,
-	&:focus,
-	&.hover {
-		&:before,
-		&:after {
-			opacity: 1;
-		}
+	&:not([disabled]) {
+		&:hover,
+		&:focus,
+		&.hover {
+			&:after {
+				opacity: 1;
+			}
 
-		&:before {
-			transition-delay: 0.2s;
-		}
-
-		&:after {
-			transition-delay: 0s;
-		}
-
-		input {
-			color: $will-dark-gray !important;
-			transition-delay: 0;
+			input {
+				color: $will-dark-gray !important;
+			}
 		}
 	}
 }
