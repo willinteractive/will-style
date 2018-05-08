@@ -134,3 +134,17 @@
 	}
 }
 
+// For the Solution Page, the Process Header.
+// @include animated-scroll-fill($includes-root-element: false) {
+// 	will-change: opacity, transform;
+
+// 	@include animated-element-init {
+
+// 	}
+
+// 	@include animated-element-active {
+// 		opacity: 1;
+// 		display: block;
+// 		transform: translateY(0);
+// 	}
+// }
