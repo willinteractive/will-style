@@ -2,7 +2,7 @@
 // Variable Calculations and Bootstrap dependent Overrides
 //
 
-$navbar-height: #{$nav-link-padding-y * 4 + $font-size-base * $line-height-base};
+$navbar-height: $nav-link-padding-y * 4 + $font-size-base * $line-height-base;
 
 // Bootstrap Overrides
 
