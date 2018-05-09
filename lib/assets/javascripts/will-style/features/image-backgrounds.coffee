@@ -1,3 +1,13 @@
+shuffle = (array) ->
+  i = array.length - 1
+
+  while i > 0
+    j = Math.floor(Math.random() * (i + 1))
+    temp = array[i]
+    array[i] = array[j]
+    array[j] = temp
+    i--
+
 generateBGDomElement = (image)->
   "<div class=\"image-bg-display\" style=\"background-image: url('#{image}')\"></div>"
 #------------------------------------------------------------------------------------------
@@ -25,6 +35,8 @@ $(document).on 'turbolinks:load', (event) ->
       bgs = JSON.parse $(this).attr("data-image-bgs").replace(/'/gi, '"')
 
       if bgs.length > 0
+        shuffle(bgs)
+
         $(this).addClass("image-bgs")
 
         for bg in bgs
