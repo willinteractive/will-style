@@ -1,48 +1,77 @@
 .image-bg {
 	position: relative;
 	overflow: hidden;
+}
 
-	.image-bg-display {
-		position: absolute;
+.image-bg-display {
+	position: absolute;
 
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.image-bgs {
+	position: absolute;
+
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	z-index: -1;
+}
+
+.image-bg,
+.image-bg-display {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.image-bg,
+.image-bg .image-bg-display {
+	// Image Loading
+	// @NOTE: Use the overlay to hide the image so that it doesn't hide the title
+	opacity: 1;
+	will-change: opacity;
+
+	&:before,
+	&:after {
+		transition: opacity 0.2s;
 	}
 
-	&,
-	.image-bg-display {
-		background-position: center;
-		background-size: cover;
-		background-repeat: no-repeat;
-
-		// Image Loading
-		// @NOTE: Use the overlay to hide the image so that it doesn't hide the title
+	&:before {
 		opacity: 1;
-		will-change: opacity;
+	}
 
-		&:before,
-		&:after {
-			transition: opacity 0.2s;
-		}
+	&:after {
+		opacity: 0;
+	}
 
+	&.loaded {
 		&:before {
-			opacity: 1;
+			opacity: $patterned-background-overlay-opacity;
 		}
 
 		&:after {
-			opacity: 0;
+			opacity: $patterned-background-opacity;
 		}
+	}
+}
 
-		&.loaded {
-			&:before {
-				opacity: $patterned-background-overlay-opacity;
-			}
+.image-bgs .image-bg-display {
+	opacity: 0;
+	will-change: opacity;
 
-			&:after {
-				opacity: $patterned-background-opacity;
-			}
-		}
+	transition: opacity 2s;
+
+	&.loaded.active {
+		opacity: 1;
+	}
+
+	&.loaded.active.first {
+		transition-duration: 0.2s;
 	}
 }

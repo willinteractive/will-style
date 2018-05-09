@@ -12,6 +12,10 @@
 		<% end %>
 		>
 
+		<% if defined?(background_images) %>
+			<div data-image-bgs="[<%= background_images.map{|i| "'#{asset_url(i)}'" }.join(", ") %>]"></div>
+		<% end %>
+
 		<% if defined?(background_video) %>
 			<div class="video-bg">
 				<video playsinline autoplay muted loop preload="auto" src="<%= background_video %>"></video>

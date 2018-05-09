@@ -2,7 +2,7 @@
 # Set Loading and Loaded properties for images and image backgrounds
 #
 
-imageLoadingQuery = ".image-bg, img"
+imageLoadingQuery = ".image-bg, .image-bg-display, img"
 
 loadedImages = { }
 
@@ -66,7 +66,11 @@ setUpImageLoading = ->
       img.src = source
 
 # Update image loading on turbolinks load
-$(document).on 'turbolinks:load', setUpImageLoading
+$(document).on 'turbolinks:load', ->
+  # Delay checking image backgrounds to make sure we catch added via javascript
+  setTimeout ->
+    setUpImageLoading()
+  , 1
 
 # Pre-process image loading when we revisit pages in turbolinks
 $(document).on 'turbolinks:before-render', (event) ->

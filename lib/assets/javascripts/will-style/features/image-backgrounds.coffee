@@ -1,7 +1,48 @@
+generateBGDomElement = (image)->
+  "<div class=\"image-bg-display\" style=\"background-image: url('#{image}')\"></div>"
 #------------------------------------------------------------------------------------------
-# This class will transform images with a data-image-bg to add it using a DOM element     -
+# Transform images with a data-image-bg to add it using a DOM element                     -
 #------------------------------------------------------------------------------------------
 
 $(document).on 'turbolinks:load', (event) ->
   $("[data-image-bg]").each ->
-    $(this).prepend("<div class=\"image-bg-display\" style=\"background-image: url('#{$(this).attr("data-image-bg")}')\"></div>")
+    $(this).prepend(generateBGDomElement($(this).attr("data-image-bg")))
+
+#------------------------------------------------------------------------------------------
+# Rotating image backgrounds                                                              -
+#------------------------------------------------------------------------------------------
+
+rotationIntervals = []
+
+$(document).on 'turbolinks:load', (event) ->
+  for interval in rotationIntervals
+    clearInterval(interval)
+
+  rotationIntervals = []
+
+  $("[data-image-bgs]").each ->
+    try
+      bgs = JSON.parse $(this).attr("data-image-bgs").replace(/'/gi, '"')
+
+      if bgs.length > 0
+        $(this).addClass("image-bgs")
+
+        for bg in bgs
+          $(this).append(generateBGDomElement(bg))
+
+        $($(this).find(".image-bg-display")[0]).addClass("active").addClass("first")
+
+        imageContainer = $(this)
+        interval = setInterval ->
+          bgs = imageContainer.find(".image-bg-display")
+
+          activeIndex = imageContainer.find(".image-bg-display.active").index() + 1
+          activeIndex = 0 if activeIndex > bgs.length - 1
+
+          bgs.removeClass("active").removeClass("first")
+          $(bgs[activeIndex]).addClass("active")
+        , 15000
+
+        rotationIntervals.push interval
+    catch
+      # JSON Parse error
