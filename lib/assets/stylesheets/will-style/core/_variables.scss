@@ -49,22 +49,24 @@ $transition-collapse: none;
 
 // Type
 
-$font-size-base:              1rem;
+$font-size-base:	1rem;
 
-$h1-font-size:                $font-size-base * 2.5;
-$h2-font-size:                $font-size-base * 2;
-$h3-font-size:                $font-size-base * 1.75;
-$h4-font-size:                $font-size-base * 1.5;
-$h5-font-size:                $font-size-base * 1.25;
-$h6-font-size:                $font-size-base;
+$h1-font-size:		$font-size-base * 2.5;
+$h2-font-size:		$font-size-base * 2;
+$h3-font-size:		$font-size-base * 1.75;
+$h4-font-size:		$font-size-base * 1.5;
+$h5-font-size:		$font-size-base * 1.25;
+$h6-font-size:		$font-size-base;
 
-$display1-size:               3rem;
-$display2-size:               2.75rem;
-$display3-size:               2.5rem;
-$display4-size:               2.25rem;
+$display1-size:		3rem;
+$display2-size:		2.75rem;
+$display3-size:		2.5rem;
+$display4-size:		2.25rem;
 
-$lead-font-size:              $font-size-base * 1.25;
+$lead-font-size:	$font-size-base * 1.25;
 
+$link-decoration:		none;
+$link-hover-decoration:	none;
 // Components
 
 $border-radius:               0;

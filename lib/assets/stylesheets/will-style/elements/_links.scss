@@ -1,0 +1,42 @@
+//
+// Links
+//
+
+// Default Links
+
+a {
+	transition: color 0.2s ease-in-out;
+}
+
+// Animated Links
+
+a.animated {
+	position: relative;
+
+	&:after {
+		content: "";
+		position: absolute;
+
+		// Offset from the bottom to account for glyphs that hang below the box (g, j, etc.)
+		bottom: -10%;
+
+		left: 0;
+		right: 0;
+
+		@include scale-property(height, 2px, $global-scale-factor);
+
+		background-color: $link-color;
+
+		transform: scaleX(0);
+		transform-origin: left center;
+		transition: transform 0.4s ease-in-out,
+					background-color 0.4s ease-in-out;
+	}
+
+	@include hover-focus {
+		&:after {
+			background-color: $link-hover-color;
+			transform: scaleX(1);
+		}
+	}
+}
