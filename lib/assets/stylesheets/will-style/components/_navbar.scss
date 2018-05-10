@@ -19,7 +19,7 @@ nav.navbar {
 				left: 0;
 				right: 0;
 
-				@include scale-property(height, 1px, $global-scale-factor);
+				@include scale-property(height, 2px, $global-scale-factor);
 
 				background-color: $navbar-dark-hover-color;
 
@@ -205,6 +205,11 @@ nav.navbar {
 	// Ensure Navbar Logo is big enough for logo to be by itself
 
 	a.navbar-brand {
+		// Ensure WILL Logo isn't huge on firefox
+		svg {
+			max-width: #{($nav-link-padding-y * 2 + $font-size-base * $line-height-base) * $will-logo-aspect-ratio};
+		}
+
 		min-width: #{($nav-link-padding-y * 2 + $font-size-base * $line-height-base) * $will-logo-aspect-ratio};
 	}
 }
