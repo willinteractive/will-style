@@ -61,6 +61,10 @@
 	input {
 		padding: 2rem;
 
+		@include media-breakpoint-down(sm) {
+			padding: 1rem;
+		}
+
 		border: none;
 		cursor: pointer;
 
