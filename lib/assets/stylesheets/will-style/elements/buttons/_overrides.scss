@@ -1,0 +1,7 @@
+button {
+	-webkit-user-select: none;
+
+	&:focus {
+		outline: 0;
+	}
+}
