@@ -15,7 +15,7 @@
 	.label-container {
 		position: absolute;
 
-		@include scale-property(top, 0.25rem);
+		@include scale-property(bottom, 0.25rem);
 		@include scale-property(left, 0.25rem);
 		right: 0;
 

@@ -20,32 +20,11 @@
 
 	input,
 	textarea {
-		transition: color $animation-time / 2 ease-in-out;
-		color: $bg-color;
-
 		outline: none;
 
 		background: none;
 		border: none;
 		width: 100%;
-	}
-
-	// Background
-	&:before {
-		content: "";
-		position: absolute;
-
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-
-		z-index: -1;
-
-		background-color: $bg-color;
-
-		opacity: 0;
-		transition: opacity $animation-time / 2 ease-in-out;
 	}
 
 	// Underline bottom
@@ -58,22 +37,26 @@
 
 		left: 0px;
 		right: 0px;
-		bottom: -2px;
+		bottom: 0px;
 
-		height: 2px;
+		height: 1px;
 
 		background-color: $bg-color;
 
-		transform: scaleX(0);
 		transform-origin: left bottom;
 
-		transition: transform $animation-time / 2 $animation-time / 4 ease-in-out;
+		transition: transform $animation-time $animation-time ease-in-out;
+	}
+
+	label {
+		text-transform: uppercase;
+		font-size: 75%;
 	}
 
 	// Underline top
 
 	.label-container {
-		transition: transform $animation-time ease-in-out;
+		transition: bottom $animation-time $animation-time / 2 ease-in-out;
 	}
 
 	.label-container:after {
@@ -85,7 +68,7 @@
 		display: inline-block;
 		flex-grow: 1;
 
-		height: 2px;
+		height: 1px;
 
 		background-color: $bg-color;
 
@@ -103,40 +86,21 @@
 	}
 
 	&:not([disabled]) {
-		&:hover {
-			&:after {
-				transform: scaleX(1);
-
-				transition: transform $animation-time ease-in-out,
-							top $animation-time / 2 $animation-time ease-in-out;
-			}
-		}
-
 		&.focus,
 		&.entered {
-			input,
-			textarea {
-				color: $fg-color;
-				transition: color $animation-time $animation-time * 2 ease-in-out;
-			}
-
 			.label-container {
-				transform: translateY(-70%);
-			}
-
-			&:before {
-				opacity: 0.5;
-				transition: opacity $animation-time / 2 $animation-time * 2 ease-in-out;
+				bottom: 100%;
 			}
 
 			.label-container:after {
 				transform: scaleX(1);
 
-				transition: transform $animation-time $animation-time ease-in-out;
+				transition: transform $animation-time $animation-time * 1.5 ease-in-out;
 			}
 
 			&:after {
-				transform: scaleX(1);
+				transform: scaleX(0);
+				transform-origin: right bottom;
 
 				transition: transform $animation-time ease-in-out;
 			}
