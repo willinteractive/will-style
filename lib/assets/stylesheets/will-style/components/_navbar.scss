@@ -59,10 +59,19 @@ nav.navbar {
 
 		&:before,
 		&:after {
+			@include hardware-accelerate;
+
+			will-change: transform;
+
 			top: calc(50% - 1px);
 		}
 
 		&:after {
+			@include hardware-accelerate;
+
+			will-change: opacity,
+						 transform;
+
 			opacity: 0;
 			transform: rotate(-225deg);
 		}
@@ -146,7 +155,12 @@ nav.navbar {
 			}
 
 			.nav-item {
-				transform: translate(-5px, -5px);
+				@include hardware-accelerate;
+
+				will-change: opacity,
+							 transform;
+
+				transform: translate3d(-5px, -5px, 0);
 				opacity: 0;
 
 				.nav-link {
@@ -172,7 +186,7 @@ nav.navbar {
 
 			&.show {
 				.nav-item {
-					transform: translate(0, 0);
+					transform: translate3d(0, 0, 0);
 					opacity: 1;
 
 					transition: transform 0.2s ease-in-out,
