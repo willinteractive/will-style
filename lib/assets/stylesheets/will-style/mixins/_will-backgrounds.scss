@@ -11,17 +11,18 @@
 	&:after {
 		content: "";
 
+		z-index: 0;
+
 		position: absolute;
 
+		display: block;
+
 		top: 0;
-
-		height: 200%;
-		min-height: 3840px;
-
 		left: 0;
 		right: 0;
 
-		z-index: 0;
+		height: 200%;
+		min-height: 3840px;
 
 		@if $dark == true {
 			background-color: $will-bg-darker;
@@ -33,16 +34,24 @@
 		background-repeat: repeat;
 		background-size: 1920px 1920px;
 
-		animation: animate-will-bg-pattern 124s linear infinite;
+		will-change: transform;
+
+		// @NOTE: Attempting to fix intermittent flickering in Safari
+		transform-style: preserve-3d;
+		backface-visibility: hidden;
+		perspective: 1000;
+		font-smoothing: antialiased;
+
+		animation: animate-will-bg-pattern 124s 0.1s linear infinite;
 	}
 }
 
 @keyframes animate-will-bg-pattern {
 	0% {
-		transform: translateY(0);
+		transform: translate3d(0, 0, 0);
 	}
 
 	100% {
-		transform: translateY(-1920px);
+		transform: translate3d(0, -1920px, 0);
 	}
 }
