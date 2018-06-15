@@ -122,8 +122,17 @@ _updateAnimatedElements = ->
     if element.data("animated-fixed")?
       targetTop -= windowTop
 
+    isActive = false
+
     # Element is fully visible
     if targetTop + targetHeight < windowTop + windowHeight
+      isActive = true
+
+    # Element is at top and we're only using the top as a trigger
+    else if targetTop < windowTop + windowHeight and element.data("animated-top")?
+      isActive = true
+
+    if isActive
       element.attr("data-animated-active", "true")
     else if element.data("animated-remove-before")?
       element.removeAttr("data-animated-active")
