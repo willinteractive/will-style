@@ -38,6 +38,9 @@ $(document).on 'turbolinks:load', (event) ->
         if $(this).attr("data-image-bgs-randomize") is "" or $(this).attr("data-image-bgs-randomize") is "true"
           shuffle(bgs)
 
+        if $(this).attr("data-image-bgs-fixed") is "" or $(this).attr("data-image-bgs-fixed") is "true"
+          $(this).addClass("fixed")
+
         $(this).addClass("image-bgs")
 
         for bg in bgs
