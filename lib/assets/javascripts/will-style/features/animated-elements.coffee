@@ -50,7 +50,17 @@ _getTargetForElement = (element) ->
 
     return target
 
+
   # Loop through parents to find target
+  parents = element.parents(element.data("animated-target"))
+
+  if parents.length > 0
+    target = parents[0]
+    _targetCache[element.data("animate-id")] = target
+
+    return target
+
+  # Loop through parents' siblings to find target
   parent = element.parent()
   iterations = 0
 
@@ -98,7 +108,6 @@ _updateAnimatedElements = ->
     target = element
 
     # Set animation ids for cache reference
-    target.data("animate-id", _generateID()) unless target.data("animate-id")
     element.data("animate-id", _generateID()) unless element.data("animate-id")
 
     # If we're using another element for targeting, use it
