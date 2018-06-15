@@ -13,7 +13,7 @@
 		>
 
 		<% if defined?(background_images) %>
-			<div data-image-bgs="[<%= background_images.map{|i| "'#{asset_url(i)}'" }.join(", ") %>]"></div>
+			<div data-image-bgs="[<%= background_images.map{|i| "'#{asset_url(i)}'" }.join(", ") %>]" data-image-bgs-randomize></div>
 		<% end %>
 
 		<% if defined?(background_video) %>

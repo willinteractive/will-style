@@ -35,7 +35,8 @@ $(document).on 'turbolinks:load', (event) ->
       bgs = JSON.parse $(this).attr("data-image-bgs").replace(/'/gi, '"')
 
       if bgs.length > 0
-        shuffle(bgs)
+        if $(this).attr("data-image-bgs-randomize") is "" or $(this).attr("data-image-bgs-randomize") is "true"
+          shuffle(bgs)
 
         $(this).addClass("image-bgs")
 
