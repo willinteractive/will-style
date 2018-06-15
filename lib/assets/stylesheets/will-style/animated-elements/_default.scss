@@ -75,12 +75,14 @@
 
 	@include animated-element-init {
 		opacity: 0;
+		transform: none;
 
 		transition: opacity 0.4s ease-in-out;
 	}
 
 	@include animated-element-active {
 		opacity: 1;
+		transform: none;
 	}
 }
 
