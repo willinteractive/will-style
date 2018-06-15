@@ -125,6 +125,8 @@ _updateAnimatedElements = ->
     # Element is fully visible
     if targetTop + targetHeight < windowTop + windowHeight
       element.attr("data-animated-active", "true")
+    else if element.data("animated-remove-before")?
+      element.removeAttr("data-animated-active")
 
     # Element is completely off the screen
     if targetTop + targetHeight < windowTop
