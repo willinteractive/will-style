@@ -19,7 +19,12 @@ $animated-element-progressive-position-prop: "data-animated-progressive-position
 $animated-number-top-prop: "data-animated-number-top" !default;
 $animated-number-bottom-prop: "data-animated-number-bottom" !default;
 
-$animated-modern-rise-blocks-prop: "data-animated-modern-rise-blocks" !default;
+$animated-fast-rise-blocks-prop: "data-animated-fast-rise-blocks" !default;
+$animated-normal-rise-blocks-prop: "data-animated-normal-rise-blocks" !default;
+$animated-slow-rise-blocks-prop: "data-animated-slow-rise-blocks" !default;
+
+$animated-delayed-fade-in-prop: "data-animated-delayed-fade-in" !default;
+
 
 
 $animated-element-selector: "[#{$animated-element-prop}]" !default;
@@ -34,7 +39,10 @@ $animated-element-after-selector: "[#{$animated-element-after-prop}]" !default;
 $animated-element-progressive-selector: "[#{$animated-element-progressive-prop}]" !default;
 
 //Modern Rise Blocks
-$animated-modern-rise-blocks-selector: "[#{$animated-modern-rise-blocks-prop}]" !default;
+$animated-fast-rise-blocks-selector: "[#{$animated-fast-rise-blocks-prop}]" !default;
+$animated-normal-rise-blocks-selector: "[#{$animated-normal-rise-blocks-prop}]" !default;
+$animated-slow-rise-blocks-selector: "[#{$animated-slow-rise-blocks-prop}]" !default;
+$animated-delayed-fade-in-selector: "[#{$animated-delayed-fade-in-prop}]" !default;
 
 $animated-number-top-selector: "[#{$animated-number-top-prop}]" !default;
 $animated-number-bottom-selector: "[#{$animated-number-bottom-prop}]" !default;
@@ -205,16 +213,59 @@ $animated-number-bottom-selector: "[#{$animated-number-bottom-prop}]" !default;
 }
 
 
-// MODERN RISE BLOCKS
+// RISE BLOCKS BELOW IMAGES ANIMATIONS
 
-@mixin animated-modern-rise-blocks($includes-root-element: true) {
+@mixin animated-fast-rise-blocks($includes-root-element: true) {
 	@if $includes-root-element == true {
-		&#{$animated-modern-rise-blocks-selector} {
+		&#{$animated-fast-rise-blocks-selector} {
 			@content;
 		}
 	} @else {
-		#{$animated-modern-rise-blocks-selector} {
+		#{$animated-fast-rise-blocks-selector} {
 			@content;
 		}
 	}
 }
+
+@mixin animated-normal-rise-blocks($includes-root-element: true) {
+	@if $includes-root-element == true {
+		&#{$animated-normal-rise-blocks-selector} {
+			@content;
+		}
+	} @else {
+		#{$animated-normal-rise-blocks-selector} {
+			@content;
+		}
+	}
+}
+
+@mixin animated-slow-rise-blocks($includes-root-element: true) {
+	@if $includes-root-element == true {
+		&#{$animated-slow-rise-blocks-selector} {
+			@content;
+		}
+	} @else {
+		#{$animated-slow-rise-blocks-selector} {
+			@content;
+		}
+	}
+}
+
+@mixin animated-delayed-fade-in($includes-root-element: true) {
+	@if $includes-root-element == true {
+		&#{$animated-delayed-fade-in-selector} {
+			@content;
+		}
+	} @else {
+		#{$animated-delayed-fade-in-selector} {
+			@content;
+		}
+	}
+}
+
+
+
+
+
+
+
