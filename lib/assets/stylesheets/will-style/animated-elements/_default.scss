@@ -134,3 +134,27 @@
 		transform: translateY(0);
 	}
 }
+
+
+// MODERN RISE BLOCKS
+
+@include animated-modern-rise-blocks($includes-root-element: false) {
+	will-change: opacity, transform;
+
+	@include animated-element-init {
+		opacity: 0;
+		transform: translateY(85%);
+		display: block;
+		transition: opacity 0.4s ease-in-out,
+					transform 0.4s ease-in-out;
+	}
+
+	@include animated-element-active {
+		opacity: 1;
+		display: block;
+		transform: translateY(0);
+	}
+}
+
+
+

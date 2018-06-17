@@ -19,6 +19,9 @@ $animated-element-progressive-position-prop: "data-animated-progressive-position
 $animated-number-top-prop: "data-animated-number-top" !default;
 $animated-number-bottom-prop: "data-animated-number-bottom" !default;
 
+$animated-modern-rise-blocks-prop: "data-animated-modern-rise-blocks" !default;
+
+
 $animated-element-selector: "[#{$animated-element-prop}]" !default;
 $animated-element-default-selector: "[#{$animated-element-default-prop}]" !default;
 $animated-element-left-selector: "[#{$animated-element-left-prop}]" !default;
@@ -29,6 +32,9 @@ $animated-element-active-selector: "[#{$animated-element-active-prop}]" !default
 $animated-element-hidden-after-selector: "[#{$animated-element-hidden-after-prop}]" !default;
 $animated-element-after-selector: "[#{$animated-element-after-prop}]" !default;
 $animated-element-progressive-selector: "[#{$animated-element-progressive-prop}]" !default;
+
+//Modern Rise Blocks
+$animated-modern-rise-blocks-selector: "[#{$animated-modern-rise-blocks-prop}]" !default;
 
 $animated-number-top-selector: "[#{$animated-number-top-prop}]" !default;
 $animated-number-bottom-selector: "[#{$animated-number-bottom-prop}]" !default;
@@ -193,6 +199,21 @@ $animated-number-bottom-selector: "[#{$animated-number-bottom-prop}]" !default;
 		}
 	} @else {
 		#{$animated-number-bottom-selector} {
+			@content;
+		}
+	}
+}
+
+
+// MODERN RISE BLOCKS
+
+@mixin animated-modern-rise-blocks($includes-root-element: true) {
+	@if $includes-root-element == true {
+		&#{$animated-modern-rise-blocks-selector} {
+			@content;
+		}
+	} @else {
+		#{$animated-modern-rise-blocks-selector} {
 			@content;
 		}
 	}
