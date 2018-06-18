@@ -81,4 +81,6 @@
 .image-bgs.fixed {
 	height: 100vh;
 	position: fixed;
+
+	pointer-events: none;
 }

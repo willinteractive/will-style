@@ -50,7 +50,6 @@ _getTargetForElement = (element) ->
 
     return target
 
-
   # Loop through parents to find target
   parents = element.parents(element.data("animated-target"))
 
