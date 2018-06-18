@@ -44,13 +44,7 @@
 		transform: translate3d(0, 0, 0);
 	}
 
-	99.9% {
-		transform: translate3d(0, -1920px, 0);
-	}
-
-	// @NOTE: Attempting to fix intermittent flickering in Safari
-	// 		  by forcing a reset of the animation before it finishes to ensure proper placement.
 	100% {
-		transform: translate3d(0, 0, 0);
+		transform: translate3d(0, -1920px, 0);
 	}
 }
