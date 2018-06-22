@@ -1,3 +1,6 @@
+
+# I have to shuffle BOTH IDS and QUOTES b/c when I create the h1 elements below I add an id to them.
+# I use that to find the right quote when I click an image.
 shuffle = (quoteArrays, idArrays) ->
   i = quoteArrays.length - 1
 
@@ -22,17 +25,6 @@ generateBGDomElement = (quote, index)->
   "<h1 id=#{index} class=\"quote-display text-light lead\" >#{quote}</h1>"
 
 
-#------------------------------------------------------------------------------------------
-# Transform images with a data-image-bg to add it using a DOM element                     -
-#------------------------------------------------------------------------------------------
-
-# $(document).on 'turbolinks:load', (event) ->
-#   $("[data-quote-rotate]").each ->
-#     $(this).prepend(generateBGDomElement($(this).attr("data-quote-rotate")))
-
-# #------------------------------------------------------------------------------------------
-# Rotating image backgrounds                                                              -
-#------------------------------------------------------------------------------------------
 
 rotationIntervals = []
 
@@ -61,33 +53,26 @@ $(document).on 'turbolinks:load', (event) ->
   $("[data-testimonial-quote]").each ->
       try
 
+        # I need to pass in both the id and quotes b/c on click I need to be able to identify the quote that corresponds w/the image and display it on-screen.
         allQuotes = $(this).attr("data-testimonial-quote").split(';');
         allIds = $(this).attr("data-testimonial-quote-ids").split(';');
 
-        #allQuotes = JSON.parse $(this).attr("data-testimonial-quote")
-        #.push $(this).attr('data-testimonial-quote')#.replace(/'/gi, '"')
-
-        if allQuotes.length > 0 #Object.keys(allQuotes).length
+        if allQuotes.length > 0
 
           if $(this).attr("data-quote-randomize") is "" or $(this).attr("data-quote-randomize") is "true"
             shuffle(allQuotes, allIds)
 
-          # if $(this).attr("data-quote-fixed") is "" or $(this).attr("data-quote-fixed") is "true"
-          #   $(this).addClass("fixed")
-
-          #$(this).addClass("quote-rotate")
-
+          # I need to iterate over BOTH the quote array and the id array - so I use the index for ID iteration.
           index = 0
           for q in allQuotes
             $("[data-quotes-holder]").append(generateBGDomElement(q, allIds[index]))
             index++
 
 
-          $( $("[data-quotes-holder]").find(".quote-display")[0]).addClass("active")#.addClass("first")
+          $( $("[data-quotes-holder]").find(".quote-display")[0]).addClass("active");
 
           quoteContainer = $("[data-quotes-holder]")
 
-          # if $("[data-quote-origin]").attr("data-quote-randomize") is "" or $("[data-quote-origin]").attr("data-quote-randomize") is "true"
 
           interval = setInterval ->
             quotes = quoteContainer.find(".quote-display")
