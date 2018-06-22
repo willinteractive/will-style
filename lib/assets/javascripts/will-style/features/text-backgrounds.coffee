@@ -27,27 +27,31 @@ generateBGDomElement = (quote)->
 
 rotationIntervals = []
 
+
+$(document).on "click", "[data-testimonial-element]", (event) ->
+
+  # @NOTE: This won't work if there are multiple testomonial blocks on the page
+  for interval in rotationIntervals
+    clearInterval interval
+
+
+
 $(document).on 'turbolinks:load', (event) ->
   for interval in rotationIntervals
     clearInterval(interval)
-
-  rotationIntervals = []
 
   allQuotes = []
 
   $("[data-testimonial-quote]").each ->
       try
 
-        console.log 'reach ' + $(this).attr("data-testimonial-quote")
-
-        allQuotes = $(this).attr("data-testimonial-quote").split(',');
+        allQuotes = $(this).attr("data-testimonial-quote").split(';');
         #allQuotes = JSON.parse $(this).attr("data-testimonial-quote")
         #.push $(this).attr('data-testimonial-quote')#.replace(/'/gi, '"')
 
         if allQuotes.length > 0 #Object.keys(allQuotes).length
 
           if $(this).attr("data-quote-randomize") is "" or $(this).attr("data-quote-randomize") is "true"
-            console.log 'in shuf '
             shuffle(allQuotes)
           if $(this).attr("data-quote-fixed") is "" or $(this).attr("data-quote-fixed") is "true"
             $(this).addClass("fixed")
@@ -59,14 +63,17 @@ $(document).on 'turbolinks:load', (event) ->
           $( $("[data-quotes-holder]").find(".quote-display")[0]).addClass("active")#.addClass("first")
 
           quoteContainer = $("[data-quotes-holder]")
+
+          # if $("[data-quote-origin]").attr("data-quote-randomize") is "" or $("[data-quote-origin]").attr("data-quote-randomize") is "true"
+
           interval = setInterval ->
             quotes = quoteContainer.find(".quote-display")
 
             activeIndex = quoteContainer.find(".quote-display.active").index() + 1
             activeIndex = 0 if activeIndex > quotes.length - 1
 
-            quotes.removeClass("active").removeClass("first")
+            quotes.removeClass("active")#.removeClass("first")
             $(quotes[activeIndex]).addClass("active")
-          , 5000
+          , 1000
 
           rotationIntervals.push interval
