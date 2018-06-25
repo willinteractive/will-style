@@ -5,19 +5,43 @@
 .row.expanded,
 .col.expanded,
 [class*='col-'].expanded {
-	@include expand-element($x: true, $y: true);
+	@include expand-element($left: true, $right: true, $top: true, $bottom: true);
 }
 
 .row.expanded-x,
 .col.expanded-x,
 [class*='col-'].expanded-x {
-	@include expand-element($x: true, $y: false);
+	@include expand-element($left: true, $right: true, $top: false, $bottom: false);
+}
+
+.row.expanded-left,
+.col.expanded-left,
+[class*='col-'].expanded-left {
+	@include expand-element($left: true, $right: false, $top: false, $bottom: false);
+}
+
+.row.expanded-right,
+.col.expanded-right,
+[class*='col-'].expanded-right {
+	@include expand-element($left: false, $right: true, $top: false, $bottom: false);
 }
 
 .row.expanded-y,
 .col.expanded-y,
 [class*='col-'].expanded-y {
-	@include expand-element($x: false, $y: true);
+	@include expand-element($left: false, $right: false, $top: true, $bottom: true);
+}
+
+.row.expanded-top,
+.col.expanded-top,
+[class*='col-'].expanded-top {
+	@include expand-element($left: false, $right: false, $top: true, $bottom: false);
+}
+
+.row.expanded-bottom,
+.col.expanded-bottom,
+[class*='col-'].expanded-bottom {
+	@include expand-element($left: false, $right: false, $top: false, $bottom: true);
 }
 
 .row.full-height,

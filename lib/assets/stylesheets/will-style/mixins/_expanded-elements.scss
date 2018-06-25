@@ -2,33 +2,51 @@
 // Mixins for Expanded Elements
 //
 
-@mixin expand-element($x: true, $y: true) {
-	@if $x == true {
+@mixin expand-element($left: true, $right: true, $top: true, $bottom: true) {
+	@if $left == true {
 		padding-left: 6rem;
-		padding-right: 6rem;
 
 		@include media-breakpoint-only(md) {
 			padding-left: 3rem;
-			padding-right: 3rem;
 		}
 
 		@include media-breakpoint-down(sm) {
 			padding-left: 2rem;
+		}
+	}
+
+	@if $right == true {
+		padding-right: 6rem;
+
+		@include media-breakpoint-only(md) {
+			padding-right: 3rem;
+		}
+
+		@include media-breakpoint-down(sm) {
 			padding-right: 2rem;
 		}
 	}
 
-	@if $y == true {
+	@if $top == true {
 		padding-top: 6rem;
-		padding-bottom: 6rem;
 
 		@include media-breakpoint-only(md) {
 			padding-top: 3rem;
-			padding-bottom: 3rem;
 		}
 
 		@include media-breakpoint-down(sm) {
 			padding-top: 2rem;
+		}
+	}
+
+	@if $bottom == true {
+		padding-bottom: 6rem;
+
+		@include media-breakpoint-only(md) {
+			padding-bottom: 3rem;
+		}
+
+		@include media-breakpoint-down(sm) {
 			padding-bottom: 2rem;
 		}
 	}
