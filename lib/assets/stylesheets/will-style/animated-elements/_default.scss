@@ -101,36 +101,36 @@
 
 @include animated-number-top($includes-root-element: false) {
 	will-change: opacity, transform;
+	display: inline-block;
 
 	@include animated-element-init {
 		opacity: 0;
 		transform: translateY(50%);
-		display: block;
+
 		transition: opacity 0.4s ease-in-out,
 					transform 0.4s ease-in-out;
 	}
 
 	@include animated-element-active {
 		opacity: 1;
-		display: block;
 		transform: translateY(0);
 	}
 }
 
 @include animated-number-bottom($includes-root-element: false) {
 	will-change: opacity, transform;
+	display: inline-block;
 
 	@include animated-element-init {
 		opacity: 0;
 		transform: translateY(-50%);
-		display: block;
+
 		transition: opacity 0.4s ease-in-out,
 					transform 0.4s ease-in-out;
 	}
 
 	@include animated-element-active {
 		opacity: 1;
-		display: block;
 		transform: translateY(0);
 	}
 }
