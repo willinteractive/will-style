@@ -13,6 +13,7 @@
 #= require bootstrap-sprockets
 
 # -------- COMPONENTS
+#= require will-style/components/navbar
 #= require will-style/components/hideable-sidebar
 
 # -------- FEATURES

@@ -184,6 +184,10 @@ nav.navbar {
 				}
 			}
 
+			&.collapsing-out:before {
+				opacity: 0;
+			}
+
 			&.show {
 				.nav-item {
 					transform: translate3d(0, 0, 0);

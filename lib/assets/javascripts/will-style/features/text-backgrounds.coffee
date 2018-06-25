@@ -19,15 +19,10 @@ shuffle = (quoteArrays, idArrays) ->
 
     i--
 
-
 generateBGDomElement = (quote, index)->
-  console.log 'index?? ' + index
   "<h1 id=#{index} class=\"quote-display text-light lead\" >#{quote}</h1>"
 
-
-
 rotationIntervals = []
-
 
 $(document).on "click", "[data-testimonial-element]", (event) ->
 
@@ -48,7 +43,6 @@ $(document).on 'turbolinks:load', (event) ->
     clearInterval(interval)
 
   allQuotes = []
-
 
   $("[data-testimonial-quote]").each ->
       try
