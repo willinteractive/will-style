@@ -5,14 +5,7 @@ $patterned-background-opacity: 0.02;
 // Patterned Background Overlays
 //
 
-@mixin patterned-background($include-overlay: true) {
-	// @FIXME: We shouldn't muck around with z-index here.
-	// Is there another way to get the after element underneath the content?
-	& > * {
-		position: relative;
-		z-index: 1;
-	}
-
+@mixin patterned-background($include-overlay: true, $fg: false) {
 	&:before,
 	&:after {
 		content: "";
@@ -39,6 +32,21 @@ $patterned-background-opacity: 0.02;
 		background-attachment: fixed;
 
 		opacity: $patterned-background-opacity;
+	}
+
+
+	@if $fg == true {
+		&:before,
+		&:after {
+			z-index: 1;
+		}
+	} else {
+		// @FIXME: We shouldn't muck around with z-index here.
+		// Is there another way to get the after element underneath the content?
+		& > * {
+			position: relative;
+			z-index: 1;
+		}
 	}
 }
 
