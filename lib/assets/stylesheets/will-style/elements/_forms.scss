@@ -55,7 +55,8 @@
 	background-color: transparent;
 	transition: background-color 0.2s,
 				block-shadow 0.2s,
-				opacity 0.2s ease-in-out;
+				opacity 0.2s ease-in-out,
+				border-color 0.2s ease-in-out;
 
 	&:before {
 		background-size: 960px 960px;
@@ -66,8 +67,7 @@
 	}
 
 	width: 100%;
-
-	border: 1px solid $will-white;
+	border: 1px solid transparent;
 
 	opacity: 0.5;
 
@@ -103,6 +103,7 @@
 
 	&:not(.disabled) {
 		opacity: 1;
+		border-color: $will-white;
 
 		input {
 			cursor: pointer;
