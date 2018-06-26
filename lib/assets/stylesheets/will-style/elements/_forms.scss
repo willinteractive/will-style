@@ -42,14 +42,13 @@
 .button-container {
 	@include will-patterned-bg($dark: false);
 	background-color: transparent;
+	transition: background-color 0.2s,
+				block-shadow 0.2s;
 
-	&:after {
+	&:before {
 		background-size: 960px 960px;
 		animation-duration: 31s;
-	}
 
-	&:before,
-	&:after {
 		opacity: 0;
 		transition: opacity 0.2s ease-in-out;
 	}
@@ -59,6 +58,8 @@
 	border: 2px solid $will-white;
 
 	input {
+		position: relative;
+
 		padding: 2rem;
 
 		@include media-breakpoint-down(sm) {
@@ -91,7 +92,9 @@
 		&:hover,
 		&:focus,
 		&.hover {
-			&:after {
+			background-color: $will-white;
+
+			&:before {
 				opacity: 1;
 			}
 
