@@ -1,0 +1,7 @@
+//
+// Shadow Classes
+//
+
+img.shadowed {
+	@include image-shadow();
+}
