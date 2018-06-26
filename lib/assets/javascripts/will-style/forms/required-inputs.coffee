@@ -14,6 +14,12 @@ update_submit = (form) ->
   # Only disable primary submit buttons
   form.find("input[type=submit]:not(.alert, .secondary)").prop("disabled", disabled)
 
+  # Add disabled classes to input containers
+  if disabled
+    form.find("input[type=submit]:not(.alert, .secondary)").closest(".button-container").addClass("disabled")
+  else
+    form.find("input[type=submit]:not(.alert, .secondary)").closest(".button-container").removeClass("disabled")
+
 update_required = (element) ->
   label = $(element).siblings(".required-label")
   label = $(element).closest("section").find(".required-label") if label.length == 0

@@ -18,14 +18,19 @@
 
 	border: none;
 
+	transition: background-color $animation-time ease-in-out;
+	background-color: transparent;
+
 	input,
-	select,
-	textarea {
+	textarea,
+	select {
 		outline: none;
 
 		background: none;
 		border: none;
 		width: 100%;
+
+		transition: color $animation-time ease-in-out;
 	}
 
 	select {
@@ -57,32 +62,22 @@
 
 	label {
 		text-transform: uppercase;
-		font-size: 75%;
+
+		@include scale-property(font-size, $font-size-base * 0.75);
+
+		transition: color $animation-time ease-in-out,
+					font-size $animation-time ease-in-out;
 	}
 
 	// Underline top
 
 	.label-container {
-		transition: bottom $animation-time $animation-time / 2 ease-in-out;
-	}
+		transition: bottom $animation-time $animation-time / 2 ease-in-out,
+					opacity $animation-time $animation-time / 2 ease-in-out;
 
-	.label-container:after {
-		content: "";
-
-		margin-left: 0.5rem;
-		margin-top: 0;
-
-		display: inline-block;
-		flex-grow: 1;
-
-		height: 1px;
-
-		background-color: $bg-color;
-
-		transform: scaleX(0);
-		transform-origin: left bottom;
-
-		transition: transform $animation-time / 2 $animation-time / 4 ease-in-out;
+		&.hidden {
+			opacity: 0;
+		}
 	}
 
 	&.disabled {
@@ -95,21 +90,19 @@
 	&:not([disabled]) {
 		&.focus,
 		&.entered {
+			background-color: $will-white;
+
 			.label-container {
-				bottom: 100%;
+				@include scale-calc(bottom, 100%, 0 - $font-size-base * 0.75 - 0.25rem);
+				opacity: 1;
 			}
 
-			.label-container:after {
-				transform: scaleX(1);
-
-				transition: transform $animation-time $animation-time * 1.5 ease-in-out;
-			}
-
-			&:after {
-				transform: scaleX(0);
-				transform-origin: right bottom;
-
-				transition: transform $animation-time ease-in-out;
+			label,
+			input,
+			textarea,
+			select,
+			span[class^="will-icon-"] {
+				color: $will-dark-gray !important;
 			}
 		}
 	}

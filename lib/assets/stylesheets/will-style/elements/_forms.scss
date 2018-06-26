@@ -5,28 +5,27 @@
 // Container styles
 
 .form-container {
-	@include scale-property(margin-bottom, 1.5rem);
+	@include scale-property(margin-bottom, 0.5rem);
 	@include scale-property(padding, 0.25rem);
-
-	&.shrunk {
-		margin-bottom: 0 !important;
-	}
+	@include scale-property(padding-top, $font-size-base + 0.25rem);
 
 	.label-container {
 		position: absolute;
 
-		@include scale-property(bottom, 0.25rem);
+		@include scale-property(bottom, 0.5rem);
 		@include scale-property(left, 0.25rem);
+
 		right: 0;
 
 		display: flex;
 		align-items: center;
-		justify-content: center;
+		justify-content: flex-start;
 
 		pointer-events: none;
 
 		label {
 			line-height: 1;
+			margin-bottom: 0;
 		}
 	}
 
@@ -41,7 +40,7 @@
 	span[class^="will-icon-"] {
 		position: absolute;
 		@include scale-property(right, 0.25rem);
-		top: 33.3%;
+		@include scale-property(bottom, 0.5rem);
 
 		font-size: 50%;
 
@@ -55,7 +54,8 @@
 	@include will-patterned-bg($dark: false);
 	background-color: transparent;
 	transition: background-color 0.2s,
-				block-shadow 0.2s;
+				block-shadow 0.2s,
+				opacity 0.2s ease-in-out;
 
 	&:before {
 		background-size: 960px 960px;
@@ -67,7 +67,9 @@
 
 	width: 100%;
 
-	border: 2px solid $will-white;
+	border: 1px solid $will-white;
+
+	opacity: 0.5;
 
 	input {
 		position: relative;
@@ -79,7 +81,6 @@
 		}
 
 		border: none;
-		cursor: pointer;
 
 		width: 100%;
 
@@ -100,7 +101,13 @@
 		}
 	}
 
-	&:not([disabled]) {
+	&:not(.disabled) {
+		opacity: 1;
+
+		input {
+			cursor: pointer;
+		}
+
 		&:hover,
 		&:focus,
 		&.hover {

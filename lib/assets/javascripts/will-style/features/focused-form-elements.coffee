@@ -16,3 +16,14 @@ $(document).on "keyup keydown change blur", "input, textarea", (event)->
       $(event.currentTarget).closest(".form-container").removeClass("entered")
     else
       $(event.currentTarget).closest(".form-container").addClass("entered")
+
+$(document).on "change", "select", (event)->
+  if $(event.currentTarget).data("selection-triggered") and $(event.currentTarget).closest(".form-container").length > 0
+    $(event.currentTarget).closest(".form-container").addClass("entered")
+  else
+    $(event.currentTarget).data("selection-triggered", true)
+
+$(document).on "mousedown", "select", (event)->
+  if $(event.currentTarget).closest(".form-container").length > 0
+    $(event.currentTarget).data("selection-triggered", true)
+    $(event.currentTarget).closest(".form-container").addClass("entered")
