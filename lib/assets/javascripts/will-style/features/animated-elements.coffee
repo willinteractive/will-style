@@ -142,7 +142,7 @@ _updateAnimatedElements = ->
 
     if isActive
       element.attr("data-animated-active", "true")
-    else if element.data("animated-remove-before")?
+    else if element.data("animated-hidden-before")?
       element.removeAttr("data-animated-active")
 
     # Element is completely off the screen
