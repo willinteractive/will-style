@@ -20,7 +20,7 @@
 		right: 0;
 
 		height: 200%;
-		min-height: 3840px;
+		min-height: 7680px;
 
 		@if $dark == true {
 			background-color: $will-bg-darker;
@@ -35,7 +35,7 @@
 
 		will-change: transform;
 
-		animation: animate-will-bg-pattern 158s linear infinite;
+		animation: animate-will-bg-pattern 316s linear infinite;
 	}
 }
 
@@ -45,6 +45,6 @@
 	}
 
 	100% {
-		transform: translate3d(0, -1920px, 0);
+		transform: translate3d(0, -3840px, 0);
 	}
 }
