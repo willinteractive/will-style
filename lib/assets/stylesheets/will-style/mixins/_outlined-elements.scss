@@ -97,12 +97,15 @@
 				opacity: 1;
 			}
 
-			label,
 			input,
 			textarea,
 			select,
 			span[class^="will-icon-"] {
 				color: $will-dark-gray !important;
+			}
+
+			label {
+				color: $will-light-gray !important;
 			}
 		}
 	}
