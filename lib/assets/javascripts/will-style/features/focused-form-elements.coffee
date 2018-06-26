@@ -23,7 +23,7 @@ $(document).on "change", "select", (event)->
   else
     $(event.currentTarget).data("selection-triggered", true)
 
-$(document).on "mousedown", "select", (event)->
+$(document).on "mousedown mouseup", "select", (event)->
   if $(event.currentTarget).closest(".form-container").length > 0
     $(event.currentTarget).data("selection-triggered", true)
     $(event.currentTarget).closest(".form-container").addClass("entered")
