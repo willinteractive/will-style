@@ -37,6 +37,18 @@
 	&:not(.light) {
 		@include outlined-input($light: false);
 	}
+
+	span[class^="will-icon-"] {
+		position: absolute;
+		@include scale-property(right, 0.25rem);
+		top: 33.3%;
+
+		font-size: 50%;
+
+		& + * {
+			@include scale-property(padding-right, 1rem);
+		}
+	}
 }
 
 .button-container {

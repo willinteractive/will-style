@@ -19,12 +19,19 @@
 	border: none;
 
 	input,
+	select,
 	textarea {
 		outline: none;
 
 		background: none;
 		border: none;
 		width: 100%;
+	}
+
+	select {
+		-webkit-appearance: none;
+		cursor: pointer;
+		border-radius: 0;
 	}
 
 	// Underline bottom

@@ -49,3 +49,9 @@
 .will-icon-start_over:before { content: '\e807'; }
 .will-icon-next_arrow_thick:before { content: '\e808'; }
 .will-icon-previous_arrow_thick:before { content: '\e809'; }
+
+.will-icon-down_arrow {
+	@extend .will-icon-next_arrow;
+
+	transform: rotate(90deg);
+}
