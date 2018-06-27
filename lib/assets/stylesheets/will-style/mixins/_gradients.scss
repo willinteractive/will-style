@@ -2,7 +2,7 @@
 // GRADIENTS
 //
 
-@mixin smooth-gradient($color: black) {
+@function smooth-gradient-color-stops($color: black) {
 	$scrim-coordinates: (
 		0: 1,
 		19: 0.738,
@@ -29,5 +29,13 @@
 		$stops: append($stops, $stop, comma);
 	}
 
-	background-image: linear-gradient(to top, $stops);
+	@return $stops();
+}
+
+@mixin smooth-linear-gradient($color: black) {
+	background-image: linear-gradient(to top, smooth-gradient-color-stops($color));
+}
+
+@mixin smooth-radial-gradient($color: black) {
+	background-image: radial-gradient(smooth-gradient-color-stops($color));
 }
