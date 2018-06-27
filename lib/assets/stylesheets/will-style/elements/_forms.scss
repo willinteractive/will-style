@@ -51,7 +51,7 @@
 }
 
 .button-container {
-	@include will-patterned-bg($dark: false);
+	@include will-patterned-bg;
 	background-color: transparent;
 	transition: background-color 0.2s,
 				block-shadow 0.2s,
@@ -112,14 +112,14 @@
 		&:hover,
 		&:focus,
 		&.hover {
-			background-color: $will-white;
+			background-color: $will-dark-gray;
 
 			&:before {
 				opacity: 1;
 			}
 
 			input {
-				color: $will-dark-gray !important;
+				color: $will-white !important;
 			}
 		}
 	}
