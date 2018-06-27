@@ -2,7 +2,7 @@
 // GRADIENTS
 //
 
-@function smooth-gradient-color-stops($color: black) {
+@function smooth-gradient-color-stops($start-color: black, $end-color: transparent) {
 	$scrim-coordinates: (
 		0: 1,
 		19: 0.738,
@@ -19,23 +19,47 @@
 		100: 0
 	);
 
-	$hue: hue($color);
-	$saturation: saturation($color);
-	$lightness: lightness($color);
+	$start-hue: hue($start-color);
+	$start-saturation: saturation($start-color);
+	$start-lightness: lightness($start-color);
+
+	$end-hue: hue($end-color);
+	$end-saturation: saturation($end-color);
+	$end-lightness: lightness($end-color);
 
 	$stops: ();
+
 	@each $color-stop, $alpha-value in $scrim-coordinates {
-		$stop: hsla($hue, $saturation, $lightness, $alpha-value) percentage($color-stop / 100);
+		$stop: "";
+
+		@if $end-color == transparent {
+			// Fade out start color when transitioning to transparent
+			$stop: hsla(
+					$start-hue,
+					$start-saturation,
+					$start-lightness,
+					$alpha-value)
+					percentage($color-stop / 100);
+		} @else {
+			// Blend the two colors when mixing two colors
+			$stop: hsla(
+					$start-hue * $alpha-value + $end-hue * (1 - $alpha-value),
+					$start-saturation * $alpha-value + $end-saturation * (1 - $alpha-value),
+					$start-lightness * $alpha-value + $end-lightness * (1 - $alpha-value),
+					1)
+					percentage($color-stop / 100);
+		}
+
 		$stops: append($stops, $stop, comma);
 	}
 
 	@return $stops();
 }
 
-@mixin smooth-linear-gradient($color: black) {
-	background-image: linear-gradient(to top, smooth-gradient-color-stops($color));
+@mixin smooth-linear-gradient($start-color: black, $end-color: transparent) {
+	background-image: linear-gradient(to top, smooth-gradient-color-stops($start-color, $end-color));
 }
 
-@mixin smooth-radial-gradient($color: black) {
-	background-image: radial-gradient(smooth-gradient-color-stops($color));
+@mixin smooth-radial-gradient($start-color: black, $end-color: transparent) {
+	background-image: radial-gradient(smooth-gradient-color-stops($start-color, $end-color));
 }

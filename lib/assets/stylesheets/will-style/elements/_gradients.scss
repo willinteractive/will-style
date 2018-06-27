@@ -13,9 +13,9 @@
 }
 
 .gradient-dark:after {
-	@include smooth-linear-gradient($color: $will-dark-gray);
+	@include smooth-linear-gradient($start-color: $will-dark-gray);
 }
 
 .gradient-light:after {
-	@include smooth-linear-gradient($color: $will-white);
+	@include smooth-linear-gradient($start-color: $will-white);
 }
