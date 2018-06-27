@@ -1,0 +1,21 @@
+.gradient-dark,
+.gradient-light {
+	&:after {
+		content: "";
+
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		height: 25%;
+	}
+}
+
+.gradient-dark:after {
+	@include smooth-gradient($color: $will-dark-gray);
+}
+
+.gradient-light:after {
+	@include smooth-gradient($color: $will-white);
+}
