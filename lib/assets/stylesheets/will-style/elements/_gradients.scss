@@ -1,5 +1,6 @@
 .gradient-dark,
-.gradient-light {
+.gradient-light,
+.gradient-primary {
 	&:after {
 		content: "";
 
@@ -9,6 +10,8 @@
 		right: 0;
 
 		height: 25%;
+
+		pointer-events: none;
 	}
 }
 
@@ -18,4 +21,8 @@
 
 .gradient-light:after {
 	@include smooth-linear-gradient($start-color: $will-white);
+}
+
+.gradient-primary:after {
+	@include smooth-linear-gradient($start-color: $primary);
 }
