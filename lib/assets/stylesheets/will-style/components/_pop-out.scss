@@ -4,47 +4,72 @@
 
 *[data-pop-out] {
 	position: fixed;
-	background: $will-dark-gray;
-	padding: 1.5rem;
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
 
-	top: 0;
+background: $will-dark-gray;
 
 	visibility: hidden;
 	pointer-events: none;
 	z-index: -1;
+
+	margin: 0;
+	margin-left: 5vw;
+
+	background: transparent;
+
+	transform: scale(0);
+
+	video,
+	iframe {
+		max-height: 100%;
+		width: 90vw;
+
+		line-height: 0px;
+	}
+
+	iframe {
+		height: calc(90vh - 3rem);
+		border: none;
+	}
 
 	.content {
 		opacity: 0;
 		transition: opacity .2s .4s;
 
 		@include image-shadow();
-	}
 
-	.close-pop-out,
-	.expand-pop-out {
-		position: absolute;
-		top: 0;
-		right: 0;
+		.close-pop-out,
+		.expand-pop-out {
+			position: absolute;
+			top: -2rem;
+			right: 0;
 
-		color: #000000;
-		font-size: 3rem;
-		line-height: 3rem;
-		margin: 0.5rem 1rem;
+			color: $will-white;
+			font-size: 3rem;
+			line-height: 3rem;
+			margin: 0.5rem;
 
-		transition: color .2s;
+			transition: color .2s;
 
-		cursor: pointer;
+			cursor: pointer;
 
-		&:hover,
-		&:focus {
-			color: $primary;
+			&:hover,
+			&:focus {
+				color: $primary;
+			}
+
+			opacity: 0;
 		}
 
-		opacity: 0;
+		.expand-pop-out {
+			right: 3rem;
+
+			&, i {
+				font-size: 1.25rem;
+			}
+		}
 	}
-
-	transform: scale(0);
-
 
 	&.enabled {
 		visibility: visible;
@@ -63,74 +88,10 @@
 		}
 	}
 
-	.expand-pop-out {
-		&, i {
-			font-size: 1.5rem;
-			line-height: 2.5rem;
-		}
-	}
-
-	&.expand {
-		padding: 0;
-		text-align: center;
-
-		margin: 0;
-		margin-left: 5vw;
-
-		background: transparent;
-
-		video,
-		iframe {
-			max-height: 100%;
-			width: 90vw;
-
-			line-height: 0px;
-		}
-
-		iframe {
-			height: calc(90vh - 3rem);
-			border: none;
-		}
-
-		.close-pop-out,
-			.expand-pop-out  {
-			color: #FFFFFF;
-
-			&:hover,
-			&:focus {
-				color: $primary;
-			}
-		}
-
-		&.dark {
-			.close-pop-out,
-			.expand-pop-out {
-				color: #000000;
-
-				&:hover,
-				&:focus {
-					color: $primary;
-				}
-			}
-		}
-
-		&.bordered {
-			.close-pop-out,
-			.expand-pop-out {
-				margin-right: -3rem;
-				margin-top: -3rem;
-			}
-
-
-			.expand-pop-out {
-				margin-right: 0;
-			}
-		}
-	}
-
 	&.full {
 		margin: 0;
 		top: 0 !important;
+		padding: 0;
 		position: fixed;
 
 		video,
