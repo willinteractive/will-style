@@ -43,20 +43,13 @@ centerPopOut = ->
   if popOut.length > 0
     popOutHeight = popOut.outerHeight()
     windowHeight = $(window).height()
-    relativeParent = undefined
 
-    popOut.parents().each ->
-      if $(this).css("position") is 'relative'
-        relativeParent = $(this)
-        return false
-
-    if relativeParent
-      if popOutHeight > windowHeight + 40
-        popOut.css
-          top: "0px"
-      else
-        popOut.css
-          top: (windowHeight - popOutHeight) / 2 + "px"
+    if popOutHeight > windowHeight + 40
+      popOut.css
+        top: "0px"
+    else
+      popOut.css
+        top: (windowHeight - popOutHeight) / 2 + "px"
 
 expandPopOut = ->
   popOut = $('[data-pop-out=""].enabled')
