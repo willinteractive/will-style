@@ -15,6 +15,7 @@
 # -------- COMPONENTS
 #= require will-style/components/navbar
 #= require will-style/components/hideable-sidebar
+#= require will-style/components/pop-out
 
 # -------- FEATURES
 #= require will-style/features/image-backgrounds

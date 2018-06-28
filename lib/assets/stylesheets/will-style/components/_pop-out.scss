@@ -1,0 +1,171 @@
+*[data-pop-out-container] {
+	position: relative;
+}
+
+*[data-pop-out] {
+	position: fixed;
+	background: #FFFFFF;
+	padding: 1.5rem;
+
+	top: 0;
+
+	visibility: hidden;
+	pointer-events: none;
+	z-index: -1;
+
+	.content {
+		opacity: 0;
+		transition: opacity .2s .4s;
+	}
+
+	transition: transform .2s .2s;
+	transform: scale(0);
+
+	&.enabled {
+		visibility: visible;
+		pointer-events: auto;
+		z-index: $navbar-z-index + 2;
+
+		transform: scale(1);
+
+		.content {
+			opacity: 1;
+		}
+	}
+
+	.close-pop-out,
+	.expand-pop-out {
+		position: absolute;
+		top: 0;
+		right: 0;
+
+		color: #000000;
+		font-size: 3rem;
+		line-height: 3rem;
+		margin: 0.5rem 1rem;
+
+		transition: color .2s;
+
+		cursor: pointer;
+
+		&:hover,
+		&:focus {
+			color: $primary;
+		}
+	}
+
+	.expand-pop-out {
+		&, i {
+			font-size: 1.5rem;
+			line-height: 2.5rem;
+		}
+	}
+
+	&.expand {
+		padding: 0;
+		text-align: center;
+
+		margin: 0;
+		margin-left: 5vw;
+
+		background: transparent;
+
+		video,
+		iframe {
+			max-height: 100%;
+			width: 90vw;
+
+			line-height: 0px;
+		}
+
+		iframe {
+			height: calc(90vh - 3rem);
+			border: none;
+		}
+
+		.close-pop-out,
+			.expand-pop-out  {
+			color: #FFFFFF;
+
+			&:hover,
+			&:focus {
+				color: $primary;
+			}
+		}
+
+		&.dark {
+			.close-pop-out,
+			.expand-pop-out {
+				color: #000000;
+
+				&:hover,
+				&:focus {
+					color: $primary;
+				}
+			}
+		}
+
+		&.bordered {
+			.close-pop-out,
+			.expand-pop-out {
+				margin-right: -3rem;
+				margin-top: -3rem;
+			}
+
+
+			.expand-pop-out {
+				margin-right: 0;
+			}
+		}
+	}
+
+	&.full {
+		margin: 0;
+		top: 0 !important;
+		position: fixed;
+
+		video, iframe {
+			width: 100vw;
+			height: 100vh;
+		}
+
+		.close-pop-out {
+			z-index: $navbar-z-index + 3;
+
+			margin: 0 !important;
+		}
+
+		.expand-pop-out {
+			display: none;
+		}
+	}
+}
+
+body {
+	&:before {
+		content: "";
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: transparent;
+
+		pointer-events: none;
+	}
+
+	&.pop-out-showing {
+		&:before {
+			content: "";
+
+			transition: background .2s;
+			background: rgba(0, 0, 0, 0.8);
+
+			z-index: $navbar-z-index + 2;
+		}
+
+		&.with-iframe {
+			overflow: hidden;
+		}
+	}
+}
