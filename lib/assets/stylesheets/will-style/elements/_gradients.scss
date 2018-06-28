@@ -32,14 +32,26 @@
 	}
 }
 
-.gradient-dark:after {
-	@include smooth-linear-gradient($start-color: $will-dark-gray);
+.gradient-top-dark,
+.gradient-bottom-dark,
+.gradient-dark {
+	&:after {
+		@include smooth-linear-gradient($start-color: $will-dark-gray);
+	}
 }
 
-.gradient-light:after {
-	@include smooth-linear-gradient($start-color: $will-white);
+.gradient-top-light,
+.gradient-bottom-light,
+.gradient-light {
+	&:after {
+		@include smooth-linear-gradient($start-color: $will-white);
+	}
 }
 
-.gradient-primary:after {
-	@include smooth-linear-gradient($start-color: $primary);
+.gradient-top-primary,
+.gradient-bottom-primary,
+.gradient-primary {
+	&:after {
+		@include smooth-linear-gradient($start-color: $primary);
+	}
 }
