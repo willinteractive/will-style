@@ -1,3 +1,9 @@
+.gradient-top-dark,
+.gradient-top-light,
+.gradient-top-primary,
+.gradient-bottom-dark,
+.gradient-bottom-light,
+.gradient-bottom-primary,
 .gradient-dark,
 .gradient-light,
 .gradient-primary {
@@ -12,6 +18,17 @@
 		height: 25%;
 
 		pointer-events: none;
+	}
+}
+
+.gradient-top-dark,
+.gradient-top-light,
+.gradient-top-primary {
+	&:after {
+		bottom: auto;
+		top: 0;
+
+		transform: rotate(180deg);
 	}
 }
 
