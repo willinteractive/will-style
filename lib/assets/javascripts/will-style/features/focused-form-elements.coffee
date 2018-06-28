@@ -4,10 +4,10 @@ $(document).on "focus", "input, textarea", (event)->
 $(document).on "blur", "input, textarea", (event)->
   $(event.currentTarget).closest(".form-container").removeClass("focus") if $(event.currentTarget).closest(".form-container").length > 0
 
-$(document).on "mouseenter", "input", (event)->
+$(document).on "mouseenter", "input, button", (event)->
   $(event.currentTarget).closest(".button-container").addClass("hover")
 
-$(document).on "mouseleave", "input", (event)->
+$(document).on "mouseleave", "input, button", (event)->
   $(event.currentTarget).closest(".button-container").removeClass("hover")
 
 $(document).on "keyup keydown change blur", "input, textarea", (event)->
