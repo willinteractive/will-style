@@ -1,10 +1,6 @@
 <% name = controller_name + "-" + action_name %>
 
 <section id="<%= name %>-top" class="hero container-fluid bg-dark">
-	<% unless defined?(custom_content) && custom_content == true %>
-		<%= yield %>
-	<% end %>
-
 	<div class="row full-height align-items-center image-bg<%= (defined?(include_pattern) && include_pattern == false) ? "" : " patterned-bg" %>"
 
 		<% if defined?(background_image) %>
@@ -25,9 +21,7 @@
 		<div class="col-sm-12">
 			<div class="row">
 				<div class="col-sm-12 expanded">
-					<% if defined?(custom_content) && custom_content == true %>
-						<%= yield %>
-					<% else %>
+					<% if defined?(title) %>
 						<%= render partial: "will-style/components/heading", locals: {
 							subtitle: defined?(subtitle) ? subtitle : "",
 							title: defined?(title) ? title : "",
@@ -35,6 +29,8 @@
 							page_heading: true
 						} %>
 					<% end %>
+
+					<%= yield %>
 				</div>
 			</div>
 		</div>
