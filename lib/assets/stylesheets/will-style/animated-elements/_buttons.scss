@@ -1,0 +1,37 @@
+.button-container {
+	will-change: opacity;
+
+	@include animated-element-init {
+		&:not(.disabled) {
+			&:before,
+			&:after {
+				animation: none;
+			}
+
+			input,
+			button {
+				opacity: 0;
+				transform: translateY(15%);
+
+				transition: opacity 0.2s ease-in-out;
+			}
+		}
+	}
+
+	@include animated-element-active {
+		&:not(.disabled) {
+			&:before {
+				animation: animate-button-before-line 0.8s 0.2s ease-in-out forwards;
+			}
+
+			&:after {
+				animation: animate-button-after-line 0.8s 0.2s ease-in-out forwards;
+			}
+
+			input,
+			button {
+				opacity: 1;
+			}
+		}
+	}
+}

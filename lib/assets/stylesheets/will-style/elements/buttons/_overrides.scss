@@ -7,31 +7,37 @@ button {
 }
 
 .button-container {
-	@include will-patterned-bg;
+	position: relative;
+	border: 2px solid transparent !important;
 
-	background-color: transparent;
-	transition: background-color 0.2s,
-				block-shadow 0.2s,
-				opacity 0.2s ease-in-out,
-				border-color 0.2s ease-in-out;
+	opacity: 0;
+	transition: opacity 0.2s ease-in-out;
 
-	&:before {
-		background-size: 960px 960px;
-		animation-duration: 31s;
+	.will-bg-pattern-dark {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		z-index: -1;
+
+		&:before {
+			background-size: 960px 960px;
+			animation-duration: 31s;
+		}
 
 		opacity: 0;
 		transition: opacity 0.2s ease-in-out;
+
+		pointer-events: none;
 	}
-
-	width: 100%;
-	border: 1px solid transparent;
-
-	opacity: 0.5;
 
 	input,
 	button {
 		position: relative;
-		cursor: pointer;
+
+		cursor: not-allowed;
 
 		padding: 2rem;
 
@@ -49,6 +55,60 @@ button {
 		transition: color 0.2s ease-in-out;
 
 		background-color: transparent;
+
+		z-index: 1;
+	}
+
+	&:before,
+	&:after {
+		content: "";
+
+		margin-top: 0;
+
+		position: absolute;
+
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		z-index: 0;
+		pointer-events: none;
+
+		height: auto;
+
+		transition-timing-function: linear;
+
+		background-repeat: no-repeat;
+
+		background-size: 100% 2px,
+						 2px 100%;
+
+		transform: scaleX(0);
+	}
+
+	&:before {
+		background-image: 	linear-gradient(to right, $will-white, $will-white),
+							linear-gradient(to right, $will-white, $will-white);
+
+		background-position: center top,
+							 right top;
+
+		transform-origin: left top;
+
+		bottom: calc(100% - 2px);
+	}
+
+	&:after {
+		background-image: 	linear-gradient(to bottom, $will-white, $will-white),
+							linear-gradient(to bottom, $will-white, $will-white);
+
+		background-position: center bottom,
+							 left bottom;
+
+		transform-origin: right bottom;
+
+		top: calc(100% - 2px);
 	}
 
 	&.light {
@@ -65,18 +125,24 @@ button {
 
 	&:not(.disabled) {
 		opacity: 1;
-		border-color: $will-white;
 
-		input {
+		input,
+		button {
 			cursor: pointer;
+		}
+
+		&:before {
+			animation: animate-button-before-line 0.8s 0.2s ease-in-out forwards;
+		}
+
+		&:after {
+			animation: animate-button-after-line 0.8s 0.2s ease-in-out forwards;
 		}
 
 		&:hover,
 		&:focus,
 		&.hover {
-			background-color: $will-dark-gray;
-
-			&:before {
+			.will-bg-pattern-dark {
 				opacity: 1;
 			}
 
@@ -84,5 +150,39 @@ button {
 				color: $will-white !important;
 			}
 		}
+	}
+}
+
+@keyframes animate-button-before-line {
+	0% {
+		transform: scaleX(0);
+		bottom: calc(100% - 2px);
+	}
+
+	75% {
+		bottom: calc(100% - 2px);
+		transform: scaleX(1);
+	}
+
+	100% {
+		bottom: 0;
+		transform: scaleX(1);
+	}
+}
+
+@keyframes animate-button-after-line {
+	0% {
+		transform: scaleX(0);
+		top: calc(100% - 2px);
+	}
+
+	75% {
+		top: calc(100% - 2px);
+		transform: scaleX(1);
+	}
+
+	100% {
+		top: 0;
+		transform: scaleX(1);
 	}
 }
