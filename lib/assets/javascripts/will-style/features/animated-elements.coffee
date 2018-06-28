@@ -137,7 +137,7 @@ _updateAnimatedElements = ->
       isActive = true
 
     # Element is at top and we're only using the top as a trigger
-    else if targetTop < windowTop + windowHeight and element.data("animated-top")?
+    else if targetTop < windowTop + windowHeight and element.data("animated-begin")?
       isActive = true
 
     if isActive
