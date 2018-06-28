@@ -29,7 +29,6 @@ clearPopOut = ->
       popOut.find("video").off("ended")
 
     popOut.removeClass("enabled")
-    popOut.removeClass("full")
 
     if popOut.find("iframe").length > 0
       $(popOut.find("iframe")).removeAttr("src")
@@ -51,12 +50,6 @@ centerPopOut = ->
       popOut.css
         top: (windowHeight - popOutHeight) / 2 + "px"
 
-expandPopOut = ->
-  popOut = $('[data-pop-out=""].enabled')
-
-  if popOut.length > 0
-    popOut.addClass "full"
-
 $(document).on "click", '[data-pop-out-link=""]', (event) ->
   return if $('[data-pop-out=""].enabled').length > 0
 
@@ -71,7 +64,7 @@ $(document).on "click", '[data-pop-out-link=""]', (event) ->
         return
 
       if popOut.find("iframe").length is 0
-        $(popOut.find(".content")).prepend("<iframe></iframe>")
+        $(popOut.find(".content")).prepend("<iframe allowfullscreen></iframe>")
 
       iframe = $(popOut.find("iframe"))
       iframe.attr("src", link.attr("data-pop-out-url"))
@@ -97,7 +90,5 @@ $(document).on "click", '[data-pop-out-link=""]', (event) ->
     return false
 
 $(document).on "click", '.close-pop-out', clearPopOut
-
-$(document).on "click", '.expand-pop-out', expandPopOut
 
 $(document).on "turbolinks:load", clearPopOut
