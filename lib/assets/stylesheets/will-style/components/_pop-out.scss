@@ -4,7 +4,7 @@
 
 *[data-pop-out] {
 	position: fixed;
-	background: #FFFFFF;
+	background: $will-dark-gray;
 	padding: 1.5rem;
 
 	top: 0;
@@ -16,21 +16,8 @@
 	.content {
 		opacity: 0;
 		transition: opacity .2s .4s;
-	}
 
-	transition: transform .2s .2s;
-	transform: scale(0);
-
-	&.enabled {
-		visibility: visible;
-		pointer-events: auto;
-		z-index: $navbar-z-index + 2;
-
-		transform: scale(1);
-
-		.content {
-			opacity: 1;
-		}
+		@include image-shadow();
 	}
 
 	.close-pop-out,
@@ -51,6 +38,28 @@
 		&:hover,
 		&:focus {
 			color: $primary;
+		}
+
+		opacity: 0;
+	}
+
+	transform: scale(0);
+
+
+	&.enabled {
+		visibility: visible;
+		pointer-events: auto;
+		z-index: $navbar-z-index + 2;
+
+		animation: scale-out-pop-out 0.4s 0.2s ease-in-out forwards;
+
+		.content {
+			opacity: 1;
+		}
+
+		.close-pop-out,
+		.expand-pop-out {
+			animation: fade-in-pop-out-buttons 0.2s 0.8s ease-in-out forwards;
 		}
 	}
 
@@ -124,13 +133,22 @@
 		top: 0 !important;
 		position: fixed;
 
-		video, iframe {
+		video,
+		iframe {
 			width: 100vw;
 			height: 100vh;
 		}
 
 		.close-pop-out {
 			z-index: $navbar-z-index + 3;
+
+			left: 0.25rem;
+			top: 0.25rem;
+
+			line-height: 1.5rem;
+			right: auto;
+
+			@include text-shadow-z2;
 
 			margin: 0 !important;
 		}
@@ -149,17 +167,18 @@ body {
 		bottom: 0;
 		left: 0;
 		right: 0;
-		background: transparent;
+
+		background-color: $will-dark-gray;
+
+		opacity: 0;
+		transition: opacity 0.2s ease-in-out;
 
 		pointer-events: none;
 	}
 
 	&.pop-out-showing {
 		&:before {
-			content: "";
-
-			transition: background .2s;
-			background: rgba(0, 0, 0, 0.8);
+			opacity: 0.95;
 
 			z-index: $navbar-z-index + 2;
 		}
@@ -167,5 +186,25 @@ body {
 		&.with-iframe {
 			overflow: hidden;
 		}
+	}
+}
+
+@keyframes scale-out-pop-out {
+	0% {
+		transform: scale(0);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes fade-in-pop-out-buttons {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
 	}
 }
