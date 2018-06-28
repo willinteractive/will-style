@@ -77,6 +77,10 @@ h6,
 	@include scale-font-size($display4-size);
 }
 
+.jumbo {
+	@include scale-font-size($jumbo-size);
+}
+
 //
 // Emphasis
 //
