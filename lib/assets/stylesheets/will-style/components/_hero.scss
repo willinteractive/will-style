@@ -10,6 +10,18 @@
 		background-attachment: fixed;
 	}
 
+	.fg-image {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+
+		background-size: auto 60%;
+		background-position: 95% bottom;
+		background-repeat: no-repeat;
+	}
+
 	.arrow-wrap {
 		position: absolute;
 
