@@ -76,6 +76,6 @@ $(document).on 'turbolinks:load', (event) ->
 
             quotes.removeClass("active")
             $(quotes[activeIndex]).addClass("active")
-          , 1000
+          , 5000
 
           rotationIntervals.push interval
