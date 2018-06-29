@@ -97,7 +97,7 @@
 			width: 100vw;
 			height: 100vh;
 
-			@include shadow-top();
+			@include shadow-z0();
 		}
 
 		.close-pop-out {
@@ -108,7 +108,7 @@
 
 			line-height: 1.5rem;
 
-			@include text-shadow-z2;
+			@include text-shadow-z2();
 
 			margin: 0 !important;
 		}
