@@ -43,7 +43,7 @@ centerPopOut = ->
     popOutHeight = popOut.outerHeight()
     windowHeight = $(window).height()
 
-    if popOutHeight > windowHeight + 40
+    if popOutHeight > windowHeight + 40 or popOut.hasClass("full")
       popOut.css
         top: "0px"
     else
