@@ -27,3 +27,16 @@ $(document).on "mousedown mouseup", "select", (event)->
   if $(event.currentTarget).closest(".form-container").length > 0
     $(event.currentTarget).data("selection-triggered", true)
     $(event.currentTarget).closest(".form-container").addClass("entered")
+
+$(document).on 'turbolinks:load', ->
+  # Set a timeout to let other JS run that might set values
+  setTimeout ->
+    $("select").each ->
+      if $(this).find(":selected").text() isnt "" and $(this).closest(".form-container").length > 0
+        $(this).data("selection-triggered", true)
+        $(this).closest(".form-container").addClass("entered")
+
+    $("input, textarea").each ->
+      if $(this).val() isnt "" and $(this).closest(".form-container").length > 0
+        $(this).closest(".form-container").addClass("entered")
+  , 10
