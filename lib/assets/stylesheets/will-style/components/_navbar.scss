@@ -3,10 +3,11 @@
 //
 
 nav.navbar {
-
 	// Styling Navbar links
 
 	.nav-link {
+		-webkit-user-select: none;
+
 		transition: color 0.2s ease-in-out;
 
 		position: relative;
@@ -223,6 +224,8 @@ nav.navbar {
 	// Ensure Navbar Logo is big enough for logo to be by itself
 
 	a.navbar-brand {
+		-webkit-user-select: none;
+
 		// Ensure WILL Logo isn't huge on firefox
 		svg {
 			max-width: #{($nav-link-padding-y * 2 + $font-size-base * $line-height-base) * $will-logo-aspect-ratio};
