@@ -89,3 +89,7 @@ small,
 .small {
 	@include scale-font-size($small-font-size);
 }
+
+.upcase {
+	text-transform: uppercase;
+}

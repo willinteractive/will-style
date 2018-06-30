@@ -81,7 +81,6 @@ $(document).on 'turbolinks:load', (event) ->
 
             $(quotes[activeIndex]).addClass("active")
             $(icons[activeIndex]).addClass("active")
-
-          , 1000
+          , 5000
 
           rotationIntervals.push interval

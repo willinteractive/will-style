@@ -3,6 +3,16 @@
 //
 
 nav.navbar {
+
+	// Obscuring scrolling content
+	transition: background-color 0.2s ease-in-out,
+				box-shadow 0.2s ease-in-out,;
+
+	&.obscure {
+		background-color: $dark;
+		@extend .shadow-bottom;
+	}
+
 	// Styling Navbar links
 
 	.nav-link {
