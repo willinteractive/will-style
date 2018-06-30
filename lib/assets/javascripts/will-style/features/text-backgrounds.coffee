@@ -64,18 +64,24 @@ $(document).on 'turbolinks:load', (event) ->
 
 
           $( $("[data-quotes-holder]").find(".quote-display")[0]).addClass("active");
+          $( $("[data-testimonial]").find(".quote-icon")[0]).addClass("active");
 
           quoteContainer = $("[data-quotes-holder]")
-
+          iconContainer = $("[data-testimonial]")
 
           interval = setInterval ->
             quotes = quoteContainer.find(".quote-display")
+            icons = iconContainer.find(".quote-icon")
 
             activeIndex = quoteContainer.find(".quote-display.active").index() + 1
             activeIndex = 0 if activeIndex > quotes.length - 1
 
             quotes.removeClass("active")
+            icons.removeClass("active")
+
             $(quotes[activeIndex]).addClass("active")
+            $(icons[activeIndex]).addClass("active")
+
           , 1000
 
           rotationIntervals.push interval
