@@ -22,21 +22,17 @@
 			<div class="image-bg fg-image" style="background-image: url('<%= asset_url(foreground_image) %>')"></div>
 		<% end %>
 
-		<div class="col-sm-12">
-			<div class="row">
-				<div class="col-sm-12 expanded">
-					<% if defined?(title) %>
-						<%= render partial: "will-style/components/heading", locals: {
-							subtitle: defined?(subtitle) ? subtitle : "",
-							title: defined?(title) ? title : "",
-							invert_colors: true,
-							page_heading: true
-						} %>
-					<% end %>
+		<div class="col-12 expanded">
+			<% if defined?(title) %>
+				<%= render partial: "will-style/components/heading", locals: {
+					subtitle: defined?(subtitle) ? subtitle : "",
+					title: defined?(title) ? title : "",
+					invert_colors: true,
+					page_heading: true
+				} %>
+			<% end %>
 
-					<%= yield %>
-				</div>
-			</div>
+			<%= yield %>
 		</div>
 
 		<% unless defined?(hide_arrow) && hide_arrow == true %>
