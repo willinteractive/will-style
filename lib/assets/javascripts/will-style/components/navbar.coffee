@@ -40,6 +40,18 @@ _requiresUpdate = false
 _cachedScrollTop = -1
 _cachedNavbarHeight = -1
 
+_topCache = {}
+
+#---------------------
+# Private Methods    -
+#---------------------
+
+_generateID = ->
+  'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace /[xy]/g, (c) ->
+    r = Math.random() * 16 | 0
+    v = if c == 'x' then r else r & 0x3 | 0x8
+    v.toString 16
+
 _updateNavbarObscure = ->
   navbar = $(".navbar")
   obscure = $("[data-navbar-obscure]")
@@ -59,7 +71,25 @@ _updateNavbarObscure = ->
   _requiresUpdate = false
   _isUpdating = true
 
-  if obscure.offset().top < (_cachedScrollTop + _cachedNavbarHeight)
+  shouldObscure = false
+
+  obscure.each ->
+    if $(this).is(":visible")
+      # Set animation ids for cache reference
+      $(this).data("obscure-id", _generateID()) unless $(this).data("obscure-id")
+
+      elementTop = -1
+      if _topCache[$(this).data("obscure-id")]
+        elementTop = _topCache[$(this).data("obscure-id")].top
+
+      if elementTop < 1
+        elementTop = $(this).offset().top
+        _topCache[$(this).data("animate-id")] = $(this).offset().top
+
+      if elementTop < (_cachedScrollTop + _cachedNavbarHeight)
+        shouldObscure = true
+
+  if shouldObscure
     navbar.addClass("obscure")
   else
     navbar.removeClass("obscure")
@@ -81,6 +111,10 @@ _scheduleNavbarObscureUpdate = ->
   else
     _updateNavbarObscure()
 
+#---------------------
+# Observers          -
+#---------------------
+
 $(window).on "scroll", ->
   if $(window).scrollTop() isnt _lastScrollTop
     _cachedScrollTop = -1
@@ -94,4 +128,14 @@ $(window).on "resize", ->
     _cachedScrollTop = -1
     _cachedNavbarHeight = -1
 
+    _topCache = {}
+
     _scheduleNavbarObscureUpdate()
+
+$(document).on 'turbolinks:load', ->
+  _topCache = {}
+
+  _cachedScrollTop = -1
+  _cachedNavbarHeight = -1
+
+  _scheduleNavbarObscureUpdate()
