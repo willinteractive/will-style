@@ -10,7 +10,13 @@ button {
 	position: relative;
 	border: 2px solid transparent !important;
 
-	.will-bg-pattern-dark {
+	&.inline {
+		display: inline-block;
+		width: auto;
+	}
+
+	.will-bg-pattern-dark,
+	.will-bg-pattern-light {
 		position: absolute;
 		top: 0;
 		bottom: 0;
@@ -142,12 +148,19 @@ button {
 		&:hover,
 		&:focus,
 		&.hover {
-			.will-bg-pattern-dark {
+			.will-bg-pattern-dark,
+			.will-bg-pattern-light {
 				opacity: 1;
 			}
 
-			input {
+			.will-bg-pattern-dark + input,
+			.will-bg-pattern-dark + button, {
 				color: $will-white !important;
+			}
+
+			.will-bg-pattern-light + input,
+			.will-bg-pattern-light + button, {
+				color: $will-dark-gray !important;
 			}
 		}
 	}
