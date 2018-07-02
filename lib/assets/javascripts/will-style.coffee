@@ -19,7 +19,6 @@
 
 # -------- FEATURES
 #= require will-style/features/image-backgrounds
-#= require will-style/features/text-backgrounds
 #= require will-style/features/video-backgrounds
 #= require will-style/features/image-loading
 #= require will-style/features/animated-elements
