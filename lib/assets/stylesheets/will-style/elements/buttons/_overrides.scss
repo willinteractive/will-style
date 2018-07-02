@@ -89,13 +89,19 @@ button {
 		background-size: 100% 2px,
 						 2px 100%;
 
-		transform: scaleX(0);
-	}
-
-	&:before {
 		background-image: 	linear-gradient(to right, $will-white, $will-white),
 							linear-gradient(to right, $will-white, $will-white);
 
+		transform: scaleX(0);
+	}
+
+	&.dark:before,
+	&.dark:after {
+		background-image: 	linear-gradient(to right, $will-dark-gray, $will-dark-gray),
+							linear-gradient(to right, $will-dark-gray, $will-dark-gray);
+	}
+
+	&:before {
 		background-position: center top,
 							 right top;
 
@@ -105,9 +111,6 @@ button {
 	}
 
 	&:after {
-		background-image: 	linear-gradient(to bottom, $will-white, $will-white),
-							linear-gradient(to bottom, $will-white, $will-white);
-
 		background-position: center bottom,
 							 left bottom;
 
