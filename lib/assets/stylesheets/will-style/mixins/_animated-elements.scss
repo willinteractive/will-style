@@ -14,6 +14,7 @@ $animated-element-active-prop: "data-animated-active" !default;
 $animated-element-after-prop: "data-animated-after" !default;
 $animated-element-hidden-after-prop: "data-animated-hidden-after" !default;
 $animated-element-progressive-prop: "data-animated-progressive" !default;
+$animated-element-progressive-default-prop: "data-animated-progressive-default" !default;
 $animated-element-progressive-position-prop: "data-animated-progressive-position" !default;
 
 $animated-number-top-prop: "data-animated-number-top" !default;
@@ -33,6 +34,7 @@ $animated-element-active-selector: "[#{$animated-element-active-prop}]" !default
 $animated-element-hidden-after-selector: "[#{$animated-element-hidden-after-prop}]" !default;
 $animated-element-after-selector: "[#{$animated-element-after-prop}]" !default;
 $animated-element-progressive-selector: "[#{$animated-element-progressive-prop}]" !default;
+$animated-element-progressive-default-selector: "[#{$animated-element-progressive-default-prop}]" !default;
 
 //Modern Rise Blocks
 $animated-fast-rise-blocks-selector: "[#{$animated-fast-rise-blocks-prop}]" !default;
@@ -149,6 +151,12 @@ $animated-number-bottom-selector: "[#{$animated-number-bottom-prop}]" !default;
 		&[#{$animated-element-progressive-position-prop}="#{$position}"] {
 			@content;
 		}
+	}
+}
+
+@mixin animated-element-progressive-default {
+	&#{$animated-element-progressive-default-selector} {
+		@content;
 	}
 }
 
