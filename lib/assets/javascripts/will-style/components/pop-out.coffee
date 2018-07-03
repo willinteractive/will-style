@@ -95,3 +95,17 @@ $(document).on "click", '[data-pop-out-link=""]', (event) ->
 $(document).on "click", '.close-pop-out', clearPopOut
 
 $(document).on "turbolinks:load", clearPopOut
+
+# Disable fullscreen for pop outs
+$(document).on "webkitfullscreenchange mozfullscreenchange fullscreenchange MSFullscreenChange", (event) ->
+  element = document.fullscreenElement or document.webkitFullscreenElement or document.mozFullScreenElement or document.msFullscreenElement
+
+  if element and $(element).is("iframe")
+    if document.exitFullscreen
+      document.cancelFullscreen()
+    else if document.mozCancelFullScreen
+      document.mozCancelFullScreen()
+    else if document.webkitCancelFullScreen
+      document.webkitCancelFullScreen()
+    else if document.msFullscreenElement
+      document.msExitFullscreen()
