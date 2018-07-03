@@ -55,6 +55,9 @@ $(document).on "click", '[data-pop-out-link=""]', (event) ->
 
   link = $(event.currentTarget)
 
+  if link.attr("data-pop-out-active-class") and not link.hasClass(link.attr("data-pop-out-active-class"))
+    return
+
   if link.attr("data-pop-out-id")
     popOut = $("##{link.attr("data-pop-out-id")}")
 
