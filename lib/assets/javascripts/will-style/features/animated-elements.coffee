@@ -160,6 +160,10 @@ _updateAnimatedElements = ->
       totalDistance = windowHeight + targetHeight
       traveledDistance = targetBottom - windowTop
 
+      if element.data("animated-begin")?
+        totalDistance = windowHeight
+        traveledDistance = targetTop - windowTop
+
       progressivePosition = Math.floor((totalDistance - traveledDistance) / totalDistance * 100)
 
       progressivePosition = 0 if progressivePosition < 0
