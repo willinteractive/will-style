@@ -17,10 +17,16 @@
 
 .will-bg-light,
 .will-bg-dark {
-	@include patterned-background-light;
-
 	position: relative;
 	overflow: hidden;
+
+	@include patterned-background-light;
+
+	// @NOTE: Affix background grid on these elements to get the fixed pattern effect
+	// We're not doing this globally because it can affect performance.
+	&:before {
+		background-attachment: fixed;
+	}
 
 	&:after {
 		content: "";
