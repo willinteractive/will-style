@@ -1,9 +1,12 @@
+.gradient-top-black,
 .gradient-top-dark,
 .gradient-top-light,
 .gradient-top-primary,
+.gradient-bottom-black,
 .gradient-bottom-dark,
 .gradient-bottom-light,
 .gradient-bottom-primary,
+.gradient-black,
 .gradient-dark,
 .gradient-light,
 .gradient-primary {
@@ -21,6 +24,7 @@
 	}
 }
 
+.gradient-top-black,
 .gradient-top-dark,
 .gradient-top-light,
 .gradient-top-primary {
@@ -29,6 +33,14 @@
 		top: 0;
 
 		transform: rotate(180deg);
+	}
+}
+
+.gradient-top-black,
+.gradient-bottom-black,
+.gradient-black {
+	&:after {
+		@include smooth-linear-gradient($start-color: black);
 	}
 }
 
