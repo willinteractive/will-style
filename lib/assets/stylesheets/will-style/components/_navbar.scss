@@ -149,7 +149,10 @@ nav.navbar {
 				opacity: 0;
 
 				.nav-link {
-					@include scale-font-size(2rem);
+					// Only increase font-size on portrait – there isn't enough room on phones in landscape
+					@media (orientation: portrait) {
+						@include scale-font-size(2rem);
+					}
 				}
 			}
 
