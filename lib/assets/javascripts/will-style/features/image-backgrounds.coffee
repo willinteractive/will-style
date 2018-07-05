@@ -34,6 +34,12 @@ $(document).on 'turbolinks:load', (event) ->
     try
       bgs = JSON.parse $(this).attr("data-image-bgs").replace(/'/gi, '"')
 
+      positions = []
+      try
+        positions = JSON.parse $(this).attr("data-image-bg-positions").replace(/'/gi, '"')
+      catch
+        # JSON Parse Error
+
       if bgs.length > 0
         if $(this).attr("data-image-bgs-randomize") is "" or $(this).attr("data-image-bgs-randomize") is "true"
           shuffle(bgs)
@@ -43,8 +49,13 @@ $(document).on 'turbolinks:load', (event) ->
 
         $(this).addClass("image-bgs")
 
-        for bg in bgs
-          $(this).append(generateBGDomElement(bg))
+        for bg, index in bgs
+          element = $(generateBGDomElement(bg))
+
+          if positions.length is bgs.length
+            element.attr("class", element.attr("class") + " #{positions[index]}")
+
+          element.appendTo(this)
 
         $($(this).find(".image-bg-display")[0]).addClass("active").addClass("first")
 

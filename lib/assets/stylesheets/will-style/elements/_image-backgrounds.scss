@@ -84,3 +84,21 @@
 
 	pointer-events: none;
 }
+
+// Background Positioning
+
+.image-bg,
+.image-bg-display {
+	@for $i from 0 through 100 {
+		&.x-#{$i},
+		&.x-#{$i} {
+			background-position-x: percentage($i / 100.0);
+		}
+	}
+
+	@for $i from 0 through 100 {
+		&.y-#{$i} {
+			background-position-y: percentage($i / 100.0);
+		}
+	}
+}
