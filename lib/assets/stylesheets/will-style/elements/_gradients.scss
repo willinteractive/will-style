@@ -10,7 +10,7 @@
 .gradient-dark,
 .gradient-light,
 .gradient-primary {
-	&:after {
+	&:before {
 		content: "";
 
 		position: absolute;
@@ -22,13 +22,17 @@
 
 		pointer-events: none;
 	}
+
+	&.gradient-full:before {
+		height: 200%;
+	}
 }
 
 .gradient-top-black,
 .gradient-top-dark,
 .gradient-top-light,
 .gradient-top-primary {
-	&:after {
+	&:before {
 		bottom: auto;
 		top: 0;
 
@@ -39,7 +43,7 @@
 .gradient-top-black,
 .gradient-bottom-black,
 .gradient-black {
-	&:after {
+	&:before {
 		@include smooth-linear-gradient($start-color: black);
 	}
 }
@@ -47,7 +51,7 @@
 .gradient-top-dark,
 .gradient-bottom-dark,
 .gradient-dark {
-	&:after {
+	&:before {
 		@include smooth-linear-gradient($start-color: $will-dark-gray);
 	}
 }
@@ -55,7 +59,7 @@
 .gradient-top-light,
 .gradient-bottom-light,
 .gradient-light {
-	&:after {
+	&:before {
 		@include smooth-linear-gradient($start-color: $will-white);
 	}
 }
@@ -63,7 +67,7 @@
 .gradient-top-primary,
 .gradient-bottom-primary,
 .gradient-primary {
-	&:after {
+	&:before {
 		@include smooth-linear-gradient($start-color: $primary);
 	}
 }
