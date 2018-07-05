@@ -221,3 +221,13 @@ nav.navbar {
 		min-width: #{($nav-link-padding-y * 2 + $font-size-base * $line-height-base) * $will-logo-aspect-ratio};
 	}
 }
+
+// Navbar positioning on small screens
+
+body.navbar-active {
+	overflow: hidden;
+
+	nav.navbar {
+		z-index: $navbar-z-index + 10 !important;
+	}
+}
