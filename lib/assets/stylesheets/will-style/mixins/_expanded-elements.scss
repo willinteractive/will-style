@@ -11,7 +11,7 @@
 		}
 
 		@include media-breakpoint-down(sm) {
-			padding-left: 2rem;
+			padding-left: $grid-gutter-width / 2;
 		}
 	}
 
@@ -23,7 +23,7 @@
 		}
 
 		@include media-breakpoint-down(sm) {
-			padding-right: 2rem;
+			padding-right: $grid-gutter-width / 2;
 		}
 	}
 
@@ -35,7 +35,7 @@
 		}
 
 		@include media-breakpoint-down(sm) {
-			padding-top: 2rem;
+			padding-top: $grid-gutter-width / 2;
 		}
 	}
 
@@ -47,7 +47,7 @@
 		}
 
 		@include media-breakpoint-down(sm) {
-			padding-bottom: 2rem;
+			padding-bottom: $grid-gutter-width / 2;
 		}
 	}
 }

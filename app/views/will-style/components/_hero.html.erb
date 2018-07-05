@@ -1,7 +1,7 @@
 <% name = controller_name + "-" + action_name %>
 
 <section id="<%= name %>-top" class="hero container-fluid bg-dark">
-	<div class="row full-height align-items-center image-bg<%= (defined?(include_pattern) && include_pattern == false) ? "" : " patterned-bg" %>"
+	<div class="row expanded full-height align-items-center image-bg<%= (defined?(include_pattern) && include_pattern == false) ? "" : " patterned-bg" %>"
 
 		<% if defined?(background_image) %>
 			style="background-image: url('<%= asset_url(background_image) %>')"
@@ -22,7 +22,7 @@
 			<div class="image-bg fg-image" style="background-image: url('<%= asset_url(foreground_image) %>')" data-animated data-animated-fixed data-animated-default data-animated-delay="800" data-animated-hidden-after data-animated-target="section" data-animated-begin data-animated-opacity></div>
 		<% end %>
 
-		<div class="col-12 expanded">
+		<div class="col-12">
 			<% if defined?(title) %>
 				<%= render partial: "will-style/components/heading", locals: {
 					subtitle: defined?(subtitle) ? subtitle : "",

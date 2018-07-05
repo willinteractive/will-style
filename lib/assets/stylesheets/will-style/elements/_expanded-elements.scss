@@ -35,3 +35,17 @@
 [class*='col-'].full-height {
 	min-height: 100vh;
 }
+
+// Reset Horizontal padding on expanded rows so that columns don't get double padding
+
+@include media-breakpoint-down(sm) {
+	.row.expanded,
+	.row.expanded-x {
+		> .col,
+    	> [class*="col-"] {
+			padding-right: 0;
+			padding-left: 0;
+    	}
+	}
+}
+
