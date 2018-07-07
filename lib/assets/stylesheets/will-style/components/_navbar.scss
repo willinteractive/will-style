@@ -3,13 +3,27 @@
 //
 
 nav.navbar {
+	@include patterned-background();
+
+	&:before,
+	&:after {
+		opacity: 0;
+
+		transition: opacity 0.2s ease-in-out;
+	}
 
 	// Obscuring scrolling content
-	transition: background-color 0.2s ease-in-out,
-				box-shadow 0.2s ease-in-out,;
+	transition: box-shadow 0.2s ease-in-out,;
 
 	&.obscure {
-		background-color: $dark;
+		&:before {
+			opacity: 1;
+		}
+
+		&:after {
+			opacity: $patterned-background-opacity;
+		}
+
 		@extend .shadow-bottom;
 	}
 
@@ -105,6 +119,8 @@ nav.navbar {
 		}
 
 		.navbar-collapse {
+			@include patterned-background();
+
 			padding: 1rem 2rem;
 
 			position: absolute;
@@ -120,23 +136,10 @@ nav.navbar {
 
 			transform: translateX(-100%);
 
-			&:before {
-				content: "";
-
-				position: fixed;
-
-				top: 0;
-				bottom: 0;
-				left: 0;
-				right: 0;
-
-				background-color: $dark;
-
+			&:before,
+			&:after {
 				opacity: 0;
-
 				transition: opacity 0.2s ease-in-out;
-
-				z-index: -1;
 			}
 
 			.nav-item {
@@ -162,6 +165,10 @@ nav.navbar {
 
 				&:before {
 					opacity: 1;
+				}
+
+				&:after {
+					opacity: $patterned-background-opacity;
 				}
 			}
 
