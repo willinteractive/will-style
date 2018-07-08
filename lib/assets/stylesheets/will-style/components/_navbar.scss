@@ -179,8 +179,11 @@ nav.navbar {
 				}
 			}
 
-			&.collapsing-out:before {
-				opacity: 0;
+			&.collapsing-out {
+				&:before,
+				&:after {
+					opacity: 0;
+				}
 			}
 
 			&.show {
