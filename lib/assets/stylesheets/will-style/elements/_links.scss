@@ -5,7 +5,7 @@
 // Default Links
 
 a {
-	transition: color 0.2s ease-in-out;
+	transition: color 0.2s $animation-timing-function;
 }
 
 // Animated Links
@@ -29,8 +29,8 @@ a.animated {
 
 		transform: scaleX(0);
 		transform-origin: left center;
-		transition: transform 0.4s ease-in-out,
-					background-color 0.4s ease-in-out;
+		transition: transform $animation-duration $animation-timing-function,
+					background-color $animation-duration $animation-timing-function;
 	}
 
 	@include hover-focus {

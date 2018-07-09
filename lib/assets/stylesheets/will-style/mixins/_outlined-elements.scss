@@ -18,7 +18,7 @@
 
 	border: none;
 
-	transition: background-color $animation-time ease-in-out;
+	transition: background-color $animation-time $animation-timing-function;
 	background-color: transparent;
 
 	input,
@@ -30,7 +30,7 @@
 		border: none;
 		width: 100%;
 
-		transition: color $animation-time ease-in-out;
+		transition: color $animation-time $animation-timing-function;
 	}
 
 	select {
@@ -57,7 +57,7 @@
 
 		transform-origin: left bottom;
 
-		transition: transform $animation-time $animation-time ease-in-out;
+		transition: transform $animation-time $animation-time $animation-timing-function;
 	}
 
 	label {
@@ -65,15 +65,15 @@
 
 		@include scale-property(font-size, $font-size-base * 0.75);
 
-		transition: color $animation-time ease-in-out,
-					font-size $animation-time ease-in-out;
+		transition: color $animation-time $animation-timing-function,
+					font-size $animation-time $animation-timing-function;
 	}
 
 	// Underline top
 
 	.label-container {
-		transition: bottom $animation-time $animation-time / 2 ease-in-out,
-					opacity $animation-time $animation-time / 2 ease-in-out;
+		transition: bottom $animation-time $animation-time / 2 $animation-timing-function,
+					opacity $animation-time $animation-time / 2 $animation-timing-function;
 
 		&.hidden {
 			opacity: 0;

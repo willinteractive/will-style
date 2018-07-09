@@ -12,7 +12,7 @@
 			button {
 				opacity: 0;
 
-				transition: opacity 0.4s 0.4s ease-in-out;
+				transition: opacity $animation-duration $animation-duration $animation-timing-function;
 			}
 		}
 	}
@@ -20,11 +20,11 @@
 	@include animated-element-active {
 		&:not(.disabled) {
 			&:before {
-				animation: animate-button-before-line 0.8s ease-in-out forwards;
+				animation: animate-button-before-line 0.8s $animation-timing-function forwards;
 			}
 
 			&:after {
-				animation: animate-button-after-line 0.8s ease-in-out forwards;
+				animation: animate-button-after-line 0.8s $animation-timing-function forwards;
 			}
 
 			input,

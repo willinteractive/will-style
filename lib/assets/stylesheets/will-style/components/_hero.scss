@@ -35,7 +35,7 @@
 			max-width: 3rem;
 			fill: $will-white;
 
-			transition: transform 0.4s ease-in-out;
+			transition: transform $animation-duration $animation-timing-function;
 		}
 
 		&:hover,

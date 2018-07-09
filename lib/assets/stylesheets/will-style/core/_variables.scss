@@ -71,6 +71,7 @@ $lead-font-size:	$font-size-base * 1.25;
 
 $link-decoration:		none;
 $link-hover-decoration:	none;
+
 // Components
 
 $border-radius:               0;
@@ -96,3 +97,6 @@ $footer-z-index: -1;
 // Globals
 
 $will-logo-aspect-ratio: 4.41;
+
+$animation-timing-function: ease-in-out !default;
+$animation-duration: 0.4s !default;
