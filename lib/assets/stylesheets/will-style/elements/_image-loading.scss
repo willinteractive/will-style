@@ -1,6 +1,6 @@
 .image-bg,
 img {
-	transition: opacity 0.2s;
+	transition: opacity $animation-duration / 2 $animation-timing-function;
 	opacity: 0;
 
 	&.loaded {
