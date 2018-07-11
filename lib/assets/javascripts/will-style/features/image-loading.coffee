@@ -66,7 +66,7 @@ setUpImageLoading = ->
       img.src = source
 
 # Update image loading on turbolinks load
-$(document).on 'turbolinks:load', ->
+$(document).on window.WILLStyleSettings.pageChangeEvent, ->
   # Delay checking image backgrounds to make sure we catch added via javascript
   setTimeout ->
     setUpImageLoading()

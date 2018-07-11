@@ -97,7 +97,7 @@ _scheduleResizeVideoElements = ->
   else
     _resizeVideoElements()
 
-$(document).on 'turbolinks:load', ->
+$(document).on window.WILLStyleSettings.pageChangeEvent, ->
   _initializeVideoElements()
 
   $("video").on "loadedmetadata timeupdate", (event) ->

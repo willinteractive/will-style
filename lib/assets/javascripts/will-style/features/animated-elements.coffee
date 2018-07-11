@@ -238,7 +238,7 @@ $(window).on "resize", ->
 
     _scheduleAnimatedElementsUpdate()
 
-$(document).on 'turbolinks:load', ->
+$(document).on window.WILLStyleSettings.pageChangeEvent, ->
   _heightCache = {}
   _targetCache = {}
 

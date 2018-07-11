@@ -14,7 +14,7 @@ generateBGDomElement = (image)->
 # Transform images with a data-image-bg to add it using a DOM element                     -
 #------------------------------------------------------------------------------------------
 
-$(document).on 'turbolinks:load', (event) ->
+$(document).on window.WILLStyleSettings.pageChangeEvent, (event) ->
   $("[data-image-bg]").each ->
     $(this).prepend(generateBGDomElement($(this).attr("data-image-bg")))
 
@@ -24,7 +24,7 @@ $(document).on 'turbolinks:load', (event) ->
 
 rotationIntervals = []
 
-$(document).on 'turbolinks:load', (event) ->
+$(document).on window.WILLStyleSettings.pageChangeEvent, (event) ->
   for interval in rotationIntervals
     clearInterval(interval)
 

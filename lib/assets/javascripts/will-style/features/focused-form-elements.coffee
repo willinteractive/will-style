@@ -28,7 +28,7 @@ $(document).on "mousedown mouseup", "select", (event)->
     $(event.currentTarget).data("selection-triggered", true)
     $(event.currentTarget).closest(".form-container").addClass("entered")
 
-$(document).on 'turbolinks:load', ->
+$(document).on window.WILLStyleSettings.pageChangeEvent, ->
   # Set a timeout to let other JS run that might set values
   setTimeout ->
     $("select").each ->

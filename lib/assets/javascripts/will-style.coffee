@@ -12,6 +12,9 @@
 #= require popper
 #= require bootstrap-sprockets
 
+# -------- CORE
+#= require will-style/core/settings
+
 # -------- COMPONENTS
 #= require will-style/components/navbar
 #= require will-style/components/hideable-sidebar

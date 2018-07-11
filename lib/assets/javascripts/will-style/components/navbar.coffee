@@ -142,7 +142,7 @@ $(window).on "resize", ->
 
     _scheduleNavbarObscureUpdate()
 
-$(document).on 'turbolinks:load', ->
+$(document).on window.WILLStyleSettings.pageChangeEvent, ->
   _topCache = {}
 
   _cachedScrollTop = -1
