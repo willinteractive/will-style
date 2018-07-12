@@ -93,3 +93,11 @@ small,
 .upcase {
 	text-transform: uppercase;
 }
+
+//
+// Text Selection
+//
+
+.no-select {
+	user-select: none;
+}

@@ -31,6 +31,24 @@
 				0 15px 6px 0 rgba(0, 0, 0, 0.22);
 }
 
+@mixin shadow($size) {
+	@if $size == 'z0' {
+		@include shadow-z0();
+	} @else if $size == 'z1' {
+		@include shadow-z1();
+	} @else if $size == 'z2' {
+		@include shadow-z2();
+	} @else if $size == 'z3' {
+		@include shadow-z3();
+	} @else if $size == 'z4' {
+		@include shadow-z4();
+	} @else if $size == 'z5' {
+		@include shadow-z5();
+	} @else {
+		box-shadow: $size;
+	}
+}
+
 @mixin shadow-inset() {
 	box-shadow: inset 0 3px 7px -2px rgba(0, 0, 0, 0.24),
 				inset 0 3px 7px -2px rgba(0, 0, 0, 0.36);
@@ -97,6 +115,24 @@
 @mixin text-shadow-z5() {
 	-ms-filter: "progid:DXImageTransform.Microsoft.DropShadow(color=#333333, offX=4, offY=4)";
 	text-shadow: 4px 4px rgba(0, 0, 0, 0.30);
+}
+
+@mixin text-shadow($size) {
+	@if $size == 'z0' {
+		@include text-shadow-z0();
+	} @else if $size == 'z1' {
+		@include text-shadow-z1();
+	} @else if $size == 'z2' {
+		@include text-shadow-z2();
+	} @else if $size == 'z3' {
+		@include text-shadow-z3();
+	} @else if $size == 'z4' {
+		@include text-shadow-z4();
+	} @else if $size == 'z5' {
+		@include text-shadow-z5();
+	} @else {
+		text-shadow: $size;
+	}
 }
 
 // Shadows for Images

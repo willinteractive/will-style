@@ -2,11 +2,32 @@
 // Basic Mixins
 //
 
-// This mixing will help hardware accelerate any content to force smooth rendering
+// This mixin will help hardware accelerate any content to force smooth rendering
 @mixin hardware-accelerate {
 	html.touch & {
 		backface-visibility: hidden;
 		perspective: 1000;
 		font-smoothing: antialiased;
 	}
+}
+
+// This mixin will prevent user text-selection
+@mixin no-select-text() {
+	-webkit-user-select: none; // Chrome/Safari
+	-moz-user-select: none; // Firefox
+	-ms-user-select: none; // IE10+
+
+	// Rules below not implemented in browsers yet
+	-o-user-select: none;
+	user-select: none;
+}
+
+// This mixin adds momentum scrolling on touch devices.
+@mixin momentum-scrolling() {
+	// Ensure IE 10+ render scroll bars for scrolling content.
+	-ms-overflow-style: auto;
+
+	// Let scrolling frames have momentum.
+	-webkit-overflow-scrolling: touch;
+	overflow-scrolling: auto;
 }

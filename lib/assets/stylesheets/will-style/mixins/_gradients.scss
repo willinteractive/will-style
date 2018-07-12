@@ -60,6 +60,11 @@
 	background-image: linear-gradient(to top, smooth-gradient-color-stops($start-color, $end-color));
 }
 
-@mixin smooth-radial-gradient($start-color: black, $end-color: transparent) {
-	background-image: radial-gradient(smooth-gradient-color-stops($start-color, $end-color));
+@mixin smooth-radial-gradient($start-color: black, $end-color: transparent, $shape: circle, $image: null) {
+	@if $image {
+		background-image:	#{$image},
+							radial-gradient($shape, smooth-gradient-color-stops($start-color, $end-color));
+	} @else {
+		background-image: radial-gradient($shape, smooth-gradient-color-stops($start-color, $end-color));
+	}
 }

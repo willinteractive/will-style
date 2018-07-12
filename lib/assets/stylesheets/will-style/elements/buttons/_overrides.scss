@@ -1,8 +1,19 @@
+//
+// Enhanced Button Styles
+//
+
 button {
 	-webkit-user-select: none;
 
 	&:focus {
 		outline: 0;
+	}
+
+	cursor: pointer;
+
+	&[disabled],
+	&.disabled {
+		cursor: not-allowed;
 	}
 }
 

@@ -7,6 +7,7 @@ $font-weight-normal: 	400;
 $font-weight-bold: 		700;
 
 $will-white:		#F5F5F5;
+$will-black:		#000000;
 
 $will-teal:			#48BC97;
 $will-green:		#BFDC98;
@@ -19,6 +20,7 @@ $will-action-yellow:	#FFD01E;
 $will-action-blue:		#5B9ACF;
 $will-action-green:		$will-teal;
 $will-action-gray:		#DADADA;
+$will-action-purple:	#8562a7;
 
 $will-accent-red:		#d82b35;
 $will-accent-orange: 	#df8235;
@@ -34,9 +36,6 @@ $will-bg-lightest:	$will-white;
 $will-bg-dark:		#6a6567;
 $will-bg-darker:	#3b3839;
 $will-bg-darkest:	$will-dark-gray;
-
-//this needs to be removed once we change the website
-$will-action-purple:	#8562a7;
 
 // Color Helpers
 
@@ -92,7 +91,3 @@ $color-list: (
 		background-color: $color;
 	}
 }
-
-// WILL-Specific Variables
-
-$lightbox-bg-gradient: linear-gradient(to bottom, rgba($will-bg-darkest, 0.8), rgba($will-bg-darkest, 0.8));

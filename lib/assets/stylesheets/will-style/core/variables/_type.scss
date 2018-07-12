@@ -1,0 +1,32 @@
+// Type
+
+$font-size-base:	1rem;
+
+$h1-font-size:		$font-size-base * 2.5;
+$h2-font-size:		$font-size-base * 2;
+$h3-font-size:		$font-size-base * 1.75;
+$h4-font-size:		$font-size-base * 1.5;
+$h5-font-size:		$font-size-base * 1.25;
+$h6-font-size:		$font-size-base;
+
+$small-font-size:	$font-size-base * 0.75;
+$jumbo-size:		4rem;
+
+$display1-size:		3rem;
+$display2-size:		2.75rem;
+$display3-size:		2.5rem;
+$display4-size:		2.25rem;
+
+$lead-font-size:	$font-size-base * 1.25;
+
+$link-decoration:		none;
+$link-hover-decoration:	none;
+
+$will-sans-serif:		"Core Sans", "Open Sans", "San Francisco", "Calibri", Helvetica, sans-serif;
+$will-bold-sans-serif:	"Core Sans Bold", "Open Sans", "San Francisco", "Calibri", Helvetica, sans-serif;
+
+$font-family-sans-serif:	$will-sans-serif;
+$headings-font-family:		$will-bold-sans-serif;
+
+$will-government-serif:			"Times New Roman", Times New Roman;
+$will-government-sans-serif:	"Arial", Arial;
