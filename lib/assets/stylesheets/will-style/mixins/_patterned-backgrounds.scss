@@ -29,7 +29,7 @@ $patterned-background-opacity: 0.02;
 	}
 
 	&:after {
-		background-image: asset_url("will-style/patterns/bg-pattern.jpg");
+		background-image: will-style-bg-url("patterns/bg-pattern.jpg");
 		background-repeat: repeat;
 
 		opacity: $patterned-background-opacity;
@@ -72,7 +72,7 @@ $patterned-background-opacity: 0.02;
 
 		z-index: 0;
 
-		background-image: asset_url("will-style/patterns/bg-pattern.jpg");
+		background-image: will-style-bg-url("patterns/bg-pattern.jpg");
 		background-repeat: repeat;
 
 		opacity: $patterned-background-opacity * 4;

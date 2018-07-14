@@ -31,3 +31,14 @@
 	-webkit-overflow-scrolling: touch;
 	overflow-scrolling: auto;
 }
+
+// This function allows us to switch between asset_urls and regular urls for image backgrounds
+$include-type: "node" !default;
+
+@function will-style-bg-url($url: "") {
+	@if $include-type == "rails" {
+		@return asset_url("will-style/" + $url);
+	} @else {
+		@return url("../images/will-style/" + $url);
+	}
+}

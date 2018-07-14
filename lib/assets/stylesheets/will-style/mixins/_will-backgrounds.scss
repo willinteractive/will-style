@@ -24,10 +24,10 @@
 
 		@if $dark == true {
 			background-color: $will-bg-darker;
-			background-image: asset_url("will-style/patterns/bg-will-arrow-pattern-dark.svg");
+			background-image: will-style-bg-url("patterns/bg-will-arrow-pattern-dark.svg");
 		} @else {
 			background-color: $will-bg-light;
-			background-image: asset_url("will-style/patterns/bg-will-arrow-pattern-light.svg");
+			background-image: will-style-bg-url("patterns/bg-will-arrow-pattern-light.svg");
 		}
 
 		background-repeat: repeat;

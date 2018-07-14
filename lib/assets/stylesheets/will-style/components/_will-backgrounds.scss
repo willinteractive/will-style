@@ -49,14 +49,14 @@
 }
 
 .will-bg-light:after {
-	background-image: asset_url("will-style/patterns/bg-will-x-shadowed.svg");
+	background-image: will-style-bg-url("patterns/bg-will-x-shadowed.svg");
 }
 
 .will-bg-dark {
 	background-color: $will-bg-dark;
 
 	&:after {
-		background-image: asset_url("will-style/patterns/bg-will-x-shadowed-dark.svg");
+		background-image: will-style-bg-url("patterns/bg-will-x-shadowed-dark.svg");
 	}
 }
 
