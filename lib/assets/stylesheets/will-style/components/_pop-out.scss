@@ -80,7 +80,7 @@
 		}
 
 		.close-pop-out {
-			animation: fade-in-pop-out-buttons $animation-duration / 2 $animation-duration * 2 $animation-timing-function forwards;
+			animation: fade-in-pop-out $animation-duration / 2 $animation-duration * 2 $animation-timing-function forwards;
 		}
 	}
 
@@ -89,7 +89,7 @@
 		top: 0 !important;
 		padding: 0;
 
-		transform: translateY(102%);
+		opacity: 0;
 
 		&,
 		video,
@@ -115,7 +115,7 @@
 		}
 
 		&.enabled {
-			animation: move-in-pop-out $animation-duration * 1.5 $animation-duration / 2 $animation-timing-function forwards;
+			animation: fade-in-pop-out $animation-duration * 1.5 $animation-duration / 2 $animation-timing-function forwards;
 		}
 	}
 }
@@ -160,17 +160,7 @@ body {
 	}
 }
 
-@keyframes move-in-pop-out {
-	0% {
-		transform: translateY(102%);
-	}
-
-	100% {
-		transform: translateY(0);
-	}
-}
-
-@keyframes fade-in-pop-out-buttons {
+@keyframes fade-in-pop-out {
 	0% {
 		opacity: 0;
 	}
