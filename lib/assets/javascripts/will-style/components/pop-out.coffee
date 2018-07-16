@@ -1,6 +1,8 @@
 lastWindowHeight = 0
 windowSizeObserver = undefined
 
+popOutOverlay = $('<div class="pop-out-overlay"></div>')
+
 watchPopOut = ->
   lastWindowHeight = 0
   setInterval ->
@@ -29,12 +31,15 @@ clearPopOut = ->
       popOut.find("video").off("ended")
 
     popOut.removeClass("enabled")
+    popOutOverlay.removeClass("enabled")
 
     if popOut.find("iframe").length > 0
       $(popOut.find("iframe")).removeAttr("src")
 
     $("[data-pop-out-id='#{popOut.attr("id")}']").removeClass("selected")
     $("[data-pop-out-id='#{popOut.attr("id")}']").find("span").removeClass("selected")
+
+    $(document).trigger "will-style:pop-out-hide", [ popOut.attr("id") ]
 
 centerPopOut = ->
   popOut = $('[data-pop-out=""].enabled')
@@ -74,14 +79,19 @@ $(document).on "click", '[data-pop-out-link=""]', (event) ->
 
       $("body").addClass("with-iframe")
 
-    popOut.addClass("enabled")
-    centerPopOut()
-
+    popOutOverlay.attr("data-pop-out-id", link.attr("data-pop-out-id"))
+    popOutOverlay.appendTo("body")
     popOut.appendTo("body")
+
+    popOut.addClass("enabled")
+    popOutOverlay.addClass("enabled")
+    centerPopOut()
 
     $("body").addClass("pop-out-showing")
 
     watchPopOut()
+
+    $(document).trigger "will-style:pop-out-show", [ link.attr("data-pop-out-id") ]
 
     if popOut.find("video").length > 0
       popOut.find("video")[0].play()

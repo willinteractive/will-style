@@ -73,7 +73,7 @@
 		pointer-events: auto;
 		z-index: $navbar-z-index + 2;
 
-		animation: scale-out-pop-out $animation-duration $animation-duration / 2 $animation-timing-function forwards;
+		animation: scale-out-pop-out $animation-duration $animation-duration $animation-timing-function forwards;
 
 		.content {
 			opacity: 1;
@@ -121,33 +121,28 @@
 	}
 }
 
-body {
-	&:before {
-		content: "";
-		position: fixed;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
+.pop-out-overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
 
-		background-color: $will-dark-gray;
+	background-color: $will-dark-gray;
 
-		opacity: 0;
-		transition: opacity 0.2s $animation-timing-function;
+	opacity: 0;
 
-		pointer-events: none;
+	pointer-events: none;
+
+	&.enabled {
+		z-index: $navbar-z-index + 2;
+		animation: fade-in-pop-out-overlay $animation-duration $animation-timing-function forwards;
 	}
+}
 
-	&.pop-out-showing {
-		&:before {
-			opacity: 0.95;
-
-			z-index: $navbar-z-index + 2;
-		}
-
-		&.with-iframe {
-			overflow: hidden;
-		}
+body {
+	&.pop-out-showing.with-iframe {
+		overflow: hidden;
 	}
 }
 
@@ -168,5 +163,15 @@ body {
 
 	100% {
 		opacity: 1;
+	}
+}
+
+@keyframes fade-in-pop-out-overlay {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 0.95;
 	}
 }
