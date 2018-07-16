@@ -1,4 +1,4 @@
-@mixin will-patterned-bg($dark: true) {
+@mixin will-patterned-bg($dark: true, $target: before) {
 	position: relative;
 	overflow: hidden;
 
@@ -8,7 +8,7 @@
 		background-color: $will-white;
 	}
 
-	&:before {
+	&:#{$target} {
 		content: "";
 
 		position: absolute;
