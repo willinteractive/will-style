@@ -255,3 +255,6 @@ $(document).on 'turbolinks:before-render', (event) ->
 
     if element.attr("data-animated-active")? and element.attr("id") isnt ""
       $(event.originalEvent.data.newBody).find("##{element.attr("id")}").attr("data-animated-active", true)
+
+$(document).on 'will-style:update-animated-elements', (event) ->
+  _scheduleAnimatedElementsUpdate()
