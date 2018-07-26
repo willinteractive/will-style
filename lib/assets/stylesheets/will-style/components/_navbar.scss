@@ -5,6 +5,9 @@
 nav.navbar {
 	@include patterned-background();
 
+	padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+
 	&:before,
 	&:after {
 		opacity: 0;
