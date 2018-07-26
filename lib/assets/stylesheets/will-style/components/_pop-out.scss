@@ -147,18 +147,26 @@ body {
 }
 
 // Mobile Responsiveness
-html.touch body.pop-out-showing.with-iframe {
-	height: 100%;
-	position: fixed;
 
-	-ms-overflow-style: none;
+// Accounting for Safari buttons
+@include media-breakpoint-down(sm) {
+	@media (orientation: portrait) {
+		html.touch body.pop-out-showing.with-iframe {
+			height: 100%;
+			max-height: 100%;
+			position: fixed;
 
-	// Don't let the page bounce and turn bouncing scrolling off by default
-	-webkit-overflow-scrolling: none;
-	overflow-scrolling: none;
+			-ms-overflow-style: none;
+			-webkit-overflow-scrolling: none;
+			overflow-scrolling: none;
 
-	&[data-pop-out-fullscreen] {
-		height: 100%;
+			[data-pop-out][data-pop-out-fullscreen] {
+				.content,
+				iframe {
+					height: calc(100% - 54px) !important;
+				}
+			}
+		}
 	}
 }
 
