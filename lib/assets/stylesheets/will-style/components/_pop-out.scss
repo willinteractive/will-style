@@ -146,6 +146,22 @@ body {
 	}
 }
 
+// Mobile Responsiveness
+html.touch body.pop-out-showing.with-iframe {
+	height: 100%;
+	position: fixed;
+
+	-ms-overflow-style: none;
+
+	// Don't let the page bounce and turn bouncing scrolling off by default
+	-webkit-overflow-scrolling: none;
+	overflow-scrolling: none;
+
+	&[data-pop-out-fullscreen] {
+		height: 100%;
+	}
+}
+
 @keyframes scale-out-pop-out {
 	0% {
 		transform: scale(0);
