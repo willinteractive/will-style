@@ -81,9 +81,10 @@ $(document).on "click", '[data-pop-out-link=""]', (event) ->
 
       $("body").addClass("with-iframe")
 
-    popOutOverlay.attr("data-pop-out-id", link.attr("data-pop-out-id"))
-    popOutOverlay.appendTo("body")
-    popOut.appendTo("body")
+    if popOut.attr("data-pop-out-fullscreen") isnt ""
+      popOutOverlay.attr("data-pop-out-id", link.attr("data-pop-out-id"))
+      popOutOverlay.appendTo("body")
+      popOut.appendTo("body")
 
     popOut.addClass("enabled")
     popOutOverlay.addClass("enabled")
