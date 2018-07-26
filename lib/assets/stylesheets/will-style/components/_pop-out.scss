@@ -161,10 +161,27 @@ body {
 			-webkit-overflow-scrolling: none;
 			overflow-scrolling: none;
 
+
 			[data-pop-out][data-pop-out-fullscreen] {
+				@include patterned-background();
+
+				.close-pop-out {
+					position: absolute;
+
+					top: 0.25rem;
+					left: 0.25rem;
+
+					left: env(safe-area-inset-left);
+    				top: env(safe-area-inset-top);
+				}
+
 				.content,
 				iframe {
 					height: calc(100% - 54px) !important;
+
+					padding-left: env(safe-area-inset-left);
+					padding-right: env(safe-area-inset-right);
+					padding-bottom: env(safe-area-inset-bottom);
 				}
 			}
 		}
