@@ -75,7 +75,9 @@ $(document).on "click", '[data-pop-out-link=""]', (event) ->
         $(popOut.find(".content")).prepend("<iframe allowfullscreen></iframe>")
 
       iframe = $(popOut.find("iframe"))
-      iframe.attr("src", link.attr("data-pop-out-url"))
+
+      if link.attr("data-pop-out-url") isnt iframe.attr("src")
+        iframe.attr("src", link.attr("data-pop-out-url"))
 
       $("body").addClass("with-iframe")
 
