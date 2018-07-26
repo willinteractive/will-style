@@ -3,8 +3,6 @@
 //
 
 @include animated-element-default($includes-root-element: false) {
-	will-change: opacity, transform;
-
 	@include animated-element-init {
 		opacity: 0;
 		transform: translateY(15%);
@@ -20,8 +18,6 @@
 }
 
 @include animated-element-top($includes-root-element: false) {
-	will-change: opacity, transform;
-
 	@include animated-element-init {
 		opacity: 0;
 		transform: translateY(-15%);
@@ -37,8 +33,6 @@
 }
 
 @include animated-element-left($includes-root-element: false) {
-	will-change: opacity, transform;
-
 	@include animated-element-init {
 		opacity: 0;
 		transform: translateX(-15%);
@@ -54,8 +48,6 @@
 }
 
 @include animated-element-right($includes-root-element: false) {
-	will-change: opacity, transform;
-
 	@include animated-element-init {
 		opacity: 0;
 		transform: translateX(15%);
@@ -71,8 +63,6 @@
 }
 
 @include animated-element-opacity($includes-root-element: false) {
-	will-change: opacity;
-
 	@include animated-element-init {
 		opacity: 0;
 		transform: none;
@@ -100,7 +90,6 @@
 // STAT NUMS => Move a Greater Distance on the Y
 
 @include animated-number-top($includes-root-element: false) {
-	will-change: opacity, transform;
 	display: inline-block;
 
 	@include animated-element-init {
@@ -118,7 +107,6 @@
 }
 
 @include animated-number-bottom($includes-root-element: false) {
-	will-change: opacity, transform;
 	display: inline-block;
 
 	@include animated-element-init {
@@ -139,8 +127,6 @@
 // MODERN RISE BLOCKS
 
 @include animated-fast-rise-blocks($includes-root-element: false) {
-	will-change: opacity, transform;
-
 	@include animated-element-init {
 		opacity: 0;
 		transform: translateY(100%);
@@ -157,8 +143,6 @@
 }
 
 @include animated-normal-rise-blocks($includes-root-element: false) {
-	will-change: opacity, transform;
-
 	@include animated-element-init {
 		opacity: 0;
 		transform: translateY(100%);
@@ -175,8 +159,6 @@
 }
 
 @include animated-slow-rise-blocks($includes-root-element: false) {
-	will-change: opacity, transform;
-
 	@include animated-element-init {
 		opacity: 0;
 		transform: translateY(100%);
@@ -198,7 +180,6 @@
 
 @include animated-element-progressive-default {
 	@include animated-element-progressive {
-		will-change: transform;
 		transition: transform 300ms linear;
 	}
 }

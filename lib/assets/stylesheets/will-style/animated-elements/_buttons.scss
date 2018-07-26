@@ -1,6 +1,4 @@
 .button-container {
-	will-change: opacity;
-
 	@include animated-element-init {
 		&:not(.disabled) {
 			&:before,

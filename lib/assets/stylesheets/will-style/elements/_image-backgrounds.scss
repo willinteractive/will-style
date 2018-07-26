@@ -35,7 +35,6 @@
 	// Image Loading
 	// @NOTE: Use the overlay to hide the image so that it doesn't hide the title
 	opacity: 1;
-	will-change: opacity;
 
 	&:before,
 	&:after {
@@ -63,7 +62,6 @@
 
 .image-bgs .image-bg-display {
 	opacity: 0;
-	will-change: opacity;
 
 	transition: opacity 2s;
 
