@@ -34,7 +34,8 @@ clearPopOut = ->
     popOutOverlay.removeClass("enabled")
 
     if popOut.find("iframe").length > 0
-      $(popOut.find("iframe")).removeAttr("src")
+      if popOut.attr("data-pop-out-fullscreen") isnt ""
+        $(popOut.find("iframe")).removeAttr("src")
 
     $("[data-pop-out-id='#{popOut.attr("id")}']").removeClass("selected")
     $("[data-pop-out-id='#{popOut.attr("id")}']").find("span").removeClass("selected")
