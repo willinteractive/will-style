@@ -68,10 +68,6 @@ $(document).on "click", '[data-pop-out-link=""]', (event) ->
     popOut = $("##{link.attr("data-pop-out-id")}")
 
     if link.attr("data-pop-out-url")
-      if $("html").hasClass("touch")
-        window.open link.attr("data-pop-out-url"), '_blank'
-        return
-
       if popOut.find("iframe").length is 0
         $(popOut.find(".content")).prepend("<iframe allowfullscreen></iframe>")
 
