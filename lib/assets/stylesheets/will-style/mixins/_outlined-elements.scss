@@ -35,6 +35,9 @@
 
 	select {
 		-webkit-appearance: none;
+		-moz-appearance: none;
+		-ms-appearance: none;
+
 		cursor: pointer;
 		border-radius: 0;
 	}
