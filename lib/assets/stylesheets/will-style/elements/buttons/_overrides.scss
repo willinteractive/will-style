@@ -104,6 +104,10 @@ button {
 							linear-gradient(to right, $will-white, $will-white);
 
 		transform: scaleX(0);
+
+		will-change:	transform,
+						bottom,
+						top;
 	}
 
 	&.dark:before,
