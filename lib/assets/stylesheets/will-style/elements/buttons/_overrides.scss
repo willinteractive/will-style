@@ -75,63 +75,77 @@ button {
 		opacity: 0;
 	}
 
-	&:before,
-	&:after {
-		content: "";
-
-		margin-top: 0;
-
+	.button-outline-outer,
+	.button-outline-inner {
 		position: absolute;
-
 		top: 0;
 		bottom: 0;
 		left: 0;
 		right: 0;
 
+		pointer-events: none;
+	}
+
+	.button-outline-outer:before,
+	.button-outline-outer:after,
+	.button-outline-inner:before,
+	.button-outline-inner:after {
+		content: "";
+
+		position: absolute;
+
 		z-index: 0;
 		pointer-events: none;
 
-		height: auto;
-
-		transition-timing-function: linear;
-
-		background-repeat: no-repeat;
-
-		background-size: 100% 2px,
-						 2px 100%;
-
-		background-image: 	linear-gradient(to right, $will-white, $will-white),
-							linear-gradient(to right, $will-white, $will-white);
+		background-color: $will-white;
 
 		transform: scaleX(0);
-
-		will-change:	transform,
-						bottom,
-						top;
+		will-change: transform;
 	}
 
-	&.dark:before,
-	&.dark:after {
-		background-image: 	linear-gradient(to right, $will-dark-gray, $will-dark-gray),
-							linear-gradient(to right, $will-dark-gray, $will-dark-gray);
+	.button-outline-outer:before,
+	.button-outline-outer:after {
+		left: 0;
+		right: 0;
+
+		height: 2px;
 	}
 
-	&:before {
-		background-position: center top,
-							 right top;
-
-		transform-origin: left top;
-
-		bottom: calc(100% - 2px);
+	.button-outline-outer:before {
+		top: 0;
+		transform-origin: left center;
 	}
 
-	&:after {
-		background-position: center bottom,
-							 left bottom;
+	.button-outline-outer:after {
+		bottom: 0;
+		transform-origin: right center;
+	}
 
-		transform-origin: right bottom;
+	.button-outline-inner:before,
+	.button-outline-inner:after {
+		top: 0;
+		bottom: 0;
 
-		top: calc(100% - 2px);
+		width: 2px;
+	}
+
+	.button-outline-inner:before {
+		left: 0;
+		transform-origin: center bottom;
+	}
+
+	.button-outline-inner:after {
+		right: 0;
+		transform-origin: center top;
+	}
+
+	&.dark {
+		.button-outline-outer:before,
+		.button-outline-outer:after,
+		.button-outline-inner:before,
+		.button-outline-inner:after {
+			background-color: $will-dark-gray;
+		}
 	}
 
 	&.light {
@@ -155,12 +169,14 @@ button {
 			cursor: pointer;
 		}
 
-		&:before {
-			animation: animate-button-before-line 0.8s $animation-timing-function forwards;
+		.button-outline-outer:before,
+		.button-outline-outer:after {
+			animation: animate-button-horizontal-line $animation-duration * 1.5 $animation-timing-function forwards;
 		}
 
-		&:after {
-			animation: animate-button-after-line 0.8s $animation-timing-function forwards;
+		.button-outline-inner:before,
+		.button-outline-inner:after {
+			animation: animate-button-vertical-line $animation-duration * 0.75 $animation-duration * 1.5 $animation-timing-function forwards;
 		}
 
 		&:hover,
@@ -184,36 +200,22 @@ button {
 	}
 }
 
-@keyframes animate-button-before-line {
+@keyframes animate-button-horizontal-line {
 	0% {
 		transform: scaleX(0);
-		bottom: calc(100% - 2px);
-	}
-
-	75% {
-		bottom: calc(100% - 2px);
-		transform: scaleX(1);
 	}
 
 	100% {
-		bottom: 0;
 		transform: scaleX(1);
 	}
 }
 
-@keyframes animate-button-after-line {
+@keyframes animate-button-vertical-line {
 	0% {
-		transform: scaleX(0);
-		top: calc(100% - 2px);
-	}
-
-	75% {
-		top: calc(100% - 2px);
-		transform: scaleX(1);
+		transform: scaleY(0);
 	}
 
 	100% {
-		top: 0;
-		transform: scaleX(1);
+		transform: scaleY(1);
 	}
 }

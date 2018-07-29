@@ -28,6 +28,7 @@
 #= require will-style/features/image-loading
 #= require will-style/features/animated-elements
 #= require will-style/features/focused-form-elements
+#= require will-style/features/outlined-buttons
 
 # -------- FORMS
 #= require will-style/forms/required-inputs

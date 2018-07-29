@@ -1,8 +1,10 @@
 .button-container {
 	@include animated-element-init {
 		&:not(.disabled) {
-			&:before,
-			&:after {
+			.button-outline-outer:before,
+			.button-outline-outer:after,
+			.button-outline-inner:before,
+			.button-outline-inner:after {
 				animation: none;
 			}
 
@@ -17,12 +19,14 @@
 
 	@include animated-element-active {
 		&:not(.disabled) {
-			&:before {
-				animation: animate-button-before-line 0.8s $animation-timing-function forwards;
+			.button-outline-outer:before,
+			.button-outline-outer:after {
+				animation: animate-button-horizontal-line $animation-duration * 1.5 $animation-timing-function forwards;
 			}
 
-			&:after {
-				animation: animate-button-after-line 0.8s $animation-timing-function forwards;
+			.button-outline-inner:before,
+			.button-outline-inner:after {
+				animation: animate-button-vertical-line $animation-duration * 0.75 $animation-duration * 1.5 $animation-timing-function forwards;
 			}
 
 			input,

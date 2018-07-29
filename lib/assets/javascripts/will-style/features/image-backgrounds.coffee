@@ -10,6 +10,7 @@ shuffle = (array) ->
 
 generateBGDomElement = (image)->
   "<div class=\"image-bg-display\" style=\"background-image: url('#{image}')\"></div>"
+
 #------------------------------------------------------------------------------------------
 # Transform images with a data-image-bg to add it using a DOM element                     -
 #------------------------------------------------------------------------------------------
