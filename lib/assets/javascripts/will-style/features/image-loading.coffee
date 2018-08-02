@@ -56,6 +56,8 @@ setUpImageLoading = ->
         if not img.complete or img.naturalHeight is 0
           element.addClass("error")
 
+        window.WILLStyle.Events.trigger "image-loaded", element
+
       img.onerror = ->
         setTimeout ->
           element.removeClass("loading")

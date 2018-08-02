@@ -191,32 +191,15 @@ _scheduleAnimatedElementsUpdate = ->
   else
     _updateAnimatedElements()
 
-_setupImageLoading = ->
-  if $(_animatedElementSelector).length > 0
-    $("img").each ->
-      image = $(this)
+_resetAnimation = ->
+  _heightCache = {}
+  _targetCache = {}
 
-      _loadTimeout = undefined
+  _cachedScrollTop = -1
+  _cachedWindowHeight = -1
+  _cachedElements = undefined
 
-      _onLoad = ->
-        clearTimeout _loadTimeout if _loadTimeout
-
-        element = image.closest(_animatedElementSelector)
-        if element and element.data("animate-id") and _heightCache[element.data("animate-id")]
-          delete _heightCache[element.data("animate-id")]
-
-        _scheduleAnimatedElementsUpdate()
-
-      # If the image is already loaded, trigger loaded
-      if image.context and (image.context.readyState is 4 or image.context.complete)
-        _onLoad()
-
-      # Otherwise, set a timeout to ensure we don't sit in loading forever
-      else
-        _loadTimeout = setTimeout _onLoad, 5000
-
-        $(this).on 'load', _onLoad
-        $(this).on 'error', _onLoad
+  _scheduleAnimatedElementsUpdate()
 
 #---------------------
 # Observers          -
@@ -238,16 +221,7 @@ $(window).on "resize", ->
 
     _scheduleAnimatedElementsUpdate()
 
-$(document).on window.WILLStyleSettings.pageChangeEvent, ->
-  _heightCache = {}
-  _targetCache = {}
-
-  _cachedScrollTop = -1
-  _cachedWindowHeight = -1
-  _cachedElements = undefined
-
-  _setupImageLoading()
-  _scheduleAnimatedElementsUpdate()
+$(document).on window.WILLStyle.Settings.pageChangeEvent, _resetAnimation
 
 $(document).on 'turbolinks:before-render', (event) ->
   $(_staticAnimatedElementSelector).each ->
@@ -256,5 +230,9 @@ $(document).on 'turbolinks:before-render', (event) ->
     if element.attr("data-animated-active")? and element.attr("id") isnt ""
       $(event.originalEvent.data.newBody).find("##{element.attr("id")}").attr("data-animated-active", true)
 
-$(document).on 'will-style:update-animated-elements', (event) ->
+window.WILLStyle.Events.on "update-animated-elements", ->
   _scheduleAnimatedElementsUpdate()
+
+window.WILLStyle.Events.on "image-loaded", (image) ->
+  if image.css("position") is "static"
+    _resetAnimation()
