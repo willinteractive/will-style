@@ -24,7 +24,8 @@
 
 	// @NOTE: Affix background grid on these elements to get the fixed pattern effect
 	// We're not doing this globally because it can affect performance.
-	&:before {
+	html.no-touch &:before {
+		@include hardware-accelerate();
 		background-attachment: fixed;
 	}
 
