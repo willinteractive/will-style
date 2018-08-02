@@ -69,11 +69,6 @@
 	"bootstrap/forms",
 	"bootstrap/custom-forms";
 
-// Tables
-
-@import
-	"bootstrap/tables";
-
 // Layout
 
 @import
@@ -96,12 +91,10 @@
 
 @import
 	"will-style/components/footer",
-	"will-style/components/hideable-sidebar",
 	"will-style/components/will-backgrounds",
 	"will-style/components/pop-out",
 
 	"bootstrap/nav",
-
 	"bootstrap/navbar",
 	"will-style/components/navbar",
 
@@ -120,7 +113,6 @@
 // Libraries
 
 @import
-	"bootstrap/badge",
 	"bootstrap/utilities",
 	"bootstrap/print";
 

@@ -11,6 +11,11 @@
 	"bootstrap/button-group",
 	"bootstrap/input-group";
 
+// Tables
+
+@import
+	"bootstrap/tables";
+
 // Navigation
 
 @import
@@ -35,6 +40,12 @@
 	"bootstrap/progress";
 
 @import
+	"bootstrap/badge",
 	"bootstrap/tooltip",
 	"bootstrap/popover",
 	"bootstrap/carousel";
+
+// Components
+
+@import
+	"will-style/components/hideable-sidebar",
