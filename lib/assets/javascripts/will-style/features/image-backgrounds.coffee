@@ -15,7 +15,7 @@ generateBGDomElement = (image)->
 # Transform images with a data-image-bg to add it using a DOM element                     -
 #------------------------------------------------------------------------------------------
 
-$(document).on window.WILLStyleSettings.pageChangeEvent, (event) ->
+$(document).on window.WILLStyle.Settings.pageChangeEvent, (event) ->
   $("[data-image-bg]").each ->
     $(this).prepend(generateBGDomElement($(this).attr("data-image-bg")))
 
@@ -25,7 +25,7 @@ $(document).on window.WILLStyleSettings.pageChangeEvent, (event) ->
 
 rotationIntervals = []
 
-$(document).on window.WILLStyleSettings.pageChangeEvent, (event) ->
+$(document).on window.WILLStyle.Settings.pageChangeEvent, (event) ->
   for interval in rotationIntervals
     clearInterval(interval)
 

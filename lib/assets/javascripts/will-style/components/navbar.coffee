@@ -142,7 +142,7 @@ $(window).on "resize", ->
 
     _scheduleNavbarObscureUpdate()
 
-$(document).on window.WILLStyleSettings.pageChangeEvent, ->
+$(document).on window.WILLStyle.Settings.pageChangeEvent, ->
   _topCache = {}
 
   _cachedScrollTop = -1

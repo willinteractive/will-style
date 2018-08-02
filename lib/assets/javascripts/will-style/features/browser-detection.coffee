@@ -13,7 +13,7 @@ isiPhoneX = ->
 
   return isiOS() and screen.width is 1125 and screen.height is 2436
 
-$(document).on window.WILLStyleSettings.pageChangeEvent, ->
+$(document).on window.WILLStyle.Settings.pageChangeEvent, ->
 
   # Add iOS class to the HTML Page
 

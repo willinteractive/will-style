@@ -14,6 +14,7 @@
 
 # -------- CORE
 #= require will-style/core/settings
+#= require will-style/core/events
 
 # -------- COMPONENTS
 #= require will-style/components/navbar

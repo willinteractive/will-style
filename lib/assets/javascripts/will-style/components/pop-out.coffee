@@ -40,7 +40,7 @@ clearPopOut = ->
     $("[data-pop-out-id='#{popOut.attr("id")}']").removeClass("selected")
     $("[data-pop-out-id='#{popOut.attr("id")}']").find("span").removeClass("selected")
 
-    $(document).trigger "will-style:pop-out-hide", [ popOut.attr("id") ]
+    window.WILLStyle.Events.trigger "pop-out-hide", popOut.attr("id")
 
 centerPopOut = ->
   popOut = $('[data-pop-out=""].enabled')
@@ -95,11 +95,11 @@ $(document).on "click", '[data-pop-out-link=""]', (event) ->
 
     watchPopOut()
 
-    $(document).trigger "will-style:pop-out-show", [ link.attr("data-pop-out-id") ]
-
     if popOut.find("video").length > 0
       popOut.find("video")[0].play()
       popOut.find("video").on("ended", clearPopOut)
+
+    window.WILLStyle.Events.trigger "pop-out-show", link.attr("data-pop-out-id")
 
     event.stopImmediatePropagation()
     event.stopPropagation()

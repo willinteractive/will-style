@@ -1,4 +1,6 @@
-return if window.WILLStyleSettings
+window.WILLStyle = {} unless window.WILLStyle
 
-window.WILLStyleSettings =
+return if window.WILLStyle.Settings
+
+window.WILLStyle.Settings =
   pageChangeEvent: "turbolinks:load"
