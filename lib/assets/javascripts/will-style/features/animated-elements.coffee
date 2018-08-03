@@ -114,6 +114,8 @@ _updateAnimatedElements = ->
       potentialTarget = _getTargetForElement(element)
       target = $(potentialTarget) if potentialTarget
 
+      target.data("animate-id", _generateID()) unless target.data("animate-id")
+
     if target.data("animate-id") and _heightCache[target.data("animate-id")]
       targetTop = _heightCache[target.data("animate-id")].top
       targetHeight = _heightCache[target.data("animate-id")].height
