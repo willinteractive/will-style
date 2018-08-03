@@ -191,15 +191,13 @@ _scheduleAnimatedElementsUpdate = ->
   else
     _updateAnimatedElements()
 
-_resetAnimation = ->
+_resetAnimationCache = ->
   _heightCache = {}
   _targetCache = {}
 
   _cachedScrollTop = -1
   _cachedWindowHeight = -1
   _cachedElements = undefined
-
-  _scheduleAnimatedElementsUpdate()
 
 #---------------------
 # Observers          -
@@ -215,13 +213,11 @@ $(window).on "resize", ->
     _lastWindowHeight = $(window).outerHeight()
     _lastWindowWidth = $(window).outerWidth()
 
-    _cachedScrollTop = -1
-    _cachedWindowHeight = -1
-    _heightCache = {}
+    _resetAnimationCache()
 
-    _scheduleAnimatedElementsUpdate()
-
-$(document).on window.WILLStyle.Settings.pageChangeEvent, _resetAnimation
+$(document).on window.WILLStyle.Settings.pageChangeEvent, (event) ->
+  _resetAnimationCache()
+  _scheduleAnimatedElementsUpdate()
 
 $(document).on 'turbolinks:before-render', (event) ->
   $(_staticAnimatedElementSelector).each ->
@@ -234,5 +230,5 @@ window.WILLStyle.Events.on "update-animated-elements", ->
   _scheduleAnimatedElementsUpdate()
 
 window.WILLStyle.Events.on "image-loaded", (image) ->
-  if image.css("position") is "static"
-    _resetAnimation()
+  if image.css("position") is "static" or image.css("position") is "relative"
+    _resetAnimationCache()
