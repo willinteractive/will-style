@@ -2,6 +2,8 @@
 // Headings
 //
 
+// Main Headings
+
 .will-heading {
 	.subtitle {
 		text-transform: uppercase;
@@ -47,6 +49,8 @@
 	}
 }
 
+// Section Headings
+
 .section-heading {
 	padding-top: 1rem;
 
@@ -69,5 +73,22 @@
 		font-weight: normal;
 
 		font-family: $font-family-sans-serif;
+	}
+}
+
+// Small font overrides
+
+@include media-breakpoint-down(sm) {
+	.will-heading,
+	.section-heading {
+		.display-1,
+		&.display-1 {
+			font-size: #{$display1-size * 0.667};
+		}
+
+		.display-4,
+		&.display-4 {
+			font-size: #{$display4-size * 0.667};
+		}
 	}
 }
