@@ -20,43 +20,9 @@ rails g will:style:sass
 
 This will write a custom-will-styles.scss file in your app/assets/stylesheets folder so you can include / remove whatever styles you want.
 
---
+### Optional Libraries
 
-See the Gemfile for other gems that other components may require.
-
-### IE9 4096 Selector Limit
-
-While IE9 is still alive, we need our sites to respect the 4096 selector limit. You can use this gem to help with that in your site:
-
-https://github.com/zweilove/css_splitter
-
-----------------------------------------
-
-Here are some quick steps for set up.
-
-1. Include gem 'css_splitter' in your gemfile and bundle.
-2. Make an application_split2.css file that contains this code
-
-```
-/*
- *= require 'application'
- */
-
-```
-
-3. Add this code to config/application.rb
-
-```
- config.assets.precompile += %w( application_split2.css )
- ```
-
-4. Switch the stylesheet include tag to this:
-
-```
-<%= split_stylesheet_link_tag "application", debug: false, media: "all", "data-turbolinks-track" => true  %>
-```
-
-Repeat this for every stylesheet you use in the application. It's not a perfect solution, but it's the one we have...
+We use premailer-rails to style emails inline. Be sure to include it in your Gemfile if you're sending emails
 
 ### To Work On WILL Style Locally
 
@@ -77,12 +43,3 @@ Finally, when switching between the local and the remote gem, be sure to delete:
 and restart the app by saving:
 
 * tmp/restart.txt
-
-
-#### Updating docs
-
-```
-$ rake rdoc
-```
-
-RDoc Formatting Guide: http://ruby-doc.org/gems/docs/r/rdoc-4.1.1/RDoc/Markup.html
