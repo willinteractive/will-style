@@ -38,6 +38,10 @@
 		-moz-appearance: none;
 		-ms-appearance: none;
 
+		&::-ms-expand {
+    		display: none;
+		}
+
 		cursor: pointer;
 		border-radius: 0;
 	}
