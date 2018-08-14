@@ -34,6 +34,11 @@
 .col.full-height,
 [class*='col-'].full-height {
 	min-height: 100vh;
+
+	// @IE11: This fixes full height items on IE11 that use .align-items-center
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	   height: 100%;
+	}
 }
 
 // Reset Horizontal padding on expanded rows so that columns don't get double padding
