@@ -76,9 +76,8 @@
 @mixin will-theme-text-gradient {
 	color: $will-teal;
 
-	background-image: linear-gradient(120deg, $will-green, $will-teal 55%);
+	background-image: -webkit-linear-gradient(120deg, $will-teal, $will-green 85%);
 
-	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
