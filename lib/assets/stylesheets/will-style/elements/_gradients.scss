@@ -71,3 +71,7 @@
 		@include smooth-linear-gradient($start-color: $primary);
 	}
 }
+
+.text-gradient-will {
+	@include will-theme-text-gradient;
+}
