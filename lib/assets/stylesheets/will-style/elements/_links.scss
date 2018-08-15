@@ -10,7 +10,8 @@ a {
 
 // Animated Links
 
-a.animated {
+a.animated,
+button.animated {
 	position: relative;
 
 	&:after {
