@@ -9,14 +9,13 @@
 		backface-visibility: hidden;
 		perspective: 1000;
 
-		font-smoothing: antialiased;
 		-webkit-font-smoothing: antialiased;
 	} @else {
 		html.touch & {
 			transform: translate3d(0, 0, 0);
 			backface-visibility: hidden;
 			perspective: 1000;
-			font-smoothing: antialiased;
+
 			-webkit-font-smoothing: antialiased;
 		}
 	}
