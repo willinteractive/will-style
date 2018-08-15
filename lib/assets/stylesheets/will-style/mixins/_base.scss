@@ -3,11 +3,22 @@
 //
 
 // This mixin will help hardware accelerate any content to force smooth rendering
-@mixin hardware-accelerate {
-	html.touch & {
+@mixin hardware-accelerate($force: false) {
+	@if $force == true {
+		transform: translate3d(0, 0, 0);
 		backface-visibility: hidden;
 		perspective: 1000;
+
 		font-smoothing: antialiased;
+		-webkit-font-smoothing: antialiased;
+	} @else {
+		html.touch & {
+			transform: translate3d(0, 0, 0);
+			backface-visibility: hidden;
+			perspective: 1000;
+			font-smoothing: antialiased;
+			-webkit-font-smoothing: antialiased;
+		}
 	}
 }
 
