@@ -1,6 +1,10 @@
 $patterned-background-overlay-opacity: 0.8;
 $patterned-background-opacity: 0.02;
 
+@if $include-font-smoothing == true {
+	$patterned-background-overlay-opacity: 0.85;
+}
+
 //
 // Patterned Background Overlays
 //
