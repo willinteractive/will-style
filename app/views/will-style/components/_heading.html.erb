@@ -24,6 +24,4 @@
 	<% if defined?(text) %>
 		<p class="text lead<%= invert_colors ? " text-light" : "" %>" data-animated data-animated-target=".title-container" <%= delay_prop %>><%= raw text %></p>
 	<% end %>
-
-	<%= yield %>
 </div>
