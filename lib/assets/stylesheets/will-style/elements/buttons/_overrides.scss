@@ -75,7 +75,6 @@ button {
 		opacity: 0;
 	}
 
-
 	a {
 		display: block;
 		cursor: pointer;
@@ -146,6 +145,10 @@ button {
 	}
 
 	&.dark {
+		a {
+			color: $will-dark-gray;
+		}
+
 		.button-outline-outer:before,
 		.button-outline-outer:after,
 		.button-outline-inner:before,
