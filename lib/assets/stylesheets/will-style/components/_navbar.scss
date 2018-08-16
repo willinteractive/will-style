@@ -60,14 +60,10 @@ nav.navbar {
 
 		&:before,
 		&:after {
-			@include hardware-accelerate;
-
 			top: calc(50% - 1px);
 		}
 
 		&:after {
-			@include hardware-accelerate;
-
 			opacity: 0;
 			transform: rotate(-225deg);
 		}
