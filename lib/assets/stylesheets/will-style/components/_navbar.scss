@@ -218,9 +218,21 @@ nav.navbar {
 		// Ensure WILL Logo isn't huge on firefox
 		svg {
 			max-width: #{($nav-link-padding-y * 2 + $font-size-base * $line-height-base) * $will-logo-aspect-ratio};
+			overflow: visible
 		}
 
 		min-width: #{($nav-link-padding-y * 2 + $font-size-base * $line-height-base) * $will-logo-aspect-ratio};
+
+		svg .play-fill {
+			transition: transform 0.2s $animation-timing-function;
+		}
+
+		&:hover,
+		&:focus {
+			svg .play-fill {
+				transform: translateX(5px);
+			}
+		}
 	}
 }
 
