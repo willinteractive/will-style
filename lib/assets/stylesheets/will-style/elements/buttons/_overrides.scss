@@ -47,7 +47,8 @@ button {
 	}
 
 	input,
-	button {
+	button,
+	a {
 		position: relative;
 
 		cursor: not-allowed;
@@ -72,6 +73,12 @@ button {
 		z-index: 1;
 
 		opacity: 0;
+	}
+
+
+	a {
+		display: block;
+		cursor: pointer;
 	}
 
 	.button-outline-outer,
@@ -149,7 +156,8 @@ button {
 
 	&.light {
 		input,
-		button {
+		button,
+		a {
 			color: $will-white;
 
 			&:disabled {
@@ -161,7 +169,8 @@ button {
 
 	&:not(.disabled) {
 		input,
-		button {
+		button,
+		a {
 			opacity: 1;
 			transition: opacity $animation-duration $animation-duration $animation-timing-function;
 
@@ -187,12 +196,14 @@ button {
 			}
 
 			.will-bg-pattern-dark + input,
-			.will-bg-pattern-dark + button, {
+			.will-bg-pattern-dark + button,
+			.will-bg-pattern-dark + a {
 				color: $will-white !important;
 			}
 
 			.will-bg-pattern-light + input,
-			.will-bg-pattern-light + button, {
+			.will-bg-pattern-light + button,
+			.will-bg-pattern-light + a {
 				color: $will-dark-gray !important;
 			}
 		}
