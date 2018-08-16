@@ -54,6 +54,8 @@ nav.navbar {
 			height: 2px;
 
 			background-color: $body-bg;
+
+			will-change: opacity, transform;
 		}
 
 		&:before,
