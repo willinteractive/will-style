@@ -35,6 +35,15 @@
 
 		animation: animate-will-bg-pattern 316s linear infinite;
 	}
+
+	// @NOTE: Interner Explorer hates our animated backgrounds.
+	// 		  We should work to fix them.
+	@include ie-styles {
+		#{$target} {
+			content: none !important;
+			animation: none !important;
+		}
+	}
 }
 
 @keyframes animate-will-bg-pattern {

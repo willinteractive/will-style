@@ -39,7 +39,6 @@ $patterned-background-opacity: 0.02;
 		opacity: $patterned-background-opacity;
 	}
 
-
 	@if $fg == true {
 		&:before,
 		&:after {

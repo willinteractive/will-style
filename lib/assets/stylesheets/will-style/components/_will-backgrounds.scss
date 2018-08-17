@@ -49,6 +49,24 @@
 
 		animation: animate-will-bg-light 34s linear infinite;
 	}
+
+	// @NOTE: Interner Explorer hates our animated backgrounds.
+	// 		  We should work to fix them.
+	@include ie-styles {
+		&:before,
+		&:after {
+			content: none !important;
+			animation: none !important;
+		}
+
+		&.will-bg-light {
+			background-color: $will-bg-light;
+		}
+
+		&.will-bg-dark {
+			background-color: $will-bg-darkest;
+		}
+	}
 }
 
 .will-bg-light:after {
