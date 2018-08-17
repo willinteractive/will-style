@@ -2,20 +2,16 @@
 	<table border="0" cellpadding="0" cellspacing="0">
 		<tr>
 			<td class="content-block">
-				<span class="apple-link">
-					WILL Interactive, 10000 Falls Road Suite 305, Potomac MD 20854
-				</span>
-
-				<% if defined?(unsubscribe_link) && !unsubscribe_link.nil? %>
-					<br> Don't like these emails? <a href="<%= unsubscribe_link %>">Unsubscribe</a>.
-				<% end %>
-			</td>
-		</tr>
-
-		<tr>
-			<td class="content-block">
 				<a href="https://willinteractive.com">willinteractive.com</a>
 			</td>
 		</tr>
+
+		<% if defined?(unsubscribe_link) && !unsubscribe_link.nil? %>
+			<tr>
+				<td class="content-block">
+					<a href="<%= unsubscribe_link %>">Unsubscribe</a>
+				</td>
+			</tr>
+		<% end %>
 	</table>
 </div>
