@@ -42,6 +42,31 @@
 	overflow-scrolling: auto;
 }
 
+// This mixin directly targets IE11 for hacks
+@mixin ie11-styles {
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		@content;
+	}
+}
+
+// This mixin directly targets Edge for hacks
+@mixin edge-styles {
+	@supports (-ms-ime-align:auto) {
+		@content;
+	}
+}
+
+// This mixin directly targets internet explorer for hacks
+@mixin ie-styles {
+	@include ie11-styles {
+		@content;
+	}
+
+	@include edge-styles {
+		@content;
+	}
+}
+
 // This function allows us to switch between asset_urls and regular urls for image backgrounds
 $include-type: "node" !default;
 
