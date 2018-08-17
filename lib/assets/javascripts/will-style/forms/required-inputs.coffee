@@ -11,14 +11,16 @@ update_submit = (form) ->
       # Enforce valid email addresses on email fields
       disabled = true if $(this).attr("type") is "email" and $.isEmail($(this).val()) is false
 
-  # Only disable primary submit buttons
-  form.find("input[type=submit]:not(.alert, .secondary)").prop("disabled", disabled)
+  form.find("input[type=submit]").prop("disabled", disabled)
+  form.find("button.require-dependent").prop("disabled", disabled)
 
   # Add disabled classes to input containers
   if disabled
-    form.find("input[type=submit]:not(.alert, .secondary)").closest(".button-container").addClass("disabled")
+    form.find("input[type=submit]").closest(".button-container").addClass("disabled")
+    form.find("button.require-dependent").closest(".button-container").addClass("disabled")
   else
-    form.find("input[type=submit]:not(.alert, .secondary)").closest(".button-container").removeClass("disabled")
+    form.find("input[type=submit]").closest(".button-container").removeClass("disabled")
+    form.find("button.require-dependent").closest(".button-container").removeClass("disabled")
 
 update_required = (element) ->
   label = $(element).siblings(".required-label")
