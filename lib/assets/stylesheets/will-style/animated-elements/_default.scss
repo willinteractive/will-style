@@ -83,7 +83,7 @@
 @include animated-element-hidden-after($includes-root-element: false) {
 	@include animated-element-after {
 		opacity: 0;
-		transition-delay: 0 !important;
+		transition-delay: 0s !important;
 	}
 }
 
