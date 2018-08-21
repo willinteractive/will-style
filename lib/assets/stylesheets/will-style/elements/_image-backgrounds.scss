@@ -38,7 +38,7 @@
 
 	&:before,
 	&:after {
-		transition: opacity 0.2s;
+		transition: opacity 0.4s;
 	}
 
 	&:before {
@@ -63,14 +63,14 @@
 .image-bgs .image-bg-display {
 	opacity: 0;
 
-	transition: opacity 2s;
+	transition: opacity 2s $animation-duration / 2 $animation-timing-function;
 
 	&.loaded.active {
 		opacity: 1;
 	}
 
 	&.loaded.active.first {
-		transition-duration: 0.2s;
+		transition-duration: $animation-duration;
 	}
 }
 
