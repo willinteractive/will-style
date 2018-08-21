@@ -90,6 +90,8 @@
 // STAT NUMS => Move a Greater Distance on the Y
 
 @include animated-number-top($includes-root-element: false) {
+	// @NOTE: Number animations require elements to have an active display property.
+	//        This can affect layout, so be careful.
 	display: inline-block;
 
 	@include animated-element-init {
@@ -107,6 +109,8 @@
 }
 
 @include animated-number-bottom($includes-root-element: false) {
+	// @NOTE: Number animations require elements to have an active display property.
+	//        This can affect layout, so be careful.
 	display: inline-block;
 
 	@include animated-element-init {
@@ -122,7 +126,6 @@
 		transform: translateY(0);
 	}
 }
-
 
 // MODERN RISE BLOCKS
 
