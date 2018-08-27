@@ -24,7 +24,7 @@ nav.navbar {
 			opacity: $patterned-background-opacity;
 		}
 
-		@extend .shadow-bottom;
+		@include shadow-bottom();
 	}
 
 	// Styling Navbar links
