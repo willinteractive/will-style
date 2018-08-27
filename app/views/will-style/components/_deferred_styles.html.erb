@@ -1,0 +1,19 @@
+<% unless defined?(stylesheet) %>
+	<% stylesheet = "application" %>
+<% end %>
+
+<style>
+	html {
+		background-color: #2d2f2e;
+	}
+
+	body {
+		display: none;
+	}
+</style>
+
+<link rel="preload" href="<%= stylesheet_path(stylesheet) %>" as="style" onload="this.onload=null; if (window.WILLStyle) { window.WILLStyle.Events.trigger('css-initialized'); } this.rel='stylesheet'">
+
+<noscript>
+	<link rel="stylesheet" href="<%= stylesheet_path(stylesheet) %>">
+</noscript>

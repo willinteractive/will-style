@@ -29,6 +29,8 @@ _cachedElements = undefined
 _heightCache = {}
 _targetCache = {}
 
+_cssInitialized = true
+
 #---------------------
 # Private Methods    -
 #---------------------
@@ -77,6 +79,8 @@ _getTargetForElement = (element) ->
   return undefined
 
 _updateAnimatedElements = ->
+  return if _cssInitialized is false
+
   if _isUpdating is true
     _requiresUpdate = true
     return
@@ -231,6 +235,19 @@ $(document).on 'turbolinks:before-render', (event) ->
 window.WILLStyle.Events.on "update-animated-elements", ->
   _scheduleAnimatedElementsUpdate()
 
+window.WILLStyle.Events.on "css-initialized", ->
+  _cssInitialized = true
+
+  _resetAnimationCache()
+  _scheduleAnimatedElementsUpdate()
+
 window.WILLStyle.Events.on "image-loaded", (image) ->
   if image.css("position") is "static" or image.css("position") is "relative"
     _resetAnimationCache()
+
+#---------------------
+# Initialization     -
+#---------------------
+
+if window.WILLStyle.Settings.synchronousCSS is false
+  _cssInitialized = false
