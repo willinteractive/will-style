@@ -15,8 +15,8 @@
 
 // This is a rotating will background that has a light pattern underneath an oversized arrow in white
 
-.will-bg-light,
-.will-bg-dark {
+.will-bg-x-light,
+.will-bg-x-dark {
 	position: relative;
 	overflow: hidden;
 
@@ -59,21 +59,21 @@
 			animation: none !important;
 		}
 
-		&.will-bg-light {
+		&.will-bg-x-light {
 			background-color: $will-bg-light;
 		}
 
-		&.will-bg-dark {
+		&.will-bg-x-dark {
 			background-color: $will-bg-darkest;
 		}
 	}
 }
 
-.will-bg-light:after {
+.will-bg-x-light:after {
 	background-image: will-style-bg-url("patterns/bg-will-x-shadowed.svg");
 }
 
-.will-bg-dark {
+.will-bg-x-dark {
 	background-color: $will-bg-dark;
 
 	&:after {
