@@ -5,10 +5,17 @@
 $footer-height: 55px !default;
 
 .wrap {
-	min-height: 100vh;
+	min-height: calc(100vh + #{$footer-height});
+
+	display: flex;
+	flex-direction: column;
 
 	margin-bottom: 0 - $footer-height;
  	padding-bottom: $footer-height;
+
+ 	main {
+ 		flex-grow: 1;
+ 	}
 }
 
 footer {
