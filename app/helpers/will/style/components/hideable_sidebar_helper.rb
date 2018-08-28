@@ -100,7 +100,7 @@ module WILL
           def wrapper(options={}, &block)
             raise ArgumentError, "Missing block" unless block_given?
 
-            options[:class] = "container hideable-sidebar-wrap #{options[:class]}"
+            options[:class] = "hideable-sidebar-wrap #{options[:class]}"
 
             if options[:data] && options[:data].is_a?(Hash)
               options[:data] = options[:data].merge({ "hideable-sidebar" => "" })
