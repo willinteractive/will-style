@@ -2,7 +2,7 @@
 // Footers
 //
 
-$footer-height: 45px !default;
+$footer-height: 55px !default;
 
 .wrap {
 	min-height: 100vh;
@@ -12,14 +12,14 @@ $footer-height: 45px !default;
 }
 
 footer {
+	position: fixed;
+	bottom: 0;
+
 	// @NOTE: This prevents 1px overscrolls when the page isn't 100vh by default
 	overflow: hidden;
 
 	height: $footer-height;
 	max-height: $footer-height;
-
-	padding-top: 10px;
-	padding-bottom: 0;
 
 	margin-bottom: 0;
 
