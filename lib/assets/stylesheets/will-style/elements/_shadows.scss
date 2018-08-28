@@ -5,3 +5,22 @@
 .shadowed {
 	@include image-shadow();
 }
+
+.shadow-top {
+	@include shadow-top;
+}
+
+.shadow-bottom {
+	@include shadow-bottom;
+
+	// @NOTE: Add a little z-index to ensure element is on top so the shadow shows
+	z-index: 10;
+}
+
+.shadow-left {
+	@include shadow-left;
+}
+
+.shadow-right {
+	@include shadow-right;
+}

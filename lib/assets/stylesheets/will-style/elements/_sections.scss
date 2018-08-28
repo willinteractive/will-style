@@ -1,0 +1,11 @@
+main {
+	z-index: $navbar-z-index + 1;
+
+	// Ensure our animated heroes are overlayed correctly;
+	@extend .bg-dark;
+
+	// Include the bottom shadow
+	position: relative;
+
+	@include shadow-top-bottom;
+}
