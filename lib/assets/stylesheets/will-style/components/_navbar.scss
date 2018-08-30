@@ -244,18 +244,20 @@ nav.navbar {
 
 		min-width: #{($nav-link-padding-y * 2 + $font-size-base * $line-height-base) * $will-logo-aspect-ratio};
 
-		svg .play-fill {
-			transition: transform 0.2s $animation-timing-function;
-		}
+		// Logo Animation
 
-		&:hover,
-		&:focus {
-			color: $navbar-dark-hover-color;
+		// svg .play-fill {
+		// 	transition: transform 0.2s $animation-timing-function;
+		// }
 
-			svg .play-fill {
-				transform: translateX(5px);
-			}
-		}
+		// &:hover,
+		// &:focus {
+		// 	color: $navbar-dark-hover-color;
+
+		// 	svg .play-fill {
+		// 		transform: translateX(5px);
+		// 	}
+		// }
 	}
 
 	// Gravatar Images
