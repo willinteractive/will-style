@@ -138,5 +138,9 @@
 // Shadows for Images
 
 @mixin image-shadow {
-	box-shadow: 0px 5px 40px -5px #000000;
+	box-shadow: 0 0 20px rgba(black, 0.75);
+}
+
+@mixin image-shadow-filter {
+  filter: drop-shadow(0 0 15px rgba(black, 0.75));
 }

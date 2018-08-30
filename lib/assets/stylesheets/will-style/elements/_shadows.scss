@@ -6,6 +6,10 @@
 	@include image-shadow();
 }
 
+.shadowed-filtered {
+	@include image-shadow-filter();
+}
+
 .shadow-top {
 	@include shadow-top;
 }
