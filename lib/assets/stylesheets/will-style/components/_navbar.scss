@@ -35,27 +35,28 @@ nav.navbar {
 		transition: color 0.2s $animation-timing-function;
 	}
 
-	&.navbar-dark {
-		.nav-link:focus {
-			outline: none;
+	// @NOTE: This causes a white box to flash on Chrome
+	// &.navbar-dark {
+	// 	.nav-link:focus {
+	// 		outline: none;
 
-			&:before {
-				content: "";
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				left: 0;
-				right: 0;
+	// 		&:before {
+	// 			content: "";
+	// 			position: absolute;
+	// 			top: 0;
+	// 			bottom: 0;
+	// 			left: 0;
+	// 			right: 0;
 
-				border: 1px solid $navbar-dark-color;
-			}
+	// 			border: 1px solid $navbar-dark-color;
+	// 		}
 
-		}
+	// 	}
 
-		.dropdown-menu {
-			margin: -1px;
-		}
-	}
+	// 	.dropdown-menu {
+	// 		margin: -1px;
+	// 	}
+	// }
 
 	// Navbar Toggler animation
 
