@@ -13,3 +13,11 @@ main {
 .flex-grow {
 	flex-grow: 1;
 }
+
+// @IE11: This is required to prevent bouncing on IE11 when scrolling.
+//        it also requires a hack in elements/_image-backgrounds.
+@include ie11-styles {
+	.row {
+		z-index: 1;
+	}
+}
