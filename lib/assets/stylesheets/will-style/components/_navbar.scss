@@ -240,7 +240,14 @@ nav.navbar {
 		// Ensure WILL Logo isn't huge on firefox
 		svg {
 			max-width: #{($nav-link-padding-y * 2 + $font-size-base * $line-height-base) * $will-logo-aspect-ratio};
-			overflow: visible
+			overflow: visible;
+		}
+
+		// @IE11: IE11 hates sizing our logo correctly
+		@include ie11-styles {
+			svg {
+				max-height: 40px;
+			}
 		}
 
 		min-width: #{($nav-link-padding-y * 2 + $font-size-base * $line-height-base) * $will-logo-aspect-ratio};
