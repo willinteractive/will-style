@@ -1,19 +1,25 @@
 <% name = controller_name + "-" + action_name %>
 
+<% if defined?(background_image) && !background_image.nil? %>
+	<% background_images = [ background_image ] %>
+<% end %>
+
+<% if defined?(background_image_position) && !background_image_position.nil? %>
+	<% background_image_positions = [ background_image_position ] %>
+<% end %>
+
 <section id="<%= name %>-top" class="hero container-fluid bg-dark">
-	<div class="row expanded full-height align-items-center image-bg<%= (defined?(include_pattern) && include_pattern == false) ? "" : " patterned-bg" %>"
+	<div class="row expanded full-height align-items-center image-bg<%= (defined?(include_pattern) && include_pattern == false) ? "" : " patterned-bg" %>">
 
-		<% if defined?(background_image) %>
-			style="background-image: url('<%= asset_url(background_image) %>')"
-		<% end %>
-		>
-
-		<% if defined?(background_images) %>
+		<% if defined?(background_images) && !background_images.nil? %>
 			<div data-image-bgs="[<%= background_images.map{|i| "'#{asset_url(i)}'" }.join(", ") %>]"
-				<% if defined?(background_image_positions) %>
-					data-image-bg-positions="[<%= background_image_positions.map{|i| "'#{i}'" }.join(", ") %>]"
-				<% end %>
-			data-image-bgs-randomize></div>
+
+			<% if defined?(background_image_positions) && !background_image_positions.nil? %>
+				data-image-bg-positions="[<%= background_image_positions.map{|i| "'#{i}'" }.join(", ") %>]"
+			<% end %>
+
+			data-image-bgs-randomize>
+			</div>
 		<% end %>
 
 		<% if defined?(background_video) %>
