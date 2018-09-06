@@ -185,7 +185,7 @@ body {
 // @HACK: Accounting for Safari / Chrome bottom bar buttons
 @include media-breakpoint-down(sm) {
 	@media (orientation: portrait) {
-		html.touch body.pop-out-showing.with-iframe {
+		html.touchevents body.pop-out-showing.with-iframe {
 			height: 100%;
 			max-height: 100%;
 			position: fixed;
@@ -216,7 +216,7 @@ body {
 // @HACK: Accounting for iPhone X not reporting safe space properly
 @include media-breakpoint-down(sm) {
 	@media (orientation: portrait) {
-		html.touch.iphone-x body.pop-out-showing.with-iframe {
+		html.touchevents.iphone-x body.pop-out-showing.with-iframe {
 			[data-pop-out][data-pop-out-fullscreen] {
 				@include patterned-background();
 

@@ -68,7 +68,7 @@ $(document).on "click", '[data-pop-out-link=""]', (event) ->
     popOut = $("##{link.attr("data-pop-out-id")}")
 
     if link.attr("data-pop-out-url")
-      if $("html").hasClass("touch") and popOut.attr("data-pop-out-fullscreen") isnt ""
+      if $("html").hasClass("touchevents") and popOut.attr("data-pop-out-fullscreen") isnt ""
         window.open link.attr("data-pop-out-url"), '_blank'
         return
 

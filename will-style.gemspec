@@ -22,7 +22,6 @@ Gem::Specification.new do |s|
   s.add_dependency "bootstrap", "~> 4.0.0"
 
   s.add_dependency "font-awesome-rails", "~> 4.7"
-  s.add_dependency "modernizr-rails", "~> 2.7.1"
 
   s.add_dependency "sassc-rails", "~> 1.3.0"
 

@@ -3,7 +3,7 @@
 #= require jquery_ujs
 
 # -------- MODERNIZR
-#= require modernizr
+#= require modernizr-custom
 
 # -------- LIBRARIES
 #= require jquery.isEmail
