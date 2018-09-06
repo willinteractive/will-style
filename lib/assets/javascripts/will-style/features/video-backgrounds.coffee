@@ -73,6 +73,10 @@ _resizeVideoElement = (video) ->
         top: 0
         left: (windowWidth - newWidth) / 2
 
+    setTimeout ->
+      $(video).closest(".video-bg").addClass("active")
+    , 100
+
 _resizeVideoElements = ->
   $("video").each ->
     _resizeVideoElement(this)
