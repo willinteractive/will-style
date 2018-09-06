@@ -74,7 +74,20 @@
 	}
 }
 
-// Fixed Image Backgrounds
+// Single Image BGs
+.image-bg {
+	&.patterned {
+		@include patterned-background;
+
+		&:after {
+			background-attachment: fixed;
+		}
+	}
+
+	&.fixed {
+		background-attachment: fixed;
+	}
+}
 
 .image-bgs.fixed {
 	height: 100vh;
