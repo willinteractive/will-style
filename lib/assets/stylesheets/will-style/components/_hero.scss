@@ -29,6 +29,18 @@
 
 		padding-bottom: 2rem;
 
+		@media (orientation: portrait) {
+			html.touchevents & {
+				padding-bottom: 8rem;
+			}
+		}
+
+		@media (orientation: landscape) {
+			html.touchevents & {
+				padding-bottom: 3rem;
+			}
+		}
+
 		cursor: pointer;
 
 		svg {
