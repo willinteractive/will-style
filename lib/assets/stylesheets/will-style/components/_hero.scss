@@ -27,17 +27,13 @@
 		left: 0;
 		right: 0;
 
-		padding-bottom: 2rem;
+		padding-bottom: 3rem;
 
-		@media (orientation: portrait) {
-			html.touchevents & {
-				padding-bottom: 8rem;
-			}
-		}
-
-		@media (orientation: landscape) {
-			html.touchevents & {
-				padding-bottom: 3rem;
+		html.touchevents & {
+			@include media-breakpoint-down(sm) {
+				@media (orientation: portrait) {
+					padding-bottom: 8rem;
+				}
 			}
 		}
 
