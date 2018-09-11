@@ -22,11 +22,11 @@ $lead-font-size:	$font-size-base * 1.25;
 $link-decoration:		none;
 $link-hover-decoration:	none;
 
-$will-sans-serif:		"Core Sans", "Open Sans", "San Francisco", "Calibri", Helvetica, sans-serif;
-$will-bold-sans-serif:	"Core Sans Bold", "Open Sans", "San Francisco", "Calibri", Helvetica, sans-serif;
+$will-sans-serif:		"Core Sans", "Open Sans", "San Francisco", "Calibri", Helvetica, sans-serif !default;
+$will-bold-sans-serif:	"Core Sans Bold", "Open Sans", "San Francisco", "Calibri", Helvetica, sans-serif !default;
 
-$font-family-sans-serif:	$will-sans-serif;
-$headings-font-family:		$will-bold-sans-serif;
+$font-family-sans-serif:	$will-sans-serif !default;
+$headings-font-family:		$will-bold-sans-serif !default;
 
 $will-government-serif:			"Times New Roman", Times New Roman;
 $will-government-sans-serif:	"Arial", Arial;
