@@ -56,8 +56,8 @@
 	@return $stops();
 }
 
-@mixin smooth-linear-gradient($start-color: black, $end-color: transparent) {
-	background-image: linear-gradient(to top, smooth-gradient-color-stops($start-color, $end-color));
+@mixin smooth-linear-gradient($start-color: black, $end-color: transparent, $direction: to top) {
+	background-image: linear-gradient($direction, smooth-gradient-color-stops($start-color, $end-color));
 }
 
 @mixin smooth-radial-gradient($start-color: black, $end-color: transparent, $shape: circle, $image: null) {
