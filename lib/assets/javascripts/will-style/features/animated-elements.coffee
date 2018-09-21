@@ -105,80 +105,83 @@ _updateAnimatedElements = ->
   _cachedElements.each ->
     element = $(this)
 
-    targetTop = -1
-    targetHeight = -1
+    # Do each calculation asynchronously to prevent lag
+    setTimeout ->
+      targetTop = -1
+      targetHeight = -1
 
-    target = element
+      target = element
 
-    # Set animation ids for cache reference
-    element.data("animate-id", _generateID()) unless element.data("animate-id")
+      # Set animation ids for cache reference
+      element.data("animate-id", _generateID()) unless element.data("animate-id")
 
-    # If we're using another element for targeting, use it
-    if element.data("animated-target")?
-      potentialTarget = _getTargetForElement(element)
-      target = $(potentialTarget) if potentialTarget
+      # If we're using another element for targeting, use it
+      if element.data("animated-target")?
+        potentialTarget = _getTargetForElement(element)
+        target = $(potentialTarget) if potentialTarget
 
-      target.data("animate-id", _generateID()) unless target.data("animate-id")
+        target.data("animate-id", _generateID()) unless target.data("animate-id")
 
-    if target.data("animate-id") and _heightCache[target.data("animate-id")]
-      targetTop = _heightCache[target.data("animate-id")].top
-      targetHeight = _heightCache[target.data("animate-id")].height
+      if target.data("animate-id") and _heightCache[target.data("animate-id")]
+        targetTop = _heightCache[target.data("animate-id")].top
+        targetHeight = _heightCache[target.data("animate-id")].height
 
-    if targetTop < 1
-      targetTop = target.offset().top
-      targetHeight = target.outerHeight()
+      if targetTop < 1
+        targetTop = target.offset().top
+        targetHeight = target.outerHeight()
 
-      _heightCache[target.data("animate-id")] =
-        top: targetTop
-        height: targetHeight
+        _heightCache[target.data("animate-id")] =
+          top: targetTop
+          height: targetHeight
 
-    # Remove scroll top if element is data-animation-fixed
-    if element.data("animated-fixed")?
-      targetTop -= windowTop
+      # Remove scroll top if element is data-animation-fixed
+      if element.data("animated-fixed")?
+        targetTop -= windowTop
 
-    isActive = false
+      isActive = false
 
-    # Element is fully visible
-    if targetTop + targetHeight < windowTop + windowHeight
-      isActive = true
+      # Element is fully visible
+      if targetTop + targetHeight < windowTop + windowHeight
+        isActive = true
 
-    # Element is at top and we're only using the top as a trigger
-    else if targetTop < windowTop + windowHeight and element.data("animated-begin")?
-      isActive = true
+      # Element is at top and we're only using the top as a trigger
+      else if targetTop < windowTop + windowHeight and element.data("animated-begin")?
+        isActive = true
 
-    if isActive
-      element.attr("data-animated-active", "true")
-    else if element.data("animated-hidden-before")?
-      element.removeAttr("data-animated-active")
+      if isActive
+        element.attr("data-animated-active", "true")
+      else if element.data("animated-hidden-before")?
+        element.removeAttr("data-animated-active")
 
-    # Element is completely off the screen
-    if targetTop + targetHeight < windowTop
-      element.attr("data-animated-after", "true")
-    else
-      element.removeAttr("data-animated-after")
-
-    # Set progressive classes if element is asking for it
-    if element.data("animated-progressive")?
-      targetBottom = targetTop + targetHeight
-
-      progressivePosition = 0
-
-      totalDistance = windowHeight + targetHeight
-      traveledDistance = targetBottom - windowTop
-
-      if element.data("animated-begin")?
-        totalDistance = windowHeight
-        traveledDistance = targetTop - windowTop
-
-      progressivePosition = Math.floor((totalDistance - traveledDistance) / totalDistance * 100)
-
-      progressivePosition = 0 if progressivePosition < 0
-      progressivePosition = 100 if progressivePosition > 100
-
-      if progressivePosition > 0
-        element.attr("data-animated-progressive-position", progressivePosition)
+      # Element is completely off the screen
+      if targetTop + targetHeight < windowTop
+        element.attr("data-animated-after", "true")
       else
-        element.removeAttr("data-animated-progressive-position")
+        element.removeAttr("data-animated-after")
+
+      # Set progressive classes if element is asking for it
+      if element.data("animated-progressive")?
+        targetBottom = targetTop + targetHeight
+
+        progressivePosition = 0
+
+        totalDistance = windowHeight + targetHeight
+        traveledDistance = targetBottom - windowTop
+
+        if element.data("animated-begin")?
+          totalDistance = windowHeight
+          traveledDistance = targetTop - windowTop
+
+        progressivePosition = Math.floor((totalDistance - traveledDistance) / totalDistance * 100)
+
+        progressivePosition = 0 if progressivePosition < 0
+        progressivePosition = 100 if progressivePosition > 100
+
+        if progressivePosition > 0
+          element.attr("data-animated-progressive-position", progressivePosition)
+        else
+          element.removeAttr("data-animated-progressive-position")
+    , 0
 
   clearTimeout(_updateTimer) if _updateTimer
 
