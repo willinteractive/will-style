@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "jquery-rails", "~> 4.3"
 
-  s.add_dependency "bootstrap", "~> 4.0.0"
+  s.add_dependency "bootstrap", "~> 4.1.2"
 
   s.add_dependency "font-awesome-rails", "~> 4.7"
 
