@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 2004 1164" style="enable-background:new 0 0 2004 1164;" xml:space="preserve">
+
+	<defs>
+		<filter id="drop-shadow">
+			<feGaussianBlur in="SourceAlpha" stdDeviation="10"/>
+
+			<feOffset dx="5" dy="5" result="offsetblur"/>
+			<feFlood flood-color="#000000"/>
+			<feComposite in2="offsetblur" operator="in"/>
+
+			<feComponentTransfer>
+				<feFuncA type="linear" slope="0.2"/>
+			</feComponentTransfer>
+
+			<feMerge>
+				<feMergeNode/>
+				<feMergeNode in="SourceGraphic"/>
+			</feMerge>
+	    </filter>
+	</defs>
+
+	<style type="text/css">
+		.block {
+			fill: #F5F5F5;
+			filter: url(#drop-shadow);
+		}
+	</style>
+
+	<path class="block" d="M957.1,627l-757.3,490h948.8L996.2,641C990.5,623.1,973,616.8,957.1,627z"/>
+	<path class="block" d="M963.1,537.4L803.4,37H37v1080h88.5l819.3-528.4C961,577.1,968.3,556.6,963.1,537.4z"/>
+	<path class="block" d="M1036.1,529.3L1798.6,37H844.4l152.8,478.3C1002.8,533.2,1020.3,539.5,1036.1,529.3z"/>
+	<path class="block" d="M1957,37h-88.9l-819.7,530.9c-16.2,11.5-23.6,31.9-18.3,51.1L1188,1117h769V37z"/>
+</svg>

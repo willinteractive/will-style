@@ -1,0 +1,253 @@
+//
+// Animated Elements Mixins and Helpers
+//
+
+// Variables
+$animated-element-prop: "data-animated" !default;
+$animated-element-default-prop: "data-animated-default" !default;
+$animated-element-left-prop: "data-animated-left" !default;
+$animated-element-right-prop: "data-animated-right" !default;
+$animated-element-top-prop: "data-animated-top" !default;
+$animated-element-opacity-prop: "data-animated-opacity" !default;
+$animated-element-delay-prop: "data-animated-delay" !default;
+$animated-element-active-prop: "data-animated-active" !default;
+$animated-element-after-prop: "data-animated-after" !default;
+$animated-element-hidden-after-prop: "data-animated-hidden-after" !default;
+$animated-element-progressive-prop: "data-animated-progressive" !default;
+$animated-element-progressive-default-prop: "data-animated-progressive-default" !default;
+$animated-element-progressive-position-prop: "data-animated-progressive-position" !default;
+
+$animated-number-top-prop: "data-animated-number-top" !default;
+$animated-number-bottom-prop: "data-animated-number-bottom" !default;
+
+$animated-fast-rise-blocks-prop: "data-animated-fast-rise-blocks" !default;
+$animated-normal-rise-blocks-prop: "data-animated-normal-rise-blocks" !default;
+$animated-slow-rise-blocks-prop: "data-animated-slow-rise-blocks" !default;
+
+$animated-element-selector: "[#{$animated-element-prop}]" !default;
+$animated-element-default-selector: "[#{$animated-element-default-prop}]" !default;
+$animated-element-left-selector: "[#{$animated-element-left-prop}]" !default;
+$animated-element-right-selector: "[#{$animated-element-right-prop}]" !default;
+$animated-element-top-selector: "[#{$animated-element-top-prop}]" !default;
+$animated-element-opacity-selector: "[#{$animated-element-opacity-prop}]" !default;
+$animated-element-active-selector: "[#{$animated-element-active-prop}]" !default;
+$animated-element-hidden-after-selector: "[#{$animated-element-hidden-after-prop}]" !default;
+$animated-element-after-selector: "[#{$animated-element-after-prop}]" !default;
+$animated-element-progressive-selector: "[#{$animated-element-progressive-prop}]" !default;
+$animated-element-progressive-default-selector: "[#{$animated-element-progressive-default-prop}]" !default;
+
+//Modern Rise Blocks
+$animated-fast-rise-blocks-selector: "[#{$animated-fast-rise-blocks-prop}]" !default;
+$animated-normal-rise-blocks-selector: "[#{$animated-normal-rise-blocks-prop}]" !default;
+$animated-slow-rise-blocks-selector: "[#{$animated-slow-rise-blocks-prop}]" !default;
+
+$animated-number-top-selector: "[#{$animated-number-top-prop}]" !default;
+$animated-number-bottom-selector: "[#{$animated-number-bottom-prop}]" !default;
+
+// Yield function for initializing transitions on animated elements
+
+@mixin animated-element-init {
+	&#{$animated-element-selector} {
+		@content;
+	}
+}
+
+// Yield function for setting up transitions on animated elements activating
+
+@mixin animated-element-active {
+	&#{$animated-element-active-selector} {
+		@content;
+	}
+}
+
+// Yield function for setting up transitions on animated elements after they're off the screen
+
+@mixin animated-element-after {
+	&#{$animated-element-after-selector} {
+		@content;
+	}
+}
+
+@mixin animated-element-default($includes-root-element: true) {
+	@if $includes-root-element == true {
+		&#{$animated-element-default-selector} {
+			@content;
+		}
+	} @else {
+		#{$animated-element-default-selector} {
+			@content;
+		}
+	}
+}
+
+@mixin animated-element-left($includes-root-element: true) {
+	@if $includes-root-element == true {
+		&#{$animated-element-left-selector} {
+			@content;
+		}
+	} @else {
+		#{$animated-element-left-selector} {
+			@content;
+		}
+	}
+}
+
+@mixin animated-element-right($includes-root-element: true) {
+	@if $includes-root-element == true {
+		&#{$animated-element-right-selector} {
+			@content;
+		}
+	} @else {
+		#{$animated-element-right-selector} {
+			@content;
+		}
+	}
+}
+
+@mixin animated-element-top($includes-root-element: true) {
+	@if $includes-root-element == true {
+		&#{$animated-element-top-selector} {
+			@content;
+		}
+	} @else {
+		#{$animated-element-top-selector} {
+			@content;
+		}
+	}
+}
+
+@mixin animated-element-opacity($includes-root-element: true) {
+	@if $includes-root-element == true {
+		&#{$animated-element-opacity-selector} {
+			@content;
+		}
+	} @else {
+		#{$animated-element-opacity-selector} {
+			@content;
+		}
+	}
+}
+
+@mixin animated-element-hidden-after($includes-root-element: true) {
+	@if $includes-root-element == true {
+		&#{$animated-element-hidden-after-selector} {
+			@content;
+		}
+	} @else {
+		#{$animated-element-hidden-after-selector} {
+			@content;
+		}
+	}
+}
+
+@mixin animated-element-progressive {
+	&#{$animated-element-progressive-selector} {
+		@content;
+	}
+}
+
+@mixin animated-element-progressive-position($position: 0) {
+	&#{$animated-element-progressive-selector} {
+		&[#{$animated-element-progressive-position-prop}="#{$position}"] {
+			@content;
+		}
+	}
+}
+
+@mixin animated-element-progressive-default {
+	&#{$animated-element-progressive-default-selector} {
+		@content;
+	}
+}
+
+@mixin animated-element-delay($ms: 0, $delay: -1, $includes-root-element: true) {
+	@if $delay == -1 {
+		$delay: $ms;
+	}
+
+	@if $includes-root-element == true {
+		&[#{$animated-element-delay-prop}="#{$ms}"] {
+			@include animated-element-active {
+				transition-delay: #{$delay}ms !important;
+			}
+		}
+	} @else {
+		[#{$animated-element-delay-prop}="#{$ms}"] {
+			@include animated-element-active {
+				transition-delay: #{$delay}ms !important;
+			}
+		}
+	}
+}
+
+@mixin animated-element-delay-block($ms: 0) {
+	&[#{$animated-element-delay-prop}="#{$ms}"] {
+		@include animated-element-active {
+			@content;
+		}
+	}
+}
+
+// STAT NUMS
+
+@mixin animated-number-top($includes-root-element: true) {
+	@if $includes-root-element == true {
+		&#{$animated-number-top-selector} {
+			@content;
+		}
+	} @else {
+		#{$animated-number-top-selector} {
+			@content;
+		}
+	}
+}
+
+@mixin animated-number-bottom($includes-root-element: true) {
+	@if $includes-root-element == true {
+		&#{$animated-number-bottom-selector} {
+			@content;
+		}
+	} @else {
+		#{$animated-number-bottom-selector} {
+			@content;
+		}
+	}
+}
+
+// RISE BLOCKS BELOW IMAGES ANIMATIONS
+
+@mixin animated-fast-rise-blocks($includes-root-element: true) {
+	@if $includes-root-element == true {
+		&#{$animated-fast-rise-blocks-selector} {
+			@content;
+		}
+	} @else {
+		#{$animated-fast-rise-blocks-selector} {
+			@content;
+		}
+	}
+}
+
+@mixin animated-normal-rise-blocks($includes-root-element: true) {
+	@if $includes-root-element == true {
+		&#{$animated-normal-rise-blocks-selector} {
+			@content;
+		}
+	} @else {
+		#{$animated-normal-rise-blocks-selector} {
+			@content;
+		}
+	}
+}
+
+@mixin animated-slow-rise-blocks($includes-root-element: true) {
+	@if $includes-root-element == true {
+		&#{$animated-slow-rise-blocks-selector} {
+			@content;
+		}
+	} @else {
+		#{$animated-slow-rise-blocks-selector} {
+			@content;
+		}
+	}
+}

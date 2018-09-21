@@ -1,0 +1,94 @@
+//
+// Headings
+//
+
+// Main Headings
+
+.will-heading {
+	.subtitle {
+		text-transform: uppercase;
+		line-height: 1;
+	}
+
+	// Accent Line
+
+	.subtitle-container {
+		@include media-breakpoint-up(md) {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			padding-right: 1rem;
+		}
+
+		@include media-breakpoint-down(sm) {
+			&,
+			.subtitle {
+				display: inline-block;
+				width: auto;
+
+				margin-bottom: 0;
+				line-height: 1;
+			}
+		}
+
+		.subtitle-line {
+			height: 2px;
+
+			@include media-breakpoint-up(md) {
+				flex-grow: 1;
+
+				max-width: 250px;
+				margin-left: 1rem;
+			}
+
+			@include media-breakpoint-down(sm) {
+				display: inline-block;
+				width: 100%;
+			}
+		}
+	}
+}
+
+// Section Headings
+
+.section-heading {
+	padding-top: 1rem;
+
+	&:before {
+		content: "";
+
+		position: absolute;
+		top: 0;
+		height: 2px;
+
+		left: calc(50% - 3rem);
+		width: 6rem;
+
+		background-color: $will-teal;
+	}
+
+	small {
+		display: block;
+		font-size: 75%;
+		font-weight: normal;
+
+		font-family: $font-family-sans-serif;
+	}
+}
+
+// Small font overrides
+
+@include media-breakpoint-down(sm) {
+	.will-heading,
+	.section-heading {
+		.display-1,
+		&.display-1 {
+			font-size: #{$display1-size * 0.667};
+		}
+
+		.display-4,
+		&.display-4 {
+			font-size: #{$display4-size * 0.667};
+		}
+	}
+}

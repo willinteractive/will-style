@@ -1,0 +1,21 @@
+//
+// Accessibility Styles
+//
+
+::selection {
+	background: $body-color;
+	color: $body-bg;
+}
+
+.text-light {
+	::selection,
+	&::selection {
+		background: $body-bg;
+		color: $body-color;
+	}
+}
+
+// Don't allow image selection, it's uuuugly
+img {
+	-webkit-user-select: none;
+}

@@ -54,7 +54,7 @@ module Will
             end
 
             p "Could not find partial by the name '#{partial_name}'. Use this generator without any arguments to see a list of partials." if found_partial == false
-          end          
+          end
         end
 
         private

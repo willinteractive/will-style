@@ -1,0 +1,146 @@
+//
+// SHADOWS
+//
+
+@mixin shadow-z0() {
+	box-shadow: 0px 0px rgba(0, 0, 0, 0);
+}
+
+@mixin shadow-z1() {
+	box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, 0.12),
+				0 1px 1px 0 rgba(0, 0, 0, 0.24);
+}
+
+@mixin shadow-z2() {
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+				0 2px 5px 0 rgba(0, 0, 0, 0.23);
+}
+
+@mixin shadow-z3() {
+	box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.19),
+				0 6px 3px 0 rgba(0, 0, 0, 0.23);
+}
+
+@mixin shadow-z4() {
+	box-shadow: 0 14px 14px 0 rgba(0, 0, 0, 0.25),
+				0 10px 5px 0 rgba(0, 0, 0, 0.22);
+}
+
+@mixin shadow-z5() {
+	box-shadow: 0 19px 19px 0 rgba(0, 0, 0, 0.30),
+				0 15px 6px 0 rgba(0, 0, 0, 0.22);
+}
+
+@mixin shadow($size) {
+	@if $size == 'z0' {
+		@include shadow-z0();
+	} @else if $size == 'z1' {
+		@include shadow-z1();
+	} @else if $size == 'z2' {
+		@include shadow-z2();
+	} @else if $size == 'z3' {
+		@include shadow-z3();
+	} @else if $size == 'z4' {
+		@include shadow-z4();
+	} @else if $size == 'z5' {
+		@include shadow-z5();
+	} @else {
+		box-shadow: $size;
+	}
+}
+
+@mixin shadow-inset() {
+	box-shadow: inset 0 3px 7px -2px rgba(0, 0, 0, 0.24),
+				inset 0 3px 7px -2px rgba(0, 0, 0, 0.36);
+}
+
+@mixin shadow-inset-small() {
+	box-shadow: inset 0 1px 5px -1px rgba(0, 0, 0, 0.24);
+}
+
+@mixin shadow-bottom {
+	box-shadow: 0 5px 5px 0 rgba(0,0,0,0.16),
+				0 5px 5px 0 rgba(0,0,0,0.23);
+}
+
+@mixin shadow-top {
+	box-shadow: 0 -2px 5px 0 rgba(0,0,0,0.16),
+				0 -2px 5px 0 rgba(0,0,0,0.23);
+}
+
+@mixin shadow-top-bottom {
+	box-shadow: 0 5px 5px 0 rgba(0,0,0,0.16),
+				0 5px 5px 0 rgba(0,0,0,0.23),
+				0 -2px 5px 0 rgba(0,0,0,0.16),
+				0 -2px 5px 0 rgba(0,0,0,0.23);
+}
+
+@mixin shadow-left {
+	box-shadow: -5px 0 5px 0 rgba(0,0,0,0.16),
+				-5px 0 5px 0 rgba(0,0,0,0.23);
+}
+
+@mixin shadow-right {
+	box-shadow: 5px 0 5px 0 rgba(0,0,0,0.16),
+				5px 0 5px 0 rgba(0,0,0,0.23);
+}
+
+// Text shadows useful for transitioning
+
+@mixin text-shadow-z0() {
+	-ms-filter: none;
+	text-shadow: 0px 0px rgba(0, 0, 0, 0);
+}
+
+@mixin text-shadow-z1() {
+	-ms-filter: "progid:DXImageTransform.Microsoft.DropShadow(color=#333333, offX=1, offY=1)";
+	text-shadow: 1px 1px rgba(0, 0, 0, 0.12);
+}
+
+@mixin text-shadow-z2() {
+	-ms-filter: "progid:DXImageTransform.Microsoft.DropShadow(color=#333333, offX=2, offY=2)";
+	text-shadow: 2px 2px rgba(0, 0, 0, 0.16);
+}
+
+@mixin text-shadow-z3() {
+	-ms-filter: "progid:DXImageTransform.Microsoft.DropShadow(color=#333333, offX=2.5, offY=2.5)";
+	text-shadow: 2.5px 2.5px rgba(0, 0, 0, 0.19);
+}
+
+@mixin text-shadow-z4() {
+	-ms-filter: "progid:DXImageTransform.Microsoft.DropShadow(color=#333333, offX=3, offY=3)";
+	text-shadow: 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+@mixin text-shadow-z5() {
+	-ms-filter: "progid:DXImageTransform.Microsoft.DropShadow(color=#333333, offX=4, offY=4)";
+	text-shadow: 4px 4px rgba(0, 0, 0, 0.30);
+}
+
+@mixin text-shadow($size) {
+	@if $size == 'z0' {
+		@include text-shadow-z0();
+	} @else if $size == 'z1' {
+		@include text-shadow-z1();
+	} @else if $size == 'z2' {
+		@include text-shadow-z2();
+	} @else if $size == 'z3' {
+		@include text-shadow-z3();
+	} @else if $size == 'z4' {
+		@include text-shadow-z4();
+	} @else if $size == 'z5' {
+		@include text-shadow-z5();
+	} @else {
+		text-shadow: $size;
+	}
+}
+
+// Shadows for Images
+
+@mixin image-shadow {
+	box-shadow: 0 0 20px rgba(black, 0.75);
+}
+
+@mixin image-shadow-filter {
+  filter: drop-shadow(0 0 15px rgba(black, 0.75));
+}

@@ -1,0 +1,27 @@
+<% unless defined?(invert_colors) %>
+	<% invert_colors = false %>
+<% end %>
+
+<% title_class = defined?(page_heading) && page_heading == true ? "display-1" : "display-4" %>
+<% title_class += invert_colors ? " text-light" : "" %>
+
+<% fixed_prop = defined?(page_heading) && page_heading == true ? "data-animated-fixed" : "" %>
+
+<% delay_prop = defined?(animated_delay) ? "data-animated-delay=#{animated_delay}" : "" %>
+
+<div class="will-heading">
+	<div class="title-container" data-animated <%= fixed_prop %> <%= delay_prop %>>
+		<div class="subtitle-container">
+			<h6 class="will-teal font-weight-normal subtitle"><%= subtitle %></h6>
+			<% unless subtitle.blank? %>
+				<div class="subtitle-line <%= invert_colors ? " bg-light" : "bg-dark" %>"></div>
+			<% end %>
+		</div>
+
+		<h1 class="title <%= title_class %>"><%= raw title %></h1>
+	</div>
+
+	<% if defined?(text) %>
+		<p class="text lead<%= invert_colors ? " text-light" : "" %>" data-animated data-animated-target=".title-container" <%= delay_prop %>><%= raw text %></p>
+	<% end %>
+</div>

@@ -1,0 +1,121 @@
+.image-bg {
+	position: relative;
+	overflow: hidden;
+}
+
+.image-bg-display {
+	position: absolute;
+
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.image-bgs {
+	position: absolute;
+
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	z-index: -1;
+}
+
+.image-bg,
+.image-bg-display {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.image-bg,
+.image-bg .image-bg-display {
+	// Image Loading
+	// @NOTE: Use the overlay to hide the image so that it doesn't hide the title
+	opacity: 1;
+
+	&:before,
+	&:after {
+		transition: opacity 0.4s;
+	}
+
+	&:before {
+		opacity: 1;
+	}
+
+	&:after {
+		opacity: 0;
+	}
+
+	&.loaded {
+		&:before {
+			opacity: $patterned-background-overlay-opacity;
+		}
+
+		&:after {
+			opacity: $patterned-background-opacity;
+		}
+	}
+}
+
+.image-bgs .image-bg-display {
+	opacity: 0;
+
+	transition: opacity 2s $animation-duration / 2 $animation-timing-function;
+
+	&.loaded.active {
+		opacity: 1;
+	}
+
+	&.loaded.active.first {
+		transition-duration: $animation-duration;
+	}
+}
+
+// Single Image BGs
+.image-bg {
+	&.patterned {
+		@include patterned-background;
+
+		&:after {
+			background-attachment: fixed;
+		}
+	}
+
+	&.fixed {
+		background-attachment: fixed;
+	}
+}
+
+.image-bgs.fixed {
+	height: 100vh;
+	position: fixed;
+
+	pointer-events: none;
+
+	// @IE11: This is required to prevent bouncing on IE11 when scrolling.
+	//        it also requires a hack in elements/_sections.
+	@include ie11-styles {
+		z-index: 0;
+	}
+}
+
+// Background Positioning
+
+.image-bg,
+.image-bg-display {
+	@for $i from 0 through 100 {
+		&.x-#{$i},
+		&.x-#{$i} {
+			background-position-x: percentage($i / 100.0);
+		}
+	}
+
+	@for $i from 0 through 100 {
+		&.y-#{$i} {
+			background-position-y: percentage($i / 100.0);
+		}
+	}
+}

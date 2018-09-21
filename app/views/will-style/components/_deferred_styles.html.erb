@@ -1,0 +1,39 @@
+<% unless defined?(stylesheet) %>
+	<% stylesheet = "application" %>
+<% end %>
+
+<style>
+	html {
+		background-color: #2d2f2e;
+	}
+
+	body {
+		display: none;
+	}
+</style>
+
+<script type="text/javascript">
+	window.deferredStyleTimer = undefined;
+
+	window.processDeferredStyle = function(target) {
+	 if (window.WILLStyle && window.WILLStyle.Events) {
+	 	window.WILLStyle.Events.trigger('css-initialized');
+	 	target.rel='stylesheet';
+	 } else {
+	 	if (window.deferredStyleTimer) {
+	 		clearTimeout(window.deferredStyleTimer);
+	 		window.deferredStyleTimer = undefined;
+	 	}
+
+	 	setTimeout(function() {
+	 		window.processDeferredStyle(target);
+	 	}, 100);
+	 }
+	};
+</script>
+
+<link rel="preload" href="<%= stylesheet_path(stylesheet) %>" as="style" onload="this.onload=null; window.processDeferredStyle(this);">
+
+<noscript>
+	<link rel="stylesheet" href="<%= stylesheet_path(stylesheet) %>">
+</noscript>

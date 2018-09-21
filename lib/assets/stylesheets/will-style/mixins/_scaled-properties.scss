@@ -1,0 +1,71 @@
+//
+// Scale Properties
+//
+
+$global-scale-factor: 0.2 !default;
+
+@mixin scale-property($property: 'font-size', $value: $font-size-base, $scale-factor: $global-scale-factor) {
+	#{$property}: $value;
+
+	@include media-breakpoint-only(lg) {
+		#{$property}: $value + $value * $scale-factor;
+	}
+
+	@include media-breakpoint-only(xl) {
+		#{$property}: $value + $value * $scale-factor * 2;
+	}
+
+	@include media-breakpoint-only(xxl) {
+		#{$property}: $value + $value * $scale-factor * 4;
+	}
+
+	@include media-breakpoint-up(xxxl) {
+		#{$property}: $value + $value * $scale-factor * 6;
+	}
+}
+
+@mixin scale-calc($property: 'font-size', $value1: 100%, $value2: $font-size-base, $scale-factor: $global-scale-factor) {
+	#{$property}: calc(#{$value1} + #{$value2});
+
+	@include media-breakpoint-only(lg) {
+		#{$property}: calc(#{$value1} + #{$value2 + $value2 * $scale-factor});
+	}
+
+	@include media-breakpoint-only(xl) {
+		#{$property}: calc(#{$value1} + #{$value2 + $value2 * $scale-factor * 2});
+	}
+
+	@include media-breakpoint-only(xxl) {
+		#{$property}: calc(#{$value1} + #{$value2 + $value2 * $scale-factor * 4});
+	}
+
+	@include media-breakpoint-up(xxxl) {
+		#{$property}: calc(#{$value1} + #{$value2 + $value2 * $scale-factor * 6});
+	}
+}
+
+@mixin scale-translate($x: 0, $y: 0, $scale-factor: $global-scale-factor) {
+	transform: translate(#{$x}, #{$y});
+
+	@include media-breakpoint-only(lg) {
+		transform: translate(#{$x + $x * $scale-factor}, #{$y + $y * $scale-factor});
+	}
+
+	@include media-breakpoint-only(xl) {
+		transform: translate(#{$x + $x * $scale-factor * 2}, #{$y + $y * $scale-factor * 2});
+	}
+
+	@include media-breakpoint-only(xxl) {
+		transform: translate(#{$x + $x * $scale-factor * 6}, #{$y + $y * $scale-factor * 4});
+	}
+
+	@include media-breakpoint-up(xxxl) {
+		transform: translate(#{$x + $x * $scale-factor * 6}, #{$y + $y * $scale-factor * 6});
+	}
+}
+
+// Shortcut to scale font-size property
+
+@mixin scale-font-size($size: $paragraph-font-size, $scale-factor: $global-scale-factor) {
+	@include scale-property('font-size', $size, $scale-factor);
+}

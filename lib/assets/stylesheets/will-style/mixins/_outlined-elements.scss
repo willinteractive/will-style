@@ -1,0 +1,157 @@
+//
+// Aniamting Outlined Elements
+//
+
+@mixin outlined-input($light: false) {
+	$bg-color: $will-dark-gray;
+	$fg-color: $will-white;
+
+	@if $light == true {
+		$bg-color: $will-white;
+		$fg-color: $will-dark-gray;
+	}
+
+	$animation-time: 0.2s;
+
+	position: relative;
+	overflow: visible;
+
+	border: none;
+
+	transition: background-color $animation-time $animation-timing-function;
+	background-color: transparent;
+
+	input,
+	textarea,
+	select {
+		outline: none;
+
+		background: none;
+		border: none;
+		width: 100%;
+
+		transition: color $animation-time $animation-timing-function;
+	}
+
+	select {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		-ms-appearance: none;
+
+		&::-ms-expand {
+    		display: none;
+		}
+
+		cursor: pointer;
+		border-radius: 0;
+	}
+
+	// Underline bottom
+	&:after {
+		content: "";
+
+		margin-top: 0;
+
+		position: absolute;
+
+		left: 0px;
+		right: 0px;
+		bottom: 0px;
+
+		height: 1px;
+
+		background-color: $bg-color;
+
+		transform-origin: left bottom;
+
+		transition: transform $animation-time $animation-time $animation-timing-function;
+	}
+
+	label {
+		text-transform: uppercase;
+
+		@include scale-property(font-size, $font-size-base * 0.75);
+
+		transition: color $animation-time $animation-timing-function,
+					font-size $animation-time $animation-timing-function;
+	}
+
+	// Underline top
+
+	.label-container {
+		transition: bottom $animation-time $animation-time / 2 $animation-timing-function,
+					opacity $animation-time $animation-time / 2 $animation-timing-function;
+
+		&.hidden {
+			opacity: 0;
+		}
+	}
+
+	&.disabled {
+		&:before,
+		&:after {
+			display: none;
+		}
+	}
+
+	&:not([disabled]) {
+		&.focus,
+		&.entered {
+			background-color: $will-white;
+
+			.label-container {
+				@include scale-calc(bottom, 100%, 0 - $font-size-base * 0.75 - 0.25rem);
+				opacity: 1;
+			}
+
+			input,
+			textarea,
+			select,
+			span[class^="will-icon-"] {
+				color: $will-dark-gray !important;
+			}
+
+			label {
+				color: $will-light-gray !important;
+			}
+		}
+	}
+}
+
+//
+// Animated Links
+//
+
+@mixin underlined-element($position: 'bottom', $height: 2px) {
+	position: relative;
+
+	@if $position == 'bottom' {
+		padding-bottom: $height * 2;
+		padding-top: inherit;
+	} @else {
+		padding-top: $height * 2;
+		padding-bottom: inherit;
+	}
+
+	&:before {
+		content: "";
+
+		position: absolute;
+
+		@if $position == 'bottom' {
+			bottom: 0;
+			top: auto;
+		} @else {
+			top: 0 ;
+			bottom: auto;
+		}
+
+		left: 0;
+		right: 0;
+
+		height: $height;
+
+		background-color: $primary;
+		background-image: linear-gradient(to right, $primary-lighter, $primary);
+	}
+}

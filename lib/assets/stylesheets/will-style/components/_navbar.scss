@@ -1,0 +1,291 @@
+//
+// Navbar Overrides
+//
+
+nav.navbar {
+	@include patterned-background();
+
+	&:before,
+	&:after {
+		opacity: 0;
+
+		transition: opacity 0.2s $animation-timing-function;
+	}
+
+	// Obscuring scrolling content
+	transition: box-shadow 0.2s $animation-timing-function,;
+
+	&.obscure {
+		&:before {
+			opacity: 1;
+		}
+
+		&:after {
+			opacity: $patterned-background-opacity;
+		}
+
+		@include shadow-bottom();
+	}
+
+	// Styling Navbar links
+
+	.nav-link {
+		-webkit-user-select: none;
+
+		transition: color 0.2s $animation-timing-function;
+	}
+
+	// @NOTE: This causes a white box to flash on Chrome
+	// &.navbar-dark {
+	// 	.nav-link:focus {
+	// 		outline: none;
+
+	// 		&:before {
+	// 			content: "";
+	// 			position: absolute;
+	// 			top: 0;
+	// 			bottom: 0;
+	// 			left: 0;
+	// 			right: 0;
+
+	// 			border: 1px solid $navbar-dark-color;
+	// 		}
+
+	// 	}
+
+	// 	.dropdown-menu {
+	// 		margin: -1px;
+	// 	}
+	// }
+
+	// Navbar Toggler animation
+
+	.navbar-toggler {
+		position: relative;
+
+		&:before,
+		&:after,
+		.navbar-toggler-icon:before,
+		.navbar-toggler-icon:after {
+			content: "";
+
+			position: absolute;
+
+			left: $navbar-toggler-padding-x * 1.25;
+			right: $navbar-toggler-padding-x * 1.25;
+
+			height: 2px;
+
+			background-color: $body-bg;
+
+			will-change: opacity, transform;
+		}
+
+		&:before,
+		&:after {
+			top: calc(50% - 1px);
+		}
+
+		&:after {
+			opacity: 0;
+			transform: rotate(-225deg);
+		}
+
+		.navbar-toggler-icon:before {
+			top: $navbar-toggler-padding-y * 2.5;
+
+			transform-origin: left center;
+		}
+
+		.navbar-toggler-icon:after {
+			bottom: $navbar-toggler-padding-y * 2.5;
+
+			transform-origin: right center;
+		}
+
+		&[aria-expanded="true"] {
+			&:before {
+				transform: rotate(-225deg);
+
+				transition: transform 0.2s $animation-timing-function;
+			}
+
+			&:after {
+				transform: rotate(-315deg);
+				opacity: 1;
+
+				transition: transform 0.2s 0.15s $animation-timing-function,
+							opacity 0s 0.2s linear;
+			}
+
+			.navbar-toggler-icon:before,
+			.navbar-toggler-icon:after {
+				transform: scaleX(0);
+
+				transition: transform 0.05s $animation-timing-function;
+			}
+		}
+	}
+
+	// Navbar on small screens
+
+	@include media-breakpoint-down(md) {
+		.navbar-toggler {
+			z-index: 11;
+		}
+
+		.navbar-collapse {
+			@include patterned-background();
+
+			padding: 1rem 2rem;
+
+			position: absolute;
+			z-index: 10;
+
+			top: 0;
+			left: 0;
+
+			width: 100vw;
+			min-height: 100vh !important;
+
+			display: block;
+
+			transform: translateX(-100%);
+
+			&:before,
+			&:after {
+				opacity: 0;
+				transition: opacity 0.2s $animation-timing-function;
+			}
+
+			.nav-item {
+				transform: translate3d(-5px, -5px, 0);
+				opacity: 0;
+
+				.nav-link {
+					// Only increase font-size on portrait – there isn't enough room on phones in landscape
+					@media (orientation: portrait) {
+						@include scale-font-size(2rem);
+					}
+				}
+			}
+
+			&.collapsing,
+			&.show {
+				transform: translateX(0);
+
+				&:before {
+					opacity: 1;
+				}
+
+				&:after {
+					opacity: $patterned-background-opacity;
+				}
+			}
+
+			&.collapsing {
+				.nav-item {
+					opacity: 0;
+					transition: none;
+				}
+			}
+
+			&.collapsing-out {
+				&:before,
+				&:after {
+					opacity: 0;
+				}
+			}
+
+			&.show {
+				.nav-item {
+					transform: translate3d(0, 0, 0);
+					opacity: 1;
+
+					transition: transform 0.2s $animation-timing-function,
+								opacity 0.2s $animation-timing-function;
+				}
+			}
+		}
+	}
+
+	// Add absolutely positioned and fixed position navbars with the navbar-abs class
+
+	&.navbar-abs {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+
+		z-index: $navbar-z-index;
+	}
+
+	&.navbar-fixed {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+
+		z-index: $navbar-z-index;
+	}
+
+	// Ensure Navbar Logo is big enough for logo to be by itself
+
+	a.navbar-brand {
+		-webkit-user-select: none;
+
+		color: $navbar-dark-color;
+		@include scale-font-size($lead-font-size, $global-scale-factor);
+
+		// Ensure WILL Logo isn't huge on firefox
+		svg {
+			max-width: #{($nav-link-padding-y * 2 + $font-size-base * $line-height-base) * $will-logo-aspect-ratio};
+			overflow: visible;
+		}
+
+		// @IE11: IE11 hates sizing our logo correctly
+		@include ie11-styles {
+			svg {
+				max-height: 40px;
+			}
+		}
+
+		min-width: #{($nav-link-padding-y * 2 + $font-size-base * $line-height-base) * $will-logo-aspect-ratio};
+
+		// Logo Animation
+
+		// svg .play-fill {
+		// 	transition: transform 0.2s $animation-timing-function;
+		// }
+
+		// &:hover,
+		// &:focus {
+		// 	color: $navbar-dark-hover-color;
+
+		// 	svg .play-fill {
+		// 		transform: translateX(5px);
+		// 	}
+		// }
+	}
+
+	// Gravatar Images
+
+	.nav-item {
+		a.nav-link {
+			img {
+				transition: none !important;
+				opacity: 1 !important;
+			}
+		}
+	}
+}
+
+// Navbar positioning on small screens
+
+body.navbar-active {
+	overflow: hidden;
+
+	nav.navbar {
+		z-index: $navbar-z-index + 10 !important;
+	}
+}

@@ -1,0 +1,57 @@
+@mixin will-patterned-bg($dark: true, $target: "&:before") {
+	position: relative;
+	overflow: hidden;
+
+	@if $dark == true {
+		background-color: $will-bg-darkest;
+	} @else {
+		background-color: $will-white;
+	}
+
+	#{$target} {
+		content: "";
+
+		position: absolute;
+
+		display: block;
+
+		top: 0;
+		left: 0;
+		right: 0;
+
+		height: 200%;
+		min-height: 7680px;
+
+		@if $dark == true {
+			background-color: $will-bg-darker;
+			background-image: will-style-bg-url("patterns/bg-will-arrow-pattern-dark.svg");
+		} @else {
+			background-color: $will-bg-light;
+			background-image: will-style-bg-url("patterns/bg-will-arrow-pattern-light.svg");
+		}
+
+		background-repeat: repeat;
+		background-size: 1920px 1920px;
+
+		animation: animate-will-bg-pattern 316s linear infinite;
+	}
+
+	// @NOTE: Interner Explorer hates our animated backgrounds.
+	// 		  We should work to fix them.
+	@include ie-styles {
+		#{$target} {
+			content: none !important;
+			animation: none !important;
+		}
+	}
+}
+
+@keyframes animate-will-bg-pattern {
+	0% {
+		transform: translate3d(0, 0, 0);
+	}
+
+	100% {
+		transform: translate3d(0, -3840px, 0);
+	}
+}

@@ -1,0 +1,36 @@
+//
+// Footers
+//
+
+$footer-height: 55px !default;
+
+.wrap {
+	min-height: calc(100vh + #{$footer-height});
+
+	display: flex;
+	flex-direction: column;
+
+	margin-bottom: 0 - $footer-height;
+ 	padding-bottom: $footer-height;
+
+ 	main {
+ 		flex-grow: 1;
+ 	}
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+
+	// @NOTE: This prevents 1px overscrolls when the page isn't 100vh by default
+	overflow: hidden;
+
+	height: $footer-height;
+	max-height: $footer-height;
+
+	margin-bottom: 0;
+
+	p {
+		margin: 0px;
+	}
+}

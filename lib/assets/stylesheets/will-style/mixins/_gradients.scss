@@ -1,0 +1,83 @@
+//
+// GRADIENTS
+//
+
+@function smooth-gradient-color-stops($start-color: black, $end-color: transparent) {
+	$scrim-coordinates: (
+		0: 1,
+		19: 0.738,
+		34: 0.541,
+		47: 0.382,
+		56.5: 0.278,
+		65: 0.194,
+		73: 0.126,
+		80.2: 0.075,
+		86.1: 0.042,
+		91: 0.021,
+		95.2: 0.008,
+		98.2: 0.002,
+		100: 0
+	);
+
+	$start-hue: hue($start-color);
+	$start-saturation: saturation($start-color);
+	$start-lightness: lightness($start-color);
+
+	$end-hue: hue($end-color);
+	$end-saturation: saturation($end-color);
+	$end-lightness: lightness($end-color);
+
+	$stops: ();
+
+	@each $color-stop, $alpha-value in $scrim-coordinates {
+		$stop: "";
+
+		@if $end-color == transparent {
+			// Fade out start color when transitioning to transparent
+			$stop: hsla(
+					$start-hue,
+					$start-saturation,
+					$start-lightness,
+					$alpha-value)
+					percentage($color-stop / 100);
+		} @else {
+			// Blend the two colors when mixing two colors
+			$stop: hsla(
+					$start-hue * $alpha-value + $end-hue * (1 - $alpha-value),
+					$start-saturation * $alpha-value + $end-saturation * (1 - $alpha-value),
+					$start-lightness * $alpha-value + $end-lightness * (1 - $alpha-value),
+					1)
+					percentage($color-stop / 100);
+		}
+
+		$stops: append($stops, $stop, comma);
+	}
+
+	@return $stops();
+}
+
+@mixin smooth-linear-gradient($start-color: black, $end-color: transparent, $direction: to top) {
+	background-image: linear-gradient($direction, smooth-gradient-color-stops($start-color, $end-color));
+}
+
+@mixin smooth-radial-gradient($start-color: black, $end-color: transparent, $shape: circle, $image: null) {
+	@if $image {
+		background-image:	#{$image},
+							radial-gradient($shape, smooth-gradient-color-stops($start-color, $end-color));
+	} @else {
+		background-image: radial-gradient($shape, smooth-gradient-color-stops($start-color, $end-color));
+	}
+}
+
+@mixin will-theme-gradient {
+	background-image: linear-gradient(120deg, $will-logo-green, $will-logo-teal 55%);
+}
+
+@mixin will-theme-text-gradient {
+	color: $will-teal;
+
+	background-image: -webkit-linear-gradient(120deg, $will-logo-teal, $will-logo-green 95%);
+
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}

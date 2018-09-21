@@ -1,0 +1,53 @@
+//
+// Form Elements
+//
+
+// Container styles
+
+.form-container {
+	@include scale-property(margin-bottom, 0.5rem);
+	@include scale-property(padding, 0.25rem);
+	@include scale-property(padding-top, $font-size-base + 0.25rem);
+
+	.label-container {
+		position: absolute;
+
+		@include scale-property(bottom, 0.5rem);
+		@include scale-property(left, 0.25rem);
+
+		right: 0;
+
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+
+		pointer-events: none;
+
+		label {
+			line-height: 1;
+			margin-bottom: 0;
+		}
+	}
+
+	&.light {
+		@include outlined-input($light: true);
+	}
+
+	&:not(.light) {
+		@include outlined-input($light: false);
+	}
+
+	span[class^="will-icon-"] {
+		position: absolute;
+		@include scale-property(right, 0.25rem);
+		@include scale-property(bottom, 0.5rem);
+
+		pointer-events: none;
+
+		font-size: 50%;
+
+		& + * {
+			@include scale-property(padding-right, 1rem);
+		}
+	}
+}

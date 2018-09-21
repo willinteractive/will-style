@@ -1,0 +1,29 @@
+//
+// Image Background Progessive data-animated-progressive-position
+//
+
+.image-bg {
+	@include animated-element-progressive {
+		.image-bg-display {
+			// Add extra space for transition
+			bottom: -201px;
+
+			transition: transform 300ms linear;
+		}
+	}
+}
+
+@for $i from 1 through 100 {
+	@include animated-element-progressive-position($i) {
+		.image-bg-display {
+			transform: translateY(#{0 - $i * 2}px);
+		}
+	}
+}
+
+// Ensure fixed image bgs don't have any transition when they hide
+.image-bgs.fixed {
+	@include animated-element-after {
+		transition-duration: 0s !important;
+	}
+}

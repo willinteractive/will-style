@@ -1,0 +1,104 @@
+//
+// Interactive, WILL-themed backgrounds
+//
+
+// This is a floating will background that has a dark pattern underneath WILL triangles of varying size
+
+
+.will-bg-pattern-dark {
+	@include will-patterned-bg;
+}
+
+.will-bg-pattern-light {
+	@include will-patterned-bg($dark: false);
+}
+
+// This is a rotating will background that has a light pattern underneath an oversized arrow in white
+
+.will-bg-x-light,
+.will-bg-x-dark {
+	position: relative;
+	overflow: hidden;
+
+	@include patterned-background-light;
+
+	// @NOTE: Affix background grid on these elements to get the fixed pattern effect
+	// We're not doing this globally because it can affect performance.
+	html.no-touchevents &:before {
+		background-attachment: fixed;
+
+		// @NOTE: Include hardware accelerate here because it makes performance in Safari appear a bit better
+		@include hardware-accelerate();
+	}
+
+	&:after {
+		content: "";
+
+		position: absolute;
+
+		top: -50%;
+		left: -30%;
+
+		width: 200%;
+		height: 200%;
+
+		background-size: cover;
+
+		background-repeat: no-repeat;
+		background-position: center;
+
+		animation: animate-will-bg-light 34s linear infinite;
+	}
+
+	// @NOTE: Interner Explorer hates our animated backgrounds.
+	// 		  We should work to fix them.
+	@include ie-styles {
+		&:before,
+		&:after {
+			content: none !important;
+			animation: none !important;
+		}
+
+		&.will-bg-x-light {
+			background-color: $will-bg-light;
+		}
+
+		&.will-bg-x-dark {
+			background-color: $will-bg-darkest;
+		}
+	}
+}
+
+.will-bg-x-light:after {
+	background-image: will-style-bg-url("patterns/bg-will-x-shadowed.svg");
+}
+
+.will-bg-x-dark {
+	background-color: $will-bg-dark;
+
+	&:after {
+		background-image: will-style-bg-url("patterns/bg-will-x-shadowed-dark.svg");
+	}
+}
+
+@keyframes animate-will-bg-light {
+	0% {
+		transform: rotate(0);
+	}
+
+	25% {
+		transform: rotate(5deg);
+	}
+
+	50% {
+		transform: rotate(0);
+	}
+
+	75% {
+		transform: rotate(-5deg);
+	}
+
+	100% {
+		transform: rotate(0);
+	}
+}

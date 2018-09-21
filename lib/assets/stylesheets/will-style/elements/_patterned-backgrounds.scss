@@ -1,0 +1,7 @@
+.patterned-bg {
+	@include patterned-background();
+}
+
+.patterned-fg {
+	@include patterned-background($fg: true);
+}

@@ -1,0 +1,33 @@
+//
+// WILL Heading Animations
+//
+
+.navbar {
+	@include animated-element-init {
+		.navbar-brand,
+		.navbar-toggler,
+		.nav-item {
+			opacity: 0;
+
+			transition: opacity $animation-duration $animation-timing-function;
+		}
+
+		.navbar-toggler {
+			transition-delay: 0.2s;
+		}
+
+		@for $i from 1 through 10 {
+			.navbar-nav .nav-item:nth-of-type(#{$i}) {
+				transition-delay: #{$i * 0.1}s;
+			}
+		}
+	}
+
+	@include animated-element-active {
+		.navbar-brand,
+		.navbar-toggler,
+		.nav-item {
+			opacity: 1;
+		}
+	}
+}

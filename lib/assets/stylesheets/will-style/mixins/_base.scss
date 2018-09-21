@@ -1,0 +1,79 @@
+//
+// Basic Mixins
+//
+
+// This mixin will help hardware accelerate any content to force smooth rendering
+@mixin hardware-accelerate($force: false) {
+	@if $force == true {
+		transform: translate3d(0, 0, 0);
+		backface-visibility: hidden;
+		perspective: 1000;
+
+		-webkit-font-smoothing: antialiased;
+	} @else {
+		html.touchevents & {
+			transform: translate3d(0, 0, 0);
+			backface-visibility: hidden;
+			perspective: 1000;
+
+			-webkit-font-smoothing: antialiased;
+		}
+	}
+}
+
+// This mixin will prevent user text-selection
+@mixin no-select-text() {
+	-webkit-user-select: none; // Chrome/Safari
+	-moz-user-select: none; // Firefox
+	-ms-user-select: none; // IE10+
+
+	// Rules below not implemented in browsers yet
+	-o-user-select: none;
+	user-select: none;
+}
+
+// This mixin adds momentum scrolling on touch devices.
+@mixin momentum-scrolling() {
+	// Ensure IE 10+ render scroll bars for scrolling content.
+	-ms-overflow-style: auto;
+
+	// Let scrolling frames have momentum.
+	-webkit-overflow-scrolling: touch;
+	overflow-scrolling: auto;
+}
+
+// This mixin directly targets IE11 for hacks
+@mixin ie11-styles {
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		@content;
+	}
+}
+
+// This mixin directly targets Edge for hacks
+@mixin edge-styles {
+	@supports (-ms-ime-align:auto) {
+		@content;
+	}
+}
+
+// This mixin directly targets internet explorer for hacks
+@mixin ie-styles {
+	@include ie11-styles {
+		@content;
+	}
+
+	@include edge-styles {
+		@content;
+	}
+}
+
+// This function allows us to switch between asset_urls and regular urls for image backgrounds
+$include-type: "node" !default;
+
+@function will-style-bg-url($url: "") {
+	@if $include-type == "rails" {
+		@return asset_url("will-style/" + $url);
+	} @else {
+		@return url("../images/will-style/" + $url);
+	}
+}

@@ -35,7 +35,7 @@ module WILL
         def ws_page_header(options={}, &block)
           raise ArgumentError, "Missing block" unless block_given?
 
-          options[:class] = "app-page-header #{options[:class]}"
+          options[:class] = "app-page-header container #{options[:class]}"
           content_tag(:header, options) do
             content_tag(:div, class: "row") do
               capture(PageHeaderBuilder.new(self), &block)
@@ -80,15 +80,15 @@ module WILL
           #     <h1>This is content.</h1>
           #   <% end %>
           #
-          def column(sizes="small-12", options={}, &block)
+          def column(sizes="col-sm-12", options={}, &block)
             raise ArgumentError, "Missing block" unless block_given?
-            
+
             if sizes.is_a?(Hash)
               options = options.merge(sizes)
               sizes = ""
             end
 
-            options[:class] = "columns #{sizes} #{options[:class]}"
+            options[:class] = "cols #{sizes} #{options[:class]}"
 
             content_tag(:div, options) do
               capture(&block)

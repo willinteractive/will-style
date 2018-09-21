@@ -1,0 +1,53 @@
+//
+// Mixins for Expanded Elements
+//
+
+@mixin expand-element($left: true, $right: true, $top: true, $bottom: true) {
+	@if $left == true {
+		padding-left: 6rem;
+
+		@include media-breakpoint-only(md) {
+			padding-left: 3rem;
+		}
+
+		@include media-breakpoint-down(sm) {
+			padding-left: $grid-gutter-width / 2;
+		}
+	}
+
+	@if $right == true {
+		padding-right: 6rem;
+
+		@include media-breakpoint-only(md) {
+			padding-right: 3rem;
+		}
+
+		@include media-breakpoint-down(sm) {
+			padding-right: $grid-gutter-width / 2;
+		}
+	}
+
+	@if $top == true {
+		padding-top: 6rem;
+
+		@include media-breakpoint-only(md) {
+			padding-top: 3rem;
+		}
+
+		@include media-breakpoint-down(sm) {
+			padding-top: $grid-gutter-width / 2;
+		}
+	}
+
+	@if $bottom == true {
+		padding-bottom: 6rem;
+
+		@include media-breakpoint-only(md) {
+			padding-bottom: 3rem;
+		}
+
+		@include media-breakpoint-down(sm) {
+			padding-bottom: $grid-gutter-width / 2;
+		}
+	}
+}

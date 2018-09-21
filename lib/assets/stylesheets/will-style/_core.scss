@@ -1,0 +1,124 @@
+//
+// Core
+//
+
+@import
+	"bootstrap/functions",
+
+	"will-style/core/colors",
+	"will-style/core/typography/rails",
+
+	"will-style/core/variables/colors",
+	"will-style/core/variables/type",
+	"will-style/core/variables/global",
+
+	"bootstrap/variables",
+
+	"will-style/core/overrides",
+	"will-style/core/deferred-styles",
+	"will-style/core/accessibility";
+
+// Mixins
+
+@import
+	"bootstrap/mixins",
+	"bootstrap/root",
+	"bootstrap/reboot",
+
+	"will-style/mixins/base",
+	"will-style/mixins/gradients",
+	"will-style/mixins/layout",
+	"will-style/mixins/outlined-elements",
+	"will-style/mixins/shadows",
+	"will-style/mixins/patterned-backgrounds",
+	"will-style/mixins/expanded-elements",
+	"will-style/mixins/animated-elements",
+	"will-style/mixins/scaled-properties",
+	"will-style/mixins/will-backgrounds",
+	"will-style/mixins/will-icons";
+
+// Transitions
+
+@import
+	"will-style/core/transitions",
+	"bootstrap/transitions";
+
+// Type
+
+@import
+	"will-style/core/type",
+	"will-style/core/will_icons/rails",
+	"will-style/core/will_icons";
+
+// Images
+
+@import
+	"bootstrap/images";
+
+// Buttons
+
+@import
+	"will-style/elements/buttons/variables",
+	"bootstrap/buttons",
+	"will-style/elements/buttons/overrides",
+
+	"will-style/elements/links";
+
+// Forms
+
+@import
+	"bootstrap/forms",
+	"bootstrap/custom-forms";
+
+// Layout
+
+@import
+	"bootstrap/grid";
+
+// Elements
+
+@import
+	"bootstrap/alert",
+
+	"will-style/elements/sections",
+	"will-style/elements/expanded-elements",
+	"will-style/elements/patterned-backgrounds",
+	"will-style/elements/image-loading",
+	"will-style/elements/image-backgrounds",
+	"will-style/elements/video-backgrounds",
+	"will-style/elements/headings",
+	"will-style/elements/forms",
+	"will-style/elements/shadows",
+	"will-style/elements/gradients";
+
+// Components
+
+@import
+	"will-style/components/footer",
+	"will-style/components/will-backgrounds",
+	"will-style/components/pop-out",
+
+	"bootstrap/nav",
+	"bootstrap/navbar",
+	"will-style/components/navbar",
+
+	"will-style/components/hero";
+
+// Animations
+
+@import
+	"will-style/animated-elements/default",
+	"will-style/animated-elements/buttons",
+	"will-style/animated-elements/headings",
+	"will-style/animated-elements/image-backgrounds",
+	"will-style/animated-elements/heroes",
+	"will-style/animated-elements/navbar";
+
+// Libraries
+
+@import
+	"bootstrap/utilities",
+	"bootstrap/print";
+
+@import
+  "will-style/libraries/turbolinks";

@@ -1,0 +1,116 @@
+//
+// WILL Heading Animations
+//
+
+.will-heading {
+	.title-container {
+		@include animated-element-init {
+			.title {
+				opacity: 0;
+				transform: translateY(15%);
+
+				transition: opacity $animation-duration $animation-timing-function,
+							transform $animation-duration $animation-timing-function;
+			}
+
+			.subtitle {
+				opacity: 0;
+				transform: translateY(15%) $animation-timing-function;
+
+				transition: opacity $animation-duration $animation-duration $animation-timing-function,
+							transform $animation-duration $animation-duration * 2 $animation-timing-function;
+			}
+
+			.subtitle-line {
+				transform: scaleX(0);
+				transform-origin: left center;
+
+				transition: transform $animation-duration $animation-duration * 1.5 $animation-timing-function;
+			}
+		}
+
+		@include animated-element-active {
+			.title,
+			.subtitle {
+				opacity: 1;
+				transform: translateY(0);
+			}
+
+			.subtitle-line {
+				transform: scaleX(1);
+			}
+		}
+
+		// Add delay capabilities
+		@for $i from 1 through 15 {
+			@include animated-element-delay-block($ms: $i * 100) {
+				.title {
+					transition-delay: #{$i * 100}ms;
+				}
+
+				.subtitle {
+					transition-delay: #{$i * 100 + 300}ms;
+				}
+
+				.subtitle-line {
+					transition-delay: #{$i * 100 + 600}ms;
+				}
+			}
+		}
+	}
+
+	.text {
+		@include animated-element-init {
+			opacity: 0;
+			transform: translateY(15%);
+
+			transition: opacity $animation-duration $animation-duration * 2 $animation-timing-function,
+						transform $animation-duration $animation-duration * 2 $animation-timing-function;
+		}
+
+		@include animated-element-active {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		// Add delay capabilities
+		@for $i from 1 through 15 {
+			@include animated-element-delay($ms: $i * 100, $delay: $i * 100 + 1000);
+		}
+	}
+}
+
+.section-heading {
+	@include animated-element-init {
+		&,
+		small {
+			opacity: 0;
+			transform: translateY(15%);
+
+			transition: opacity $animation-duration $animation-timing-function,
+						transform $animation-duration $animation-timing-function;
+		}
+
+		small {
+			transition-delay: 0.3s;
+		}
+
+		&:before {
+			transform: scaleX(0);
+
+			transition: transform $animation-duration $animation-duration * 1.5 $animation-timing-function;
+		}
+	}
+
+	@include animated-element-active {
+		&,
+		small {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		&:before {
+			transform: scaleX(1);
+		}
+	}
+}
