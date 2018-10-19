@@ -93,7 +93,7 @@ module WILL
               content = text.html_safe
             end
 
-            options[:class] = "list-group-item #{options[:class]}"
+            options[:class] = "list-group-item d-flex justify-content-between align-items-center #{options[:class]}"
 
             content_tag(:li, options) do
               content
@@ -138,7 +138,7 @@ module WILL
               content = text.html_safe
             end
 
-            options[:class] = "list-group-item #{options[:class]}"
+            options[:class] = "list-group-item d-flex justify-content-between align-items-center #{options[:class]}"
 
             link_to(target, options) do
               content

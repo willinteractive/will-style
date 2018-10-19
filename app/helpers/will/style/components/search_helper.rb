@@ -74,7 +74,7 @@ module WILL
             builder = SearchBuilder.new(self, query, options[:input_id] || :q, autofocus)
             block_content = block_given? ? capture(builder, &block) : ""
 
-            content_tag(:div, class: "row collapse") do
+            content_tag(:div, class: "row") do
               [
                 block_content,
                 builder.input(placeholder),
