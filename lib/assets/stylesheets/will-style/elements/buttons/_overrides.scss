@@ -20,6 +20,8 @@ button {
 .button-container {
 	position: relative;
 
+	transition: opacity $animation-duration $animation-timing-function;
+
 	&.inline {
 		display: inline-block;
 		width: auto;
@@ -73,6 +75,14 @@ button {
 		z-index: 1;
 
 		opacity: 0;
+	}
+
+	&.inline {
+		input,
+		button,
+		a {
+			padding: 1rem 3rem;
+		}
 	}
 
 	a {
@@ -170,14 +180,13 @@ button {
 		}
 	}
 
-	&:not(.disabled) {
+	&:not(.disabled),
+	&.permanent {
 		input,
 		button,
 		a {
 			opacity: 1;
 			transition: opacity $animation-duration $animation-duration $animation-timing-function;
-
-			cursor: pointer;
 		}
 
 		.button-outline-outer:before,
@@ -188,6 +197,14 @@ button {
 		.button-outline-inner:before,
 		.button-outline-inner:after {
 			animation: animate-button-vertical-line $animation-duration * 0.75 $animation-duration * 1.5 $animation-timing-function forwards;
+		}
+	}
+
+	&:not(.disabled) {
+		input,
+		button,
+		a {
+			cursor: pointer;
 		}
 
 		&:hover,
@@ -210,6 +227,10 @@ button {
 				color: $will-dark-gray !important;
 			}
 		}
+	}
+
+	&.permanent.disabled {
+		opacity: 0.5;
 	}
 }
 
