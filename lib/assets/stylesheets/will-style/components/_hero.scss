@@ -3,6 +3,11 @@
 //
 
 .hero {
+
+	// Allow Hero BGs to bleed through
+	position: relative;
+	z-index: 0;
+
 	.image-bg {
 		padding-top:	$navbar-height;
 		padding-bottom: $navbar-height;
