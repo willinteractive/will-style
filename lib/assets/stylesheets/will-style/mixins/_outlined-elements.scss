@@ -33,6 +33,11 @@
 		transition: color $animation-time $animation-timing-function;
 	}
 
+	// @HACK This prevents the yellow bg when webkit autofills form inpts
+	input:-webkit-autofill {
+		box-shadow: inset 0 0 0px 9999px $bg-color;
+	}
+
 	select {
 		-webkit-appearance: none;
 		-moz-appearance: none;
