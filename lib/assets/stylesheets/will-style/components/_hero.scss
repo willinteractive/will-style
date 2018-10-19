@@ -8,6 +8,10 @@
 	position: relative;
 	z-index: 0;
 
+	&.wrap-exposed {
+		z-index: 1;
+	}
+
 	.image-bg {
 		padding-top:	$navbar-height;
 		padding-bottom: $navbar-height;
