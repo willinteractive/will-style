@@ -30,7 +30,9 @@
 	"bootstrap/card",
 	"bootstrap/close",
 	"bootstrap/modal",
-	"bootstrap/jumbotron";
+	"bootstrap/jumbotron",
+
+	"will-style/components/list-group";
 
 // Extras
 
@@ -47,4 +49,6 @@
 // Components
 
 @import
-	"will-style/components/hideable-sidebar";
+	"will-style/components/hideable-sidebar",
+	"will-style/components/pagination",
+	"will-style/components/search";
