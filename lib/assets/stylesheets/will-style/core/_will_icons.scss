@@ -12,7 +12,10 @@
 	// @NOTE: Working around fontastic making will icons a monospace font and shrinking our logo
 	font-size: 3.1em;
 	line-height: 0;
-	transform: translateY(0.37em);
+
+	-webkit-font-smoothing: antialiased;
+	backface-visibility: hidden;
+	transform: translate3d(0, 0.39em, 0);
 
 	margin-left: 0;
 }
