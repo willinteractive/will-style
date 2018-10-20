@@ -161,19 +161,19 @@ module WILL
                 link_to("#", options) do
                   [
                     fa_icon("search", class: "text-primary"),
-                    content_tag(:span, class: "hide") do
+                    content_tag(:span, class: "d-none") do
                       "Search"
                     end
                   ].join.html_safe
                 end,
 
-                submit_tag("Submit Search", class: "hide")
+                submit_tag("Submit Search", class: "d-none")
               ].join.html_safe
             end
           end
 
           def hidden_submit_button(options={})
-            submit_tag("Submit Search", class: "hide")
+            submit_tag("Submit Search", class: "d-none")
           end
 
           ##
