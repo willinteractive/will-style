@@ -41,4 +41,8 @@ button.animated {
 			transform: scaleX(1);
 		}
 	}
+
+	&.text-danger:after {
+		background-color: $danger !important;
+	}
 }
