@@ -50,5 +50,9 @@
 
 @import
 	"will-style/components/hideable-sidebar",
-	"will-style/components/pagination",
 	"will-style/components/search";
+
+// Libraries
+
+@import
+	"will-style/libraries/will_paginate";

@@ -1,0 +1,52 @@
+//
+// Styles for the WILL Paginate Gem
+//
+
+.will-paginate {
+	@include scale-property(padding-top, $font-size-base, $global-scale-factor);
+	@include scale-property(padding-bottom, $font-size-base, $global-scale-factor);
+
+	a,
+	em {
+		padding: 0.25rem 0.5rem;
+		@include scale-font-size($small-font-size, $global-scale-factor);
+		line-height: 1;
+		margin: 0;
+	}
+
+	a {
+		color: $body-color;
+
+		&:hover,
+		&:focus {
+			color: $primary;
+		}
+	}
+
+	em.current {
+		font-style: normal !important;
+		color: $primary;
+		border: 1px solid $primary;
+	}
+
+	a.previous_page,
+	a.next_page {
+		@include will-icon-font;
+
+		position: relative;
+
+		&:before {
+			position: absolute;
+			left: 0;
+			@include scale-property(top, 0.3rem, $global-scale-factor);
+			@include scale-font-size($small-font-size * .75, $global-scale-factor);
+		}
+	}
+
+	a.previous_page {
+		@extend .will-icon-previous_arrow;
+	}
+	a.next_page {
+		@extend .will-icon-next_arrow;
+	}
+}
