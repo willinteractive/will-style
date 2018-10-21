@@ -38,7 +38,7 @@
 		&:before {
 			position: absolute;
 			left: 0;
-			@include scale-property(top, 0.3rem, $global-scale-factor);
+			@include scale-property(top, 0.35rem, $global-scale-factor);
 			@include scale-font-size($small-font-size * .75, $global-scale-factor);
 		}
 	}
