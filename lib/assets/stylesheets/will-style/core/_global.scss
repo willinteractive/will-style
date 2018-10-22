@@ -71,28 +71,49 @@ $body-font-family:			$header-font-family;
 	font-style: normal;
 }
 
-//
-// COLORS
-//
-
 $font-weight-light: 	300;
 $font-weight-normal: 	400;
 $font-weight-bold: 		700;
 
-$body-bg: #fff;
-$body-font-color: #333;
+//
+// COLORS
+//
+
+// Foundation Variable Settings
+$white       : #FFFFFF;
+$ghost       : #FAFAFA;
+$snow        : #F9F9F9;
+$vapor       : #F6F6F6;
+$white-smoke : #F5F5F5;
+$silver      : #EFEFEF;
+$smoke       : #eaeaea;
+$gainsboro   : #d4d4d4;
+$iron        : #CCCCCC;
+$base        : #AAAAAA;
+$aluminum    : #999999;
+$jumbo       : #888888;
+$monsoon     : #777777;
+$steel       : #6a6567;
+$charcoal    : #555555;
+$tuatara     : #3b3839;
+$oil         : #2d2f2e;
+$jet         : #222222;
+$black       : #000000;
+
+$body-bg: $white;
+$body-font-color: $oil;
 $action-color: #8562a7;
 
 // We use these as default colors throughout
 $primary-color: #48BC97;
 $sub-primary-color: #BFDC98;
 $secondary-color: scale-color($body-font-color, $lightness: 85%);
-$alert-color: #D6675A;
+$alert-color: #d82b35;
 $success-color: $primary-color;
-$warning-color: #DBB30E;
-$warning-bg-color: #F7E184;
-$info-color: #6FAED2;
-$theme-grey: #444444;
+$warning-color: #e9b000;
+$warning-bg-color: #FFD01E;
+$info-color: #3a8bc2;
+$theme-grey: #3b3839;
 
 // Player frame types
 $choice-color: 											rgb(200,66,66);
