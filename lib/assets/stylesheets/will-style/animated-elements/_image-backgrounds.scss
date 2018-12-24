@@ -20,10 +20,3 @@
 		}
 	}
 }
-
-// Ensure fixed image bgs don't have any transition when they hide
-.image-bgs.fixed {
-	@include animated-element-after {
-		transition-duration: 0s !important;
-	}
-}
