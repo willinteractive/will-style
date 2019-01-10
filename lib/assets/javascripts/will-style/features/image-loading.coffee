@@ -12,7 +12,6 @@ getImageSourceForElement = (element) ->
 
     if element.is("img")
       element.attr("src", element.attr("data-src")) if element.attr("data-src")?
-
       source = element.attr("src")
     else
       bg = element.css('background-image')
@@ -35,7 +34,7 @@ presetImageLoading = (images) ->
 
     source = getImageSourceForElement(element)
 
-    if element.hasClass("loaded") or source is "" or loadedImages.hasOwnProperty(source)
+    if element.hasClass("loaded") or loadedImages.hasOwnProperty(source)
       element.addClass("loaded")
 
 # Setup loading / loaded statuses for all images
@@ -45,8 +44,10 @@ setUpImageLoading = ->
 
     source = getImageSourceForElement(element)
 
-    if element.hasClass("loaded") or source is "" or loadedImages.hasOwnProperty(source)
+    if element.hasClass("loaded") or loadedImages.hasOwnProperty(source)
       element.addClass("loaded")
+    else if source is ""
+      # Do Nothing
     else
       element.addClass("loading")
 
