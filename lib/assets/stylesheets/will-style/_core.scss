@@ -5,7 +5,6 @@
 @import
 	"bootstrap/functions",
 
-	"will-style/core/colors",
 	"will-style/core/typography/rails",
 
 	"will-style/core/variables/colors",
@@ -16,7 +15,8 @@
 
 	"will-style/core/overrides",
 	"will-style/core/deferred-styles",
-	"will-style/core/accessibility";
+	"will-style/core/accessibility",
+	"will-style/core/colors";
 
 // Mixins
 
