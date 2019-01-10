@@ -15,8 +15,11 @@ getImageSourceForElement = (element) ->
     else
       bg = element.css('background-image')
 
-      if bg.indexOf("url") is 0
-        source = bg.replace('url(','').replace(')','').replace(/\"/gi, "")
+      if bg.indexOf("url") isnt -1
+        matches = bg.match(/url\(.*?\)/gi)
+
+        if matches and matches.length > 0
+          source = matches[matches.length - 1].replace('url(','').replace(')','').replace(/[\"\']/gi, "")
 
     # Ensure source is empty string for logic checking
     source = "" unless source
