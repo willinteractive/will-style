@@ -11,6 +11,8 @@ getImageSourceForElement = (element) ->
     source = ""
 
     if element.is("img")
+      element.attr("src", element.attr("data-src")) if element.attr("data-src")?
+
       source = element.attr("src")
     else
       bg = element.css('background-image')
