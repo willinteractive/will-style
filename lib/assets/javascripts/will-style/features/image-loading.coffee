@@ -46,8 +46,8 @@ setUpImageLoading = ->
 
     if element.hasClass("loaded") or loadedImages.hasOwnProperty(source)
       element.addClass("loaded")
-    else if source is ""
-      # Do Nothing
+    else if source is "" and not element.attr("data-src")?
+      element.addClass("loaded")
     else
       element.addClass("loading")
 
