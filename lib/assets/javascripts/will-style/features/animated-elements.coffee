@@ -238,6 +238,10 @@ $(document).on 'turbolinks:before-render', (event) ->
 window.WILLStyle.Events.on "update-animated-elements", ->
   _scheduleAnimatedElementsUpdate()
 
+window.WILLStyle.Events.on "reset-animated-elements", ->
+  _resetAnimationCache()
+  _scheduleAnimatedElementsUpdate()
+
 window.WILLStyle.Events.on "css-initialized", ->
   _cssInitialized = true
 
