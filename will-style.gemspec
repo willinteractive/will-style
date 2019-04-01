@@ -23,10 +23,10 @@ Gem::Specification.new do |s|
 
   s.add_dependency "font-awesome-rails", "~> 4.7"
 
-  s.add_dependency "sassc-rails", "~> 1.3.0"
+  s.add_dependency "sassc-rails", "~> 2.0.0"
 
   s.add_dependency 'coffee-rails', "~> 4.2.2"
-  s.add_dependency 'autoprefixer-rails', "~> 8.1.0"
+  s.add_dependency 'autoprefixer-rails', "~> 9.1.0"
 
   s.add_dependency 'turbolinks', "~> 5.1.0"
 
