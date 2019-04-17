@@ -211,13 +211,13 @@ nav.navbar {
 
 	// Add absolutely positioned and fixed position navbars with the navbar-abs class
 
+	z-index: $navbar-z-index !important;
+
 	&.navbar-abs {
 		position: absolute;
 		top: 0;
 		left: 0;
 		right: 0;
-
-		z-index: $navbar-z-index;
 	}
 
 	&.navbar-fixed {
@@ -225,8 +225,6 @@ nav.navbar {
 		top: 0;
 		left: 0;
 		right: 0;
-
-		z-index: $navbar-z-index;
 	}
 
 	// Ensure Navbar Logo is big enough for logo to be by itself
