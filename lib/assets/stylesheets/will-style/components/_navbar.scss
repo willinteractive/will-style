@@ -243,12 +243,14 @@ nav.navbar {
 
 		&.two-line {
 			svg {
-				width: #{$navbar-height / 2 *  $will-logo-aspect-ratio};
-				height: $navbar-height / 2;
+				width: #{$navbar-height / 2.5 *  $will-logo-aspect-ratio};
+				height: $navbar-height / 2.5;
 			}
 
 			span {
-				margin-left: $navbar-height / 8;
+				line-height: 1;
+				margin-left: $navbar-height / 9;
+				margin-bottom: $navbar-height / 9;
 				transition: color $animation-duration / 2 $animation-timing-function;
 			}
 		}
