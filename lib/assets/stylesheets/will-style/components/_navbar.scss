@@ -241,6 +241,18 @@ nav.navbar {
 			overflow: visible;
 		}
 
+		&.two-line {
+			svg {
+				width: #{$navbar-height / 2 *  $will-logo-aspect-ratio};
+				height: $navbar-height / 2;
+			}
+
+			span {
+				margin-left: $navbar-height / 8;
+				transition: color $animation-duration / 2 $animation-timing-function;
+			}
+		}
+
 		// @IE11: IE11 hates sizing our logo correctly
 		@include ie11-styles {
 			svg {
