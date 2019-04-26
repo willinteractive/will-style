@@ -12,6 +12,7 @@ $animated-element-opacity-prop: "data-animated-opacity" !default;
 $animated-element-opacity-animation-prop: "data-animated-opacity-animation" !default;
 $animated-element-delay-prop: "data-animated-delay" !default;
 $animated-element-active-prop: "data-animated-active" !default;
+$animated-element-active-init-prop: "data-animated-active-init" !default;
 $animated-element-after-prop: "data-animated-after" !default;
 $animated-element-hidden-after-prop: "data-animated-hidden-after" !default;
 $animated-element-progressive-prop: "data-animated-progressive" !default;
@@ -33,6 +34,7 @@ $animated-element-top-selector: "[#{$animated-element-top-prop}]" !default;
 $animated-element-opacity-selector: "[#{$animated-element-opacity-prop}]" !default;
 $animated-element-opacity-animation-selector: "[#{$animated-element-opacity-animation-prop}]" !default;
 $animated-element-active-selector: "[#{$animated-element-active-prop}]" !default;
+$animated-element-active-init-selector: "[#{$animated-element-active-init-prop}]" !default;
 $animated-element-hidden-after-selector: "[#{$animated-element-hidden-after-prop}]" !default;
 $animated-element-after-selector: "[#{$animated-element-after-prop}]" !default;
 $animated-element-progressive-selector: "[#{$animated-element-progressive-prop}]" !default;
@@ -58,6 +60,12 @@ $animated-number-bottom-selector: "[#{$animated-number-bottom-prop}]" !default;
 
 @mixin animated-element-active {
 	&#{$animated-element-active-selector} {
+		@content;
+	}
+}
+
+@mixin animated-element-active-init {
+	&#{$animated-element-active-init-selector} {
 		@content;
 	}
 }

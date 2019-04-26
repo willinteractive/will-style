@@ -41,6 +41,17 @@
 			}
 		}
 
+		@include animated-element-active-init {
+			.title,
+			.subtitle {
+				transition-duration: 0s;
+			}
+
+			.subtitle-line {
+				transition-duration: 0s;
+			}
+		}
+
 		// Add delay capabilities
 		@for $i from 1 through 15 {
 			@include animated-element-delay-block($ms: $i * 100) {
