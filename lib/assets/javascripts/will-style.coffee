@@ -36,6 +36,7 @@
 # -------- FORMS
 #= require will-style/forms/required-inputs
 #= require will-style/forms/expanding-textareas
+#= require will-style/forms/url-formatting
 #= require will-style/forms/selected-buttons
 #= require will-style/forms/placeholder
 #= require will-style/forms/search
