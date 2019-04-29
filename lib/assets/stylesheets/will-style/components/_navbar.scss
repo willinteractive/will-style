@@ -242,6 +242,8 @@ nav.navbar {
 		}
 
 		&.two-line {
+			line-height: 0;
+
 			svg {
 				width: #{$navbar-height / 2.5 *  $will-logo-aspect-ratio};
 				height: $navbar-height / 2.5;
