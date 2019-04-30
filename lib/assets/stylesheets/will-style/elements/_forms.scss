@@ -51,3 +51,9 @@
 		}
 	}
 }
+
+label.form-label {
+	text-transform: uppercase;
+	@include scale-property(font-size, $font-size-base * 0.75);
+	display: block;
+}
