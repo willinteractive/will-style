@@ -1,0 +1,36 @@
+<% unless defined?(color) %>
+	<% color = "light" %>
+<% end %>
+
+<% unless defined?(img) %>
+	<% img = color == "dark" ? "devices/light/computer.png" : "devices/dark/computer.png" %>
+<% end %>
+
+<div class="row expanded-y align-items-center <%= color == "dark" ? "will-bg-pattern-dark" : "will-bg-pattern-light" %> <%= defined?(root_classes) ? root_classes : "" %>">
+	<div class="col-12">
+		<% if defined?(title) %>
+			<div class="row">
+				<div class="col-12 expanded-bottom text-center">
+					<h1 class="display-1 section-heading <%= color == "dark" ? "text-light" : "" %>" data-animated>
+						<%= raw(title) %>
+					</h1>
+				</div>
+			</div>
+		<% end %>
+
+		<div class="row">
+			<div class="col-12 <%= defined?(small_text) && small_text == true ? " col-md-5" : " col-md-6" %> expanded-left" data-animated data-animated-default data-animated-begin>
+				<p class="<%= color == "dark" ? "text-light" : "" %>" data-animated data-animated-default data-animated-delay="400" data-animated-begin><%= raw(text)
+				%></p>
+			</div>
+
+			<div class="d-none d-md-block <%= defined?(small_text) && small_text == true ? " col-md-7" : " col-md-5 offset-1" %>">
+				<% if defined?(offset) && offset == false %>
+					<div class="image-bg computer contained" style="background-image: url('<%= asset_url(img) %>')" data-animated data-animated-default data-animated-begin></div>
+				<% else %>
+					<div class="image-bg computer" style="background-image: url('<%= asset_url(img) %>')" data-animated data-animated-default data-animated-begin></div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

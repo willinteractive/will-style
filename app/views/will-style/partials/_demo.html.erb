@@ -1,0 +1,49 @@
+<% unless defined?(color) %>
+	<% color = "light" %>
+<% end %>
+
+<div id="preview-pop-out" data-pop-out>
+	<div class="content">
+		<a class="close-pop-out" aria-label="Close">&#215;</a>
+	</div>
+</div>
+
+<div class="row expanded align-items-center <%= color == "dark" ? "will-bg-pattern-dark" : "will-bg-pattern-light" %> <%= defined?(root_classes) ? root_classes : "" %>">
+	<div class="col-12 col-md-4" data-animated data-animated-default data-animated-begin>
+		<% if defined?(title_img) %>
+			<div class="demo-image-container">
+				<%= image_tag(asset_url(img), class: "img-fluid shadowed") %>
+
+				<div class="demo-image gradient-bottom-black gradient-full">
+					<%= image_tag(asset_url(title_img), class: "img-fluid") %>
+				</div>
+			</div>
+		<% else %>
+			<%= image_tag(asset_url(img), class: "img-fluid shadowed") %>
+		<% end %>
+	</div>
+
+	<div class="col-12 col-md-7 offset-md-1" data-animated data-animated-default data-animated-begin>
+		<p class="<%= color == "dark" ? "text-light" : "" %> lead" data-animated data-animated-default data-animated-delay="200">
+			Don't take our word for it. Try some of it for yourself.
+		</p>
+
+		<div class="button-container mt-4 mb-4 <%= color == "dark" ? "light" : "dark" %> inline" data-animated data-animated-default>
+			<div class="will-bg-pattern-<%= color == "dark" ? "light" : "dark" %>"></div>
+
+			<button data-pop-out-link data-pop-out-id="preview-pop-out" data-pop-out-url="<%= url %>">
+				Play Demo
+			</button>
+		</div>
+
+		<% if defined?(download_url) %>
+			<div class="button-container <%= color == "dark" ? "light" : "dark" %> inline" data-animated data-animated-default>
+				<div class="will-bg-pattern-<%= color == "dark" ? "light" : "dark" %>"></div>
+
+				<a href="<%= download_url %>" target="_blank">
+					Download Information
+				</a>
+			</div>
+		<% end %>
+	</div>
+</div>

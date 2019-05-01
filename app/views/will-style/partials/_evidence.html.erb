@@ -1,0 +1,24 @@
+<% unless defined?(color) %>
+	<% color = "light" %>
+<% end %>
+
+<div class="row expanded align-items-center <%= color == "dark" ? "will-bg-pattern-dark bg-dark" : "will-bg-pattern-light" %> <%= defined?(root_classes) ? root_classes : "" %>">
+	<div class="col-12 col-md-6">
+		<%= render partial: "will-style/components/heading", locals: {
+			subtitle: "Evidence",
+			title: "Proven Effective",
+			text: defined?(text) ? raw(text) : nil,
+			invert_colors: color == "dark"
+		} %>
+	</div>
+
+	<div class="col-12 col-md-5 offset-md-1" data-animated data-animated-default data-animated-begin data-animated-delay="400">
+		<div class="button-container <%= color == "dark" ? "light" : "dark" %> inline" data-animated data-animated-default>
+			<div class="will-bg-pattern-<%= color == "dark" ? "light" : "dark" %>"></div>
+
+			<a href="<%= download_url %>" target="_blank">
+				More Information
+			</a>
+		</div>
+	</div>
+</div>

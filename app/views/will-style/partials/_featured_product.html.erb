@@ -1,0 +1,35 @@
+<% unless defined?(color) %>
+	<% color = "dark" %>
+<% end %>
+
+<div class="row align-items-center expanded <%= color == "dark" ? "will-bg-pattern-dark" : "will-bg-pattern-light" %> <%= defined?(root_classes) ? root_classes : "" %>">
+
+	<div class="d-none d-md-block col-3 expanded-y" data-animated data-animated-default data-animated-begin data-animated-target="p">
+		<%= image_tag(asset_url(poster), class: "img-fluid shadowed") %>
+	</div>
+
+	<div class="col-12 col-md-8 col-xxl-5 offset-md-1 offset-xxl-0">
+		<%= render partial: "will-style/components/heading", locals: {
+			subtitle: 'FEATURED PROJECT',
+			title: title,
+			text: defined?(text) ? raw(text) : nil,
+			invert_colors: color == "dark"
+		} %>
+
+		<h5 data-animated data-animated-default data-animated-delay="1200">
+			<%= link_to link, class: "animated" do %>
+				Learn More
+			<% end %>
+		</h5>
+	</div>
+
+	<% if defined?(poster_landscape) %>
+		<div class="d-block d-md-none col-12 expanded-y text-center">
+			<%= image_tag(asset_url(poster_landscape), class: "img-fluid shadowed") %>
+		</div>
+	<% else %>
+		<div class="d-block d-md-none col-6 offset-3 expanded-y text-center">
+			<%= image_tag(asset_url(poster), class: "img-fluid shadowed") %>
+		</div>
+	<% end %>
+</div>

@@ -1,0 +1,35 @@
+<% unless defined?(color) %>
+	<% color = "light" %>
+<% end %>
+
+<div class="row  <%= color == "dark" ? "will-bg-pattern-dark" : "will-bg-pattern-light" %> <%= defined?(root_classes) ? root_classes : "" %>">
+	<div class="col-12">
+		<% if defined?(title) %>
+			<div class="row expanded">
+				<div class="col-12 text-center">
+					<h1 class="display-1 section-heading <%= color == "dark" ? "text-light" : "" %>" data-animated>
+						<%= title %>
+					</h1>
+				</div>
+			</div>
+		<% end %>
+
+		<% stats.each_with_index do |stat, index| %>
+			<div class="row expanded-x align-items-center">
+				<div class="col-12 col-md-6 expanded-y">
+					<%= render partial: "will-style/components/heading", locals: {
+						subtitle: defined?(subtitle) ? subtitle : nil,
+						title: stat[:title],
+						text: stat[:text],
+						invert_colors: color == "dark"
+					} %>
+				</div>
+
+				<% rotated_class = index % 2 == 0 ? "rotated-backward" : "rotated-forward" %>
+				<div class="col-6 col-md-3 offset-3 phone-container <%= rotated_class %>" data-animated data-animated-delay="1000" data-animated-target=".will-heading">
+					<%= image_tag(asset_url(stat[:phone]), class: "img-fluid") %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>

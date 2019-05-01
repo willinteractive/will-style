@@ -1,0 +1,33 @@
+<% unless defined?(color) %>
+	<% color = "dark" %>
+<% end %>
+
+<div class="row align-items-center expanded <%= color == "dark" ? "will-bg-pattern-dark" : "will-bg-pattern-light" %> <%= defined?(root_classes) ? root_classes : "" %>">
+	<div class="col-12 col-md-8">
+		<%= render partial: "will-style/components/heading", locals: {
+			subtitle: 'TESTIMONIALS',
+			title: 'Don\'t take our word for it',
+			invert_colors: true
+		} %>
+
+		<% testimonials.each do |testimonial| %>
+			<div id="<%= testimonial[:id] %>" data-testimonial-item data-animated data-animated-default>
+				<p class="<%= color == "dark" ? "text-light" : "" %> lead">"<%= raw testimonial[:quote] %>"</p>
+
+				<% if testimonial[:source] %>
+					<p class="<%= color == "dark" ? "text-light" : "" %> text-right lead">&mdash; <%= raw testimonial[:source] %></p>
+				<% end %>
+			</div>
+		<% end %>
+	</div>
+
+	<div class="col-12 col-md-3 offset-md-1 text-center" data-animated data-animated-default data-animated-begin>
+		<div class="row">
+			<% testimonials.each do |testimonial| %>
+				<a href="" class="col-3 col-md-6 pt-2 pb-2" data-testimonial-link data-testimonial-id="<%=testimonial[:id]%>">
+					<%= image_tag(asset_url(testimonial[:logo]), class: "img-fluid quote-icon") %>
+				</a>
+			<% end %>
+		</div>
+	</div>
+</div>

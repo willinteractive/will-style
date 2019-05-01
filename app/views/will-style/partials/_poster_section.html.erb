@@ -1,0 +1,29 @@
+<% unless defined?(color) %>
+	<% color = "dark" %>
+<% end %>
+
+<% unless defined?(position) %>
+	<% position = "left" %>
+<% end %>
+
+<div class="row product-bg align-items-center <%= color == "dark" ? "bg-dark" : "bg-white" %> <%= defined?(root_classes) ? root_classes : "" %>">
+	<div class="d-none d-md-block col-4 text-center <%= position == "right" ? "order-md-2" : "" %>" data-animated data-animated-progressive data-animated-progressive-default>
+		<%= image_tag(asset_url(poster), class: "img-fluid #{defined?(include_shadow) && include_shadow == false ? "" : "shadowed"}") %>
+	</div>
+
+	<% if defined?(poster_landscape) %>
+		<div class="d-block d-md-none col-12 expanded-y text-center">
+			<%= image_tag(asset_url(poster_landscape), class: "img-fluid shadowed") %>
+		</div>
+	<% else %>
+		<div class="d-block d-md-none col-6 offset-3 expanded-y text-center">
+			<%= image_tag(asset_url(poster), class: "img-fluid shadowed") %>
+		</div>
+	<% end %>
+
+	<div class="col-12 col-md-8 expanded">
+		<p class="<%= color == "dark" ? "text-light" : "" %> lead" data-animated data-animated-default data-animated-delay="400" data-animated-begin>
+			<%= raw text %>
+		</p>
+	</div>
+</div>

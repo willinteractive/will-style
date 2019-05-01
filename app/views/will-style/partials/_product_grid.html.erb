@@ -1,0 +1,83 @@
+<% unless defined?(color) %>
+	<% color = "dark" %>
+<% end %>
+
+<% unless defined?(categories) %>
+	<% categories = [
+		{
+			products: products
+		}
+	] %>
+
+	<% if defined?(title) %>
+		<% categories[0][:title] = title %>
+	<% end %>
+<% end %>
+
+<div class="row  expanded <%= color == "dark" ? "will-bg-pattern-dark" : "will-bg-pattern-light" %> <%= defined?(root_classes) ? root_classes : "" %>">
+	<div class="col-12">
+		<% categories.each_with_index do |category, category_index| %>
+			<% if category[:title] %>
+				<div class="row pb-4">
+					<div class="col-12 text-center">
+						<h1 class="display-1 section-heading <%= color == "dark" ? "text-light" : "" %>" data-animated>
+							<%= category[:title] %>
+						</h1>
+					</div>
+				</div>
+			<% end %>
+
+			<% if category[:products].length % 4 == 0 %>
+				<div class="row">
+					<% category[:products].each do |product| %>
+						<div class="col-6 col-sm-3 text-center pb-4" data-animated data-animated-default data-animated-begin>
+							<% if product[:link] %>
+								<%= link_to product[:link], class: "product-grid-link" do %>
+									<img src="<%= asset_url(product[:img]) %>" class="img-fluid shadowed">
+
+									<div class="col-12 pt-4 text-center">
+										<p class="<%= color == "dark" ? "" : " text-dark" %> d-none d-md-block <%= color == "dark" ? "text-light" : "" %>">
+											<%= raw product[:title]%>
+										</p>
+									</div>
+								<% end %>
+							<% else %>
+								<div class="product-grid-item">
+									<img src="<%= asset_url(product[:img]) %>" class="img-fluid shadowed">
+
+									<div class="col-12 pt-4 text-center">
+										<p class="<%= color == "dark" ? "" : " text-dark" %> d-none d-md-block <%= color == "dark" ? "text-light" : "" %>">
+											<%= raw product[:title]%>
+										</p>
+									</div>
+								</div>
+							<% end %>
+						</div>
+					<% end %>
+				</div>
+			<% else %>
+				<% category[:products].each_slice(3).to_a.each_with_index do |group, i| %>
+					<div class="row">
+						<% group.each_with_index do |product, j| %>
+							<% element_class = "col-4 text-center" %>
+							<% element_class += " offset-2" if group.length == 2 && j == 0 %>
+							<% element_class += " offset-4" if group.length == 1 %>
+
+							<div class="<%= element_class %>" data-animated data-animated-default data-animated-begin>
+								<%= link_to product[:link], class: "product-grid-link" do %>
+									<img src="<%= asset_url(product[:img]) %>" class="img-fluid shadowed">
+
+									<div class="col-12 pt-4 text-center">
+										<p class="lead <%= color == "dark" ? "" : " text-dark" %> d-none d-md-block <%= color == "dark" ? "text-light" : "" %>">
+											<%= raw product[:title]%>
+										</p>
+									</div>
+								<% end %>
+							</div>
+						<% end %>
+					</div>
+				<% end %>
+			<% end %>
+		<% end %>
+	</div>
+</div>

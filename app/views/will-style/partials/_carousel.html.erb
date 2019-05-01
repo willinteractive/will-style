@@ -1,0 +1,41 @@
+<% unless defined?(visible_count) %>
+	<% visible_count = 6 %>
+<% end %>
+
+<% unless defined?(visible_phone_count) %>
+	<% visible_phone_count = visible_count %>
+<% end %>
+
+<div data-carousel="<%= name %>" data-carousel-visible-count="<%= visible_count %>" data-carousel-visible-phone-count="<%= visible_phone_count %>" data-animated data-animated-default data-animated-delay="800" data-animated-begin>
+	<div data-carousel-inner>
+		<% elements.each_with_index do |element, index| %>
+			<% if element[:link] %>
+				<button class="text-center" data-carousel-element="<%=element[:id]%>" data-carousel-link="<%= element[:link] %>">
+			<% elsif element[:demo_url] %>
+				<button class="text-center" data-carousel-element="<%=element[:id]%>" data-pop-out-link data-pop-out-id="demo-pop-out" data-pop-out-url="<%= element[:demo_url] %>" data-pop-out-active-class="active">
+			<% else %>
+				<button class="text-center" data-carousel-element="<%=element[:id]%>">
+			<% end %>
+				<% if element[:title_img] != nil %>
+					<div class="demo-image-container text-left">
+						<%= image_tag(asset_url(element[:img]), class: "img-fluid w-100 shadowed") %>
+
+						<div class="demo-image gradient-bottom-black gradient-full">
+							<%= image_tag(asset_url(element[:title_img]), class: "img-fluid") %>
+						</div>
+					</div>
+				<% else %>
+					<%= image_tag(asset_url(element[:img]), class: "img-fluid w-100 shadowed") %>
+				<% end %>
+			</button>
+		<% end %>
+	</div>
+
+	<button data-carousel-arrow-previous>
+		<i class="will-icon-previous_arrow text-light"></i>
+	</button>
+
+	<button data-carousel-arrow-next>
+		<i class="will-icon-next_arrow text-light"></i>
+	</button>
+</div>

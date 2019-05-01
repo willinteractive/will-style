@@ -1,0 +1,46 @@
+<% unless defined?(color) %>
+	<% color = "light" %>
+<% end %>
+
+<div class="row expanded align-items-center <%= color == "dark" ? "will-bg-pattern-dark bg-dark" : "company-bg" %> <%= defined?(root_classes) ? root_classes : "" %>">
+
+	<% if color == "light" %>
+		<div class="gradient-top-light"></div>
+		<div class="gradient-light"></div>
+	<% end %>
+
+	<% if defined?(text) %>
+		<div class="col-12 <%= defined?(full_text) && full_text == true ? "" : "col-md-6" %>">
+			<%= render partial: "will-style/components/heading", locals: {
+				subtitle: defined?(subtitle) ? raw(subtitle) : 'CLIENT'.pluralize(clients.length),
+				title: defined?(title) ? raw(title) : 'This is Them',
+				text: defined?(text) ? raw(text) : nil,
+				invert_colors: color == "dark"
+			} %>
+		</div>
+	<% end %>
+
+	<div class="col-12 <%= defined?(text) && !(defined?(full_text) && full_text == true) ? " col-md-5 offset-md-1" : "" %>" data-animated data-animated-default data-animated-begin data-animated-delay="400">
+		<div class="row">
+			<% cols = 3 %>
+
+			<% if clients.length == 1 %>
+				<% cols = 8 %>
+			<% elsif clients.length < 4 %>
+				<% cols = 6 %>
+			<% elsif clients.length == 6 %>
+				<% cols = 4 %>
+			<% elsif clients.length > 11 && clients.length < 24 %>
+				<% cols = 2 %>
+			<% elsif clients.length > 23 %>
+				<% cols = 1 %>
+			<% end %>
+
+			<% clients.each do |client| %>
+				<div class="col-<%= cols %> <%= clients.length == 1 ? " offset-#{(12 - cols) / 2} " : "" %> mb-2">
+					<%= image_tag(asset_url(client[:logo]), class: "img-fluid") %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>

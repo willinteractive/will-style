@@ -1,0 +1,46 @@
+<% unless defined?(color) %>
+	<% color = "dark" %>
+<% end %>
+
+<div class="row <%= color == "dark" ? "will-bg-pattern-dark" : "will-bg-pattern-light" %> <%= defined?(root_classes) ? root_classes : "" %>">
+	<div class="col-12">
+		<div class="row">
+			<div class="col-12">
+				<%= render partial: "shared/carousel", locals: {
+						   name: 'featured-products',
+						   elements: products,
+						   visible_count: 6,
+						   visible_phone_count: 3,
+				} %>
+			</div>
+		</div>
+
+		<% products.each do |product| %>
+			<div data-carousel-target="featured-products" data-carousel-active="<%= product[:id] %>">
+				<div class="row expanded-x expanded-bottom">
+					<div class="col-12 col-md-6">
+						<%= render partial: "will-style/components/heading", locals: {
+							subtitle: product[:subtitle],
+							title: product[:title],
+							invert_colors: color == "dark"
+						} %>
+
+						<h6 class="<%= color == "dark" ? "text-light" : "" %> upcase" data-animated data-animated-default data-animated-delay="400"><%= product[:keywords].join(" | ") %></h6>
+					</div>
+
+					<div class="col-12 col-md-6">
+						<p class="<%= color == "dark" ? "text-light" : "" %>" data-animated data-animated-default data-animated-delay="800">
+							<%= raw product[:text]%>
+						</p>
+
+						<h5 data-animated data-animated-default data-animated-delay="1200">
+							<%= link_to product[:link], class: "animated" do %>
+								Learn More
+							<% end %>
+						</h5>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>
