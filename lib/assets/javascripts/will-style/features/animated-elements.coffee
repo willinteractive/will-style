@@ -10,6 +10,8 @@ _animatedElementSelector = "[data-animated]"
 _staticAnimatedElementSelector = "[data-animated-static]"
 _frameRate = 1000 / 60
 
+_maximumAnimationDuration = 800
+
 #---------------------
 # Private Properties -
 #---------------------
@@ -21,6 +23,8 @@ _lastWindowWidth = -1
 _updateTimer = undefined
 _isUpdating = false
 _requiresUpdate = false
+
+_resetTimer = undefined
 
 _cachedScrollTop = -1
 _cachedWindowHeight = -1
@@ -102,6 +106,8 @@ _updateAnimatedElements = ->
 
   _cachedElements = $(_animatedElementSelector) unless _cachedElements
 
+  _hasReset = false
+
   _cachedElements.each ->
     element = $(this)
 
@@ -153,6 +159,21 @@ _updateAnimatedElements = ->
         isActive = true
 
       if isActive
+        # Element animation determines the position of future elements, so it requires a remeasure
+        if element.attr("data-animated-active") isnt "true" && element.data("animated-reset")? && _hasReset is false
+          _hasReset = true
+
+          clearTimeout(_resetTimer) if _resetTimer
+
+          _resetTimer = setTimeout ->
+            _resetAnimationCache()
+
+            _requiresUpdate = false
+            _isUpdating = false
+
+            _scheduleAnimatedElementsUpdate()
+          , parseInt(element.data("animated-reset")) || _maximumAnimationDuration
+
         element.attr("data-animated-active", "true")
       else if element.data("animated-hidden-before")?
         element.removeAttr("data-animated-active")
