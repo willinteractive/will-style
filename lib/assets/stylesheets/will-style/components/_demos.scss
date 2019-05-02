@@ -1,0 +1,30 @@
+.demo-image-container {
+	position: relative;
+	overflow: visible;
+
+	.demo-image {
+		position: absolute;
+
+		left: -1px;
+		right: -1px;
+		bottom: -1px;
+
+		height: 33.3%;
+
+		padding: 0.5rem;
+
+		img {
+			position: relative;
+
+			height: 100%;
+
+			// @IE11: We're setting this to 100% here because it fixes the SVG heights
+			width: 100%;
+			max-width: 40%;
+
+			max-height: 100%;
+
+			z-index: 1;
+		}
+	}
+}
