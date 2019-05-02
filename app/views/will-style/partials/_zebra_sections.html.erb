@@ -14,13 +14,13 @@
 <% sections.each_with_index do |section, index| %>
 	<div class="row align-items-center expanded-x <%= index % 2 == stripe_value ? " will-bg-pattern-dark" : "will-bg-pattern-light" %> <%= defined?(end_classes) && index == sections.length - 1 ? end_classes : "" %> <%= defined?(root_classes) && index == 0 ? root_classes : "" %>">
 
-		<div class="col-12 col-md-5 text-center expanded-y <%= reverse && index % 2 == 1 ? "order-md-2 offset-md-1" : "" %>" data-animated data-animated-default data-animated-begin>
+		<div class="col-12 col-md-5 text-center expanded-y <%= reverse && index % 2 == 0 ? "order-md-2 offset-md-1" : "" %>" data-animated data-animated-default data-animated-begin>
 			<% if section[:image] %>
 				<%= image_tag(asset_url(section[:image]), class: "img-fluid shadowed") %>
 			<% end %>
 		</div>
 
-		<div class="col-12 col-md-6 expanded-y <%= reverse && index % 2 == 1 ? "order-md-1" : "offset-md-1" %>">
+		<div class="col-12 col-md-6 expanded-y <%= reverse && index % 2 == 0 ? "order-md-1" : "offset-md-1" %>">
 			<%= render partial: "will-style/components/heading", locals: {
 				subtitle: defined?(subtitle) ? subtitle : nil,
 				title: section[:title],

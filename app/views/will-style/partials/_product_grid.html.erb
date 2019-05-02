@@ -2,6 +2,10 @@
 	<% color = "dark" %>
 <% end %>
 
+<% unless defined?(expanded) %>
+	<% expanded = true %>
+<% end %>
+
 <% unless defined?(categories) %>
 	<% categories = [
 		{
@@ -14,7 +18,7 @@
 	<% end %>
 <% end %>
 
-<div class="row  expanded <%= color == "dark" ? "will-bg-pattern-dark" : "will-bg-pattern-light" %> <%= defined?(root_classes) ? root_classes : "" %>">
+<div class="row <%= expanded ? "expanded" : "" %> <%= color == "dark" ? "will-bg-pattern-dark" : "will-bg-pattern-light" %> <%= defined?(root_classes) ? root_classes : "" %>">
 	<div class="col-12">
 		<% categories.each_with_index do |category, category_index| %>
 			<% if category[:title] %>
