@@ -18,7 +18,15 @@
 	<% end %>
 <% end %>
 
-<div class="row <%= expanded ? "expanded" : "" %> <%= color == "dark" ? "will-bg-pattern-dark" : "will-bg-pattern-light" %> <%= defined?(root_classes) ? root_classes : "" %>">
+<div class="row <%= expanded ? "expanded" : "" %>
+	<% if defined?(exclude_pattern) && exclude_pattern == true %>
+		<%= color == "dark" ? "bg-dark" : "" %>
+	<% else %>
+		<%= color == "dark" ? "will-bg-pattern-dark" : "will-bg-pattern-light" %>
+	<% end %>
+
+	<%= defined?(root_classes) ? root_classes : "" %>">
+
 	<div class="col-12">
 		<% categories.each_with_index do |category, category_index| %>
 			<% if category[:title] %>
