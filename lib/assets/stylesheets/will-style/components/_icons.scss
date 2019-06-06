@@ -1,0 +1,13 @@
+// Testimonial Icons
+
+svg.testimonial-icon {
+	max-width: 100%;
+
+	path {
+		fill: $body-color;
+	}
+
+	&.light path {
+		fill: $will-white;
+	}
+}
