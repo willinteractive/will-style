@@ -31,7 +31,10 @@
 		<div class="button-container mt-4 mb-4 <%= color == "dark" ? "light" : "dark" %> inline" data-animated data-animated-default>
 			<div class="will-bg-pattern-<%= color == "dark" ? "light" : "dark" %>"></div>
 
-			<button data-pop-out-link data-pop-out-id="preview-pop-out" data-pop-out-url="<%= url %>">
+			<button data-pop-out-link data-pop-out-id="preview-pop-out" data-pop-out-url="<%= url %>"
+				<% if defined?(ga_event) %>
+					data-ga-event="<%= ga_event %>"
+				<% end %>>
 				Play Demo
 			</button>
 		</div>
