@@ -35,29 +35,6 @@ nav.navbar {
 		transition: color 0.2s $animation-timing-function;
 	}
 
-	// @NOTE: This causes a white box to flash on Chrome
-	// &.navbar-dark {
-	// 	.nav-link:focus {
-	// 		outline: none;
-
-	// 		&:before {
-	// 			content: "";
-	// 			position: absolute;
-	// 			top: 0;
-	// 			bottom: 0;
-	// 			left: 0;
-	// 			right: 0;
-
-	// 			border: 1px solid $navbar-dark-color;
-	// 		}
-
-	// 	}
-
-	// 	.dropdown-menu {
-	// 		margin: -1px;
-	// 	}
-	// }
-
 	// Navbar Toggler animation
 
 	.navbar-toggler {
@@ -265,21 +242,6 @@ nav.navbar {
 		}
 
 		min-width: #{($nav-link-padding-y * 2 + $font-size-base * $line-height-base) * $will-logo-aspect-ratio};
-
-		// Logo Animation
-
-		// svg .play-fill {
-		// 	transition: transform 0.2s $animation-timing-function;
-		// }
-
-		// &:hover,
-		// &:focus {
-		// 	color: $navbar-dark-hover-color;
-
-		// 	svg .play-fill {
-		// 		transform: translateX(5px);
-		// 	}
-		// }
 	}
 
 	// Thin navbar
