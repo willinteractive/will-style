@@ -2,6 +2,8 @@ $will-icons-font-location: "/fonts" !default;
 
 @font-face {
 	font-family: 'will-icons';
+	font-display: block;
+
 	src: url('#{$will-icons-font-location}/will-icons/will-icons.eot');
 
 	src: url('#{$will-icons-font-location}/will-icons/will-icons.eot') format('embedded-opentype'),
