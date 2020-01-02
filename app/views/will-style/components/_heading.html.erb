@@ -2,6 +2,10 @@
 	<% invert_colors = false %>
 <% end %>
 
+<% unless defined?(shadowed) %>
+	<% shadowed = false %>
+<% end %>
+
 <% title_class = defined?(page_heading) && page_heading == true ? "display-1" : "display-4" %>
 <% title_class += invert_colors ? " text-light" : "" %>
 
@@ -12,16 +16,16 @@
 <div class="will-heading">
 	<div class="title-container" data-animated <%= fixed_prop %> <%= delay_prop %>>
 		<div class="subtitle-container">
-			<h6 class="will-teal font-weight-normal subtitle"><%= raw subtitle %></h6>
+			<h6 class="will-teal font-weight-normal subtitle <%= shadowed ? "text-shadow" : "" %>"><%= raw subtitle %></h6>
 			<% unless subtitle.blank? %>
-				<div class="subtitle-line <%= invert_colors ? " bg-light" : "bg-dark" %>"></div>
+				<div class="subtitle-line <%= invert_colors ? " bg-light" : "bg-dark" %> <%= shadowed ? "box-shadow" : "" %>"></div>
 			<% end %>
 		</div>
 
-		<h1 class="title <%= title_class %>"><%= raw title %></h1>
+		<h1 class="title <%= title_class %> <%= shadowed ? "text-shadow" : "" %>"><%= raw title %></h1>
 	</div>
 
 	<% if defined?(text) %>
-		<p class="text lead<%= invert_colors ? " text-light" : "" %>" data-animated data-animated-target=".title-container" <%= delay_prop %>><%= raw text %></p>
+		<p class="text lead <%= invert_colors ? "text-light" : "" %> <%= shadowed ? "text-shadow" : "" %>" data-animated data-animated-target=".title-container" <%= delay_prop %>><%= raw text %></p>
 	<% end %>
 </div>
