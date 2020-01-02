@@ -1,0 +1,27 @@
+//
+// Dropdown Overrides
+//
+
+.dropdown {
+	.dropdown-menu {
+		margin-top: 0 !important;
+
+		display: block;
+		pointer-events: none;
+
+		opacity: 0;
+		transform: translateX(120vw);
+
+		transition: opacity $animation-duration / 2 $animation-timing-function,
+					transform 0s $animation-duration;
+
+		&.show {
+			pointer-events: auto;
+
+			opacity: 1;
+			transform: translateX(0);
+
+			transition-delay: 0;
+		}
+	}
+}
