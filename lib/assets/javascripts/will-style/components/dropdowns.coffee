@@ -23,3 +23,10 @@ $(document).on "mouseenter", ".dropdown-toggle, .dropdown-menu", (event) ->
 $(document).on "mouseleave", ".dropdown-toggle, .dropdown-menu", (event) ->
   hideDropdown $(event.currentTarget).closest(".dropdown")
   return true
+
+# Allow togglers to be links to things
+$(document).on "click", ".dropdown-toggle", (event) ->
+  link = $(event.currentTarget).attr("href")
+
+  if link isnt "" and link isnt "#"
+    window.location.href = link

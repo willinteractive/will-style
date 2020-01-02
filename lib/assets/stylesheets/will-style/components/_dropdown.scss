@@ -12,7 +12,7 @@
 		pointer-events: none;
 
 		opacity: 0;
-		transform: translateX(120vw);
+		transform: translateX(200vw);
 
 		transition: opacity $animation-duration / 2 $animation-timing-function,
 					transform 0s $animation-duration;
@@ -27,12 +27,21 @@
 		}
 	}
 
-
 	// Always show dropdowns on small screens
 	@include media-breakpoint-down(md) {
 		.dropdown-toggle {
 			&:after {
 				content: none;
+			}
+		}
+
+		.navbar-dark &.show {
+			.dropdown-toggle {
+				color: $white;
+
+				@include hover-focus {
+					color: $primary;
+				}
 			}
 		}
 
@@ -49,9 +58,15 @@
 			.dropdown-item {
 				background-color: transparent !important;
 
+				padding-left: 0;
+				padding-right: 0;
+
+				@include scale-font-size($lead-font-size, $global-scale-factor);
+
 				.navbar-dark & {
 					color: $white;
 				}
+
 				@include hover-focus {
 					color: $primary;
 				}
