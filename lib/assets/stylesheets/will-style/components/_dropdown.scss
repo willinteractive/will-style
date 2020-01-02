@@ -4,8 +4,10 @@
 
 .dropdown {
 	.dropdown-menu {
+		// @NOTE: Ensure that there's no space between dropdown link and dropdown to prevent hover issues
 		margin-top: 0 !important;
 
+		// Dropdown animations
 		display: block;
 		pointer-events: none;
 
@@ -22,6 +24,38 @@
 			transform: translateX(0);
 
 			transition-delay: 0;
+		}
+	}
+
+
+	// Always show dropdowns on small screens
+	@include media-breakpoint-down(md) {
+		.dropdown-toggle {
+			&:after {
+				content: none;
+			}
+		}
+
+		.dropdown-menu {
+			opacity: 1;
+			transform: none;
+			box-shadow: none;
+			background-color: transparent;
+
+			border: none;
+
+			pointer-events: auto;
+
+			.dropdown-item {
+				background-color: transparent !important;
+
+				.navbar-dark & {
+					color: $white;
+				}
+				@include hover-focus {
+					color: $primary;
+				}
+			}
 		}
 	}
 }
