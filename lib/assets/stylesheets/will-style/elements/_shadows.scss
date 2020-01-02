@@ -2,10 +2,12 @@
 // Shadow Classes
 //
 
+.shadow,
 .shadowed {
 	@include image-shadow();
 }
 
+.shadow-filtered,
 .shadowed-filtered {
 	@include image-shadow-filter();
 }
@@ -27,4 +29,14 @@
 
 .shadow-right {
 	@include shadow-right;
+}
+
+.text-shadow,
+.text-shadowed {
+	@include text-shadow($shadow-weight);
+}
+
+.box-shadow,
+.box-shadowed {
+	@include shadow($shadow-weight);
 }
