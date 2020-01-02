@@ -43,7 +43,7 @@ button {
 		}
 
 		opacity: 0;
-		transition: opacity $animation-duration $animation-timing-function;
+		transition: opacity $animation-duration / 2 $animation-timing-function;
 
 		pointer-events: none;
 	}
@@ -239,6 +239,23 @@ button {
 
 	&.permanent.disabled {
 		opacity: 0.5;
+	}
+
+	&.shadowed {
+		@include shadow($shadow-weight);
+
+		input,
+		button,
+		a {
+			transition: color $animation-duration / 2 $animation-timing-function,
+						text-shadow $animation-duration / 2 $animation-timing-function;
+
+			@include text-shadow($shadow-weight);
+
+			@include hover-focus {
+				@include text-shadow-z0;
+			}
+		}
 	}
 }
 

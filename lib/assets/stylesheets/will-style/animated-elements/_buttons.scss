@@ -35,4 +35,19 @@
 			}
 		}
 	}
+
+	&.shadowed {
+		@include animated-element-init {
+			@include shadow-z0;
+			transition: opacity $animation-duration $animation-timing-function,
+						box-shadow $animation-duration $animation-timing-function;
+		}
+
+		@include animated-element-active {
+			transition-delay: 0s,
+							  $animation-duration * 2.25;
+
+			@include shadow($shadow-weight);
+		}
+	}
 }
