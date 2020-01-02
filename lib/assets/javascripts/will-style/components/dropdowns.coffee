@@ -27,6 +27,11 @@ $(document).on "mouseleave", ".dropdown-toggle, .dropdown-menu", (event) ->
 # Allow togglers to be links to things
 $(document).on "click", ".dropdown-toggle", (event) ->
   link = $(event.currentTarget).attr("href")
+  dropdown = $(event.currentTarget).closest(".dropdown")
 
-  if link isnt "" and link isnt "#"
+  return if link is "" or link is "#"
+
+  if $("html").hasClass("touchevents")
+    # @TODO: We need to figure out how to trigger this
+  else
     window.location.href = link
