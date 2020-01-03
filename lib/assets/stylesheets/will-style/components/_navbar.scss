@@ -112,8 +112,6 @@ nav.navbar {
 		}
 
 		.navbar-collapse {
-			padding: 1rem 2rem;
-
 			position: absolute;
 			z-index: 10;
 
@@ -132,21 +130,29 @@ nav.navbar {
 			transform: translateX(-100%);
 
 			.navbar-nav {
+				padding: 1rem 2rem;
+
 				min-height: 100vh;
 
 				position: relative;
+
 				@include patterned-background();
 
 				&:before,
 				&:after {
 					position: absolute;
-					top: -1rem;
-					bottom: -1rem;
-					left: -2rem;
-					right: -2rem;
+					top: 0;
+					bottom: 0;
+					left: 0;
+					right: 0;
 
 					opacity: 0;
 					transition: opacity 0.2s $animation-timing-function;
+				}
+
+				&:before {
+					@include shadow-top-bottom();
+					overflow: visible;
 				}
 			}
 
