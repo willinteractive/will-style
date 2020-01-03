@@ -30,7 +30,7 @@
 
 		@for $i from 1 through 5 {
 			.dropdown-item:nth-of-type(#{$i}) {
-				transition-delay: #{$i * 0.1}s;
+				transition-delay: #{($i - 1) * 0.1}s;
 			}
 		}
 
