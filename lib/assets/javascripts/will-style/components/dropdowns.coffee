@@ -23,11 +23,11 @@ visitRootDropdown = (dropdown) ->
     console.log link
     window.location.href = link
 
-$(document).on "mouseenter", ".dropdown-toggle, .dropdown-menu", (event) ->
+$(document).on "mouseenter focusin", ".dropdown-toggle, .dropdown-menu", (event) ->
   highlightDropdown $(event.currentTarget).closest(".dropdown")
   return true
 
-$(document).on "mouseleave", ".dropdown-toggle, .dropdown-menu", (event) ->
+$(document).on "mouseleave focusout", ".dropdown-toggle, .dropdown-menu", (event) ->
   hideDropdown $(event.currentTarget).closest(".dropdown")
   return true
 
