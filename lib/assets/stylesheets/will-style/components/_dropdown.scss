@@ -49,12 +49,28 @@
 		}
 	}
 
+	html.touchevents & .dropdown-toggle {
+		&:after {
+			content: "+";
+
+			border: none;
+
+			vertical-align: 0;
+		}
+	}
+
+	html.touchevents &.show .dropdown-toggle:after {
+		animation: rotate-dropdown-toggle $animation-duration $animation-timing-function forwards;
+	}
+
+	html.no-touchevents & .dropdown-toggle:after {
+		content: none;
+	}
+
 	// Always show dropdowns on small screens
 	@include media-breakpoint-down(md) {
-		.dropdown-toggle {
-			&:after {
-				content: none;
-			}
+		.dropdown-toggle:after {
+			content: none;
 		}
 
 		.navbar-dark &.show {
@@ -97,5 +113,15 @@
 				}
 			}
 		}
+	}
+}
+
+@keyframes rotate-dropdown-toggle {
+	0% {
+		transform: rotate(0);
+	}
+
+	100% {
+		transform: rotate(-675deg);
 	}
 }
