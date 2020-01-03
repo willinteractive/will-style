@@ -45,13 +45,6 @@ $(document).on "click", ".dropdown-toggle", (event) ->
 $(document).on 'turbolinks:load', (event) ->
   return unless $("html").hasClass("touchevents")
 
-  # On large screens, follow the dropdown link when the dropdown hides
-  #
-  # @NOTE: Disabling this for now until we figure out if we want it
-  # $(".dropdown-toggle").on "click", (event) ->
-  #   if $(event.currentTarget).closest(".dropdown").hasClass("show")
-  #     visitRootDropdown $(event.currentTarget).closest(".dropdown")
-
   # On small screens, trigger click-through on first click
   $(".dropdown").on "show.bs.dropdown", (event) ->
     dropdown = $(event.currentTarget).closest(".dropdown")

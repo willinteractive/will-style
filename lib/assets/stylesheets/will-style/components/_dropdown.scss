@@ -53,8 +53,9 @@
 		outline: none !important;
 
 		&:after {
-			content: "+";
-
+			content: "\00D7";
+			transform: rotate(-45deg);
+			line-height: 0.5;
 			border: none;
 
 			vertical-align: 0;
@@ -98,7 +99,6 @@
 			.dropdown-item {
 				background-color: transparent !important;
 
-				padding-left: 0;
 				padding-right: 0;
 
 				transform: translate3d(0, 0, 0);
@@ -120,10 +120,10 @@
 
 @keyframes rotate-dropdown-toggle {
 	0% {
-		transform: rotate(0);
+		transform: rotate(-45deg);
 	}
 
 	100% {
-		transform: rotate(-675deg);
+		transform: rotate(-360deg);
 	}
 }

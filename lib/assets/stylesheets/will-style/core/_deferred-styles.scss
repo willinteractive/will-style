@@ -5,3 +5,11 @@
 body {
 	display: block !important;
 }
+
+html.no-touchevents .touch-only {
+	display: none !important;
+}
+
+html.touchevents .mouse-only {
+	display: none !important;
+}
