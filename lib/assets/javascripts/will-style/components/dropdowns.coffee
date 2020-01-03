@@ -34,18 +34,23 @@ $(document).on "mouseleave", ".dropdown-toggle, .dropdown-menu", (event) ->
 # Allow togglers to be links to things
 
 # Mouse-Based
+
 $(document).on "click", ".dropdown-toggle", (event) ->
   return if $("html").hasClass("touchevents")
 
   visitRootDropdown $(event.currentTarget).closest(".dropdown")
 
 # Touch-Based
+
 $(document).on 'turbolinks:load', (event) ->
   return unless $("html").hasClass("touchevents")
 
-  $(".dropdown-toggle").on "click", (event) ->
-    if $(event.currentTarget).closest(".dropdown").hasClass("show")
-      visitRootDropdown $(event.currentTarget).closest(".dropdown")
+  # On large screens, follow the dropdown link when the dropdown hides
+  #
+  # @NOTE: Disabling this for now until we figure out if we want it
+  # $(".dropdown-toggle").on "click", (event) ->
+  #   if $(event.currentTarget).closest(".dropdown").hasClass("show")
+  #     visitRootDropdown $(event.currentTarget).closest(".dropdown")
 
   # On small screens, trigger click-through on first click
   $(".dropdown").on "show.bs.dropdown", (event) ->
