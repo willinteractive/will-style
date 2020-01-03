@@ -155,10 +155,7 @@ nav.navbar {
 				opacity: 0;
 
 				.nav-link {
-					// Only increase font-size on portrait – there isn't enough room on phones in landscape
-					@media (orientation: portrait) {
-						@include scale-font-size(2rem);
-					}
+					@include scale-font-size($lead-font-size * 1.25, $global-scale-factor);
 				}
 			}
 
@@ -196,8 +193,8 @@ nav.navbar {
 					transform: translate3d(0, 0, 0);
 					opacity: 1;
 
-					transition: transform 0.2s $animation-timing-function,
-								opacity 0.2s $animation-timing-function;
+					transition: transform $animation-duration / 2 $animation-timing-function,
+								opacity $animation-duration / 2 $animation-timing-function;
 				}
 			}
 		}
