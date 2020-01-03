@@ -36,3 +36,49 @@
 		right: $offset-right;
 	}
 }
+
+// @NOTE: Phones do weird things with 100vh.
+// This fixes it without having to do weird position: fixed stuff.
+
+@mixin stretch {
+	min-height: 100vh;
+
+	html.touchevents & {
+		min-height: stretch;
+		min-height: -webkit-fill-available;
+		min-height: -moz-available;
+	}
+}
+
+@mixin stretch {
+	min-height: 100vh;
+
+	html.touchevents & {
+		min-height: stretch;
+		min-height: -webkit-fill-available;
+		min-height: -moz-available;
+	}
+}
+
+@mixin stretch-max {
+	max-height: 100vh;
+
+	html.touchevents & {
+		max-height: stretch;
+		max-height: -webkit-fill-available;
+		max-height: -moz-available;
+	}
+}
+
+@mixin iphone-notch-padding-left {
+	padding-left: env(safe-area-inset-left);
+}
+
+@mixin iphone-notch-padding-right {
+	padding-right: env(safe-area-inset-right);
+}
+
+@mixin iphone-notch-padding {
+	@include iphone-notch-padding-left;
+	@include iphone-notch-padding-right;
+}
