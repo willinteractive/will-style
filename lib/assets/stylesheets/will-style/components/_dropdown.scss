@@ -72,7 +72,7 @@
 	// Always show dropdowns on small screens
 	@include media-breakpoint-down(md) {
 		.dropdown-toggle:after {
-			content: none;
+			content: none !important;
 		}
 
 		.navbar-dark &.show {
