@@ -55,6 +55,8 @@
 		&:after {
 			content: "\00D7";
 			transform: rotate(-45deg);
+			transform-origin: center;
+
 			line-height: 0.5;
 			border: none;
 
@@ -63,7 +65,7 @@
 	}
 
 	html.touchevents &.show .dropdown-toggle:after {
-		animation: rotate-dropdown-toggle $animation-duration $animation-timing-function forwards;
+		animation: rotate-dropdown-toggle $animation-duration / 2 $animation-timing-function forwards;
 	}
 
 	html.no-touchevents & .dropdown-toggle:after {
