@@ -24,14 +24,11 @@
 			transform: translate3d(-5px, -5px, 0);
 			opacity: 0;
 
+			padding-left: 0.75rem;
+			padding-right: 0.75rem;
+
 			transition: transform $animation-duration / 2 $animation-timing-function,
 						opacity $animation-duration / 2 $animation-timing-function;
-		}
-
-		@for $i from 1 through 5 {
-			.dropdown-item:nth-of-type(#{$i}) {
-				transition-delay: #{($i - 1) * 0.1}s;
-			}
 		}
 
 		&.show {
@@ -45,6 +42,12 @@
 			.dropdown-item {
 				transform: translate3d(0, 0, 0);
 				opacity: 1;
+			}
+
+			@for $i from 1 through 5 {
+				.dropdown-item:nth-of-type(#{$i}) {
+					transition-delay: #{($i - 1) * 0.1}s;
+				}
 			}
 		}
 	}
@@ -101,6 +104,7 @@
 			.dropdown-item {
 				background-color: transparent !important;
 
+				padding-left: 1.5rem;
 				padding-right: 0;
 
 				transform: translate3d(0, 0, 0);
