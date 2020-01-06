@@ -124,12 +124,28 @@
 		}
 	}
 
-
+	// @TODO: Clean this up;
 	&.shadowed {
 		box-shadow: none !important;
 
+		label {
+			@include text-shadow-z2;
+		}
+
+		&:after {
+			@include shadow-z2;
+		}
+
 		&.focus,
 		&.entered {
+			label {
+				text-shadow: none !important;
+			}
+
+			&:after {
+				box-shadow: none !important;
+			}
+
 			box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
 				0 2px 5px 0 rgba(0, 0, 0, 0.23) !important;
 		}
