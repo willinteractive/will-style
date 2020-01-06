@@ -2,10 +2,19 @@
 // Hero
 //
 
+$hero-visible-height: 100vh !default;
+
 .hero {
 
-	// Allow Hero BGs to bleed through
-	position: relative;
+	// Affix heros to the window
+	position: fixed;
+
+	top: 0;
+	left: 0;
+
+	height: 100vh;
+	width: 100vw;
+
 	z-index: 0;
 
 	&.wrap-exposed {
@@ -27,6 +36,12 @@
 		background-size: 50% auto;
 		background-position: center;
 		background-repeat: no-repeat;
+	}
+
+	&.light {
+		.image-bg.patterned-bg.loaded:before {
+			opacity: 0.67;
+		}
 	}
 
 	.arrow-wrap {
@@ -62,4 +77,10 @@
 			}
 		}
 	}
+}
+
+// Add a little shadow to the top of each section after the hero
+
+.hero + main {
+	margin-top: $hero-visible-height;
 }

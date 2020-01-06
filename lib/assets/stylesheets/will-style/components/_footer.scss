@@ -3,63 +3,34 @@
 //
 
 $footer-height: 55px !default;
-
-.wrap {
-	min-height: calc(100vh + #{$footer-height});
-
-	display: flex;
-	flex-direction: column;
-
-	margin-bottom: 0 - $footer-height;
-	padding-bottom: $footer-height;
-
-	main {
-		flex-grow: 1;
-	}
-}
-
-
-// Adding exposed footer wrap
-.wrap-exposed {
-	min-height: 100vh;
-
-	display: flex;
-	flex-direction: column;
-
-	margin-bottom: 0 - $footer-height;
-	padding-bottom: $footer-height;
-
-	z-index: 1;
-
-	pointer-events: none;
-
-	main,
-	.main {
-		flex-grow: 1;
-		z-index: 1;
-
-		pointer-events: all;
-	}
-
-	// @IE11: This fixes full height items on IE11 that use .align-items-center
-	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-		height: calc(100% - #{$footer-height});
-	}
-}
+$small-footer-height: 55px !default;
 
 footer {
-	position: fixed;
-	bottom: 0;
+	position: relative;
+
+	padding-top: $navbar-height * 2;
+	@include media-breakpoint-up(md) {
+		padding-top: 0;
+	}
 
 	// @NOTE: This prevents 1px overscrolls when the page isn't 100vh by default
 	overflow: hidden;
 
-	height: $footer-height;
-	max-height: $footer-height;
+	height: auto;
+	min-height: $footer-height;
 
 	margin-bottom: 0;
 
 	p {
 		margin: 0px;
 	}
+
+	.margin-after {
+		margin-bottom: 1rem;
+	}
+}
+
+footer.small {
+	min-height: $small-footer-height;
+	padding-top: 0;
 }

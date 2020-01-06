@@ -1,0 +1,7 @@
+//
+// Underlined Elements
+//
+
+.underlined {
+	@include underlined-element();
+}

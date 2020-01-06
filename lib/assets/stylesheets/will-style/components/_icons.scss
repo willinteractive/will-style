@@ -1,13 +1,15 @@
+//
 // Testimonial Icons
+//
 
 svg.testimonial-icon {
 	max-width: 100%;
 
 	path {
-		fill: $body-color;
+		fill: $dark;
 	}
 
 	&.light path {
-		fill: $will-white;
+		fill: $white;
 	}
 }

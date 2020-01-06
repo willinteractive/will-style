@@ -57,3 +57,9 @@ label.form-label {
 	@include scale-property(font-size, $font-size-base * 0.75);
 	display: block;
 }
+
+// Don't allow clicking on disabled form elements
+
+input[type="submit"].disabled {
+	pointer-events: none;
+}

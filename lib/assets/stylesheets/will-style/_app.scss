@@ -4,6 +4,11 @@
 	"font-awesome",
 	"bootstrap/code";
 
+// Core
+
+@import
+	"will-style/app/colors";
+
 // Elements
 
 @import
@@ -53,7 +58,8 @@
 @import
 	"will-style/components/hideable-sidebar",
 	"will-style/components/search",
-	"will-style/components/icons";
+	"will-style/components/icons",
+	"will-style/components/rotating-headlines";
 
 // Libraries
 
