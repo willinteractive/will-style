@@ -18,7 +18,9 @@
 
 	border: none;
 
-	transition: background-color $animation-time $animation-timing-function;
+	transition: background-color $animation-time $animation-timing-function,
+				box-shadow $animation-time $animation-timing-function;
+
 	background-color: transparent;
 
 	input,
@@ -119,6 +121,17 @@
 			label {
 				color: $will-light-gray !important;
 			}
+		}
+	}
+
+
+	&.shadowed {
+		box-shadow: none !important;
+
+		&.focus,
+		&.entered {
+			box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+				0 2px 5px 0 rgba(0, 0, 0, 0.23) !important;
 		}
 	}
 }

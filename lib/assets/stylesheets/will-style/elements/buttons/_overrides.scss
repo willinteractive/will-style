@@ -20,7 +20,8 @@ button {
 .button-container {
 	position: relative;
 
-	transition: opacity $animation-duration $animation-timing-function;
+	transition: opacity $animation-duration $animation-timing-function,
+				box-shadow $animation-duration / 2 $animation-duration * 2.25 $animation-timing-function;
 
 	&.inline {
 		display: inline-block;
@@ -255,6 +256,11 @@ button {
 			@include hover-focus {
 				@include text-shadow-z0;
 			}
+		}
+
+		&.disabled {
+			@include shadow-z0;
+			transition: none;
 		}
 	}
 }

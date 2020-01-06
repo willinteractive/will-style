@@ -10,7 +10,7 @@ footer {
 
 	padding-top: $navbar-height * 2;
 	@include media-breakpoint-up(md) {
-		padding-top: 0;
+		padding-top: $navbar-height;
 	}
 
 	// @NOTE: This prevents 1px overscrolls when the page isn't 100vh by default
