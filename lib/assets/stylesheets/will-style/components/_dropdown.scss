@@ -50,6 +50,10 @@
 				opacity: 1;
 			}
 
+			.dropdown-item:nth-of-type(1) {
+				animation: clear-dropdown-hover $animation-duration $animation-timing-function;
+			}
+
 			@for $i from 1 through 5 {
 				.dropdown-item:nth-of-type(#{$i}) {
 					transition-delay: #{($i - 1) * 0.1}s,
@@ -144,5 +148,15 @@
 
 	100% {
 		transform: rotate(-360deg);
+	}
+}
+
+@keyframes clear-dropdown-hover {
+	0% {
+		background-color: transparent;
+	}
+
+	100% {
+		background-color: transparent;
 	}
 }
