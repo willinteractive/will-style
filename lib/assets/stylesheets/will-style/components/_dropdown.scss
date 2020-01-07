@@ -28,7 +28,9 @@
 			padding-right: 0.75rem;
 
 			transition: transform $animation-duration / 2 $animation-timing-function,
-						opacity $animation-duration / 2 $animation-timing-function;
+						opacity $animation-duration / 2 $animation-timing-function,
+						color $animation-duration / 2 $animation-timing-function,
+						background-color $animation-duration / 2 $animation-timing-function;
 		}
 
 		&.show {
@@ -46,7 +48,10 @@
 
 			@for $i from 1 through 5 {
 				.dropdown-item:nth-of-type(#{$i}) {
-					transition-delay: #{($i - 1) * 0.1}s;
+					transition-delay: #{($i - 1) * 0.1}s,
+									  #{($i - 1) * 0.1}s,
+									  0s,
+									  0s;
 				}
 			}
 		}
