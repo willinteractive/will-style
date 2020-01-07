@@ -124,30 +124,30 @@
 		}
 	}
 
-	// @TODO: Clean this up;
 	&.shadowed {
-		box-shadow: none !important;
+		box-shadow: none;
 
-		label {
-			@include text-shadow-z2;
+		label,
+		.will-icon-down_arrow {
+			@include text-shadow($shadow-weight);
 		}
 
 		&:after {
-			@include shadow-z2;
+			@include shadow($shadow-weight);
 		}
 
 		&.focus,
 		&.entered {
-			label {
-				text-shadow: none !important;
+			label,
+			.will-icon-down_arrow {
+				text-shadow: none;
 			}
 
 			&:after {
-				box-shadow: none !important;
+				box-shadow: none;
 			}
 
-			box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
-				0 2px 5px 0 rgba(0, 0, 0, 0.23) !important;
+			@include shadow($shadow-weight);
 		}
 	}
 }
