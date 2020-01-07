@@ -130,6 +130,10 @@
 		label,
 		.will-icon-down_arrow {
 			@include text-shadow($shadow-weight);
+
+			transition: color $animation-time $animation-timing-function,
+						font-size $animation-time $animation-timing-function,
+						text-shadow $animation-time $animation-timing-function;
 		}
 
 		&:after {
