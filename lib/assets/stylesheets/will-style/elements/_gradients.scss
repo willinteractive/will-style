@@ -74,4 +74,5 @@
 
 .text-gradient-will {
 	@include will-theme-text-gradient;
+	text-shadow: none !important;
 }

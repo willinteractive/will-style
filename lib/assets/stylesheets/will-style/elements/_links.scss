@@ -35,6 +35,10 @@ button.animated {
 					background-color $animation-duration $animation-timing-function;
 	}
 
+	&.text-shadowed:after {
+		@include shadow($shadow-weight);
+	}
+
 	@include hover-focus {
 		&:after {
 			background-color: $link-hover-color;
