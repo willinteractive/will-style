@@ -65,6 +65,10 @@
 
 			vertical-align: 0;
 		}
+
+		&.text-shadowed:after {
+			@include text-shadow($shadow-weight);
+		}
 	}
 
 	html.touchevents &.show .dropdown-toggle:after {
