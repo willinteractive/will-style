@@ -20,8 +20,7 @@ visitRootDropdown = (dropdown) ->
   link = dropdown.find(".dropdown-toggle").attr("href")
 
   if link and link isnt "" and link isnt "#"
-    console.log link
-    window.location.href = link
+    Turbolinks.visit link
 
 $(document).on "mouseenter focusin", ".dropdown-toggle, .dropdown-menu", (event) ->
   highlightDropdown $(event.currentTarget).closest(".dropdown")

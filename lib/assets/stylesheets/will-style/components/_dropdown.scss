@@ -3,6 +3,10 @@
 //
 
 .dropdown {
+	.dropdown-toggle {
+		cursor: pointer;
+	}
+
 	.dropdown-menu {
 		// @NOTE: Ensure that there's no space between dropdown link and dropdown to prevent hover issues
 		margin-top: 0 !important;
