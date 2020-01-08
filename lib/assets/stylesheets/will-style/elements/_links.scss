@@ -15,7 +15,9 @@ a.animated,
 button.animated {
 	position: relative;
 
-	&:after {
+	z-index: 2;
+
+	&:before {
 		content: "";
 		position: absolute;
 
@@ -29,24 +31,26 @@ button.animated {
 
 		background-color: $link-color;
 
+		z-index: -1;
+
 		transform: scaleX(0);
 		transform-origin: left center;
 		transition: transform $animation-duration $animation-timing-function,
 					background-color $animation-duration $animation-timing-function;
 	}
 
-	&.text-shadowed:after {
+	&.text-shadowed:before {
 		@include shadow($shadow-weight);
 	}
 
 	@include hover-focus {
-		&:after {
+		&:before {
 			background-color: $link-hover-color;
 			transform: scaleX(1);
 		}
 	}
 
-	&.text-danger:after {
+	&.text-danger:before {
 		background-color: $danger !important;
 	}
 }
