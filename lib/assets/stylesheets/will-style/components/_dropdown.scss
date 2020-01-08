@@ -18,11 +18,15 @@
 
 		@include image-shadow;
 
-		opacity: 0;
-		transform: translateX(200vw);
+		@include hardware-accelerate($force: true);
 
-		transition: opacity $animation-duration / 2 $animation-timing-function,
-					transform 0s $animation-duration;
+		opacity: 0;
+		transform: scale3d(1, 0, 1);
+
+		transform-origin: center top;
+
+		transition: opacity 0s $animation-timing-function,
+					transform $animation-duration / 2 $animation-timing-function;
 
 		.dropdown-item {
 			transform: translate3d(-5px, -5px, 0);
@@ -41,9 +45,7 @@
 			pointer-events: auto;
 
 			opacity: 1;
-			transform: translateX(0);
-
-			transition-delay: 0;
+			transform: scale3d(1, 1, 1);
 
 			.dropdown-item {
 				transform: translate3d(0, 0, 0);
