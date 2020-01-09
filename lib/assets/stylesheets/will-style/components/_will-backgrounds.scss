@@ -38,6 +38,7 @@
 		background-repeat: no-repeat;
 		background-position: center;
 
+		@include shadow-filter;
 		animation: animate-will-bg-light 34s linear infinite;
 	}
 
@@ -62,6 +63,7 @@
 
 .will-bg-x-light:after {
 	background-image: will-style-bg-url("patterns/bg-will-x-shadowed.svg");
+	@include shadow-filter-light;
 }
 
 .will-bg-x-dark {

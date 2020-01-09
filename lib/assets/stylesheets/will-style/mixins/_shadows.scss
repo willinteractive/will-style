@@ -149,3 +149,11 @@
 @mixin image-shadow-filter {
   filter: drop-shadow(0 0 15px rgba(black, 0.75));
 }
+
+@mixin shadow-filter {
+  filter: drop-shadow(0 0 5px rgba(black, 0.75));
+}
+
+@mixin shadow-filter-light {
+  filter: drop-shadow(0 0 5px rgba(black, 0.25));
+}
