@@ -23,7 +23,6 @@
 #= require will-style/components/pop-out
 #= require will-style/components/hero
 #= require will-style/components/modals
-#= require will-style/components/carousel
 
 # -------- FEATURES
 #= require will-style/features/browser-detection
