@@ -1,0 +1,56 @@
+.selector-wrap {
+	[data-selector-link] {
+		height: 24px;
+		position: relative;
+
+		cursor: pointer;
+
+		border: none;
+		background: none;
+
+		&:before,
+		&:after {
+			content: "";
+			position: absolute;
+			top: 11px;
+			bottom: 11px;
+			height: 2px;
+			left: 2px;
+			right: 2px;
+		}
+
+		&:before {
+			background-color: $will-bg-lighter;
+		}
+
+		&:after {
+			background-color: $body-color;
+
+			transition: transform $animation-duration $animation-timing-function;
+			transform-origin: right center;
+			transform: scaleX(0);
+		}
+
+		&.active:after {
+			transform: scaleX(1);
+			transform-origin: left center;
+		}
+
+		&.text-light {
+			&:before {
+				background-color: $will-bg-dark;
+			}
+
+			&:after {
+				background-color: $light;
+			}
+		}
+	}
+
+
+	[data-selector-item] {
+		&:not(.active) {
+			display: none;
+		}
+	}
+}

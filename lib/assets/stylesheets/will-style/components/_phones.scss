@@ -1,0 +1,36 @@
+.phone-container {
+	@include media-breakpoint-up(md) {
+		&.rotated-forward img {
+			transform: rotate(20deg);
+		}
+
+		&.rotated-backward img {
+			transform: rotate(-20deg);
+			transform-origin: left bottom;
+		}
+	}
+
+	@include animated-element-init {
+		opacity: 0;
+
+		&.rotated-forward {
+			transform: translateY(-15%) rotate(10deg);
+		}
+
+		&.rotated-backward {
+			transform: translateY(-15%) rotate(-10deg);
+		}
+
+		transition: opacity 0.7s,
+					transform 0.7s;
+	}
+
+	@include animated-element-active {
+		opacity: 1;
+
+		&.rotated-forward,
+		&.rotated-backward {
+			transform: translateY(0) rotate(0deg);
+		}
+	}
+}
