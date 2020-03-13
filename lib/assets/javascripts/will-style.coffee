@@ -24,8 +24,6 @@
 #= require will-style/components/hero
 #= require will-style/components/modals
 #= require will-style/components/carousel
-#= require will-style/components/rotating-computer
-#= require will-style/components/testimonials
 
 # -------- FEATURES
 #= require will-style/features/browser-detection
