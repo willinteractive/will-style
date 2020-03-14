@@ -39,7 +39,7 @@
 		background-position: center;
 
 		@include shadow-filter;
-		animation: animate-will-bg-light 34s linear infinite;
+		// animation: animate-will-bg-light 34s linear infinite;
 	}
 
 	// @NOTE: Interner Explorer hates our animated backgrounds.
