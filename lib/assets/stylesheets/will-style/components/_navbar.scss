@@ -8,12 +8,7 @@ nav.navbar {
 	&:before,
 	&:after {
 		opacity: 0;
-
-		transition: opacity 0.2s $animation-timing-function;
 	}
-
-	// Obscuring scrolling content
-	transition: box-shadow 0.2s $animation-timing-function,;
 
 	&.obscure {
 		&.obscure {
