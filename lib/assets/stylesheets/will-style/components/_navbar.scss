@@ -16,15 +16,19 @@ nav.navbar {
 	transition: box-shadow 0.2s $animation-timing-function,;
 
 	&.obscure {
-		&:before {
-			opacity: 1;
-		}
+		&.obscure {
+			backdrop-filter: saturate(180%) blur(20px);
 
-		&:after {
-			opacity: $patterned-background-opacity;
-		}
+			&:before {
+				opacity: 0.75;
+			}
 
-		@include shadow-bottom();
+			&:after {
+				opacity: $patterned-background-opacity;
+			}
+
+			@include shadow-bottom();
+		}
 	}
 
 	// Styling Navbar links
