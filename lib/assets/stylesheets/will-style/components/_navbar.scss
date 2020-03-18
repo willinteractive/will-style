@@ -297,6 +297,10 @@ nav.navbar {
 			}
 		}
 	}
+
+	&.navbar-permanent {
+		z-index: $navbar-z-index + 10 !important;
+	}
 }
 
 // Navbar positioning on small screens
