@@ -261,6 +261,17 @@ nav.navbar {
 
 		min-width: #{($nav-link-padding-y * 2 + $font-size-base * $line-height-base) * $will-logo-aspect-ratio};
 
+		// Double logo size when we have the contact navbar
+		&.contact {
+			@include media-breakpoint-up(lg) {
+				min-width: #{($nav-link-padding-y + $font-size-base * 2 * $line-height-base) * $will-logo-aspect-ratio};
+
+				svg {
+					max-width: #{($nav-link-padding-y + $font-size-base * 2 * $line-height-base) * $will-logo-aspect-ratio};
+				}
+			}
+		}
+
 		// Making sure brand fits on small small screens
 		@include media-breakpoint-down(xs) {
 			margin-right: 0;
