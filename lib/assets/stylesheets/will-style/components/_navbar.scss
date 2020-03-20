@@ -220,6 +220,8 @@ nav.navbar {
 	// Ensure Navbar Logo is big enough for logo to be by itself
 
 	a.navbar-brand {
+		font-size: 0 !important;
+
 		-webkit-user-select: none;
 
 		color: $navbar-dark-color;
@@ -227,7 +229,7 @@ nav.navbar {
 
 		// Ensure WILL Logo isn't huge on firefox
 		svg {
-			max-width: #{($nav-link-padding-y * 2 + $font-size-base * $line-height-base) * $will-logo-aspect-ratio};
+			height: #{($nav-link-padding-y * 2 + $font-size-base * $line-height-base)};
 			overflow: visible;
 		}
 
@@ -235,7 +237,7 @@ nav.navbar {
 			line-height: 0;
 
 			svg {
-				width: #{$navbar-height / 2.5 *  $will-logo-aspect-ratio};
+				// width: #{$navbar-height / 2.5 *  $will-logo-aspect-ratio};
 				height: $navbar-height / 2.5;
 			}
 
@@ -247,35 +249,10 @@ nav.navbar {
 			}
 		}
 
-		// @IE11: IE11 hates sizing our logo correctly
-		@include ie11-styles {
-			svg {
-				max-height: 40px;
-			}
-		}
-
-		min-width: #{($nav-link-padding-y * 2 + $font-size-base * $line-height-base) * $will-logo-aspect-ratio};
-
-		// Double logo size when we have the contact navbar
+		// Double logo size when we have the contact navbar?
 		&.contact {
 			@include media-breakpoint-up(lg) {
-				min-width: #{($nav-link-padding-y + $font-size-base * 2 * $line-height-base) * $will-logo-aspect-ratio};
-
-				svg {
-					max-width: #{($nav-link-padding-y + $font-size-base * 2 * $line-height-base) * $will-logo-aspect-ratio};
-				}
-			}
-		}
-
-		// Making sure brand fits on small small screens
-		@include media-breakpoint-down(xs) {
-			margin-right: 0;
-
-			min-width: #{($nav-link-padding-y + $font-size-base * $line-height-base) * $will-logo-aspect-ratio};
-			max-width: #{($nav-link-padding-y + $font-size-base * $line-height-base) * $will-logo-aspect-ratio};
-
-			svg {
-				max-width: #{($nav-link-padding-y + $font-size-base * $line-height-base) * $will-logo-aspect-ratio};
+				height: #{($nav-link-padding-y * 2 + $font-size-base * 2 * $line-height-base)};
 			}
 		}
 	}
@@ -302,6 +279,103 @@ nav.navbar {
 				opacity: 1 !important;
 			}
 		}
+	}
+
+	// Breaking to a new row
+
+	.break {
+		flex-basis: 100%;
+		height: 0;
+	}
+
+	// Navbar Dropdowns
+
+	.dropdown {
+		&:before {
+			content: "";
+
+			position: absolute;
+			left: $navbar-nav-link-padding-x;
+			right: $navbar-nav-link-padding-x;
+			bottom: $nav-link-padding-y;
+			height: 2px;
+
+			z-index: -1;
+
+			background-color: $white;
+
+			transform: scaleX(0);
+			transform-origin: left center;
+
+			transition: transform $animation-duration $animation-timing-function;
+		}
+
+		@include media-breakpoint-up(lg) {
+			&.show:before {
+				transform: scaleX(1);
+			}
+		}
+	}
+
+	.navbar-dropdowns {
+		flex-grow: 1;
+		// @TODO: Add min-height;
+
+		.dropdown-menu {
+			position: relative !important;
+			top: 0 !important;
+			left: 0 !important;
+			width: 100% !important;
+			max-width: none !important;
+			height: auto !important;
+			margin-top: 0 !important;
+			border: none !important;
+			background-color: transparent !important;
+			box-shadow: none !important;
+
+			padding: 0 !important;
+
+			transition: none !important;
+			opacity: 1 !important;
+			transform: none !important;
+
+			.dropdown-item {
+				display: inline-block;
+				width: auto;
+				background-color: transparent !important;
+				@include scale-font-size($font-size-base, $global-scale-factor);
+
+				padding-top: 0;
+				padding-bottom: 0;
+
+				padding-left: $navbar-nav-link-padding-x;
+				padding-right: $navbar-nav-link-padding-x;
+
+				@include hover-focus {
+					color: $navbar-light-active-color !important;
+				}
+
+				opacity: 0;
+			}
+
+			&.show {
+				display: flex;
+
+				.dropdown-item {
+					animation: animate-element-opacity-in $animation-duration / 2 $animation-timing-function forwards;
+
+					@for $i from 2 through 5 {
+						&:nth-of-type(#{$i}) {
+							animation-delay: #{0.05 * ($i - 1)}s;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&.navbar-dark .navbar-dropdowns .dropdown-menu .dropdown-item {
+		color: $white;
 	}
 }
 

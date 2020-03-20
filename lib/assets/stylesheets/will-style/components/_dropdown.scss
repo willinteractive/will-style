@@ -5,6 +5,7 @@
 .dropdown {
 	.dropdown-toggle {
 		cursor: pointer;
+		outline: none !important;
 	}
 
 	.dropdown-menu {

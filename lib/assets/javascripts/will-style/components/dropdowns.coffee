@@ -2,51 +2,85 @@
 # Adding functionality to the bootstrap dropdowns
 #
 
-highlightDropdown = (dropdown) ->
-  return if $("html").hasClass("touchevents")
+currentDropdown = undefined
 
-  if dropdown
-    $(dropdown).addClass("show")
-    $(dropdown).find(".dropdown-menu").addClass("show")
+getDropdown = (dropdownToggle) ->
+  if $(dropdownToggle).closest(".dropdown").length > 0
+    $(dropdownToggle).closest(".dropdown")
+  else if $(dropdownToggle).closest(".dropdown-menu[aria-labelledby]").length > 0
+    $("##{$(dropdownToggle).closest(".dropdown-menu").attr('aria-labelledby')}").closest(".dropdown")
 
-hideDropdown = (dropdown) ->
-  return if $("html").hasClass("touchevents")
+getDropdownMenu = (dropdown) ->
+  if $(dropdown).find(".dropdown-menu").length > 0 and !$(dropdown).find(".dropdown-menu").hasClass("dropdown-small")
+    $(dropdown).find(".dropdown-menu")
+  else
+    $(".dropdown-menu[aria-labelledby='#{$(dropdown).find(".dropdown-toggle").attr("id")}']")
 
-  if dropdown
-    $(dropdown).removeClass("show")
-    $(dropdown).find(".dropdown-menu").removeClass("show")
+highlightDropdown = (dropdownToggle) ->
+  dropdown = getDropdown(dropdownToggle)
 
-visitRootDropdown = (dropdown) ->
-  link = dropdown.find(".dropdown-toggle").attr("href")
+  return unless dropdown.length > 0
 
-  if link and link isnt "" and link isnt "#"
-    Turbolinks.visit link
+  if currentDropdown and currentDropdown isnt dropdown[0]
+    currentDropdown = undefined
 
-$(document).on "mouseenter focusin", ".dropdown-toggle, .dropdown-menu", (event) ->
-  highlightDropdown $(event.currentTarget).closest(".dropdown")
+  # Clear all other dropdowns
+  $(".dropdown, .dropdown-menu").removeClass("show")
+
+  dropdown.addClass("show")
+  getDropdownMenu(dropdown).addClass("show") if getDropdownMenu(dropdown)
+
+  $(".dropdown-toggle").blur()
+
+hideDropdown = (dropdownToggle) ->
+  dropdown = getDropdown(dropdownToggle)
+
+  return unless dropdown.length > 0
+  return if currentDropdown
+
+  $(dropdownToggle).blur()
+
+  dropdown.removeClass("show")
+  getDropdownMenu(dropdown).removeClass("show") if getDropdownMenu(dropdown)
+
+toggleDropdown = (dropdownToggle) ->
+  dropdown = getDropdown(dropdownToggle)
+
+  return unless dropdown.length > 0
+
+  dropdownMenu = getDropdownMenu(dropdown)
+
+  if dropdownMenu.length > 0
+    if currentDropdown is dropdown[0]
+      hidDropdown = true
+      currentDropdown = undefined
+
+      hideDropdown(dropdownToggle)
+    else
+      currentDropdown = undefined
+
+      highlightDropdown(dropdownToggle)
+      currentDropdown = dropdown[0]
+
+$(document).on "mouseenter focusin", ".dropdown-toggle", (event) ->
+  toggleDropdown event.currentTarget
   return true
 
 $(document).on "mouseleave focusout", ".dropdown-toggle, .dropdown-menu", (event) ->
-  hideDropdown $(event.currentTarget).closest(".dropdown")
-  return true
+  return unless event and event.originalEvent and event.originalEvent.clientX and event.originalEvent.clientY
 
-# Allow togglers to be links to things
+  currentElement = $(document.elementFromPoint(event.originalEvent.clientX, event.originalEvent.clientY))
+
+  if currentElement.closest(".dropdown-menu").length is 0 and currentElement.closest(".dropdown").length is 0
+    hideDropdown event.currentTarget
+
+  return true
 
 # Mouse-Based
 
-$(document).on "click", ".dropdown-toggle", (event) ->
-  return if $("html").hasClass("touchevents")
-
-  visitRootDropdown $(event.currentTarget).closest(".dropdown")
-
-# Touch-Based
-
-$(document).on 'turbolinks:load', (event) ->
-  return unless $("html").hasClass("touchevents")
-
-  # On small screens, trigger click-through on first click
-  $(".dropdown").on "show.bs.dropdown", (event) ->
-    dropdown = $(event.currentTarget).closest(".dropdown")
-
-    if dropdown.closest(".navbar-collapse").hasClass("collapse show")
-      visitRootDropdown dropdown
+$(document).on window.WILLStyle.Settings.pageChangeEvent, (event) ->
+  $(".dropdown-toggle").on "click", (event) ->
+    toggleDropdown(event.currentTarget)
+    event.stopImmediatePropagation()
+    event.stopPropagation()
+    return false
