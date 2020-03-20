@@ -64,7 +64,7 @@ _generateID = ->
 
 _updateNavbarObscure = ->
   navbar = $(".navbar")
-  obscure = $("[data-navbar-obscure]")
+  obscure = $("[data-navbar-obscure], main")
 
   return unless obscure.length > 0 and navbar.length > 0
 

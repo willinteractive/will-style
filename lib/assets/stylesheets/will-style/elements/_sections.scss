@@ -1,5 +1,5 @@
 main {
-	z-index: $navbar-z-index + 1;
+	z-index: $navbar-z-index - 2;
 
 	// Ensure our animated heroes are overlayed correctly;
 	@extend .bg-dark;

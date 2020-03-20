@@ -303,10 +303,6 @@ nav.navbar {
 			}
 		}
 	}
-
-	&.navbar-permanent {
-		z-index: $navbar-z-index + 10 !important;
-	}
 }
 
 // Navbar positioning on small screens
@@ -315,6 +311,6 @@ body.navbar-active {
 	overflow: hidden;
 
 	nav.navbar {
-		z-index: $navbar-z-index + 10 !important;
+		z-index: $navbar-z-index + 1 !important;
 	}
 }
