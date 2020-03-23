@@ -290,7 +290,9 @@ nav.navbar {
 
 	// Navbar Dropdowns
 
-	.dropdown {
+	.dropdown .nav-link {
+		position: relative;
+
 		&:before {
 			content: "";
 
@@ -298,6 +300,7 @@ nav.navbar {
 			left: $navbar-nav-link-padding-x;
 			right: $navbar-nav-link-padding-x;
 			bottom: 0;
+
 			height: 2px;
 
 			z-index: -1;
@@ -309,11 +312,11 @@ nav.navbar {
 
 			transition: transform $animation-duration $animation-timing-function;
 		}
+	}
 
-		@include media-breakpoint-up(lg) {
-			&.show:before {
-				transform: scaleX(1);
-			}
+	@include media-breakpoint-up(lg) {
+		.dropdown.show .nav-link:before {
+			transform: scaleX(1);
 		}
 	}
 
