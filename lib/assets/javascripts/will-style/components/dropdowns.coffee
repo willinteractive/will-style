@@ -30,6 +30,8 @@ highlightDropdown = (dropdownToggle) ->
   dropdown.addClass("show")
   getDropdownMenu(dropdown).addClass("show") if getDropdownMenu(dropdown)
 
+  currentDropdown = dropdown[0]
+
   $(".dropdown-toggle").blur()
 
 hideDropdown = (dropdownToggle) ->
@@ -60,10 +62,9 @@ toggleDropdown = (dropdownToggle) ->
       currentDropdown = undefined
 
       highlightDropdown(dropdownToggle)
-      currentDropdown = dropdown[0]
 
 $(document).on "mouseenter focusin", ".dropdown-toggle", (event) ->
-  toggleDropdown event.currentTarget
+  highlightDropdown event.currentTarget
   return true
 
 $(document).on "mouseleave focusout", ".dropdown-toggle, .dropdown-menu", (event) ->
@@ -80,7 +81,8 @@ $(document).on "mouseleave focusout", ".dropdown-toggle, .dropdown-menu", (event
 
 $(document).on window.WILLStyle.Settings.pageChangeEvent, (event) ->
   $(".dropdown-toggle").on "click", (event) ->
-    toggleDropdown(event.currentTarget)
+    highlightDropdown(event.currentTarget)
+
     event.stopImmediatePropagation()
     event.stopPropagation()
     return false
