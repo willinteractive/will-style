@@ -3,6 +3,7 @@
 #
 
 currentDropdown = undefined
+viewedOnePage = false
 
 getDropdown = (dropdownToggle) ->
   if $(dropdownToggle).closest(".dropdown").length > 0
@@ -112,7 +113,10 @@ $(document).on window.WILLStyle.Settings.pageChangeEvent, (event) ->
         dropdownTarget = $("##{dropdownLabel}")
 
         if dropdownTarget
-          dropdownTarget.addClass("no-anim")
-          dropdownMenu.addClass("no-anim")
+          if viewedOnePage is true
+            dropdownTarget.addClass("no-anim")
+            dropdownMenu.addClass("no-anim")
 
           highlightDropdown dropdownTarget[0]
+
+  viewedOnePage = true
