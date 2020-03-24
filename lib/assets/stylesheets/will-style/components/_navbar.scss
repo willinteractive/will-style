@@ -330,6 +330,7 @@ nav.navbar {
 
 	.navbar-dropdowns {
 		flex-grow: 1;
+		padding-top: $nav-link-padding-y;
 
 		@include media-breakpoint-down(md) {
 			display: none !important;
