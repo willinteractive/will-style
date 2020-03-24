@@ -330,6 +330,10 @@ nav.navbar {
 	.navbar-dropdowns {
 		flex-grow: 1;
 
+		@include media-breakpoint-down(md) {
+			display: none !important;
+		}
+
 		@include scale-property(min-height, $font-size-base * $line-height-base, $global-scale-factor);
 
 		.dropdown-menu {
