@@ -318,6 +318,13 @@ nav.navbar {
 		.dropdown.show .nav-link:before {
 			transform: scaleX(1);
 		}
+
+		.dropdown.show .nav-link.no-anim {
+			&,
+			&:before {
+				transition: none !important;
+			}
+		}
 	}
 
 	.navbar-dropdowns {
@@ -355,7 +362,13 @@ nav.navbar {
 				padding-left: $navbar-nav-link-padding-x;
 				padding-right: $navbar-nav-link-padding-x;
 
+				outline: none;
+
 				@include hover-focus {
+					color: $navbar-light-active-color !important;
+				}
+
+				&.active {
 					color: $navbar-light-active-color !important;
 				}
 
@@ -373,6 +386,11 @@ nav.navbar {
 							animation-delay: #{0.05 * ($i - 1)}s;
 						}
 					}
+				}
+
+				&.no-anim .dropdown-item {
+					animation: none !important;
+					opacity: 1 !important;
 				}
 			}
 		}

@@ -63,7 +63,19 @@ toggleDropdown = (dropdownToggle) ->
 
       highlightDropdown(dropdownToggle)
 
+clearAnimationClasses = (dropdownToggle) ->
+  dropdown = getDropdown(dropdownToggle)
+
+  return unless dropdown.length > 0
+
+  dropdownMenu = getDropdownMenu(dropdown)
+
+  $(dropdownToggle).removeClass("no-anim")
+  dropdownMenu.removeClass("no-anim")
+
 $(document).on "mouseenter focusin", ".dropdown-toggle", (event) ->
+  clearAnimationClasses(event.currentTarget)
+
   highlightDropdown event.currentTarget
   return true
 
@@ -77,12 +89,30 @@ $(document).on "mouseleave focusout", ".dropdown-toggle, .dropdown-menu", (event
 
   return true
 
-# Mouse-Based
-
 $(document).on window.WILLStyle.Settings.pageChangeEvent, (event) ->
+
+  # Hold Dropdowns On Click
+
   $(".dropdown-toggle").on "click", (event) ->
     highlightDropdown(event.currentTarget)
 
     event.stopImmediatePropagation()
     event.stopPropagation()
     return false
+
+  # Highlight Active Dropdowns on Page Change
+
+  $(".dropdown-item.active").each ->
+    dropdownMenu = $(this).closest(".dropdown-menu")
+
+    if dropdownMenu
+      dropdownLabel = dropdownMenu.attr("aria-labelledby")
+
+      if dropdownLabel
+        dropdownTarget = $("##{dropdownLabel}")
+
+        if dropdownTarget
+          dropdownTarget.addClass("no-anim")
+          dropdownMenu.addClass("no-anim")
+
+          highlightDropdown dropdownTarget[0]
