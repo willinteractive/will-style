@@ -30,6 +30,7 @@ nav.navbar {
 
 	.nav-link {
 		-webkit-user-select: none;
+		outline: none;
 
 		transition: color 0.2s $animation-timing-function;
 	}
