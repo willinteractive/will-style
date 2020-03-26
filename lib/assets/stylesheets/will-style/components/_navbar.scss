@@ -38,7 +38,9 @@ nav.navbar {
 	// Navbar Toggler animation
 
 	.navbar-toggler {
-		position: relative;
+		position: absolute;
+		right: 0;
+		top: 0;
 
 		&:before,
 		&:after,
