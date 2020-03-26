@@ -261,8 +261,10 @@ nav.navbar {
 	// Thin navbar
 
 	&.navbar-small {
-		padding-top: 0;
-		padding-bottom: 0;
+		.navbar-nav {
+			padding-top: 0 !important;
+			padding-bottom: 0;
+		}
 
 		a.navbar-brand {
 			padding: 0;
