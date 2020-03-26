@@ -272,6 +272,10 @@ nav.navbar {
 			padding: 0;
 			min-width: 0;
 			margin-right: 0;
+
+			svg {
+				height: #{($nav-link-padding-y + $font-size-base * $line-height-base)};
+			}
 		}
 	}
 
