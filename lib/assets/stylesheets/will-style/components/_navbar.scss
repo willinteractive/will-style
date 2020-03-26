@@ -12,10 +12,16 @@ nav.navbar {
 
 	&.obscure {
 		&.obscure {
-			backdrop-filter: saturate(180%) blur(20px);
+			html.backdropfilter & {
+				backdrop-filter: saturate(180%) blur(20px);
 
-			&:before {
-				opacity: 0.75;
+				&:before {
+					opacity: 0.75;
+				}
+			}
+
+			html.no-backdropfilter &:before {
+				opacity: 0.95;
 			}
 
 			&:after {
