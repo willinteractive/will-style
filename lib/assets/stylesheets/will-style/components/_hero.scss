@@ -22,7 +22,12 @@ $hero-visible-height: 100vh !default;
 	}
 
 	.image-bg {
-		padding-top:	$navbar-height;
+		padding-top: $navbar-height;
+
+		@include media-breakpoint-up(lg) {
+			padding-top: $navbar-height * 1.5;
+		}
+
 		padding-bottom: $navbar-height;
 	}
 
