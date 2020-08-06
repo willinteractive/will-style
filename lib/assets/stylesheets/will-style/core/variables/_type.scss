@@ -26,11 +26,11 @@ $line-height-base:            1.4;
 $link-decoration:		none;
 $link-hover-decoration:	none;
 
-$will-sans-serif:		"Core Sans", "Open Sans", "San Francisco", "Calibri", Helvetica, sans-serif !default;
-$will-bold-sans-serif:	"Core Sans Bold", "Open Sans", "San Francisco", "Calibri", Helvetica, sans-serif !default;
+$will-sans-serif:		"Montserrat", "Open Sans", "San Francisco", Helvetica, sans-serif !default;
+$will-bold-sans-serif:	"Montserrat", "Open Sans", "San Francisco", Helvetica, sans-serif !default;
 
 $font-family-sans-serif:	$will-sans-serif !default;
-$headings-font-family:		$will-bold-sans-serif !default;
+$headings-font-family:		'Marcellus SC', serif !default;
 
 $will-government-serif:			"Times New Roman", Times New Roman;
 $will-government-sans-serif:	"Arial", Arial;
