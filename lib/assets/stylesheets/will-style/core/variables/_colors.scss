@@ -6,7 +6,7 @@ $font-weight-light: 	300;
 $font-weight-normal: 	400;
 $font-weight-bold: 		700;
 
-$will-white:		#F5F5F5;
+$will-white:		#FFFFFF;
 $will-black:		#000000;
 
 $will-teal:			#48BC97;
@@ -16,22 +16,29 @@ $will-logo-green:	#B1D899;
 $will-logo-teal:	#48BC97;
 
 $will-light-gray:	#696868;
-$will-dark-gray:	#2d2f2e;
+$will-dark-gray:	#2D2E2F;
 
 $will-action-red:		#FF4967;
+$will-action-orange:	#FF8F41;
 $will-action-yellow:	#FFD01E;
-$will-action-blue:		#5B9ACF;
-$will-action-green:		$will-teal;
-$will-action-gray:		#DADADA;
-$will-action-purple:	#8562a7;
+$will-action-green:		#A0C65D;
+$will-action-blue:		#2D7DD2;
 
-$will-accent-red:		#d82b35;
-$will-accent-orange: 	#df8235;
-$will-accent-yellow:	#e9b000;
-$will-accent-green:		$will-teal;
-$will-accent-blue:		#3a8bc2;
-$will-accent-purple:	#a9418c;
-$will-accent-magenta:	#e65288;
+$will-action-purple:	#6622CC;
+$will-action-violet:	#991BC9;
+$will-action-pink: 		#D93197;
+
+$will-action-gray:		#DADADA;
+
+$will-accent-red:		#FF6A55;
+$will-accent-orange:	#FFb12F;
+$will-accent-yellow:	#CFCB3E;
+$will-accent-green:		#73C17A;
+$will-accent-teal:		#3A9CB5;
+$will-accent-blue:		#4950CF;
+$will-accent-purple:	#7E1FCB;
+$will-accent-violet:	#B118C8;
+$will-accent-pink:		#EC3D7F;
 
 $will-bg-light: 	#d4d4d4;
 $will-bg-lighter:	#eaeaea;
@@ -50,9 +57,14 @@ $color-list: (
 	will-white:			$will-white,
 
 	will-action-red:	$will-action-red,
+	will-action-orange:	$will-action-orange,
 	will-action-yellow:	$will-action-yellow,
-	will-action-blue:	$will-action-blue,
 	will-action-green: 	$will-action-green,
+	will-action-blue:	$will-action-blue,
+	will-action-purple:	$will-action-purple,
+	will-action-violet:	$will-action-violet,
+	will-action-pink:	$will-action-pink,
+
 	will-action-gray:	$will-action-gray,
 
 	will-accent-red:		$will-accent-red,
@@ -61,7 +73,8 @@ $color-list: (
 	will-accent-green:		$will-accent-green,
 	will-accent-blue:		$will-accent-blue,
 	will-accent-purple:		$will-accent-purple,
-	will-accent-magenta:	$will-accent-magenta,
+	will-accent-violet:		$will-accent-violet,
+	will-accent-pink:		$will-accent-pink,
 
 	will-bg-light:		$will-bg-light,
 	will-bg-lighter:	$will-bg-lighter,
@@ -89,7 +102,7 @@ $gray-900: $will-dark-gray;
 $blue:    $will-accent-blue;
 $indigo:  $will-action-purple;
 $purple:  $will-accent-purple;
-$pink:    $will-accent-magenta;
+$pink:    $will-accent-pink;
 $red:     $will-accent-red;
 $orange:  $will-accent-orange;
 $yellow:  $will-accent-yellow;
