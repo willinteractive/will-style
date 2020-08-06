@@ -1,0 +1,18 @@
+//
+// Spannable Text
+//
+
+.spannable {
+	span {
+		display: inline-block;
+	}
+
+	&:not([data-spanned]) {
+		visibility: hidden;
+	}
+
+	&.spannable-wide,
+	&.spannable-wide p {
+		letter-spacing: 0.25em;
+	}
+}

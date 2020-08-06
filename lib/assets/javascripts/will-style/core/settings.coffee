@@ -1,7 +1,9 @@
 window.WILLStyle = {} unless window.WILLStyle
 
-return if window.WILLStyle.Settings
+# Set up some default settings for common tasks
+unless window.WILLStyle.Settings
+  window.WILLStyle.Settings =
+    pageChangeEvent: "turbolinks:load"
+    synchronousCSS: true
 
-window.WILLStyle.Settings =
-  pageChangeEvent: "turbolinks:load"
-  synchronousCSS: true
+window.WILLStyle.Settings.elementChangedEvent = "will-style:elementChanged"
