@@ -1,5 +1,5 @@
 $patterned-background-overlay-opacity: 0.8;
-$patterned-background-opacity: 0.02;
+$patterned-background-opacity: 0.05;
 
 @if $include-font-smoothing == true {
 	$patterned-background-overlay-opacity: 0.85;
@@ -33,7 +33,7 @@ $patterned-background-opacity: 0.02;
 	}
 
 	&:after {
-		background-image: will-style-bg-url("patterns/bg-pattern.jpg");
+		background-image: will-style-bg-url("patterns/bg-pattern.svg");
 		background-repeat: repeat;
 
 		opacity: $patterned-background-opacity;
@@ -75,7 +75,7 @@ $patterned-background-opacity: 0.02;
 
 		z-index: 0;
 
-		background-image: will-style-bg-url("patterns/bg-pattern.jpg");
+		background-image: will-style-bg-url("patterns/bg-pattern.svg");
 		background-repeat: repeat;
 
 		opacity: $patterned-background-opacity * 4;
