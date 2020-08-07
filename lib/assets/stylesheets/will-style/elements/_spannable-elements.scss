@@ -36,6 +36,8 @@
 		padding-left: 1rem;
 		line-height: 1;
 
+		margin-bottom: 0;
+
 		font-weight: bold;
 		@include scale-font-size($small-font-size, $global-scale-factor);
 	}
