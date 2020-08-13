@@ -38,8 +38,10 @@ $spannable-element-animation-distance: 25% !default;
 // Spannable Animations for Buttons and Links
 button.spannable,
 a.spannable {
-	@include hover-focus {
-		@include rotate-spannable-element();
+	&:not(.disabled) {
+		@include hover-focus {
+			@include rotate-spannable-element();
+		}
 	}
 }
 
