@@ -3,7 +3,6 @@
 #
 
 currentDropdown = undefined
-viewedOnePage = false
 
 getDropdown = (dropdownToggle) ->
   if $(dropdownToggle).closest(".dropdown").length > 0
@@ -17,7 +16,7 @@ getDropdownMenu = (dropdown) ->
   else
     $(".dropdown-menu[aria-labelledby='#{$(dropdown).find(".dropdown-toggle").attr("id")}']")
 
-highlightDropdown = (dropdownToggle) ->
+highlightDropdown = (dropdownToggle, permanently = false) ->
   dropdown = getDropdown(dropdownToggle)
 
   return unless dropdown.length > 0
@@ -27,13 +26,15 @@ highlightDropdown = (dropdownToggle) ->
 
   # Clear all other dropdowns
   $(".dropdown, .dropdown-menu").removeClass("show")
+  $(".dropdown-toggle").removeClass("active")
 
   dropdown.addClass("show")
   getDropdownMenu(dropdown).addClass("show") if getDropdownMenu(dropdown)
 
-  currentDropdown = dropdown[0]
+  if permanently is true
+    currentDropdown = dropdown[0]
 
-  $(".dropdown-toggle").blur()
+  # $(".dropdown-toggle").blur()
 
 hideDropdown = (dropdownToggle) ->
   dropdown = getDropdown(dropdownToggle)
@@ -43,26 +44,10 @@ hideDropdown = (dropdownToggle) ->
 
   $(dropdownToggle).blur()
 
+  currentDropdown = undefined
+
   dropdown.removeClass("show")
   getDropdownMenu(dropdown).removeClass("show") if getDropdownMenu(dropdown)
-
-toggleDropdown = (dropdownToggle) ->
-  dropdown = getDropdown(dropdownToggle)
-
-  return unless dropdown.length > 0
-
-  dropdownMenu = getDropdownMenu(dropdown)
-
-  if dropdownMenu.length > 0
-    if currentDropdown is dropdown[0]
-      hidDropdown = true
-      currentDropdown = undefined
-
-      hideDropdown(dropdownToggle)
-    else
-      currentDropdown = undefined
-
-      highlightDropdown(dropdownToggle)
 
 clearAnimationClasses = (dropdownToggle) ->
   dropdown = getDropdown(dropdownToggle)
@@ -95,7 +80,7 @@ $(document).on window.WILLStyle.Settings.pageChangeEvent, (event) ->
   # Hold Dropdowns On Click
 
   $(".dropdown-toggle").on "click", (event) ->
-    highlightDropdown(event.currentTarget)
+    highlightDropdown(event.currentTarget, true)
 
     event.stopImmediatePropagation()
     event.stopPropagation()
@@ -113,10 +98,4 @@ $(document).on window.WILLStyle.Settings.pageChangeEvent, (event) ->
         dropdownTarget = $("##{dropdownLabel}")
 
         if dropdownTarget
-          if viewedOnePage is true
-            dropdownTarget.addClass("no-anim")
-            dropdownMenu.addClass("no-anim")
-
-          highlightDropdown dropdownTarget[0]
-
-  viewedOnePage = true
+          dropdownTarget.addClass("active")
