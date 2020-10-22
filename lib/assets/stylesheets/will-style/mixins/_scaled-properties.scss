@@ -4,23 +4,39 @@
 
 $global-scale-factor: 0.2 !default;
 
-@mixin scale-property($property: 'font-size', $value: $font-size-base, $scale-factor: $global-scale-factor) {
+@mixin scale-property($property: 'font-size', $value: $font-size-base, $scale-factor: $global-scale-factor, $important: false) {
 	#{$property}: $value;
 
 	@include media-breakpoint-only(lg) {
-		#{$property}: $value + $value * $scale-factor;
+		@if $important == true {
+			#{$property}: $value + $value * $scale-factor !important;
+		} @else {
+			#{$property}: $value + $value * $scale-factor;
+		}
 	}
 
 	@include media-breakpoint-only(xl) {
-		#{$property}: $value + $value * $scale-factor * 2;
+		@if $important == true {
+			#{$property}: $value + $value * $scale-factor * 2 !important;
+		} @else {
+			#{$property}: $value + $value * $scale-factor * 2;
+		}
 	}
 
 	@include media-breakpoint-only(xxl) {
-		#{$property}: $value + $value * $scale-factor * 4;
+		@if $important == true {
+			#{$property}: $value + $value * $scale-factor * 4 !important;
+		} @else {
+			#{$property}: $value + $value * $scale-factor * 4;
+		}
 	}
 
 	@include media-breakpoint-up(xxxl) {
-		#{$property}: $value + $value * $scale-factor * 6;
+		@if $important == true {
+			#{$property}: $value + $value * $scale-factor * 6 !important;
+		} @else {
+			#{$property}: $value + $value * $scale-factor * 6;
+		}
 	}
 }
 
@@ -66,6 +82,6 @@ $global-scale-factor: 0.2 !default;
 
 // Shortcut to scale font-size property
 
-@mixin scale-font-size($size: $paragraph-font-size, $scale-factor: $global-scale-factor) {
-	@include scale-property('font-size', $size, $scale-factor);
+@mixin scale-font-size($size: $paragraph-font-size, $scale-factor: $global-scale-factor, $important: false) {
+	@include scale-property('font-size', $size, $scale-factor, $important);
 }
