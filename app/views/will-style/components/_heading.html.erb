@@ -6,7 +6,7 @@
 	<% shadowed = false %>
 <% end %>
 
-<% title_class = defined?(page_heading) && page_heading == true ? "display-1" : "display-4" %>
+<% title_class = defined?(page_heading) && page_heading == true ? "display-1" : "" %>
 <% title_class += invert_colors ? " text-light" : "" %>
 
 <% fixed_prop = defined?(page_heading) && page_heading == true ? "data-animated-fixed" : "" %>
@@ -22,10 +22,10 @@
 			<% end %>
 		</div>
 
-		<h1 class="title <%= title_class %> <%= shadowed ? "text-shadow" : "" %>"><%= raw title %></h1>
+		<h2 class="title <%= title_class %> <%= shadowed ? "text-shadow" : "" %>"><%= raw title %></h2>
 	</div>
 
 	<% if defined?(text) %>
-		<p class="text lead <%= invert_colors ? "text-light" : "" %> <%= shadowed ? "text-shadow" : "" %>" data-animated data-animated-target=".title-container" <%= delay_prop %>><%= raw text %></p>
+		<p class="text <%= invert_colors ? "text-light" : "" %> <%= shadowed ? "text-shadow" : "" %>" data-animated data-animated-target=".title-container" <%= delay_prop %>><%= raw text %></p>
 	<% end %>
 </div>

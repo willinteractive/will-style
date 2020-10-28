@@ -1,0 +1,44 @@
+//
+// Spannable Text
+//
+
+.spannable {
+	span {
+		display: inline-block;
+	}
+
+	&:not([data-spanned]) {
+		visibility: hidden;
+	}
+
+	&.spannable-wide,
+	&.spannable-wide p {
+		letter-spacing: 0.5em;
+	}
+}
+
+.spannable-wrap {
+	@include scale-property(margin-bottom, 0.5rem, $global-scale-factor);
+
+	display: flex;
+	align-items: flex-end;
+
+	img,
+	.spannable {
+		display: inline-block;
+	}
+
+	img {
+		@include scale-property(width, 5rem, $global-scale-factor);
+	}
+
+	.spannable {
+		padding-left: 1rem;
+		line-height: 1;
+
+		margin-bottom: 0;
+
+		font-weight: bold;
+		@include scale-font-size($small-font-size, $global-scale-factor);
+	}
+}

@@ -25,3 +25,9 @@
 		background-color: $color;
 	}
 }
+
+// Adding a black class for overriding color styles
+
+.text-black {
+	color: $will-black;
+}

@@ -33,6 +33,7 @@
 #= require will-style/features/focused-form-elements
 #= require will-style/features/outlined-buttons
 #= require will-style/features/hiding-default-link-titles
+#= require will-style/features/spannable-elements
 
 # -------- FORMS
 #= require will-style/forms/required-inputs
