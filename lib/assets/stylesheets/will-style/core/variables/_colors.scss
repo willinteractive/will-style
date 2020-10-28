@@ -21,7 +21,7 @@ $will-dark-gray:	#2D2F2E;
 $will-action-red:		#FF4967;
 $will-action-orange:	#FF8F41;
 $will-action-yellow:	#FFD01E;
-$will-action-green:		#A0C65D;
+$will-action-green:		$will-teal;
 $will-action-blue:		#2D7DD2;
 
 $will-action-purple:	#6622CC;
@@ -99,14 +99,14 @@ $gray-700: $will-light-gray;
 $gray-800: $will-bg-darker;
 $gray-900: $will-dark-gray;
 
-$blue:    $will-accent-blue;
+$blue:    $will-action-blue;
 $indigo:  $will-action-purple;
-$purple:  $will-accent-purple;
-$pink:    $will-accent-pink;
-$red:     $will-accent-red;
-$orange:  $will-accent-orange;
-$yellow:  $will-accent-yellow;
-$green:   $will-accent-green;
+$purple:  $will-action-purple;
+$pink:    $will-action-pink;
+$red:     $will-action-red;
+$orange:  $will-action-orange;
+$yellow:  $will-action-yellow;
+$green:   $will-action-green;
 $teal:    $will-teal;
 $cyan:    $will-green;
 
