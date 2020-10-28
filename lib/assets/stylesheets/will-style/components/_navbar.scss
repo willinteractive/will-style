@@ -257,13 +257,6 @@ nav.navbar {
 				transition: color $animation-duration / 2 $animation-timing-function;
 			}
 		}
-
-		// Double logo size when we have the contact navbar?
-		&:not(.two-line).contact {
-			svg {
-				height: #{($nav-link-padding-y * 2 + $font-size-base * 2 * $line-height-base)};
-			}
-		}
 	}
 
 	// Thin navbar
