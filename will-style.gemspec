@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "font-awesome-rails", "~> 4.7"
 
+  s.add_dependency "sassc", "~> 2.2.1"
   s.add_dependency "sassc-rails", "~> 2.0.0"
 
   s.add_dependency 'coffee-rails', "~> 4.2"
