@@ -107,7 +107,7 @@
 			background-color: $will-white;
 
 			.label-container {
-				@include scale-calc(bottom, 100%, 0 - $font-size-base - 0.25rem);
+				@include scale-calc(bottom, 100%, 0 - $small-font-size - 0.25rem);
 				opacity: 1;
 			}
 
