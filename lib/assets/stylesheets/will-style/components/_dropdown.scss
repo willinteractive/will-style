@@ -40,6 +40,8 @@
 						opacity $animation-duration / 2 $animation-timing-function,
 						color $animation-duration / 2 $animation-timing-function,
 						background-color $animation-duration / 2 $animation-timing-function;
+
+			outline: none !important;
 		}
 
 		&.show {
