@@ -17,13 +17,13 @@ $footer-height: 45px !default;
 }
 
 #main-footer {
-	background: $component-bg-color;
+	background: $oil;
 	height: $footer-height;
 	padding-top: 10px;
-	border-top: 1px solid $component-border-color;
 
 	p {
 		margin: 0px;
+		color: #fff !important;
 	}
 }
 
