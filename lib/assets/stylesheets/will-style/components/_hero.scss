@@ -56,7 +56,7 @@ $hero-visible-height: 100vh !default;
 		left: 0;
 		right: 0;
 
-		padding-bottom: 3rem;
+		padding-bottom: 2rem;
 
 		html.touchevents & {
 			@include media-breakpoint-down(sm) {
