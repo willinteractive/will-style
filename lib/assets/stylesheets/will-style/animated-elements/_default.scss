@@ -217,7 +217,7 @@
 @for $i from 1 through 100 {
 	@include animated-element-progressive-default {
 		@include animated-element-progressive-position($i) {
-			transform: translateY(#{0 - $i * 2}px);
+			transform: translateY(#{0 - $i * 1}px);
 		}
 	}
 }
