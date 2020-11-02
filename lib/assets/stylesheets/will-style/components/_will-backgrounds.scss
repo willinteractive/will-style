@@ -2,18 +2,7 @@
 // Interactive, WILL-themed backgrounds
 //
 
-// This is a floating will background that has a dark pattern underneath WILL triangles of varying size
-
-
-.will-bg-pattern-dark {
-	@include will-patterned-bg;
-}
-
-.will-bg-pattern-light {
-	@include will-patterned-bg($dark: false);
-}
-
-// This is a rotating will background that has a light pattern underneath an oversized arrow in white
+// This is a background that has a light pattern underneath an oversized arrow in white
 
 .will-bg-x-light,
 .will-bg-x-dark {
@@ -41,8 +30,6 @@
 		@include shadow-filter;
 	}
 
-	// @NOTE: Interner Explorer hates our animated backgrounds.
-	// 		  We should work to fix them.
 	@include ie-styles {
 		&:before,
 		&:after {
