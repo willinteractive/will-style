@@ -54,6 +54,68 @@
 	}
 }
 
+.form-btn {
+	outline: none;
+
+	background-color: rgba($white, 0.5);
+
+	border-radius: $border-radius;
+
+	border: 2px solid $body-color;
+	color: $body-color;
+
+	@include scale-font-size($lead-font-size, $global-scale-factor);
+
+	font-weight: bold;
+
+	padding: 0.5em 1.25em;
+
+	transition: opacity $animation-duration / 2 $animation-timing-function,
+				color $animation-duration / 2 $animation-timing-function,
+				background-color $animation-duration / 2 $animation-timing-function,
+				box-shadow $animation-duration / 2 $animation-timing-function,
+				text-shadow $animation-duration / 2 $animation-timing-function;
+
+	&.shadowed {
+		@include text-shadow($shadow-weight);
+		@include shadow($shadow-weight);
+	}
+
+	&[disabled] {
+		cursor: not-allowed;
+		opacity: 0.5;
+		background-color: transparent !important;
+
+		box-shadow: none;
+		text-shadow: none;
+	}
+
+	&:not([disabled]) {
+		backdrop-filter: blur(2px);
+
+		@include hover-focus {
+			@include text-shadow-z0;
+
+			background-color: $body-bg;
+			color: $white;
+		}
+	}
+
+	&.light {
+		border-color: $white;
+		color: $white;
+
+		&:not([disabled]) {
+			background-color: rgba($body-color, 0.5);
+
+			@include hover-focus {
+				background-color: $white;
+				color: $body-color;
+			}
+		}
+	}
+}
+
 label.form-label {
 	text-transform: uppercase;
 	@include scale-property(font-size, $font-size-base * 0.75);
