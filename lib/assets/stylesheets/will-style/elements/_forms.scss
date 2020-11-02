@@ -9,6 +9,8 @@
 	@include scale-property(padding, 0.25rem);
 	@include scale-property(padding-top, $font-size-base + 0.25rem);
 
+	border-radius: $border-radius;
+
 	.label-container {
 		position: absolute;
 
