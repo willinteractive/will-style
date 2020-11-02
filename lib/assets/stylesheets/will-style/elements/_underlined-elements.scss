@@ -4,4 +4,11 @@
 
 .underlined {
 	@include underlined-element();
+
+	&.text-shadow,
+	&.text-shadowed {
+		&:before {
+			@include shadow($shadow-weight);
+		}
+	}
 }

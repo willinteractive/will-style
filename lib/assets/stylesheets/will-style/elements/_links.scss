@@ -39,6 +39,7 @@ button.animated {
 					background-color $animation-duration $animation-timing-function;
 	}
 
+	&.text-shadow:before,
 	&.text-shadowed:before {
 		@include shadow($shadow-weight);
 	}
