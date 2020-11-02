@@ -125,3 +125,33 @@
 		}
 	}
 }
+
+html.clip-paths .will-line {
+	@include animated-element-init {
+		&:after {
+			clip-path: inset(0 100% 0 0);
+			transition: clip-path $animation-duration $animation-timing-function;
+		}
+	}
+
+	@include animated-element-active {
+		&:after {
+			clip-path: inset(0 0 0 0);
+		}
+	}
+}
+
+html.no-clip-paths .will-line {
+	@include animated-element-init {
+		&:after {
+			opacity: 0;
+			transition: opacity $animation-duration $animation-timing-function;
+		}
+	}
+
+	@include animated-element-active {
+		&:after {
+			opacity: 1;
+		}
+	}
+}
