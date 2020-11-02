@@ -1,0 +1,15 @@
+.container.narrow,
+.container-fluid.narrow {
+	padding-left: $grid-gutter-width / 4;
+	padding-right: $grid-gutter-width / 4;
+
+	.row {
+		margin-left: -$grid-gutter-width / 4;
+		margin-right: -$grid-gutter-width / 4;
+
+		[class*="col-"] {
+			padding-left: $grid-gutter-width / 4;
+			padding-right: $grid-gutter-width / 4;
+		}
+	}
+}
