@@ -5,6 +5,9 @@
 ::selection {
 	background: $body-color;
 	color: $body-bg;
+
+	text-shadow: none !important;
+	box-shadow: none !important;
 }
 
 .text-light {

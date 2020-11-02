@@ -39,6 +39,8 @@ nav.navbar {
 		outline: none;
 
 		transition: color 0.2s $animation-timing-function;
+
+		@include text-shadow($shadow-weight);
 	}
 
 	// Navbar Toggler animation
@@ -162,6 +164,10 @@ nav.navbar {
 				.nav-link {
 					@include scale-font-size($lead-font-size * 1.25, $global-scale-factor);
 				}
+
+				.dropdown-item {
+					@include text-shadow($shadow-weight);
+				}
 			}
 
 			&.collapsing,
@@ -257,6 +263,13 @@ nav.navbar {
 				margin-left: $navbar-height / 9;
 				margin-bottom: $navbar-height / 9;
 				transition: color $animation-duration / 2 $animation-timing-function;
+			}
+		}
+
+		// Include shadow if it's on everything else
+		@if $shadow-weight != 'z0' {
+			svg {
+				@include shadow-filter;
 			}
 		}
 	}

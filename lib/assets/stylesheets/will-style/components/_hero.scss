@@ -73,12 +73,31 @@ $hero-visible-height: 100vh !default;
 			fill: $will-white;
 
 			transition: transform $animation-duration $animation-timing-function;
+
+			// Include shadow if it's on everything else
+			@if $shadow-weight != 'z0' {
+				@include shadow-filter;
+			}
 		}
 
 		&:hover,
 		&:focus {
 			svg {
 				transform: translateY(25%);
+			}
+		}
+	}
+
+	// Adding shadows to hero titles
+	@if $shadow-weight != 'z0' {
+		.will-heading {
+			.subtitle,
+			.title {
+				@include text-shadow($shadow-weight);
+			}
+
+			.subtitle-line {
+				@include shadow($shadow-weight);
 			}
 		}
 	}
