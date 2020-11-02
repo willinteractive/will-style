@@ -4,17 +4,17 @@
 	 viewBox="0 0 400 400" style="enable-background:new 0 0 400 400;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:url(#SVGID_1_);}
-	.st1{fill:#F5F5F5;}
+	.st1{fill:#FFFFFF;}
 </style>
 <title>square-logos</title>
 <g id="gradient">
-	
+
 		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="60.8451" y1="441.6899" x2="339.6549" y2="-41.2199" gradientTransform="matrix(1 0 0 -1 0 400)">
 		<stop  offset="0" style="stop-color:#BFDD99"/>
 		<stop  offset="1" style="stop-color:#4BBD98"/>
 	</linearGradient>
 	<rect x="-3.5" y="-4.5" class="st0" width="407.5" height="408.6"/>
-	<polygon class="st1" points="124.3,166.2 114.5,206.9 107.1,180.9 85.2,180.8 78.5,207.6 67.7,166.2 47.2,166.2 63.1,236.9 
+	<polygon class="st1" points="124.3,166.2 114.5,206.9 107.1,180.9 85.2,180.8 78.5,207.6 67.7,166.2 47.2,166.2 63.1,236.9
 		87.6,236.9 96.5,207.1 104.4,236.9 129.1,236.9 144.9,166.2 	"/>
 	<polygon class="st1" points="182.1,166.2 182.1,236.9 228.5,236.9 228.5,217.1 202.6,217.1 202.6,166.2 	"/>
 	<polygon class="st1" points="237.3,166.2 237.3,236.9 283.3,236.9 283.3,217.1 257.9,217.1 257.9,166.2 	"/>
