@@ -76,10 +76,14 @@
   left: 0; }
 
 .select2-container--open .select2-dropdown--above {
-  border-bottom: none; }
+  border-bottom: none;
+border-top-left-radius: $border-radius;
+border-top-right-radius: $border-radius;}
 
 .select2-container--open .select2-dropdown--below {
-  border-top: none; }
+  border-top: none;
+border-bottom-left-radius: $border-radius;
+border-bottom-right-radius: $border-radius; }
 
 .select2-search--dropdown {
   display: block;

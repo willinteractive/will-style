@@ -1,10 +1,8 @@
 // Hoverable and focusable bootstrap list groups
 .list-group {
-	a.list-group-item {
-		// clear left and right border
-		border-left: none;
-		border-right: none;
+	border-radius: $border-radius;
 
+	a.list-group-item {
 		background-color: transparent;
 
 		transition: background-color $animation-duration $animation-timing-function;
