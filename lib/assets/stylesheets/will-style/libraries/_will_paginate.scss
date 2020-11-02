@@ -14,11 +14,19 @@
 		margin: 0;
 	}
 
-	a {
-		color: $body-color;
 
-		&:hover,
-		&:focus {
+	a,
+	.gap {
+		color: $body-color;
+	}
+
+	&.light a,
+	&.light .gap {
+		color: $white;
+	}
+
+	a {
+		@include hover-focus {
 			color: $primary;
 		}
 	}
