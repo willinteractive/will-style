@@ -111,7 +111,7 @@
 
 			line-height: 1.5rem;
 
-			@include text-shadow-z2();
+			@include text-shadow($shadow-weight);
 
 			margin: 0 !important;
 		}
