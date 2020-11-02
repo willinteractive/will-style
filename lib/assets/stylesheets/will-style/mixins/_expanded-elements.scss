@@ -4,10 +4,10 @@
 
 @mixin expand-element($left: true, $right: true, $top: true, $bottom: true) {
 	@if $left == true {
-		padding-left: 6rem;
+		padding-left: 4rem;
 
 		@include media-breakpoint-only(md) {
-			padding-left: 3rem;
+			padding-left: 2rem;
 		}
 
 		@include media-breakpoint-down(sm) {
@@ -16,10 +16,10 @@
 	}
 
 	@if $right == true {
-		padding-right: 6rem;
+		padding-right: 4rem;
 
 		@include media-breakpoint-only(md) {
-			padding-right: 3rem;
+			padding-right: 2rem;
 		}
 
 		@include media-breakpoint-down(sm) {
@@ -28,10 +28,10 @@
 	}
 
 	@if $top == true {
-		padding-top: 6rem;
+		padding-top: 4rem;
 
 		@include media-breakpoint-only(md) {
-			padding-top: 3rem;
+			padding-top: 2rem;
 		}
 
 		@include media-breakpoint-down(sm) {
@@ -40,10 +40,10 @@
 	}
 
 	@if $bottom == true {
-		padding-bottom: 6rem;
+		padding-bottom: 4rem;
 
 		@include media-breakpoint-only(md) {
-			padding-bottom: 3rem;
+			padding-bottom: 2rem;
 		}
 
 		@include media-breakpoint-down(sm) {
