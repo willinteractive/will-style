@@ -17,6 +17,11 @@ button {
 	}
 }
 
+// Large buttons should include border radius
+.btn.btn-lg {
+	border-radius: $border-radius;
+}
+
 .button-container {
 	position: relative;
 
