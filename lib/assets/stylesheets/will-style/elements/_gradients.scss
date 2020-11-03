@@ -76,3 +76,10 @@
 	@include will-theme-text-gradient;
 	text-shadow: none !important;
 }
+
+@each $name, $color in $action-color-list {
+	.text-gradient-#{$name} {
+		@include text-gradient($color);
+		text-shadow: none !important;
+	}
+}

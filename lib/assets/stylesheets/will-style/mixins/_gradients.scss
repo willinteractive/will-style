@@ -81,3 +81,10 @@
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
+
+@mixin text-gradient($color: $will-action-red) {
+	background-image: -webkit-linear-gradient(-45deg, $color, lighten($color, 10%) 95%);
+
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
