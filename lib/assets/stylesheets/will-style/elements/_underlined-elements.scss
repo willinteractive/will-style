@@ -13,19 +13,22 @@
 	}
 }
 
+.will-line-wrap {
+	line-height: $line-height-base * 1.25;
+}
+
 .will-line {
 	position: relative;
 	display: inline-block;
 	width: auto;
-	margin-bottom: 0.5em;
 
 	&:after {
 		content: "";
 
 		position: absolute;
-		left: 0;
-		right: 0;
-		bottom: -0.5em;
+		left: -0.125em;
+		right: -0.25em;
+		bottom: -0.25em;
 
 		height: 0.5em;
 		background-image: asset_url("will-style/lines/line-full.svg");
