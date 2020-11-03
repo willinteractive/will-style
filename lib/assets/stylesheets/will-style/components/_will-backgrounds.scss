@@ -4,6 +4,26 @@
 
 // This is a background that has a light pattern underneath an oversized arrow in white
 
+.bg-pattern {
+	position: relative;
+
+	&:before {
+		content: "";
+
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		background-image: will-style-bg-url("patterns/bg-dots.svg");
+		background-repeat: repeat;
+		background-size: 950px 524px;
+
+		opacity: 0.25;
+	}
+}
+
 .will-bg-x-light,
 .will-bg-x-dark {
 	position: relative;
