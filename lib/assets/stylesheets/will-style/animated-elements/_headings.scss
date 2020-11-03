@@ -131,6 +131,7 @@ html.clip-paths .will-line {
 		&:after {
 			clip-path: inset(0 100% 0 0);
 			transition: clip-path $animation-duration $animation-timing-function;
+			transition-delay: inherit;
 		}
 	}
 
