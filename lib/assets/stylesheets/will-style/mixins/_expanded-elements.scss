@@ -4,7 +4,7 @@
 
 @mixin expand-element($left: true, $right: true, $top: true, $bottom: true) {
 	@if $left == true {
-		padding-left: 4rem;
+		padding-left: 3rem;
 
 		@include media-breakpoint-only(md) {
 			padding-left: 2rem;
@@ -16,7 +16,7 @@
 	}
 
 	@if $right == true {
-		padding-right: 4rem;
+		padding-right: 3rem;
 
 		@include media-breakpoint-only(md) {
 			padding-right: 2rem;
@@ -28,7 +28,7 @@
 	}
 
 	@if $top == true {
-		padding-top: 4rem;
+		padding-top: 3rem;
 
 		@include media-breakpoint-only(md) {
 			padding-top: 2rem;
@@ -40,7 +40,7 @@
 	}
 
 	@if $bottom == true {
-		padding-bottom: 4rem;
+		padding-bottom: 3rem;
 
 		@include media-breakpoint-only(md) {
 			padding-bottom: 2rem;
