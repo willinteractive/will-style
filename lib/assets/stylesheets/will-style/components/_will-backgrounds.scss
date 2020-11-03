@@ -16,11 +16,18 @@
 		left: 0;
 		right: 0;
 
-		background-image: will-style-bg-url("patterns/bg-dots.svg");
 		background-repeat: repeat;
 		background-size: 950px 524px;
+	}
 
+	&.bg-white:before {
+		background-image: will-style-bg-url("patterns/bg-dots.svg");
 		opacity: 0.25;
+	}
+
+	&.bg-dark:before {
+		background-image: will-style-bg-url("patterns/bg-dots-light.svg");
+		opacity: 0.15;
 	}
 }
 
