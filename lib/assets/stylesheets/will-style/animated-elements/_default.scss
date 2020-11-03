@@ -103,8 +103,8 @@
 	}
 }
 
-@for $i from 1 through 50 {
-	@include animated-element-delay($ms: $i * 100, $includes-root-element: false);
+@for $i from 1 through 100 {
+	@include animated-element-delay($ms: $i * 50, $includes-root-element: false);
 }
 
 @include animated-element-hidden-after($includes-root-element: false) {
