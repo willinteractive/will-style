@@ -12,11 +12,12 @@
 <% fixed_prop = defined?(page_heading) && page_heading == true ? "data-animated-fixed" : "" %>
 
 <% delay_prop = defined?(animated_delay) ? "data-animated-delay=#{animated_delay}" : "" %>
+<% subtitle = "" unless defined?(subtitle) %>
 
 <div class="will-heading">
 	<div class="title-container" data-animated <%= fixed_prop %> <%= delay_prop %>>
 		<div class="subtitle-container">
-			<h6 class="will-teal font-weight-normal subtitle <%= shadowed ? "text-shadow" : "" %>"><%= raw subtitle %></h6>
+			<h6 class="text-primary text-gradient-will subtitle <%= shadowed ? "text-shadow" : "" %>"><%= raw subtitle %></h6>
 			<% unless subtitle.blank? %>
 				<div class="subtitle-line <%= invert_colors ? " bg-light" : "bg-dark" %> <%= shadowed ? "box-shadow" : "" %>"></div>
 			<% end %>
