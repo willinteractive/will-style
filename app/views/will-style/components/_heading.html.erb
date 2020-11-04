@@ -6,8 +6,20 @@
 	<% shadowed = false %>
 <% end %>
 
+<% bg_class = "" %>
+
+<% unless defined?(include_bg) %>
+	<% include_bg = true %>
+
+	<% if invert_colors == true %>
+		<% bg_class = "bg-dark" %>
+	<% else %>
+		<% bg_class = "bg-white" %>
+	<% end %>
+<% end %>
+
 <% title_class = defined?(page_heading) && page_heading == true ? "display-1" : "" %>
-<% title_class += invert_colors ? " text-light" : "" %>
+<% title_class += invert_colors ? " text-white" : "" %>
 
 <% fixed_prop = defined?(page_heading) && page_heading == true ? "data-animated-fixed" : "" %>
 
@@ -16,17 +28,17 @@
 
 <div class="will-heading">
 	<div class="title-container" data-animated <%= fixed_prop %> <%= delay_prop %>>
-		<div class="subtitle-container">
-			<h6 class="text-primary text-gradient-will subtitle <%= shadowed ? "text-shadow" : "" %>"><%= raw subtitle %></h6>
+		<div class="subtitle-container <%= bg_class %>">
+			<h6 class="text-gradient-will subtitle"><%= raw subtitle %></h6>
 			<% unless subtitle.blank? %>
-				<div class="subtitle-line <%= invert_colors ? " bg-light" : "bg-dark" %> <%= shadowed ? "box-shadow" : "" %>"></div>
+				<div class="subtitle-line <%= invert_colors ? " bg-white" : "bg-dark" %> <%= shadowed ? "box-shadow" : "" %>"></div>
 			<% end %>
 		</div>
 
-		<h2 class="title <%= title_class %> <%= shadowed ? "text-shadow" : "" %>"><%= raw title %></h2>
+		<h3 class="title <%= title_class %> <%= shadowed ? "text-shadow" : "" %> <%= bg_class %>"><%= raw title %></h3>
 	</div>
 
 	<% if defined?(text) %>
-		<p class="text <%= invert_colors ? "text-light" : "" %> <%= shadowed ? "text-shadow" : "" %>" data-animated data-animated-target=".title-container" <%= delay_prop %>><%= raw text %></p>
+		<p class="text <%= invert_colors ? "text-white" : "" %> <%= shadowed ? "text-shadow" : "" %> <%= bg_class %>" data-animated data-animated-target=".title-container" <%= delay_prop %>><%= raw text %></p>
 	<% end %>
 </div>
