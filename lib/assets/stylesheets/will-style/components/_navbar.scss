@@ -265,13 +265,6 @@ nav.navbar {
 				transition: color $animation-duration / 2 $animation-timing-function;
 			}
 		}
-
-		// Include shadow if it's on everything else
-		@if $shadow-weight != 'z0' {
-			svg {
-				@include shadow-filter;
-			}
-		}
 	}
 
 	// Thin navbar
