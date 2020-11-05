@@ -29,13 +29,13 @@
 <div class="will-heading">
 	<div class="title-container" data-animated <%= fixed_prop %> <%= delay_prop %>>
 		<div class="subtitle-container <%= bg_class %>">
-			<h6 class="text-gradient-will subtitle"><%= raw subtitle %></h6>
+			<h6 class="text-gradient-will subtitle mb-0"><%= raw subtitle %></h6>
 			<% unless subtitle.blank? %>
 				<div class="subtitle-line <%= invert_colors ? " bg-white" : "bg-dark" %> <%= shadowed ? "box-shadow" : "" %>"></div>
 			<% end %>
 		</div>
 
-		<h3 class="title <%= title_class %> <%= shadowed ? "text-shadow" : "" %> <%= bg_class %>"><%= raw title %></h3>
+		<h3 class="d-inline-block w-auto title <%= title_class %> <%= shadowed ? "text-shadow" : "" %> <%= bg_class %>"><%= raw title %></h3>
 	</div>
 
 	<% if defined?(text) %>
