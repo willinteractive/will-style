@@ -8,7 +8,6 @@
 # -------- LIBRARIES
 #= require jquery.isEmail
 #= require jquery.urlify
-#= require will-style/libraries/outdated-browser
 
 #= require popper
 #= require bootstrap-sprockets
