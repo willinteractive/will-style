@@ -4,8 +4,12 @@
 	<% title = app_name %>
 <% end %>
 
+<% unless defined?(use_turbolinks) %>
+	<% use_turbolinks = true %>
+<% end %>
+
 <nav id="nav" class="navbar navbar-expand-lg navbar-fixed navbar-dark" data-animated data-animated-static>
-	<%= link_to root_path, class: "navbar-brand" do %>
+	<%= link_to root_path, class: "navbar-brand", data: { turbolinks: use_turbolinks } do %>
 		<%= render partial: "will-style/components/will_logo_svg" %>
 		&nbsp;
 		<% if defined?(title) && title != "" %>
