@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
 
   s.files = `git ls-files`.split("\n")
 
-  s.add_dependency "rails", "~> 5.1"
+  s.add_dependency "rails", "> 5.1"
 
   s.add_dependency "jquery-rails", "~> 4.3"
 
