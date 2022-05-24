@@ -1,0 +1,16 @@
+$will-icons-font-location: "~will-style/lib/assets/fonts" !default;
+
+@font-face {
+	font-family: 'will-icons';
+	font-display: block;
+
+	src: url('#{$will-icons-font-location}/will-icons/will-icons.eot');
+
+	src: url('#{$will-icons-font-location}/will-icons/will-icons.eot') format('embedded-opentype'),
+		 url('#{$will-icons-font-location}/will-icons/will-icons.woff') format('woff'),
+		 url('#{$will-icons-font-location}/will-icons/will-icons.ttf') format('truetype'),
+		 url('#{$will-icons-font-location}/will-icons/will-icons.svg') format('svg');
+
+	font-weight: normal;
+	font-style: normal;
+}

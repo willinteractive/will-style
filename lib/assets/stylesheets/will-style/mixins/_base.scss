@@ -2,6 +2,14 @@
 // Basic Mixins
 //
 
+// Restoring Bootstrap v4 hover-focus mixin
+@mixin hover-focus() {
+	&:hover,
+	&:focus {
+	  @content;
+	}
+  }
+
 // This mixin will help hardware accelerate any content to force smooth rendering
 @mixin hardware-accelerate($force: false) {
 	@if $force == true {
