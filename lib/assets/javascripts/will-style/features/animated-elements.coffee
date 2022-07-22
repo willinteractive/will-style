@@ -254,6 +254,11 @@ $(document).on window.WILLStyle.Settings.pageChangeEvent, (event) ->
   _resetAnimationCache()
   _scheduleAnimatedElementsUpdate()
 
+# Force animated element update on page change
+$ ->
+  _resetAnimationCache()
+  _scheduleAnimatedElementsUpdate()
+
 $(document).on 'turbolinks:before-render', (event) ->
   $(_staticAnimatedElementSelector).each ->
     element = $(this)
