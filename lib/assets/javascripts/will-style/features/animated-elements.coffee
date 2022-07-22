@@ -28,7 +28,6 @@ _resetTimer = undefined
 
 _cachedScrollTop = -1
 _cachedWindowHeight = -1
-_cachedElements = undefined
 
 _heightCache = {}
 _targetCache = {}
@@ -104,11 +103,9 @@ _updateAnimatedElements = ->
   windowCenter = windowHeight / 2 + windowTop
   windowBottom = windowHeight + windowTop
 
-  _cachedElements = $(_animatedElementSelector) unless _cachedElements
-
   _hasReset = false
 
-  _cachedElements.each ->
+  $(_animatedElementSelector).each ->
     element = $(this)
 
     # Do each calculation asynchronously to prevent lag
@@ -231,7 +228,6 @@ _resetAnimationCache = ->
 
   _cachedScrollTop = -1
   _cachedWindowHeight = -1
-  _cachedElements = undefined
 
 #---------------------
 # Observers          -
