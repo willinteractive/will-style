@@ -1,5 +1,5 @@
 module Will
   module Style
-    VERSION = "4.0.18"
+    VERSION = "4.0.19"
   end
 end
