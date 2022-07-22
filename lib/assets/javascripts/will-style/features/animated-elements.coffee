@@ -248,6 +248,7 @@ $(window).on "resize", ->
     _lastWindowWidth = $(window).outerWidth()
 
     _resetAnimationCache()
+    _scheduleAnimatedElementsUpdate()
 
 $(document).on window.WILLStyle.Settings.pageChangeEvent, (event) ->
   _resetAnimationCache()
