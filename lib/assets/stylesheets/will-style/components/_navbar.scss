@@ -3,7 +3,9 @@
 //
 
 nav.navbar {
-	@include patterned-background();
+	&.navbar-dark {
+		@include patterned-background();
+	}
 
 	&:before,
 	&:after {
@@ -28,7 +30,9 @@ nav.navbar {
 				opacity: $patterned-background-opacity;
 			}
 
-			@include shadow-bottom();
+			&.navbar-dark {
+				@include shadow-bottom();
+			}
 		}
 	}
 

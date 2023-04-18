@@ -17,8 +17,6 @@
 		display: block;
 		pointer-events: none;
 
-		@include image-shadow;
-
 		@include hardware-accelerate($force: true);
 
 		opacity: 0;
