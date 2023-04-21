@@ -10,15 +10,10 @@ gem 'bootstrap-sass'
 gem 'jquery-rails'
 
 gem 'will-style', :git => "https://github.com/willinteractive/will-style"
+
 ```
 
-To write a template styles sass file in your app, use this generator:
-
-```ruby
-rails g will:style:sass
-```
-
-This will write a custom-will-styles.scss file in your app/assets/stylesheets folder so you can include / remove whatever styles you want.
+You will also need to include font-awesome-pro, as it's required for our apps. Use the following instructions to install it: https://fontawesome.com/docs/web/use-with/ruby-on-rails
 
 ### Optional Libraries
 

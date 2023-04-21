@@ -1,6 +1,6 @@
 module FontAwesomeStubHelper
-  def fa_icon(names = "flag", options = {})
-    return "<%= fa_icon \"#{(names.is_a?(Array) ? names.join(" ") : names)}\"#{(options.keys.length > 0 ? " " + options.inspect : "") } %>".html_safe
+  def icon(names = "flag", options = {})
+    return "<%= icon \"#{(names.is_a?(Array) ? names.join(" ") : names)}\"#{(options.keys.length > 0 ? " " + options.inspect : "") } %>".html_safe
   end
 
   def fa_stacked_icon(names = "flag", options = {})
@@ -45,7 +45,7 @@ module Will
 
                 file_content = File.read(File.expand_path("../../../../../app/views/will-style/elements/_#{partial}", __FILE__))
 
-                # Render out any sub-partials (and use our fa_icon stub to not render those)
+                # Render out any sub-partials (and use our icon stub to not render those)
                 file_content = Renderer.new().render_to_string(partial: "will-style/elements/" + partial.gsub(".html.erb", "").downcase)
 
                 pbcopy file_content
