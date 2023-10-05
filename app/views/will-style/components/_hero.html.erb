@@ -9,7 +9,7 @@
 <% end %>
 
 <section id="<%= name %>-top" class="hero container-fluid <%= defined?(include_footer) && include_footer == true ? "wrap-exposed" : "bg-dark" %> <%= defined?(class_names) ? class_names : "" %>">
-	<div class="row expanded <%= defined?(include_footer) && include_footer == true ? "bg-dark shadow-bottom main" : "full-height" %> align-items-center image-bg<%= (defined?(include_pattern) && include_pattern == false) ? "" : " patterned-bg patterned-bg-fixed" %>">
+	<div class="row expanded <%= defined?(include_footer) && include_footer == true ? "bg-dark shadow-bottom main" : "full-height" %> align-items-center image-bg<%= (defined?(include_pattern) && include_pattern == false) ? "" : "" %>">
 
 		<% if defined?(background_images) && !background_images.nil? %>
 			<div data-image-bgs="[<%= background_images.map{|i| "'#{asset_url(i)}'" }.join(", ") %>]"

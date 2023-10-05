@@ -2,35 +2,13 @@
 // Footers
 //
 
-$footer-height: 55px !default;
-$small-footer-height: 55px !default;
-
 footer {
-	position: relative;
-
-	padding-top: $navbar-height * 2;
-	@include media-breakpoint-up(md) {
-		padding-top: $navbar-height;
-	}
-
 	// @NOTE: This prevents 1px overscrolls when the page isn't 100vh by default
 	overflow: hidden;
 
-	height: auto;
-	min-height: $footer-height;
+	// margin-bottom: 0;
 
-	margin-bottom: 0;
-
-	p {
-		margin: 0px;
-	}
-
-	.margin-after {
-		margin-bottom: 1rem;
-	}
-}
-
-footer.small {
-	min-height: $small-footer-height;
-	padding-top: 0;
+	// p {
+	// 	margin: 0px;
+	// }
 }

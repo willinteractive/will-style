@@ -77,7 +77,7 @@
 	label {
 		text-transform: uppercase;
 
-		@include scale-property(font-size, $small-font-size);
+		font-size: $small-font-size;
 
 		transition: color $animation-time $animation-timing-function,
 					font-size $animation-time $animation-timing-function;
@@ -107,7 +107,7 @@
 			background-color: $will-white;
 
 			.label-container {
-				@include scale-calc(bottom, 100%, 0 - $small-font-size - 0.25rem);
+				bottom: 100%, 0 - $small-font-size - 0.25rem;
 				opacity: 1;
 			}
 

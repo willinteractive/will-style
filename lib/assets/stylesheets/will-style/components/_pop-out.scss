@@ -195,8 +195,6 @@ body {
 			overflow-scrolling: none;
 
 			[data-pop-out][data-pop-out-fullscreen] {
-				@include patterned-background();
-
 				.close-pop-out {
 					position: absolute;
 
@@ -218,8 +216,6 @@ body {
 	@media (orientation: portrait) {
 		html.touchevents.iphone-x body.pop-out-showing.with-iframe {
 			[data-pop-out][data-pop-out-fullscreen] {
-				@include patterned-background();
-
 				.close-pop-out {
 					position: absolute;
 

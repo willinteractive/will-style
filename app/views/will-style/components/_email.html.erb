@@ -29,11 +29,7 @@
 													<% if defined?(site_name) %>
 														<%= site_name %>
 													<% else %>
-														<% if Rails::VERSION::MAJOR >= 6 %>
-         													<%= Rails.application.class.module_parent_name.underscore %>
-       													<% else %>
-															<%= Rails.application.class.parent_name.upcase %>
-														<% end %>
+														<%= Rails.application.class.module_parent_name.underscore %>
 				                                  	<% end %>
 												</span>
 											</td>

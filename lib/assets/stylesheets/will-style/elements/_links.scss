@@ -27,7 +27,7 @@ button.animated {
 		left: 0;
 		right: 0;
 
-		@include scale-property(height, 2px, $global-scale-factor);
+		height: 2px;
 
 		background-color: $link-color;
 

@@ -17,283 +17,56 @@ button {
 	}
 }
 
-// Large buttons should include border radius
-.btn.btn-lg {
-	border-radius: $border-radius;
-}
-
-.button-container {
-	position: relative;
-
-	transition: opacity $animation-duration $animation-timing-function,
-				box-shadow $animation-duration / 2 $animation-duration * 2.25 $animation-timing-function;
-
-	&.inline {
-		display: inline-block;
-		width: auto;
-	}
-
-	.will-bg-pattern-dark,
-	.will-bg-pattern-light {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-
-		// z-index: -1;
-
-		&:before {
-			background-size: 960px 960px;
-			animation-duration: 31s;
-		}
-
-		opacity: 0;
-		transition: opacity $animation-duration / 2 $animation-timing-function;
-
-		pointer-events: none;
-	}
-
-	input,
-	button,
-	a {
+.btn {
+	&.btn-gradient,
+	&.btn-gradient-hover {
+		// Reset button to allow for gradient application
 		position: relative;
-
-		cursor: not-allowed;
-
-		padding: 2rem;
-
-		@include media-breakpoint-down(sm) {
-			padding: 1rem;
-		}
-
-		border: none;
-
-		width: 100%;
-
-		font-family: $headings-font-family;
-		@include scale-font-size($h5-font-size);
-
-		transition: color 0.2s $animation-timing-function;
-
-		background-color: transparent;
-
 		z-index: 1;
 
-		opacity: 0;
-	}
+		background-color: transparent !important;
+		color: $white !important;
 
-	p,
-	span,
-	a,
-	input,
-	button {
-		font-weight: bold;
-	}
+		&:before,
+		&:after {
+			content: "";
 
-	&.inline {
-		input,
-		button,
-		a {
-			padding: 1rem 3rem;
-		}
-	}
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
 
-	&.small {
-		input,
-		button,
-		a {
-			padding: 0.5rem 1.5rem;
-		}
-	}
+			z-index: -1;
 
-	a {
-		display: block;
-		cursor: pointer;
-	}
-
-	.button-outline-outer,
-	.button-outline-inner {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-
-		pointer-events: none;
-	}
-
-	.button-outline-outer:before,
-	.button-outline-outer:after,
-	.button-outline-inner:before,
-	.button-outline-inner:after {
-		content: "";
-
-		position: absolute;
-
-		z-index: 0;
-		pointer-events: none;
-
-		background-color: $will-white;
-
-		transform: scaleX(0);
-		will-change: transform;
-	}
-
-	.button-outline-outer:before,
-	.button-outline-outer:after {
-		left: 0;
-		right: 0;
-
-		height: 2px;
-	}
-
-	.button-outline-outer:before {
-		top: 0;
-		transform-origin: left center;
-	}
-
-	.button-outline-outer:after {
-		bottom: 0;
-		transform-origin: right center;
-	}
-
-	.button-outline-inner:before,
-	.button-outline-inner:after {
-		top: 0;
-		bottom: 0;
-
-		width: 2px;
-	}
-
-	.button-outline-inner:before {
-		left: 0;
-		transform-origin: center bottom;
-	}
-
-	.button-outline-inner:after {
-		right: 0;
-		transform-origin: center top;
-	}
-
-	&.dark {
-		a {
-			color: $will-dark-gray;
+			border-radius: inherit;
 		}
 
-		.button-outline-outer:before,
-		.button-outline-outer:after,
-		.button-outline-inner:before,
-		.button-outline-inner:after {
-			background-color: $will-dark-gray;
-		}
-	}
+		&:after {
+			background-image: $will-gradient-hover;
+			transition: opacity $animation-duration $animation-timing-function;
 
-	&.light {
-		input,
-		button,
-		a {
-			color: $will-white;
-
-			&:disabled {
-				background-color: transparent;
-				color: $will-white;
-			}
-		}
-	}
-
-	&:not(.disabled),
-	&.permanent {
-		input,
-		button,
-		a {
-			opacity: 1;
-			transition: opacity $animation-duration $animation-duration $animation-timing-function;
-		}
-
-		.button-outline-outer:before,
-		.button-outline-outer:after {
-			animation: animate-button-horizontal-line $animation-duration * 1.5 $animation-timing-function forwards;
-		}
-
-		.button-outline-inner:before,
-		.button-outline-inner:after {
-			animation: animate-button-vertical-line $animation-duration * 0.75 $animation-duration * 1.5 $animation-timing-function forwards;
-		}
-	}
-
-	&:not(.disabled) {
-		input,
-		button,
-		a {
-			cursor: pointer;
+			opacity: 0;
 		}
 
 		&:hover,
-		&:focus,
-		&.hover {
-			.will-bg-pattern-dark,
-			.will-bg-pattern-light {
+		&:focus {
+			&:after {
 				opacity: 1;
 			}
-
-			.will-bg-pattern-dark + input,
-			.will-bg-pattern-dark + button,
-			.will-bg-pattern-dark + a {
-				color: $will-white !important;
-			}
-
-			.will-bg-pattern-light + input,
-			.will-bg-pattern-light + button,
-			.will-bg-pattern-light + a {
-				color: $will-dark-gray !important;
-			}
 		}
 	}
 
-	&.permanent.disabled {
-		opacity: 0.5;
-	}
-
-	&.shadowed {
-		@include shadow($shadow-weight);
-
-		input,
-		button,
-		a {
-			transition: color $animation-duration / 2 $animation-timing-function,
-						text-shadow $animation-duration / 2 $animation-timing-function;
-
-			@include text-shadow($shadow-weight);
-
-			@include hover-focus {
-				@include text-shadow-z0;
-			}
-		}
-
-		&.disabled {
-			@include shadow-z0;
-			transition: none;
+	&.btn-gradient {
+		&:before {
+			background-image: $will-gradient;
 		}
 	}
-}
 
-@keyframes animate-button-horizontal-line {
-	0% {
-		transform: scaleX(0);
-	}
+	&.btn-gradient-hover {
+		&:before {
+			background-color: $body-color;
+		}
 
-	100% {
-		transform: scaleX(1);
-	}
-}
-
-@keyframes animate-button-vertical-line {
-	0% {
-		transform: scaleY(0);
-	}
-
-	100% {
-		transform: scaleY(1);
 	}
 }

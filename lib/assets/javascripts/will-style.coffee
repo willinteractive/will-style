@@ -39,8 +39,6 @@
 #= require will-style/forms/expanding-textareas
 #= require will-style/forms/url-formatting
 #= require will-style/forms/selected-buttons
-#= require will-style/forms/placeholder
-#= require will-style/forms/search
 
 #= require will-style/libraries/turbolinks
 #= require turbolinks

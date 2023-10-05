@@ -38,7 +38,7 @@
 
 	&:before,
 	&:after {
-		transition: opacity 0.4s;
+		transition: opacity $animation-duration $animation-timing-function;
 	}
 
 	&:before {
@@ -51,11 +51,11 @@
 
 	&.loaded {
 		&:before {
-			opacity: $patterned-background-overlay-opacity;
+			opacity: 1;
 		}
 
 		&:after {
-			opacity: $patterned-background-opacity;
+			opacity:1;
 		}
 	}
 }
@@ -76,14 +76,6 @@
 
 // Single Image BGs
 .image-bg {
-	&.patterned {
-		@include patterned-background;
-
-		&:after {
-			background-attachment: fixed;
-		}
-	}
-
 	&.fixed {
 		background-attachment: fixed;
 	}

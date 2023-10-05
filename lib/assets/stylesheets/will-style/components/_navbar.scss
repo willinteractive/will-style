@@ -3,35 +3,14 @@
 //
 
 nav.navbar {
-	&.navbar-dark {
-		@include patterned-background();
-	}
-
-	&:before,
-	&:after {
-		opacity: 0;
-	}
-
 	&.obscure {
 		&.obscure {
 			html.backdropfilter & {
-				backdrop-filter: saturate(180%) blur(20px);
-
-				&:before {
-					opacity: 0.75;
-				}
+				backdrop-filter: blur(20px);
 			}
 
 			html.no-backdropfilter &:before {
 				opacity: 0.95;
-			}
-
-			&:after {
-				opacity: $patterned-background-opacity;
-			}
-
-			&.navbar-dark {
-				@include shadow-bottom();
 			}
 		}
 	}
@@ -42,7 +21,7 @@ nav.navbar {
 		-webkit-user-select: none;
 		outline: none;
 
-		transition: color 0.2s $animation-timing-function;
+		transition: color $animation-duration / 2 $animation-timing-function;
 	}
 
 	// Navbar Toggler animation
@@ -51,6 +30,12 @@ nav.navbar {
 		position: absolute;
 		right: 0;
 		top: 0;
+
+		border: none !important;
+
+		.navbar-toggler-icon {
+			background-image: none !important;
+		}
 
 		&:before,
 		&:after,
@@ -65,9 +50,9 @@ nav.navbar {
 
 			height: 2px;
 
-			background-color: $body-bg;
+			background-color: $body-color;
 
-			will-change: opacity, transform;
+			transition: background-color $animation-duration / 2 $animation-timing-function;
 		}
 
 		&:before,
@@ -92,11 +77,22 @@ nav.navbar {
 			transform-origin: right center;
 		}
 
+		&:hover,
+		&:focus {
+			&:before,
+			&:after,
+			.navbar-toggler-icon:before,
+			.navbar-toggler-icon:after {
+				background-color: $primary;
+			}
+		}
+
 		&[aria-expanded="true"] {
 			&:before {
 				transform: rotate(-225deg);
 
-				transition: transform 0.2s $animation-timing-function;
+				transition: transform 0.2s $animation-timing-function,
+							background-color $animation-duration / 2 $animation-timing-function;
 			}
 
 			&:after {
@@ -104,14 +100,16 @@ nav.navbar {
 				opacity: 1;
 
 				transition: transform 0.2s 0.15s $animation-timing-function,
-							opacity 0s 0.2s linear;
+							opacity 0s 0.2s linear,
+							background-color $animation-duration / 2 $animation-timing-function;
 			}
 
 			.navbar-toggler-icon:before,
 			.navbar-toggler-icon:after {
 				transform: scaleX(0);
 
-				transition: transform 0.05s $animation-timing-function;
+				transition: transform 0.05s $animation-timing-function,
+							background-color $animation-duration / 2 $animation-timing-function;
 			}
 		}
 	}
@@ -145,6 +143,24 @@ nav.navbar {
 			background-color: transparent;
 			background-repeat: repeat;
 
+			@include textured-bg($target: "after");
+
+			&:before {
+				content: "";
+
+				position: fixed;
+
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+
+				background-color: rgba($body-bg, 0.75);
+				backdrop-filter: blur(20px);
+
+				pointer-events: none;
+			}
+
 			.navbar-nav {
 				padding: 1rem 2rem;
 
@@ -162,7 +178,7 @@ nav.navbar {
 				opacity: 0;
 
 				.nav-link {
-					@include scale-font-size($lead-font-size * 1.25, $global-scale-factor);
+					font-size: $lead-font-size * 1.25;
 				}
 			}
 
@@ -170,10 +186,6 @@ nav.navbar {
 			&.show {
 				transform: translateX(0);
 
-				background-color: $dark;
-				background-image: will-style-bg-url("patterns/bg-pattern-opacity.svg");
-				background-size: $patterned-background-size $patterned-background-size;
-				background-repeat: repeat;
 
 				.navbar-nav {
 					&:before {
@@ -181,7 +193,7 @@ nav.navbar {
 					}
 
 					&:after {
-						opacity: $patterned-background-opacity;
+						opacity: 1;
 					}
 				}
 			}
@@ -205,8 +217,8 @@ nav.navbar {
 					transform: translate3d(0, 0, 0);
 					opacity: 1;
 
-					transition: transform $animation-duration / 2 $animation-timing-function,
-								opacity $animation-duration / 2 $animation-timing-function;
+					transition: transform $animation-duration / 2 $animation-duration $animation-timing-function,
+								opacity $animation-duration / 2 $animation-duration $animation-timing-function;
 				}
 			}
 		}
@@ -238,7 +250,7 @@ nav.navbar {
 		-webkit-user-select: none;
 
 		color: $navbar-dark-color;
-		@include scale-font-size($lead-font-size, $global-scale-factor);
+		font-size: $lead-font-size;
 
 		// Ensure WILL Logo isn't huge on firefox
 		svg {
@@ -259,25 +271,6 @@ nav.navbar {
 				margin-left: $navbar-height / 9;
 				margin-bottom: $navbar-height / 9;
 				transition: color $animation-duration / 2 $animation-timing-function;
-			}
-		}
-	}
-
-	// Thin navbar
-
-	&.navbar-small {
-		.navbar-nav {
-			padding-top: 0 !important;
-			padding-bottom: 0;
-		}
-
-		a.navbar-brand {
-			padding: 0;
-			min-width: 0;
-			margin-right: 0;
-
-			svg {
-				height: #{($nav-link-padding-y + $font-size-base * $line-height-base)};
 			}
 		}
 	}

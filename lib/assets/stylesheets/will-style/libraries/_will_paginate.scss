@@ -3,13 +3,13 @@
 //
 
 .will-paginate {
-	@include scale-property(padding-top, $font-size-base, $global-scale-factor);
-	@include scale-property(padding-bottom, $font-size-base, $global-scale-factor);
+	padding-top: $font-size-base;
+	padding-bottom: $font-size-base;
 
 	a,
 	em {
 		padding: 0.25rem 0.5rem;
-		@include scale-font-size($small-font-size, $global-scale-factor);
+		font-size: $small-font-size;
 		line-height: 1;
 		margin: 0;
 	}
@@ -46,8 +46,8 @@
 		&:before {
 			position: absolute;
 			left: 0;
-			@include scale-property(top, 0.35rem, $global-scale-factor);
-			@include scale-font-size($small-font-size * .75, $global-scale-factor);
+			top: 0.35rem;
+			font-size: $small-font-size * .75;
 		}
 	}
 

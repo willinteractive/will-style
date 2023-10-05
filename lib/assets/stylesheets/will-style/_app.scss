@@ -1,7 +1,3 @@
-// Type
-
-@import
-	"bootstrap/code";
 
 // Core
 
@@ -11,8 +7,7 @@
 // Elements
 
 @import
-	"bootstrap/button-group",
-	"bootstrap/input-group";
+	"bootstrap/button-group";
 
 // Tables
 
@@ -35,7 +30,6 @@
 	"bootstrap/card",
 	"bootstrap/close",
 	"bootstrap/modal",
-	"bootstrap/jumbotron",
 
 	"will-style/components/list-group",
 	"will-style/components/dropdown";
@@ -43,14 +37,16 @@
 // Extras
 
 @import
-	"bootstrap/media",
 	"bootstrap/progress";
 
 @import
 	"bootstrap/badge",
 	"bootstrap/tooltip",
 	"bootstrap/popover",
-	"bootstrap/carousel";
+	"bootstrap/carousel",
+	"bootstrap/spinners",
+	"bootstrap/offcanvas",
+	"bootstrap/placeholders";
 
 // Components
 
