@@ -18,9 +18,7 @@
 
 # -------- COMPONENTS
 #= require will-style/components/navbar
-#= require will-style/components/hideable-sidebar
 #= require will-style/components/pop-out
-#= require will-style/components/hero
 #= require will-style/components/modals
 
 # -------- FEATURES
