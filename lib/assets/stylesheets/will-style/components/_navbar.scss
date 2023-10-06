@@ -130,7 +130,6 @@ nav.navbar {
 
 			width: 100vw;
 			@include stretch-max;
-			@include shadow-top-bottom();
 
 			overflow: auto;
 			-webkit-overflow-scrolling: touch;
