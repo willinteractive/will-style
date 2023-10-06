@@ -27,6 +27,8 @@ button {
 		background-color: transparent !important;
 		color: $white !important;
 
+		@extend .border-0;
+
 		&:before,
 		&:after {
 			content: "";
