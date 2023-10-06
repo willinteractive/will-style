@@ -2,41 +2,12 @@
 // Shadow Classes
 //
 
-.shadow,
-.shadowed {
-	@include image-shadow();
-}
-
 .shadow-filtered,
 .shadowed-filtered {
 	@include image-shadow-filter();
 }
 
-.shadow-top {
-	@include shadow-top;
-}
-
-.shadow-bottom {
-	@include shadow-bottom;
-
-	// @NOTE: Add a little z-index to ensure element is on top so the shadow shows
-	z-index: 10;
-}
-
-.shadow-left {
-	@include shadow-left;
-}
-
-.shadow-right {
-	@include shadow-right;
-}
-
 .text-shadow,
 .text-shadowed {
 	@include text-shadow($shadow-weight);
-}
-
-.box-shadow,
-.box-shadowed {
-	@include shadow($shadow-weight);
 }

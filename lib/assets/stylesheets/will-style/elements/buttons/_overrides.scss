@@ -68,5 +68,19 @@ button {
 			background-color: $body-color;
 		}
 
+		&.btn-outline {
+			color: $body-color !important;
+
+			&:before {
+				background-color: transparent;
+
+				border: 2px solid $body-color;
+			}
+
+			&:hover,
+			&:focus {
+				color: $white !important;
+			}
+		}
 	}
 }
