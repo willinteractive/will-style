@@ -2,12 +2,10 @@
 // Shadow Classes
 //
 
-.shadow-filtered,
-.shadowed-filtered {
+.shadow-filtered {
 	@include image-shadow-filter();
 }
 
-.text-shadow,
-.text-shadowed {
+.text-shadow {
 	@include text-shadow($shadow-weight);
 }
