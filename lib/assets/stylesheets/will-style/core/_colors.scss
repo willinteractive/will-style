@@ -8,21 +8,11 @@
 
 @each $name, $color in $color-list {
 	.#{$name} {
-		&:not(.background) {
-			color: $color;
-		}
-
-		&.background {
-			background-color: $color;
-		}
+		color: $color !important;
 	}
 
-	.#{$name}-fg {
-		color: $color;
-	}
-
-	.#{$name}-bg {
-		background-color: $color;
+	.bg-#{$name} {
+		background-color: $color !important;
 	}
 }
 

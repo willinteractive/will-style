@@ -9,3 +9,8 @@
 .text-shadow {
 	@include text-shadow($shadow-weight);
 }
+
+.no-shadow {
+	box-shadow: none !important;
+	text-shadow: none !important;
+}
