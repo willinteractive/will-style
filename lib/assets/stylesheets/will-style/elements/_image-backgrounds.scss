@@ -86,12 +86,6 @@
 	position: fixed;
 
 	pointer-events: none;
-
-	// @IE11: This is required to prevent bouncing on IE11 when scrolling.
-	//        it also requires a hack in elements/_sections.
-	@include ie11-styles {
-		z-index: 0;
-	}
 }
 
 // Background Positioning
