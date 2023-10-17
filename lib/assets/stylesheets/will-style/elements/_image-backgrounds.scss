@@ -1,0 +1,107 @@
+.image-bg {
+	position: relative;
+	overflow: hidden;
+}
+
+.image-bg-display {
+	position: absolute;
+
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.image-bgs {
+	position: absolute;
+
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	pointer-events: none;
+}
+
+.image-bg,
+.image-bg-display {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.image-bg,
+.image-bg .image-bg-display {
+	// Image Loading
+	// @NOTE: Use the overlay to hide the image so that it doesn't hide the title
+	opacity: 1;
+
+	&:before,
+	&:after {
+		transition: opacity $animation-duration $animation-timing-function;
+	}
+
+	&:before {
+		opacity: 1;
+	}
+
+	&:after {
+		opacity: 0;
+	}
+
+	&.loaded {
+		&:before {
+			opacity: 0.8;
+		}
+
+		&:after {
+			opacity: 0.05;
+		}
+	}
+}
+
+.image-bgs .image-bg-display {
+	opacity: 0;
+
+	transition: opacity 2s $animation-duration / 2 $animation-timing-function;
+
+	&.loaded.active {
+		opacity: 1;
+	}
+
+	&.loaded.active.first {
+		transition-duration: $animation-duration;
+	}
+}
+
+// Single Image BGs
+.image-bg {
+	&.fixed {
+		background-attachment: fixed;
+	}
+}
+
+.image-bgs.fixed {
+	height: 100vh;
+	position: fixed;
+
+	pointer-events: none;
+}
+
+// Background Positioning
+
+.image-bg,
+.image-bg-display {
+	@for $i from 0 through 100 {
+		&.x-#{$i},
+		&.x-#{$i} {
+			background-position-x: percentage($i / 100.0);
+		}
+	}
+
+	@for $i from 0 through 100 {
+		&.y-#{$i} {
+			background-position-y: percentage($i / 100.0);
+		}
+	}
+}
