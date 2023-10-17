@@ -2,12 +2,15 @@
 // Mixins for Expanded Elements
 //
 
+$large-padding-size: 3rem;
+$small-padding-size: 2rem;
+
 @mixin expand-element($left: true, $right: true, $top: true, $bottom: true) {
 	@if $left == true {
-		padding-left: 5rem;
+		padding-left: $large-padding-size;
 
 		@include media-breakpoint-only(md) {
-			padding-left: 4rem;
+			padding-left: $small-padding-size;
 		}
 
 		@include media-breakpoint-down(sm) {
@@ -16,10 +19,10 @@
 	}
 
 	@if $right == true {
-		padding-right: 5rem;
+		padding-right: $large-padding-size;
 
 		@include media-breakpoint-only(md) {
-			padding-right: 4rem;
+			padding-right: $small-padding-size;
 		}
 
 		@include media-breakpoint-down(sm) {
@@ -28,10 +31,10 @@
 	}
 
 	@if $top == true {
-		padding-top: 5rem;
+		padding-top: $large-padding-size;
 
 		@include media-breakpoint-only(md) {
-			padding-top: 4rem;
+			padding-top: $small-padding-size;
 		}
 
 		@include media-breakpoint-down(sm) {
@@ -40,10 +43,10 @@
 	}
 
 	@if $bottom == true {
-		padding-bottom: 5rem;
+		padding-bottom: $large-padding-size;
 
 		@include media-breakpoint-only(md) {
-			padding-bottom: 4rem;
+			padding-bottom: $small-padding-size;
 		}
 
 		@include media-breakpoint-down(sm) {
