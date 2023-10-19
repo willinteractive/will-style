@@ -27,7 +27,7 @@ body {
 
 	width: 100%;
 
-	background-color: $will-dark-gray;
+	background-color: $body-bg;
 }
 
 table {
@@ -36,6 +36,12 @@ table {
 	mso-table-rspace: 0pt;
 
 	width: 100%;
+
+	&.main {
+		border-radius: 5px;
+		overflow: hidden;
+		box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+	}
 
 	td {
 		font-family: sans-serif;
@@ -98,7 +104,7 @@ a {
 .body {
 	width: 100%;
 
-	background-color: $will-dark-gray;
+	background-color: $body-bg;
 }
 
 // Set a max-width, and make it display as block
@@ -203,14 +209,19 @@ a {
 	}
 
 	&.btn-primary {
-		table td {
-			background-color: $will-teal;
-		}
-
 		a {
-			background-color: $will-teal;
-			border-color: $will-teal;
+			background-color: $primary;
+			border-color: $primary;
 			color: $will-white;
+
+			font-weight: bold;
+			border-radius: 800px;
+
+			&:hover,
+			&:focus {
+				background-color: $will-action-blue;
+				border-color: $will-action-blue;
+			}
 		}
 	}
 }
@@ -245,7 +256,7 @@ a {
 	p,
 	span,
 	a {
-		color: $will-white !important;
+		color: $body-color !important;
 
 		text-decoration: none !important;
 
