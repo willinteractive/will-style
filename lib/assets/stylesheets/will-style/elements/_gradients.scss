@@ -93,7 +93,7 @@
 }
 
 .text-gradient-green {
-	@include text-gradient($will-green, $will-teal);
+	@include text-gradient($will-logo-blue, $will-teal);
 	text-shadow: none !important;
 }
 
