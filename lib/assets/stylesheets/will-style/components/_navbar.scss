@@ -17,12 +17,12 @@ nav.navbar {
 
 	// Styling Navbar links
 
-	.nav-link {
-		-webkit-user-select: none;
-		outline: none;
+	// .nav-link {
+	// 	-webkit-user-select: none;
+	// 	outline: none;
 
-		transition: color $animation-duration / 2 $animation-timing-function;
-	}
+	// 	transition: color $animation-duration / 2 $animation-timing-function;
+	// }
 
 	// Navbar Toggler animation
 
@@ -221,24 +221,6 @@ nav.navbar {
 				}
 			}
 		}
-	}
-
-	// Add absolutely positioned and fixed position navbars with the navbar-abs class
-
-	z-index: $navbar-z-index !important;
-
-	&.navbar-abs {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-	}
-
-	&.navbar-fixed {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
 	}
 
 	// Ensure Navbar Logo is big enough for logo to be by itself

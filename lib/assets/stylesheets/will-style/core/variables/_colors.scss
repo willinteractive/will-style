@@ -93,16 +93,6 @@ $color-list: (
 $white:		$will-white;
 $black:		$will-black;
 
-$gray-100: $will-bg-lighter;
-$gray-200: $will-action-gray;
-$gray-300: $will-bg-light;
-$gray-400: $will-action-gray;
-$gray-500: #adb5bd;
-$gray-600: $will-bg-dark;
-$gray-700: $will-light-gray;
-$gray-800: $will-bg-darker;
-$gray-900: $will-dark-gray;
-
 $blue:    $will-action-blue;
 $indigo:  $will-action-purple;
 $purple:  $will-action-purple;
@@ -114,8 +104,8 @@ $green:   $will-action-green;
 $teal:    $will-teal;
 $cyan:    $will-green;
 
-$primary:       $will-action-blue;
-$secondary:     $gray-600;
+$primary:       $will-action-purple;
+$secondary:     $will-action-gray;
 $success:       $green;
 $info:          $cyan;
 $warning:       $yellow;
@@ -129,16 +119,3 @@ $body-bg:		$will-linen;
 $body-color:	$will-dark-gray;
 
 $primary-lighter:	$will-action-blue;
-
-$navbar-dark-color:                 $white;
-$navbar-dark-hover-color:           $primary;
-$navbar-light-active-color:          $primary;
-$navbar-dark-active-color:          $primary;
-$navbar-dark-disabled-color:        rgba($white, .5);
-
-$navbar-dark-toggler-icon-bg:       none;
-$navbar-dark-toggler-border-color:  transparent;
-
-$list-group-border-color:	$body-color;
-
-$transition-collapse: none;
