@@ -5,21 +5,22 @@ update_submit = (form) ->
 
   form.find(".required").each ->
     # Ensure we're in the correct form and it's not a select2 hidden element
-    if $(this).closest("form").is(form) and ($(this).attr("id") and $(this).attr("id").indexOf("s2") isnt 0)
-      disabled = true if $(this).val() is null or $(this).val() is ""
+    if $(this).closest("form").is(form)
+      unless ($(this).attr("id") and $(this).attr("id").indexOf("s2") isnt 0)
+        disabled = true if $(this).val() is null or $(this).val() is ""
 
-      # Enforce valid email addresses on email fields
-      disabled = true if $(this).attr("type") is "email" and $.isEmail($(this).val()) is false
+        # Enforce valid email addresses on email fields
+        disabled = true if $(this).attr("type") is "email" and $.isEmail($(this).val()) is false
 
-  form.find("input[type=submit]").prop("disabled", disabled)
+  form.find("[type=submit]").prop("disabled", disabled)
   form.find("button.require-dependent").prop("disabled", disabled)
 
   # Add disabled classes to input containers
   if disabled
-    form.find("input[type=submit]").closest(".button-container").addClass("disabled")
+    form.find("[type=submit]").closest(".button-container").addClass("disabled")
     form.find("button.require-dependent").closest(".button-container").addClass("disabled")
   else
-    form.find("input[type=submit]").closest(".button-container").removeClass("disabled")
+    form.find("[type=submit]").closest(".button-container").removeClass("disabled")
     form.find("button.require-dependent").closest(".button-container").removeClass("disabled")
 
 update_required = (element) ->
