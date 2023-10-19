@@ -1,3 +1,9 @@
 .textured {
     @include textured-bg;
 }
+
+.bg-will {
+    background-color: $body-bg;
+    position: relative;
+    @include textured-bg;
+}
