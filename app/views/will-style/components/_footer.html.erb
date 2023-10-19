@@ -6,6 +6,10 @@
 	<% privacy_link = "https://willinteractive.com/privacy" %>
 <% end %>
 
+<% unless defined?(terms_link) %>
+	<% terms_link = "https://willinteractive.com/terms" %>
+<% end %>
+
 <footer class="footer mt-auto py-3 bg-dark <%= defined?(root_classes) ? root_classes : "" %>">
 	<div class="container-fluid">
 		<div class="row">
@@ -21,6 +25,10 @@
 						&nbsp;&nbsp;
 
 						<%= link_to "SaaS Agreement", saas_link, target: :blank, class: "text-light animated" %>
+
+						&nbsp;&nbsp;
+
+						<%= link_to "Terms", terms_link, target: :blank, class: "text-light animated" %>
 
 						<% if defined?(support_link) %>
 
