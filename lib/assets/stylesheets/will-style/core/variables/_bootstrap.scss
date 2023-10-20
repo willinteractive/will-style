@@ -33,6 +33,10 @@ $navbar-light-color:                $body-color;
 $navbar-light-hover-color:          $primary;
 $navbar-light-active-color:         $primary;
 
+$navbar-dark-color:                $light;
+$navbar-light-hover-color:         darken($light, $default-darkening-percentage);
+$navbar-light-active-color:        darken($light, $default-darkening-percentage);
+
 $modal-content-bg: $white;
 $modal-content-border-radius: 5px;
 
