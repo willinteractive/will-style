@@ -73,6 +73,35 @@ button {
 		&:before {
 			background-image: $will-gradient;
 		}
+
+		// @NOTE: Outlined gradient buttons will currently only work on linen backgrounds
+		// and with normal button sizes
+		&.btn-outline {
+			color: $primary !important;
+
+			background: linear-gradient($will-linen, $will-linen) padding-box,
+						$will-gradient border-box;
+
+			border: 2px solid transparent !important;
+
+			padding-left: calc(#{$btn-padding-x} - #{px-to-rem(1)});
+			padding-right: calc(#{$btn-padding-x} - #{px-to-rem(1)});
+			padding-top: calc(#{$btn-padding-y} - #{px-to-rem(1)});
+			padding-bottom: calc(#{$btn-padding-y} - #{px-to-rem(1)});
+
+			&:before {
+				content: none;
+			}
+
+			&:after {
+				margin: -2px;
+			}
+
+			&:hover,
+			&:focus {
+				color: $white !important;
+			}
+		}
 	}
 
 	&.btn-gradient-hover {

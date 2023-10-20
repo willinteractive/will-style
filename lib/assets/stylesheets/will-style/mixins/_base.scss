@@ -60,3 +60,7 @@ $include-type: "node" !default;
 		@return url("../images/will-style/" + $url);
 	}
 }
+
+@function px-to-rem($value) {
+    @return ($value / 16) + rem;
+}
