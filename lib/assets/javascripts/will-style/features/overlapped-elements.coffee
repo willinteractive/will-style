@@ -45,6 +45,8 @@ _updateOverlappedElements = ->
         element.closest(_parentSelector).css
             "margin-top": "#{element.height() / 2}px"
 
+        element.closest(_parentSelector).attr("overlap-active", true)
+
         element.parent().find(_afterSelector).css
             "margin-top": "-#{element.height() / 2}px"
     , 0
