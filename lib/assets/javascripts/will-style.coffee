@@ -29,6 +29,7 @@
 #= require will-style/features/animated-elements
 #= require will-style/features/focused-form-elements
 #= require will-style/features/outlined-buttons
+#= require will-style/features/overlapped-elements
 #= require will-style/features/hiding-default-link-titles
 #= require will-style/features/spannable-elements
 

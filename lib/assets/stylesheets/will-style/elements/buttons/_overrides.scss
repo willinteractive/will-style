@@ -18,6 +18,16 @@ button {
 }
 
 .btn {
+	&.btn-xl {
+		font-size: map-get($font-sizes, 3);
+		padding-left: 2rem;
+		padding-right: 2rem;
+
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+
+	// Gradient buttons
 	&.btn-gradient,
 	&.btn-gradient-hover {
 		// Reset button to allow for gradient application
