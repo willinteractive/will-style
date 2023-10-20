@@ -3,29 +3,29 @@
 //
 
 // Variables
-$animated-element-prop: "data-animated" !default;
-$animated-element-default-prop: "data-animated-default" !default;
-$animated-element-left-prop: "data-animated-left" !default;
-$animated-element-right-prop: "data-animated-right" !default;
-$animated-element-top-prop: "data-animated-top" !default;
-$animated-element-bottom-prop: "data-animated-bottom" !default;
-$animated-element-opacity-prop: "data-animated-opacity" !default;
-$animated-element-opacity-animation-prop: "data-animated-opacity-animation" !default;
-$animated-element-delay-prop: "data-animated-delay" !default;
-$animated-element-active-prop: "data-animated-active" !default;
-$animated-element-active-init-prop: "data-animated-active-init" !default;
-$animated-element-after-prop: "data-animated-after" !default;
-$animated-element-hidden-after-prop: "data-animated-hidden-after" !default;
-$animated-element-progressive-prop: "data-animated-progressive" !default;
-$animated-element-progressive-default-prop: "data-animated-progressive-default" !default;
-$animated-element-progressive-position-prop: "data-animated-progressive-position" !default;
+$animated-element-prop: "animated" !default;
+$animated-element-default-prop: "animated-default" !default;
+$animated-element-left-prop: "animated-left" !default;
+$animated-element-right-prop: "animated-right" !default;
+$animated-element-top-prop: "animated-top" !default;
+$animated-element-bottom-prop: "animated-bottom" !default;
+$animated-element-opacity-prop: "animated-opacity" !default;
+$animated-element-opacity-animation-prop: "animated-opacity-animation" !default;
+$animated-element-delay-prop: "animated-delay" !default;
+$animated-element-active-prop: "animated-active" !default;
+$animated-element-active-init-prop: "animated-active-init" !default;
+$animated-element-after-prop: "animated-after" !default;
+$animated-element-hidden-after-prop: "animated-hidden-after" !default;
+$animated-element-progressive-prop: "animated-progressive" !default;
+$animated-element-progressive-default-prop: "animated-progressive-default" !default;
+$animated-element-progressive-position-prop: "animated-progressive-position" !default;
 
-$animated-number-top-prop: "data-animated-number-top" !default;
-$animated-number-bottom-prop: "data-animated-number-bottom" !default;
+$animated-number-top-prop: "animated-number-top" !default;
+$animated-number-bottom-prop: "animated-number-bottom" !default;
 
-$animated-fast-rise-blocks-prop: "data-animated-fast-rise-blocks" !default;
-$animated-normal-rise-blocks-prop: "data-animated-normal-rise-blocks" !default;
-$animated-slow-rise-blocks-prop: "data-animated-slow-rise-blocks" !default;
+$animated-fast-rise-blocks-prop: "animated-fast-rise-blocks" !default;
+$animated-normal-rise-blocks-prop: "animated-normal-rise-blocks" !default;
+$animated-slow-rise-blocks-prop: "animated-slow-rise-blocks" !default;
 
 $animated-element-selector: "[#{$animated-element-prop}]" !default;
 $animated-element-default-selector: "[#{$animated-element-default-prop}]" !default;
@@ -85,7 +85,7 @@ $animated-number-bottom-selector-chrome: "[#{$animated-number-bottom-prop}=true]
 		@content;
 	}
 
-	&[data-animated-active=true] {
+	&[animated-active=true] {
 		@content;
 	}
 }

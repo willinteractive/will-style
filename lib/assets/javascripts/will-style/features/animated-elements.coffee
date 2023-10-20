@@ -6,8 +6,8 @@
 # Private Constants  -
 #---------------------
 
-_animatedElementSelector = "[data-animated]"
-_staticAnimatedElementSelector = "[data-animated-static]"
+_animatedElementSelector = "[animated]"
+_staticAnimatedElementSelector = "[animated-static]"
 _frameRate = 1000 / 60
 
 _maximumAnimationDuration = 800
@@ -157,7 +157,7 @@ _updateAnimatedElements = ->
 
       if isActive
         # Element animation determines the position of future elements, so it requires a remeasure
-        if element.attr("data-animated-active") isnt "true" && element.data("animated-reset")? && _hasReset is false
+        if element.attr("animated-active") isnt "true" && element.data("animated-reset")? && _hasReset is false
           _hasReset = true
 
           clearTimeout(_resetTimer) if _resetTimer
@@ -171,15 +171,15 @@ _updateAnimatedElements = ->
             _scheduleAnimatedElementsUpdate()
           , parseInt(element.data("animated-reset")) || _maximumAnimationDuration
 
-        element.attr("data-animated-active", "true")
+        element.attr("animated-active", "true")
       else if element.data("animated-hidden-before")?
-        element.removeAttr("data-animated-active")
+        element.removeAttr("animated-active")
 
       # Element is completely off the screen
       if targetTop + targetHeight < windowTop
-        element.attr("data-animated-after", "true")
+        element.attr("animated-after", "true")
       else
-        element.removeAttr("data-animated-after")
+        element.removeAttr("animated-after")
 
       # Set progressive classes if element is asking for it
       if element.data("animated-progressive")?
@@ -200,9 +200,9 @@ _updateAnimatedElements = ->
         progressivePosition = 100 if progressivePosition > 100
 
         if progressivePosition > 0
-          element.attr("data-animated-progressive-position", progressivePosition)
+          element.attr("animated-progressive-position", progressivePosition)
         else
-          element.removeAttr("data-animated-progressive-position")
+          element.removeAttr("animated-progressive-position")
     , 0
 
   clearTimeout(_updateTimer) if _updateTimer
@@ -259,9 +259,9 @@ $(document).on 'turbolinks:before-render', (event) ->
   $(_staticAnimatedElementSelector).each ->
     element = $(this)
 
-    if element.attr("data-animated-active")? and element.attr("id") isnt ""
-      $(event.originalEvent.data.newBody).find("##{element.attr("id")}").attr("data-animated-active", true)
-      $(event.originalEvent.data.newBody).find("##{element.attr("id")}").attr("data-animated-active-init", true)
+    if element.attr("animated-active")? and element.attr("id") isnt ""
+      $(event.originalEvent.data.newBody).find("##{element.attr("id")}").attr("animated-active", true)
+      $(event.originalEvent.data.newBody).find("##{element.attr("id")}").attr("animated-active-init", true)
 
 window.WILLStyle.Events.on "update-animated-elements", ->
   _scheduleAnimatedElementsUpdate()
