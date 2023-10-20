@@ -14,7 +14,6 @@
 		margin: 0;
 	}
 
-
 	a,
 	.gap {
 		color: $body-color;
@@ -32,9 +31,11 @@
 	}
 
 	em.current {
+		font-weight: bold !important;
 		font-style: normal !important;
 		color: $primary;
 		border: 1px solid $primary;
+		border-radius: $border-radius;
 	}
 
 	a.previous_page,
@@ -46,7 +47,9 @@
 		&:before {
 			position: absolute;
 			left: 0;
-			top: 0.35rem;
+
+			// Wag to get the arrow perfectly positioned
+			top: $small-font-size * .53;
 			font-size: $small-font-size * .75;
 		}
 	}
