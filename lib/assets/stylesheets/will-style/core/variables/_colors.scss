@@ -29,6 +29,7 @@ $will-action-pink: 		#D93197;
 
 $will-action-burnt-sienna:	#d76e4c;
 $will-action-iris:			#4a50cf;
+$will-action-skyblue:		#6893ce;
 
 $will-action-gray:		$will-light-gray;
 
@@ -49,7 +50,14 @@ $will-bg-dark:		#6a6567;
 $will-bg-darker:	#3b3839;
 $will-bg-darkest:	$will-dark-gray;
 
-$will-gradient: linear-gradient(to bottom right, #48bc97 0%, #6893ce 14.000000000000002%, #805be1 34%, #a755ad 63%, #d76e4c 83%, #f09236 96%);
+$will-gradient: linear-gradient(-45deg,
+	$will-action-orange 0%,
+	$will-action-burnt-sienna 14%,
+	$will-action-violet 34%,
+	$will-action-purple 63%,
+	$will-action-skyblue 83%,
+	$will-teal 96%);
+
 $will-gradient-hover: linear-gradient(to bottom, $will-action-purple, $will-action-blue);
 
 // Color Helpers
