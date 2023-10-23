@@ -49,7 +49,7 @@ $will-bg-dark:		#6a6567;
 $will-bg-darker:	#3b3839;
 $will-bg-darkest:	$will-dark-gray;
 
-$will-gradient: linear-gradient(45deg, #48bc97 0%, #6893ce 14.000000000000002%, #805be1 34%, #a755ad 63%, #d76e4c 83%, #f09236 96%);
+$will-gradient: linear-gradient(to bottom right, #48bc97 0%, #6893ce 14.000000000000002%, #805be1 34%, #a755ad 63%, #d76e4c 83%, #f09236 96%);
 $will-gradient-hover: linear-gradient(to bottom, $will-action-purple, $will-action-blue);
 
 // Color Helpers
