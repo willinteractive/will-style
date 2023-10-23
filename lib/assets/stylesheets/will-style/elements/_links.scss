@@ -54,3 +54,16 @@ button.animated {
 		background-color: $danger !important;
 	}
 }
+
+a.img-link {
+	p.title {
+		color: $body-color;
+		transition: color $animation-duration $animation-timing-function;
+	}
+
+	@include hover-focus {
+		p.title {
+			color: $link-hover-color;
+		}
+	}
+}

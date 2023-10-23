@@ -1,3 +1,11 @@
+@mixin image-background-responsive($url: "image", $format: "jpg") {
+	background-image: asset_url("#{$url}.webp");
+
+	html.no-webp & {
+		background-image: asset_url("#{$url}.#{$format}");
+	}
+}
+
 @mixin textured-bg($target: "before") {
     &:#{$target} {
         content: "";

@@ -57,9 +57,10 @@ i.rotated:before {
 	display: inline-block;
 	width: auto;
 
-	background: $will-gradient;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+	// Ensure background clip is applied
+	background: $will-gradient !important;
+	-webkit-background-clip: text !important;
+	-webkit-text-fill-color: transparent !important;
 }
 
 //

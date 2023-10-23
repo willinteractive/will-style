@@ -1,0 +1,57 @@
+.will-nav-tabs {
+    border: none !important;
+
+    position: relative;
+
+    &:before {
+        content: "";
+
+        position: absolute;
+
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        height: 1px;
+
+        background-color: $body-color;
+    }
+
+    .will-nav-link {
+        position: relative;
+
+        border: none !important;
+        background-color: transparent !important;
+
+        color: $body-color !important;
+
+        &.active,
+        &:hover,
+        &:focus {
+            @extend .text-gradient;
+        }
+
+        &:after {
+            content: "";
+
+            position: absolute;
+            bottom: 1px;
+            left: 0;
+            right: 0;
+
+            height: 2px;
+
+            @include will-theme-gradient;
+
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform $animation-duration $animation-timing-function;
+        }
+
+        &.active {
+            &::after {
+                transform: scaleX(1);
+            }
+        }
+    }
+}
