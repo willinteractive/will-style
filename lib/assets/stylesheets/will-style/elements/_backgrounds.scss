@@ -11,3 +11,7 @@
 .bg-will-gradient {
     background-image: $will-gradient;
 }
+
+.bg-grid {
+    @include grid-bg;
+}
