@@ -5,31 +5,22 @@
 nav.navbar {
 	&.obscure {
 		&.obscure {
-			html.backdropfilter & {
-				backdrop-filter: blur(20px);
-			}
+			backdrop-filter: blur(20px);
 
-			html.no-backdropfilter &:before {
-				opacity: 0.95;
-			}
 		}
 	}
 
 	// Styling Navbar links
 
-	// .nav-link {
-	// 	-webkit-user-select: none;
-	// 	outline: none;
-
-	// 	transition: color $animation-duration / 2 $animation-timing-function;
-	// }
-
 	// Navbar Toggler animation
 
 	.navbar-toggler {
 		position: absolute;
+
 		right: 0;
 		top: 0;
+
+		// Fix navbar togggler position looking uneven
 
 		border: none !important;
 
@@ -154,8 +145,7 @@ nav.navbar {
 				left: 0;
 				right: 0;
 
-				background-color: rgba($body-bg, 0.75);
-				backdrop-filter: blur(20px);
+				background-color: $body-bg;
 
 				pointer-events: none;
 			}
