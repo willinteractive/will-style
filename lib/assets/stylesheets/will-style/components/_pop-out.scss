@@ -209,23 +209,3 @@ body {
 	}
 }
 
-// @HACK: Accounting for iPhone X not reporting safe space properly
-@include media-breakpoint-down(sm) {
-	@media (orientation: portrait) {
-		html.touchevents.iphone-x body.pop-out-showing.with-iframe {
-			[data-pop-out][data-pop-out-fullscreen] {
-				.close-pop-out {
-					position: absolute;
-
-					top: 0.25rem;
-					left: 0.25rem;
-				}
-
-				.content,
-				iframe {
-					height: calc(100% - 56px) !important;
-				}
-			}
-		}
-	}
-}
