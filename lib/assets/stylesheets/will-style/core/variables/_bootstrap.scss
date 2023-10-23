@@ -7,17 +7,6 @@ $small-navbar-height: $nav-link-padding-y * 2 + $font-size-base * $line-height-b
 
 // Bootstrap Overrides
 
-// Adding more breakpoints for grid to account for larger screens
-$grid-breakpoints: map-merge($grid-breakpoints, (
-	xxl: 1920px,
-	xxxl: 2560px
-));
-
-$container-max-widths: map-merge($container-max-widths, (
-	xxl: 1600px,
-	xxxl: 1900px
-));
-
 $card-border-width: 0;
 $dropdown-border-width: 0;
 
