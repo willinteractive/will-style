@@ -23,7 +23,6 @@
 
 # -------- FEATURES
 #= require will-style/features/browser-detection
-#= require will-style/features/feature-detection
 #= require will-style/features/image-backgrounds
 #= require will-style/features/video-backgrounds
 #= require will-style/features/image-loading
