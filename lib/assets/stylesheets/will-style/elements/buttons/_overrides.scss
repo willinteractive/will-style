@@ -39,6 +39,8 @@ button {
 
 		@extend .border-0;
 
+		transition: color $animation-duration $animation-timing-function;
+
 		&:before,
 		&:after {
 			content: "";
@@ -55,7 +57,7 @@ button {
 		}
 
 		&:after {
-			background-image: $will-gradient-hover;
+			background-image: $will-logo-gradient;
 			transition: opacity $animation-duration $animation-timing-function;
 
 			opacity: 0;
