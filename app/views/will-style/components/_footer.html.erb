@@ -10,7 +10,11 @@
 	<% terms_link = "https://willinteractive.com/terms" %>
 <% end %>
 
-<footer class="footer mt-auto py-3 bg-dark <%= defined?(root_classes) ? root_classes : "" %>">
+<% unless defined?(include_bg) %>
+	<% include_bg = true %>
+<% end %>
+
+<footer class="footer mt-auto py-3 <%= include_bg ? "bg-dark" : "text-shadow" %> <%= defined?(root_classes) ? root_classes : "" %>">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-12">
