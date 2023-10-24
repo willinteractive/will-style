@@ -5,6 +5,7 @@
 @include animated-element-default($includes-root-element: false) {
 	@include animated-element-init {
 		opacity: 0;
+		transform: translateY(5%);
 
 		transition: opacity $animation-duration $animation-timing-function,
 					transform $animation-duration $animation-timing-function;
