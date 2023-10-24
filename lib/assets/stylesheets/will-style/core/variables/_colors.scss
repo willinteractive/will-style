@@ -50,6 +50,8 @@ $will-bg-dark:		#6a6567;
 $will-bg-darker:	#3b3839;
 $will-bg-darkest:	$will-dark-gray;
 
+$will-action-hover-bg: rgba($will-action-skyblue, 0.2);
+
 $will-gradient: linear-gradient(-45deg,
 	$will-action-orange 0%,
 	$will-action-burnt-sienna 14%,

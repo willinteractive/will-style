@@ -1,0 +1,103 @@
+//
+// Dropdown Overrides
+//
+
+.dropdown {
+	.dropdown-toggle {
+		cursor: pointer;
+		outline: none !important;
+	}
+
+	.dropdown-menu {
+		// @NOTE: Ensure that there's no space between dropdown link and dropdown to prevent hover issues
+		margin-top: 0 !important;
+		padding: 0;
+
+		// Dropdown animations
+		display: block;
+		pointer-events: none;
+
+		opacity: 0;
+		transform: scale3d(1, 0, 1);
+
+		transform-origin: center top;
+
+		transition: opacity 0s $animation-timing-function,
+					transform $animation-duration / 2 $animation-timing-function;
+
+		.dropdown-item {
+			transform: translate3d(-5px, -5px, 0);
+			opacity: 0;
+
+			padding-left: 0.75rem;
+			padding-right: 0.75rem;
+
+			transition: transform $animation-duration / 2 $animation-timing-function,
+						opacity $animation-duration / 2 $animation-timing-function,
+						color $animation-duration / 2 $animation-timing-function,
+						background-color $animation-duration / 2 $animation-timing-function;
+
+			outline: none !important;
+
+			&:first-of-type {
+				border-top-left-radius: $border-radius;
+				border-top-right-radius: $border-radius;
+			}
+
+			&:last-of-type {
+				border-bottom-left-radius: $border-radius;
+				border-bottom-right-radius: $border-radius;
+			}
+		}
+
+		&.show {
+			pointer-events: auto;
+
+			opacity: 1;
+			transform: scale3d(1, 1, 1);
+
+			.dropdown-item {
+				transform: translate3d(0, 0, 0);
+				opacity: 1;
+			}
+
+			@for $i from 1 through 6 {
+				.dropdown-item:nth-of-type(#{$i}) {
+					transition-delay: #{($i - 1) * 0.1}s,
+									  #{($i - 1) * 0.1}s,
+									  0s,
+									  0s;
+				}
+			}
+		}
+	}
+
+	// Always show dropdowns on small screens
+	@include media-breakpoint-down(md) {
+		.dropdown-menu {
+			opacity: 1;
+			transform: none;
+
+			background-color: transparent !important;
+			box-shadow: none !important;
+
+			pointer-events: auto;
+
+			.dropdown-item {
+				background-color: transparent !important;
+
+				padding-left: 1.5rem;
+				padding-right: 0;
+
+				transform: translate3d(0, 0, 0);
+				opacity: 1;
+
+				font-size: $lead-font-size;
+
+				@include hover-focus {
+					color: $primary;
+				}
+			}
+		}
+	}
+}

@@ -11,6 +11,33 @@ nav.navbar {
 	}
 
 	// Styling Navbar links
+	.nav-item {
+		margin-right: 0.5em;
+
+		&:last-of-type {
+			margin-right: 0 !important;
+		}
+
+		.nav-link {
+			@extend .fw-bold;
+
+			&:not(.dropdown-toggle) {
+				@extend .animated;
+
+				&:before {
+					bottom: 0 !important;
+					left: $nav-link-padding-x / 2 !important;
+					right: $nav-link-padding-x / 2 !important;
+				}
+
+				@include media-breakpoint-down(md) {
+					&:before {
+						content: none !important;
+					}
+				}
+			}
+		}
+	}
 
 	// Navbar Toggler animation
 

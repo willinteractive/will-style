@@ -17,6 +17,7 @@
 #= require will-style/core/events
 
 # -------- COMPONENTS
+#= require will-style/components/dropdowns
 #= require will-style/components/navbar
 #= require will-style/components/pop-out
 #= require will-style/components/modals
