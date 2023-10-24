@@ -60,10 +60,10 @@ $will-gradient: linear-gradient(-45deg,
 	$will-action-skyblue 83%,
 	$will-teal 96%);
 
-$will-logo-gradient: linear-gradient(120deg,
-	$will-logo-blue,
-	$will-logo-blue 50%,
-	$will-logo-teal 95%);
+$will-logo-gradient: linear-gradient(-45deg,
+	$will-logo-teal 0%,
+	$will-logo-blue 63%,
+	$will-action-skyblue 100%);
 
 // Color Helpers
 
