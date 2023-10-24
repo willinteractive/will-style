@@ -2,6 +2,10 @@
 	<% class_name = "" %>
 <% end %>
 
+<% unless defined?(domain) %>
+	<% domain = false %>
+<% end %>
+
 <% unless defined?(alt) %>
 	<% alt = "" %>
 <% end %>
@@ -25,6 +29,7 @@
             class_name: "#{class_name} #{ File.basename(source,  File.extname(source)).gsub(/^[0-9]+\-/, "")}",
             responsive: responsive,
             alt: alt,
+            domain: domain,
             exclude_webp: exclude_webp
         } %>
     <% end %>

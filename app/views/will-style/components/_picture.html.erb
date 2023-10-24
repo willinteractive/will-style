@@ -2,8 +2,16 @@
 	<% class_name = "" %>
 <% end %>
 
+<% unless defined?(domain) %>
+	<% domain = false %>
+<% end %>
+
 <% unless defined?(alt) %>
 	<% alt = "" %>
+<% end %>
+
+<% if domain %>
+	<% source = "#{domain}/#{source}" %>
 <% end %>
 
 <% source_type = "" %>
