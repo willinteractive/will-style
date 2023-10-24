@@ -5,10 +5,7 @@
 # -------- MODERNIZR
 #= require modernizr-custom
 
-# -------- LIBRARIES
-#= require jquery.isEmail
-#= require jquery.urlify
-
+# -------- BOOTSTRAP
 #= require popper
 #= require bootstrap-sprockets
 
@@ -16,31 +13,9 @@
 #= require will-style/core/settings
 #= require will-style/core/events
 
-# -------- COMPONENTS
-#= require will-style/components/dropdowns
-#= require will-style/components/navbar
-#= require will-style/components/pop-out
-#= require will-style/components/modals
-
 # -------- FEATURES
 #= require will-style/features/browser-detection
-#= require will-style/features/image-backgrounds
-#= require will-style/features/video-backgrounds
 #= require will-style/features/image-loading
-#= require will-style/features/picture-replacement
 #= require will-style/features/animated-elements
-#= require will-style/features/focused-form-elements
-#= require will-style/features/outlined-buttons
-#= require will-style/features/overlapped-elements
 #= require will-style/features/hiding-default-link-titles
 #= require will-style/features/spannable-elements
-
-# -------- FORMS
-#= require will-style/forms/required-inputs
-#= require will-style/forms/expanding-textareas
-#= require will-style/forms/file-sizes
-#= require will-style/forms/url-formatting
-#= require will-style/forms/selected-buttons
-
-#= require will-style/libraries/turbolinks
-#= require turbolinks
