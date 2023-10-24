@@ -1,0 +1,37 @@
+<% source_type = "" %>
+<% if source.match(/\.png$/) %>
+	<% source_type = "png" %>
+<% elsif source.match(/\.jpg$/) %>
+	<% source_type = "jpg" %>
+<% elsif source.match(/\.gif$/) %>
+	<% source_type = "gif" %>
+<% end %>
+
+<% if defined?(exclude_webp) && exclude_webp == true %>
+<% else %>
+	<% source = source.gsub(/\.#{source_type}$/, ".webp") %>
+	<% source_type = "webp" %>
+<% end %>
+
+<% unless defined?(class_name) %>
+	<% class_name = "" %>
+<% end %>
+
+<img class="<%= class_name %>"
+	src="<%= asset_url(source) %>"
+	<% if defined?(responsive) && responsive == true %>
+			srcset="
+				<%= asset_url(source.gsub(".#{source_type}", "-540.#{source_type}")) %> 540w,
+				<%= asset_url(source.gsub(".#{source_type}", "-768.#{source_type}")) %> 768w,
+				<%= asset_url(source.gsub(".#{source_type}", "-960.#{source_type}")) %> 960w,
+				<%= asset_url(source.gsub(".#{source_type}", "-1140.#{source_type}")) %> 1140w,
+				<%= asset_url(source.gsub(".#{source_type}", "-1320.#{source_type}")) %> 1320w"
+			sizes="
+				(max-width: 540px),
+				(max-width: 768px) 50vw,
+				(max-width: 960px) 50vw,
+				(max-width: 1140px) 50vw"
+	<% else %>
+
+	<% end %>
+/>
