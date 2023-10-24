@@ -1,0 +1,35 @@
+<% unless defined?(class_name) %>
+	<% class_name = "" %>
+<% end %>
+
+<% unless defined?(alt) %>
+	<% alt = "" %>
+<% end %>
+
+<% unless defined?(responsive) %>
+	<% responsive = false %>
+<% end %>
+
+<% unless defined?(exclude_webp) %>
+	<% exclude_webp = false %>
+<% end %>
+
+<div class="picture-set">
+    <% sources.each_with_index do |source, index| %>
+        <% if index == 1 %>
+            <div class="overlay">
+        <% end %>
+
+        <%= render partial: "will-style/components/picture", locals: {
+            source: source,
+            class_name: "#{class_name} #{ File.basename(source,  File.extname(source)).gsub(/^[0-9]+\-/, "")}",
+            responsive: responsive,
+            alt: alt,
+            exclude_webp: exclude_webp
+        } %>
+    <% end %>
+
+    <% if sources.length > 1 %>
+        </div>
+    <% end %>
+</div>
