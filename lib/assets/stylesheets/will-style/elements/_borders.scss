@@ -3,7 +3,7 @@
 //
 
 // Until bootstrap allows us to set border radius on breakpoints, we can just use this
-.border-radius-sm-0 {
+.rounded-sm-0 {
     @include media-breakpoint-down(sm) {
         border-radius: 0 !important;
     }

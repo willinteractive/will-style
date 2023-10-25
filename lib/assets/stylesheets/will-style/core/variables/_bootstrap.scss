@@ -18,6 +18,7 @@ $nav-tabs-link-active-bg: $white;
 $nav-tabs-link-active-bg: $white;
 $nav-tabs-link-active-border-color: $nav-tabs-border-color;
 
+$navbar-z-index: 100000;
 $navbar-light-color:                $body-color;
 $navbar-light-hover-color:          $primary;
 $navbar-light-active-color:         $primary;
@@ -32,3 +33,6 @@ $modal-content-border-radius: 5px;
 $accordion-button-active-bg: $primary;
 
 $dropdown-link-hover-bg: $will-action-hover-bg;
+
+$zindex-modal-backdrop:             $navbar-z-index + 10;
+$zindex-modal:                      $navbar-z-index + 20;

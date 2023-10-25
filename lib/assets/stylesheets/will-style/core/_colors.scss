@@ -16,8 +16,9 @@
 	}
 }
 
-// Adding a black class for overriding color styles
+// Set overscroll on WILL Apps
 
-.text-black {
-	color: $will-black;
+html,
+body {
+	background-color: $body-bg;
 }

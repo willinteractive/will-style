@@ -1,44 +1,14 @@
-.text-gradient-red {
-	@include text-gradient($will-action-red, $will-action-orange);
-	text-shadow: none !important;
-}
+//
+// Gradients
+//
 
-.text-gradient-orange {
-	@include text-gradient($will-action-orange, $will-action-yellow);
-	text-shadow: none !important;
-}
+.text-gradient {
+	// Get gradient to correctly apply
+	display: inline-block;
+	width: auto;
 
-.text-gradient-yellow {
-	@include text-gradient($will-action-yellow, $will-action-green);
-	text-shadow: none !important;
-}
-
-.text-gradient-green {
-	@include text-gradient($will-logo-blue, $will-teal);
-	text-shadow: none !important;
-}
-
-.text-gradient-teal {
-	@include text-gradient($will-teal, $will-action-blue);
-	text-shadow: none !important;
-}
-
-.text-gradient-blue {
-	@include text-gradient($will-action-blue, $will-action-purple);
-	text-shadow: none !important;
-}
-
-.text-gradient-purple {
-	@include text-gradient($will-action-purple, $will-action-violet);
-	text-shadow: none !important;
-}
-
-.text-gradient-violet {
-	@include text-gradient($will-action-violet, $will-action-pink);
-	text-shadow: none !important;
-}
-
-.text-gradient-pink {
-	@include text-gradient($will-action-pink, $will-action-red);
-	text-shadow: none !important;
+	// Ensure background clip is applied
+	background: $will-gradient !important;
+	-webkit-background-clip: text !important;
+	-webkit-text-fill-color: transparent !important;
 }

@@ -63,13 +63,12 @@
 @import
 	"bootstrap/containers",
 	"bootstrap/grid",
-	"bootstrap/tables",
-
-	"will-style/core/layout";
+	"bootstrap/tables";
 
 // Elements
 
 @import
+	"will-style/elements/gradients",
 	"will-style/elements/image-loading";
 
 
