@@ -17,10 +17,6 @@
 		display: block;
 		pointer-events: none;
 
-		@include image-shadow;
-
-		@include hardware-accelerate($force: true);
-
 		opacity: 0;
 		transform: scale3d(1, 0, 1);
 
@@ -76,56 +72,14 @@
 		}
 	}
 
-	html.touchevents & .dropdown-toggle {
-		outline: none !important;
-
-		&:after {
-			content: "\00D7";
-			transform: rotate(-45deg);
-			transform-origin: center;
-
-			line-height: 0.5;
-			border: none;
-
-			vertical-align: 0;
-		}
-
-		&.text-shadowed:after {
-			@include text-shadow($shadow-weight);
-		}
-	}
-
-	html.touchevents &.show .dropdown-toggle:after {
-		animation: rotate-dropdown-toggle $animation-duration / 2 $animation-timing-function forwards;
-	}
-
-	html.no-touchevents & .dropdown-toggle:after {
-		content: none;
-	}
-
 	// Always show dropdowns on small screens
 	@include media-breakpoint-down(md) {
-		.dropdown-toggle:after {
-			content: none !important;
-		}
-
-		.navbar-dark &.show {
-			.dropdown-toggle {
-				color: $white;
-
-				@include hover-focus {
-					color: $primary;
-				}
-			}
-		}
-
 		.dropdown-menu {
 			opacity: 1;
 			transform: none;
-			box-shadow: none;
-			background-color: transparent;
 
-			border: none;
+			background-color: transparent !important;
+			box-shadow: none !important;
 
 			pointer-events: auto;
 
@@ -138,36 +92,12 @@
 				transform: translate3d(0, 0, 0);
 				opacity: 1;
 
-				@include scale-font-size($lead-font-size, $global-scale-factor);
-
-				.navbar-dark & {
-					color: $white;
-				}
+				font-size: $lead-font-size;
 
 				@include hover-focus {
 					color: $primary;
 				}
 			}
 		}
-	}
-}
-
-@keyframes rotate-dropdown-toggle {
-	0% {
-		transform: rotate(-45deg);
-	}
-
-	100% {
-		transform: rotate(-360deg);
-	}
-}
-
-@keyframes clear-dropdown-hover {
-	0% {
-		background-color: transparent;
-	}
-
-	100% {
-		background-color: transparent;
 	}
 }

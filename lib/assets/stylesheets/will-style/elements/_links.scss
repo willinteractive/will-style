@@ -6,7 +6,7 @@
 
 a {
 	transition: color 0.2s $animation-timing-function;
-	cursor: pointer;
+	// cursor: pointer;
 }
 
 // Animated Links
@@ -27,7 +27,7 @@ button.animated {
 		left: 0;
 		right: 0;
 
-		@include scale-property(height, 2px, $global-scale-factor);
+		height: 2px;
 
 		background-color: $link-color;
 
@@ -39,8 +39,7 @@ button.animated {
 					background-color $animation-duration $animation-timing-function;
 	}
 
-	&.text-shadow:before,
-	&.text-shadowed:before {
+	&.text-shadow:before {
 		@include shadow($shadow-weight);
 	}
 
@@ -53,5 +52,18 @@ button.animated {
 
 	&.text-danger:before {
 		background-color: $danger !important;
+	}
+}
+
+a.img-link {
+	p.title {
+		color: $body-color;
+		transition: color $animation-duration $animation-timing-function;
+	}
+
+	@include hover-focus {
+		p.title {
+			color: $link-hover-color;
+		}
 	}
 }

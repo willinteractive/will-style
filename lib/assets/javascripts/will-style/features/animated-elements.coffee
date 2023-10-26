@@ -6,8 +6,8 @@
 # Private Constants  -
 #---------------------
 
-_animatedElementSelector = "[data-animated]"
-_staticAnimatedElementSelector = "[data-animated-static]"
+_animatedElementSelector = "[animated]"
+_staticAnimatedElementSelector = "[animated-static]"
 _frameRate = 1000 / 60
 
 _maximumAnimationDuration = 800
@@ -46,21 +46,21 @@ _generateID = ->
 
 _getTargetForElement = (element) ->
   # Pull element from target cache if it's there
-  return _targetCache[element.data("animate-id")] if _targetCache[element.data("animate-id")]
+  return _targetCache[element.attr("animate-id")] if _targetCache[element.attr("animate-id")]
 
   # If target is inside the element, return it
-  if element.find(element.data("animated-target")).length > 0
-    target = element.find(element.data("animated-target"))[0]
-    _targetCache[element.data("animate-id")] = target
+  if element.find(element.attr("animated-target")).length > 0
+    target = element.find(element.attr("animated-target"))[0]
+    _targetCache[element.attr("animate-id")] = target
 
     return target
 
   # Loop through parents to find target
-  parents = element.parents(element.data("animated-target"))
+  parents = element.parents(element.attr("animated-target"))
 
   if parents.length > 0
     target = parents[0]
-    _targetCache[element.data("animate-id")] = target
+    _targetCache[element.attr("animate-id")] = target
 
     return target
 
@@ -69,11 +69,11 @@ _getTargetForElement = (element) ->
   iterations = 0
 
   while iterations++ < 100
-    targets = parent.find(element.data("animated-target"))
+    targets = parent.find(element.attr("animated-target"))
 
     if targets.length > 0
       target = targets[0]
-      _targetCache[element.data("animate-id")] = target
+      _targetCache[element.attr("animate-id")] = target
 
       return target
 
@@ -116,29 +116,29 @@ _updateAnimatedElements = ->
       target = element
 
       # Set animation ids for cache reference
-      element.data("animate-id", _generateID()) unless element.data("animate-id")
+      element.attr("animate-id", _generateID()) unless element.attr("animate-id")
 
       # If we're using another element for targeting, use it
-      if element.data("animated-target")?
+      if element.attr("animated-target")?
         potentialTarget = _getTargetForElement(element)
         target = $(potentialTarget) if potentialTarget
 
-        target.data("animate-id", _generateID()) unless target.data("animate-id")
+        target.attr("animate-id", _generateID()) unless target.attr("animate-id")
 
-      if target.data("animate-id") and _heightCache[target.data("animate-id")]
-        targetTop = _heightCache[target.data("animate-id")].top
-        targetHeight = _heightCache[target.data("animate-id")].height
+      if target.attr("animate-id") and _heightCache[target.attr("animate-id")]
+        targetTop = _heightCache[target.attr("animate-id")].top
+        targetHeight = _heightCache[target.attr("animate-id")].height
 
       if targetTop < 1
         targetTop = target.offset().top
         targetHeight = target.outerHeight()
 
-        _heightCache[target.data("animate-id")] =
+        _heightCache[target.attr("animate-id")] =
           top: targetTop
           height: targetHeight
 
       # Remove scroll top if element is data-animation-fixed
-      if element.data("animated-fixed")?
+      if element.attr("animated-fixed")?
         targetTop -= windowTop
 
       isActive = false
@@ -148,16 +148,16 @@ _updateAnimatedElements = ->
         isActive = true
 
       # Element is at top and we're only using the top as a trigger
-      else if element.data("animated-begin")? and targetTop < windowTop + windowHeight
+      else if element.attr("animated-begin")? and (targetTop + targetHeight * 0.1) < windowTop + windowHeight
         isActive = true
 
       # Element is just past the top and we're only using the top as a trigger
-      else if element.data("animated-visible")? and targetTop + (targetHeight * 0.1) < windowTop + windowHeight
+      else if element.attr("animated-visible")? and targetTop + (targetHeight * 0.2) < windowTop + windowHeight
         isActive = true
 
       if isActive
         # Element animation determines the position of future elements, so it requires a remeasure
-        if element.attr("data-animated-active") isnt "true" && element.data("animated-reset")? && _hasReset is false
+        if element.attr("animated-active") isnt "true" && element.attr("animated-reset")? && _hasReset is false
           _hasReset = true
 
           clearTimeout(_resetTimer) if _resetTimer
@@ -169,20 +169,20 @@ _updateAnimatedElements = ->
             _isUpdating = false
 
             _scheduleAnimatedElementsUpdate()
-          , parseInt(element.data("animated-reset")) || _maximumAnimationDuration
+          , parseInt(element.attr("animated-reset")) || _maximumAnimationDuration
 
-        element.attr("data-animated-active", "true")
-      else if element.data("animated-hidden-before")?
-        element.removeAttr("data-animated-active")
+        element.attr("animated-active", "true")
+      else if element.attr("animated-hidden-before")?
+        element.removeAttr("animated-active")
 
       # Element is completely off the screen
       if targetTop + targetHeight < windowTop
-        element.attr("data-animated-after", "true")
+        element.attr("animated-after", "true")
       else
-        element.removeAttr("data-animated-after")
+        element.removeAttr("animated-after")
 
       # Set progressive classes if element is asking for it
-      if element.data("animated-progressive")?
+      if element.attr("animated-progressive")?
         targetBottom = targetTop + targetHeight
 
         progressivePosition = 0
@@ -190,7 +190,7 @@ _updateAnimatedElements = ->
         totalDistance = windowHeight + targetHeight
         traveledDistance = targetBottom - windowTop
 
-        if element.data("animated-begin")?
+        if element.attr("animated-begin")?
           totalDistance = windowHeight
           traveledDistance = targetTop - windowTop
 
@@ -200,9 +200,9 @@ _updateAnimatedElements = ->
         progressivePosition = 100 if progressivePosition > 100
 
         if progressivePosition > 0
-          element.attr("data-animated-progressive-position", progressivePosition)
+          element.attr("animated-progressive-position", progressivePosition)
         else
-          element.removeAttr("data-animated-progressive-position")
+          element.removeAttr("animated-progressive-position")
     , 0
 
   clearTimeout(_updateTimer) if _updateTimer
@@ -259,9 +259,9 @@ $(document).on 'turbolinks:before-render', (event) ->
   $(_staticAnimatedElementSelector).each ->
     element = $(this)
 
-    if element.attr("data-animated-active")? and element.attr("id") isnt ""
-      $(event.originalEvent.data.newBody).find("##{element.attr("id")}").attr("data-animated-active", true)
-      $(event.originalEvent.data.newBody).find("##{element.attr("id")}").attr("data-animated-active-init", true)
+    if element.attr("animated-active")? and element.attr("id") isnt ""
+      $(event.originalEvent.attr.newBody).find("##{element.attr("id")}").attr("animated-active", true)
+      $(event.originalEvent.attr.newBody).find("##{element.attr("id")}").attr("animated-active-init", true)
 
 window.WILLStyle.Events.on "update-animated-elements", ->
   _scheduleAnimatedElementsUpdate()

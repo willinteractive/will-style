@@ -1,0 +1,20 @@
+form {
+    input.error {
+        @extend .rounded-top;
+
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+        border-bottom-width: 0 !important;
+    }
+
+    small.form-control.error {
+        @extend .alert;
+        @extend .alert-danger;
+
+        @extend .rounded-bottom;
+        @extend .p-1;
+
+        border-top-left-radius: 0 !important;
+        border-top-right-radius: 0 !important;
+    }
+}

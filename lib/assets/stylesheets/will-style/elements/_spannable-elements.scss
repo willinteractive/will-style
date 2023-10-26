@@ -18,7 +18,7 @@
 }
 
 .spannable-wrap {
-	@include scale-property(margin-bottom, 0.5rem, $global-scale-factor);
+	margin-bottom: 0.5rem;
 
 	display: flex;
 	align-items: flex-end;
@@ -29,7 +29,7 @@
 	}
 
 	img {
-		@include scale-property(width, 5rem, $global-scale-factor);
+		width: 5rem;
 	}
 
 	.spannable {
@@ -39,6 +39,6 @@
 		margin-bottom: 0;
 
 		font-weight: bold;
-		@include scale-font-size($small-font-size, $global-scale-factor);
+		font-size: $small-font-size;
 	}
 }

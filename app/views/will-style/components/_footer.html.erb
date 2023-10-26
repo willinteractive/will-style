@@ -1,3 +1,48 @@
-<footer class="footer container-fluid bg-dark d-flex align-items-center justify-content-center <%= defined?(root_classes) ? root_classes : "" %>">
-	<p class="text-center text-light pt-4 pb-4"><small>&copy;<%= Time.now.year %> <i class="will-icon-will_logo"></i></small></p>
+<% unless defined?(saas_link) %>
+	<% saas_link = "https://willinteractive.com/saas" %>
+<% end %>
+
+<% unless defined?(privacy_link) %>
+	<% privacy_link = "https://willinteractive.com/privacy" %>
+<% end %>
+
+<% unless defined?(terms_link) %>
+	<% terms_link = "https://willinteractive.com/terms" %>
+<% end %>
+
+<% unless defined?(include_bg) %>
+	<% include_bg = true %>
+<% end %>
+
+<footer class="footer mt-auto py-3 <%= include_bg ? "bg-dark" : "text-shadow" %> <%= defined?(root_classes) ? root_classes : "" %>">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<p class="text-center mb-0 text-light">
+					<small>
+						&copy;<%= Time.now.year %> <i class="will-icon-will_logo"></i>
+
+						&nbsp;&nbsp;
+
+						<%= link_to "Privacy Policy", privacy_link, target: :blank, class: "text-light animated" %>
+
+						&nbsp;&nbsp;
+
+						<%= link_to "SaaS Agreement", saas_link, target: :blank, class: "text-light animated" %>
+
+						&nbsp;&nbsp;
+
+						<%= link_to "Terms", terms_link, target: :blank, class: "text-light animated" %>
+
+						<% if defined?(support_link) %>
+
+							&nbsp;&nbsp;
+
+							<%= link_to "Support", support_link, target: :blank, class: "text-light animated" %>
+						<% end %>
+					</small>
+				</p>
+			</div>
+		</div>
+	</div>
 </footer>

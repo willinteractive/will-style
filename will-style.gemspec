@@ -15,13 +15,11 @@ Gem::Specification.new do |s|
 
   s.files = `git ls-files`.split("\n")
 
-  s.add_dependency "rails", ">= 5.1"
+  s.add_dependency "rails", ">= 6.0"
 
   s.add_dependency "jquery-rails", "~> 4.3"
 
-  s.add_dependency "bootstrap", "~> 4.3.1"
-
-  s.add_dependency "font-awesome-rails", "~> 4.7"
+  s.add_dependency "bootstrap", "~> 5.3.1"
 
   s.add_dependency "sassc", "~> 2.2.1"
   s.add_dependency "sassc-rails", "~> 2.0.0"

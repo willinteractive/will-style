@@ -13,8 +13,9 @@ getImageSourceForElement = (element) ->
   source = ""
 
   if element.is("img")
-    element.attr("src", element.attr("data-src")) if element.attr("data-src")?
-    source = element.attr("src")
+    unless element.attr("srcset")
+      element.attr("src", element.attr("data-src")) if element.attr("data-src")?
+      source = element.attr("src")
   else
     bg = element.css('background-image')
 
@@ -43,6 +44,7 @@ presetImageLoading = (images) ->
 setUpImageLoading = ->
   $(imageLoadingQuery).each ->
     element = $(this)
+    imageElement = false
 
     source = getImageSourceForElement(element)
 
@@ -51,8 +53,11 @@ setUpImageLoading = ->
       element.removeAttr("data-image-loading-checking")
 
     else if source is "" and not element.attr("data-src")?
-      element.addClass("loaded")
-      element.removeAttr("data-image-loading-checking")
+      if element.attr("srcset")
+        imageElement = element[0]
+      else
+        element.addClass("loaded")
+        element.removeAttr("data-image-loading-checking")
 
     else if element.attr("data-image-loading-checking")?
       # Don't scan
@@ -60,29 +65,35 @@ setUpImageLoading = ->
       element.attr("data-image-loading-checking", true)
 
       element.addClass("loading")
+      imageElement = new Image()
+      imageElement.src = source
 
-      img = new Image()
-
-      img.onload = ->
-        loadedImages[source] = ""
-
+    if imageElement
+      if imageElement.complete
         element.removeClass("loading")
         element.addClass("loaded")
         element.removeAttr("data-image-loading-checking")
-
-        if not img.complete or img.naturalHeight is 0
-          element.addClass("error")
-
         window.WILLStyle.Events.trigger "image-loaded", element
 
-      img.onerror = ->
-        setTimeout ->
+      else
+        imageElement.onload = ->
+          loadedImages[source] = ""
+
           element.removeClass("loading")
           element.addClass("loaded")
-          element.addClass("error")
-        , 1000
+          element.removeAttr("data-image-loading-checking")
 
-      img.src = source
+          if not imageElement.complete or imageElement.naturalHeight is 0
+            element.addClass("error")
+
+          window.WILLStyle.Events.trigger "image-loaded", element
+
+        imageElement.onerror = ->
+          setTimeout ->
+            element.removeClass("loading")
+            element.addClass("loaded")
+            element.addClass("error")
+          , 1000
 
 # Update image loading on turbolinks load
 $(document).on window.WILLStyle.Settings.pageChangeEvent, ->

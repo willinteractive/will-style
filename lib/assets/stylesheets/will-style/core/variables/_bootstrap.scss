@@ -1,0 +1,38 @@
+//
+// Variable Calculations and Bootstrap dependent Overrides
+//
+
+$navbar-height: $nav-link-padding-y * 4 + $font-size-base * $line-height-base;
+$small-navbar-height: $nav-link-padding-y * 2 + $font-size-base * $line-height-base;
+
+// Bootstrap Overrides
+
+$card-border-width: 0;
+$dropdown-border-width: 0;
+
+$list-group-border-color: $will-light-gray;
+
+$box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+
+$nav-tabs-link-active-bg: $white;
+$nav-tabs-link-active-bg: $white;
+$nav-tabs-link-active-border-color: $nav-tabs-border-color;
+
+$navbar-z-index: 100000;
+$navbar-light-color:                $body-color;
+$navbar-light-hover-color:          $primary;
+$navbar-light-active-color:         $primary;
+
+$navbar-dark-color:                $light;
+$navbar-dark-hover-color:         darken($light, $default-darkening-percentage);
+$navbar-dark-active-color:        darken($light, $default-darkening-percentage);
+
+$modal-content-bg: $white;
+$modal-content-border-radius: 5px;
+
+$accordion-button-active-bg: $primary;
+
+$dropdown-link-hover-bg: $will-action-hover-bg;
+
+$zindex-modal-backdrop:             $navbar-z-index + 10;
+$zindex-modal:                      $navbar-z-index + 20;

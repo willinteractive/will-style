@@ -1,14 +1,3 @@
-// Components
-
-$border-radius:               5px;
-$border-radius-lg:            0;
-$border-radius-sm:            0;
-
-// Positioning
-
-$navbar-z-index: 100000;
-$footer-z-index: -1;
-
 // Globals
 
 $will-logo-aspect-ratio: 4.41;
@@ -20,3 +9,7 @@ $animation-curve-slow-out-fast-in:		cubic-bezier(0.2, 0, 0.4, 1) !default;
 
 $animation-timing-function: ease-in-out !default;
 $animation-duration: 0.4s !default;
+
+$shadow-weight: 'z2' !default;
+
+$default-darkening-percentage: 20%;

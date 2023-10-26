@@ -2,7 +2,6 @@
 require "sassc"
 require "sassc-rails"
 require "bootstrap"
-require "font-awesome-rails"
 require "autoprefixer-rails"
 require "jquery-rails"
 require "turbolinks"

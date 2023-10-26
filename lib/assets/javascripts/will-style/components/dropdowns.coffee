@@ -1,5 +1,5 @@
 #
-# Adding functionality to the bootstrap dropdowns
+# Adding hover functionality to the bootstrap dropdowns
 #
 
 currentDropdown = undefined

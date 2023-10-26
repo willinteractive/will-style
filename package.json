@@ -1,9 +1,15 @@
 {
   "name": "will-style",
-  "version": "4.0.19",
+  "version": "5.0.0",
   "license": "MIT",
   "dependencies": {
-    "bootstrap": "~4.3"
+    "bootstrap": "~5.2"
+  },
+  "devDependencies": {
+    "del": "~1.2.1",
+    "gulp": "~4.0.2",
+    "gulp-sharp-responsive": "~0.4",
+    "require-dir": "~1.2.0"
   },
   "engines": {
     "node": ">=6.12.0",

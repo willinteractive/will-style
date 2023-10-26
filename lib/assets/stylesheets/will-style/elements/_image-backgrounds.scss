@@ -20,7 +20,7 @@
 	left: 0;
 	right: 0;
 
-	z-index: -1;
+	pointer-events: none;
 }
 
 .image-bg,
@@ -38,7 +38,7 @@
 
 	&:before,
 	&:after {
-		transition: opacity 0.4s;
+		transition: opacity $animation-duration $animation-timing-function;
 	}
 
 	&:before {
@@ -51,11 +51,11 @@
 
 	&.loaded {
 		&:before {
-			opacity: $patterned-background-overlay-opacity;
+			opacity: 0.8;
 		}
 
 		&:after {
-			opacity: $patterned-background-opacity;
+			opacity: 0.05;
 		}
 	}
 }
@@ -76,14 +76,6 @@
 
 // Single Image BGs
 .image-bg {
-	&.patterned {
-		@include patterned-background;
-
-		&:after {
-			background-attachment: fixed;
-		}
-	}
-
 	&.fixed {
 		background-attachment: fixed;
 	}
@@ -94,12 +86,6 @@
 	position: fixed;
 
 	pointer-events: none;
-
-	// @IE11: This is required to prevent bouncing on IE11 when scrolling.
-	//        it also requires a hack in elements/_sections.
-	@include ie11-styles {
-		z-index: 0;
-	}
 }
 
 // Background Positioning

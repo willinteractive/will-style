@@ -3,29 +3,17 @@
 //
 
 // Variables
-$animated-element-prop: "data-animated" !default;
-$animated-element-default-prop: "data-animated-default" !default;
-$animated-element-left-prop: "data-animated-left" !default;
-$animated-element-right-prop: "data-animated-right" !default;
-$animated-element-top-prop: "data-animated-top" !default;
-$animated-element-bottom-prop: "data-animated-bottom" !default;
-$animated-element-opacity-prop: "data-animated-opacity" !default;
-$animated-element-opacity-animation-prop: "data-animated-opacity-animation" !default;
-$animated-element-delay-prop: "data-animated-delay" !default;
-$animated-element-active-prop: "data-animated-active" !default;
-$animated-element-active-init-prop: "data-animated-active-init" !default;
-$animated-element-after-prop: "data-animated-after" !default;
-$animated-element-hidden-after-prop: "data-animated-hidden-after" !default;
-$animated-element-progressive-prop: "data-animated-progressive" !default;
-$animated-element-progressive-default-prop: "data-animated-progressive-default" !default;
-$animated-element-progressive-position-prop: "data-animated-progressive-position" !default;
-
-$animated-number-top-prop: "data-animated-number-top" !default;
-$animated-number-bottom-prop: "data-animated-number-bottom" !default;
-
-$animated-fast-rise-blocks-prop: "data-animated-fast-rise-blocks" !default;
-$animated-normal-rise-blocks-prop: "data-animated-normal-rise-blocks" !default;
-$animated-slow-rise-blocks-prop: "data-animated-slow-rise-blocks" !default;
+$animated-element-prop: "animated" !default;
+$animated-element-default-prop: "animated-default" !default;
+$animated-element-left-prop: "animated-left" !default;
+$animated-element-right-prop: "animated-right" !default;
+$animated-element-top-prop: "animated-top" !default;
+$animated-element-bottom-prop: "animated-bottom" !default;
+$animated-element-opacity-prop: "animated-opacity" !default;
+$animated-element-delay-prop: "animated-delay" !default;
+$animated-element-active-prop: "animated-active" !default;
+$animated-element-active-init-prop: "animated-active-init" !default;
+$animated-element-after-prop: "animated-after" !default;
 
 $animated-element-selector: "[#{$animated-element-prop}]" !default;
 $animated-element-default-selector: "[#{$animated-element-default-prop}]" !default;
@@ -34,13 +22,9 @@ $animated-element-right-selector: "[#{$animated-element-right-prop}]" !default;
 $animated-element-top-selector: "[#{$animated-element-top-prop}]" !default;
 $animated-element-bottom-selector: "[#{$animated-element-bottom-prop}]" !default;
 $animated-element-opacity-selector: "[#{$animated-element-opacity-prop}]" !default;
-$animated-element-opacity-animation-selector: "[#{$animated-element-opacity-animation-prop}]" !default;
 $animated-element-active-selector: "[#{$animated-element-active-prop}]" !default;
 $animated-element-active-init-selector: "[#{$animated-element-active-init-prop}]" !default;
-$animated-element-hidden-after-selector: "[#{$animated-element-hidden-after-prop}]" !default;
 $animated-element-after-selector: "[#{$animated-element-after-prop}]" !default;
-$animated-element-progressive-selector: "[#{$animated-element-progressive-prop}]" !default;
-$animated-element-progressive-default-selector: "[#{$animated-element-progressive-default-prop}]" !default;
 
 $animated-element-selector-chrome: "[#{$animated-element-prop}=true]" !default;
 $animated-element-default-selector-chrome: "[#{$animated-element-default-prop}=true]" !default;
@@ -49,26 +33,9 @@ $animated-element-right-selector-chrome: "[#{$animated-element-right-prop}=true]
 $animated-element-top-selector-chrome: "[#{$animated-element-top-prop}=true]" !default;
 $animated-element-bottom-selector-chrome: "[#{$animated-element-bottom-prop}=true]" !default;
 $animated-element-opacity-selector-chrome: "[#{$animated-element-opacity-prop}=true]" !default;
-$animated-element-opacity-animation-selector-chrome: "[#{$animated-element-opacity-animation-prop}=true]" !default;
 $animated-element-active-selector-chrome: "[#{$animated-element-active-prop}=true]" !default;
 $animated-element-active-init-selector-chrome: "[#{$animated-element-active-init-prop}=true]" !default;
-$animated-element-hidden-after-selector-chrome: "[#{$animated-element-hidden-after-prop}=true]" !default;
 $animated-element-after-selector-chrome: "[#{$animated-element-after-prop}=true]" !default;
-$animated-element-progressive-selector-chrome: "[#{$animated-element-progressive-prop}=true]" !default;
-$animated-element-progressive-default-selector-chrome: "[#{$animated-element-progressive-default-prop}=true]" !default;
-
-//Modern Rise Blocks
-$animated-fast-rise-blocks-selector: "[#{$animated-fast-rise-blocks-prop}=true]" !default;
-$animated-normal-rise-blocks-selector: "[#{$animated-normal-rise-blocks-prop}=true]" !default;
-$animated-slow-rise-blocks-selector: "[#{$animated-slow-rise-blocks-prop}=true]" !default;
-$animated-number-top-selector: "[#{$animated-number-top-prop}=true]" !default;
-$animated-number-bottom-selector: "[#{$animated-number-bottom-prop}=true]" !default;
-
-$animated-fast-rise-blocks-selector-chrome: "[#{$animated-fast-rise-blocks-prop}=true]" !default;
-$animated-normal-rise-blocks-selector-chrome: "[#{$animated-normal-rise-blocks-prop}=true]" !default;
-$animated-slow-rise-blocks-selector-chrome: "[#{$animated-slow-rise-blocks-prop}=true]" !default;
-$animated-number-top-selector-chrome: "[#{$animated-number-top-prop}=true]" !default;
-$animated-number-bottom-selector-chrome: "[#{$animated-number-bottom-prop}=true]" !default;
 
 // Yield function for initializing transitions on animated elements
 
@@ -85,7 +52,7 @@ $animated-number-bottom-selector-chrome: "[#{$animated-number-bottom-prop}=true]
 		@content;
 	}
 
-	&[data-animated-active=true] {
+	&[animated-active=true] {
 		@content;
 	}
 }
@@ -176,50 +143,6 @@ $animated-number-bottom-selector-chrome: "[#{$animated-number-bottom-prop}=true]
 	}
 }
 
-@mixin animated-element-opacity-animation($includes-root-element: true) {
-	@if $includes-root-element == true {
-		&#{$animated-element-opacity-animation-selector}, &#{$animated-element-opacity-animation-selector-chrome} {
-			@content;
-		}
-	} @else {
-		#{$animated-element-opacity-animation-selector}, #{$animated-element-opacity-animation-selector-chrome} {
-			@content;
-		}
-	}
-}
-
-@mixin animated-element-hidden-after($includes-root-element: true) {
-	@if $includes-root-element == true {
-		&#{$animated-element-hidden-after-selector}, &#{$animated-element-hidden-after-selector-chrome} {
-			@content;
-		}
-	} @else {
-		#{$animated-element-hidden-after-selector}, #{$animated-element-hidden-after-selector-chrome} {
-			@content;
-		}
-	}
-}
-
-@mixin animated-element-progressive {
-	&#{$animated-element-progressive-selector}, &#{$animated-element-progressive-selector-chrome} {
-		@content;
-	}
-}
-
-@mixin animated-element-progressive-position($position: 0) {
-	&#{$animated-element-progressive-selector}, &#{$animated-element-progressive-selector-chrome} {
-		&[#{$animated-element-progressive-position-prop}="#{$position}"] {
-			@content;
-		}
-	}
-}
-
-@mixin animated-element-progressive-default {
-	&#{$animated-element-progressive-default-selector}, &#{$animated-element-progressive-default-selector-chrome} {
-		@content;
-	}
-}
-
 @mixin animated-element-delay($ms: 0, $delay: -1, $includes-root-element: true) {
 	@if $delay == -1 {
 		$delay: $ms;
@@ -243,70 +166,6 @@ $animated-number-bottom-selector-chrome: "[#{$animated-number-bottom-prop}=true]
 @mixin animated-element-delay-block($ms: 0) {
 	&[#{$animated-element-delay-prop}="#{$ms}"] {
 		@include animated-element-active {
-			@content;
-		}
-	}
-}
-
-// STAT NUMS
-
-@mixin animated-number-top($includes-root-element: true) {
-	@if $includes-root-element == true {
-		&#{$animated-number-top-selector}, &#{$animated-number-top-selector-chrome} {
-			@content;
-		}
-	} @else {
-		#{$animated-number-top-selector}, #{$animated-number-top-selector-chrome} {
-			@content;
-		}
-	}
-}
-
-@mixin animated-number-bottom($includes-root-element: true) {
-	@if $includes-root-element == true {
-		&#{$animated-number-bottom-selector}, &#{$animated-number-bottom-selector-chrome} {
-			@content;
-		}
-	} @else {
-		#{$animated-number-bottom-selector}, #{$animated-number-bottom-selector-chrome} {
-			@content;
-		}
-	}
-}
-
-// RISE BLOCKS BELOW IMAGES ANIMATIONS
-
-@mixin animated-fast-rise-blocks($includes-root-element: true) {
-	@if $includes-root-element == true {
-		&#{$animated-fast-rise-blocks-selector}, &#{$animated-fast-rise-blocks-selector-chrome} {
-			@content;
-		}
-	} @else {
-		#{$animated-fast-rise-blocks-selector}, #{$animated-fast-rise-blocks-selector-chrome} {
-			@content;
-		}
-	}
-}
-
-@mixin animated-normal-rise-blocks($includes-root-element: true) {
-	@if $includes-root-element == true {
-		&#{$animated-normal-rise-blocks-selector}, &#{$animated-normal-rise-blocks-selector-chrome} {
-			@content;
-		}
-	} @else {
-		#{$animated-normal-rise-blocks-selector} {
-			@content;
-		}
-	}
-}
-
-@mixin animated-slow-rise-blocks($includes-root-element: true) {
-	@if $includes-root-element == true {
-		&#{$animated-slow-rise-blocks-selector}, &#{$animated-slow-rise-blocks-selector-chrome} {
-			@content;
-		}
-	} @else {
-		#{$animated-slow-rise-blocks-selector}, #{$animated-slow-rise-blocks-selector-chrome} {
 			@content;
 		}
 	}

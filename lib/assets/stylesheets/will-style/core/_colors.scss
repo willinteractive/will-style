@@ -8,26 +8,17 @@
 
 @each $name, $color in $color-list {
 	.#{$name} {
-		&:not(.background) {
-			color: $color;
-		}
-
-		&.background {
-			background-color: $color;
-		}
+		color: $color !important;
 	}
 
-	.#{$name}-fg {
-		color: $color;
-	}
-
-	.#{$name}-bg {
-		background-color: $color;
+	.bg-#{$name} {
+		background-color: $color !important;
 	}
 }
 
-// Adding a black class for overriding color styles
+// Set overscroll on WILL Apps
 
-.text-black {
-	color: $will-black;
+html,
+body {
+	background-color: $body-bg;
 }

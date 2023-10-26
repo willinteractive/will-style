@@ -12,8 +12,9 @@
 	"will-style/core/variables/global",
 
 	"bootstrap/variables",
+	"bootstrap/variables-dark",
 
-	"will-style/core/overrides",
+	"will-style/core/variables/bootstrap",
 	"will-style/core/deferred-styles",
 	"will-style/core/accessibility",
 	"will-style/core/colors";
@@ -21,20 +22,22 @@
 // Mixins
 
 @import
+	"bootstrap/maps",
 	"bootstrap/mixins",
+	"bootstrap/utilities",
+
 	"bootstrap/root",
 	"bootstrap/reboot",
+	"bootstrap/type",
 
 	"will-style/mixins/base",
+	"will-style/mixins/backgrounds",
 	"will-style/mixins/gradients",
 	"will-style/mixins/layout",
 	"will-style/mixins/outlined-elements",
 	"will-style/mixins/shadows",
-	"will-style/mixins/patterned-backgrounds",
-	"will-style/mixins/expanded-elements",
 	"will-style/mixins/animated-elements",
 	"will-style/mixins/scaled-properties",
-	"will-style/mixins/will-backgrounds",
 	"will-style/mixins/will-icons";
 
 // Transitions
@@ -55,75 +58,31 @@
 @import
 	"bootstrap/images";
 
-// Buttons
-
-@import
-	"will-style/elements/buttons/variables",
-	"bootstrap/buttons",
-	"will-style/elements/buttons/overrides",
-
-	"will-style/elements/links";
-
-// Forms
-
-@import
-	"bootstrap/forms",
-	"bootstrap/custom-forms";
-
 // Layout
 
 @import
-	"bootstrap/grid";
+	"bootstrap/containers",
+	"bootstrap/grid",
+	"bootstrap/tables";
 
 // Elements
 
 @import
-	"bootstrap/alert",
-
-	"will-style/elements/sections",
-	"will-style/elements/expanded-elements",
-	"will-style/elements/patterned-backgrounds",
-	"will-style/elements/image-loading",
-	"will-style/elements/image-backgrounds",
-	"will-style/elements/video-backgrounds",
-	"will-style/elements/headings",
-	"will-style/elements/forms",
-	"will-style/elements/shadows",
 	"will-style/elements/gradients",
-	"will-style/elements/underlined-elements",
-	"will-style/elements/spannable-elements",
-	"will-style/elements/containers";
+	"will-style/elements/image-loading";
 
-// Components
-
-@import
-	"will-style/components/footer",
-	"will-style/components/will-backgrounds",
-	"will-style/components/pop-out",
-
-
-	"bootstrap/nav",
-	"bootstrap/navbar",
-	"will-style/components/navbar",
-
-	"will-style/components/hero";
-
-// Animations
-
-@import
-	"will-style/animated-elements/default",
-	"will-style/animated-elements/buttons",
-	"will-style/animated-elements/headings",
-	"will-style/animated-elements/image-backgrounds",
-	"will-style/animated-elements/heroes",
-	"will-style/animated-elements/navbar",
-	"will-style/animated-elements/spannable-elements";
 
 // Libraries
 
 @import
-	"bootstrap/utilities",
-	"bootstrap/print";
+	"font-awesome-pro",
+	"font-awesome-pro/brands",
+	"font-awesome-pro/solid",
+	"font-awesome-pro/regular",
+	"font-awesome-pro/light",
+	"font-awesome-pro/thin",
+	"font-awesome-pro/duotone",
+	"font-awesome-pro/sharp-solid",
 
-@import
-  "will-style/libraries/turbolinks";
+	"bootstrap/helpers",
+	"bootstrap/utilities/api";
