@@ -4,10 +4,9 @@
 
 *[data-pop-out] {
 	position: fixed;
+
 	padding-top: 1.5rem;
 	padding-bottom: 1.5rem;
-
-	background: $will-dark-gray;
 
 	visibility: hidden;
 	pointer-events: none;
@@ -28,11 +27,55 @@
 		padding: 0;
 
 		line-height: 0px;
+
+		order: 2;
 	}
 
 	iframe {
 		border: none;
 		background-color: $will-dark-gray;
+		border-radius: $border-radius;
+
+		@extend .shadow;
+	}
+
+	&.aspect {
+		video,
+		iframe {
+			aspect-ratio: 1920 / 1080;
+
+			@media (min-aspect-ratio: 1920 / 1080) {
+				width: auto;
+			}
+
+			@media (max-aspect-ratio: 1920 / 1080) {
+				height: auto;
+			}
+		}
+	}
+
+	.close-pop-out {
+		order: 1;
+
+		color: $will-white;
+
+		font-size: 3rem;
+		line-height: 3rem;
+
+		margin-left: auto;
+		margin-bottom: 0.5rem;
+		margin-right: 0;
+
+		transition: color $animation-duration $animation-timing-function;
+
+		cursor: pointer;
+
+		&:hover,
+		&:focus {
+			color: $primary;
+		}
+
+		opacity: 0;
 	}
 
 	.content {
@@ -43,27 +86,10 @@
 		opacity: 0;
 		transition: opacity .2s .4s;
 
-		.close-pop-out {
-			position: absolute;
-			top: -2rem;
-			right: 0;
-
-			color: $will-white;
-			font-size: 3rem;
-			line-height: 3rem;
-			margin: 0.5rem;
-
-			transition: color .2s;
-
-			cursor: pointer;
-
-			&:hover,
-			&:focus {
-				color: $primary;
-			}
-
-			opacity: 0;
-		}
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 	}
 
 	&.enabled {
@@ -121,7 +147,10 @@
 }
 
 .pop-out-overlay {
+	@include textured-bg;
+
 	position: fixed;
+
 	top: 0;
 	bottom: 0;
 	left: 0;
@@ -172,7 +201,7 @@ body {
 	}
 
 	100% {
-		opacity: 0.95;
+		opacity: 1;
 	}
 }
 
