@@ -56,14 +56,40 @@ button.animated {
 }
 
 a.img-link {
+	cursor: pointer;
+	position: relative;
+	display: block;
+
 	p.title {
 		color: $body-color;
 		transition: color $animation-duration $animation-timing-function;
 	}
 
+	img {
+		pointer-events: none;
+	}
+
+	.hover-img {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		width: 100%;
+		height: 100%;
+
+		opacity: 0;
+		transition: opacity $animation-duration $animation-timing-function;
+	}
+
 	@include hover-focus {
 		p.title {
 			color: $link-hover-color;
+		}
+
+		.hover-img {
+			opacity: 1;
 		}
 	}
 }
