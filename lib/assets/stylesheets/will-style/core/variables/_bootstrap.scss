@@ -24,8 +24,8 @@ $navbar-light-hover-color:          $primary;
 $navbar-light-active-color:         $primary;
 
 $navbar-dark-color:                $light;
-$navbar-dark-hover-color:         darken($light, $default-darkening-percentage);
-$navbar-dark-active-color:        darken($light, $default-darkening-percentage);
+$navbar-dark-hover-color:         darken($light, 5%);
+$navbar-dark-active-color:        darken($light, 5%);
 
 $modal-content-bg: $white;
 $modal-content-border-radius: 5px;

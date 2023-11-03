@@ -50,16 +50,6 @@
 	}
 }
 
-@mixin stretch {
-	min-height: 100vh;
-
-	html.touchevents & {
-		min-height: stretch;
-		min-height: -webkit-fill-available;
-		min-height: -moz-available;
-	}
-}
-
 @mixin stretch-max {
 	max-height: 100vh;
 
