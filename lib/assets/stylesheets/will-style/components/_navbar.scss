@@ -3,10 +3,43 @@
 //
 
 nav.navbar {
-	&.obscure {
-		&.obscure {
-			backdrop-filter: blur(20px);
+	&.fixed {
+		position: fixed;
 
+		top: 0;
+		left: 0;
+		right: 0;
+
+		z-index: $navbar-z-index;
+
+		& + *:nth-of-type(1) {
+			padding-top: $navbar-height !important;
+		}
+
+		.will-logo-svg {
+			.letter-fill,
+			.play-fill {
+				transition: fill $animation-duration $animation-timing-function;
+			}
+		}
+
+		&.obscure {
+			@extend .navbar-dark;
+			background: $will-gradient !important;
+
+			.will-logo-svg {
+				.letter-fill,
+				.play-fill {
+					fill: $white !important;
+				}
+			}
+
+			.btn.btn-gradient {
+				&::before {
+					background-image: none;
+					background-color: $body-color;
+				}
+			}
 		}
 	}
 

@@ -84,6 +84,11 @@ button {
 			background: linear-gradient($will-linen, $will-linen) padding-box,
 						$will-gradient border-box;
 
+			&.bg-white {
+				background: linear-gradient($white, $white) padding-box,
+							$will-gradient border-box;
+
+			}
 			border: 2px solid transparent !important;
 
 			padding-left: calc(#{$btn-padding-x} - #{px-to-rem(1)});

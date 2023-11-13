@@ -24,3 +24,25 @@ $(document).on "click tap", ".navbar-toggler", (event)->
     $("body").removeClass("navbar-active")
   else
     $("body").addClass("navbar-active")
+
+_cachedNavHeight = -1
+
+_checkNavbarObscure = ->
+  if $("nav.navbar.fixed").length > 0
+    _cachedNavHeight = $("nav.navbar.fixed").outerHeight()
+    addObscureClass = false
+
+    if _cachedNavHeight > 0
+      addObscureClass = $(window).scrollTop() > $("nav.navbar.fixed").outerHeight()
+
+    if addObscureClass
+      $("nav.navbar.fixed").addClass("obscure")
+    else
+      $("nav.navbar.fixed").removeClass("obscure")
+
+# Add class on navbar to make sure it's on top of content
+$(window).on "scroll", _checkNavbarObscure
+
+$(window).on "resize", (event)->
+  _cachedNavHeight = -1
+  _checkNavbarObscure()
