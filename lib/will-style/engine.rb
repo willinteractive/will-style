@@ -1,6 +1,5 @@
 # Dependencies
-require "sassc"
-require "sassc-rails"
+require "dartsass-sprockets"
 require "bootstrap"
 require "autoprefixer-rails"
 require "jquery-rails"

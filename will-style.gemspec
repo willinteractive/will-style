@@ -21,8 +21,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "bootstrap", "~> 5.3.1"
 
-  s.add_dependency "sassc", "~> 2.2.1"
-  s.add_dependency "sassc-rails", "~> 2.0.0"
+  s.add_dependency "dartsass-sprockets", "~> 3.0.0"
 
   s.add_dependency 'coffee-rails', "~> 4.2"
   s.add_dependency 'autoprefixer-rails', ">= 9.1"
