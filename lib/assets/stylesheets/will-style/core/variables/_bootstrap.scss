@@ -3,7 +3,6 @@
 //
 
 $navbar-height: $nav-link-padding-y * 4 + $font-size-base * $line-height-base;
-$small-navbar-height: $nav-link-padding-y * 2 + $font-size-base * $line-height-base;
 
 // Bootstrap Overrides
 
@@ -29,6 +28,9 @@ $navbar-dark-active-color:        darken($light, 5%);
 
 $modal-content-bg: $white;
 $modal-content-border-radius: 5px;
+
+$accordion-icon-color-dark: $body-color;
+$accordion-icon-active-color-dark: $body-color;
 
 $accordion-button-active-bg: $primary;
 
