@@ -9,7 +9,6 @@
 #= require will-style/features/google-analytics
 #= require will-style/features/image-backgrounds
 #= require will-style/features/video-backgrounds
-#= require will-style/features/outlined-buttons
 #= require will-style/features/focused-form-elements
 #= require will-style/features/overlapped-elements
 
