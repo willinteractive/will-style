@@ -1,0 +1,48 @@
+$expanded-size: 6rem;
+$expanded-size-sm: 2rem;
+
+.expanded {
+    padding-top: $expanded-size;
+    padding-bottom: $expanded-size;
+    padding-left: $expanded-size;
+    padding-right: $expanded-size;
+
+    @include media-breakpoint-down(sm) {
+        padding-top: $expanded-size-sm;
+        padding-bottom: $expanded-size-sm;
+        padding-left: $expanded-size-sm;
+        padding-right: $expanded-size-sm;
+    }
+}
+
+.expanded-start {
+    padding-left: $expanded-size;
+
+    @include media-breakpoint-down(sm) {
+        padding-left: $expanded-size-sm;
+    }
+}
+
+.expanded-end {
+    padding-right: $expanded-size;
+
+    @include media-breakpoint-down(sm) {
+        padding-right: $expanded-size-sm;
+    }
+}
+
+.expanded-top {
+    padding-top: $expanded-size;
+
+    @include media-breakpoint-down(sm) {
+        padding-top: $expanded-size-sm;
+    }
+}
+
+.expanded-bottom {
+    padding-bottom: $expanded-size;
+
+    @include media-breakpoint-down(sm) {
+        padding-bottom: $expanded-size-sm;
+    }
+}
