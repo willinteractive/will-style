@@ -143,12 +143,15 @@ _updateAnimatedElements = ->
 
       isActive = false
 
+      beginHeight = targetHeight * 0.1
+      beginHeight = 15 if beginHeight > 15
+
       # Element is fully visible
       if targetTop + targetHeight < windowTop + windowHeight
         isActive = true
 
       # Element is at top and we're only using the top as a trigger
-      else if element.attr("animated-begin")? and (targetTop + targetHeight * 0.1) < windowTop + windowHeight
+      else if element.attr("animated-begin")? and (targetTop + beginHeight) < windowTop + windowHeight
         isActive = true
 
       # Element is just past the top and we're only using the top as a trigger
