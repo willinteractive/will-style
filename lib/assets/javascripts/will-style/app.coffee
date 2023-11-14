@@ -23,5 +23,6 @@
 #= require select2
 #= require jquery.isEmail
 #= require jquery.urlify
+
 #= require will-style/libraries/turbolinks
 #= require turbolinks
