@@ -5,7 +5,7 @@
 @include animated-element-default($includes-root-element: false) {
 	@include animated-element-init {
 		opacity: 0;
-		transform: translateY(5%);
+		transform: translateY(5px);
 
 		transition: opacity $animation-duration $animation-timing-function,
 					transform $animation-duration $animation-timing-function;
@@ -20,7 +20,7 @@
 @include animated-element-bottom($includes-root-element: false) {
 	@include animated-element-init {
 		opacity: 0;
-		transform: translateY(15%);
+		transform: translateY(5px);
 
 		transition: opacity $animation-duration $animation-timing-function,
 					transform $animation-duration $animation-timing-function;
@@ -35,7 +35,7 @@
 @include animated-element-top($includes-root-element: false) {
 	@include animated-element-init {
 		opacity: 0;
-		transform: translateY(-15%);
+		transform: translateY(-5px);
 
 		transition: opacity $animation-duration $animation-timing-function,
 					transform $animation-duration $animation-timing-function;
@@ -50,7 +50,7 @@
 @include animated-element-left($includes-root-element: false) {
 	@include animated-element-init {
 		opacity: 0;
-		transform: translateX(-15%);
+		transform: translateX(-5px);
 
 		transition: opacity $animation-duration $animation-timing-function,
 					transform $animation-duration $animation-timing-function;
@@ -65,7 +65,7 @@
 @include animated-element-right($includes-root-element: false) {
 	@include animated-element-init {
 		opacity: 0;
-		transform: translateX(15%);
+		transform: translateX(5px);
 
 		transition: opacity $animation-duration $animation-timing-function,
 					transform $animation-duration $animation-timing-function;
