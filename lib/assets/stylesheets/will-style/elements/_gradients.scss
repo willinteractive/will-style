@@ -12,3 +12,16 @@
 	-webkit-background-clip: text !important;
 	-webkit-text-fill-color: transparent !important;
 }
+
+@each $name, $color in $color-list {
+	.text-gradient-#{$name} {
+		// Get gradient to correctly apply
+		display: inline-block;
+		width: auto;
+
+		-webkit-background-clip: text !important;
+		-webkit-text-fill-color: transparent !important;
+
+		@include color-gradient($color);
+	}
+}
