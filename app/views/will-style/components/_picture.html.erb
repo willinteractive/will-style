@@ -34,7 +34,7 @@
 		<% source_type = "webp" %>
 	<% end %>
 
-	<img class="<%= class_name %>" alt="<%= alt %>"
+	<img class="<%= class_name %>" alt="<%= alt %>" lazy="true"
 		src="<%= asset_url(source) %>"
 		<% if defined?(responsive) && responsive == true %>
 				srcset="
