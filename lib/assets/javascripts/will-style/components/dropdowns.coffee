@@ -5,97 +5,110 @@
 currentDropdown = undefined
 
 getDropdown = (dropdownToggle) ->
-  if $(dropdownToggle).closest(".dropdown").length > 0
-    $(dropdownToggle).closest(".dropdown")
-  else if $(dropdownToggle).closest(".dropdown-menu[aria-labelledby]").length > 0
-    $("##{$(dropdownToggle).closest(".dropdown-menu").attr('aria-labelledby')}").closest(".dropdown")
+  return unless dropdownToggle
+
+  if dropdownToggle.closest(".dropdown")
+    return dropdownToggle.closest(".dropdown")
+  else if dropdownToggle.closest(".dropdown-menu[aria-labelledby]")
+    return dropdownToggle.closest(".dropdown-menu[aria-labelledby]").closest(".dropdown")
 
 getDropdownMenu = (dropdown) ->
-  if $(dropdown).find(".dropdown-menu").length > 0 and !$(dropdown).find(".dropdown-menu").hasClass("dropdown-small")
-    $(dropdown).find(".dropdown-menu")
+  return unless dropdown
+
+  if dropdown.querySelector(".dropdown-menu").length > 0 and !dropdown.querySelector(".dropdown-menu").classList.contains("dropdown-small")
+    return dropdown.querySelector(".dropdown-menu")
   else
-    $(".dropdown-menu[aria-labelledby='#{$(dropdown).find(".dropdown-toggle").attr("id")}']")
+    return document.querySelector(".dropdown-menu[aria-labelledby='#{dropdown.querySelector(".dropdown-toggle").getAttribute("id")}']")
 
 highlightDropdown = (dropdownToggle, permanently = false) ->
   dropdown = getDropdown(dropdownToggle)
 
-  return unless dropdown.length > 0
+  return unless dropdown
 
-  if currentDropdown and currentDropdown isnt dropdown[0]
+  if currentDropdown and currentDropdown isnt dropdown
     currentDropdown = undefined
 
   # Clear all other dropdowns
-  $(".dropdown, .dropdown-menu").removeClass("show")
-  $(".dropdown-toggle").removeClass("active")
+  for element in document.querySelectorAll(".dropdown, .dropdown-menu")
+    element.classList.remove("show")
 
-  dropdown.addClass("show")
-  getDropdownMenu(dropdown).addClass("show") if getDropdownMenu(dropdown)
+  for element in document.querySelectorAll(".dropdown-toggle")
+    element.classList.remove("active")
+
+  dropdown.classList.add("show")
+  getDropdownMenu(dropdown).classList.add("show") if getDropdownMenu(dropdown)
 
   if permanently is true
-    currentDropdown = dropdown[0]
-
-  # $(".dropdown-toggle").blur()
+    currentDropdown = dropdown
 
 hideDropdown = (dropdownToggle) ->
   dropdown = getDropdown(dropdownToggle)
 
-  return unless dropdown.length > 0
+  return unless dropdown
   return if currentDropdown
 
-  $(dropdownToggle).blur()
+  dropdownToggle.blur()
 
   currentDropdown = undefined
 
-  dropdown.removeClass("show")
-  getDropdownMenu(dropdown).removeClass("show") if getDropdownMenu(dropdown)
+  dropdown.classList.remove("show")
+  getDropdownMenu(dropdown).classList.remove("show") if getDropdownMenu(dropdown)
 
 clearAnimationClasses = (dropdownToggle) ->
   dropdown = getDropdown(dropdownToggle)
 
-  return unless dropdown.length > 0
+  return unless dropdown
 
   dropdownMenu = getDropdownMenu(dropdown)
 
-  $(dropdownToggle).removeClass("no-anim")
-  dropdownMenu.removeClass("no-anim")
+  dropdownToggle.classList.remove("no-anim")
+  dropdownMenu.classList.remove("no-anim")
 
-$(document).on "mouseenter focusin", ".dropdown-toggle", (event) ->
-  clearAnimationClasses(event.currentTarget)
+onDropdownEnter = (event) ->
+  return unless event.target.classList.contains("dropdown-toggle")
 
-  highlightDropdown event.currentTarget
+  clearAnimationClasses(event.target)
+
+  highlightDropdown event.target
   return true
 
-$(document).on "mouseleave focusout", ".dropdown-toggle, .dropdown-menu", (event) ->
-  return unless event and event.originalEvent and event.originalEvent.clientX and event.originalEvent.clientY
+onDropdownOut = (event) ->
+  return unless event and event.clientX and event.clientY
 
-  currentElement = $(document.elementFromPoint(event.originalEvent.clientX, event.originalEvent.clientY))
+  currentElement = document.elementFromPoint(event.clientX, event.clientY)
 
-  if currentElement.closest(".dropdown-menu").length is 0 and currentElement.closest(".dropdown").length is 0
-    hideDropdown event.currentTarget
+  unless !currentElement or currentElement.closest(".dropdown-menu, .dropdown")
+    hideDropdown event.target
 
   return true
 
-$(document).on window.WILLStyle.Settings.pageChangeEvent, (event) ->
+onDropdownClick = (event) ->
+  highlightDropdown(event.target, true)
 
-  # Hold Dropdowns On Click
+  event.stopImmediatePropagation()
+  event.stopPropagation()
+  return false
 
-  $(".dropdown-toggle").on "click", (event) ->
-    highlightDropdown(event.currentTarget, true)
+document.addEventListener window.WILLStyle.Settings.pageChangeEvent, (event) ->
+  # Setup event listeners
+  for element in document.querySelectorAll(".dropdown-toggle, .dropdown-menu")
+    element.addEventListener "click", onDropdownClick
 
-    event.stopImmediatePropagation()
-    event.stopPropagation()
-    return false
+    element.addEventListener "mouseover", onDropdownEnter
+    element.addEventListener "focusin", onDropdownEnter
+
+    element.addEventListener "mouseout", onDropdownOut
+    element.addEventListener "focusout", onDropdownOut
 
   # Highlight Active Dropdowns on Page Change
-
-  $(".dropdown-item.active").each ->
-    dropdownMenu = $(this).closest(".dropdown-menu")
+  for element in document.querySelectorAll(".dropdown-item.active")
+    dropdownMenu = element.closest(".dropdown-menu")
 
     if dropdownMenu
-      dropdownLabel = dropdownMenu.attr("aria-labelledby")
+      dropdownLabel = dropdownMenu.getAttribute("aria-labelledby")
 
       if dropdownLabel
-        dropdownTarget = $("##{dropdownLabel}")
+        dropdownTarget = document.querySelector("##{dropdownLabel}")
 
         if dropdownTarget
-          dropdownTarget.addClass("active")
+          dropdownTarget.classList.add("active")
