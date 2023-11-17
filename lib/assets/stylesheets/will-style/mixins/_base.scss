@@ -62,5 +62,5 @@ $include-type: "node" !default;
 }
 
 @function px-to-rem($value) {
-    @return ($value / 16) + rem;
+    @return calc($value / 16) + rem;
 }

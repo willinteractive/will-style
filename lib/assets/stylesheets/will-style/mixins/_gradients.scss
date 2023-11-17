@@ -39,7 +39,7 @@
 					$start-saturation,
 					$start-lightness,
 					$alpha-value)
-					percentage($color-stop / 100);
+					percentage(calc($color-stop / 100));
 		} @else {
 			// Blend the two colors when mixing two colors
 			$stop: hsla(
@@ -47,7 +47,7 @@
 					$start-saturation * $alpha-value + $end-saturation * (1 - $alpha-value),
 					$start-lightness * $alpha-value + $end-lightness * (1 - $alpha-value),
 					1)
-					percentage($color-stop / 100);
+					percentage(calc($color-stop / 100));
 		}
 
 		$stops: append($stops, $stop, comma);

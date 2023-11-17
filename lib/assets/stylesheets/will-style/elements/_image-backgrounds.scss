@@ -63,7 +63,7 @@
 .image-bgs .image-bg-display {
 	opacity: 0;
 
-	transition: opacity 2s $animation-duration / 2 $animation-timing-function;
+	transition: opacity 2s calc($animation-duration / 2) $animation-timing-function;
 
 	&.loaded.active {
 		opacity: 1;
@@ -95,13 +95,13 @@
 	@for $i from 0 through 100 {
 		&.x-#{$i},
 		&.x-#{$i} {
-			background-position-x: percentage($i / 100.0);
+			background-position-x: percentage(calc($i / 100.0));
 		}
 	}
 
 	@for $i from 0 through 100 {
 		&.y-#{$i} {
-			background-position-y: percentage($i / 100.0);
+			background-position-y: percentage(calc($i / 100.0));
 		}
 	}
 }
