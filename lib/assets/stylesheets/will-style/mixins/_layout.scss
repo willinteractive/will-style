@@ -37,27 +37,14 @@
 	}
 }
 
-// @NOTE: Phones do weird things with 100vh.
-// This fixes it without having to do weird position: fixed stuff.
-
 @mixin stretch {
 	min-height: 100vh;
-
-	html.touchevents & {
-		min-height: stretch;
-		min-height: -webkit-fill-available;
-		min-height: -moz-available;
-	}
+	min-height: 100dvh;
 }
 
 @mixin stretch-max {
 	max-height: 100vh;
-
-	html.touchevents & {
-		max-height: stretch;
-		max-height: -webkit-fill-available;
-		max-height: -moz-available;
-	}
+	max-height: 100dvh;
 }
 
 @mixin iphone-notch-padding-left {
