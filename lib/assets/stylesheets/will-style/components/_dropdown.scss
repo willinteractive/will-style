@@ -2,6 +2,12 @@
 // Dropdown Overrides
 //
 
+// This is a fix for dropdown end not working
+.dropdown-menu-end {
+	right: 0;
+	left: auto;
+}
+
 .dropdown {
 	.dropdown-toggle {
 		cursor: pointer;
