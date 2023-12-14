@@ -367,6 +367,35 @@ nav.navbar {
 		flex-basis: 100%;
 		height: 0;
 	}
+
+	// Always show dropdowns on small screens
+	@include media-breakpoint-down(md) {
+		.dropdown-menu {
+			opacity: 1;
+			transform: none;
+
+			background-color: transparent !important;
+			box-shadow: none !important;
+
+			pointer-events: auto;
+
+			.dropdown-item {
+				background-color: transparent !important;
+
+				padding-left: 1.5rem;
+				padding-right: 0;
+
+				transform: translate3d(0, 0, 0);
+				opacity: 1;
+
+				font-size: $lead-font-size;
+
+				@include hover-focus {
+					color: $primary;
+				}
+			}
+		}
+	}
 }
 
 // Navbar positioning on small screens
