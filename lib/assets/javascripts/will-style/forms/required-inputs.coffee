@@ -15,7 +15,6 @@ update_submit = (form) ->
         # Enforce valid email addresses on email fields
         disabled = true if $(this).attr("type") is "email" and $.isEmail($(this).val()) is false
 
-
   form.find("[type=submit]").prop("disabled", disabled)
   form.find("button.require-dependent").prop("disabled", disabled)
 
