@@ -14,11 +14,18 @@ $will-logo-teal:	$will-teal;
 $will-light-gray:	#abaaa8;
 $will-dark-gray:	#2d2e2f;
 
-$will-action-red:		#ff4967;
+// @NOTE: Changing action red to be 508 compliant
+// $will-action-red:		#ff4967;
+$will-action-red:		#EB0027;
+
 $will-action-orange:	#f09236;
 $will-action-yellow:	#ffc823;
 $will-action-green:		$will-teal;
-$will-action-blue:		#4085e4;
+
+// @NOTE: Changing action blue to be 508 compliant
+// $will-action-blue:		#4085e4;
+$will-action-blue:		#2472E0;
+
 $will-action-purple: 	#805be1;
 $will-action-violet:	#a755ad;
 $will-action-pink: 		#D93197;
