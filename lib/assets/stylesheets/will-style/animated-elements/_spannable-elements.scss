@@ -29,7 +29,7 @@ $spannable-element-animation-distance: 25% !default;
 
 		@for $i from 2 through 35 {
 			&:nth-of-type(#{$i}) {
-				animation-delay: $animation-duration / 6 * $i;
+				animation-delay: calc($animation-duration / 6) * $i;
 			}
 		}
 	}
