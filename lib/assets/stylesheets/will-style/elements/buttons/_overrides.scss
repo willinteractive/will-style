@@ -69,6 +69,14 @@ button {
 				opacity: 1;
 			}
 		}
+
+		&[disabled],
+		&.disabled {
+			&:before {
+				background-image: none;
+				background-color: $body-color;
+			}
+		}
 	}
 
 	&.btn-gradient {

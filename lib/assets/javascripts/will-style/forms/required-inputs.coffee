@@ -6,11 +6,15 @@ update_submit = (form) ->
   form.find(".required").each ->
     # Ensure we're in the correct form and it's not a select2 hidden element
     if $(this).closest("form").is(form)
-      unless ($(this).attr("id") and $(this).attr("id").indexOf("s2") isnt 0)
+      # Don't trigger disabled classes on select2 elements
+      if $(this).attr("id") and $(this).attr("id").indexOf("s2") is 0
+        # console.log "BAUIL"
+      else
         disabled = true if $(this).val() is null or $(this).val() is ""
 
         # Enforce valid email addresses on email fields
         disabled = true if $(this).attr("type") is "email" and $.isEmail($(this).val()) is false
+
 
   form.find("[type=submit]").prop("disabled", disabled)
   form.find("button.require-dependent").prop("disabled", disabled)
