@@ -18,5 +18,13 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/willinteractive/will-style.git"
-  }
+  },
+  "scripts": {
+    "preinstall": "npx npm-force-resolutions"
+  },
+  "resolutions": {
+    "glob-parent": "^6.0.2",
+    "glob-watcher": "^6.0.0",
+    "is-glob": "^4.0.3"
+ }
 }
