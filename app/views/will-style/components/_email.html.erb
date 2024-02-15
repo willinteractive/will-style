@@ -22,8 +22,13 @@
 									<table border="0" cellpadding="0" cellspacing="0">
 										<tr>
 											<td>
-												<%= image_tag "will-style/logos/master-logos/master-dark-gradient.png", title: "WILL", class: "logo", height: 20, width: 80 %>
-				                                <span>
+												<% if defined?(logo_url) && !logo_url.blank? %>
+													<img src="<%= logo_url %>" class="company-logo" height="40">
+												<% else %>
+													<%= image_tag "will-style/logos/master-logos/master-dark-gradient.png", title: "WILL", class: "logo", height: 40, width: 160 %>
+												<% end %>
+
+												<span>
 				                                	&nbsp;
 
 													<% if defined?(site_name) %>
