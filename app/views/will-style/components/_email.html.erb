@@ -25,7 +25,7 @@
 												<% if defined?(logo_url) && !logo_url.blank? %>
 													<img src="<%= logo_url %>" class="company-logo" height="40">
 												<% else %>
-													<%= image_tag "will-style/logos/master-logos/master-dark-gradient.png", title: "WILL", class: "logo", height: 40, width: 160 %>
+													<%= image_tag "will-style/logos/master-logos/master-dark-gradient.png", title: "WILL", class: "logo", height: 20, width: 80 %>
 												<% end %>
 
 												<span>
@@ -47,6 +47,14 @@
 												<%= yield %>
 											</td>
 										</tr>
+
+										<% if defined?(logo_url) && !logo_url.blank? %>
+											<tr>
+												<td style="text-align: right">
+													<%= image_tag "will-style/logos/master-logos/master-dark-gradient.png", title: "WILL", class: "logo", height: 20, width: 80 %>
+												</td>
+											</tr>
+										<% end %>
 									</table>
 								</td>
 							</tr>
