@@ -215,7 +215,7 @@ $animated-number-bottom-selector-chrome: "[#{$animated-number-bottom-prop}=true]
 }
 
 @mixin animated-element-progressive-default {
-	&#{$animated-element-progressive-default-selector}, &#{$animated-element-progressive-default-selector-chrome} {
+	#{$animated-element-progressive-default-selector}, #{$animated-element-progressive-default-selector-chrome} {
 		@content;
 	}
 }
