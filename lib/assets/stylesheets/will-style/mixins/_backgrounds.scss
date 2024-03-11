@@ -33,8 +33,10 @@
     }
 }
 
-@mixin grid-bg($target: "before") {
-    position: relative;
+@mixin grid-bg($target: "before", $include-position: true) {
+    @if $include-position {
+        position: relative;
+    }
 
     &:#{$target} {
         content: "";
