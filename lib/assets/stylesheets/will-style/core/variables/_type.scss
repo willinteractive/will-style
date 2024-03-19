@@ -1,27 +1,27 @@
 // Type
 
-$font-size-base:	1rem;
+$font-size-base:	1rem !default;
 
-$jumbo-size:		4rem;
+$jumbo-size:		4rem !default;
 
-$display1-size:		3rem;
-$display2-size:		2.75rem;
-$display3-size:		2.5rem;
-$display4-size:		2.25rem;
+$display1-size:		3rem !default;
+$display2-size:		2.75rem !default;
+$display3-size:		2.5rem !default;
+$display4-size:		2.25rem !default;
 
-$lead-font-size:	$font-size-base * 1.25;
+$lead-font-size:	$font-size-base * 1.25 !default;
 
-$line-height-base:            1.4;
+$line-height-base:            1.4 !default;
 
 $link-decoration:		none;
 $link-hover-decoration:	none;
 
-$will-sans-serif:		"Montserrat", "Open Sans", "San Francisco", Helvetica, sans-serif !default;
-$will-bold-sans-serif:	"Montserrat", "Open Sans", "San Francisco", Helvetica, sans-serif !default;
+$will-sans-serif:		"Montserrat", "Open Sans", "San Francisco", Helvetica, sans-serif;
+$will-bold-sans-serif:	"Montserrat", "Open Sans", "San Francisco", Helvetica, sans-serif;
 
-$will-serif:			 'DM Serif Display', serif !default;
+$will-serif:			 'DM Serif Display', serif;
 
-$will-monospace:		'Cutive Mono', monospace !default;
+$will-monospace:		'Cutive Mono', monospace;
 
 $font-family-sans-serif:	$will-sans-serif !default;
 $headings-font-family:		$will-sans-serif !default;
