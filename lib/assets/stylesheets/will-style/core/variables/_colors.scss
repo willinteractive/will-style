@@ -119,18 +119,18 @@ $yellow:  $will-action-yellow;
 $green:   $will-action-green;
 $teal:    $will-teal;
 
-$primary:       $will-action-purple;
-$secondary:     $will-dark-gray;
-$success:       $green;
-$info:          $blue;
-$warning:       $yellow;
-$danger:        $red;
-$light:         $will-white;
-$dark:          $will-bg-darkest;
+$primary:       $will-action-purple !default;
+$secondary:     $will-dark-gray !default;
+$success:       $green !default;
+$info:          $blue !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $will-white !default;
+$dark:          $will-bg-darkest !default;
 
-$link-color:	$will-action-purple;
+$link-color:	$will-action-purple !default;
 
-$body-bg:		$will-linen;
-$body-color:	$will-dark-gray;
+$body-bg:		$will-linen !default;
+$body-color:	$will-dark-gray !default;
 
-$primary-lighter:	$will-action-blue;
+$primary-lighter:	$will-action-blue !default;
