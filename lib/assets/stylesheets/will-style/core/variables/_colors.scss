@@ -11,8 +11,7 @@ $will-teal:			#48bc97;
 $will-logo-blue:	#2D7DD2;
 $will-logo-teal:	$will-teal;
 
-$will-light-gray:	#abaaa8;
-$will-dark-gray:	#2d2e2f;
+$will-gray:	#abaaa8;
 
 // @NOTE: Changing action red to be 508 compliant
 // $will-action-red:		#ff4967;
@@ -34,7 +33,7 @@ $will-action-burnt-sienna:	#d76e4c;
 $will-action-iris:			#4a50cf;
 $will-action-skyblue:		#6893ce;
 
-$will-action-gray:		$will-light-gray;
+$will-action-gray:		$will-gray;
 
 $will-accent-red:		#FF6A55;
 $will-accent-orange:	#FFb12F;
@@ -51,7 +50,7 @@ $will-bg-lighter:	#eaeaea;
 $will-bg-lightest:	$will-white;
 $will-bg-dark:		#6a6567;
 $will-bg-darker:	#3b3839;
-$will-bg-darkest:	$will-dark-gray;
+$will-bg-darkest:	$will-black;
 
 $will-action-hover-bg: rgba($will-action-skyblue, 0.2);
 
@@ -72,8 +71,8 @@ $will-logo-gradient: linear-gradient(-45deg,
 
 $color-list: (
 	will-teal: 			$will-teal,
-	will-light-gray: 	$will-light-gray,
-	will-dark-gray:		$will-dark-gray,
+	will-gray:		 	$will-gray,
+	will-gray:			$will-black,
 	will-white:			$will-white,
 
 	will-action-red:	$will-action-red,
@@ -120,7 +119,7 @@ $green:   $will-action-green;
 $teal:    $will-teal;
 
 $primary:       $will-action-purple !default;
-$secondary:     $will-dark-gray !default;
+$secondary:     $will-black !default;
 $success:       $green !default;
 $info:          $blue !default;
 $warning:       $yellow !default;
@@ -131,6 +130,6 @@ $dark:          $will-bg-darkest !default;
 $link-color:	$will-action-purple !default;
 
 $body-bg:		$will-linen !default;
-$body-color:	$will-dark-gray !default;
+$body-color:	$will-black !default;
 
 $primary-lighter:	$will-action-blue !default;
