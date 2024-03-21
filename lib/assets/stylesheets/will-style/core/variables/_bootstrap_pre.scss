@@ -5,3 +5,13 @@ $carousel-control-color:             $primary;
 $carousel-indicator-active-bg:      $primary;
 
 $font-weight-base: 500;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxxl: 1920px
+);
