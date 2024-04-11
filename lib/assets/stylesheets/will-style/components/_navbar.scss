@@ -57,8 +57,8 @@ nav.navbar {
 			&:not(.dropdown-toggle) {
 				&:before {
 					bottom: 0 !important;
-					left: $nav-link-padding-x / 2 !important;
-					right: $nav-link-padding-x / 2 !important;
+					left: calc($nav-link-padding-x / 2) !important;
+					right: calc($nav-link-padding-x / 2) !important;
 				}
 
 				@include media-breakpoint-down(md) {
@@ -111,7 +111,7 @@ nav.navbar {
 
 			background-color: $body-color;
 
-			transition: background-color $animation-duration / 2 $animation-timing-function;
+			transition: background-color calc($animation-duration / 2) $animation-timing-function;
 		}
 
 		&:before,
@@ -151,7 +151,7 @@ nav.navbar {
 				transform: rotate(-225deg);
 
 				transition: transform 0.2s $animation-timing-function,
-							background-color $animation-duration / 2 $animation-timing-function;
+							background-color calc($animation-duration / 2) $animation-timing-function;
 			}
 
 			&:after {
@@ -160,7 +160,7 @@ nav.navbar {
 
 				transition: transform 0.2s 0.15s $animation-timing-function,
 							opacity 0s 0.2s linear,
-							background-color $animation-duration / 2 $animation-timing-function;
+							background-color calc($animation-duration / 2) $animation-timing-function;
 			}
 
 			.navbar-toggler-icon:before,
@@ -168,7 +168,7 @@ nav.navbar {
 				transform: scaleX(0);
 
 				transition: transform 0.05s $animation-timing-function,
-							background-color $animation-duration / 2 $animation-timing-function;
+							background-color calc($animation-duration / 2) $animation-timing-function;
 			}
 		}
 	}
@@ -310,8 +310,8 @@ nav.navbar {
 					transform: translate3d(0, 0, 0);
 					opacity: 1;
 
-					transition: transform $animation-duration / 2 $animation-duration $animation-timing-function,
-								opacity $animation-duration / 2 $animation-duration $animation-timing-function;
+					transition: transform calc($animation-duration / 2) $animation-duration $animation-timing-function,
+								opacity calc($animation-duration / 2) $animation-duration $animation-timing-function;
 				}
 			}
 		}
@@ -337,15 +337,15 @@ nav.navbar {
 			line-height: 0;
 
 			svg {
-				// width: #{$navbar-height / 2.5 *  $will-logo-aspect-ratio};
-				height: $navbar-height / 2.5;
+				// width: #{calc($navbar-height / 2.5) *  $will-logo-aspect-ratio};
+				height: calc($navbar-height / 2.5);
 			}
 
 			span {
 				line-height: 1;
-				margin-left: $navbar-height / 9;
-				margin-bottom: $navbar-height / 9;
-				transition: color $animation-duration / 2 $animation-timing-function;
+				margin-left: calc($navbar-height / 9);
+				margin-bottom: calc($navbar-height / 9);
+				transition: color calc($animation-duration / 2) $animation-timing-function;
 			}
 		}
 	}

@@ -29,7 +29,7 @@
 		transform-origin: center top;
 
 		transition: opacity 0s $animation-timing-function,
-					transform $animation-duration / 2 $animation-timing-function;
+					transform calc($animation-duration / 2) $animation-timing-function;
 
 		.dropdown-item {
 			transform: translate3d(-5px, -5px, 0);
@@ -38,10 +38,10 @@
 			padding-left: 0.75rem;
 			padding-right: 0.75rem;
 
-			transition: transform $animation-duration / 2 $animation-timing-function,
-						opacity $animation-duration / 2 $animation-timing-function,
-						color $animation-duration / 2 $animation-timing-function,
-						background-color $animation-duration / 2 $animation-timing-function;
+			transition: transform calc($animation-duration / 2) $animation-timing-function,
+						opacity calc($animation-duration / 2) $animation-timing-function,
+						color calc($animation-duration / 2) $animation-timing-function,
+						background-color calc($animation-duration / 2) $animation-timing-function;
 
 			outline: none !important;
 
