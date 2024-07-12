@@ -5,7 +5,6 @@
 #= require will-style/components/modals
 
 # -------- FEATURES
-#= require will-style/features/tab-indexing
 #= require will-style/features/google-analytics
 #= require will-style/features/image-backgrounds
 #= require will-style/features/video-backgrounds
