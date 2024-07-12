@@ -56,6 +56,8 @@ $include-type: "node" !default;
 @function will-style-bg-url($url: "") {
 	@if $include-type == "rails" {
 		@return asset_url("will-style/" + $url);
+	} @else if $include-type == "remote" {
+		@return url("https://cdn.willinteractive.com/site/assets/images/will-style/" + $url);
 	} @else {
 		@return url("../images/will-style/" + $url);
 	}

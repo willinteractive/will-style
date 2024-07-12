@@ -1,0 +1,19 @@
+// Libraries
+
+@import
+	// @NOTE: Font Awesome Pro will currently not work with ruby 3.2 (SassC dependency), so we'll try the free version
+	// "font-awesome-pro",
+	// "font-awesome-pro/brands",
+	// "font-awesome-pro/solid",
+	// "font-awesome-pro/regular",
+	// "font-awesome-pro/light",
+	// "font-awesome-pro/thin",
+	// "font-awesome-pro/duotone",
+	// "font-awesome-pro/sharp-solid",
+
+	"font-awesome",
+	"font-awesome/solid",
+
+	"will-style/libraries/will_paginate",
+	"will-style/libraries/select2",
+	"will-style/libraries/turbo";

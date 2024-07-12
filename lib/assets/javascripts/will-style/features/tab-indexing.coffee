@@ -1,6 +1,6 @@
 # Automate Tab Indexing
 
-$(document).on 'turbolinks:load', (event) ->
+$(document).on 'turbo:load', (event) ->
   currentIndex = 1
 
   $(".nav-link, .dropdown-item").each ->
