@@ -259,7 +259,6 @@ $ ->
   _scheduleAnimatedElementsUpdate()
 
 $(document).on 'turbo:before-render', (event) ->
-  console.log "NICe"
   $(_staticAnimatedElementSelector).each ->
     element = $(this)
 
