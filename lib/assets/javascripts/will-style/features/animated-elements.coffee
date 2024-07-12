@@ -258,7 +258,8 @@ $ ->
   _resetAnimationCache()
   _scheduleAnimatedElementsUpdate()
 
-$(document).on 'turbolinks:before-render', (event) ->
+$(document).on 'turbo:before-render', (event) ->
+  console.log "NICe"
   $(_staticAnimatedElementSelector).each ->
     element = $(this)
 

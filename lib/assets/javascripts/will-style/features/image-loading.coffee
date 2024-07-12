@@ -95,16 +95,16 @@ setUpImageLoading = ->
             element.addClass("error")
           , 1000
 
-# Update image loading on turbolinks load
+# Update image loading on turbo load
 $(document).on window.WILLStyle.Settings.pageChangeEvent, ->
   # Delay checking image backgrounds to make sure we catch added via javascript
   setTimeout ->
     setUpImageLoading()
   , 1
 
-# Pre-process image loading when we revisit pages in turbolinks
-$(document).on 'turbolinks:before-render', (event) ->
-  presetImageLoading($(event.originalEvent.data.newBody).find(imageLoadingQuery))
+# Pre-process image loading when we revisit pages in turbo
+$(document).on 'turbo:before-render', (event) ->
+  presetImageLoading($(event.originalEvent.detail.newBody).find(imageLoadingQuery))
 
 # Set up image poll interval to automatically check for images
 imagePollInterval = setInterval ->

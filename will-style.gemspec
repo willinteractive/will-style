@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'coffee-rails', "~> 4.2"
   s.add_dependency 'autoprefixer-rails', ">= 9.1"
 
-  s.add_dependency 'turbolinks', "~> 5.1.0"
+  s.add_dependency 'turbo-rails', "~> 2.0.5"
 
   s.add_development_dependency "bundler", "~> 2.2.18"
 

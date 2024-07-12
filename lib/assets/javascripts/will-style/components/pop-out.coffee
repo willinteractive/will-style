@@ -108,7 +108,7 @@ $(document).on "click", '[data-pop-out-link=""]', (event) ->
 
 $(document).on "click", '.close-pop-out', clearPopOut
 
-$(document).on "turbolinks:load", clearPopOut
+$(document).on "turbo:load", clearPopOut
 
 # Disable fullscreen for pop outs
 $(document).on "webkitfullscreenchange mozfullscreenchange fullscreenchange MSFullscreenChange", (event) ->
