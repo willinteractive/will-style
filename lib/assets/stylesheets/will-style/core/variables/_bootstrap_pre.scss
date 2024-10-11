@@ -1,10 +1,10 @@
 $accordion-icon-color-dark: $body-color;
 $accordion-icon-active-color-dark: $body-color;
 
-$carousel-control-color:             $primary;
+$carousel-control-color:            $primary;
 $carousel-indicator-active-bg:      $primary;
 
-$font-weight-base: 500;
+$font-weight-base: 500 !default;
 
 $grid-breakpoints: (
   xs: 0,
