@@ -329,7 +329,7 @@ nav.navbar {
 
 		// Ensure WILL Logo isn't huge on firefox
 		svg {
-			height: #{($nav-link-padding-y * 2 + $font-size-base * $line-height-base)};
+			height: #{($lead-font-size * $line-height-base)};
 			overflow: visible;
 		}
 
