@@ -92,6 +92,10 @@ button {
 			background: linear-gradient($body-bg, $body-bg) padding-box,
 						$will-logo-gradient border-box;
 
+			&:after {
+				background-image: $will-logo-gradient !important;
+			}
+
 			&.bg-will-linen {
 				background: linear-gradient($will-linen, $will-linen) padding-box,
 							$will-logo-gradient border-box;
@@ -142,6 +146,10 @@ button {
 	&.btn-gradient-hover {
 		&:before {
 			background-color: $body-color;
+		}
+
+		&:after {
+			background-image: $will-logo-gradient !important;
 		}
 
 		&.btn-outline {
