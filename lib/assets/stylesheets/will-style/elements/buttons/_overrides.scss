@@ -89,11 +89,11 @@ button {
 		&.btn-outline {
 			color: $primary !important;
 
-			background: linear-gradient($will-linen, $will-linen) padding-box,
+			background: linear-gradient($body-bg, $body-bg) padding-box,
 						$will-gradient border-box;
 
-			&.bg-white {
-				background: linear-gradient($white, $white) padding-box,
+			&.bg-will-linen {
+				background: linear-gradient($will-linen, $will-linen) padding-box,
 							$will-gradient border-box;
 
 			}
@@ -131,6 +131,14 @@ button {
 				background-color: transparent;
 
 				border: 2px solid $body-color;
+			}
+
+			&.bg-white {
+				color: $white !important;
+
+				&:before {
+					border-color: $white;
+				}
 			}
 
 			&:hover,
