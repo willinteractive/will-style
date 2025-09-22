@@ -1,5 +1,5 @@
-$expanded-size: 6rem;
-$expanded-size-sm: $navbar-height + 1rem;
+$expanded-size: 4rem;
+$expanded-size-sm: 2rem;
 
 .expanded {
     padding-top: $expanded-size;
@@ -44,5 +44,16 @@ $expanded-size-sm: $navbar-height + 1rem;
 
     @include media-breakpoint-down(sm) {
         padding-bottom: $expanded-size-sm;
+    }
+}
+
+// Expanded elements after navbar
+
+nav + .expanded,
+nav + .expanded-top {
+    padding-top: $expanded-size + $navbar-height;
+
+    @include media-breakpoint-down(sm) {
+        padding-top: $expanded-size-sm + $navbar-height;
     }
 }

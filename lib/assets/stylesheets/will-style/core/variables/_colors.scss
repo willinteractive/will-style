@@ -3,8 +3,10 @@
 //
 
 $will-white:		#FFFDF8;
-$will-black:		#2d2e2f;
+$will-dark:			#2d2e2f;
+$will-black:		#030328;
 $will-linen: 		#f4ede4;
+$will-logo-white:	#f2f2f2;
 
 $will-teal:			#48bc97;
 
@@ -48,8 +50,8 @@ $will-accent-pink:		#EC3D7F;
 $will-bg-light: 	#d4d4d4;
 $will-bg-lighter:	#eaeaea;
 $will-bg-lightest:	$will-white;
-$will-bg-dark:		#6a6567;
-$will-bg-darker:	#3b3839;
+$will-bg-dark:		#3b3839;
+$will-bg-darker:	$will-dark;
 $will-bg-darkest:	$will-black;
 
 $will-action-hover-bg: rgba($will-action-skyblue, 0.2);
@@ -74,6 +76,7 @@ $color-list: (
 	will-gray:		 	$will-gray,
 	will-black:			$will-black,
 	will-white:			$will-white,
+	will-linen:			$will-linen,
 
 	will-action-red:	$will-action-red,
 	will-action-orange:	$will-action-orange,
@@ -118,7 +121,7 @@ $yellow:  $will-action-yellow;
 $green:   $will-action-green;
 $teal:    $will-teal;
 
-$primary:       $will-action-purple !default;
+$primary:       $will-action-blue !default;
 $secondary:     $will-black !default;
 $success:       $green !default;
 $info:          $blue !default;
@@ -127,9 +130,9 @@ $danger:        $red !default;
 $light:         $will-white !default;
 $dark:          $will-bg-darkest !default;
 
-$link-color:	$will-action-purple !default;
+$link-color:	$primary !default;
 
-$body-bg:		$will-linen !default;
+$body-bg:		$will-logo-white !default;
 $body-color:	$will-black !default;
 
-$primary-lighter:	$will-action-blue !default;
+$primary-lighter:	$will-action-purple !default;

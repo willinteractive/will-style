@@ -57,7 +57,7 @@ button {
 		}
 
 		&:after {
-			background-image: $will-logo-gradient;
+			background-image: $will-gradient;
 			transition: opacity $animation-duration $animation-timing-function;
 
 			opacity: 0;
@@ -81,7 +81,7 @@ button {
 
 	&.btn-gradient {
 		&:before {
-			background-image: $will-gradient;
+			background-image: $will-logo-gradient;
 		}
 
 		// @NOTE: Outlined gradient buttons will currently only work on linen backgrounds
@@ -89,14 +89,38 @@ button {
 		&.btn-outline {
 			color: $primary !important;
 
-			background: linear-gradient($will-linen, $will-linen) padding-box,
-						$will-gradient border-box;
+			background: linear-gradient($body-bg, $body-bg) padding-box,
+						$will-logo-gradient border-box;
 
-			&.bg-white {
-				background: linear-gradient($white, $white) padding-box,
-							$will-gradient border-box;
+			&:after {
+				background-image: $will-logo-gradient !important;
+			}
+
+			&.bg-will-linen {
+				background: linear-gradient($will-linen, $will-linen) padding-box,
+							$will-logo-gradient border-box;
 
 			}
+
+			&.bg-dark {
+				color: $white !important;
+
+				background: linear-gradient($dark, $dark) padding-box,
+							$will-logo-gradient border-box;
+			}
+
+			&.bg-black {
+				color: $white !important;
+
+				background: linear-gradient(black, black) padding-box,
+							$will-logo-gradient border-box;
+			}
+
+			&.bg-white {
+				background: linear-gradient($will-white, $will-white) padding-box,
+							$will-logo-gradient border-box;
+			}
+
 			border: 2px solid transparent !important;
 
 			padding-left: calc(#{$btn-padding-x} - #{px-to-rem(1)});
@@ -124,6 +148,10 @@ button {
 			background-color: $body-color;
 		}
 
+		&:after {
+			background-image: $will-logo-gradient !important;
+		}
+
 		&.btn-outline {
 			color: $body-color !important;
 
@@ -131,6 +159,24 @@ button {
 				background-color: transparent;
 
 				border: 2px solid $body-color;
+			}
+
+			&.bg-white {
+				color: $white !important;
+
+				&:before {
+					border-color: $white;
+				}
+			}
+
+			&.bg-dark {
+				color: $white !important;
+				background-color: $dark !important;
+			}
+
+			&.bg-black {
+				color: $white !important;
+				background-color: black !important;
 			}
 
 			&:hover,

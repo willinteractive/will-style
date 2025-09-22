@@ -13,6 +13,16 @@
 	-webkit-text-fill-color: transparent !important;
 }
 
+.text-logo-gradient {
+	// Get gradient to correctly apply
+	display: inline-block;
+	width: auto;
+
+	background: $will-logo-gradient !important;
+	-webkit-background-clip: text !important;
+	-webkit-text-fill-color: transparent !important;
+}
+
 @each $name, $color in $color-list {
 	.text-gradient-#{$name} {
 		// Get gradient to correctly apply
