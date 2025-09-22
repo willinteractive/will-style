@@ -22,9 +22,9 @@ $navbar-light-color:                $body-color;
 $navbar-light-hover-color:          $primary;
 $navbar-light-active-color:         $primary;
 
-$navbar-dark-color:                $light;
-$navbar-dark-hover-color:         darken($light, 5%);
-$navbar-dark-active-color:        darken($light, 5%);
+$navbar-dark-color:               $light;
+$navbar-dark-hover-color:         $will-logo-blue;
+$navbar-dark-active-color:        $will-logo-blue;
 
 $modal-content-bg: $white;
 $modal-content-border-radius: 5px;

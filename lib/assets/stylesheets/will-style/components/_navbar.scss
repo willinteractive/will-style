@@ -20,12 +20,13 @@ nav.navbar {
 			.letter-fill,
 			.play-fill {
 				transition: fill $animation-duration $animation-timing-function;
+				transition-delay: 0 !important;
 			}
 		}
 
 		&.obscure {
 			@extend .navbar-dark;
-			background: $will-gradient !important;
+			background: $will-logo-gradient !important;
 
 			.will-logo-svg {
 				.letter-fill,
@@ -39,6 +40,10 @@ nav.navbar {
 					background-image: none;
 					background-color: $body-color;
 				}
+			}
+
+			.nav-link {
+				@include text-shadow-z0;
 			}
 		}
 	}
@@ -70,12 +75,10 @@ nav.navbar {
 		}
 	}
 
-	&:not(.navbar-dark) {
-		.nav-item {
-			.nav-link {
-				&:not(.dropdown-toggle) {
-					@extend .animated;
-				}
+	.nav-item {
+		.nav-link {
+			&:not(.dropdown-toggle) {
+				@extend .animated;
 			}
 		}
 	}
