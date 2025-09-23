@@ -219,8 +219,8 @@ a {
 
 			&:hover,
 			&:focus {
-				background-color: lighten($primary, $default-darkening-percentage) !important;
-				border-color: lighten($primary, $default-darkening-percentage) !important;
+				background-color: lighten($primary, 10%) !important;
+				border-color: lighten($primary, 10%) !important;
 			}
 		}
 	}
