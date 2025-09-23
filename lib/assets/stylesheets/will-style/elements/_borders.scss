@@ -14,3 +14,10 @@
 .border.border-dashed {
     border-style: dashed !important;
 }
+
+.divider {
+    height: 4px;
+    border-radius: 4px;
+
+    @extend .bg-will-logo-gradient;
+}
