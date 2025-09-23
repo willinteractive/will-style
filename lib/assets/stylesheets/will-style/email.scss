@@ -219,8 +219,8 @@ a {
 
 			&:hover,
 			&:focus {
-				background-color: $will-action-purple !important;
-				border-color: $will-action-purple !important;
+				background-color: lighten($primary, $default-darkening-percentage) !important;
+				border-color: lighten($primary, $default-darkening-percentage) !important;
 			}
 		}
 	}
