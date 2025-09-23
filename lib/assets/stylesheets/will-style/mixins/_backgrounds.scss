@@ -35,7 +35,7 @@
     }
 }
 
-@mixin grid-bg($target: "before", $include-position: true) {
+@mixin grid-bg($target: "before", $include-position: true, $background-color: false) {
     @if $include-position {
         position: relative;
     }
@@ -51,6 +51,10 @@
         bottom: 0;
         left: 0;
         right: 0;
+
+        @if $background-color {
+            background-color: $background-color;
+        }
 
         background-image: will-style-bg-url("patterns/grid.svg");
         background-repeat: repeat;
