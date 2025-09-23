@@ -215,12 +215,12 @@ a {
 			color: $will-white;
 
 			font-weight: bold;
-			border-radius: 800px;
+			border-radius: 5px;
 
 			&:hover,
 			&:focus {
-				background-color: $will-action-blue;
-				border-color: $will-action-blue;
+				background-color: lighten($primary, 10%) !important;
+				border-color: lighten($primary, 10%) !important;
 			}
 		}
 	}

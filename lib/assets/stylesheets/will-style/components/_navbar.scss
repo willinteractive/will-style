@@ -44,6 +44,10 @@ nav.navbar {
 
 			.nav-link {
 				@include text-shadow-z0;
+
+				@include hover-focus {
+					color: $will-logo-white !important;
+				}
 			}
 		}
 	}
