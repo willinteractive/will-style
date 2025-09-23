@@ -12,21 +12,33 @@
     background-image: $will-gradient;
 }
 
+.bg-will-logo-gradient {
+    background-image: $will-logo-gradient;
+}
+
 .bg-grid {
     @include grid-bg;
 }
 
 .bg-dark-will-gradient {
-    background-color: $dark;
+    position: relative;
 
+    @include textured-bg($target: "after");
+
+    & > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    // @TODO: Make these radial gradients into circles
     background:
-    radial-gradient(71.53% 125.77% at 0% 100%,
-        #48BC97 0%,
-        rgba(74, 80, 207, 0.3) 35.1%,
-        rgba(0, 0, 0, 0) 100%),
-    radial-gradient(44.56% 60.29% at 102.31% 9.24%,
-        rgba(58, 92, 216, 0.8) 0%,
-        rgba(167, 85, 173, 0.3) 41.38%,
-        rgba(167, 85, 173, 0) 100%),
-    $dark;
+        radial-gradient(71.53% 125.77% at 0% 100%,
+            #48BC97 0%,
+            rgba(74, 80, 207, 0.3) 35.1%,
+            rgba(0, 0, 0, 0) 100%),
+        radial-gradient(44.56% 60.29% at 102.31% 9.24%,
+            rgba(58, 92, 216, 0.8) 0%,
+            rgba(167, 85, 173, 0.3) 41.38%,
+            rgba(167, 85, 173, 0) 100%),
+        $dark;
 }
