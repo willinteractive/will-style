@@ -123,10 +123,10 @@ button {
 
 			border: 2px solid transparent !important;
 
-			padding-left: calc(#{$btn-padding-x} - #{px-to-rem(1)});
-			padding-right: calc(#{$btn-padding-x} - #{px-to-rem(1)});
-			padding-top: calc(#{$btn-padding-y} - #{px-to-rem(1)});
-			padding-bottom: calc(#{$btn-padding-y} - #{px-to-rem(1)});
+			padding-left: calc(#{$btn-padding-x});
+			padding-right: calc(#{$btn-padding-x});
+			padding-top: calc(#{$btn-padding-y});
+			padding-bottom: calc(#{$btn-padding-y});
 
 			&:before {
 				content: none;
