@@ -54,4 +54,10 @@
             }
         }
     }
+
+    &.dark {
+        .will-nav-link {
+            color: $body-bg !important;
+        }
+    }
 }
