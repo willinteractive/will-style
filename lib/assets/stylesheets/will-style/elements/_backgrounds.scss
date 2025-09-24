@@ -26,14 +26,16 @@
     background-color: black;
 
     background-image:
-        radial-gradient(71.53% 125.77% at 0% 100%,
-            #48BC97 0%,
-            rgba(74, 80, 207, 0.3) 35.1%,
-            rgba(74, 80, 207, 0) 100%),
-        radial-gradient(44.56% 60.29% at 102.31% 9.24%,
-            rgba(58, 92, 216, 0.8) 0%,
-            rgba(167, 85, 173, 0.3) 41.38%,
-            rgba(167, 85, 173, 0) 100%);
+        radial-gradient(circle farthest-corner at 0% 100%,
+            rgba($will-teal, 0.8) 0%,
+            rgba($will-action-iris, 0.3) 25%,
+            rgba(#2B2E78, 0.2) 45%,
+            rgba(black, 0) 100%),
+        radial-gradient(circle farthest-corner at 100% 0%,
+            rgba(#3A5CD8, 0.8) 0%,
+            rgba(#A755AD, 0.3) 25%,
+            rgba(#502953, 0.2) 45%,
+            rgba(black, 0) 100%);
 
     background-repeat: no-repeat;
     background-size: cover;
