@@ -17,22 +17,21 @@ nav.navbar {
 		}
 
 		&.obscure {
-			@extend .navbar-dark;
-
-			background: rgba($dark, 0.67) !important;
+			background: rgba($body-bg, 0.67) !important;
 			backdrop-filter: blur(10px);
-
-			.will-logo-svg {
-				.letter-fill {
-					fill: $will-logo-white !important;
-				}
-			}
 
 			.nav-link {
 				@include text-shadow-z0;
+			}
 
-				@include hover-focus {
-					color: $will-logo-white !important;
+			&.navbar-dark {
+				@extend .navbar-dark;
+				background: rgba($dark, 0.67) !important;
+
+				.nav-link {
+					@include hover-focus {
+						color: $will-logo-white !important;
+					}
 				}
 			}
 		}
