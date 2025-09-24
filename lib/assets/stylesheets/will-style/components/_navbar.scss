@@ -16,29 +16,15 @@ nav.navbar {
 			padding-top: $navbar-height !important;
 		}
 
-		.will-logo-svg {
-			.letter-fill,
-			.play-fill {
-				transition: fill $animation-duration $animation-timing-function;
-				transition-delay: 0 !important;
-			}
-		}
-
 		&.obscure {
 			@extend .navbar-dark;
-			background: $will-logo-gradient !important;
+
+			background: rgba($dark, 0.67) !important;
+			backdrop-filter: blur(10px);
 
 			.will-logo-svg {
-				.letter-fill,
-				.play-fill {
-					fill: $white !important;
-				}
-			}
-
-			.btn.btn-gradient {
-				&::before {
-					background-image: none;
-					background-color: $body-color;
+				.letter-fill {
+					fill: $will-logo-white !important;
 				}
 			}
 
