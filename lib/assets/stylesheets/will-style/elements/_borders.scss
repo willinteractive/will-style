@@ -23,6 +23,5 @@
 }
 
 .text-widespace + .divider {
-    display: inline-block;
-    width: calc(100% - $widespace-letter-spacing * 2);
+    width: calc(100% - $widespace-letter-spacing);
 }
