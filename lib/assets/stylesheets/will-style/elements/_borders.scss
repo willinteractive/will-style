@@ -21,3 +21,8 @@
 
     @extend .bg-will-logo-gradient;
 }
+
+.text-widespace + .divider {
+    display: inline-block;
+    width: calc(100% - $widespace-letter-spacing * 2);
+}
