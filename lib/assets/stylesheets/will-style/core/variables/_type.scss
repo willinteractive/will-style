@@ -19,6 +19,9 @@ $link-hover-decoration:	none;
 $will-sans-serif:		"Montserrat", "Open Sans", "San Francisco", Helvetica, sans-serif;
 $will-bold-sans-serif:	"Montserrat", "Open Sans", "San Francisco", Helvetica, sans-serif;
 
+$will-app-sans-serif:		"Inter", "Open Sans", "San Francisco", Helvetica, sans-serif;
+$will-app-bold-sans-serif:	"Inter", "Open Sans", "San Francisco", Helvetica, sans-serif;
+
 $will-serif:			 'Playfair Display', "Times New Roman", Times, serif;
 
 $will-monospace:		'Cutive Mono', monospace;
@@ -33,3 +36,5 @@ $font-family-monospace:     $will-monospace !default;
 $headings-font-family:		$font-family-sans-serif !default;
 
 $include-font-smoothing: true !default;
+
+$widespace-letter-spacing: 0.33em;
