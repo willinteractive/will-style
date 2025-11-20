@@ -2,6 +2,8 @@
 // Enhanced Button Styles
 //
 
+@use "sass:map";
+
 button {
 	-webkit-user-select: none;
 
@@ -19,7 +21,7 @@ button {
 
 .btn {
 	&.btn-xl {
-		font-size: map-get($font-sizes, 3);
+		font-size: map.get($font-sizes, 3);
 		padding-left: 2rem;
 		padding-right: 2rem;
 
