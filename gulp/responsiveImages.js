@@ -5,24 +5,24 @@
 
 // Example: gulp generate-responsive-images
 
-const { src, dest } = require("gulp");
-const sharpResponsive = require("gulp-sharp-responsive");
+import gulp from "gulp";
 
-const gulp = require("gulp");
+import sharpResponsive from "gulp-sharp-responsive";
 
-const del = require("del");
+import { deleteSync } from "del";
 
 gulp.task('clear-responsive-images', function(done) {
-    del(["dist/"], done);
+    deleteSync(["dist/"]);
+    done();
 });
 
 gulp.task("copy-svgs", function() {
-    return src("src/**/*.svg")
-        .pipe(dest("dist"));
+    return gulp.src("src/**/*.svg")
+        .pipe(gulp.dest("dist"));
 });
 
 gulp.task("generate-responsive-images", gulp.series('clear-responsive-images', 'copy-svgs', function() {
-    return src("src/**/*.{gif,jpg,png}")
+    return gulp.src("src/**/*.{gif,jpg,png}")
         .pipe(sharpResponsive({
             formats: [
 
@@ -225,5 +225,5 @@ gulp.task("generate-responsive-images", gulp.series('clear-responsive-images', '
                 }
             ]
         }))
-        .pipe(dest("dist"));
+        .pipe(gulp.dest("dist"));
 }));
