@@ -1,6 +1,6 @@
 {
   "name": "will-style",
-  "version": "5.2.0",
+  "version": "5.2.1",
   "license": "MIT",
   "dependencies": {
     "bootstrap": "~5.3.8"
