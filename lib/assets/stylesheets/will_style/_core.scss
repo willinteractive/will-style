@@ -1,0 +1,80 @@
+//
+// Core
+//
+
+@import
+	"bootstrap/functions",
+
+	"will_style/core/typography/web",
+
+	"will_style/core/variables/colors",
+	"will_style/core/variables/type",
+	"will_style/core/variables/global",
+
+	"will_style/core/variables/bootstrap_pre",
+
+	"bootstrap/variables",
+	"bootstrap/variables-dark",
+
+	"will_style/core/variables/bootstrap",
+	"will_style/core/deferred-styles",
+	"will_style/core/accessibility",
+	"will_style/core/colors";
+
+// Mixins
+
+@import
+	"bootstrap/maps",
+	"bootstrap/mixins",
+	"bootstrap/utilities",
+
+	"bootstrap/root",
+	"bootstrap/reboot",
+	"bootstrap/type",
+
+	"will_style/mixins/base",
+	"will_style/mixins/backgrounds",
+	"will_style/mixins/gradients",
+	"will_style/mixins/layout",
+	"will_style/mixins/underlined-elements",
+	"will_style/mixins/shadows",
+	"will_style/mixins/animated-elements",
+	"will_style/mixins/scaled-properties",
+	"will_style/mixins/will-icons";
+
+// Transitions
+
+@import
+	"will_style/core/transitions",
+	"bootstrap/transitions";
+
+// Type
+
+@import
+	"will_style/core/type",
+	"will_style/core/will_icons/rails",
+	"will_style/core/will_icons";
+
+// Images
+
+@import
+	"bootstrap/images";
+
+// Layout
+
+@import
+	"bootstrap/containers",
+	"bootstrap/grid",
+	"bootstrap/tables";
+
+// Elements
+
+@import
+	"will_style/elements/gradients",
+	"will_style/elements/image-loading";
+
+// Libraries
+
+@import
+	"bootstrap/helpers",
+	"bootstrap/utilities/api";

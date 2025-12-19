@@ -24,7 +24,7 @@
             <div class="overlay">
         <% end %>
 
-        <%= render partial: "will-style/components/picture", locals: {
+        <%= render partial: "will_style/components/picture", locals: {
             source: source,
             class_name: "#{class_name} #{ File.basename(source,  File.extname(source)).gsub(/^[0-9]+\-/, "")}",
             responsive: responsive,

@@ -5,7 +5,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title><%= defined?(title) ? title : "" %></title>
 
-		<%= stylesheet_link_tag "will-style/email" %>
+		<%= stylesheet_link_tag "will_style/email" %>
 	</head>
 
 	<body>
@@ -25,7 +25,7 @@
 												<% if defined?(logo_url) && !logo_url.blank? %>
 													<img src="<%= logo_url %>" class="company-logo" height="40">
 												<% else %>
-													<%= image_tag "will-style/logos/master-logos/master-dark-gradient.png", title: "WILL", class: "logo", height: 20, width: 80 %>
+													<%= image_tag "will_style/logos/master-logos/master-dark-gradient.png", title: "WILL", class: "logo", height: 20, width: 80 %>
 												<% end %>
 
 												<span>
@@ -51,7 +51,7 @@
 										<% if defined?(logo_url) && !logo_url.blank? %>
 											<tr>
 												<td style="text-align: right">
-													<%= image_tag "will-style/logos/master-logos/master-dark-gradient.png", title: "WILL", class: "logo", height: 20, width: 80 %>
+													<%= image_tag "will_style/logos/master-logos/master-dark-gradient.png", title: "WILL", class: "logo", height: 20, width: 80 %>
 												</td>
 											</tr>
 										<% end %>
@@ -60,7 +60,7 @@
 							</tr>
 						</table>
 
-						<%= render partial: "will-style/components/email/footer", locals: {
+						<%= render partial: "will_style/components/email/footer", locals: {
 							unsubscribe_link: defined?(unsubscribe_link) ? unsubscribe_link : nil
 						} %>
 					</div>
