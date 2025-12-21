@@ -16,12 +16,10 @@ Gem::Specification.new do |s|
   s.files = `git ls-files`.split("\n")
 
   s.add_dependency "rails", ">= 6.0"
-  s.add_dependency "jquery-rails", "~> 4.6"
   s.add_dependency "bootstrap", "~> 5.3"
 
   s.add_dependency "dartsass-sprockets", "~> 3.2"
 
-  s.add_dependency 'coffee-rails', "~> 5.0"
   s.add_dependency 'autoprefixer-rails', "~> 10.4"
 
   s.add_dependency 'turbo-rails', "~> 2.0"

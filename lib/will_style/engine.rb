@@ -2,7 +2,6 @@
 require "dartsass-sprockets"
 require "bootstrap"
 require "autoprefixer-rails"
-require "jquery-rails"
 require "turbo-rails"
 
 module WILLStyle
