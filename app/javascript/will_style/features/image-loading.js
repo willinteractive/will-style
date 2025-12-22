@@ -11,14 +11,51 @@
 
   let imagePollInterval = undefined;
 
+  // Sanitize potential image source values taken from the DOM before
+  // assigning them to an <img> src attribute.
+  function sanitizeImageSrc(rawSrc) {
+    if (!rawSrc) {
+      return "";
+    }
+
+    var src = String(rawSrc).trim();
+    if (src === "") {
+      return "";
+    }
+
+    // Allow relative URLs (no scheme)
+    if (!/^[a-zA-Z][a-zA-Z0-9+\-.]*:/.test(src)) {
+      return src;
+    }
+
+    var lower = src.toLowerCase();
+
+    // Allow http(s) URLs
+    if (lower.startsWith("http:") || lower.startsWith("https:")) {
+      return src;
+    }
+
+    // Allow data:image/... URLs but reject other data: URLs
+    if (lower.startsWith("data:image/")) {
+      return src;
+    }
+
+    // Reject all other schemes (e.g. javascript:, vbscript:, data:text/html, etc.)
+    return "";
+  }
+
   // Get the source of an image or css background-image
   function getImageSourceForElement(element) {
     let source = "";
 
     if (element.tagName === "IMG") {
       if (!element.getAttribute("srcset")) {
-        if (element.getAttribute("data-src")) {
-          element.setAttribute("src", element.getAttribute("data-src"));
+        const dataSrc = element.getAttribute("data-src");
+        if (dataSrc) {
+          const safeSrc = sanitizeImageSrc(dataSrc);
+          if (safeSrc) {
+            element.setAttribute("src", safeSrc);
+          }
         }
         source = element.getAttribute("src") || "";
       }
