@@ -11,12 +11,10 @@ module WillStyle
     isolate_namespace WillStyle
 
     initializer "will_style.javascript" do |app|
-      Rails.logger.info "Adding will_style javascript paths: #{root.join("app/javascript")}"
       app.config.assets.paths << root.join("app/javascript")
     end
 
     initializer "will_style.importmap", before: "importmap" do |app|
-      Rails.logger.info "Adding will_style importmap: #{app.root.join("config/importmap.rb")}"
       WillStyle.importmap = Importmap::Map.new
       WillStyle.importmap.draw(app.root.join("config/importmap.rb"))
       WillStyle.importmap.draw(root.join("config/importmap.rb"))

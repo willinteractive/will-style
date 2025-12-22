@@ -10,4 +10,3 @@ Rails.application.config.assets.precompile += [
    "bootstrap.min.js",
    "popper.js"
 ]
-

@@ -1,7 +1,4 @@
 // -------- Vendor
-// require "popper";
-// require "bootstrap";
-
 //= require will_style/vendor/growfield
 
 // -------- CORE
