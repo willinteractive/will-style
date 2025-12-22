@@ -4,9 +4,9 @@ require "bootstrap"
 require "autoprefixer-rails"
 require "turbo-rails"
 
-module WILLStyle
+module WillStyle
   class Engine < Rails::Engine
-    isolate_namespace WILLStyle
+    isolate_namespace WillStyle
   end
 
   # Using bootstrap-sass initialization
@@ -29,4 +29,4 @@ module WILLStyle
   end
 end
 
-WILLStyle.load!
+WillStyle.load!

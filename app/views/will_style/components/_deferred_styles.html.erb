@@ -16,8 +16,8 @@
 	window.deferredStyleTimer = undefined;
 
 	window.processDeferredStyle = function(target) {
-	 if (window.WILLStyle && window.WILLStyle.Events) {
-	 	window.WILLStyle.Events.trigger('css-initialized');
+	 if (window.WillStyle && window.WillStyle.Events) {
+	 	window.WillStyle.Events.trigger('css-initialized');
 	 	target.rel='stylesheet';
 	 } else {
 	 	if (window.deferredStyleTimer) {
