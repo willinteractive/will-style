@@ -18,16 +18,24 @@
         }
       }
 
-      let newHTML = "";
       const textContent = text.textContent.trim();
+
+      // Clear existing content before rebuilding with safe DOM operations
+      text.textContent = '';
+
       for (let i = 0; i < textContent.length; i++) {
         const letter = textContent[i];
-        newHTML += `<span>${letter}</span>`;
+        const span = document.createElement('span');
+
+        // Preserve original behavior of turning whitespace into non-breaking spaces
+        if (/\s/.test(letter)) {
+          span.textContent = '\u00A0';
+        } else {
+          span.textContent = letter;
+        }
+
+        text.appendChild(span);
       }
-
-      newHTML = newHTML.replace(/\s/gi, "&nbsp;");
-
-      text.innerHTML = newHTML;
     }
   }
 
