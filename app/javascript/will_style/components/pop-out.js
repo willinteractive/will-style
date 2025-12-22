@@ -7,6 +7,37 @@
   const popOutOverlay = document.createElement('div');
   popOutOverlay.className = 'pop-out-overlay';
 
+  // Ensure that only safe URLs are used for pop-out iframes / windows.
+  function isSafePopOutUrl(url) {
+    if (typeof url !== "string") {
+      return false;
+    }
+    const trimmed = url.trim();
+    if (!trimmed) {
+      return false;
+    }
+
+    // Disallow obvious dangerous schemes such as javascript:, data:, vbscript:
+    const lower = trimmed.toLowerCase();
+    if (lower.startsWith("javascript:") || lower.startsWith("data:") || lower.startsWith("vbscript:")) {
+      return false;
+    }
+
+    // Allow only http/https (including protocol-relative URLs that will resolve to http/https)
+    try {
+      // Handle protocol-relative URLs (e.g. //example.com/path) by prefixing current origin's protocol
+      const toParse = lower.startsWith("//") ? window.location.protocol + trimmed : trimmed;
+      const parsed = new URL(toParse, window.location.origin);
+      if (parsed.protocol === "http:" || parsed.protocol === "https:") {
+        return true;
+      }
+      return false;
+    } catch (e) {
+      // If URL parsing fails, treat as unsafe
+      return false;
+    }
+  }
+
   function watchPopOut() {
     lastWindowHeight = 0;
     setInterval(() => {
@@ -96,7 +127,7 @@
       if (!popOut) return;
 
       const popOutUrl = link.getAttribute("data-pop-out-url");
-      if (popOutUrl) {
+      if (popOutUrl && isSafePopOutUrl(popOutUrl)) {
         if (document.documentElement.classList.contains("touchevents") && popOut.getAttribute("data-pop-out-fullscreen") !== "") {
           window.open(popOutUrl, '_blank');
           return;
