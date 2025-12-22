@@ -13,7 +13,3 @@
 
   window.WillStyle.Settings.elementChangedEvent = "will-style:elementChanged";
 })();
-
-document.addEventListener("turbo:load", function() {
-  console.log("TURBO:LOAD");
-})

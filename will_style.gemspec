@@ -15,15 +15,15 @@ Gem::Specification.new do |s|
 
   s.files = `git ls-files`.split("\n")
 
-  s.add_dependency "rails", ">= 6.0"
+  s.add_dependency "rails", ">= 7.2.3"
   s.add_dependency "bootstrap", "~> 5.3"
 
   s.add_dependency "dartsass-sprockets", "~> 3.2"
 
   s.add_dependency 'autoprefixer-rails', "~> 10.4"
 
-  # Lock turbo-rails to 2.0.5 until every dependency supports Rails 8.1
-  s.add_dependency 'turbo-rails', "2.0.5"
+  s.add_dependency 'turbo-rails', "~> 2.0"
+  s.add_dependency 'importmap-rails', "~> 2.2"
 
   s.add_development_dependency "bundler", "~> 4.0"
 end

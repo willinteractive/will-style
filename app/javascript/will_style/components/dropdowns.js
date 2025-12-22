@@ -134,7 +134,7 @@
   document.addEventListener(window.WillStyle.Settings.pageChangeEvent, function() {
     // Setup event listeners
     const elements = document.querySelectorAll(".dropdown-toggle, .dropdown-menu");
-    console.log("HERE");
+
     for (let i = 0; i < elements.length; i++) {
       const element = elements[i];
       element.addEventListener("click", onDropdownClick);

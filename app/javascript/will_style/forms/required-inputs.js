@@ -17,7 +17,7 @@
         // Don't trigger disabled classes on select2 elements
         const id = element.getAttribute("id");
         if (id && id.indexOf("s2") === 0) {
-          // console.log "BAUIL"
+
         } else {
           const value = element.value;
           if (value === null || value === "") {
