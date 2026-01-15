@@ -30,7 +30,7 @@ nav.navbar {
 
 				.nav-link {
 					@include hover-focus {
-						color: $will-logo-white !important;
+						color: $will-white !important;
 					}
 				}
 			}
@@ -196,7 +196,7 @@ nav.navbar {
 
 		.nav-link {
 			@include hover-focus {
-				color: $will-logo-white !important;
+				color: $will-white !important;
 			}
 		}
 	}
