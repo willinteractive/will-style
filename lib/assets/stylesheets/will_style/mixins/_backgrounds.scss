@@ -174,36 +174,39 @@
     }
 
     &:before {
-        top: -25cqh;
-        left: -25cqh;
+        top: -25cqw;
+        left: -25cqw;
 
-        width: 67cqh;
-        height: 67cqh;
+        width: 70cqw;
+        height: 70cqw;
 
         @media (orientation: landscape) {
-            top: -10cqw;
-            left: -10cqw;
+            top: -50cqh;
+            left: -50cqh;
 
-            width: 35cqw;
-            height: 35cqw;
+            width: 100cqh;
+            height: 100cqh;
         }
 
         background-color: transparent;
-        background-image: radial-gradient(circle, rgba(6, 182, 212, 0.2) 0%, rgba(6, 182, 212, 0) 67%);
+        background-image: radial-gradient(circle, rgba(6, 182, 212, .35) 0%, rgba(6, 182, 212, 0) 67%);
 
         animation: ambient-glow-pulse 8s ease-in-out infinite;
     }
 
     &:after {
-        bottom: -7.5cqh;
-        right: -25cqh;
+        bottom: -7.5cqw;
+        right: -25cqw;
 
-        width: 50cqh;
-        height: 50cqh;
+        width: 67cqw;
+        height: 67cqw;
 
         @media (orientation: landscape) {
-            width: 50cqw;
-            height: 50cqw;
+            bottom: -7.5cqh;
+            right: -25cqh;
+
+            width: 67cqh;
+            height: 67cqh;
         }
 
         background-image: radial-gradient(circle, rgba(16, 185, 129, 0.25) 0%, rgba(16, 185, 129, 0) 67%);
@@ -224,19 +227,19 @@
             border-radius: 50%;
 
             bottom: -10cqh;
-            left: calc(50cqw - 15cqh);
+            left: 30cqw;
 
-            width: 30cqh;
-            height: 30cqh;
+            width: 40cqw;
+            height: 40cqw;
 
             @media (orientation: landscape) {
-                left: 35cqw;
+                left: calc(50cqw - 25cqh);
 
-                width: 30cqw;
-                height: 30cqw;
+                width: 50cqh;
+                height: 50cqh;
             }
 
-            background-image: radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, rgba(139, 92, 246, 0) 67%);
+            background-image: radial-gradient(circle, rgba(139, 92, 246, .25) 0%, rgba(139, 92, 246, 0) 67%);
 
             animation: ambient-glow-pulse 12s ease-in-out infinite;
         }
