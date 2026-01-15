@@ -187,4 +187,17 @@ button {
 			}
 		}
 	}
+
+	&.btn-scale {
+		transition: color $animation-duration $animation-timing-function,
+					transform $animation-duration / 2 $animation-timing-function,
+					box-shadow $animation-duration / 2 $animation-timing-function;
+
+		transform: scale(1) translateY(0);
+
+		@include hover-focus {
+			transform: scale(1) translateY(-2px);
+			@include shadow($shadow-weight, true);
+		}
+	}
 }
