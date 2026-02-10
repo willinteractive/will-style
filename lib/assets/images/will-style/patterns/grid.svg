@@ -1,1 +1,26 @@
-<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g stroke-miterlimit="10"><path d="m0 7h100" fill="#d0c5b7" stroke="#d0c5b7" stroke-width=".75"/><g fill="#dfd9d1" stroke="#dfd9d1" stroke-width=".25"><path d="m0 17h100"/><path d="m0 27h100"/><path d="m0 37h100"/><path d="m0 47h100"/><path d="m0 57h100"/><path d="m0 67h100"/><path d="m0 77h100"/><path d="m0 87h100"/><path d="m0 97h100"/><path d="m97 0v100"/><path d="m87 0v100"/><path d="m77 0v100"/><path d="m67 0v100"/><path d="m57 0v100"/><path d="m47 0v100"/><path d="m37 0v100"/><path d="m27 0v100"/><path d="m17 0v100"/></g><path d="m7 0v100" fill="#d0c5b7" stroke="#d0c5b7" stroke-width=".75"/></g></svg>
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <g stroke-miterlimit="10">
+        <path d="m0 7h100" fill="#acd0f6" stroke="#acd0f6" stroke-width=".75" />
+        <g fill="#bad7f4" stroke="#bad7f4" stroke-width=".25">
+            <path d="m0 17h100" />
+            <path d="m0 27h100" />
+            <path d="m0 37h100" />
+            <path d="m0 47h100" />
+            <path d="m0 57h100" />
+            <path d="m0 67h100" />
+            <path d="m0 77h100" />
+            <path d="m0 87h100" />
+            <path d="m0 97h100" />
+            <path d="m97 0v100" />
+            <path d="m87 0v100" />
+            <path d="m77 0v100" />
+            <path d="m67 0v100" />
+            <path d="m57 0v100" />
+            <path d="m47 0v100" />
+            <path d="m37 0v100" />
+            <path d="m27 0v100" />
+            <path d="m17 0v100" />
+        </g>
+        <path d="m7 0v100" fill="#acd0f6" stroke="#acd0f6" stroke-width=".75" />
+    </g>
+</svg>
