@@ -20,23 +20,12 @@
     @include grid-bg;
 }
 
+.bg-light-will-gradient {
+    @include light-gradient-bg;
+}
+
 .bg-dark-will-gradient {
     position: relative;
 
-    background-color: black;
-
-    background-image:
-        radial-gradient(circle farthest-corner at 0% 100%,
-            rgba($will-teal, 0.8) 0%,
-            rgba($will-action-iris, 0.3) 25%,
-            rgba(#2B2E78, 0.2) 45%,
-            rgba(black, 0) 100%),
-        radial-gradient(circle farthest-corner at 100% 0%,
-            rgba(#3A5CD8, 0.8) 0%,
-            rgba(#A755AD, 0.3) 25%,
-            rgba(#502953, 0.2) 45%,
-            rgba(black, 0) 100%);
-
-    background-repeat: no-repeat;
-    background-size: cover;
+    @include dark-gradient-bg;
 }

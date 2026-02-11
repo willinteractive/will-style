@@ -3,16 +3,16 @@
 //
 
 $will-white:		#FFFDF8;
-$will-dark:			#2d2e2f;
-$will-black:		#030328;
+$will-offwhite:		#f8fafc;
+$will-black:		#18181a;
+$will-dark:			#0e0b22;
 $will-linen: 		#f4ede4;
-$will-logo-white:	#f2f2f2;
-
 $will-teal:			#48bc97;
 
 $will-logo-blue:	#2D7DD2;
 $will-logo-teal:	$will-teal;
-$will-logo-black:	$will-dark;
+$will-logo-black:	$will-black;
+$will-logo-white:	$will-white;
 
 $will-gray:	#abaaa8;
 
@@ -27,6 +27,7 @@ $will-action-green:		$will-teal;
 // @NOTE: Changing action blue to be 508 compliant
 // $will-action-blue:		#4085e4;
 $will-action-blue:		#2472E0;
+$will-dark-blue:		#1E254C;
 
 $will-action-purple: 	#805be1;
 $will-action-violet:	#a755ad;
@@ -67,8 +68,7 @@ $will-gradient: linear-gradient(-45deg,
 
 $will-logo-gradient: linear-gradient(-45deg,
 	$will-logo-teal 0%,
-	$will-logo-blue 63%,
-	$will-action-skyblue 100%);
+	$will-logo-blue 63%);
 
 // Color Helpers
 
