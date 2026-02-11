@@ -78,47 +78,6 @@ $grid-opacity: 0.5 !default;
     }
 }
 
-@mixin grid-and-grain-bg($target: "before", $include-position: true, $background-color: false, $include-fade: true) {
-    @if $include-position {
-        position: relative;
-    }
-
-    &:#{$target} {
-        content: "";
-
-        position: absolute;
-
-        pointer-events: none;
-
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-
-        @if $background-color {
-            background-color: $background-color;
-        }
-
-        background-image:   will_style-bg-url("patterns/grid.svg"),
-                            will_style-bg-url("patterns/grain-faded.png");
-
-        background-repeat: repeat;
-
-        background-size:    60px 60px,
-                            auto;
-
-        opacity: $grid-opacity;
-
-        z-index: 0;
-    }
-
-    @if $include-position {
-        & > * {
-            position: relative;
-        }
-    }
-}
-
 @mixin dark-gradient-bg {
     background-color: black;
 
