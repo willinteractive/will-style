@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.version  = WillStyle::VERSION
   s.authors  = ["The WILL Developers"]
   s.email    = ["developers@willinteractive.com"]
-  s.summary  = "WILL custom styling built on top of foundation"
+  s.summary  = "WILL custom styling built on top of bootstrap 5.3"
   s.description  = "WILL Style"
   s.homepage = "https://github.com/willinteractive/will-style"
   s.license  = 'MIT'
