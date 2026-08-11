@@ -1,6 +1,6 @@
 # Open Questions — will-style
 
-All 10 questions below have been answered (2026-08-11). Answers are recorded inline and now drive `MIGRATION.md`.
+All 12 questions below have been answered (2026-08-11). Answers are recorded inline and now drive `MIGRATION.md`.
 
 ## Distribution & consumers
 
@@ -49,4 +49,5 @@ All 10 questions below have been answered (2026-08-11). Answers are recorded inl
 
 ## Duplicate `stretch` mixin (found 2026-08-11 while adding Stylelint)
 
-12. **`lib/assets/stylesheets/will_style/mixins/_layout.scss` defines `@mixin stretch` twice** — once at line 23 with offset parameters (`position: absolute` + top/right/bottom/left), and again at line 43 with no parameters (`min-height: 100vh`/`100dvh`). In Sass, the second definition completely replaces the first (no overloading by arity) — so any caller doing `@include stretch($offset-top: ...)` would currently error, and any bare `@include stretch;` gets viewport-height behavior, not the positioning behavior the first definition's name and parameters suggest. This wasn't fixed — flagged with an inline `stylelint-disable` comment instead, since resolving it requires knowing which behavior current callers actually depend on. **What's known**: within will-style itself, `@include stretch;` is called bare three times in `components/_navbar.scss` (lines 206, 239) — i.e., the currently-*active* (second) definition is what this repo's own SCSS relies on. No caller of the offset-parameter form was found here, but this gem's mixins are also consumable by the four downstream apps' own SCSS, so it can't be ruled out as dead code from this repo alone. Please advise which you'd like: (a) delete the offset-based `stretch` as dead code, (b) rename one of the two to a distinct name, or (c) something else.
+12. **`lib/assets/stylesheets/will_style/mixins/_layout.scss` defines `@mixin stretch` twice** — once with offset parameters (`position: absolute` + top/right/bottom/left), and again with no parameters (`min-height: 100vh`/`100dvh`), which silently shadowed the first.
+    **Answer (2026-08-11)**: delete the offset-based version as dead code. No caller of it was found in this repo (only the bare, viewport-height form is used, three times in `components/_navbar.scss`); accepted the residual risk that a downstream consumer's own SCSS could theoretically call the offset form, per the standing dead-code policy in [standards.md](standards.md) (surfaces as a real break, gets reverted and documented, rather than left "just in case"). Done — see `mixins/_layout.scss`.

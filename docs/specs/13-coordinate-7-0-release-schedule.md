@@ -36,3 +36,7 @@ N/A — process, not code.
 ## Coding Agent Safe?
 
 No — this is a human scheduling and communication decision.
+
+## Outcome (decided 2026-08-11)
+
+Rollout order and schedule: **Launchpad today (2026-08-11), Access Friday (2026-08-14), Learning in two weeks (2026-08-25), Veils-Player in four weeks (2026-09-08)**. `CHANGELOG.md` added to the repo, with a `7.0.0` entry tracking breaking changes as they land (see [15](15-remove-sprockets-js-manifest.md), [16](16-convert-js-to-esm.md), [08](08-remove-will-icons.md)); finalized once [17](17-cut-7-0-release.md) actually cuts the tag.

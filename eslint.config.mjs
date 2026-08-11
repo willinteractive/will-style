@@ -14,12 +14,14 @@ export default [
         ]
     },
     {
-        // The gem's shipped browser JS: plain IIFEs attached to a global
-        // WillStyle namespace, not ES modules (see docs/MIGRATION.md item C2).
+        // The gem's shipped browser JS: real ES modules as of item C2
+        // (docs/MIGRATION.md) -- window.WillStyle only appears now as a
+        // documented compatibility shim in core/settings.js, core/events.js,
+        // and forms/expanding-textareas.js.
         files: ["app/javascript/**/*.js"],
         languageOptions: {
             ecmaVersion: 2021,
-            sourceType: "script",
+            sourceType: "module",
             globals: {
                 ...globals.browser,
                 WillStyle: "writable",
