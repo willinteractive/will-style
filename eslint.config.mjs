@@ -34,6 +34,16 @@ export default [
         }
     },
     {
+        // The importmap entry point aggregating the behavior files below via
+        // plain ESM side-effect imports (see app/javascript/will_style.js) --
+        // real module syntax, unlike the IIFE files it imports.
+        files: ["app/javascript/will_style.js"],
+        languageOptions: {
+            ecmaVersion: 2021,
+            sourceType: "module"
+        }
+    },
+    {
         // Local dev tooling: Node ESM.
         files: ["gulp/**/*.js"],
         languageOptions: {
