@@ -4,7 +4,7 @@
 
 ## Stack
 
-Rails engine (`rails >= 7.2.3`, unbounded on purpose — see [docs/MIGRATION.md](docs/MIGRATION.md) item F2/09). Bootstrap 5.3, `dartsass-sprockets` (Dart Sass) for SCSS, `importmap-rails` + a legacy Sprockets manifest for JS (dual-loading, being consolidated — see item C1). No pinned Ruby version yet; target is `>= 3.4.10` (item F2). Node `>=18.12.0` for the local dev tooling only.
+Rails engine, requires `rails >= 8.0` and Ruby `>= 3.4.10` (both raised 2026-08-11 — `access`/`learning` are being modernized to match). Bootstrap 5.3, `dartsass-sprockets` (Dart Sass) for SCSS, `importmap-rails` + a legacy Sprockets manifest for JS (dual-loading, being consolidated — see item C1). Node `>=18.12.0` for the local dev tooling only.
 
 ## Commands
 

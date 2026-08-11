@@ -18,7 +18,7 @@
 
 ## Dependency graph
 
-**Gem runtime dependencies** ([`will_style.gemspec:18-26`](../will_style.gemspec#L18-L26)): `rails >= 7.2.3`, `bootstrap ~> 5.3`, `dartsass-sprockets ~> 3.2`, `autoprefixer-rails ~> 10.4`, `turbo-rails ~> 2.0`, `importmap-rails ~> 2.2`. Only dev dependency: `bundler ~> 4.0`.
+**Gem runtime dependencies** ([`will_style.gemspec:18-26`](../will_style.gemspec#L18-L26)): `rails >= 8.0`, `bootstrap ~> 5.3`, `dartsass-sprockets ~> 3.2`, `autoprefixer-rails ~> 10.4`, `turbo-rails ~> 2.0`, `importmap-rails ~> 2.2`. Only dev dependency: `bundler ~> 4.0`.
 
 **npm dependencies** ([`package.json`](../package.json)): runtime `bootstrap ~5.3.8` (used as an SCSS source, not shipped as JS); dev-only `del`, `gulp`, `gulp-sharp-responsive` (private git fork), `require-dir`, `sharp` — these support only the local responsive-image gulp task, not the gem's shipped output.
 

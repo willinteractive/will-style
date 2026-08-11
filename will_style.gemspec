@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
 
   s.files = `git ls-files`.split("\n")
 
-  s.add_dependency "rails", ">= 7.2.3"
+  s.add_dependency "rails", ">= 8.0"
   s.add_dependency "bootstrap", "~> 5.3"
 
   s.add_dependency "dartsass-sprockets", "~> 3.2"

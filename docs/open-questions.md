@@ -36,6 +36,7 @@ All 10 questions below have been answered (2026-08-11). Answers are recorded inl
 ## Versioning strategy
 
 9. **How far should the `rails` dependency track?**
-   **Answer**: Leave unbounded for now — all consuming apps are migrating to Rails 8. Revisit only if a future Rails 9 changes import/dependency structure in a way that breaks this gem.
+   **Answer**: Leave unbounded above the floor; revisit only if a future Rails 9 changes import/dependency structure in a way that breaks this gem.
+   **Updated 2026-08-11**: after F6's consumer inventory showed `access`/`learning` still on Rails 6.1.x, the team confirmed those two are being modernized next — so it's fine to raise the floor itself to `>= 8.0` now (done, see [dependency-audit.md](dependency-audit.md)). This is a deliberate forcing function: neither app can adopt a will-style release built after this change until it's on Rails 8, which is expected to happen as part of their own modernization, not a surprise.
 10. **Appetite for a breaking will-style major version?**
     **Answer**: Yes — breaking changes are fine as long as the rollout across the four consuming apps is coordinated (a 7.0 release, not a silent 6.x change).

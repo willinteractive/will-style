@@ -6,7 +6,7 @@ What modernized will-style code looks like once `docs/MIGRATION.md` is complete.
 
 - `required_ruby_version` is always set and current (`>= 3.4.10` as of this writing — bump it when the team's floor moves, don't let it silently lapse).
 - Runtime gem dependencies use `~>` pessimistic constraints, kept current — this repo's dependencies already follow this well; keep doing it.
-- `rails` stays intentionally unbounded (`>= 7.2.3`, no upper bound) per team decision — revisit only if a future Rails major changes import/dependency structure in a way that breaks this gem, not preemptively.
+- `rails` has an explicit floor (`>= 8.0`), no upper bound, per team decision — revisit the floor only alongside a broader Ruby/Rails version bump, and add an upper bound only if a future Rails major changes import/dependency structure in a way that breaks this gem, not preemptively.
 - No dead code: a public method with no callers found anywhere (this repo or, as best as can be checked, consumer repos) gets deleted, not left "just in case." If it's genuinely load-bearing for a consumer, that surfaces as a real break, gets reverted, and gets documented — better than silently accumulating unverifiable surface area.
 - Optional integrations (e.g. `premailer-rails`) are detected at load time (`defined?`/`Gem::Specification.find_by_name`) rather than declared as hard dependencies, so consumers that don't need the feature don't carry the weight.
 
