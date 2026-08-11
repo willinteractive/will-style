@@ -2,9 +2,11 @@
 
 All notable changes to `will_style` are documented here. Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
-## [Unreleased] — 7.0.0
+## [7.0.0] — 2026-08-11
 
 Breaking release, part of the 2026 modernization effort (see `docs/MIGRATION.md`). Rollout schedule: Launchpad 2026-08-11, Access 2026-08-14, Learning 2026-08-25, Veils-Player 2026-09-08.
+
+**Not yet verified in a live consuming app**: the JS changes below (Sprockets manifest removal, ES module conversion) were verified as far as this repo allows — lint, syntax checks, full Ruby/JS/CSS toolchain — but not exercised in a real browser. Smoke-test against Launchpad as part of this rollout; if anything surfaces, a `7.0.x` bugfix release is the plan, not a revert of the whole release.
 
 ### Breaking
 
