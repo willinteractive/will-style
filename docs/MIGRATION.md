@@ -17,7 +17,7 @@ Lowest blast radius first (`F1`–`F3`), then the safety net (`F4`–`F6`) befor
 | F3 | ~~Delete `WillStyle.stylesheets_path`~~ **Done 2026-08-11.** `gem_path` left in place pending a consumer-usage check. See [docs/specs/03](specs/03-remove-dead-code.md). | — | Trivial |
 | F4 | Stand up a Ruby test harness for the engine (dummy Rails app + Minitest or RSpec) so every item below is verifiable instead of eyeballed. | — | Medium |
 | F5 | Add lint config (Rubocop, Stylelint, ESLint) and a GitHub Actions CI workflow running lint + F4's tests. | F4 | Medium |
-| F6 | Inventory all four consuming apps: current will-style git ref/tag, Sprockets-vs-importmap asset pipeline mode, Bootstrap version. This is the prerequisite for `B2`, `B3`, and `C1` — don't guess at consumer state. | — | Small |
+| F6 | ~~Inventory all four consuming apps~~ **Done 2026-08-11.** Found real surprises: `access`/`learning` are 2 majors behind on a pre-rename gem name, on Ruby 3.2.2 (below F2's new floor) and Rails 6.1.x, with no `config/importmap.rb`; `veils-player` isn't a Rails app at all. This changes `B2`/`B3`'s risk picture — see [docs/specs/06](specs/06-consumer-inventory.md). | — | Small |
 
 ## Parallel — either engineer, independent
 
