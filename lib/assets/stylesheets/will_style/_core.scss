@@ -2,14 +2,48 @@
 // Core
 //
 
+// Forwarded so their members stay available to the not-yet-migrated parts
+// of the tree that still reach these via the legacy @import cascade
+// (anything still under _site.scss). $include-type is configured here,
+// once -- a module can only be configured at its first load, and this is
+// the single point everything else (mixins/backgrounds' will-style-bg-url)
+// funnels through.
+@forward "will_style/mixins/base" with ($include-type: "rails");
+@forward "will_style/core/variables/global";
+@forward "will_style/mixins/backgrounds";
+@forward "will_style/mixins/gradients";
+@forward "will_style/mixins/layout";
+@forward "will_style/mixins/underlined-elements";
+@forward "will_style/mixins/shadows";
+@forward "will_style/mixins/animated-elements";
+@forward "will_style/mixins/fontawesome";
+@forward "will_style/core/transitions";
+
+// @use'd (not just forwarded) because these emit CSS directly, which
+// @forward alone would not do.
+@use "will_style/core/typography/web";
+@use "will_style/elements/colors";
+@use "will_style/core/deferred-styles";
+@use "will_style/core/accessibility";
+@use "will_style/elements/gradients";
+@use "will_style/elements/image-loading";
+
+// core/colors (variables only -- its CSS output lives in elements/_colors.scss
+// now, specifically so this file can be both @import'd here AND @use'd by
+// several already-migrated files (mixins/backgrounds, mixins/gradients, etc.)
+// without emitting duplicate CSS: a module with real CSS output gets a
+// separate emission per @import/@use "world", but a pure-variables module
+// like this one doesn't have any CSS to duplicate, so loading it both ways
+// is safe. It has to stay @import'd (not @forward'd) here specifically
+// because its Bootstrap $variable !default overrides only take effect if
+// they land in the same @import-based global scope bootstrap/variables
+// reads from below -- @forward alone would not leak them there. Revisit
+// once bootstrap/variables itself moves to @use ... with().
 @import
 	"bootstrap/functions",
 
-	"will_style/core/typography/web",
-
 	"will_style/core/colors",
 	"will_style/core/variables/type",
-	"will_style/core/variables/global",
 
 	"will_style/core/variables/bootstrap_pre",
 
@@ -17,8 +51,7 @@
 	"bootstrap/variables-dark",
 
 	"will_style/core/variables/bootstrap",
-	"will_style/core/deferred-styles",
-	"will_style/core/accessibility";
+	"will_style/core/type";
 
 // Mixins
 
@@ -31,26 +64,12 @@
 	"bootstrap/reboot",
 	"bootstrap/type",
 
-	"will_style/mixins/base",
-	"will_style/mixins/backgrounds",
-	"will_style/mixins/gradients",
-	"will_style/mixins/layout",
-	"will_style/mixins/underlined-elements",
-	"will_style/mixins/shadows",
-	"will_style/mixins/animated-elements",
-	"will_style/mixins/scaled-properties",
-	"will_style/mixins/fontawesome";
+	"will_style/mixins/scaled-properties";
 
 // Transitions
 
 @import
-	"will_style/core/transitions",
 	"bootstrap/transitions";
-
-// Type
-
-@import
-	"will_style/core/type";
 
 // Images
 
@@ -63,12 +82,6 @@
 	"bootstrap/containers",
 	"bootstrap/grid",
 	"bootstrap/tables";
-
-// Elements
-
-@import
-	"will_style/elements/gradients",
-	"will_style/elements/image-loading";
 
 // Libraries
 

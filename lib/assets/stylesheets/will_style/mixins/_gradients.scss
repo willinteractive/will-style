@@ -1,3 +1,5 @@
+@use "will_style/core/colors" as colors;
+
 //
 // GRADIENTS
 //
@@ -67,9 +69,9 @@
 }
 
 @mixin will-theme-gradient {
-	background-image: $will-logo-gradient;
+	background-image: colors.$will-logo-gradient;
 }
 
-@mixin color-gradient($color: $primary) {
+@mixin color-gradient($color: colors.$primary) {
 	@include smooth-linear-gradient($start-color: darken($color, 10%), $end-color: lighten($color, 10%), $direction: to bottom right);
 }

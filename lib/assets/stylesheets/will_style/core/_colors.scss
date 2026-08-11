@@ -121,24 +121,3 @@ $link-color: $primary !default;
 $body-bg: $will-logo-white !default;
 $body-color: $will-black !default;
 $primary-lighter: $will-action-purple !default;
-
-// Utility Classes
-
-// Add .will-* utility classes to color the foreground and background
-
-@each $name, $color in $color-list {
-	.#{$name} {
-		color: $color !important;
-	}
-
-	.bg-#{$name} {
-		background-color: $color !important;
-	}
-}
-
-// Set overscroll on WILL Apps
-
-html,
-body {
-	background-color: $body-bg;
-}

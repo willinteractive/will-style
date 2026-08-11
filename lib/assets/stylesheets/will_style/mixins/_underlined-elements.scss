@@ -1,3 +1,5 @@
+@use "will_style/core/colors" as colors;
+
 //
 // Animated Links
 //
@@ -28,7 +30,7 @@
 		left: 0;
 		right: 0;
 		height: $height;
-		background-color: $primary;
-		background-image: linear-gradient(to right, $primary-lighter, $primary);
+		background-color: colors.$primary;
+		background-image: linear-gradient(to right, colors.$primary-lighter, colors.$primary);
 	}
 }
