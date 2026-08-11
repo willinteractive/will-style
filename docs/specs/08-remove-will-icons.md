@@ -39,3 +39,16 @@ Small.
 Yes, once the cross-app usage check confirms zero references.
 
 **Note**: land this before [07-scss-import-to-use-migration.md](07-scss-import-to-use-migration.md) — both touch the same SCSS directories; don't run them concurrently.
+
+## Outcome (2026-08-11)
+
+Implemented, with two real findings that changed the plan mid-execution:
+
+1. **`libraries/_will_paginate.scss` had an active, non-cosmetic dependency on will-icons** — `will_paginate`'s previous/next pagination links used `@include will-icon-font` plus `@extend .will-icon-previous_arrow`/`.will-icon-next_arrow`. Deleting the icon font source without touching this file would have been a hard Sass compile error (`@extend` on a since-removed selector), not a silent regression. Replaced with a new reusable `mixins/_fontawesome.scss` (`@include fontawesome-icon($content, $weight: 900)`, defaulting to `"Font Awesome 6 Pro"` — confirmed the team's Kit is Pro-tier, not Free) rendering `fa-chevron-left`/`fa-chevron-right` (`\f053`/`\f054`) via the same `:before`-content technique the old mixin used, so positioning/sizing logic in `_will_paginate.scss` didn't need to change.
+2. **The footer's inline WILL mark had no good FontAwesome or existing-SVG equivalent** — `_footer.html.erb` used a compact `will-icon-will_logo` glyph; the gem's only other logo asset is the full "WILL" wordmark SVG sized for headers, not an inline copyright-line glyph. Per the team, replaced with the literal text "WILL Interactive" (a compliance requirement to use the full company name), not an icon at all.
+
+Cross-app check (all four consumers, source only — not compiled `public/assets/` output) found zero live `.will-icon-*` references outside will-style itself; the one `veils-player` grep hit (`$use-will-icon-on-pause`) was an unrelated SCSS variable name, not a font/class dependency.
+
+Deleted: `will-icons/glyphs/` (13 SVGs), `lib/assets/fonts/will-icons/` (`.eot`/`.svg`/`.ttf`/`.woff`), `core/_will_icons.scss`, `core/will_icons/_rails.scss`/`_react.scss`/`_node.scss`, `mixins/_will-icons.scss`, and their `@import`s from `_core.scss`.
+
+Verified by compiling both real entry-point combinations directly with `sass-embedded` (matching Launchpad's actual `@import "will_style"; @import "will_style/app";` usage, not just `will_style.scss` alone, which only pulls in `core` and would have missed `_will_paginate.scss` entirely): compiles cleanly, output contains no `will-icons` references, and does contain the new `f053`/`f054`/`Font Awesome 6 Pro` rules. `email.scss` also verified to compile. Full toolchain (Rubocop, RSpec, Stylelint) stayed clean throughout.

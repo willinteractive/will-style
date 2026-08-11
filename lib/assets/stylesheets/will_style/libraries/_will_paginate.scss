@@ -40,8 +40,6 @@
 
 	a.previous_page,
 	a.next_page {
-		@include will-icon-font;
-
 		position: relative;
 
 		&:before {
@@ -54,11 +52,11 @@
 		}
 	}
 
-	a.previous_page {
-		@extend .will-icon-previous_arrow;
+	a.previous_page:before {
+		@include fontawesome-icon("\f053"); // fa-chevron-left
 	}
 
-	a.next_page {
-		@extend .will-icon-next_arrow;
+	a.next_page:before {
+		@include fontawesome-icon("\f054"); // fa-chevron-right
 	}
 }
