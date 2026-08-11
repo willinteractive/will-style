@@ -35,3 +35,11 @@ Small.
 ## Coding Agent Safe?
 
 Partially — the technical investigation is agent-safe, but confirming WILL's FontAwesome account/licensing tier needs a human with account access.
+
+## Outcome (2026-08-11) — partially resolved, blocked on account access
+
+**Confirmed**: the team's Kit is **Pro-tier** (confirmed directly during P2's work, when the same question came up for the pagination-arrow replacement — see [08-remove-will-icons.md](08-remove-will-icons.md)). This most likely explains "we had issues before": `@fortawesome/fontawesome-free` on the public npm registry has no Pro icon parity, so any earlier attempt to pin that package would have silently dropped every Pro-only icon in use.
+
+**Still blocked**: FontAwesome's Pro packages (`@fortawesome/pro-solid-svg-icons`, `@fortawesome/fontawesome-pro`, etc.) are distributed through FontAwesome's own private npm registry, gated by a per-account auth token generated from the FontAwesome dashboard. This isn't something inspectable or installable from this environment — it needs a human with dashboard access to (a) confirm the account actually supports npm/pinned-package distribution (some Pro tiers are Kit-only), (b) generate the registry auth token, and (c) decide how that token gets distributed to contributor machines/CI (an `.npmrc` secret, most likely) without leaking it into the repo.
+
+**Recommendation**: don't block the rest of the modernization roadmap on this — it's an account/credentials task, not an engineering one. [12-fontawesome-final-decision.md](12-fontawesome-final-decision.md) (B1) should stay open until someone with FontAwesome dashboard access can answer the three points above; the Kit script remains the working fallback in the meantime.

@@ -25,6 +25,7 @@ All 10 questions below have been answered (2026-08-11). Answers are recorded inl
    **Answer**: Everyone currently has SSH access, so it's not an active blocker — but replace it with an actively maintained responsive-image tool as non-urgent cleanup.
 6. **FontAwesome Kit script — keep, or move to a pinned package?**
    **Answer**: There's prior history of issues with the pinned-package approach. Spike on moving to a pinned package first; if it doesn't pan out, the hardcoded Kit script is an acceptable fallback.
+   **Update 2026-08-11**: confirmed the account is Pro-tier (likely explaining the earlier trouble — `@fortawesome/fontawesome-free` has no Pro icon parity). A pinned-package spike is blocked on FontAwesome dashboard access to generate a private-registry npm auth token — needs someone with account access to pick this up; see [specs/11](specs/11-fontawesome-pinned-package-spike.md).
 7. **`premailer-rails` — declare it as a dependency?**
    **Answer**: Yes — make it an **optional** declared dependency rather than a README-only note.
 
