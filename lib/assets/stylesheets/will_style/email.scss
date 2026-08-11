@@ -1,7 +1,5 @@
-@import
-	"will_style/core/variables/colors",
-	"will_style/core/colors",
-	"will_style/mixins/shadows";
+@use "sass:color";
+@use "will_style/core/colors";
 
 //
 // Reset
@@ -23,7 +21,7 @@ body {
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 	width: 100%;
-	background-color: $body-bg;
+	background-color: colors.$body-bg;
 }
 
 table {
@@ -58,7 +56,7 @@ h4 {
 	line-height: 1.4;
 	margin: 0;
 	margin-bottom: 15px;
-	color: $will-black;
+	color: colors.$will-black;
 }
 
 h1 {
@@ -84,7 +82,7 @@ ol {
 }
 
 a {
-	color: $will-teal;
+	color: colors.$will-teal;
 	text-decoration: underline;
 }
 
@@ -94,7 +92,7 @@ a {
 
 .body {
 	width: 100%;
-	background-color: $body-bg;
+	background-color: colors.$body-bg;
 }
 
 // Set a max-width, and make it display as block
@@ -166,7 +164,7 @@ a {
 		width: auto;
 
 		td {
-			background-color: $will-white;
+			background-color: colors.$will-white;
 			text-align: center;
 		}
 	}
@@ -181,24 +179,24 @@ a {
 		margin: 0;
 		padding: 12px 25px;
 		cursor: pointer;
-		color: $will-teal;
-		background-color: $will-white;
-		border: solid 1px $will-teal;
+		color: colors.$will-teal;
+		background-color: colors.$will-white;
+		border: solid 1px colors.$will-teal;
 		border-radius: 5px;
 	}
 
 	&.btn-primary {
 		a {
-			background-color: $primary;
-			border-color: $primary;
-			color: $will-white;
+			background-color: colors.$primary;
+			border-color: colors.$primary;
+			color: colors.$will-white;
 			font-weight: bold;
 			border-radius: 5px;
 
 			&:hover,
 			&:focus {
-				background-color: lighten($primary, 10%) !important;
-				border-color: lighten($primary, 10%) !important;
+				background-color: color.adjust(colors.$primary, $lightness: 10%) !important;
+				border-color: color.adjust(colors.$primary, $lightness: 10%) !important;
 			}
 		}
 	}
@@ -210,7 +208,7 @@ a {
 
 .main {
 	width: 100%;
-	background: $will-white;
+	background: colors.$will-white;
 }
 
 .wrapper {
@@ -233,7 +231,7 @@ a {
 	p,
 	span,
 	a {
-		color: $body-color !important;
+		color: colors.$body-color !important;
 		text-decoration: none !important;
 		font-size: 12px;
 		text-align: center;
@@ -286,7 +284,7 @@ a {
 hr {
 	margin: 20px 0;
 	border: 0;
-	border-bottom: 1px solid $will-black;
+	border-bottom: 1px solid colors.$will-black;
 }
 
 //
