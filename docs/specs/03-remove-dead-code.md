@@ -36,3 +36,7 @@ Trivial.
 ## Coding Agent Safe?
 
 Yes.
+
+## Outcome (2026-08-11)
+
+Implemented — `stylesheets_path` and the stale "Using bootstrap-sass initialization" comment removed from `lib/will_style/engine.rb`. `gem_path` left in place per the original recommendation (no known callers here, but its public-method status means an external caller can't be fully ruled out from this repo alone). `ruby -c` syntax check and a full `gem build` both pass; no remaining references anywhere in the repo.

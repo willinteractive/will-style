@@ -13,8 +13,8 @@ Lowest blast radius first (`F1`–`F3`), then the safety net (`F4`–`F6`) befor
 | ID | Title | Depends on | Complexity |
 |---|---|---|---|
 | F1 | Run `npm install` to resync `node_modules` with the lockfile — fixes the `gulp` version drift and, more importantly, the installed `sharp@0.33.5` CVE exposure (GHSA-f88m-g3jw-g9cj). Do this immediately, independent of everything else. | — | Trivial |
-| F2 | Set `required_ruby_version = ">= 3.4.10"` in `will_style.gemspec`. | — | Trivial |
-| F3 | Delete `WillStyle.stylesheets_path` (calls undefined `assets_path`, no known callers) and confirm `WillStyle.gem_path` still has a legitimate caller before leaving it in `lib/will_style/engine.rb`. | — | Trivial |
+| F2 | ~~Set `required_ruby_version = ">= 3.4.10"`~~ **Done 2026-08-11.** See [docs/specs/02](specs/02-ruby-version-floor.md). | — | Trivial |
+| F3 | ~~Delete `WillStyle.stylesheets_path`~~ **Done 2026-08-11.** `gem_path` left in place pending a consumer-usage check. See [docs/specs/03](specs/03-remove-dead-code.md). | — | Trivial |
 | F4 | Stand up a Ruby test harness for the engine (dummy Rails app + Minitest or RSpec) so every item below is verifiable instead of eyeballed. | — | Medium |
 | F5 | Add lint config (Rubocop, Stylelint, ESLint) and a GitHub Actions CI workflow running lint + F4's tests. | F4 | Medium |
 | F6 | Inventory all four consuming apps: current will-style git ref/tag, Sprockets-vs-importmap asset pipeline mode, Bootstrap version. This is the prerequisite for `B2`, `B3`, and `C1` — don't guess at consumer state. | — | Small |

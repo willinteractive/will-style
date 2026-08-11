@@ -26,7 +26,6 @@ module WillStyle
     end
   end
 
-  # Using bootstrap-sass initialization
   class << self
     attr_accessor :importmap
 
@@ -36,10 +35,6 @@ module WillStyle
     # Paths
     def gem_path
       @gem_path ||= File.expand_path '..', File.dirname(__FILE__)
-    end
-
-    def stylesheets_path
-      File.join assets_path, 'stylesheets'
     end
   end
 end

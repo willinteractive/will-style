@@ -13,6 +13,8 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/willinteractive/will-style"
   s.license  = 'MIT'
 
+  s.required_ruby_version = ">= 3.4.10"
+
   s.files = `git ls-files`.split("\n")
 
   s.add_dependency "rails", ">= 7.2.3"

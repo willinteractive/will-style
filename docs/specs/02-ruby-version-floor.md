@@ -37,3 +37,7 @@ Trivial.
 ## Coding Agent Safe?
 
 Yes.
+
+## Outcome (2026-08-11)
+
+Implemented — `s.required_ruby_version = ">= 3.4.10"` added to `will_style.gemspec`. `gem build will_style.gemspec` succeeds (build itself doesn't enforce the floor; it's enforced at install time by Bundler/RubyGems). Not yet cross-checked against consumer Ruby versions — still pending [06-consumer-inventory.md](06-consumer-inventory.md).
