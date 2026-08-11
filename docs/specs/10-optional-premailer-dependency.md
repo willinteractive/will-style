@@ -36,3 +36,9 @@ Trivial.
 ## Coding Agent Safe?
 
 Yes.
+
+## Outcome (2026-08-11)
+
+Implemented, and simpler than the spec anticipated: there was no existing engine-level config wired to `premailer-rails` at all (grep found zero references anywhere in `lib/`/`config/` — only the README note). So there was nothing to conditionally gate; the actual gap was pure discoverability. Added a `Rails.logger.warn` at the top of `app/views/will_style/components/_email.html.erb` (the email layout) that fires when `PremailerRails` isn't defined, since without it the `stylesheet_link_tag` in that layout produces a `<link>` most email clients ignore — i.e. the email would silently render unstyled. `Readme.md` updated to mention the warning. No gemspec change, per the original recommendation.
+
+Covered by two new specs in `spec/views/will_style/components/_email_html_erb_spec.rb` (rendering the layout without `premailer-rails` present still succeeds; the warning fires with the expected message). Required adding `spec/internal/app/assets/{images,javascripts,stylesheets}/` to the dummy app — the manifest's `link_tree ../images` needs a real directory to resolve, which hadn't been exercised by the F4 specs since they never rendered a view that pulls in `stylesheet_link_tag`.
