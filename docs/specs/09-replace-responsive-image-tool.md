@@ -2,7 +2,9 @@
 
 ## Current State
 
-`gulp-sharp-responsive` resolves via `git+ssh://git@github.com/willinteractive/gulp-sharp-responsive.git` to a single pinned commit (`066b452b`) — a single-maintainer WILL-owned fork, not published to the npm registry. Everyone currently has the SSH access needed to install it, so it's not an active blocker, but it's a single point of failure with no visible release process.
+`gulp-sharp-responsive` resolves via `git+ssh://git@github.com/willinteractive/gulp-sharp-responsive.git` to a single pinned commit (`066b452b`) — a single-maintainer WILL-owned fork, not published to the npm registry. Everyone currently has the SSH access needed to install it, so lack of access isn't an active blocker.
+
+**Update (2026-08-11, from executing [01-npm-dependency-resync.md](01-npm-dependency-resync.md))**: this is more urgent than originally scoped. Once `node_modules` was resynced to match the lockfile (`gulp@5.0.1`), the `generate-responsive-images` task stopped completing — it hangs with "Did you forget to signal async completion?" and writes nothing to `dist/`, almost certainly because `gulp-sharp-responsive` itself isn't fully gulp-5-compatible. Separately, the package pins its own `sharp` dependency at `^0.33.2` in its `package.json`, which can't dedupe with this repo's `sharp@0.35.3` — so a second, CVE-vulnerable `sharp@0.33.5` installs nested inside it regardless of what this repo's own lockfile specifies (`npm audit` shows 3 high-severity findings scoped entirely inside `gulp-sharp-responsive`'s tree, with no fix available upstream). The tool is currently **broken under the versions this repo now requires**, not just a long-term maintenance risk.
 
 ## Desired Outcome
 
@@ -14,7 +16,7 @@ Evaluate registry alternatives that wrap `sharp` for responsive-image generation
 
 ## Risks and Tradeoffs
 
-Low risk — this tool only affects local/CI image generation, not the gem's shipped output (`src/`/`dist/` are gitignored). Main tradeoff is engineering time against a currently-working tool.
+Low risk to consumers — this tool only affects local/CI image generation, not the gem's shipped output (`src/`/`dist/` are gitignored). No longer low urgency, though: the tool doesn't currently work against the dependency versions this repo's own lockfile requires (see Current State), so this is closer to a bug fix than a modernization nice-to-have.
 
 ## Rollback Plan
 
