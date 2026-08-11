@@ -1,15 +1,12 @@
-(function() {
-  'use strict';
+export const Settings = {
+  pageChangeEvent: "turbo:load",
+  synchronousCSS: true,
+  elementChangedEvent: "will-style:elementChanged"
+};
 
-  window.WillStyle = window.WillStyle || {};
-
-  // Set up some default settings for common tasks
-  if (!window.WillStyle.Settings) {
-    window.WillStyle.Settings = {
-      pageChangeEvent: "turbo:load",
-      synchronousCSS: true
-    };
-  }
-
-  window.WillStyle.Settings.elementChangedEvent = "will-style:elementChanged";
-})();
+// Compatibility shim: window.WillStyle.Settings was the public surface
+// under the old IIFE/Sprockets setup, and nothing in this repo confirms
+// no consuming app's own JS reads it directly -- kept deliberately
+// alongside the real export above, not a transitional leftover.
+window.WillStyle = window.WillStyle || {};
+window.WillStyle.Settings = Settings;

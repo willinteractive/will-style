@@ -14,12 +14,14 @@ export default [
         ]
     },
     {
-        // The gem's shipped browser JS: plain IIFEs attached to a global
-        // WillStyle namespace, not ES modules (see docs/MIGRATION.md item C2).
+        // The gem's shipped browser JS: real ES modules as of item C2
+        // (docs/MIGRATION.md) -- window.WillStyle only appears now as a
+        // documented compatibility shim in core/settings.js, core/events.js,
+        // and forms/expanding-textareas.js.
         files: ["app/javascript/**/*.js"],
         languageOptions: {
             ecmaVersion: 2021,
-            sourceType: "script",
+            sourceType: "module",
             globals: {
                 ...globals.browser,
                 WillStyle: "writable",
@@ -31,16 +33,6 @@ export default [
             // Used deliberately as an inverted-condition no-op branch
             // (e.g. required-inputs.js's select2-skip check) rather than a bug.
             "no-empty": "off"
-        }
-    },
-    {
-        // The importmap entry point aggregating the behavior files below via
-        // plain ESM side-effect imports (see app/javascript/will_style.js) --
-        // real module syntax, unlike the IIFE files it imports.
-        files: ["app/javascript/will_style.js"],
-        languageOptions: {
-            ecmaVersion: 2021,
-            sourceType: "module"
         }
     },
     {

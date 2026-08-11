@@ -1,168 +1,166 @@
 //
 // Adding hover functionality to the bootstrap dropdowns
 //
-(function() {
-  'use strict';
+import { Settings } from "will_style/core/settings";
 
-  let currentDropdown = undefined;
+let currentDropdown = undefined;
 
-  function getDropdown(dropdownToggle) {
-    if (!dropdownToggle) {
-      return;
-    }
-
-    if (dropdownToggle.closest(".dropdown")) {
-      return dropdownToggle.closest(".dropdown");
-    } else if (dropdownToggle.closest(".dropdown-menu[aria-labelledby]")) {
-      return dropdownToggle.closest(".dropdown-menu[aria-labelledby]").closest(".dropdown");
-    }
+function getDropdown(dropdownToggle) {
+  if (!dropdownToggle) {
+    return;
   }
 
-  function getDropdownMenu(dropdown) {
-    if (!dropdown) {
-      return;
-    }
+  if (dropdownToggle.closest(".dropdown")) {
+    return dropdownToggle.closest(".dropdown");
+  } else if (dropdownToggle.closest(".dropdown-menu[aria-labelledby]")) {
+    return dropdownToggle.closest(".dropdown-menu[aria-labelledby]").closest(".dropdown");
+  }
+}
 
-    const menu = dropdown.querySelector(".dropdown-menu");
-    if (menu && !menu.classList.contains("dropdown-small")) {
-      return menu;
-    } else {
-      return document.querySelector(`.dropdown-menu[aria-labelledby='${dropdown.querySelector(".dropdown-toggle").getAttribute("id")}']`);
-    }
+function getDropdownMenu(dropdown) {
+  if (!dropdown) {
+    return;
   }
 
-  function highlightDropdown(dropdownToggle, permanently = false) {
-    const dropdown = getDropdown(dropdownToggle);
+  const menu = dropdown.querySelector(".dropdown-menu");
+  if (menu && !menu.classList.contains("dropdown-small")) {
+    return menu;
+  } else {
+    return document.querySelector(`.dropdown-menu[aria-labelledby='${dropdown.querySelector(".dropdown-toggle").getAttribute("id")}']`);
+  }
+}
 
-    if (!dropdown) {
-      return;
-    }
+function highlightDropdown(dropdownToggle, permanently = false) {
+  const dropdown = getDropdown(dropdownToggle);
 
-    if (currentDropdown && currentDropdown !== dropdown) {
-      currentDropdown = undefined;
-    }
-
-    // Clear all other dropdowns
-    const allDropdowns = document.querySelectorAll(".dropdown, .dropdown-menu");
-    for (let i = 0; i < allDropdowns.length; i++) {
-      allDropdowns[i].classList.remove("show");
-    }
-
-    const allToggles = document.querySelectorAll(".dropdown-toggle");
-    for (let i = 0; i < allToggles.length; i++) {
-      allToggles[i].classList.remove("active");
-    }
-
-    dropdown.classList.add("show");
-    const menu = getDropdownMenu(dropdown);
-    if (menu) {
-      menu.classList.add("show");
-    }
-
-    if (permanently === true) {
-      currentDropdown = dropdown;
-    }
+  if (!dropdown) {
+    return;
   }
 
-  function hideDropdown(dropdownToggle) {
-    const dropdown = getDropdown(dropdownToggle);
-
-    if (!dropdown) {
-      return;
-    }
-    if (currentDropdown) {
-      return;
-    }
-
-    dropdownToggle.blur();
-
+  if (currentDropdown && currentDropdown !== dropdown) {
     currentDropdown = undefined;
-
-    dropdown.classList.remove("show");
-    const menu = getDropdownMenu(dropdown);
-    if (menu) {
-      menu.classList.remove("show");
-    }
   }
 
-  function clearAnimationClasses(dropdownToggle) {
-    const dropdown = getDropdown(dropdownToggle);
-
-    if (!dropdown) {
-      return;
-    }
-
-    const dropdownMenu = getDropdownMenu(dropdown);
-
-    dropdownToggle.classList.remove("no-anim");
-    dropdownMenu.classList.remove("no-anim");
+  // Clear all other dropdowns
+  const allDropdowns = document.querySelectorAll(".dropdown, .dropdown-menu");
+  for (let i = 0; i < allDropdowns.length; i++) {
+    allDropdowns[i].classList.remove("show");
   }
 
-  function onDropdownEnter(event) {
-    if (!event.target.classList.contains("dropdown-toggle")) {
-      return true;
-    }
+  const allToggles = document.querySelectorAll(".dropdown-toggle");
+  for (let i = 0; i < allToggles.length; i++) {
+    allToggles[i].classList.remove("active");
+  }
 
-    clearAnimationClasses(event.target);
+  dropdown.classList.add("show");
+  const menu = getDropdownMenu(dropdown);
+  if (menu) {
+    menu.classList.add("show");
+  }
 
-    highlightDropdown(event.target);
+  if (permanently === true) {
+    currentDropdown = dropdown;
+  }
+}
+
+function hideDropdown(dropdownToggle) {
+  const dropdown = getDropdown(dropdownToggle);
+
+  if (!dropdown) {
+    return;
+  }
+  if (currentDropdown) {
+    return;
+  }
+
+  dropdownToggle.blur();
+
+  currentDropdown = undefined;
+
+  dropdown.classList.remove("show");
+  const menu = getDropdownMenu(dropdown);
+  if (menu) {
+    menu.classList.remove("show");
+  }
+}
+
+function clearAnimationClasses(dropdownToggle) {
+  const dropdown = getDropdown(dropdownToggle);
+
+  if (!dropdown) {
+    return;
+  }
+
+  const dropdownMenu = getDropdownMenu(dropdown);
+
+  dropdownToggle.classList.remove("no-anim");
+  dropdownMenu.classList.remove("no-anim");
+}
+
+function onDropdownEnter(event) {
+  if (!event.target.classList.contains("dropdown-toggle")) {
     return true;
   }
 
-  function onDropdownOut(event) {
-    if (!event || !event.clientX || !event.clientY) {
-      return true;
-    }
+  clearAnimationClasses(event.target);
 
-    const currentElement = document.elementFromPoint(event.clientX, event.clientY);
+  highlightDropdown(event.target);
+  return true;
+}
 
-    if (currentElement && !currentElement.closest(".dropdown-menu, .dropdown")) {
-      hideDropdown(event.target);
-    }
-
+function onDropdownOut(event) {
+  if (!event || !event.clientX || !event.clientY) {
     return true;
   }
 
-  function onDropdownClick(event) {
-    highlightDropdown(event.target, true);
+  const currentElement = document.elementFromPoint(event.clientX, event.clientY);
 
-    event.stopImmediatePropagation();
-    event.stopPropagation();
-    return false;
+  if (currentElement && !currentElement.closest(".dropdown-menu, .dropdown")) {
+    hideDropdown(event.target);
   }
 
-  document.addEventListener(window.WillStyle.Settings.pageChangeEvent, function() {
-    // Setup event listeners
-    const elements = document.querySelectorAll(".dropdown-toggle, .dropdown-menu");
+  return true;
+}
 
-    for (let i = 0; i < elements.length; i++) {
-      const element = elements[i];
-      element.addEventListener("click", onDropdownClick);
+function onDropdownClick(event) {
+  highlightDropdown(event.target, true);
 
-      element.addEventListener("mouseover", onDropdownEnter);
-      element.addEventListener("focusin", onDropdownEnter);
+  event.stopImmediatePropagation();
+  event.stopPropagation();
+  return false;
+}
 
-      element.addEventListener("mouseout", onDropdownOut);
-      element.addEventListener("focusout", onDropdownOut);
-    }
+document.addEventListener(Settings.pageChangeEvent, function() {
+  // Setup event listeners
+  const elements = document.querySelectorAll(".dropdown-toggle, .dropdown-menu");
 
-    // Highlight Active Dropdowns on Page Change
-    const activeItems = document.querySelectorAll(".dropdown-item.active");
-    for (let i = 0; i < activeItems.length; i++) {
-      const element = activeItems[i];
-      const dropdownMenu = element.closest(".dropdown-menu");
+  for (let i = 0; i < elements.length; i++) {
+    const element = elements[i];
+    element.addEventListener("click", onDropdownClick);
 
-      if (dropdownMenu) {
-        const dropdownLabel = dropdownMenu.getAttribute("aria-labelledby");
+    element.addEventListener("mouseover", onDropdownEnter);
+    element.addEventListener("focusin", onDropdownEnter);
 
-        if (dropdownLabel) {
-          const dropdownTarget = document.querySelector(`#${dropdownLabel}`);
+    element.addEventListener("mouseout", onDropdownOut);
+    element.addEventListener("focusout", onDropdownOut);
+  }
 
-          if (dropdownTarget) {
-            dropdownTarget.classList.add("active");
-          }
+  // Highlight Active Dropdowns on Page Change
+  const activeItems = document.querySelectorAll(".dropdown-item.active");
+  for (let i = 0; i < activeItems.length; i++) {
+    const element = activeItems[i];
+    const dropdownMenu = element.closest(".dropdown-menu");
+
+    if (dropdownMenu) {
+      const dropdownLabel = dropdownMenu.getAttribute("aria-labelledby");
+
+      if (dropdownLabel) {
+        const dropdownTarget = document.querySelector(`#${dropdownLabel}`);
+
+        if (dropdownTarget) {
+          dropdownTarget.classList.add("active");
         }
       }
     }
-  });
-})();
+  }
+});

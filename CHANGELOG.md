@@ -12,6 +12,7 @@ Breaking release, part of the 2026 modernization effort (see `docs/MIGRATION.md`
 - `rails` dependency floor raised to `>= 8.0` (was `>= 7.2.3`, unbounded).
 - `will-icons` removed entirely (icon font, SCSS, and view references). Pagination-arrow icons now render via FontAwesome Pro (`mixins/_fontawesome.scss`) instead. The footer's inline WILL glyph is now literal "WILL Interactive" text.
 - Sprockets JS manifest (`app/javascript/will_style.js`) removed — `config/importmap.rb` is now the only JS loading path. Any consumer still relying on the Sprockets `//= require will_style` path needs to be on importmap-rails first.
+- All 20 behavior files under `app/javascript/will_style/` converted from global-namespace IIFEs to real ES modules (`import`/`export`). `window.WillStyle.Settings`, `.Events`, and `.Forms.initializeExpandingTextareas` remain available as compatibility-shim globals (one, `Events`, is load-bearing for `_deferred_styles.html.erb`) — but any new integration should treat this as deprecated surface, not a stable public API.
 
 ### Changed
 
