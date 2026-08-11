@@ -14,7 +14,6 @@ $animated-element-delay-prop: "animated-delay" !default;
 $animated-element-active-prop: "animated-active" !default;
 $animated-element-active-init-prop: "animated-active-init" !default;
 $animated-element-after-prop: "animated-after" !default;
-
 $animated-element-selector: "[#{$animated-element-prop}]" !default;
 $animated-element-default-selector: "[#{$animated-element-default-prop}]" !default;
 $animated-element-left-selector: "[#{$animated-element-left-prop}]" !default;
@@ -25,7 +24,6 @@ $animated-element-opacity-selector: "[#{$animated-element-opacity-prop}]" !defau
 $animated-element-active-selector: "[#{$animated-element-active-prop}]" !default;
 $animated-element-active-init-selector: "[#{$animated-element-active-init-prop}]" !default;
 $animated-element-after-selector: "[#{$animated-element-after-prop}]" !default;
-
 $animated-element-selector-chrome: "[#{$animated-element-prop}=true]" !default;
 $animated-element-default-selector-chrome: "[#{$animated-element-default-prop}=true]" !default;
 $animated-element-left-selector-chrome: "[#{$animated-element-left-prop}=true]" !default;
@@ -52,7 +50,7 @@ $animated-element-after-selector-chrome: "[#{$animated-element-after-prop}=true]
 		@content;
 	}
 
-	&[animated-active=true] {
+	&[animated-active="true"] {
 		@content;
 	}
 }

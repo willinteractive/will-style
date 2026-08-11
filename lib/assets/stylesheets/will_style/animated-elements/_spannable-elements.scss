@@ -40,7 +40,7 @@ button.spannable,
 a.spannable {
 	&:not(.disabled) {
 		@include hover-focus {
-			@include rotate-spannable-element();
+			@include rotate-spannable-element;
 		}
 	}
 }
@@ -53,11 +53,11 @@ h3.spannable,
 h4.spannable,
 h5.spannable {
 	@include animated-element-init {
-		@include spannable-element-animation-init();
+		@include spannable-element-animation-init;
 	}
 
 	@include animated-element-active {
-		@include animate-spannable-element();
+		@include animate-spannable-element;
 	}
 }
 

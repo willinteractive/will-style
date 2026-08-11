@@ -1,0 +1,40 @@
+plugins:
+  - rubocop-rails
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.4
+  SuggestExtensions: false
+  Exclude:
+    - "spec/internal/**/*"
+    - "vendor/**/*"
+    - "node_modules/**/*"
+
+Rails:
+  Enabled: true
+
+# This repo is a gem/engine, not a Rails app config directory in the
+# conventional sense — several Rails cops assume an app layout.
+Rails/ApplicationController:
+  Enabled: false
+Rails/ApplicationRecord:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+# Dev dependencies live in the gemspec (add_development_dependency), matching
+# the convention already used by will-style and the org's other gems
+# (player-sync). Not a Rubocop default worth fighting.
+Gemspec/DevelopmentDependencies:
+  Enabled: false
+
+# Not published to RubyGems (git-reference distribution only) — MFA is n/a.
+Gemspec/RequireMFA:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 20
+
+Layout/LineLength:
+  Max: 120

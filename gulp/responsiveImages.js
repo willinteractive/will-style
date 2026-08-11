@@ -6,10 +6,36 @@
 // Example: gulp generate-responsive-images
 
 import gulp from "gulp";
-
-import sharpResponsive from "gulp-sharp-responsive";
+import fg from "fast-glob";
+import sharp from "sharp";
+import path from "node:path";
+import fs from "node:fs/promises";
 
 import { deleteSync } from "del";
+
+const BREAKPOINTS = [
+    { width: 540, quality: 70 },
+    { width: 768, quality: 80 },
+    { width: 960, quality: 80 },
+    { width: 1140, quality: 80 },
+    { width: 1320, quality: 80 },
+    { width: 1920, quality: 80 }
+];
+
+async function writeVariant(inputPath, outputPath, width, quality, format) {
+    let image = sharp(inputPath, { failOnError: false }).resize({ width });
+
+    if (format === "webp") {
+        image = image.webp({ quality, progressive: false });
+    } else if (path.extname(outputPath).toLowerCase() === ".png") {
+        image = image.png({ quality, progressive: false });
+    } else {
+        image = image.jpeg({ quality, progressive: false });
+    }
+
+    await fs.mkdir(path.dirname(outputPath), { recursive: true });
+    await image.toFile(outputPath);
+}
 
 gulp.task('clear-responsive-images', function(done) {
     deleteSync(["dist/"]);
@@ -21,209 +47,22 @@ gulp.task("copy-svgs", function() {
         .pipe(gulp.dest("dist"));
 });
 
-gulp.task("generate-responsive-images", gulp.series('clear-responsive-images', 'copy-svgs', function() {
-    return gulp.src("src/**/*.{gif,jpg,png}")
-        .pipe(sharpResponsive({
-            formats: [
+gulp.task("generate-responsive-images", gulp.series('clear-responsive-images', 'copy-svgs', async function() {
+    const sourceFiles = await fg("src/**/*.{gif,jpg,png}");
 
-                // Original File
+    for (const sourcePath of sourceFiles) {
+        const relativePath = path.relative("src", sourcePath);
+        const { dir, name, ext } = path.parse(relativePath);
 
-                {
-                    width: 540,
-                    rename: ({}, {
-                        suffix: "-540"
-                    }),
-                    sharp: { failOnError: false, density: 72 },
-                    jpegOptions: {
-                        quality: 70, progressive: false
-                    },
-                    pngOptions: {
-                        quality: 70, progressive: false
-                    },
-                    webpOptions: {
-                        quality: 70, progressive: false
-                    }
-                },
-                {
-                    width: 768,
-                    rename: ({}, {
-                        suffix: "-768"
-                    }),
-                    sharp: { failOnError: false, density: 72 },
-                    jpegOptions: {
-                        quality: 80, progressive: false
-                    },
-                    pngOptions: {
-                        quality: 80, progressive: false
-                    },
-                    webpOptions: {
-                        quality: 80, progressive: false
-                    }
-                },
-                {
-                    width: 960,
-                    rename: ({}, {
-                        suffix: "-960"
-                    }),
-                    sharp: { failOnError: false, density: 72 },
-                    jpegOptions: {
-                        quality: 80, progressive: false
-                    },
-                    pngOptions: {
-                        quality: 80, progressive: false
-                    },
-                    webpOptions: {
-                        quality: 80, progressive: false
-                    }
-                },
-                {
-                    width: 1140,
-                    rename: ({}, {
-                        suffix: "-1140"
-                    }),
-                    sharp: { failOnError: false, density: 72 },
-                    jpegOptions: {
-                        quality: 80, progressive: false
-                    },
-                    pngOptions: {
-                        quality: 80, progressive: false
-                    },
-                    webpOptions: {
-                        quality: 80, progressive: false
-                    }
-                },
-                {
-                    width: 1320,
-                    rename: ({}, {
-                        suffix: "-1320"
-                    }),
-                    sharp: { failOnError: false, density: 72 },
-                    jpegOptions: {
-                        quality: 80, progressive: false
-                    },
-                    pngOptions: {
-                        quality: 80, progressive: false
-                    },
-                    webpOptions: {
-                        quality: 80, progressive: false
-                    }
-                },
-                {
-                    width: 1920,
-                    sharp: { failOnError: false, density: 72 },
-                    jpegOptions: {
-                        quality: 80, progressive: false
-                    },
-                    pngOptions: {
-                        quality: 80, progressive: false
-                    },
-                    webpOptions: {
-                        quality: 80, progressive: false
-                    }
-                },
+        for (const { width, quality } of BREAKPOINTS) {
+            // The largest breakpoint (1920) matches the original gulp-sharp-responsive
+            // rename config, which left it unsuffixed — every other width gets "-{width}".
+            const suffix = width === 1920 ? "" : `-${width}`;
+            const originalOut = path.join("dist", dir, `${name}${suffix}${ext}`);
+            const webpOut = path.join("dist", dir, `${name}${suffix}.webp`);
 
-                 // WebP File
-
-                 {
-                    width: 540,
-                    rename: ({}, {
-                        suffix: "-540"
-                    }),
-                    format: "webp",
-                    sharp: { failOnError: false, density: 72 },
-                    jpegOptions: {
-                        quality: 70, progressive: false
-                    },
-                    pngOptions: {
-                        quality: 70, progressive: false
-                    },
-                    webpOptions: {
-                        quality: 70, progressive: false
-                    }
-                },
-                {
-                    width: 768,
-                    rename: ({}, {
-                        suffix: "-768"
-                    }),
-                    format: "webp",
-                    sharp: { failOnError: false, density: 72 },
-                    jpegOptions: {
-                        quality: 80, progressive: false
-                    },
-                    pngOptions: {
-                        quality: 80, progressive: false
-                    },
-                    webpOptions: {
-                        quality: 80, progressive: false
-                    }
-                },
-                {
-                    width: 960,
-                    rename: ({}, {
-                        suffix: "-960"
-                    }),
-                    format: "webp",
-                    sharp: { failOnError: false, density: 72 },
-                    jpegOptions: {
-                        quality: 80, progressive: false
-                    },
-                    pngOptions: {
-                        quality: 80, progressive: false
-                    },
-                    webpOptions: {
-                        quality: 80, progressive: false
-                    }
-                },
-                {
-                    width: 1140,
-                    rename: ({}, {
-                        suffix: "-1140"
-                    }),
-                    format: "webp",
-                    sharp: { failOnError: false, density: 72 },
-                    jpegOptions: {
-                        quality: 80, progressive: false
-                    },
-                    pngOptions: {
-                        quality: 80, progressive: false
-                    },
-                    webpOptions: {
-                        quality: 80, progressive: false
-                    }
-                },
-                {
-                    width: 1320,
-                    rename: ({}, {
-                        suffix: "-1320"
-                    }),
-                    format: "webp",
-                    sharp: { failOnError: false, density: 72 },
-                    jpegOptions: {
-                        quality: 80, progressive: false
-                    },
-                    pngOptions: {
-                        quality: 80, progressive: false
-                    },
-                    webpOptions: {
-                        quality: 80, progressive: false
-                    }
-                },
-                {
-                    width: 1920,
-                    format: "webp",
-                    sharp: { failOnError: false, density: 72 },
-                    jpegOptions: {
-                        quality: 80, progressive: false
-                    },
-                    pngOptions: {
-                        quality: 80, progressive: false
-                    },
-                    webpOptions: {
-                        quality: 80, progressive: false
-                    }
-                }
-            ]
-        }))
-        .pipe(gulp.dest("dist"));
+            await writeVariant(sourcePath, originalOut, width, quality, "original");
+            await writeVariant(sourcePath, webpOut, width, quality, "webp");
+        }
+    }
 }));

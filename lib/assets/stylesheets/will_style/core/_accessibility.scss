@@ -1,11 +1,12 @@
+@use "will_style/core/colors" as colors;
+
 //
 // Accessibility Styles
 //
 
 ::selection {
-	background: $body-color;
-	color: $body-bg;
-
+	background: colors.$body-color;
+	color: colors.$body-bg;
 	text-shadow: none !important;
 	box-shadow: none !important;
 }
@@ -13,8 +14,8 @@
 .text-light {
 	::selection,
 	&::selection {
-		background: $body-bg;
-		color: $body-color;
+		background: colors.$body-bg;
+		color: colors.$body-color;
 	}
 }
 

@@ -10,7 +10,6 @@ form {
     small.form-control.error {
         @extend .alert;
         @extend .alert-danger;
-
         @extend .rounded-bottom;
         @extend .p-1;
 

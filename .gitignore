@@ -12,3 +12,8 @@
 
 /src
 /dist
+
+# Test harness
+/coverage
+/spec/internal/log/*.log
+/spec/internal/tmp

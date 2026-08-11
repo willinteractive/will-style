@@ -239,7 +239,7 @@
         if (element.getAttribute("animated-progressive")) {
           const targetBottom = targetTop + targetHeight;
 
-          let progressivePosition = 0;
+          let progressivePosition;
 
           let totalDistance = windowHeight + targetHeight;
           let traveledDistance = targetBottom - windowTop;

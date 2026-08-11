@@ -1,0 +1,22 @@
+@use "will_style/core/colors" as colors;
+
+// Utility Classes
+
+// Add .will-* utility classes to color the foreground and background
+
+@each $name, $color in colors.$color-list {
+	.#{$name} {
+		color: $color !important;
+	}
+
+	.bg-#{$name} {
+		background-color: $color !important;
+	}
+}
+
+// Set overscroll on WILL Apps
+
+html,
+body {
+	background-color: colors.$body-bg;
+}

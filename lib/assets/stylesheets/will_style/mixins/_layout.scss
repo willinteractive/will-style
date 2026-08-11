@@ -26,17 +26,23 @@
 	@if $offset-top {
 		top: $offset-top;
 	}
+
 	@if $offset-bottom {
 		bottom: $offset-bottom;
 	}
+
 	@if $offset-left {
 		left: $offset-left;
 	}
+
 	@if $offset-right {
 		right: $offset-right;
 	}
 }
 
+// stylelint-disable-next-line scss/no-duplicate-mixins -- this redefines
+// (shadows) the "stretch" mixin above with an unrelated signature and
+// behavior. Flagged, not fixed here — see docs/open-questions.md #12.
 @mixin stretch {
 	min-height: 100vh;
 	min-height: 100dvh;

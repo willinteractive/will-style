@@ -9,12 +9,12 @@
 // Creating a function for inner borders only
 
 .border-inner {
-    border-top-width: 0px !important;
-    border-left-width: 0px !important;
-    border-right-width: 0px !important;
+    border-top-width: 0 !important;
+    border-left-width: 0 !important;
+    border-right-width: 0 !important;
     border-bottom-width: $border-width !important;
 
     &:last-of-type {
-        border-bottom-width: 0px !important;
+        border-bottom-width: 0 !important;
     }
 }

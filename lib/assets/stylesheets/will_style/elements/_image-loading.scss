@@ -1,6 +1,8 @@
+@use "will_style/core/variables/global" as global;
+
 .image-bg,
 img {
-	transition: opacity $animation-duration $animation-timing-function;
+	transition: opacity global.$animation-duration global.$animation-timing-function;
 	opacity: 0;
 
 	&.loaded {

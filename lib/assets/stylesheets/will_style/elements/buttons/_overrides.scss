@@ -24,7 +24,6 @@ button {
 		font-size: map.get($font-sizes, 3);
 		padding-left: 2rem;
 		padding-right: 2rem;
-
 		padding-top: 1rem;
 		padding-bottom: 1rem;
 	}
@@ -35,7 +34,6 @@ button {
 		// Reset button to allow for gradient application
 		position: relative;
 		z-index: 1;
-
 		background-color: transparent !important;
 		color: $white !important;
 
@@ -46,22 +44,18 @@ button {
 		&:before,
 		&:after {
 			content: "";
-
 			position: absolute;
 			top: 0;
 			bottom: 0;
 			left: 0;
 			right: 0;
-
 			z-index: -1;
-
 			border-radius: inherit;
 		}
 
 		&:after {
 			background-image: $will-gradient;
 			transition: opacity $animation-duration $animation-timing-function;
-
 			opacity: 0;
 		}
 
@@ -90,7 +84,6 @@ button {
 		// and with normal button sizes
 		&.btn-outline {
 			color: $primary !important;
-
 			background: linear-gradient($body-bg, $body-bg) padding-box,
 						$will-logo-gradient border-box;
 
@@ -106,14 +99,12 @@ button {
 
 			&.bg-dark {
 				color: $white !important;
-
 				background: linear-gradient($dark, $dark) padding-box,
 							$will-logo-gradient border-box;
 			}
 
 			&.bg-black {
 				color: $white !important;
-
 				background: linear-gradient(black, black) padding-box,
 							$will-logo-gradient border-box;
 			}
@@ -124,7 +115,6 @@ button {
 			}
 
 			border: 2px solid transparent !important;
-
 			padding-left: calc(#{$btn-padding-x});
 			padding-right: calc(#{$btn-padding-x});
 			padding-top: calc(#{$btn-padding-y});
@@ -159,7 +149,6 @@ button {
 
 			&:before {
 				background-color: transparent;
-
 				border: 2px solid $body-color;
 			}
 
@@ -192,11 +181,11 @@ button {
 		transition: color $animation-duration $animation-timing-function,
 					transform calc($animation-duration / 2) $animation-timing-function,
 					box-shadow calc($animation-duration / 2) $animation-timing-function;
-
 		transform: scale(1) translateY(0);
 
 		@include hover-focus {
 			transform: scale(1) translateY(-2px);
+
 			@include shadow($shadow-weight, true);
 		}
 	}

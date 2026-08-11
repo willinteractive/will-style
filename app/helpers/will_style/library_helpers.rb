@@ -1,7 +1,12 @@
+# frozen_string_literal: true
+
 module WillStyle
   module LibraryHelpers
     def icon(style, name, text = nil, html_options = {})
-      text, html_options = nil, text if text.is_a?(Hash)
+      if text.is_a?(Hash)
+        html_options = text
+        text = nil
+      end
 
       content_class = "#{style} fa-#{name}"
       content_class << " #{html_options[:class]}" if html_options.key?(:class)
@@ -9,7 +14,7 @@ module WillStyle
       html_options['aria-hidden'] ||= true
 
       html = content_tag(:i, nil, html_options)
-      html << ' ' << text.to_s unless text.blank?
+      html << ' ' << text.to_s if text.present?
       html
     end
   end

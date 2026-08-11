@@ -1,3 +1,11 @@
+<% unless defined?(PremailerRails) %>
+	<% Rails.logger.warn(
+		"[will_style] Rendering the email layout without premailer-rails installed " \
+		"-- inline CSS styling will not be applied and this email will likely render " \
+		"unstyled in most clients. Add `gem \"premailer-rails\"` to your Gemfile."
+	) %>
+<% end %>
+
 <!doctype html>
 <html>
 	<head>

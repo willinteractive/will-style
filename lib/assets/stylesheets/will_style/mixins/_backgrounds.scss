@@ -1,3 +1,9 @@
+@use "will_style/core/colors" as colors;
+
+// $include-type is configured once, centrally, in _core.scss (a module can
+// only be configured at its first load) -- see the note there.
+@use "will_style/mixins/base" as base;
+
 @mixin image-background-responsive($url: "image", $format: "jpg") {
 	background-image: asset_url("#{$url}.webp");
 
@@ -9,22 +15,16 @@
 @mixin textured-bg($target: "before", $include-position: true) {
     &:#{$target} {
         content: "";
-
         position: absolute;
-
         pointer-events: none;
-
         top: 0;
         bottom: 0;
         left: 0;
         right: 0;
-
-        background-image: will_style-bg-url("patterns/grain.png");
+        background-image: base.will-style-bg-url("patterns/grain.png");
         background-repeat: repeat;
         background-size: auto;
-
         opacity: 0.1;
-
         z-index: 0;
     }
 
@@ -42,11 +42,8 @@
 
     &:#{$target} {
         content: "";
-
         position: absolute;
-
         pointer-events: none;
-
         top: 0;
         bottom: 0;
         left: 0;
@@ -58,35 +55,32 @@
 
         @if $include-texture {
             background-image:
-                will_style-bg-url("patterns/grain-faded.png"),
-                will_style-bg-url("patterns/grid.svg");
+                base.will-style-bg-url("patterns/grain-faded.png"),
+                base.will-style-bg-url("patterns/grid.svg");
             background-repeat: repeat, repeat;
             background-size: auto, 60px 60px;
         } @else {
-            background-image: will_style-bg-url("patterns/grid.svg");
+            background-image: base.will-style-bg-url("patterns/grid.svg");
             background-repeat: repeat;
             background-size: 60px 60px;
         }
 
         opacity: 0.5;
-
         z-index: 0;
 
         @if $include-mask {
             opacity: 1;
-
             mask-image:
                 radial-gradient(circle farthest-corner at 0% 100%,
-                    rgba(black, 0) 0%,
-                    rgba(black, 0.34) 25%,
-                    rgba(black, 0.67) 45%,
-                    rgba(black, 1) 100%),
+                    rgb(black, 0) 0%,
+                    rgb(black, 0.34) 25%,
+                    rgb(black, 0.67) 45%,
+                    rgb(black, 1) 100%),
                 radial-gradient(circle farthest-corner at 100% 0%,
-                    rgba(black, 0) 0%,
-                    rgba(black, 0.34) 25%,
-                    rgba(black, 0.67) 45%,
-                    rgba(black, 1) 100%);
-
+                    rgb(black, 0) 0%,
+                    rgb(black, 0.34) 25%,
+                    rgb(black, 0.67) 45%,
+                    rgb(black, 1) 100%);
             mask-repeat: no-repeat;
             mask-size: cover;
             mask-composite: intersect;
@@ -102,30 +96,26 @@
 
 @mixin dark-gradient-bg {
     background-color: black;
-
     background-image:
         radial-gradient(circle farthest-corner at 0% 100%,
-            rgba($will-teal, 0.8) 0%,
-            rgba($will-action-iris, 0.3) 25%,
+            rgba(colors.$will-teal, 0.8) 0%,
+            rgba(colors.$will-action-iris, 0.3) 25%,
             rgba(#2B2E78, 0.2) 45%,
-            rgba(black, 0) 100%),
+            rgb(black, 0) 100%),
         radial-gradient(circle farthest-corner at 100% 0%,
             rgba(#3A5CD8, 0.8) 0%,
             rgba(#A755AD, 0.3) 25%,
             rgba(#502953, 0.2) 45%,
-            rgba(black, 0) 100%);
-
+            rgb(black, 0) 100%);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 @mixin light-gradient-bg {
-    background-color: $will-white;
-
+    background-color: colors.$will-white;
     background-image:
-        linear-gradient(to bottom, rgba($will-white, 0.6), rgba($will-white, 0.6)),
-        will_style-bg-url("patterns/light-gradient.jpg");
-
+        linear-gradient(to bottom, rgba(colors.$will-white, 0.6), rgba(colors.$will-white, 0.6)),
+        base.will-style-bg-url("patterns/light-gradient.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

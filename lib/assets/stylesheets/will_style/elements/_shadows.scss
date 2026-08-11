@@ -3,7 +3,7 @@
 //
 
 .shadow-filter {
-	@include image-shadow-filter();
+	@include image-shadow-filter;
 }
 
 .text-shadow {
