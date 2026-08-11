@@ -1,3 +1,5 @@
+@use "will_style/core/variables/global" as global;
+
 .image-bg {
 	position: relative;
 	overflow: hidden;
@@ -35,7 +37,7 @@
 
 	&:before,
 	&:after {
-		transition: opacity $animation-duration $animation-timing-function;
+		transition: opacity global.$animation-duration global.$animation-timing-function;
 	}
 
 	&:before {
@@ -59,14 +61,14 @@
 
 .image-bgs .image-bg-display {
 	opacity: 0;
-	transition: opacity 2s calc(calc($animation-duration / 2)) $animation-timing-function;
+	transition: opacity 2s calc(calc(global.$animation-duration / 2)) global.$animation-timing-function;
 
 	&.loaded.active {
 		opacity: 1;
 	}
 
 	&.loaded.active.first {
-		transition-duration: $animation-duration;
+		transition-duration: global.$animation-duration;
 	}
 }
 

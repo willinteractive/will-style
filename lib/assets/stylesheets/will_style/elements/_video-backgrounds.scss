@@ -1,3 +1,5 @@
+@use "will_style/core/variables/global" as global;
+
 //
 // Video Backgrounds
 //
@@ -13,7 +15,7 @@
 
 	&.loaded.active {
 		opacity: 1;
-		transition: opacity $animation-duration $animation-timing-function;
+		transition: opacity global.$animation-duration global.$animation-timing-function;
 	}
 
 	video {

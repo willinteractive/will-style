@@ -1,32 +1,35 @@
+@use "will_style/core/colors" as colors;
+@use "will_style/mixins/backgrounds" as backgrounds;
+
 .textured {
-    @include textured-bg;
+    @include backgrounds.textured-bg;
 }
 
 .bg-will {
-    background-color: $body-bg;
+    background-color: colors.$body-bg;
     position: relative;
 
-    @include textured-bg;
+    @include backgrounds.textured-bg;
 }
 
 .bg-will-gradient {
-    background-image: $will-gradient;
+    background-image: colors.$will-gradient;
 }
 
 .bg-will-logo-gradient {
-    background-image: $will-logo-gradient;
+    background-image: colors.$will-logo-gradient;
 }
 
 .bg-grid {
-    @include grid-bg;
+    @include backgrounds.grid-bg;
 }
 
 .bg-light-will-gradient {
-    @include light-gradient-bg;
+    @include backgrounds.light-gradient-bg;
 }
 
 .bg-dark-will-gradient {
     position: relative;
 
-    @include dark-gradient-bg;
+    @include backgrounds.dark-gradient-bg;
 }
