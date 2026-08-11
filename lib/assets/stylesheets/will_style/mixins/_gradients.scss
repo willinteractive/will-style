@@ -18,15 +18,12 @@
 		98.2: 0.002,
 		100: 0
 	);
-
 	$start-hue: hue($start-color);
 	$start-saturation: saturation($start-color);
 	$start-lightness: lightness($start-color);
-
 	$end-hue: hue($end-color);
 	$end-saturation: saturation($end-color);
 	$end-lightness: lightness($end-color);
-
 	$stops: ();
 
 	@each $color-stop, $alpha-value in $scrim-coordinates {

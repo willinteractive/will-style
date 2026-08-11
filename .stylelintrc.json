@@ -1,0 +1,21 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "rules": {
+    "at-rule-no-deprecated": null,
+    "selector-class-pattern": null,
+    "custom-property-pattern": null,
+    "scss/dollar-variable-pattern": null,
+    "no-descending-specificity": null,
+    "selector-pseudo-element-colon-notation": null,
+    "declaration-block-no-redundant-longhand-properties": null,
+    "scss/at-extend-no-missing-placeholder": null,
+    "property-no-vendor-prefix": null,
+    "scss/comment-no-empty": null,
+    "value-keyword-case": null,
+    "declaration-property-value-keyword-no-deprecated": null,
+    "font-family-no-missing-generic-family-keyword": null,
+    "property-no-unknown": [true, { "ignoreProperties": ["/^mso-/"] }],
+    "scss/no-global-function-names": null
+  },
+  "ignoreFiles": ["node_modules/**", "dist/**"]
+}

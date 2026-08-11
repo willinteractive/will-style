@@ -1,9 +1,9 @@
 // CUSTOM WILL ICONS
-//------------------
+// ------------------
 
 [class^="will-icon-"]:before,
 [class*=" will-icon-"]:before {
-	@include will-icon-font();
+	@include will-icon-font;
 }
 
 .will-icon-will_logo:before {
@@ -12,11 +12,9 @@
 	// @NOTE: Working around fontastic making will icons a monospace font and shrinking our logo
 	font-size: 3.1em;
 	line-height: 0;
-
 	-webkit-font-smoothing: antialiased;
 	backface-visibility: hidden;
 	transform: translate3d(0, 0.39em, 0);
-
 	margin-left: 0;
 }
 

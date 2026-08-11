@@ -6,7 +6,6 @@
 	@include animated-element-init {
 		opacity: 0;
 		transform: translateY(5px);
-
 		transition: opacity $animation-duration $animation-timing-function,
 					transform $animation-duration $animation-timing-function;
 	}
@@ -21,7 +20,6 @@
 	@include animated-element-init {
 		opacity: 0;
 		transform: translateY(5px);
-
 		transition: opacity $animation-duration $animation-timing-function,
 					transform $animation-duration $animation-timing-function;
 	}
@@ -36,7 +34,6 @@
 	@include animated-element-init {
 		opacity: 0;
 		transform: translateY(-5px);
-
 		transition: opacity $animation-duration $animation-timing-function,
 					transform $animation-duration $animation-timing-function;
 	}
@@ -51,7 +48,6 @@
 	@include animated-element-init {
 		opacity: 0;
 		transform: translateX(-5px);
-
 		transition: opacity $animation-duration $animation-timing-function,
 					transform $animation-duration $animation-timing-function;
 	}
@@ -66,7 +62,6 @@
 	@include animated-element-init {
 		opacity: 0;
 		transform: translateX(5px);
-
 		transition: opacity $animation-duration $animation-timing-function,
 					transform $animation-duration $animation-timing-function;
 	}
@@ -81,7 +76,6 @@
 	@include animated-element-init {
 		opacity: 0;
 		transform: none;
-
 		transition: opacity $animation-duration $animation-timing-function;
 	}
 

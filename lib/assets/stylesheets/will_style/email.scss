@@ -18,29 +18,24 @@ body {
 	-webkit-font-smoothing: antialiased;
 	font-size: 14px;
 	line-height: 1.4;
-
 	margin: 0;
 	padding: 0;
-
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
-
 	width: 100%;
-
 	background-color: $body-bg;
 }
 
 table {
 	border-collapse: separate;
-	mso-table-lspace: 0pt;
-	mso-table-rspace: 0pt;
-
+	mso-table-lspace: 0;
+	mso-table-rspace: 0;
 	width: 100%;
 
 	&.main {
 		border-radius: 5px;
 		overflow: hidden;
-		box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+		box-shadow: 1px 1px 4px rgb(0 0 0 / 25%);
 	}
 
 	td {
@@ -61,17 +56,14 @@ h4 {
 	font-family: sans-serif;
 	font-weight: 400;
 	line-height: 1.4;
-
 	margin: 0;
 	margin-bottom: 15px;
-
 	color: $will-black;
 }
 
 h1 {
 	font-size: 35px;
 	font-weight: 300;
-
 	text-align: center;
 	text-transform: capitalize;
 }
@@ -82,7 +74,6 @@ ol {
 	font-family: sans-serif;
 	font-size: 14px;
 	font-weight: normal;
-
 	margin: 0;
 	margin-bottom: 15px;
 
@@ -103,7 +94,6 @@ a {
 
 .body {
 	width: 100%;
-
 	background-color: $body-bg;
 }
 
@@ -113,10 +103,8 @@ a {
 .container {
 	display: block;
 	margin: 0 auto !important;
-
 	max-width: 580px;
 	width: 580px;
-
 	padding: 10px;
 }
 
@@ -125,11 +113,8 @@ a {
 .content {
 	display: block;
 	box-sizing: border-box;
-
 	margin: 0 auto;
-
 	max-width: 580px;
-
 	padding: 10px;
 }
 
@@ -189,21 +174,15 @@ a {
 	a {
 		display: inline-block;
 		box-sizing: border-box;
-
 		font-size: 14px;
 		font-weight: bold;
-
 		text-decoration: none;
 		text-transform: capitalize;
-
 		margin: 0;
 		padding: 12px 25px;
-
 		cursor: pointer;
 		color: $will-teal;
-
 		background-color: $will-white;
-
 		border: solid 1px $will-teal;
 		border-radius: 5px;
 	}
@@ -213,7 +192,6 @@ a {
 			background-color: $primary;
 			border-color: $primary;
 			color: $will-white;
-
 			font-weight: bold;
 			border-radius: 5px;
 
@@ -232,7 +210,6 @@ a {
 
 .main {
 	width: 100%;
-
 	background: $will-white;
 }
 
@@ -257,11 +234,8 @@ a {
 	span,
 	a {
 		color: $body-color !important;
-
 		text-decoration: none !important;
-
 		font-size: 12px;
-
 		text-align: center;
 	}
 }
@@ -269,18 +243,13 @@ a {
 .preheader {
 	color: transparent;
 	display: none;
-
 	height: 0;
 	max-height: 0;
 	max-width: 0;
-
 	opacity: 0;
-
 	overflow: hidden;
 	mso-hide: all;
-
 	visibility: hidden;
-
 	width: 0;
 }
 
@@ -291,7 +260,6 @@ a {
 .logo {
 	width: 80px;
 	max-width: 80px;
-
 	height: 20px;
 	max-height: 20px;
 }
@@ -309,17 +277,14 @@ a {
 	font-size: .75em;
 	border-collapse: collapse;
 	text-align: left;
-
 	padding: 19px;
-
 	width: 100%;
-	background: #FFFFFF;
+	background: #FFF;
 	border: 1px solid #d4d4d4;
 }
 
 hr {
 	margin: 20px 0;
-
 	border: 0;
 	border-bottom: 1px solid $will-black;
 }
@@ -328,7 +293,7 @@ hr {
 // Mobile-Friendly Styles
 //
 
-@media only screen and (max-width: 620px) {
+@media only screen and (width <= 620px) {
 	table.body {
 		h1 {
 			font-size: 28px !important;

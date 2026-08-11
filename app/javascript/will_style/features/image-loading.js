@@ -67,7 +67,7 @@
         const matches = bg.match(/url\(.*?\)/gi);
 
         if (matches && matches.length > 0) {
-          source = matches[matches.length - 1].replace('url(', '').replace(')', '').replace(/[\"\']/gi, "");
+          source = matches[matches.length - 1].replace('url(', '').replace(')', '').replace(/["']/gi, "");
         }
       }
     }
@@ -87,7 +87,7 @@
 
       const source = getImageSourceForElement(element);
 
-      if (element.classList.contains("loaded") || loadedImages.hasOwnProperty(source)) {
+      if (element.classList.contains("loaded") || Object.prototype.hasOwnProperty.call(loadedImages, source)) {
         element.classList.add("loaded");
       }
     }
@@ -102,7 +102,7 @@
 
       const source = getImageSourceForElement(element);
 
-      if (element.classList.contains("loaded") || loadedImages.hasOwnProperty(source)) {
+      if (element.classList.contains("loaded") || Object.prototype.hasOwnProperty.call(loadedImages, source)) {
         element.classList.add("loaded");
         element.removeAttribute("data-image-loading-checking");
       } else if (source === "" && !element.getAttribute("data-src")) {

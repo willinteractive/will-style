@@ -2,15 +2,25 @@
   "name": "will-style",
   "version": "6.0.3",
   "license": "MIT",
+  "scripts": {
+    "lint:js": "eslint .",
+    "lint:css": "stylelint \"lib/assets/stylesheets/**/*.scss\"",
+    "lint": "npm run lint:js && npm run lint:css"
+  },
   "dependencies": {
     "bootstrap": "~5.3.8"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "del": "~8.0.1",
+    "eslint": "^10.8.1",
     "fast-glob": "^3.3.3",
+    "globals": "^17.9.0",
     "gulp": "^5.0.1",
     "require-dir": "~1.2.0",
-    "sharp": ">=0.35.0"
+    "sharp": ">=0.35.0",
+    "stylelint": "^17.14.1",
+    "stylelint-config-standard-scss": "^17.0.0"
   },
   "engines": {
     "node": ">=18.12.0",
@@ -24,5 +34,5 @@
     "glob-parent": "^6.0.2",
     "glob-watcher": "^6.0.0",
     "is-glob": "^4.0.3"
- }
+  }
 }

@@ -4,19 +4,14 @@
 
 *[data-pop-out] {
 	position: fixed;
-
 	padding-top: 1.5rem;
 	padding-bottom: 1.5rem;
-
 	visibility: hidden;
 	pointer-events: none;
 	z-index: -1;
-
 	margin: 0;
 	margin-left: 5vw;
-
 	background: transparent;
-
 	transform: scale(0);
 
 	video,
@@ -25,9 +20,7 @@
 		width: 100%;
 		margin: 0;
 		padding: 0;
-
 		line-height: 0px;
-
 		order: 2;
 	}
 
@@ -44,11 +37,11 @@
 		iframe {
 			aspect-ratio: 1920 / 1080;
 
-			@media (min-aspect-ratio: 1920 / 1080) {
+			@media (aspect-ratio >= 1920 / 1080) {
 				width: auto;
 			}
 
-			@media (max-aspect-ratio: 1920 / 1080) {
+			@media (aspect-ratio <= 1920 / 1080) {
 				height: auto;
 			}
 		}
@@ -56,18 +49,13 @@
 
 	.close-pop-out {
 		order: 1;
-
 		color: $will-white;
-
 		font-size: 3rem;
 		line-height: 3rem;
-
 		margin-left: auto;
 		margin-bottom: 0.5rem;
 		margin-right: 0;
-
 		transition: color $animation-duration $animation-timing-function;
-
 		cursor: pointer;
 
 		&:hover,
@@ -82,10 +70,8 @@
 		max-height: 100%;
 		height: calc(90vh - 3rem);
 		width: 90vw;
-
 		opacity: 0;
 		transition: opacity .2s .4s;
-
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -96,7 +82,6 @@
 		visibility: visible;
 		pointer-events: auto;
 		z-index: $navbar-z-index + 2;
-
 		animation: scale-out-pop-out $animation-duration $animation-duration $animation-timing-function forwards;
 
 		.content {
@@ -112,7 +97,6 @@
 		margin: 0;
 		top: 0 !important;
 		padding: 0;
-
 		opacity: 0;
 		transform: none;
 
@@ -124,15 +108,13 @@
 			width: 100vw;
 			height: 100vh;
 
-			@include shadow-z0();
+			@include shadow-z0;
 		}
 
 		.close-pop-out {
 			z-index: $navbar-z-index + 3;
-
 			left: 0.25rem;
 			top: 0.25rem;
-
 			line-height: 1.5rem;
 
 			@include text-shadow($shadow-weight);
@@ -150,16 +132,12 @@
 	@include textured-bg;
 
 	position: fixed;
-
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
-
 	background-color: $will-black;
-
 	opacity: 0;
-
 	pointer-events: none;
 
 	&.enabled {
@@ -216,7 +194,6 @@ body {
 			height: 100%;
 			max-height: 100%;
 			position: fixed;
-
 			-ms-overflow-style: none;
 			-webkit-overflow-scrolling: none;
 			overflow-scrolling: none;
@@ -224,7 +201,6 @@ body {
 			[data-pop-out][data-pop-out-fullscreen] {
 				.close-pop-out {
 					position: absolute;
-
 					top: 0.25rem;
 					left: 0.25rem;
 				}

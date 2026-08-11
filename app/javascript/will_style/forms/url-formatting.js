@@ -8,15 +8,15 @@
 
     // Replace all non word characters, dashes, and slashes with nothing
     // and dashes and slashes at the beginning of the name with nothing
-    value = value.replace(/[^\w\-\/]/g, "").replace(/^[\-\/]+/g, "");
+    value = value.replace(/[^\w/-]/g, "").replace(/^[/-]+/g, "");
 
     // If we're editing, don't replace dashes and slashes at the end, it'd be frustrating
     if (!isEditing) {
-      value = value.replace(/[\-\/]+$/g, "");
+      value = value.replace(/[/-]+$/g, "");
     }
 
     // Reduce all multiple dashes and slashes to a single dash
-    value = value.replace(/[\-\/]+/g, "-");
+    value = value.replace(/[/-]+/g, "-");
 
     return value;
   };

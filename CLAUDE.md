@@ -8,11 +8,14 @@ Rails engine, requires `rails >= 8.0` and Ruby `>= 3.4.10` (both raised 2026-08-
 
 ## Commands
 
-There is currently **no test suite, no lint config, and no CI** in this repo — that's first on the modernization roadmap (`docs/MIGRATION.md` items F4/F5). Until then:
-
-- Build the gem: `gem build will_style.gemspec`
+- Install: `bundle install` (Ruby side, requires bundler `4.0.x` — `gem install bundler -v 4.0.18` if missing) and `npm install` (JS side).
+- Test: `bundle exec rspec` (RSpec + Combustion dummy app, see `spec/`).
+- Ruby lint: `bundle exec rubocop` (`-a`/`-A` to autocorrect).
+- JS/CSS lint: `npm run lint` (`npm run lint:js` / `npm run lint:css` individually).
+- Dependency audit: `bundle exec bundle-audit check --update`.
+- Build the gem: `gem build will_style.gemspec`.
 - Local responsive-image generation (dev tool only, not part of the shipped gem): `npx gulp generate-responsive-images` (place source images in `src/`, output lands in `dist/`; both gitignored). `npx gulp clear-responsive-images` / `npx gulp copy-svgs` are the sub-tasks.
-- **Before running any npm command**, run `npm install` first — `node_modules` is currently out of sync with the lockfile (stale `gulp`/`sharp`, the latter a live CVE — see `docs/dependency-audit.md`).
+- CI (`.github/workflows/ci.yml`) runs all of the above as separate jobs on every push/PR.
 
 ## Directories that matter
 
@@ -22,11 +25,12 @@ There is currently **no test suite, no lint config, and no CI** in this repo —
 - `app/views/will_style/` — presentational ERB partials, including `components/email/` (styled for `premailer-rails` inlining in the consuming app — not a declared dependency yet, see item P4).
 - `docs/` — the modernization planning docs: `system-map.md` (architecture), `dependency-audit.md`, `risk-notes.md`, `open-questions.md` (resolved), `MIGRATION.md` (the roadmap), `specs/` (one spec per roadmap item), `standards.md` (target-state conventions).
 
-## Conventions a linter won't catch (yet — none exist)
+## Conventions a linter won't catch
 
-- SCSS: `@use` is the target pattern going forward (see `docs/standards.md`); most existing files still use the legacy `@import` — don't add new `@import`s, migrate the file you're touching if it's small.
+- SCSS: `@use` is the target pattern going forward (see `docs/standards.md`); most existing files still use the legacy `@import` — don't add new `@import`s, migrate the file you're touching if it's small. (Stylelint's `at-rule-no-deprecated` and `scss/no-global-function-names` are intentionally off until item P1 lands — don't re-enable them piecemeal.)
 - JS: keep the IIFE + `window.WillStyle` pattern in any file you touch **unless** you're doing the item-16 ESM conversion — don't half-convert one file to ES modules while its siblings still expect the global.
 - Any new dependency on Bootstrap's own JS runtime should be avoided — this gem deliberately reimplements dropdown/modal behavior by hand rather than invoking Bootstrap's JS API (see `docs/system-map.md`).
+- `lib/assets/stylesheets/will_style/mixins/_layout.scss` has two `@mixin stretch` definitions (the second shadows the first) — known, flagged, unresolved (`docs/open-questions.md` #12). Don't "clean this up" without checking that thread first.
 
 ## Do not modify without checking `docs/MIGRATION.md` first
 

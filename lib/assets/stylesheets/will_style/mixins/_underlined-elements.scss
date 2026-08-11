@@ -15,7 +15,6 @@
 
 	&:before {
 		content: "";
-
 		position: absolute;
 
 		@if $position == 'bottom' {
@@ -28,9 +27,7 @@
 
 		left: 0;
 		right: 0;
-
 		height: $height;
-
 		background-color: $primary;
 		background-image: linear-gradient(to right, $primary-lighter, $primary);
 	}

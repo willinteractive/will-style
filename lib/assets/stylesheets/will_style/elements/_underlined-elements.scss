@@ -3,7 +3,7 @@
 //
 
 .underlined {
-	@include underlined-element();
+	@include underlined-element;
 
 	&.text-shadow,
 	&.text-shadowed {

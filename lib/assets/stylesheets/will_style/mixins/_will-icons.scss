@@ -5,15 +5,13 @@
 // Mixins
 
 @mixin will-icon-font {
-	font-family: "will-icons";
+	font-family: will-icons;
 	font-style: normal;
 	font-weight: normal;
 	speak: none;
-
 	display: inline-block;
 	text-decoration: inherit;
 	width: 1em;
-
 	text-align: center;
 
 	 // For safety - reset parent styles, that can break glyph codes

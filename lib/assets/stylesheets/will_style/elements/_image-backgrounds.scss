@@ -5,7 +5,6 @@
 
 .image-bg-display {
 	position: absolute;
-
 	top: 0;
 	bottom: 0;
 	left: 0;
@@ -14,12 +13,10 @@
 
 .image-bgs {
 	position: absolute;
-
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
-
 	pointer-events: none;
 }
 
@@ -62,7 +59,6 @@
 
 .image-bgs .image-bg-display {
 	opacity: 0;
-
 	transition: opacity 2s calc(calc($animation-duration / 2)) $animation-timing-function;
 
 	&.loaded.active {
@@ -84,7 +80,6 @@
 .image-bgs.fixed {
 	height: 100vh;
 	position: fixed;
-
 	pointer-events: none;
 }
 
