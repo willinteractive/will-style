@@ -7,8 +7,8 @@
   },
   "devDependencies": {
     "del": "~8.0.1",
+    "fast-glob": "^3.3.3",
     "gulp": "^5.0.1",
-    "gulp-sharp-responsive": "https://github.com/willinteractive/gulp-sharp-responsive.git",
     "require-dir": "~1.2.0",
     "sharp": ">=0.35.0"
   },

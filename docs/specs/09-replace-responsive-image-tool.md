@@ -38,3 +38,7 @@ Medium.
 ## Coding Agent Safe?
 
 Yes for the mechanical swap; a human should spot-check output quality/sizing against the current tool's output before merging.
+
+## Outcome (2026-08-11)
+
+Implemented. `gulp-sharp-responsive` is removed from `package.json`; `gulp/responsiveImages.js` now calls `sharp` directly (via `fast-glob` for source discovery, no vinyl/stream pipeline), preserving the exact breakpoint set (540/768/960/1140/1320/1920), per-size quality settings, WebP output, and the original tool's unsuffixed-1920/`-{width}`-suffixed-others naming convention. Smoke tested against sample PNGs (including a nested subdirectory) and an SVG: `generate-responsive-images` now completes (previously hung indefinitely post-F1), produces correctly-sized output at every breakpoint, and `npm audit` reports **0 vulnerabilities** (down from 3 high-severity, all previously nested inside `gulp-sharp-responsive`). No more `git+ssh` dependency — `npm install` now works for anyone regardless of repo access.
