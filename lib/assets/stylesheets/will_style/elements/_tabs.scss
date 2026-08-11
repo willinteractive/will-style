@@ -1,3 +1,7 @@
+@use "will_style/core/colors" as colors;
+@use "will_style/core/variables/global" as global;
+@use "will_style/mixins/gradients" as gradients;
+
 .will-nav-tabs {
     border: none !important;
     position: relative;
@@ -9,19 +13,25 @@
         left: 0;
         right: 0;
         height: 1px;
-        background-color: $body-color;
+        background-color: colors.$body-color;
     }
 
     .will-nav-link {
         position: relative;
         border: none !important;
         background-color: transparent !important;
-        color: $body-color !important;
+        color: colors.$body-color !important;
 
+        // Inlined from .text-logo-gradient (elements/_text-gradients.scss)
+        // rather than @extend'd across modules -- see note in that file.
         &.active,
         &:hover,
         &:focus {
-            @extend .text-logo-gradient;
+            display: inline-block;
+            width: auto;
+            background: colors.$will-logo-gradient !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
         }
 
         &:after {
@@ -32,11 +42,11 @@
             right: 0;
             height: 2px;
 
-            @include will-theme-gradient;
+            @include gradients.will-theme-gradient;
 
             transform: scaleX(0);
             transform-origin: center;
-            transition: transform $animation-duration $animation-timing-function;
+            transition: transform global.$animation-duration global.$animation-timing-function;
         }
 
         &.active {
@@ -48,7 +58,7 @@
 
     &.dark {
         .will-nav-link {
-            color: $body-bg !important;
+            color: colors.$body-bg !important;
         }
     }
 }

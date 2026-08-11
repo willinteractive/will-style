@@ -16,6 +16,11 @@
 	-webkit-text-fill-color: transparent !important;
 }
 
+// elements/_tabs.scss inlines these declarations (on :hover/:focus/&.active)
+// rather than @extend-ing this selector -- a module with real CSS output
+// like this one can't be @use'd from a second @import-rooted context
+// without its output getting emitted twice (see docs/specs/07's progress
+// log), and @extend needs that @use relationship to reach this selector.
 .text-logo-gradient {
 	// Get gradient to correctly apply
 	display: inline-block;

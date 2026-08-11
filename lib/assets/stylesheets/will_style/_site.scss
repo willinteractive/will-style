@@ -1,3 +1,18 @@
+// @use'd here because they emit CSS directly. Bootstrap-coupled elements/
+// components (bare Bootstrap variables, or variables from the still-@import
+// core/variables/type|bootstrap|bootstrap_pre) stay in the @import block
+// below -- same constraint as _core.scss, see the note there.
+@use "will_style/elements/backgrounds";
+@use "will_style/elements/image-backgrounds";
+@use "will_style/elements/video-backgrounds";
+@use "will_style/elements/shadows";
+@use "will_style/elements/tabs";
+@use "will_style/components/footer";
+@use "will_style/components/picture-set";
+@use "will_style/animated-elements/default";
+@use "will_style/animated-elements/navbar";
+@use "will_style/animated-elements/spannable-elements";
+
 // Elements
 
 @import
@@ -8,17 +23,12 @@
 	"bootstrap/buttons",
 	"will_style/elements/buttons/overrides",
 
-	"will_style/elements/backgrounds",
 	"will_style/elements/borders",
 	"will_style/elements/links",
 
 	"will_style/elements/expanded-elements",
-	"will_style/elements/image-backgrounds",
-	"will_style/elements/video-backgrounds",
-	"will_style/elements/shadows",
 	"will_style/elements/underlined-elements",
 	"will_style/elements/spannable-elements",
-	"will_style/elements/tabs",
 	"will_style/elements/containers";
 
 // Tables
@@ -59,9 +69,7 @@
 // Components
 
 @import
-	"will_style/components/footer",
 	"will_style/components/pop-out",
-
 
 	"bootstrap/nav",
 	"bootstrap/navbar",
@@ -69,14 +77,4 @@
 	"will_style/components/dropdown",
 
 	"bootstrap/accordion",
-	"will_style/components/forms",
-	"will_style/components/picture-set";
-
-// Animations
-
-@import
-	"will_style/animated-elements/default",
-	"will_style/animated-elements/navbar",
-	"will_style/animated-elements/spannable-elements";
-
-
+	"will_style/components/forms";

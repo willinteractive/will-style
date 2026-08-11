@@ -1,3 +1,7 @@
+@use "will_style/core/variables/global" as global;
+@use "will_style/mixins/base" as base;
+@use "will_style/mixins/animated-elements" as animated;
+
 //
 // Animations for Spannable Elements
 //
@@ -13,7 +17,7 @@ $spannable-element-animation-distance: 25% !default;
 
 @mixin animate-spannable-element($delay: 0s) {
 	span {
-		animation: animate-spannable-element $animation-duration $delay $animation-timing-function forwards;
+		animation: animate-spannable-element global.$animation-duration $delay global.$animation-timing-function forwards;
 
 		@for $i from 2 through 35 {
 			&:nth-of-type(#{$i}) {
@@ -25,11 +29,11 @@ $spannable-element-animation-distance: 25% !default;
 
 @mixin rotate-spannable-element {
 	span {
-		animation: rotate-spannable-element $animation-duration $animation-timing-function;
+		animation: rotate-spannable-element global.$animation-duration global.$animation-timing-function;
 
 		@for $i from 2 through 35 {
 			&:nth-of-type(#{$i}) {
-				animation-delay: calc($animation-duration / 6) * $i;
+				animation-delay: calc(global.$animation-duration / 6) * $i;
 			}
 		}
 	}
@@ -39,7 +43,7 @@ $spannable-element-animation-distance: 25% !default;
 button.spannable,
 a.spannable {
 	&:not(.disabled) {
-		@include hover-focus {
+		@include base.hover-focus {
 			@include rotate-spannable-element;
 		}
 	}
@@ -52,11 +56,11 @@ h2.spannable,
 h3.spannable,
 h4.spannable,
 h5.spannable {
-	@include animated-element-init {
+	@include animated.animated-element-init {
 		@include spannable-element-animation-init;
 	}
 
-	@include animated-element-active {
+	@include animated.animated-element-active {
 		@include animate-spannable-element;
 	}
 }

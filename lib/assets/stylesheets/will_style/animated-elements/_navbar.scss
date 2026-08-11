@@ -1,14 +1,17 @@
+@use "will_style/core/variables/global" as global;
+@use "will_style/mixins/animated-elements" as animated;
+
 //
 // WILL Navbar Animations
 //
 
 .navbar {
-	@include animated-element-init {
+	@include animated.animated-element-init {
 		.navbar-brand,
 		.navbar-toggler,
 		.nav-item {
 			opacity: 0;
-			transition: opacity $animation-duration $animation-timing-function;
+			transition: opacity global.$animation-duration global.$animation-timing-function;
 		}
 
 		.navbar-toggler {
@@ -22,7 +25,7 @@
 		}
 	}
 
-	@include animated-element-active {
+	@include animated.animated-element-active {
 		.navbar-brand,
 		.navbar-toggler,
 		.nav-item {

@@ -1,90 +1,93 @@
+@use "will_style/core/variables/global" as global;
+@use "will_style/mixins/animated-elements" as animated;
+
 //
 // Default Animation for Animated Elements
 //
 
-@include animated-element-default($includes-root-element: false) {
-	@include animated-element-init {
+@include animated.animated-element-default($includes-root-element: false) {
+	@include animated.animated-element-init {
 		opacity: 0;
 		transform: translateY(5px);
-		transition: opacity $animation-duration $animation-timing-function,
-					transform $animation-duration $animation-timing-function;
+		transition: opacity global.$animation-duration global.$animation-timing-function,
+					transform global.$animation-duration global.$animation-timing-function;
 	}
 
-	@include animated-element-active {
+	@include animated.animated-element-active {
 		opacity: 1;
 		transform: translateY(0);
 	}
 }
 
-@include animated-element-bottom($includes-root-element: false) {
-	@include animated-element-init {
+@include animated.animated-element-bottom($includes-root-element: false) {
+	@include animated.animated-element-init {
 		opacity: 0;
 		transform: translateY(5px);
-		transition: opacity $animation-duration $animation-timing-function,
-					transform $animation-duration $animation-timing-function;
+		transition: opacity global.$animation-duration global.$animation-timing-function,
+					transform global.$animation-duration global.$animation-timing-function;
 	}
 
-	@include animated-element-active {
+	@include animated.animated-element-active {
 		opacity: 1;
 		transform: translateY(0);
 	}
 }
 
-@include animated-element-top($includes-root-element: false) {
-	@include animated-element-init {
+@include animated.animated-element-top($includes-root-element: false) {
+	@include animated.animated-element-init {
 		opacity: 0;
 		transform: translateY(-5px);
-		transition: opacity $animation-duration $animation-timing-function,
-					transform $animation-duration $animation-timing-function;
+		transition: opacity global.$animation-duration global.$animation-timing-function,
+					transform global.$animation-duration global.$animation-timing-function;
 	}
 
-	@include animated-element-active {
+	@include animated.animated-element-active {
 		opacity: 1;
 		transform: translateY(0);
 	}
 }
 
-@include animated-element-left($includes-root-element: false) {
-	@include animated-element-init {
+@include animated.animated-element-left($includes-root-element: false) {
+	@include animated.animated-element-init {
 		opacity: 0;
 		transform: translateX(-5px);
-		transition: opacity $animation-duration $animation-timing-function,
-					transform $animation-duration $animation-timing-function;
+		transition: opacity global.$animation-duration global.$animation-timing-function,
+					transform global.$animation-duration global.$animation-timing-function;
 	}
 
-	@include animated-element-active {
+	@include animated.animated-element-active {
 		opacity: 1;
 		transform: translateY(0);
 	}
 }
 
-@include animated-element-right($includes-root-element: false) {
-	@include animated-element-init {
+@include animated.animated-element-right($includes-root-element: false) {
+	@include animated.animated-element-init {
 		opacity: 0;
 		transform: translateX(5px);
-		transition: opacity $animation-duration $animation-timing-function,
-					transform $animation-duration $animation-timing-function;
+		transition: opacity global.$animation-duration global.$animation-timing-function,
+					transform global.$animation-duration global.$animation-timing-function;
 	}
 
-	@include animated-element-active {
+	@include animated.animated-element-active {
 		opacity: 1;
 		transform: translateY(0);
 	}
 }
 
-@include animated-element-opacity($includes-root-element: false) {
-	@include animated-element-init {
+@include animated.animated-element-opacity($includes-root-element: false) {
+	@include animated.animated-element-init {
 		opacity: 0;
 		transform: none;
-		transition: opacity $animation-duration $animation-timing-function;
+		transition: opacity global.$animation-duration global.$animation-timing-function;
 	}
 
-	@include animated-element-active {
+	@include animated.animated-element-active {
 		opacity: 1;
 		transform: none;
 	}
 }
 
 @for $i from 1 through 100 {
-	@include animated-element-delay($ms: $i * 50, $includes-root-element: false);
+	@include animated.animated-element-delay($ms: $i * 50, $includes-root-element: false);
 }

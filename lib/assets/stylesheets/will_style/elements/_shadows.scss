@@ -1,13 +1,16 @@
+@use "will_style/core/variables/global" as global;
+@use "will_style/mixins/shadows" as shadows;
+
 //
 // Shadow Classes
 //
 
 .shadow-filter {
-	@include image-shadow-filter;
+	@include shadows.image-shadow-filter;
 }
 
 .text-shadow {
-	@include text-shadow($shadow-weight);
+	@include shadows.text-shadow(global.$shadow-weight);
 }
 
 .no-shadow {
