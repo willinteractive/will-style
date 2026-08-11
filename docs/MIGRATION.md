@@ -27,7 +27,7 @@ Lowest blast radius first (`F1`–`F3`), then the safety net (`F4`–`F6`) befor
 | P2 | ~~Remove `will-icons`~~ **Done 2026-08-11.** `libraries/_will_paginate.scss` turned out to actively depend on it (pagination arrows) — replaced with a new reusable `mixins/_fontawesome.scss` rendering FontAwesome Pro chevrons. `_footer.html.erb`'s inline WILL glyph replaced with literal "WILL Interactive" text per a company-name compliance requirement. Verified by compiling the real `will_style` + `will_style/app` entry-point combination directly. See [docs/specs/08](specs/08-remove-will-icons.md). | F6 | Small |
 | P3 | ~~Replace `gulp-sharp-responsive`~~ **Done 2026-08-11.** Re-prioritized after F1 revealed the tool was broken under `gulp@5.0.1` and carried a nested, unfixable CVE. `gulp/responsiveImages.js` now calls `sharp` directly; `npm audit` is clean (0 vulnerabilities); no more private git+ssh dependency. See [docs/specs/09](specs/09-replace-responsive-image-tool.md). | F1 | Medium |
 | P4 | ~~Make `premailer-rails` optional~~ **Done 2026-08-11.** No engine code referenced it at all (the gap was pure discoverability, not config wiring) — added a `Rails.logger.warn` in the email layout partial when `PremailerRails` isn't defined, covered by two view specs. See [docs/specs/10](specs/10-optional-premailer-dependency.md). | — | Trivial |
-| P5 | Spike: investigate a pinned FontAwesome package as a replacement for the hardcoded Kit script in `_fontawesome.html.erb`. **Partially done 2026-08-11**: confirmed the account is Pro-tier (likely the root cause of prior trouble). **Blocked** on FontAwesome dashboard access to generate a private-registry npm token — needs a human to pick up. See [docs/specs/11](specs/11-fontawesome-pinned-package-spike.md). Feeds `B1`. | — | Small |
+| P5 | ~~Spike: investigate a pinned FontAwesome package as a replacement for the hardcoded Kit script in `_fontawesome.html.erb`~~ **Done 2026-08-11.** Confirmed the account is Pro-tier (likely the root cause of prior trouble). Team decision (with dashboard access): keep the Kit script — simplest integration across four consuming apps with no shared toolchain. See [docs/specs/11](specs/11-fontawesome-pinned-package-spike.md). Feeds `B1`. | — | Small |
 
 **Do not run P1 and P2 concurrently on separate branches** — both touch `lib/assets/stylesheets/will_style/core/` and `mixins/`. Land P2 (smaller, pure deletion) first, then start P1 on a clean tree to avoid merge conflicts on shared partials.
 
@@ -35,7 +35,7 @@ Lowest blast radius first (`F1`–`F3`), then the safety net (`F4`–`F6`) befor
 
 | ID | Title | Depends on | Complexity |
 |---|---|---|---|
-| B1 | Finalize the FontAwesome approach based on `P5`'s findings — adopt the pinned package, or confirm the Kit-script fallback and close this out. | P5 | Small |
+| B1 | ~~Finalize the FontAwesome approach based on `P5`'s findings~~ **Done 2026-08-11: keeping the Kit-script fallback.** No code change. See [docs/specs/12](specs/12-fontawesome-final-decision.md). | P5 | Small |
 | B2 | Schedule and coordinate the `7.0` breaking release across Launchpad, Access, Learning, and Veils-Player — rollout order, timing, communication. This is a scheduling call, not engineering work, but nothing in `C1`–`C3` ships until it's made. | F6 | — |
 | B3 | Decide the removal timing for the Sprockets JS manifest based on `F6`'s findings — proceed once no consumer is confirmed Sprockets-only. | F6 | — |
 

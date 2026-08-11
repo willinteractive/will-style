@@ -35,3 +35,7 @@ Small.
 ## Coding Agent Safe?
 
 The implementation is agent-safe; the go/no-go call itself is a human decision informed by spec 11.
+
+## Outcome (closed 2026-08-11) — keep Kit script
+
+Decision made by the team member with FontAwesome dashboard access, without needing to fully resolve spec 11's three open points (plan tier's npm support, token distribution): **keep the Kit script.** Rationale — it's the simplest integration across all four consuming apps, which don't share a single toolchain (a Rails engine gem, `access`/`learning` on older Rails, and `veils-player`, which isn't a Rails app at all); a pinned package would need per-app importmap/bundler wiring plus a private-registry-token distribution story that the Kit's single `<script>` tag avoids entirely. No code change. Closed — don't reopen without new information (e.g. the Kit script itself becoming deprecated or a licensing change).
