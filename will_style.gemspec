@@ -28,4 +28,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'importmap-rails', "~> 2.2"
 
   s.add_development_dependency "bundler", "~> 4.0"
+  s.add_development_dependency "combustion", "~> 1.5"
 end

@@ -36,3 +36,9 @@ Medium.
 ## Coding Agent Safe?
 
 Yes for scaffolding; a human should review the initial grandfathered-violation list before merging.
+
+## Outcome (2026-08-11) — partially implemented, scope question raised
+
+The CI half is done, matching real precedent rather than the originally-guessed scope: none of the three sibling WILL Rails-engine gems checked (`launchpad-integration`, `player-sync`, `will-session`) have **any** Rubocop/ESLint/Stylelint config — their actual convention is RSpec + `bundler-audit` + GitHub Actions, nothing more. Added `.github/workflows/ci.yml` mirroring `launchpad-integration`'s exact working workflow (an `rspec` job and a separate `bundler-audit` job, both using `ruby/setup-ruby` with `bundler-cache: true`). `bundle exec bundle-audit check --update` currently reports **0 vulnerabilities**.
+
+**Not done**: Rubocop/Stylelint/ESLint themselves. This was the original ask from `modernization-prompt.md`'s Phase 3 topic list ("improving code quality and consistency"), but it would be net-new tooling for the org's Rails-engine gems, not a matched convention like everything else implemented so far. Flagged back to the team rather than deciding unilaterally — see the open question this raised in `docs/open-questions.md`.

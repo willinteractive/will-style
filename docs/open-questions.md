@@ -40,3 +40,7 @@ All 10 questions below have been answered (2026-08-11). Answers are recorded inl
    **Updated 2026-08-11**: after F6's consumer inventory showed `access`/`learning` still on Rails 6.1.x, the team confirmed those two are being modernized next — so it's fine to raise the floor itself to `>= 8.0` now (done, see [dependency-audit.md](dependency-audit.md)). This is a deliberate forcing function: neither app can adopt a will-style release built after this change until it's on Rails 8, which is expected to happen as part of their own modernization, not a surprise.
 10. **Appetite for a breaking will-style major version?**
     **Answer**: Yes — breaking changes are fine as long as the rollout across the four consuming apps is coordinated (a 7.0 release, not a silent 6.x change).
+
+## Lint tooling (new, raised 2026-08-11 during F5)
+
+11. **Should will-style adopt Rubocop/Stylelint/ESLint?** The original brief asked for lint config as part of code-quality cleanup. Executing F5 found that none of the three other WILL-authored Rails-engine gems (`launchpad-integration`, `player-sync`, `will-session`) have any lint config at all — their actual convention is tests + `bundler-audit` + CI, nothing more. Options: (a) introduce linting anyway, since "no one else does it" isn't the same as "it's not valuable," or (b) skip it to match the org's real convention for this category of repo and avoid a bespoke fourth toolchain. Not decided — CI (RSpec + bundler-audit) is live either way; only the lint layer is pending.
