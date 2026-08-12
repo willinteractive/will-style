@@ -2,6 +2,17 @@
 
 All notable changes to `will_style` are documented here. Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [7.0.1] — 2026-08-12
+
+Bugfix release. This is the live-consumer smoke test 7.0.0 flagged as outstanding — run against Launchpad, which caught three real bugs the JS module conversion introduced or exposed. No public API changes; safe upgrade for anyone on `7.0.0`.
+
+### Fixed
+
+- **JS never loaded in any consuming app.** `WillStyle::Engine` built its own private `WillStyle.importmap` (drawing both the host app's and the engine's `config/importmap.rb`), but nothing wired that into `Rails.application.importmap` — the map `javascript_importmap_tags` actually renders. Every consumer's browser-facing importmap was missing all 20 `will_style/*` submodule pins, so `app/javascript/will_style.js`'s `import "will_style/core/settings"` etc. (real ESM as of 7.0.0) failed to resolve and `window.WillStyle` never initialized. Fixed by registering the engine's `config/importmap.rb` and asset-watch path directly into the host app's `config.importmap.paths`/`cache_sweepers`, the standard importmap-rails engine integration pattern.
+- **`pin_all_from` in this gem's own `config/importmap.rb` resolved to nothing.** It used a relative directory (`'../app/javascript/will_style'`), but `Importmap::Map#absolute_root_of` always resolves relative `pin_all_from` paths against the *host app's* `Rails.root`, never the declaring file's own location — so in every consumer it silently expanded to zero files. This bug predates 7.0.0 and was masked by the issue above (nothing ever drew this file into a map anyone rendered). Anchored the path to `WillStyle::Engine.root` instead.
+- **Sprockets `AssetNotPrecompiledError` on every `will_style/*.js` file**, once the above two fixes made those pins real. `config.assets.precompile` never listed the individual behavior files, only the `will_style.js` aggregate. Declared them via `WillStyle::Engine`'s asset initializer so no consuming app needs to hand-maintain this list. (A `Regexp` entry was tried first — looks idiomatic — but Sprockets 4's resolver calls `.start_with?` directly on precompile entries and raises on anything that isn't a String; switched to enumerating literal logical paths at boot instead.)
+- **`event.target.matches is not a function`**, thrown from `forms/selected-buttons.js`'s document-level capture-phase click listener (and, on inspection, three more listeners with the identical gap: `forms/url-formatting.js`, `features/focused-form-elements.js`, `features/spannable-elements.js`). `Event.target` is not guaranteed to be an `Element` — `animated-elements.js` already guarded against this (`current.matches && current.matches(...)`) but the guard was never applied consistently across the other JS behavior files. This bug predates 7.0.0 (present unchanged since at least `6.0.3`) but had never been exercised by a live click sequence until this smoke test.
+
 ## [7.0.0] — 2026-08-11
 
 Breaking release, part of the 2026 modernization effort (see `docs/MIGRATION.md`). Rollout schedule: Launchpad 2026-08-11, Access 2026-08-14, Learning 2026-08-25, Veils-Player 2026-09-08.
