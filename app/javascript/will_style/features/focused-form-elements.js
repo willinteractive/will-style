@@ -2,6 +2,7 @@ import { Settings } from "will_style/core/settings";
 
 document.addEventListener("focus", function(event) {
   const target = event.target;
+  if (!target.matches) return;
   if (target.matches("input, textarea")) {
     const container = target.closest(".form-container");
     if (container) {
@@ -12,6 +13,7 @@ document.addEventListener("focus", function(event) {
 
 document.addEventListener("blur", function(event) {
   const target = event.target;
+  if (!target.matches) return;
   if (target.matches("input, textarea")) {
     const container = target.closest(".form-container");
     if (container) {
@@ -22,6 +24,7 @@ document.addEventListener("blur", function(event) {
 
 document.addEventListener("mouseenter", function(event) {
   const target = event.target;
+  if (!target.matches) return;
   if (target.matches("input, button")) {
     const container = target.closest(".button-container");
     if (container) {
@@ -32,6 +35,7 @@ document.addEventListener("mouseenter", function(event) {
 
 document.addEventListener("mouseleave", function(event) {
   const target = event.target;
+  if (!target.matches) return;
   if (target.matches("input, button")) {
     const container = target.closest(".button-container");
     if (container) {
@@ -42,6 +46,7 @@ document.addEventListener("mouseleave", function(event) {
 
 function handleInputChange(event) {
   const target = event.target;
+  if (!target.matches) return;
   if (target.matches("input, textarea")) {
     const container = target.closest(".form-container");
     if (container) {
@@ -61,6 +66,7 @@ document.addEventListener("blur", handleInputChange, true);
 
 document.addEventListener("change", function(event) {
   const target = event.target;
+  if (!target.matches) return;
   if (target.matches("select")) {
     const selectionTriggered = target.getAttribute("data-selection-triggered");
     const container = target.closest(".form-container");
@@ -74,6 +80,7 @@ document.addEventListener("change", function(event) {
 
 function handleSelectMouse(event) {
   const target = event.target;
+  if (!target.matches) return;
   if (target.matches("select")) {
     const container = target.closest(".form-container");
     if (container) {

@@ -51,7 +51,7 @@ document.addEventListener(Settings.pageChangeEvent, function(event) {
 
 document.addEventListener(Settings.elementChangedEvent, function(event) {
   const target = event.target;
-  if (target.classList.contains("spannable")) {
+  if (target.classList && target.classList.contains("spannable")) {
     spanifyElement(target, true);
   }
 });

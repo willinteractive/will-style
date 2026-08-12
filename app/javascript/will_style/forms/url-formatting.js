@@ -20,6 +20,7 @@ let urlify = function(value, isEditing) {
 
 document.addEventListener("keyup", function(event) {
   const target = event.target;
+  if (!target.matches) return;
   if (target.matches("input[data-type=url]")) {
     const new_value = urlify(target.value, true);
     if (new_value !== target.value) {
@@ -30,6 +31,7 @@ document.addEventListener("keyup", function(event) {
 
 document.addEventListener("blur", function(event) {
   const target = event.target;
+  if (!target.matches) return;
   if (target.matches("input[data-type=url]")) {
     const new_value = urlify(target.value, false);
     if (new_value !== target.value) {
@@ -40,6 +42,7 @@ document.addEventListener("blur", function(event) {
 
 document.addEventListener("paste", function(event) {
   const target = event.target;
+  if (!target.matches) return;
   if (target.matches("input[data-type=url]")) {
     setTimeout(function() {
       const new_value = urlify(target.value, false);
@@ -52,6 +55,7 @@ document.addEventListener("paste", function(event) {
 
 document.addEventListener("change", function(event) {
   const target = event.target;
+  if (!target.matches) return;
   if (target.matches("input[data-type=url]")) {
     const new_value = urlify(target.value, false);
     if (new_value !== target.value) {
@@ -62,6 +66,7 @@ document.addEventListener("change", function(event) {
 
 document.addEventListener("submit", function(event) {
   const form = event.target;
+  if (!form.matches) return;
   if (form.matches("form")) {
     const urlInputs = form.querySelectorAll("input[data-type=url]");
     for (let i = 0; i < urlInputs.length; i++) {
