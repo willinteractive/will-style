@@ -1,0 +1,21 @@
+//
+// Pseudo-element Overrides
+//
+
+// Suppresses a `:before`/`:after` pseudo-element that's already been added
+// by another style (e.g. Bootstrap's dropdown-toggle caret, accordion-button
+// icon) without having to override the source selector itself.
+
+.no-before {
+	&:before {
+		content: none !important;
+		display: none !important;
+	}
+}
+
+.no-after {
+	&:after {
+		content: none !important;
+		display: none !important;
+	}
+}

@@ -186,6 +186,10 @@ nav.navbar {
 			@include hover-focus {
 				color: $will-white !important;
 			}
+
+			&.active {
+				color: $will-white !important;
+			}
 		}
 	}
 

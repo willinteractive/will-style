@@ -2,6 +2,18 @@
 
 All notable changes to `will_style` are documented here. Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [7.0.2] — 2026-08-12
+
+Bugfix release, more issues found live-testing `7.0.x` against Launchpad. No public API changes; safe upgrade for anyone on `7.0.x`.
+
+### Fixed
+
+- **`.navbar .nav-link.active` didn't get the hover/focus text color.** `components/_navbar.scss`'s `.nav-link` only applied `$will-white` on `:hover`/`:focus`, so an active nav link fell back to the default (dark) link color and was unreadable against the dark navbar background. Added an explicit `&.active` rule alongside the existing hover/focus one.
+
+### Added
+
+- **`.no-before` / `.no-after` utility classes** (`elements/_pseudo-elements.scss`), for suppressing a `:before`/`:after` pseudo-element that's already been injected by another style (e.g. Bootstrap's dropdown-toggle caret, accordion-button icon) without overriding the source selector itself.
+
 ## [7.0.1] — 2026-08-12
 
 Bugfix release. This is the live-consumer smoke test 7.0.0 flagged as outstanding — run against Launchpad, which caught three real bugs the JS module conversion introduced or exposed. No public API changes; safe upgrade for anyone on `7.0.0`.
