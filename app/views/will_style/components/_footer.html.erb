@@ -18,27 +18,19 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-12">
-				<p class="text-center mb-0 text-light">
-					<small>
-						&copy;<%= Time.now.year %> WILL Interactive
+				<p class="text-center mb-0 text-light line-height-1">
+					<small class="d-flex align-items-center justify-content-center gap-4">
+						<span class="d-flex align-items-center justify-content-center gap-1">
+							&copy;<%= Time.now.year %>
+							<%= image_tag "will-style/logos/master-logos/master-light.svg", alt: "WILL Interactive Logo", class: "img-fluid copyright-logo" %>
+						</span>
 
-						&nbsp;&nbsp;
-
-						<%= link_to "Privacy Policy", privacy_link, target: :blank, class: "text-light animated" %>
-
-						&nbsp;&nbsp;
-
-						<%= link_to "SaaS Agreement", saas_link, target: :blank, class: "text-light animated" %>
-
-						&nbsp;&nbsp;
-
-						<%= link_to "Terms", terms_link, target: :blank, class: "text-light animated" %>
+						<%= link_to "Privacy Policy", privacy_link, target: :blank, class: "text-light animated fw-bold" %>
+						<%= link_to "SaaS Agreement", saas_link, target: :blank, class: "text-light animated fw-bold" %>
+						<%= link_to "Terms", terms_link, target: :blank, class: "text-light animated fw-bold" %>
 
 						<% if defined?(support_link) %>
-
-							&nbsp;&nbsp;
-
-							<%= link_to "Support", support_link, target: :blank, class: "text-light animated" %>
+							<%= link_to "Support", support_link, target: :blank, class: "text-light animated fw-bold" %>
 						<% end %>
 					</small>
 				</p>

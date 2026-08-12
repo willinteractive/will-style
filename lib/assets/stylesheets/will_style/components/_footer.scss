@@ -5,4 +5,8 @@
 footer {
 	// @NOTE: This prevents 1px overscrolls when the page isn't 100vh by default
 	overflow: hidden;
+
+	.copyright-logo {
+		height: $small-font-size !important;
+	}
 }

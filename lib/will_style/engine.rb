@@ -36,6 +36,22 @@ module WillStyle
       end
     end
 
+    initializer 'will_style.images' do |app|
+      # Same AssetNotPrecompiledError problem as the JS tree above, but for
+      # lib/assets/images: config/initializers/assets.rb only hand-lists the
+      # favicon files, so anything else under here (logos, patterns, etc.)
+      # 404s in a consuming app unless that app also hand-lists it. Enumerate
+      # the whole tree instead of relying on every consumer to keep its own
+      # copy of this list in sync.
+      images_root = root.join('lib/assets/images')
+
+      Dir.glob(images_root.join('**/*')).each do |file|
+        next unless File.file?(file)
+
+        app.config.assets.precompile << Pathname.new(file).relative_path_from(images_root).to_s
+      end
+    end
+
     initializer 'will_style.importmap', before: 'importmap' do |app|
       # Registers this engine's pins (pin_all_from "will_style/...", the
       # "will_style" aggregate entry point) with importmap-rails' own

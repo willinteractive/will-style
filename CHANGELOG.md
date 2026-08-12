@@ -2,6 +2,19 @@
 
 All notable changes to `will_style` are documented here. Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [7.1.0] — 2026-08-12
+
+Feature release. No breaking public API changes; safe upgrade for anyone on `7.0.x`.
+
+### Added
+
+- **`WillStyle::Engine` now auto-precompiles the entire `lib/assets/images` tree** instead of relying on a hand-maintained list. Previously only the favicon files were declared in `config/initializers/assets.rb`, so anything else under `lib/assets/images` (logos, patterns, etc.) 404'd in a consuming app unless that app kept its own copy of the list in sync. The engine now enumerates the tree itself at boot and precompiles every file, the same fix already applied to the JS behavior files in `7.0.1`. The old hand-listed favicon entries in `config/initializers/assets.rb` were removed as redundant.
+
+### Changed
+
+- **Footer redesign.** `components/_footer.html.erb` now renders the WILL Interactive master logo (`will-style/logos/master-logos/master-light.svg`) next to the copyright year instead of plain text, and the policy links (Privacy Policy, SaaS Agreement, Terms, optional Support) switched from `&nbsp;`-separated spacing to a flex layout (`gap-4`) with bold (`fw-bold`) link text.
+- `components/_footer.scss` moved back from `@use` to `@import` in `_site.scss`, since it now references the bare Bootstrap variable `$small-font-size` to size the new logo — consistent with this repo's standing convention (see `docs/standards.md`) of keeping `@import` in any file that reaches a bare Bootstrap variable.
+
 ## [7.0.2] — 2026-08-12
 
 Bugfix release, more issues found live-testing `7.0.x` against Launchpad. No public API changes; safe upgrade for anyone on `7.0.x`.

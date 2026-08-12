@@ -8,7 +8,6 @@
 @use "will_style/elements/shadows";
 @use "will_style/elements/pseudo-elements";
 @use "will_style/elements/tabs";
-@use "will_style/components/footer";
 @use "will_style/components/picture-set";
 @use "will_style/animated-elements/default";
 @use "will_style/animated-elements/navbar";
@@ -31,6 +30,11 @@
 	"will_style/elements/underlined-elements",
 	"will_style/elements/spannable-elements",
 	"will_style/elements/containers";
+
+// Footer
+
+@import
+	"will_style/components/footer";
 
 // Tables
 
