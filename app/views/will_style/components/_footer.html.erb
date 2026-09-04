@@ -21,18 +21,18 @@
 		<div class="row">
 			<div class="col-12">
 				<p class="text-center mb-0 <%= link_classes %> line-height-1">
-					<small class="d-flex align-items-center justify-content-center gap-4">
+					<small class="d-flex flex-wrap align-items-center justify-content-center gap-4">
 						<span class="fw-bold d-flex align-items-center justify-content-center gap-1">
 							&copy;<%= Time.now.year %>
 							<%= image_tag "will-style/logos/master-logos/master-#{include_bg ? "light" : "dark"}.svg", alt: "WILL Interactive Logo", class: "img-fluid copyright-logo" %>
 						</span>
 
-						<%= link_to "Privacy Policy", privacy_link, target: :blank, class: "#{link_classes} animated fw-bold" %>
-						<%= link_to "SaaS Agreement", saas_link, target: :blank, class: "#{link_classes} animated fw-bold" %>
-						<%= link_to "Terms", terms_link, target: :blank, class: "#{link_classes} animated fw-bold" %>
+						<%= link_to "Privacy Policy", privacy_link, target: :blank, class: "#{link_classes} animated fw-bold text-nowrap" %>
+						<%= link_to "SaaS Agreement", saas_link, target: :blank, class: "#{link_classes} animated fw-bold text-nowrap" %>
+						<%= link_to "Terms", terms_link, target: :blank, class: "#{link_classes} animated fw-bold text-nowrap" %>
 
 						<% if defined?(support_link) %>
-							<%= link_to "Support", support_link, target: :blank, class: "#{link_classes} animated fw-bold" %>
+							<%= link_to "Support", support_link, target: :blank, class: "#{link_classes} animated fw-bold text-nowrap" %>
 						<% end %>
 					</small>
 				</p>
