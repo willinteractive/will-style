@@ -2,6 +2,14 @@
 
 All notable changes to `will_style` are documented here. Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [7.1.3] — 2026-09-04
+
+Bugfix release. No public API changes; safe upgrade for anyone on `7.1.x`.
+
+### Fixed
+
+- **Footer links wrapped mid-text on small screens.** `components/_footer.html.erb`'s link row (`Privacy Policy`/`SaaS Agreement`/`Terms`/`Support`) had no `flex-wrap`, so on narrow viewports individual link text broke onto a second line instead of the row itself wrapping. Added `flex-wrap` to the row and `text-nowrap` to each link — now the whole link group wraps onto a second line as a unit, and no link's text ever breaks mid-phrase.
+
 ## [7.1.2] — 2026-09-04
 
 Bugfix release. No public API changes; safe upgrade for anyone on `7.1.x`.
