@@ -2,6 +2,14 @@
 
 All notable changes to `will_style` are documented here. Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [7.1.2] — 2026-09-04
+
+Bugfix release. No public API changes; safe upgrade for anyone on `7.1.x`.
+
+### Fixed
+
+- **Footer text/logo used a fixed light color regardless of background.** `components/_footer.html.erb` always applied `text-light` and the `master-light.svg` logo, even when rendered with `include_bg: false` (no dark background), making the text and logo illegible against a light page background. Text color, the `Privacy Policy`/`SaaS Agreement`/`Terms`/`Support` links, and the logo variant now all follow `include_bg` (`text-light` + `master-light.svg` when true, `text-dark` + `master-dark.svg` when false).
+
 ## [7.1.1] — 2026-09-04
 
 Bugfix release. No public API changes; safe upgrade for anyone on `7.1.x`.
