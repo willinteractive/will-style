@@ -2,6 +2,23 @@
 
 All notable changes to `will_style` are documented here. Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [7.1.2] — 2026-09-04
+
+Bugfix release. No public API changes; safe upgrade for anyone on `7.1.x`.
+
+### Fixed
+
+- **Footer text/logo used a fixed light color regardless of background.** `components/_footer.html.erb` always applied `text-light` and the `master-light.svg` logo, even when rendered with `include_bg: false` (no dark background), making the text and logo illegible against a light page background. Text color, the `Privacy Policy`/`SaaS Agreement`/`Terms`/`Support` links, and the logo variant now all follow `include_bg` (`text-light` + `master-light.svg` when true, `text-dark` + `master-dark.svg` when false).
+
+## [7.1.1] — 2026-09-04
+
+Bugfix release. No public API changes; safe upgrade for anyone on `7.1.x`.
+
+### Fixed
+
+- **`mixins/_fontawesome.scss` targeted a FontAwesome Kit version that no longer matches the team's Kit.** The `fontawesome-icon` mixin's `font-family` hardcoded `"Font Awesome 6 Pro"`; the team's Kit is now on FontAwesome 7. Updated to `"Font Awesome 7 Pro"`.
+- **`libraries/_will_paginate.scss` pagination arrows.** Switched from `fa-chevron-left`/`fa-chevron-right` (`\f053`/`\f054`) to `fa-angle-left`/`fa-angle-right` (`\f104`/`\f105`), and removed the old absolute-position/sizing `:before` rule on `a.previous_page`/`a.next_page` — it rendered incorrectly against the new glyphs.
+
 ## [7.1.0] — 2026-08-12
 
 Feature release. No breaking public API changes; safe upgrade for anyone on `7.0.x`.
