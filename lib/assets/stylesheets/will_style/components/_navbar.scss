@@ -74,9 +74,7 @@ nav.navbar {
 	// Navbar Toggler animation
 
 	.navbar-toggler {
-		position: absolute;
-		right: 0;
-		top: 0;
+		position: relative;
 
 		// Fix navbar togggler position looking uneven
 
@@ -314,6 +312,8 @@ nav.navbar {
 
 		&.two-line {
 			line-height: 0;
+			font-size: $font-size-base !important;
+			padding-bottom: 0 !important;
 
 			svg {
 				// width: #{calc($navbar-height / 2.5) *  $will-logo-aspect-ratio};
@@ -322,7 +322,9 @@ nav.navbar {
 
 			span {
 				line-height: 1;
+				font-weight: bold;
 				margin-left: calc($navbar-height / 9);
+				margin-top: calc($navbar-height / 18);
 				margin-bottom: calc($navbar-height / 9);
 				transition: color calc($animation-duration / 2) $animation-timing-function;
 			}
@@ -348,13 +350,18 @@ nav.navbar {
 	}
 
 	// Always show dropdowns on small screens
+	// Scoped to .navbar-collapse since it relies on that container's own
+	// background/positioning (see .navbar-collapse:before above); dropdowns
+	// rendered outside the collapse (e.g. a standalone locale switcher) should
+	// keep normal Bootstrap dropdown behavior.
 	@include media-breakpoint-down(md) {
-		.dropdown-menu {
+		.navbar-collapse .dropdown-menu {
 			opacity: 1;
 			transform: none;
 			background-color: transparent !important;
 			box-shadow: none !important;
 			pointer-events: auto;
+			width: 100%;
 
 			.dropdown-item {
 				background-color: transparent !important;
@@ -369,6 +376,10 @@ nav.navbar {
 				}
 			}
 		}
+	}
+
+	.dropdown-menu {
+		position: absolute;
 	}
 }
 
