@@ -2,7 +2,7 @@
 
 All notable changes to `will_style` are documented here. Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
-## [Unreleased]
+## [7.1.5] — 2026-10-09
 
 ### Fixed
 
