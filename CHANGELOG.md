@@ -2,6 +2,12 @@
 
 All notable changes to `will_style` are documented here. Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [Unreleased]
+
+### Fixed
+
+- **Email partial's WILL logo was a broken image in every consuming app.** `components/_email.html.erb` referenced `will_style/logos/master-logos/master-dark-gradient.png`, but the image directory is `will-style/`, and the PNG logos were removed in `0c3055ad` — so Sprockets couldn't resolve it and the `<img>` fell back to a `/images/...` URL that 404s. Restored `will-style/logos/master-logos/master-dark-gradient.png` (rendered from the current SVG at 4x its 80x20 display size) and pointed both `image_tag`s at it. PNG rather than the SVG because Gmail and Outlook don't render SVG in email.
+
 ## [7.1.3] — 2026-09-04
 
 Bugfix release. No public API changes; safe upgrade for anyone on `7.1.x`.
