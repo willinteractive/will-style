@@ -2,6 +2,12 @@
 
 All notable changes to `will_style` are documented here. Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [7.1.6] — 2026-10-30
+
+### Added
+
+- **`.language-selector` styles, matching the veils-player languages panel.** A Bootstrap modal that drops from the top of the screen, with a frosted panel and a grid of `.language-btn` tiles showing each language's name and code. `launchpad_integration` 8.0.1's navbar renders the markup; older versions don't use these styles, so nothing changes until an app upgrades both gems.
+
 ## [7.1.5] — 2026-10-09
 
 ### Fixed
