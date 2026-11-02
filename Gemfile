@@ -15,3 +15,5 @@ group :development, :test do
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
 end
+
+gem "brakeman", "~> 8.1", groups: [:development, :test], require: false
