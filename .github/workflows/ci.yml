@@ -50,6 +50,19 @@ jobs:
       - name: Check for known-vulnerable dependencies
         run: bundle exec bundle-audit check --update
 
+  brakeman:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Run Brakeman (SAST)
+        run: bundle exec brakeman -q
+
   lint-js-css:
     runs-on: ubuntu-latest
     steps:
