@@ -35,7 +35,7 @@ In your app's `application.scss` (or equivalent):
 import "will_style"
 ```
 
-This pulls in the engine's core settings/events, feature behaviors (image loading, animated elements, video/image backgrounds, etc.), UI components (dropdowns, navbar, modals, pop-out), and form helpers (expanding textareas, file sizes, required inputs, URL formatting) — 20 real ES modules under `app/javascript/will_style/`, re-initializing on `turbo:load`.
+This pulls in the engine's core settings/events, feature behaviors (image loading, animated elements, video/image backgrounds, etc.), UI components (dropdowns, navbar, side nav, modals, pop-out), and form helpers (expanding textareas, file sizes, required inputs, URL formatting) — 21 real ES modules under `app/javascript/will_style/`, re-initializing on `turbo:load`.
 
 ### View helpers & partials
 

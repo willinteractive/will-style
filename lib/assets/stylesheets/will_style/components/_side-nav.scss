@@ -1,0 +1,365 @@
+//
+// Side Nav
+//
+
+// An app's navigation as a column down the left of the page, on will-dark,
+// in place of the top navbar. launchpad_integration's components/side_nav
+// renders the markup:
+//
+//   .side-nav-page               (a wrapper inside body: will_style's
+//                                 deferred styles force body to display:
+//                                 block)
+//     header.side-nav-bar        (below lg: the logo and a Menu button)
+//     aside.side-nav#side-nav    (the nav itself)
+//     .side-nav-backdrop         (below lg, behind the open panel)
+//     .side-nav-page-content     (the page: main, footer)
+//
+// From lg up the nav is a sticky full-height column beside the page. Below
+// lg it's a panel that slides in from the right, the side of the top bar's
+// Menu button; components/side-nav.js
+// opens and closes it (.open), without Bootstrap's offcanvas JS.
+//
+// Links inside it use the same classes as the navbar's (.nav-item/.nav-link,
+// .dropdown-item in the account list), so an app's navbar link partials
+// render in the side nav unchanged.
+
+$side-nav-width: 16rem;
+$side-nav-bg: $will-dark;
+$side-nav-color: rgba($white, 0.75);
+$side-nav-muted-color: rgba($white, 0.55);
+$side-nav-hover-bg: rgba($white, 0.08);
+$side-nav-active-bg: rgba($white, 0.14);
+$side-nav-divider: rgba($white, 0.12);
+$side-nav-transition: transform 0.25s ease-in-out;
+
+.side-nav-page {
+	@include media-breakpoint-up(lg) {
+		display: flex;
+		align-items: stretch;
+	}
+}
+
+.side-nav-page-content {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+	min-width: 0;
+	min-height: 100vh;
+
+	@include media-breakpoint-down(lg) {
+		min-height: calc(100vh - 3.5rem);
+	}
+}
+
+// Below lg: a thin top bar with the logo and the Menu button.
+.side-nav-bar {
+	position: sticky;
+	top: 0;
+	z-index: $navbar-z-index;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 3.5rem;
+	padding: 0 1rem;
+	background-color: $side-nav-bg;
+
+	@include media-breakpoint-up(lg) {
+		display: none;
+	}
+
+	.side-nav-brand svg,
+	.side-nav-brand img {
+		height: 1.5rem;
+	}
+}
+
+// From lg up: the top-right corner of the page beside the nav
+// (launchpad_integration's components/side_nav_top), with the language
+// button where the navbar had it. Below lg the top bar has it.
+.side-nav-top {
+	display: none;
+
+	@include media-breakpoint-up(lg) {
+		display: flex;
+		justify-content: flex-end;
+		gap: 0.25rem;
+		padding: 0.75rem 1rem 0;
+	}
+}
+
+.side-nav-top-link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.5rem;
+	height: 2.5rem;
+	border: 0;
+	border-radius: $border-radius;
+	background: transparent;
+	color: $will-dark;
+	font-size: $font-size-lg;
+
+	&:hover,
+	&:focus-visible {
+		background-color: rgba($will-dark, 0.08);
+	}
+}
+
+.side-nav-toggle,
+.side-nav-close {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.4rem 0.6rem;
+	border: 0;
+	border-radius: $border-radius;
+	background: transparent;
+	color: $side-nav-color;
+	font-weight: 600;
+
+	&:hover,
+	&:focus-visible {
+		color: $white;
+		background-color: $side-nav-hover-bg;
+	}
+}
+
+.side-nav {
+	display: flex;
+	flex-direction: column;
+	width: $side-nav-width;
+	background-color: $side-nav-bg;
+	color: $side-nav-color;
+	overflow-y: auto;
+	overscroll-behavior: contain;
+
+	@include media-breakpoint-up(lg) {
+		position: sticky;
+		top: 0;
+
+		// Over page-wide overlays such as grid-bg's ::before/::after, which
+		// would otherwise paint on top of a positioned column with no
+		// z-index of its own.
+		z-index: $navbar-z-index;
+		flex: 0 0 $side-nav-width;
+		height: 100vh;
+	}
+
+	// Below lg, from the right, the side of the top bar's Menu button.
+	@include media-breakpoint-down(lg) {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		z-index: $navbar-z-index + 5;
+		max-width: 85vw;
+		transform: translateX(100%);
+		visibility: hidden;
+		transition: $side-nav-transition, visibility 0s linear 0.25s;
+
+		&.open {
+			transform: none;
+			visibility: visible;
+			transition: $side-nav-transition;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		transition: none !important; // stylelint-disable-line declaration-no-important
+	}
+
+	a {
+		color: $side-nav-color;
+		text-decoration: none;
+
+		&:hover,
+		&:focus-visible {
+			color: $white;
+		}
+	}
+}
+
+.side-nav-header {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 0.5rem;
+	padding: 1.25rem 1rem 0.75rem;
+
+	.side-nav-close {
+		@include media-breakpoint-up(lg) {
+			display: none;
+		}
+	}
+}
+
+.side-nav-brand {
+	display: inline-flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	line-height: 1.2;
+
+	svg,
+	img {
+		height: 1.75rem;
+		width: auto;
+	}
+
+	.side-nav-app-name {
+		color: $side-nav-muted-color;
+		font-size: $font-size-sm;
+		font-weight: 600;
+	}
+}
+
+.side-nav-body {
+	flex: 1 0 auto;
+	padding: 0 0.75rem 1rem;
+}
+
+.side-nav-section {
+	padding: 0.75rem 0;
+
+	& + & {
+		border-top: 1px solid $side-nav-divider;
+	}
+}
+
+// A section's heading: an eyebrow (what it is), a title (its name), and an
+// optional logo on a white tile, so a dark logo shows on will-dark.
+.side-nav-eyebrow {
+	margin: 0 0.75rem;
+	color: $side-nav-muted-color;
+	font-size: $font-size-sm;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.side-nav-title {
+	margin: 0 0.75rem 0.5rem;
+	color: $white;
+	font-size: $font-size-lg;
+	font-weight: 700;
+	overflow-wrap: anywhere;
+}
+
+.side-nav-logo {
+	margin: 0 0.75rem 0.75rem;
+	padding: 0.5rem;
+	border-radius: $border-radius;
+	background-color: $white;
+
+	img {
+		display: block;
+		max-width: 100%;
+		max-height: 4rem;
+		margin: 0 auto;
+		object-fit: contain;
+	}
+}
+
+.side-nav-small-link {
+	display: inline-block;
+	margin: 0 0.75rem 0.5rem;
+	font-size: $font-size-sm;
+}
+
+// Links: .nav-link (an app's navbar links) and .dropdown-item (its account
+// links) look the same here.
+.side-nav .nav,
+.side-nav-list {
+	display: flex;
+	flex-direction: column;
+	gap: 0.125rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.side-nav .nav-link,
+.side-nav .dropdown-item {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	width: 100%;
+	padding: 0.55rem 0.75rem;
+	border: 0;
+	border-radius: $border-radius;
+	background: transparent;
+	color: $side-nav-color;
+	font-weight: 600;
+	text-align: left;
+	white-space: normal;
+
+	&:hover,
+	&:focus-visible {
+		color: $white;
+		background-color: $side-nav-hover-bg;
+	}
+
+	&.active,
+	&[aria-current="page"] {
+		color: $white;
+		background-color: $side-nav-active-bg;
+	}
+
+	> i,
+	> svg,
+	> .side-nav-icon {
+		flex: 0 0 1.25rem;
+		width: 1.25rem;
+		text-align: center;
+	}
+}
+
+// A second, smaller line under a link's label: the user's name under My
+// Account (account_path), or which company an app's link is for.
+.side-nav-link-detail,
+.side-nav-account-name {
+	display: block;
+	color: $side-nav-muted-color;
+	font-size: $font-size-sm;
+	font-weight: 400;
+	overflow-wrap: anywhere;
+}
+
+// The signed-in user's links, at the foot of the nav.
+.side-nav-footer {
+	padding: 0.75rem;
+	border-top: 1px solid $side-nav-divider;
+
+	.side-nav-user {
+		margin: 0 0.75rem 0.25rem;
+		color: $white;
+		font-weight: 700;
+		overflow-wrap: anywhere;
+	}
+}
+
+.side-nav-backdrop {
+	display: none;
+
+	@include media-breakpoint-down(lg) {
+		position: fixed;
+		inset: 0;
+		z-index: $navbar-z-index + 4;
+		display: block;
+		background-color: rgba($black, 0.5);
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.25s ease-in-out;
+
+		.side-nav.open + & {
+			opacity: 1;
+			pointer-events: auto;
+		}
+	}
+}
+
+// While the panel is open, the page under it doesn't scroll.
+@include media-breakpoint-down(lg) {
+	body.side-nav-open {
+		overflow: hidden;
+	}
+}
