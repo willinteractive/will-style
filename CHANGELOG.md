@@ -2,6 +2,19 @@
 
 All notable changes to `will_style` are documented here. Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [7.2.0] — 2026-11-06
+
+### Added
+
+- **Side nav: an app's navigation as a column down the left of the page, in place of the top navbar.** `components/_side-nav.scss` styles the markup `launchpad_integration` 8.1.0's `components/side_nav` renders, on `$will-dark`:
+  - From `lg` up, a sticky full-height 16rem column (`.side-nav`) beside the page (`.side-nav-page-content`), inside a `.side-nav-page` wrapper. The wrapper sits inside `body` because the deferred styles force `body` to `display: block`. The column sits above page-wide overlays such as `grid-bg`'s `::after`.
+  - Below `lg`, a thin top bar (`.side-nav-bar`) with the logo and a Menu button. The nav becomes a panel that slides in from the right, the side of the Menu button, over a dimmed backdrop.
+  - `.nav-link` and `.dropdown-item` look the same inside it, so an app's navbar link partials render in the side nav unchanged. Sections (`.side-nav-section`) carry an eyebrow, a title, and an optional logo on a white tile. `.side-nav-link-detail` (and `.side-nav-account-name`, the user's name under a single My Account link) is a smaller second line under a link's label.
+  - `.side-nav-top`: the language button in the page's top-right corner, from `lg` up.
+- **`components/side-nav.js`** opens and closes the panel below `lg` without Bootstrap's offcanvas JS. `[data-side-nav-toggle]` opens it, and `[data-side-nav-close]` or Escape closes it. Focus moves into the panel on open and back to the toggle on close, and a Turbo visit starts each page with the panel closed.
+
+Nothing changes for an app until it renders the new markup; the navbar is untouched.
+
 ## [7.1.6] — 2026-10-30
 
 ### Added

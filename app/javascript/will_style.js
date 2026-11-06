@@ -27,6 +27,7 @@ import "will_style/features/overlapped-elements"
 // -------- COMPONENTS
 import "will_style/components/dropdowns"
 import "will_style/components/navbar"
+import "will_style/components/side-nav"
 import "will_style/components/pop-out"
 import "will_style/components/modals"
 
